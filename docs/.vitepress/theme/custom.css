@@ -171,3 +171,34 @@ body {
   width: 100%;
   height: auto;
 }
+
+/* Top-right logo in nav with light/dark variants */
+.h3p-top-logo {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 14px;
+}
+
+.h3p-top-logo img {
+  height: 34px;
+  width: auto;
+  object-fit: contain;
+}
+
+.h3p-logo-dark {
+  display: none;
+}
+
+.dark .h3p-logo-light {
+  display: none;
+}
+
+.dark .h3p-logo-dark {
+  display: block;
+}
+
+@media (max-width: 960px) {
+  .h3p-top-logo {
+    display: none;
+  }
+}

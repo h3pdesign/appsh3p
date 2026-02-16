@@ -1,6 +1,15 @@
 # All Apps
 
-This is the central documentation hub for all H3P apps.
+<div class="apps-top-row">
+  <p class="apps-intro">This is the central documentation hub for all H3P apps.</p>
+  <div class="apps-avatar-card">
+    <img src="/brand/avatar.png" alt="H3P avatar" class="apps-avatar" />
+    <div class="apps-avatar-meta">
+      <strong>h3p</strong>
+      <span>app creator</span>
+    </div>
+  </div>
+</div>
 
 <div class="apps-grid">
   <a class="app-card" href="/apps/neon-vision-editor/overview">
@@ -36,6 +45,45 @@ This is the central documentation hub for all H3P apps.
 See [GitHub Repositories](/apps/github-repositories) for repository links and current publication status.
 
 <style>
+.apps-top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.apps-intro {
+  margin: 0;
+}
+
+.apps-avatar-card {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 10px;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 12px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.01));
+}
+
+.apps-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  object-fit: cover;
+}
+
+.apps-avatar-meta {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.apps-avatar-meta span {
+  font-size: 12px;
+  color: var(--vp-c-text-2);
+}
+
 .apps-grid {
   display: grid;
   gap: 16px;
@@ -95,5 +143,12 @@ See [GitHub Repositories](/apps/github-repositories) for repository links and cu
   color: #1ec75f;
   border-color: #2e8f52;
   background: rgba(30, 199, 95, 0.12);
+}
+
+@media (max-width: 768px) {
+  .apps-top-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
 </style>
