@@ -11,6 +11,9 @@
   --vp-c-brand-1: #53d2ff;
   --vp-c-brand-2: #2ab2f6;
   --vp-c-brand-3: #1796e2;
+
+  /* Narrower sidebar */
+  --vp-sidebar-width: 220px;
 }
 
 .dark {
@@ -29,6 +32,17 @@ body {
 .VPNav,
 .VPLocalNav {
   backdrop-filter: blur(8px);
+}
+
+/* Dark black sidebar surface */
+.VPSidebar {
+  background: #050608;
+  border-right: 1px solid #1d2633;
+}
+
+.VPSidebarItem .text,
+.VPSidebarItem .link {
+  font-size: 13px;
 }
 
 .VPFeature {

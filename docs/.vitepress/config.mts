@@ -1,7 +1,7 @@
 import { defineConfig } from 'vitepress'
 
 export default defineConfig({
-  title: 'startpage for h3p apps',
+  title: 'h3p apps',
   description: 'Documentation portal for H3P apps',
   sitemap: {
     hostname: 'https://apps-h3p.com'
@@ -11,7 +11,7 @@ export default defineConfig({
   cleanUrls: true,
 
   themeConfig: {
-    siteTitle: 'startpage for h3p apps',
+    siteTitle: 'h3p apps',
 
     search: {
       provider: 'local'
@@ -41,6 +41,7 @@ export default defineConfig({
           { text: 'All Apps', link: '/apps/index' },
           { text: 'GitHub Repositories', link: '/apps/github-repositories' },
           { text: 'Neon Vision Editor: Overview', link: '/apps/neon-vision-editor/overview' },
+          { text: 'Neon Vision Editor: Launch Story', link: '/apps/neon-vision-editor/launch-story' },
           { text: 'Neon Vision Editor: Installation', link: '/apps/neon-vision-editor/installation' },
           { text: 'Neon Vision Editor: Features', link: '/apps/neon-vision-editor/features' },
           { text: 'Metric Data: Overview', link: '/apps/metric-data/overview' },

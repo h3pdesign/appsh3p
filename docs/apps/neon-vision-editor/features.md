@@ -1,17 +1,38 @@
 # Neon Vision Editor Features
 
-## Editing Workspace
+## Core Editor Experience
 
-Document timeline controls, clip operations, and project navigation.
+- fast project open and launch behavior
+- automatic syntax highlighting
+- focused, low-distraction writing surface
 
-## Presets and Assets
+## Native UI and Performance
 
-Document preset categories, asset import rules, and asset organization.
+- native app behavior on macOS, iPadOS, and iOS
+- smooth scrolling and responsive interactions
+- coherent dark and light appearance
 
-## Export and Delivery
+## AI Assistance
 
-Document output formats, quality profiles, and performance notes.
+AI is optional and only appears when requested.
 
-## Known Limitations
+Current focus:
 
-Track device-specific or format-specific constraints.
+- simple code completion assistance
+
+Design principle:
+
+- helpful, non-intrusive support without taking over writing flow
+
+## Design Language
+
+- minimal UI chrome
+- readable typography
+- subtle neon accents
+- controlled contrast (not over-saturated visual noise)
+
+## Open Development and Distribution
+
+- [GitHub](https://github.com/h3pdesign/Neon-Vision-Editor)
+- [TestFlight](https://testflight.apple.com/join/YWB2fGAP)
+- [App Store](https://apps.apple.com/de/app/neon-vision-editor/id6758950965)

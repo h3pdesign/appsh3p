@@ -2,8 +2,8 @@
 layout: home
 
 hero:
-  name: "startpage for h3p apps"
-  text: "clean docs for every app"
+  name: "h3p apps"
+  text: "clean and modern apps"
   tagline: "A focused portal for product docs, setup guides, and release workflows."
   actions:
     - theme: brand

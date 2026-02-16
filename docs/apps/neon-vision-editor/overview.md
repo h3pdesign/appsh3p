@@ -2,26 +2,43 @@
 
 <img src="/icons/neon-vision-editor.png" alt="Neon Vision Editor icon" width="72" height="72" style="background: transparent; display: block;" />
 
-Neon Vision Editor is the primary creative editing app in this portfolio.
+Neon Vision Editor is a lightweight, modern editor focused on speed, readability, and automatic syntax highlighting.
 
 ## Quick Links
 
-- App docs section: `/apps/neon-vision-editor/features`
-- GitHub repository: [h3pdesign/Neon-Vision-Editor](https://github.com/h3pdesign/Neon-Vision-Editor)
+- [App Store](https://apps.apple.com/de/app/neon-vision-editor/id6758950965)
+- [TestFlight](https://testflight.apple.com/join/YWB2fGAP)
+- [GitHub](https://github.com/h3pdesign/Neon-Vision-Editor)
 
-## What This App Covers
+## Platform Availability
 
-- editing workflow and timeline operations
-- asset handling and preset usage
-- export profiles and delivery outputs
+- macOS
+- iPadOS
+- iOS
 
-## Platform Support
+## Why It Exists
 
-- macOS 14+
-- iOS support: document current status per release
+This started as a personal project to build a writing tool that feels:
 
-## Documentation Scope
+- native
+- fast
+- minimal
+- not Electron
+- not bloated with dashboard noise
+- pleasant to use every day
 
-- installation and onboarding
-- core features and usage patterns
-- troubleshooting and known limitations
+## Product Focus
+
+Neon Vision Editor keeps the interface out of your way so writing stays central.
+
+- AI is optional and on-demand.
+- No forced accounts.
+- No tracking circus.
+- No subscription maze.
+
+## Development Approach
+
+- Fully native Apple stack
+- Modern Apple frameworks
+- Consistent behavior across devices
+- Open development with public source visibility
