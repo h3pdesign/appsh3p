@@ -16,10 +16,13 @@ hero:
 features:
   - title: app-first navigation
     details: Browse each app with consistent sections and clear status.
+    link: /apps/index
   - title: fast local search
     details: Find installation, features, and support details immediately.
+    link: /getting-started/introduction
   - title: production-ready deploy
     details: Published from GitHub Pages on apps-h3p.com.
+    link: /apps/github-repositories
 ---
 
 <div class="startpage-app-strip" aria-label="H3P apps quick links">
@@ -36,6 +39,7 @@ features:
     <span>Release Assistant</span>
   </a>
 </div>
+
 <p class="startpage-external-note">Explore photography, art, and writing on <a href="https://h3p.me/home" target="_blank" rel="noreferrer">h3p.me/home</a>.</p>
 
 ## featured app
