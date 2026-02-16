@@ -1,38 +1,49 @@
 # Neon Vision Editor Features
 
-## Core Editor Experience
+## Editing Flow
 
-- fast project open and launch behavior
+Neon Vision Editor is built for focused writing and coding with a native, low-latency feel.
+
+- fast launch and project open behavior
+- clear typography and readable spacing
 - automatic syntax highlighting
-- focused, low-distraction writing surface
+- minimal chrome to keep attention on the text
 
-## Native UI and Performance
+![Editing flow on Mac](/media/neon/editing-mac-frame.png)
 
-- native app behavior on macOS, iPadOS, and iOS
-- smooth scrolling and responsive interactions
-- coherent dark and light appearance
+## AI Assist (Optional)
 
-## AI Assistance
+AI assistance is available when explicitly requested.
 
-AI is optional and only appears when requested.
+- lightweight completion support
+- no forced AI overlays
+- no interruptive auto-generation loops
 
-Current focus:
+![AI assist workflow on Mac](/media/neon/ai-assist-mac.png)
 
-- simple code completion assistance
+## Cross-Device Continuity
 
-Design principle:
+The app experience is intentionally aligned across macOS, iPadOS, and iOS.
 
-- helpful, non-intrusive support without taking over writing flow
+- consistent editing behavior across device classes
+- consistent visual language and navigation model
+- practical context switching between desktop and mobile
 
-## Design Language
+![Cross-device editing on iPad](/media/neon/cross-device-ipad.png)
+![Cross-device editing on iPhone](/media/neon/cross-device-iphone.png)
 
-- minimal UI chrome
-- readable typography
-- subtle neon accents
-- controlled contrast (not over-saturated visual noise)
+## Visual Design Direction
 
-## Open Development and Distribution
+Neon Vision Editor uses controlled neon accents with restrained contrast.
 
-- [GitHub](https://github.com/h3pdesign/Neon-Vision-Editor)
-- [TestFlight](https://testflight.apple.com/join/YWB2fGAP)
+- dark and light mode support
+- modern native look-and-feel
+- subtle brand highlights without visual noise
+
+![Neon Vision marketing visual](/media/neon/marketing-visioneditor.png)
+
+## Distribution Channels
+
 - [App Store](https://apps.apple.com/de/app/neon-vision-editor/id6758950965)
+- [TestFlight](https://testflight.apple.com/join/YWB2fGAP)
+- [GitHub](https://github.com/h3pdesign/Neon-Vision-Editor)

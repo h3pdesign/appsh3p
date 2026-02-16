@@ -1,17 +1,35 @@
 # Release Assistant Installation
 
-## Prerequisites
+## Expected Repository Layout
 
-- local build tooling installed
-- project access and signing configuration
+Release Assistant is optimized for repositories that include:
 
-## Install Steps
+- `scripts/release_all.sh`
+- `scripts/release_prep.sh` (optional but expected)
+- `scripts/setup_release_workflows.sh` (optional)
+- `.github/workflows/*` aligned with selected mode
 
-1. Install from your chosen channel.
-2. Configure repository and release settings.
-3. Run a dry-run release workflow.
+## App Setup Flow
 
-## Post-Install Validation
+1. Launch Release Assistant.
+2. Select project repository path.
+3. Validate release context and workflow readiness.
+4. Fill release metadata (version/tag/date/zip/SHA256 as needed).
+5. Run preflight or dry-run first.
+6. Run full automated release when checks pass.
 
-1. Run preflight checks.
-2. Confirm artifact generation succeeds.
+## Host-Specific Defaults
+
+GitHub.com default:
+
+- hosted notarized workflow preferred
+
+Enterprise default:
+
+- self-hosted notarized workflow with enterprise templates
+
+## Recommended First Run
+
+- run dry-run mode
+- resolve workflow/auth warnings
+- confirm audit header is present in output

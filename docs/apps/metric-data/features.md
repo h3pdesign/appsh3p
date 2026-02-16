@@ -1,13 +1,40 @@
 # Metric Data Features
 
-## Data Sources
+## Authentication and Account Handling
 
-Document supported integrations, auth methods, and refresh cadence.
+- Google OAuth 2.0 Authorization Code + PKCE flow
+- secure token persistence in Keychain
+- refresh-token based re-auth sessions
+- account switching for multi-account analytics review
 
-## Dashboards
+## Dashboard and Analytics
 
-Document dashboard layout, filters, and saved views.
+- key metrics visualized in a SwiftUI dashboard
+- date windows: 7D, 30D, 90D, This Month, Last Month
+- additional report dimensions:
+  - Country
+  - Platform
+  - Ad Unit
 
-## Alerting
+![Metric Data iPhone dashboard](/media/metrics/dashboard-iphone-frame.png)
 
-Document threshold alerts, routing, and incident triage workflow.
+## iPad and Large-Screen Usage
+
+The dashboard scales to iPad form factors for broader analytics visibility.
+
+![Metric Data iPad dashboard](/media/metrics/dashboard-ipad-frame.png)
+
+## Widget Data Flow
+
+Widget rendering uses shared data snapshots in the app group container.
+
+Related implementation references:
+
+- `Metrics/Shared/WidgetDataStore.swift`
+- `MetricsWidget/MetricsWidget.swift`
+
+## Distribution Paths
+
+- iOS build target
+- macOS App Store distribution target
+- macOS direct/notarized distribution target

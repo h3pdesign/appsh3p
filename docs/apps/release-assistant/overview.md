@@ -2,23 +2,23 @@
 
 <img src="/icons/release-assistant.png" alt="Release Assistant icon" width="72" height="72" style="background: transparent; display: block;" />
 
-Release Assistant supports build validation and release operations.
+Release Assistant is a macOS orchestration app for release pipelines in Xcode-based repositories that use `scripts/release_all.sh`.
 
-## Quick Links
+## What It Manages
 
-- App docs section: `/apps/release-assistant/features`
-- GitHub repository: pending publication
+- project discovery and switching
+- release metadata (version, tag, date, zip path, optional SHA256)
+- release context detection (Xcode, VS Code, GitHub host, visibility where available)
+- mode selection (full, dry-run, notarized, hosted/self-hosted)
+- audit-oriented output and diagnostics
 
-## What This App Covers
+## Core Design Goal
 
-- preflight checks
-- packaging and artifact handling
-- release/publish workflows
+Provide safer release execution with workflow-aware guardrails and clear operational visibility.
 
-## Platform Support
+## Operational Scope
 
-- macOS 14+
-
-## Repository Status
-
-No public GitHub repository detected in account `h3pdesign` as of February 16, 2026.
+- pre-release validation
+- pipeline execution control
+- failure hinting and remediation guidance
+- consistent command provenance logging

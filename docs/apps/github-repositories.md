@@ -1,20 +1,20 @@
 # GitHub Repositories
 
-This page tracks GitHub repository mapping for the documented apps.
+This page tracks repository mapping for all documented apps.
 
-## Detected Public Repositories
+## Public Repositories
 
-- Neon Vision Editor: [h3pdesign/Neon-Vision-Editor](https://github.com/h3pdesign/Neon-Vision-Editor)
-- Documentation portal: [h3pdesign/appsh3p](https://github.com/h3pdesign/appsh3p)
+- Neon Vision Editor: [GitHub](https://github.com/h3pdesign/Neon-Vision-Editor)
+- Documentation Portal (`apps-h3p.com`): [GitHub](https://github.com/h3pdesign/appsh3p)
 
-## Not Yet Published (or Not Found Publicly)
+## Repositories Not Publicly Listed (as of February 16, 2026)
 
 - Metric Data
 - Release Assistant
 
-## Publish Checklist For Missing Repos
+## Publication Checklist
 
 1. Create repository under `h3pdesign`.
-2. Push default branch (`main`).
-3. Add repository URL to the corresponding app overview page.
-4. Update status on `/apps/index` from `Pending` to `Live`.
+2. Push `main` and set visibility as intended.
+3. Add link to app overview page.
+4. Update status on `/apps/index`.

@@ -7,8 +7,8 @@ This is the central documentation hub for all H3P apps.
     <img src="/icons/neon-vision-editor.png" alt="Neon Vision Editor icon" class="app-icon" />
     <div>
       <h3>Neon Vision Editor</h3>
-      <p>Editing workflows, project setup, exports, and release notes.</p>
-      <span class="chip chip-live">GitHub: Live</span>
+      <p>Native editor for macOS, iPadOS, and iOS with optional AI assistance and syntax highlighting.</p>
+      <span class="chip chip-live">GitHub: public repository</span>
     </div>
   </a>
 
@@ -16,8 +16,8 @@ This is the central documentation hub for all H3P apps.
     <img src="/icons/metric-data.png" alt="Metric Data icon" class="app-icon" />
     <div>
       <h3>Metric Data</h3>
-      <p>Metrics setup, dashboard usage, and operations guidelines.</p>
-      <span class="chip">GitHub: Pending</span>
+      <p>Google AdSense analytics app with OAuth, multi-account switching, filters, and Swift Charts dashboards.</p>
+      <span class="chip">GitHub: repository not public yet</span>
     </div>
   </a>
 
@@ -25,15 +25,15 @@ This is the central documentation hub for all H3P apps.
     <img src="/icons/release-assistant.png" alt="Release Assistant icon" class="app-icon" />
     <div>
       <h3>Release Assistant</h3>
-      <p>Preflight checks, packaging pipeline, and release operations.</p>
-      <span class="chip">GitHub: Pending</span>
+      <p>macOS orchestration tool for guarded release pipelines, workflow checks, and audit-oriented output.</p>
+      <span class="chip">GitHub: repository not public yet</span>
     </div>
   </a>
 </div>
 
 ## Source Code Repositories
 
-See [GitHub Repositories](/apps/github-repositories) for repository links and publication status.
+See [GitHub Repositories](/apps/github-repositories) for repository links and current publication status.
 
 <style>
 .apps-grid {
@@ -51,7 +51,7 @@ See [GitHub Repositories](/apps/github-repositories) for repository links and pu
   gap: 14px;
   align-items: center;
   text-decoration: none;
-  background: linear-gradient(180deg, var(--vp-c-bg-soft), var(--vp-c-bg));
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.01));
   transition: transform 0.15s ease, border-color 0.15s ease;
 }
 
@@ -92,8 +92,8 @@ See [GitHub Repositories](/apps/github-repositories) for repository links and pu
 }
 
 .chip-live {
-  color: #0e8a2d;
-  border-color: #7ddf95;
-  background: #f1fff5;
+  color: #1ec75f;
+  border-color: #2e8f52;
+  background: rgba(30, 199, 95, 0.12);
 }
 </style>

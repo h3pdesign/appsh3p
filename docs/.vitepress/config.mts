@@ -40,17 +40,28 @@ export default defineConfig({
         items: [
           { text: 'All Apps', link: '/apps/index' },
           { text: 'GitHub Repositories', link: '/apps/github-repositories' },
+
           { text: 'Neon Vision Editor: Overview', link: '/apps/neon-vision-editor/overview' },
           { text: 'Neon Vision Editor: Launch Story', link: '/apps/neon-vision-editor/launch-story' },
           { text: 'Neon Vision Editor: Installation', link: '/apps/neon-vision-editor/installation' },
           { text: 'Neon Vision Editor: Features', link: '/apps/neon-vision-editor/features' },
+          { text: 'Neon Vision Editor: Gallery', link: '/apps/neon-vision-editor/gallery' },
+          { text: 'Neon Vision Editor: Changelog', link: '/apps/neon-vision-editor/changelog' },
+          { text: 'Neon Vision Editor: Known Issues', link: '/apps/neon-vision-editor/known-issues' },
+          { text: 'Neon Vision Editor: FAQ', link: '/apps/neon-vision-editor/faq' },
+
           { text: 'Metric Data: Overview', link: '/apps/metric-data/overview' },
           { text: 'Metric Data: Installation', link: '/apps/metric-data/installation' },
           { text: 'Metric Data: Features', link: '/apps/metric-data/features' },
+          { text: 'Metric Data: Gallery', link: '/apps/metric-data/gallery' },
+          { text: 'Metric Data: Known Issues', link: '/apps/metric-data/known-issues' },
+          { text: 'Metric Data: FAQ', link: '/apps/metric-data/faq' },
+
           { text: 'Release Assistant: Overview', link: '/apps/release-assistant/overview' },
           { text: 'Release Assistant: Installation', link: '/apps/release-assistant/installation' },
           { text: 'Release Assistant: Features', link: '/apps/release-assistant/features' },
-          { text: 'Add New App', link: '/apps/add-new-app' }
+          { text: 'Release Assistant: Known Issues', link: '/apps/release-assistant/known-issues' },
+          { text: 'Release Assistant: FAQ', link: '/apps/release-assistant/faq' }
         ]
       },
       {
