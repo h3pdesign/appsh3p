@@ -2,11 +2,28 @@ import { defineConfig } from 'vitepress'
 
 export default defineConfig({
   title: 'h3p apps',
-  description: 'Documentation portal for H3P apps',
+  titleTemplate: ':title | h3p apps',
+  description: 'Clean and modern apps by H3P with guides, changelogs, and platform documentation.',
   sitemap: {
     hostname: 'https://apps-h3p.com'
   },
-  appearance: 'dark',
+  head: [
+    ['meta', { name: 'robots', content: 'index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1' }],
+    ['meta', { name: 'author', content: 'H3P' }],
+    ['meta', { name: 'theme-color', content: '#0b7cff' }],
+    ['meta', { property: 'og:site_name', content: 'h3p apps' }],
+    ['meta', { property: 'og:type', content: 'website' }],
+    ['meta', { property: 'og:title', content: 'h3p apps' }],
+    ['meta', { property: 'og:description', content: 'Clean and modern apps by H3P with guides, changelogs, and platform documentation.' }],
+    ['meta', { property: 'og:url', content: 'https://apps-h3p.com/' }],
+    ['meta', { property: 'og:image', content: 'https://apps-h3p.com/media/neon-vision-editor-hero.png' }],
+    ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
+    ['meta', { name: 'twitter:title', content: 'h3p apps' }],
+    ['meta', { name: 'twitter:description', content: 'Clean and modern apps by H3P with guides, changelogs, and platform documentation.' }],
+    ['meta', { name: 'twitter:image', content: 'https://apps-h3p.com/media/neon-vision-editor-hero.png' }],
+    ['link', { rel: 'canonical', href: 'https://apps-h3p.com/' }]
+  ],
+  appearance: true,
   lang: 'en-US',
   cleanUrls: true,
 
@@ -59,8 +76,9 @@ export default defineConfig({
 
           { text: 'Release Assistant: Overview', link: '/apps/release-assistant/overview' },
           { text: 'Release Assistant: Installation', link: '/apps/release-assistant/installation' },
+          { text: 'Release Assistant: Features', link: '/apps/release-assistant/features' },
           { text: 'Release Assistant: Gallery', link: '/apps/release-assistant/gallery' },
-          ,
+          { text: 'Release Assistant: Known Issues', link: '/apps/release-assistant/known-issues' },
           { text: 'Release Assistant: FAQ', link: '/apps/release-assistant/faq' }
         ]
       },
