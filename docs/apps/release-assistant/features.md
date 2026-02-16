@@ -46,3 +46,7 @@ Each run emits structured audit context in the output stream.
 
 - Homebrew cask update path
 - manual release creation via `gh release`
+
+## Product UI Screenshot
+
+![Release Assistant main window](/media/release-assistant/main-window.png)

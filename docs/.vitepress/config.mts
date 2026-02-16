@@ -59,8 +59,8 @@ export default defineConfig({
 
           { text: 'Release Assistant: Overview', link: '/apps/release-assistant/overview' },
           { text: 'Release Assistant: Installation', link: '/apps/release-assistant/installation' },
-          { text: 'Release Assistant: Features', link: '/apps/release-assistant/features' },
-          { text: 'Release Assistant: Known Issues', link: '/apps/release-assistant/known-issues' },
+          { text: 'Release Assistant: Gallery', link: '/apps/release-assistant/gallery' },
+          ,
           { text: 'Release Assistant: FAQ', link: '/apps/release-assistant/faq' }
         ]
       },
