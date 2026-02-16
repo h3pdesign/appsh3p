@@ -1,3 +1,13 @@
+---
+head:
+  - - meta
+    - property: og:image
+      content: https://apps-h3p.com/media/metrics/dashboard-ipad-frame.png
+  - - meta
+    - name: twitter:image
+      content: https://apps-h3p.com/media/metrics/dashboard-ipad-frame.png
+---
+
 # Metric Data Features
 
 ## Authentication and Account Handling
@@ -38,3 +48,12 @@ Related implementation references:
 - iOS build target
 - macOS App Store distribution target
 - macOS direct/notarized distribution target
+
+## Related Pages
+
+- [Overview](/apps/metric-data/overview)
+- [Installation](/apps/metric-data/installation)
+- [Features](/apps/metric-data/features)
+- [Gallery](/apps/metric-data/gallery)
+- [Known Issues](/apps/metric-data/known-issues)
+- [FAQ](/apps/metric-data/faq)

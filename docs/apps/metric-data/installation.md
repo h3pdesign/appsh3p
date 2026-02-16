@@ -1,3 +1,13 @@
+---
+head:
+  - - meta
+    - property: og:image
+      content: https://apps-h3p.com/media/metrics/dashboard-ipad-frame.png
+  - - meta
+    - name: twitter:image
+      content: https://apps-h3p.com/media/metrics/dashboard-ipad-frame.png
+---
+
 # Metric Data Installation
 
 ## Open in Xcode
@@ -54,3 +64,12 @@ For direct/notarized distribution:
 xcodebuild -project "/Users/h3p/Coding/XCode Projects/Metrics/Metrics.xcodeproj" -scheme "Metrics" -configuration Debug -destination "generic/platform=iOS" -derivedDataPath ./.DerivedData CODE_SIGNING_ALLOWED=NO build
 xcodebuild -project "/Users/h3p/Coding/XCode Projects/Metrics/Metrics.xcodeproj" -scheme "Metrics-macOS-AppStore" -configuration Debug -destination "platform=macOS" -derivedDataPath ./.DerivedData CODE_SIGNING_ALLOWED=NO build
 ```
+
+## Related Pages
+
+- [Overview](/apps/metric-data/overview)
+- [Installation](/apps/metric-data/installation)
+- [Features](/apps/metric-data/features)
+- [Gallery](/apps/metric-data/gallery)
+- [Known Issues](/apps/metric-data/known-issues)
+- [FAQ](/apps/metric-data/faq)

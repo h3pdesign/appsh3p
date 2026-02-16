@@ -13,9 +13,9 @@
   --vp-c-brand-2: #0066dd;
   --vp-c-brand-3: #0052b2;
 
-  --h3p-sidebar-bg: #edf4ff;
   --h3p-sidebar-border: #c4d8fb;
   --h3p-feature-bg: linear-gradient(180deg, rgba(11, 124, 255, 0.12), rgba(11, 124, 255, 0.04));
+  --h3p-page-bg: radial-gradient(900px 500px at 85% -20%, rgba(83, 210, 255, 0.14), transparent 60%), radial-gradient(700px 400px at 15% -10%, rgba(90, 126, 255, 0.16), transparent 55%), var(--vp-c-bg);
 
   /* Compact desktop sidebar width */
   --vp-sidebar-width: clamp(170px, 13vw, 190px);
@@ -32,16 +32,13 @@
   --vp-c-brand-2: #2ab2f6;
   --vp-c-brand-3: #1796e2;
 
-  --h3p-sidebar-bg: #050608;
   --h3p-sidebar-border: #1d2633;
-  --h3p-feature-bg: linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.01));
+  --h3p-feature-bg: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.01));
+  --h3p-page-bg: radial-gradient(900px 500px at 85% -20%, rgba(83, 210, 255, 0.14), transparent 60%), radial-gradient(700px 400px at 15% -10%, rgba(90, 126, 255, 0.16), transparent 55%), var(--vp-c-bg);
 }
 
 body {
-  background:
-    radial-gradient(900px 500px at 85% -20%, rgba(83, 210, 255, 0.14), transparent 60%),
-    radial-gradient(700px 400px at 15% -10%, rgba(90, 126, 255, 0.16), transparent 55%),
-    var(--vp-c-bg);
+  background: var(--h3p-page-bg);
 }
 
 .VPNav,
@@ -49,12 +46,16 @@ body {
   backdrop-filter: blur(8px);
 }
 
-/* Sidebar follows active theme */
+/* Sidebar now uses the same background as page */
 .VPSidebar {
-  background: var(--h3p-sidebar-bg);
+  background: var(--h3p-page-bg);
   border-right: 1px solid var(--h3p-sidebar-border);
   padding-left: 8px;
   padding-right: 8px;
+}
+
+.VPSidebar .curtain {
+  background: var(--h3p-page-bg) !important;
 }
 
 .VPSidebarItem .item {
@@ -112,11 +113,11 @@ body {
 /* Startpage app row: larger icons + names at right */
 .startpage-app-strip {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
   gap: 14px;
   flex-wrap: wrap;
-  margin-top: 8px;
+  margin-top: 34px;
 }
 
 .startpage-app-item {

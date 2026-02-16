@@ -1,3 +1,16 @@
+---
+head:
+  - - meta
+    - property: og:image
+      content: https://apps-h3p.com/media/neon-vision-editor-hero.png
+  - - meta
+    - name: twitter:image
+      content: https://apps-h3p.com/media/neon-vision-editor-hero.png
+  - - script
+    - type: application/ld+json
+    - '{"@context":"https://schema.org","@graph":[{"@type":"Organization","name":"H3P","url":"https://apps-h3p.com","sameAs":["https://github.com/h3pdesign"]},{"@type":"SoftwareApplication","name":"Neon Vision Editor","applicationCategory":"DeveloperApplication","operatingSystem":"macOS, iPadOS, iOS","url":"https://apps-h3p.com/apps/neon-vision-editor/overview","downloadUrl":"https://apps.apple.com/de/app/neon-vision-editor/id6758950965","publisher":{"@type":"Organization","name":"H3P"}}]}'
+---
+
 # Neon Vision Editor
 
 <img src="/icons/neon-vision-editor.png" alt="Neon Vision Editor icon" width="72" height="72" style="background: transparent; display: block;" />
@@ -42,3 +55,11 @@ Neon Vision Editor keeps the interface out of your way so writing stays central.
 - Modern Apple frameworks
 - Consistent behavior across devices
 - Open development with public source visibility
+
+## Related Pages
+
+- [Features](/apps/neon-vision-editor/features)
+- [Gallery](/apps/neon-vision-editor/gallery)
+- [Changelog](/apps/neon-vision-editor/changelog)
+- [Known Issues](/apps/neon-vision-editor/known-issues)
+- [FAQ](/apps/neon-vision-editor/faq)

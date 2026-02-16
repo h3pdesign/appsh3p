@@ -1,3 +1,13 @@
+---
+head:
+  - - meta
+    - property: og:image
+      content: https://apps-h3p.com/media/neon-vision-editor-hero.png
+  - - meta
+    - name: twitter:image
+      content: https://apps-h3p.com/media/neon-vision-editor-hero.png
+---
+
 # Neon Vision Editor Installation
 
 ## Install Paths
@@ -26,3 +36,13 @@
 ## Development Reference
 
 Implementation is publicly visible on [GitHub](https://github.com/h3pdesign/Neon-Vision-Editor).
+
+## Related Pages
+
+- [Overview](/apps/neon-vision-editor/overview)
+- [Launch Story](/apps/neon-vision-editor/launch-story)
+- [Features](/apps/neon-vision-editor/features)
+- [Gallery](/apps/neon-vision-editor/gallery)
+- [Changelog](/apps/neon-vision-editor/changelog)
+- [Known Issues](/apps/neon-vision-editor/known-issues)
+- [FAQ](/apps/neon-vision-editor/faq)

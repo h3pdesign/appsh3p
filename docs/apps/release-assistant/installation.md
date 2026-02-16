@@ -1,3 +1,13 @@
+---
+head:
+  - - meta
+    - property: og:image
+      content: https://apps-h3p.com/media/release-assistant/main-window.png
+  - - meta
+    - name: twitter:image
+      content: https://apps-h3p.com/media/release-assistant/main-window.png
+---
+
 # Release Assistant Installation
 
 ## Expected Repository Layout
@@ -33,3 +43,12 @@ Enterprise default:
 - run dry-run mode
 - resolve workflow/auth warnings
 - confirm audit header is present in output
+
+## Related Pages
+
+- [Overview](/apps/release-assistant/overview)
+- [Installation](/apps/release-assistant/installation)
+- [Features](/apps/release-assistant/features)
+- [Gallery](/apps/release-assistant/gallery)
+- [Known Issues](/apps/release-assistant/known-issues)
+- [FAQ](/apps/release-assistant/faq)

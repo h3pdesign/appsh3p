@@ -1,3 +1,13 @@
+---
+head:
+  - - meta
+    - property: og:image
+      content: https://apps-h3p.com/media/neon-vision-editor-hero.png
+  - - meta
+    - name: twitter:image
+      content: https://apps-h3p.com/media/neon-vision-editor-hero.png
+---
+
 # Neon Vision Editor Launch Story
 
 Introducing Neon Vision Editor.
@@ -55,3 +65,13 @@ If you are into native Apple platform development, the source code is openly vis
 Critical feedback is welcome.
 
 Shipping software is iterative. Quality improves fastest when real users push on real edge cases.
+
+## Related Pages
+
+- [Overview](/apps/neon-vision-editor/overview)
+- [Launch Story](/apps/neon-vision-editor/launch-story)
+- [Features](/apps/neon-vision-editor/features)
+- [Gallery](/apps/neon-vision-editor/gallery)
+- [Changelog](/apps/neon-vision-editor/changelog)
+- [Known Issues](/apps/neon-vision-editor/known-issues)
+- [FAQ](/apps/neon-vision-editor/faq)

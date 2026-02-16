@@ -1,3 +1,13 @@
+---
+head:
+  - - meta
+    - property: og:image
+      content: https://apps-h3p.com/media/metrics/dashboard-ipad-frame.png
+  - - meta
+    - name: twitter:image
+      content: https://apps-h3p.com/media/metrics/dashboard-ipad-frame.png
+---
+
 # Metric Data Known Issues
 
 ## Google API Availability Dependency
@@ -23,3 +33,12 @@ macOS App Store and direct distribution targets require distinct signing identit
 Resolution:
 
 - validate each target signing profile before archive
+
+## Related Pages
+
+- [Overview](/apps/metric-data/overview)
+- [Installation](/apps/metric-data/installation)
+- [Features](/apps/metric-data/features)
+- [Gallery](/apps/metric-data/gallery)
+- [Known Issues](/apps/metric-data/known-issues)
+- [FAQ](/apps/metric-data/faq)

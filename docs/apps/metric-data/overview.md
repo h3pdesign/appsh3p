@@ -1,3 +1,16 @@
+---
+head:
+  - - meta
+    - property: og:image
+      content: https://apps-h3p.com/media/metrics/dashboard-ipad-frame.png
+  - - meta
+    - name: twitter:image
+      content: https://apps-h3p.com/media/metrics/dashboard-ipad-frame.png
+  - - script
+    - type: application/ld+json
+    - '{"@context":"https://schema.org","@graph":[{"@type":"Organization","name":"H3P","url":"https://apps-h3p.com","sameAs":["https://github.com/h3pdesign"]},{"@type":"SoftwareApplication","name":"Metric Data","applicationCategory":"BusinessApplication","operatingSystem":"iOS, macOS","url":"https://apps-h3p.com/apps/metric-data/overview","publisher":{"@type":"Organization","name":"H3P"}}]}'
+---
+
 # Metric Data
 
 <img src="/icons/metric-data.png" alt="Metric Data icon" width="72" height="72" style="background: transparent; display: block;" />
@@ -33,3 +46,11 @@ The details here align with:
 - `/Users/h3p/Coding/XCode Projects/Metrics/README.md`
 - `/Users/h3p/Coding/XCode Projects/Metrics/PRIVACY.md`
 - `/Users/h3p/Coding/XCode Projects/Metrics/TERMS.md`
+
+## Related Pages
+
+- [Installation](/apps/metric-data/installation)
+- [Features](/apps/metric-data/features)
+- [Gallery](/apps/metric-data/gallery)
+- [Known Issues](/apps/metric-data/known-issues)
+- [FAQ](/apps/metric-data/faq)

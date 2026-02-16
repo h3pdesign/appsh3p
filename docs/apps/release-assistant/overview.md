@@ -1,3 +1,16 @@
+---
+head:
+  - - meta
+    - property: og:image
+      content: https://apps-h3p.com/media/release-assistant/main-window.png
+  - - meta
+    - name: twitter:image
+      content: https://apps-h3p.com/media/release-assistant/main-window.png
+  - - script
+    - type: application/ld+json
+    - '{"@context":"https://schema.org","@graph":[{"@type":"Organization","name":"H3P","url":"https://apps-h3p.com","sameAs":["https://github.com/h3pdesign"]},{"@type":"SoftwareApplication","name":"Release Assistant","applicationCategory":"DeveloperApplication","operatingSystem":"macOS","url":"https://apps-h3p.com/apps/release-assistant/overview","publisher":{"@type":"Organization","name":"H3P"}}]}'
+---
+
 # Release Assistant
 
 <img src="/icons/release-assistant.png" alt="Release Assistant icon" width="72" height="72" style="background: transparent; display: block;" />
@@ -22,3 +35,11 @@ Provide safer release execution with workflow-aware guardrails and clear operati
 - pipeline execution control
 - failure hinting and remediation guidance
 - consistent command provenance logging
+
+## Related Pages
+
+- [Installation](/apps/release-assistant/installation)
+- [Features](/apps/release-assistant/features)
+- [Gallery](/apps/release-assistant/gallery)
+- [Known Issues](/apps/release-assistant/known-issues)
+- [FAQ](/apps/release-assistant/faq)

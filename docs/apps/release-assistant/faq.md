@@ -1,3 +1,13 @@
+---
+head:
+  - - meta
+    - property: og:image
+      content: https://apps-h3p.com/media/release-assistant/main-window.png
+  - - meta
+    - name: twitter:image
+      content: https://apps-h3p.com/media/release-assistant/main-window.png
+---
+
 # Release Assistant FAQ
 
 ## Does Release Assistant replace release scripts?
@@ -19,3 +29,12 @@ Yes. Enterprise host-aware auth and workflow modes are supported.
 ## Does it include audit output?
 
 Yes. Every run includes a structured audit header in output logs.
+
+## Related Pages
+
+- [Overview](/apps/release-assistant/overview)
+- [Installation](/apps/release-assistant/installation)
+- [Features](/apps/release-assistant/features)
+- [Gallery](/apps/release-assistant/gallery)
+- [Known Issues](/apps/release-assistant/known-issues)
+- [FAQ](/apps/release-assistant/faq)
