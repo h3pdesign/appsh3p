@@ -13,6 +13,7 @@
   --vp-c-brand-2: #0066dd;
   --vp-c-brand-3: #0052b2;
 
+  --h3p-sidebar-bg: #edf4ff;
   --h3p-sidebar-border: #c4d8fb;
   --h3p-feature-bg: linear-gradient(180deg, rgba(11, 124, 255, 0.12), rgba(11, 124, 255, 0.04));
   --h3p-page-bg: radial-gradient(900px 500px at 85% -20%, rgba(83, 210, 255, 0.14), transparent 60%), radial-gradient(700px 400px at 15% -10%, rgba(90, 126, 255, 0.16), transparent 55%), var(--vp-c-bg);
@@ -22,9 +23,9 @@
 }
 
 .dark {
-  --vp-c-bg: #06080b;
-  --vp-c-bg-soft: #0d1117;
-  --vp-c-bg-mute: #131a24;
+  --vp-c-bg: #05070a;
+  --vp-c-bg-soft: #0b1016;
+  --vp-c-bg-mute: #111824;
   --vp-c-divider: #273445;
   --vp-c-text-1: #e6edf7;
   --vp-c-text-2: #a7b5ca;
@@ -32,9 +33,11 @@
   --vp-c-brand-2: #2ab2f6;
   --vp-c-brand-3: #1796e2;
 
-  --h3p-sidebar-border: #1d2633;
+  /* Rich dark-black sidebar */
+  --h3p-sidebar-bg: #0a0a0c;
+  --h3p-sidebar-border: #1b2430;
   --h3p-feature-bg: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.01));
-  --h3p-page-bg: radial-gradient(900px 500px at 85% -20%, rgba(83, 210, 255, 0.14), transparent 60%), radial-gradient(700px 400px at 15% -10%, rgba(90, 126, 255, 0.16), transparent 55%), var(--vp-c-bg);
+  --h3p-page-bg: radial-gradient(900px 500px at 85% -20%, rgba(83, 210, 255, 0.12), transparent 60%), radial-gradient(700px 400px at 15% -10%, rgba(90, 126, 255, 0.14), transparent 55%), var(--vp-c-bg);
 }
 
 body {
@@ -46,16 +49,26 @@ body {
   backdrop-filter: blur(8px);
 }
 
-/* Sidebar now uses the same background as page */
+/* Sidebar surface */
 .VPSidebar {
-  background: var(--h3p-page-bg);
+  background: var(--h3p-sidebar-bg) !important;
   border-right: 1px solid var(--h3p-sidebar-border);
   padding-left: 8px;
   padding-right: 8px;
 }
 
 .VPSidebar .curtain {
-  background: var(--h3p-page-bg) !important;
+  background: var(--h3p-sidebar-bg) !important;
+}
+
+/* Top-left menu/title sizing */
+.VPNavBarTitle .title {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.VPSidebar .title {
+  font-size: 15px;
 }
 
 .VPSidebarItem .item {
@@ -172,16 +185,17 @@ body {
   height: auto;
 }
 
-/* Top-right logo in nav with light/dark variants */
+/* Top-right logo with adjusted size */
 .h3p-top-logo {
   display: inline-flex;
   align-items: center;
-  margin-left: 14px;
+  margin-left: 12px;
 }
 
 .h3p-top-logo img {
-  height: 34px;
+  height: 28px;
   width: auto;
+  max-width: 170px;
   object-fit: contain;
 }
 
