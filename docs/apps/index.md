@@ -50,6 +50,7 @@ See [GitHub Repositories](/apps/github-repositories) for repository links and cu
   justify-content: space-between;
   align-items: center;
   gap: 16px;
+  flex-wrap: wrap;
 }
 
 .apps-intro {
@@ -87,7 +88,7 @@ See [GitHub Repositories](/apps/github-repositories) for repository links and cu
 .apps-grid {
   display: grid;
   gap: 16px;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   margin-top: 16px;
 }
 

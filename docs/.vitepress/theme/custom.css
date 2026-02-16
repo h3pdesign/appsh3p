@@ -163,11 +163,12 @@ body {
 
 @media (max-width: 768px) {
   .startpage-app-strip {
-    justify-content: flex-start;
+    justify-content: center;
   }
 
   .startpage-app-item {
-    width: 100%;
+    width: auto;
+    max-width: 100%;
   }
 }
 
