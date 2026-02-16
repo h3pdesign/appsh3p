@@ -216,3 +216,21 @@ body {
     display: none;
   }
 }
+
+/* Fix broken sidebar title divider alignment */
+@media (min-width: 960px) {
+  .VPNavBarTitle.has-sidebar .title {
+    border-bottom: none !important;
+  }
+
+  .VPSidebar {
+    border-right: none !important;
+    box-shadow: inset -1px 0 0 var(--h3p-sidebar-border);
+  }
+
+  .VPSidebar .group:first-child {
+    border-top: 1px solid var(--h3p-sidebar-border) !important;
+    margin-top: 10px;
+    padding-top: 14px;
+  }
+}
