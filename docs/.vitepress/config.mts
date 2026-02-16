@@ -38,7 +38,8 @@ export default defineConfig({
       { text: 'Home', link: '/' },
       { text: 'Getting Started', link: '/getting-started/introduction' },
       { text: 'Apps', link: '/apps/index' },
-      { text: 'Policies', link: '/policies/api-stability' }
+      { text: 'Policies', link: '/policies/api-stability' },
+      { text: 'Art & Blog', link: 'https://h3p.me/home' }
     ],
 
     sidebar: [

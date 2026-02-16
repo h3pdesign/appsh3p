@@ -235,3 +235,15 @@ body {
     padding-top: 14px;
   }
 }
+
+
+.startpage-external-note {
+  margin: 18px 0 0;
+  text-align: center;
+  color: var(--vp-c-text-2);
+}
+
+.startpage-external-note a {
+  color: var(--vp-c-brand-1);
+  font-weight: 600;
+}

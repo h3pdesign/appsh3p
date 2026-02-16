@@ -36,6 +36,7 @@ features:
     <span>Release Assistant</span>
   </a>
 </div>
+<p class="startpage-external-note">Explore photography, art, and writing on <a href="https://h3p.me/home" target="_blank" rel="noreferrer">h3p.me/home</a>.</p>
 
 ## featured app
 
