@@ -13,7 +13,10 @@ head:
 
 # Metric Data
 
-<img src="/icons/metric-data.png" alt="Metric Data icon" width="72" height="72" style="background: transparent; display: block;" />
+<div class="overview-media-stack">
+  <img src="/icons/metric-data.png" alt="Metric Data icon" class="overview-app-icon" />
+  <img src="/media/metrics/dashboard-ipad-frame.png" alt="Metric Data screenshot" class="overview-app-shot" />
+</div>
 
 Metric Data is a SwiftUI analytics app for Google AdSense across iOS and macOS.
 

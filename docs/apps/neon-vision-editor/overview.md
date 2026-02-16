@@ -13,7 +13,10 @@ head:
 
 # Neon Vision Editor
 
-<img src="/icons/neon-vision-editor.png" alt="Neon Vision Editor icon" width="72" height="72" style="background: transparent; display: block;" />
+<div class="overview-media-stack">
+  <img src="/icons/neon-vision-editor.png" alt="Neon Vision Editor icon" class="overview-app-icon" />
+  <img src="/media/neon/editing-mac-frame.png" alt="Neon Vision Editor screenshot" class="overview-app-shot" />
+</div>
 
 Neon Vision Editor is a lightweight, modern editor focused on speed, readability, and automatic syntax highlighting.
 
