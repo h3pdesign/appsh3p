@@ -1,0 +1,56 @@
+:root {
+  --vp-font-family-base: "Sora", "Space Grotesk", "Avenir Next", "Segoe UI", sans-serif;
+  --vp-font-family-mono: "JetBrains Mono", "SFMono-Regular", "Menlo", monospace;
+
+  --vp-c-bg: #06080b;
+  --vp-c-bg-soft: #0d1117;
+  --vp-c-bg-mute: #131a24;
+  --vp-c-divider: #273445;
+  --vp-c-text-1: #e6edf7;
+  --vp-c-text-2: #a7b5ca;
+  --vp-c-brand-1: #53d2ff;
+  --vp-c-brand-2: #2ab2f6;
+  --vp-c-brand-3: #1796e2;
+}
+
+.dark {
+  --vp-c-bg: #06080b;
+  --vp-c-bg-soft: #0d1117;
+  --vp-c-bg-mute: #131a24;
+}
+
+body {
+  background:
+    radial-gradient(900px 500px at 85% -20%, rgba(83, 210, 255, 0.14), transparent 60%),
+    radial-gradient(700px 400px at 15% -10%, rgba(90, 126, 255, 0.16), transparent 55%),
+    #06080b;
+}
+
+.VPNav,
+.VPLocalNav {
+  backdrop-filter: blur(8px);
+}
+
+.VPFeature {
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 14px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.01));
+}
+
+.VPHero .name {
+  letter-spacing: 0.02em;
+}
+
+.home-bottom-image {
+  margin-top: 44px;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid var(--vp-c-divider);
+  background: transparent;
+}
+
+.home-bottom-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+}

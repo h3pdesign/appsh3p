@@ -2,22 +2,30 @@
 layout: home
 
 hero:
-  name: "H3P App Documentation"
-  text: "A central docs portal for all H3P apps"
-  tagline: "Product docs, setup guides, API notes, and support pages in one place."
+  name: "startpage for h3p apps"
+  text: "clean docs for every app"
+  tagline: "A focused portal for product docs, setup guides, and release workflows."
   actions:
     - theme: brand
-      text: Get Started
-      link: /getting-started/introduction
-    - theme: alt
-      text: Browse Apps
+      text: open apps
       link: /apps/index
+    - theme: alt
+      text: get started
+      link: /getting-started/introduction
 
 features:
-  - title: Multi-App Structure
-    details: Keep every app in a clear, consistent docs format.
-  - title: Fast Search
-    details: Built-in local search with keyboard shortcut support.
-  - title: Easy Deployment
-    details: Build static files and deploy to Vercel, Netlify, or GitHub Pages.
+  - title: app-first navigation
+    details: Browse each app with consistent sections and clear status.
+  - title: fast local search
+    details: Find installation, features, and support details immediately.
+  - title: production-ready deploy
+    details: Published from GitHub Pages on apps-h3p.com.
 ---
+
+## featured app
+
+neon vision editor across iphone, mac, and ipad.
+
+<div class="home-bottom-image">
+  <img src="/media/neon-vision-editor-hero.png" alt="Neon Vision Editor showcase" />
+</div>

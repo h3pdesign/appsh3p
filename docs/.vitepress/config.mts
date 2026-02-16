@@ -1,16 +1,17 @@
 import { defineConfig } from 'vitepress'
 
 export default defineConfig({
-  title: 'H3P App Docs',
+  title: 'startpage for h3p apps',
   description: 'Documentation portal for H3P apps',
   sitemap: {
     hostname: 'https://apps-h3p.com'
   },
+  appearance: 'dark',
   lang: 'en-US',
   cleanUrls: true,
 
   themeConfig: {
-    siteTitle: 'H3P App Docs',
+    siteTitle: 'startpage for h3p apps',
 
     search: {
       provider: 'local'
