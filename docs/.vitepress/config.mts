@@ -1,8 +1,8 @@
 import { defineConfig } from 'vitepress'
 
 export default defineConfig({
-  title: 'Your App Docs',
-  description: 'Documentation portal for your apps',
+  title: 'H3P App Docs',
+  description: 'Documentation portal for H3P apps',
   sitemap: {
     hostname: 'https://apps-h3p.com'
   },
@@ -10,7 +10,7 @@ export default defineConfig({
   cleanUrls: true,
 
   themeConfig: {
-    siteTitle: 'App Docs',
+    siteTitle: 'H3P App Docs',
 
     search: {
       provider: 'local'
@@ -38,12 +38,16 @@ export default defineConfig({
         text: 'Apps',
         items: [
           { text: 'All Apps', link: '/apps/index' },
-          { text: 'App One: Overview', link: '/apps/app-one/overview' },
-          { text: 'App One: Installation', link: '/apps/app-one/installation' },
-          { text: 'App One: Features', link: '/apps/app-one/features' },
-          { text: 'App Two: Overview', link: '/apps/app-two/overview' },
-          { text: 'App Two: Installation', link: '/apps/app-two/installation' },
-          { text: 'App Two: Features', link: '/apps/app-two/features' },
+          { text: 'GitHub Repositories', link: '/apps/github-repositories' },
+          { text: 'Neon Vision Editor: Overview', link: '/apps/neon-vision-editor/overview' },
+          { text: 'Neon Vision Editor: Installation', link: '/apps/neon-vision-editor/installation' },
+          { text: 'Neon Vision Editor: Features', link: '/apps/neon-vision-editor/features' },
+          { text: 'Metric Data: Overview', link: '/apps/metric-data/overview' },
+          { text: 'Metric Data: Installation', link: '/apps/metric-data/installation' },
+          { text: 'Metric Data: Features', link: '/apps/metric-data/features' },
+          { text: 'Release Assistant: Overview', link: '/apps/release-assistant/overview' },
+          { text: 'Release Assistant: Installation', link: '/apps/release-assistant/installation' },
+          { text: 'Release Assistant: Features', link: '/apps/release-assistant/features' },
           { text: 'Add New App', link: '/apps/add-new-app' }
         ]
       },
@@ -65,7 +69,7 @@ export default defineConfig({
     ],
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/your-org/your-repo' }
+      { icon: 'github', link: 'https://github.com/h3pdesign/appsh3p' }
     ]
   }
 })

@@ -1,45 +1,45 @@
 # All Apps
 
-Use this page as your public app directory. Each card links to that app's full docs.
+This is the central documentation hub for all H3P apps.
 
 <div class="apps-grid">
-  <a class="app-card" href="/apps/app-one/overview">
-    <img src="/icons/app-one.svg" alt="App One icon" class="app-icon" />
+  <a class="app-card" href="/apps/neon-vision-editor/overview">
+    <img src="/icons/neon-vision-editor.png" alt="Neon Vision Editor icon" class="app-icon" />
     <div>
-      <h3>App One</h3>
-      <p>Primary productivity app docs, setup, and feature guides.</p>
+      <h3>Neon Vision Editor</h3>
+      <p>Editing workflows, project setup, exports, and release notes.</p>
+      <span class="chip chip-live">GitHub: Live</span>
     </div>
   </a>
 
-  <a class="app-card" href="/apps/app-two/overview">
-    <img src="/icons/app-two.svg" alt="App Two icon" class="app-icon" />
+  <a class="app-card" href="/apps/metric-data/overview">
+    <img src="/icons/metric-data.png" alt="Metric Data icon" class="app-icon" />
     <div>
-      <h3>App Two</h3>
-      <p>Companion app docs, installation, and workflow references.</p>
+      <h3>Metric Data</h3>
+      <p>Metrics setup, dashboard usage, and operations guidelines.</p>
+      <span class="chip">GitHub: Pending</span>
     </div>
   </a>
 
-  <a class="app-card" href="/apps/add-new-app">
-    <img src="/icons/new-app.svg" alt="New app icon" class="app-icon" />
+  <a class="app-card" href="/apps/release-assistant/overview">
+    <img src="/icons/release-assistant.png" alt="Release Assistant icon" class="app-icon" />
     <div>
-      <h3>Add Next App</h3>
-      <p>Starter checklist for plugging a new app into this docs portal.</p>
+      <h3>Release Assistant</h3>
+      <p>Preflight checks, packaging pipeline, and release operations.</p>
+      <span class="chip">GitHub: Pending</span>
     </div>
   </a>
 </div>
 
-## Replace With Your Real Apps
+## Source Code Repositories
 
-1. Replace names and descriptions on this page.
-2. Replace icon files in `docs/public/icons/`.
-3. Update app folders in `docs/apps/`.
-4. Update sidebar links in `docs/.vitepress/config.mts`.
+See [GitHub Repositories](/apps/github-repositories) for repository links and publication status.
 
 <style>
 .apps-grid {
   display: grid;
   gap: 16px;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   margin-top: 16px;
 }
 
@@ -66,16 +66,34 @@ Use this page as your public app directory. Each card links to that app's full d
 }
 
 .app-card p {
-  margin: 0;
+  margin: 0 0 8px;
   color: var(--vp-c-text-2);
   font-size: 14px;
 }
 
 .app-icon {
-  width: 56px;
-  height: 56px;
+  width: 42px;
+  height: 42px;
   border-radius: 12px;
   flex: 0 0 auto;
+  border: none;
+  background: transparent;
+  object-fit: contain;
+}
+
+.chip {
+  display: inline-block;
+  font-size: 12px;
+  line-height: 1;
+  padding: 6px 8px;
+  border-radius: 999px;
   border: 1px solid var(--vp-c-divider);
+  color: var(--vp-c-text-2);
+}
+
+.chip-live {
+  color: #0e8a2d;
+  border-color: #7ddf95;
+  background: #f1fff5;
 }
 </style>

@@ -2,8 +2,8 @@
 layout: home
 
 hero:
-  name: "Your App Documentation"
-  text: "A central docs portal for all your apps"
+  name: "H3P App Documentation"
+  text: "A central docs portal for all H3P apps"
   tagline: "Product docs, setup guides, API notes, and support pages in one place."
   actions:
     - theme: brand
