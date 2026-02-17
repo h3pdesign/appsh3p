@@ -1034,6 +1034,15 @@ onBeforeUnmount(() => {
       >
         FX {{ heroFxEnabled ? 'On' : 'Off' }}
       </button>
+      <button
+        v-if="isHomeRoute"
+        class="h3p-lang-selector"
+        type="button"
+        aria-label="Language selector"
+        title="Language: English"
+      >
+        EN
+      </button>
       <a class="h3p-top-logo" href="/" aria-label="h3p apps home">
         <img class="h3p-logo-light" src="/brand/logo-light.png" alt="H3P logo" />
         <img class="h3p-logo-dark" src="/brand/logo-dark.png" alt="H3P logo" />

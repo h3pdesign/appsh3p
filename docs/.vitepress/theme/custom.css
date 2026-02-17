@@ -1133,6 +1133,20 @@ html.h3p-route-enter .VPContent {
   color: var(--vp-c-brand-1);
 }
 
+.h3p-lang-selector {
+  margin-right: 12px;
+  min-height: 30px;
+  min-width: 48px;
+  padding: 0 12px;
+  border-radius: 999px;
+  border: 1px solid var(--vp-c-divider);
+  background: var(--h3p-feature-bg);
+  color: var(--vp-c-text-1);
+  font-size: 12px;
+  font-weight: 700;
+  cursor: default;
+}
+
 .h3p-compact-toggle {
   margin-right: 10px;
   min-height: 30px;
@@ -1153,7 +1167,8 @@ html.h3p-route-enter .VPContent {
 
 @media (max-width: 768px) {
   .h3p-compact-toggle,
-  .h3p-hero-fx-toggle {
+  .h3p-hero-fx-toggle,
+  .h3p-lang-selector {
     display: none;
   }
 }
@@ -1342,6 +1357,10 @@ html:not(.dark) .VPDocAside {
 
   .h3p-hero-fx-toggle {
     margin-right: 14px;
+  }
+
+  .h3p-lang-selector {
+    margin-right: 16px;
   }
 }
 

@@ -27,7 +27,6 @@ features:
   <span>1 docs hub</span>
   <span class="startpage-updated-date">updated Feb 2026</span>
   <span class="startpage-synced-badge">GitHub synced Feb 2026</span>
-  <span class="startpage-locale-hint">EN</span>
 </div>
 <p class="startpage-hero-secondary-cta">
   Need setup help? <a href="/getting-started/introduction">Read the quick introduction</a>
