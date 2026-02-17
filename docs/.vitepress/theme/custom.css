@@ -1631,3 +1631,12 @@ html:not(.dark) .VPDocAside {
   max-width: 620px;
   margin: 0 auto;
 }
+
+
+/* Status widget: normalize Neon icon optical size */
+.home-hero-mini-apps img.mini-icon-neon {
+  width: 24px;
+  height: 24px;
+  transform: scale(1.12);
+  transform-origin: center;
+}

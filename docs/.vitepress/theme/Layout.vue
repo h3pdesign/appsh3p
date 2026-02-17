@@ -515,7 +515,7 @@ function ensureHomeWidgets() {
           <li><a href="https://github.com/h3pdesign/appsh3p" target="_blank" rel="noreferrer noopener">Docs repo</a></li>
         </ul>
         <div class="home-hero-mini-apps" aria-label="App icons">
-          <a href="/apps/neon-vision-editor/overview"><img src="/icons/neon-vision-editor.png" alt="Neon Vision Editor" /></a>
+          <a href="/apps/neon-vision-editor/overview"><img class="mini-icon-neon" src="/icons/neon-vision-editor.png" alt="Neon Vision Editor" /></a>
           <a href="/apps/metric-data/overview"><img src="/icons/metric-data.png" alt="Metric Data" /></a>
           <a href="/apps/release-assistant/overview"><img src="/icons/release-assistant.png" alt="Release Assistant" /></a>
         </div>
