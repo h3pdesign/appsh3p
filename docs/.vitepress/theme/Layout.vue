@@ -206,36 +206,176 @@ function setupAppsCarousel() {
   cleanupCarousel()
   if (!isAppsIndexRoute.value) return
 
+  const carousel = document.querySelector('.apps-carousel') as HTMLElement | null
   const viewport = document.querySelector('.apps-carousel-viewport') as HTMLElement | null
   const firstSlide = document.querySelector('.apps-slide') as HTMLElement | null
-  if (!viewport || !firstSlide) return
+  const prevBtn = document.querySelector('.apps-carousel-prev') as HTMLButtonElement | null
+  const nextBtn = document.querySelector('.apps-carousel-next') as HTMLButtonElement | null
+  const dots = Array.from(document.querySelectorAll<HTMLButtonElement>('.apps-carousel-dot'))
+  const dragHint = document.querySelector('.apps-carousel-drag-hint') as HTMLElement | null
+  if (!carousel || !viewport || !firstSlide) return
 
   let paused = false
-  const step = () => {
-    if (paused) return
-    const cardWidth = firstSlide.getBoundingClientRect().width + 10
-    const end = viewport.scrollWidth - viewport.clientWidth - 4
-    if (viewport.scrollLeft >= end) {
+  let carouselInView = false
+  const cardWidth = () => firstSlide.getBoundingClientRect().width + 10
+
+  const activeIndex = () => {
+    const idx = Math.round(viewport.scrollLeft / Math.max(cardWidth(), 1))
+    return Math.max(0, Math.min(idx, Math.max(dots.length - 1, 0)))
+  }
+
+  const setActiveDot = (idx: number) => {
+    dots.forEach((dot, i) => dot.classList.toggle('is-active', i === idx))
+  }
+
+  const hideDragHint = () => {
+    if (!dragHint) return
+    dragHint.classList.remove('is-visible')
+    dragHint.classList.add('is-hidden')
+    try {
+      localStorage.setItem('h3p_apps_carousel_hint_seen', '1')
+    } catch {
+      // ignore storage errors
+    }
+  }
+
+  const goToIndex = (idx: number) => {
+    viewport.scrollTo({ left: Math.max(0, idx) * cardWidth(), behavior: 'smooth' })
+    setActiveDot(Math.max(0, Math.min(idx, Math.max(dots.length - 1, 0))))
+  }
+
+  const goNext = () => {
+    const endPos = viewport.scrollWidth - viewport.clientWidth - 4
+    if (viewport.scrollLeft >= endPos) {
       viewport.scrollTo({ left: 0, behavior: 'smooth' })
+      setActiveDot(0)
       return
     }
-    viewport.scrollBy({ left: cardWidth, behavior: 'smooth' })
+    viewport.scrollBy({ left: cardWidth(), behavior: 'smooth' })
+    window.setTimeout(() => setActiveDot(activeIndex()), 160)
+  }
+
+  const goPrev = () => {
+    if (viewport.scrollLeft <= 4) {
+      const last = Math.max(dots.length - 1, 0)
+      goToIndex(last)
+      return
+    }
+    viewport.scrollBy({ left: -cardWidth(), behavior: 'smooth' })
+    window.setTimeout(() => setActiveDot(activeIndex()), 160)
+  }
+
+  const step = () => {
+    if (paused) return
+    goNext()
   }
 
   carouselTimer = window.setInterval(step, 3400)
 
-  const onEnter = () => { paused = true }
+  const onEnter = () => {
+    paused = true
+    hideDragHint()
+  }
   const onLeave = () => { paused = false }
 
   viewport.addEventListener('mouseenter', onEnter)
   viewport.addEventListener('mouseleave', onLeave)
+  const onScrollSync = () => setActiveDot(activeIndex())
   viewport.addEventListener('touchstart', onEnter, { passive: true })
   viewport.addEventListener('touchend', onLeave, { passive: true })
+  viewport.addEventListener('scroll', onScrollSync, { passive: true })
 
   carouselPauseHandlers.push(() => viewport.removeEventListener('mouseenter', onEnter))
   carouselPauseHandlers.push(() => viewport.removeEventListener('mouseleave', onLeave))
   carouselPauseHandlers.push(() => viewport.removeEventListener('touchstart', onEnter))
   carouselPauseHandlers.push(() => viewport.removeEventListener('touchend', onLeave))
+  carouselPauseHandlers.push(() => viewport.removeEventListener('scroll', onScrollSync))
+
+  if (prevBtn) {
+    const onPrev = () => {
+      paused = true
+      hideDragHint()
+      goPrev()
+    }
+    prevBtn.addEventListener('click', onPrev)
+    carouselPauseHandlers.push(() => prevBtn.removeEventListener('click', onPrev))
+  }
+
+  if (nextBtn) {
+    const onNext = () => {
+      paused = true
+      hideDragHint()
+      goNext()
+    }
+    nextBtn.addEventListener('click', onNext)
+    carouselPauseHandlers.push(() => nextBtn.removeEventListener('click', onNext))
+  }
+
+  dots.forEach((dot, idx) => {
+    const onDot = () => {
+      paused = true
+      hideDragHint()
+      goToIndex(idx)
+    }
+    dot.addEventListener('click', onDot)
+    carouselPauseHandlers.push(() => dot.removeEventListener('click', onDot))
+  })
+
+  const onKeyDown = (e: KeyboardEvent) => {
+    if (!carouselInView) return
+    const target = e.target as HTMLElement | null
+    if (target && ['INPUT', 'TEXTAREA', 'SELECT'].includes(target.tagName)) return
+    if (e.key === 'ArrowRight') {
+      paused = true
+      hideDragHint()
+      e.preventDefault()
+      goNext()
+    }
+    if (e.key === 'ArrowLeft') {
+      paused = true
+      hideDragHint()
+      e.preventDefault()
+      goPrev()
+    }
+  }
+  window.addEventListener('keydown', onKeyDown)
+  carouselPauseHandlers.push(() => window.removeEventListener('keydown', onKeyDown))
+
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        carouselInView = entries.some((entry) => entry.isIntersecting && entry.intersectionRatio > 0.55)
+      },
+      { threshold: [0.25, 0.55, 0.8] }
+    )
+    observer.observe(carousel)
+    carouselPauseHandlers.push(() => observer.disconnect())
+  } else {
+    carouselInView = true
+  }
+
+  if (dragHint) {
+    const isMobile = window.matchMedia('(max-width: 768px)').matches
+    let seen = false
+    try {
+      seen = localStorage.getItem('h3p_apps_carousel_hint_seen') === '1'
+    } catch {
+      seen = false
+    }
+
+    if (isMobile && !seen) {
+      requestAnimationFrame(() => dragHint.classList.add('is-visible'))
+      const onFirstGesture = () => hideDragHint()
+      viewport.addEventListener('pointerdown', onFirstGesture, { once: true, passive: true })
+      viewport.addEventListener('scroll', onFirstGesture, { once: true, passive: true })
+      carouselPauseHandlers.push(() => viewport.removeEventListener('pointerdown', onFirstGesture))
+      carouselPauseHandlers.push(() => viewport.removeEventListener('scroll', onFirstGesture))
+    } else {
+      hideDragHint()
+    }
+  }
+
+  setActiveDot(activeIndex())
 }
 
 function setupHeadingTools() {
@@ -288,7 +428,7 @@ function setupHeadingTools() {
 }
 
 function setupImageSkeletons() {
-  const imgs = Array.from(document.querySelectorAll<HTMLImageElement>('.overview-app-shot, .apps-slide img, .home-bottom-image img'))
+  const imgs = Array.from(document.querySelectorAll<HTMLImageElement>('.overview-app-shot, .apps-slide-media img:first-child, .home-bottom-image img'))
   imgs.forEach((img) => {
     if (img.classList.contains('h3p-img-ready')) return
     img.classList.add('h3p-img-skeleton')

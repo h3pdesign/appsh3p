@@ -1,0 +1,7 @@
+Contact: https://github.com/h3pdesign
+Contact: https://github.com/sponsors/h3pdesign
+Contact: https://www.patreon.com/h3palpha
+Expires: 2027-02-17T00:00:00.000Z
+Preferred-Languages: en, de
+Canonical: https://apps-h3p.com/.well-known/security.txt
+Policy: https://apps-h3p.com/policies/security-and-trust

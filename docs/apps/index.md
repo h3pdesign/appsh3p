@@ -27,22 +27,42 @@
 </div>
 
 <div class="apps-carousel" aria-label="Featured screenshots carousel">
+  <button class="apps-carousel-btn apps-carousel-prev" type="button" aria-label="Previous screenshot">‹</button>
+  <button class="apps-carousel-btn apps-carousel-next" type="button" aria-label="Next screenshot">›</button>
   <div class="apps-carousel-viewport">
     <div class="apps-carousel-track">
     <a class="apps-slide neon" href="/apps/neon-vision-editor/gallery">
-      <img src="/media/neon/editing-mac-frame.png" alt="Neon Vision Editor screenshot" />
-      <span>Neon Vision Editor</span>
+      <div class="apps-slide-media">
+        <img src="/media/neon/editing-mac-frame.png" alt="Neon Vision Editor screenshot" />
+        <img class="apps-slide-icon" src="/icons/neon-vision-editor.png" alt="" aria-hidden="true" />
+        <span class="apps-slide-cta">open gallery</span>
+      </div>
+      <span class="apps-slide-title">Neon Vision Editor</span>
     </a>
     <a class="apps-slide metric" href="/apps/metric-data/gallery">
-      <img src="/media/metrics/dashboard-ipad-frame.png" alt="Metric Data screenshot" />
-      <span>Metric Data</span>
+      <div class="apps-slide-media">
+        <img src="/media/metrics/dashboard-ipad-frame.png" alt="Metric Data screenshot" />
+        <img class="apps-slide-icon" src="/icons/metric-data.png" alt="" aria-hidden="true" />
+        <span class="apps-slide-cta">open gallery</span>
+      </div>
+      <span class="apps-slide-title">Metric Data</span>
     </a>
     <a class="apps-slide release" href="/apps/release-assistant/gallery">
-      <img src="/media/release-assistant/main-window.png" alt="Release Assistant screenshot" />
-      <span>Release Assistant</span>
+      <div class="apps-slide-media">
+        <img src="/media/release-assistant/main-window.png" alt="Release Assistant screenshot" />
+        <img class="apps-slide-icon" src="/icons/release-assistant.png" alt="" aria-hidden="true" />
+        <span class="apps-slide-cta">open gallery</span>
+      </div>
+      <span class="apps-slide-title">Release Assistant</span>
     </a>
     </div>
   </div>
+  <div class="apps-carousel-dots" aria-label="Carousel progress">
+    <button class="apps-carousel-dot is-active" type="button" aria-label="Go to slide 1"></button>
+    <button class="apps-carousel-dot" type="button" aria-label="Go to slide 2"></button>
+    <button class="apps-carousel-dot" type="button" aria-label="Go to slide 3"></button>
+  </div>
+  <div class="apps-carousel-drag-hint" aria-hidden="true">drag to browse</div>
 </div>
 
 <div class="apps-grid">
@@ -179,9 +199,38 @@ See [GitHub Repositories](/apps/github-repositories) for repository links and cu
   margin-top: 14px;
   border: 1px solid var(--vp-c-divider);
   border-radius: 14px;
-  padding: 10px;
+  padding: 10px 46px;
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
   overflow: hidden;
+  position: relative;
+}
+
+.apps-carousel-btn {
+  position: absolute;
+  top: calc(50% - 19px);
+  width: 30px;
+  height: 30px;
+  border-radius: 999px;
+  border: 1px solid var(--vp-c-divider);
+  background: rgba(6, 11, 20, 0.75);
+  color: var(--vp-c-text-1);
+  font-size: 19px;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 5;
+  transition: transform 0.18s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.apps-carousel-prev { left: 10px; }
+.apps-carousel-next { right: 10px; }
+
+.apps-carousel-btn:hover {
+  border-color: var(--vp-c-brand-1);
+  color: var(--vp-c-brand-1);
+  transform: scale(1.05);
 }
 
 .apps-carousel-viewport {
@@ -213,19 +262,113 @@ See [GitHub Repositories](/apps/github-repositories) for repository links and cu
   flex: 0 0 auto;
 }
 
-.apps-slide img {
+.apps-slide-media {
+  position: relative;
+}
+
+.apps-slide-media::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 34%;
+  border-radius: 0 0 8px 8px;
+  background: linear-gradient(180deg, rgba(1, 5, 12, 0), rgba(1, 5, 12, 0.7));
+  pointer-events: none;
+}
+
+.apps-slide-media img:first-child {
   width: 100%;
-  height: 120px;
+  height: 240px;
   object-fit: cover;
   border-radius: 8px;
   border: 1px solid var(--vp-c-divider);
 }
 
-.apps-slide span { font-size: 12px; font-weight: 700; }
+.apps-slide-icon {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  background: rgba(3, 7, 14, 0.68);
+  padding: 2px;
+}
+
+.apps-slide-cta {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 5px 9px;
+  border-radius: 999px;
+  border: 1px solid var(--vp-c-divider);
+  background: rgba(3, 7, 14, 0.74);
+  color: var(--vp-c-text-1);
+}
+
+.apps-slide-title { font-size: 12px; font-weight: 700; }
 .apps-slide:hover { border-color: var(--vp-c-brand-1); }
-.apps-slide.neon span { color: #b682ff; }
-.apps-slide.metric span { color: #57d17f; }
-.apps-slide.release span { color: #63d4ff; }
+.apps-slide.neon .apps-slide-title { color: #b682ff; }
+.apps-slide.metric .apps-slide-title { color: #57d17f; }
+.apps-slide.release .apps-slide-title { color: #63d4ff; }
+
+.apps-carousel-dots {
+  margin-top: 8px;
+  display: flex;
+  justify-content: center;
+  gap: 7px;
+}
+
+.apps-carousel-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  border: 1px solid var(--vp-c-divider);
+  background: rgba(139, 156, 182, 0.3);
+  padding: 0;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.apps-carousel-dot.is-active {
+  width: 18px;
+  background: var(--vp-c-brand-1);
+  border-color: var(--vp-c-brand-1);
+}
+
+.apps-carousel-drag-hint {
+  display: none;
+  position: absolute;
+  right: 14px;
+  bottom: 12px;
+  font-size: 10px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--vp-c-text-2);
+  border: 1px solid var(--vp-c-divider);
+  background: rgba(6, 11, 20, 0.72);
+  border-radius: 999px;
+  padding: 4px 8px;
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity 0.24s ease, transform 0.24s ease;
+}
+
+.apps-carousel-drag-hint.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.apps-carousel-drag-hint.is-hidden {
+  opacity: 0;
+  transform: translateY(4px);
+}
 
 .apps-avatar-card {
   display: inline-flex;
@@ -377,12 +520,17 @@ See [GitHub Repositories](/apps/github-repositories) for repository links and cu
 
 @media (max-width: 980px) {
   .apps-slide { width: min(86vw, 360px); }
-  .apps-slide img { height: 160px; }
+  .apps-slide-media img:first-child { height: 280px; }
   .apps-grid { grid-template-columns: 1fr; }
   .apps-release-item { grid-template-columns: 1fr; gap: 4px; }
 }
 
 @media (max-width: 768px) {
+  .apps-carousel { padding: 10px 38px; }
+  .apps-carousel-btn { width: 26px; height: 26px; font-size: 16px; top: calc(50% - 15px); }
+  .apps-slide-icon { top: 8px; left: 8px; width: 30px; height: 30px; }
+  .apps-slide-cta { top: 8px; right: 8px; font-size: 10px; padding: 4px 8px; }
+  .apps-carousel-drag-hint { display: inline-flex; }
   .apps-top-row { flex-direction: column; align-items: flex-start; }
   .app-card { grid-template-columns: 48px 1fr; padding: 12px 14px 12px 20px; }
   .app-icon { width: 48px; height: 48px; }

@@ -2,7 +2,7 @@
 layout: home
 
 hero:
-  name: "h3p apps"
+  name: "> h3p apps"
   text: "clean and modern development"
   tagline: "A focused portal for product docs, setup guides, and release workflows."
   actions:
@@ -59,6 +59,8 @@ neon vision editor across iphone, mac, and ipad.
 <footer class="startpage-footer" aria-label="h3p links">
   <div class="startpage-footer-grid">
     <a href="https://github.com/h3pdesign" target="_blank" rel="noreferrer">GitHub Profile</a>
+    <a href="https://github.com/sponsors/h3pdesign" target="_blank" rel="noreferrer">GitHub Sponsors</a>
+    <a href="https://www.patreon.com/h3palpha" target="_blank" rel="noreferrer">Patreon</a>
     <a href="https://h3p.me/home" target="_blank" rel="noreferrer">h3p.me Home</a>
     <a href="https://h3p.me/apps" target="_blank" rel="noreferrer">Apps</a>
     <a href="https://h3p.me/blog" target="_blank" rel="noreferrer">Blog</a>
