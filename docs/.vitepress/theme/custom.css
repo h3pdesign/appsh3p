@@ -49,6 +49,34 @@ body {
   backdrop-filter: blur(8px);
 }
 
+.h3p-nav-search-hint {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 999px;
+  min-height: 30px;
+  padding: 0 10px;
+  margin-left: 12px;
+  margin-right: 10px;
+  color: var(--vp-c-text-2);
+  font-size: 12px;
+  font-weight: 700;
+  background: var(--h3p-feature-bg);
+}
+
+.h3p-nav-search-hint kbd {
+  padding: 0 6px;
+  border-radius: 8px;
+  font-size: 11px;
+}
+
+.h3p-nav-search-hint:hover {
+  color: var(--vp-c-brand-1);
+  border-color: var(--vp-c-brand-1);
+}
+
 /* Sidebar surface */
 .VPSidebar {
   background: var(--h3p-sidebar-bg) !important;
@@ -119,6 +147,69 @@ body {
   background: var(--h3p-feature-bg);
 }
 
+.VPHome .VPFeatures .VPFeature .title {
+  position: relative;
+  padding-left: 20px;
+}
+
+.VPHome .VPFeatures .item:nth-child(1) .VPFeature .title::before,
+.VPHome .VPFeatures .item:nth-child(2) .VPFeature .title::before,
+.VPHome .VPFeatures .item:nth-child(3) .VPFeature .title::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.35em;
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+}
+
+.VPHome .VPFeatures .item:nth-child(1) .VPFeature .title::before {
+  background: linear-gradient(180deg, #8f4dff, #b682ff);
+}
+
+.VPHome .VPFeatures .item:nth-child(2) .VPFeature .title::before {
+  background: linear-gradient(180deg, #0b7cff, #53d2ff);
+}
+
+.VPHome .VPFeatures .item:nth-child(3) .VPFeature .title::before {
+  background: linear-gradient(180deg, #2dc0ff, #74e0ff);
+}
+
+/* Home feature card ("fast local search"): decorative MacBook cutout */
+.VPHome .VPFeatures a[href="/getting-started/introduction"] .box {
+  position: relative;
+  overflow: visible;
+  min-height: 140px;
+}
+
+.VPHome .VPFeatures a[href="/getting-started/introduction"] .details {
+  padding-right: 0;
+}
+
+.VPHome .VPFeatures a[href="/getting-started/introduction"] .h3p-search-macbook {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translate(-50%, -158%);
+  width: clamp(192px, 60%, 340px);
+  height: auto;
+  pointer-events: none;
+  opacity: 0.95;
+}
+
+.VPHome .VPFeatures a[href="/getting-started/introduction"] .h3p-search-macbook-shadow {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translate(-50%, -188%);
+  width: clamp(110px, 34%, 200px);
+  height: 16px;
+  border-radius: 999px;
+  background: radial-gradient(ellipse at center, rgba(18, 35, 63, 0.25) 0%, rgba(18, 35, 63, 0) 75%);
+  pointer-events: none;
+}
+
 .VPHero .name {
   letter-spacing: 0.02em;
 }
@@ -162,6 +253,15 @@ body {
 }
 
 @media (max-width: 768px) {
+  .VPHome .VPFeatures a[href="/getting-started/introduction"] .box {
+    min-height: 128px;
+  }
+
+  .VPHome .VPFeatures a[href="/getting-started/introduction"] .h3p-search-macbook {
+    width: 184px;
+    transform: translate(-50%, -138%);
+  }
+
   .startpage-app-strip {
     justify-content: center;
   }
@@ -214,6 +314,10 @@ body {
 
 @media (max-width: 960px) {
   .h3p-top-logo {
+    display: none;
+  }
+
+  .h3p-nav-search-hint {
     display: none;
   }
 }
@@ -1017,7 +1121,26 @@ html.h3p-route-enter .VPContent {
   color: var(--vp-c-brand-1);
 }
 
+.h3p-compact-toggle {
+  margin-right: 10px;
+  min-height: 30px;
+  padding: 0 10px;
+  border-radius: 999px;
+  border: 1px solid var(--vp-c-divider);
+  background: var(--h3p-feature-bg);
+  color: var(--vp-c-text-1);
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.h3p-compact-toggle:hover {
+  border-color: var(--vp-c-brand-1);
+  color: var(--vp-c-brand-1);
+}
+
 @media (max-width: 768px) {
+  .h3p-compact-toggle,
   .h3p-hero-fx-toggle {
     display: none;
   }
@@ -1750,6 +1873,11 @@ html:not(.dark) .VPDocAside {
   font-weight: 700;
 }
 
+.startpage-synced-badge {
+  color: var(--vp-c-brand-1) !important;
+  font-weight: 700;
+}
+
 .startpage-weekly-strip {
   display: grid;
   gap: 8px;
@@ -1763,10 +1891,27 @@ html:not(.dark) .VPDocAside {
   padding: 9px 11px;
   background: color-mix(in srgb, var(--vp-c-bg-soft) 90%, transparent);
   color: var(--vp-c-text-1);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .startpage-weekly-strip a:hover {
   border-color: var(--vp-c-brand-1);
+}
+
+.startpage-new-chip {
+  margin-left: 8px;
+  font-size: 10px;
+  line-height: 1;
+  padding: 3px 6px;
+  border-radius: 999px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #53d2ff;
+  border: 1px solid rgba(83, 210, 255, 0.45);
+  background: rgba(83, 210, 255, 0.12);
 }
 
 .startpage-weekly-strip strong {
@@ -1917,6 +2062,13 @@ html:not(.dark) .VPDocAside {
   color: var(--vp-c-brand-1);
 }
 
+.startpage-shortcut-legend {
+  margin-top: 10px;
+  text-align: center;
+  color: var(--vp-c-text-2);
+  font-size: 12px;
+}
+
 .startpage-social-proof {
   display: flex;
   flex-wrap: wrap;
@@ -1932,6 +2084,66 @@ html:not(.dark) .VPDocAside {
   font-size: 11px;
   color: var(--vp-c-text-2);
   background: color-mix(in srgb, var(--vp-c-bg-soft) 88%, transparent);
+}
+
+.vp-doc img[alt*="screenshot"],
+.overview-shot-frame .overview-app-shot {
+  width: min(100%, 980px);
+  margin-inline: auto;
+  border-radius: 12px;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+}
+
+.h3p-page-feedback {
+  margin-top: 16px;
+  border-top: 1px solid var(--vp-c-divider);
+  padding-top: 12px;
+}
+
+.h3p-page-feedback p {
+  margin: 0 0 8px;
+  color: var(--vp-c-text-2);
+  font-size: 13px;
+}
+
+.h3p-page-feedback-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.h3p-page-feedback-actions a {
+  text-decoration: none;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 999px;
+  padding: 6px 10px;
+  color: var(--vp-c-text-1);
+  font-size: 12px;
+}
+
+.h3p-page-feedback-actions a:hover {
+  border-color: var(--vp-c-brand-1);
+  color: var(--vp-c-brand-1);
+}
+
+.h3p-back-apps-fab {
+  display: none;
+}
+
+html.compact-home-cards .VPHome .VPFeature .box {
+  padding: 10px 12px;
+}
+
+html.compact-home-cards .startpage-start-here,
+html.compact-home-cards .startpage-weekly-strip,
+html.compact-home-cards .startpage-release-strip,
+html.compact-home-cards .startpage-use-cases,
+html.compact-home-cards .startpage-app-strip,
+html.compact-home-cards .startpage-social-proof,
+html.compact-home-cards .startpage-quick-start {
+  margin-top: 6px;
+  margin-bottom: 6px;
 }
 
 .home-deploy-badge {
@@ -1962,6 +2174,22 @@ html:not(.dark) .VPDocAside {
   .startpage-use-cases,
   .startpage-social-proof {
     gap: 6px;
+  }
+
+  .VPHome .vp-doc h2 {
+    margin-top: 18px;
+    margin-bottom: 8px;
+  }
+
+  .startpage-start-here,
+  .startpage-weekly-strip,
+  .startpage-release-strip,
+  .startpage-use-cases,
+  .startpage-app-strip,
+  .startpage-social-proof,
+  .startpage-quick-start {
+    margin-top: 8px;
+    margin-bottom: 8px;
   }
 
   .home-hero-widgets {
@@ -2008,5 +2236,39 @@ html:not(.dark) .VPDocAside {
   .VPNavBarSearch .DocSearch-Button,
   .VPNavBarHamburger {
     min-width: 44px;
+  }
+
+  .startpage-weekly-strip a,
+  .startpage-release-item span,
+  .startpage-social-proof span {
+    font-size: 11px;
+    line-height: 1.45;
+  }
+
+  .VPHome .VPFeatures a[href="/getting-started/introduction"] .h3p-search-macbook-shadow {
+    width: 128px;
+    transform: translate(-50%, -198%);
+  }
+
+  .h3p-back-apps-fab {
+    display: inline-flex;
+    position: fixed;
+    right: 12px;
+    bottom: calc(12px + env(safe-area-inset-bottom));
+    z-index: 35;
+    text-decoration: none;
+    border: 1px solid var(--vp-c-divider);
+    border-radius: 999px;
+    padding: 8px 12px;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--vp-c-text-1);
+    background: color-mix(in srgb, var(--vp-c-bg-soft) 86%, rgba(8, 15, 26, 0.24));
+    backdrop-filter: blur(10px);
+  }
+
+  .h3p-back-apps-fab:hover {
+    border-color: var(--vp-c-brand-1);
+    color: var(--vp-c-brand-1);
   }
 }
