@@ -8,14 +8,14 @@ head:
       content: https://apps-h3p.com/media/release-assistant/main-window.png
   - - script
     - type: application/ld+json
-    - '{"@context":"https://schema.org","@graph":[{"@type":"Organization","name":"H3P","url":"https://apps-h3p.com","sameAs":["https://github.com/h3pdesign"]},{"@type":"SoftwareApplication","name":"Release Assistant","applicationCategory":"DeveloperApplication","operatingSystem":"macOS","url":"https://apps-h3p.com/apps/release-assistant/overview","publisher":{"@type":"Organization","name":"H3P"}}]}'
+    - '{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://apps-h3p.com/#organization","name":"H3P","url":"https://apps-h3p.com","sameAs":["https://github.com/h3pdesign"]},{"@type":"SoftwareApplication","@id":"https://apps-h3p.com/apps/release-assistant/overview#app","name":"Release Assistant","applicationCategory":"DeveloperApplication","operatingSystem":"macOS","url":"https://apps-h3p.com/apps/release-assistant/overview","softwareVersion":"docs-sync-2026-02-16","isAccessibleForFree":true,"publisher":{"@id":"https://apps-h3p.com/#organization"}}]}'
 ---
 
 # Release Assistant
 
 <div class="overview-status-pill overview-status-alpha">Status: Internal alpha</div>
 
-<p class="overview-last-updated">Last updated: February 16, 2026</p>
+<p class="overview-last-updated">Last updated: <span data-date="2026-02-16">February 16, 2026</span></p>
 
 <div class="overview-platform-badges overview-reveal" aria-label="supported platforms">
   <span>macOS</span>

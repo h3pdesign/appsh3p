@@ -1,0 +1,37 @@
+name: Lighthouse CI
+
+on:
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  lighthouse:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build docs
+        run: npm run docs:build
+
+      - name: Start preview server
+        run: npm run docs:preview -- --host 127.0.0.1 --port 4173 > /tmp/docs-preview.log 2>&1 &
+
+      - name: Wait for preview
+        run: npx -y wait-on@8 http://127.0.0.1:4173
+
+      - name: Run Lighthouse CI
+        run: npx -y @lhci/cli@0.14.0 autorun --config=./lighthouserc.json

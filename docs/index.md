@@ -26,6 +26,7 @@ features:
   <span>3 apps</span>
   <span>1 docs hub</span>
   <span class="startpage-updated-date">updated Feb 2026</span>
+  <span class="startpage-synced-badge">GitHub synced Feb 2026</span>
   <span class="startpage-locale-hint">EN</span>
 </div>
 <p class="startpage-hero-secondary-cta">
@@ -47,16 +48,16 @@ features:
 <h2 id="whats-new-week">what's new this week</h2>
 
 <div class="startpage-weekly-strip" aria-label="What's new this week">
-  <a href="/apps/neon-vision-editor/changelog"><strong>Feb 16, 2026:</strong> Neon Vision Editor v0.4.23 release notes and docs refresh</a>
-  <a href="/apps/metric-data/overview"><strong>Feb 16, 2026:</strong> Metric Data overview now iPad-first with metadata and support docs</a>
-  <a href="/apps/release-assistant/features"><strong>Feb 16, 2026:</strong> Release Assistant workflow, gallery, and FAQ expanded</a>
+  <a href="/apps/neon-vision-editor/changelog"><strong data-date="2026-02-16">Feb 16, 2026</strong>: Neon Vision Editor v0.4.23 release notes and docs refresh</a>
+  <a href="/apps/metric-data/overview"><strong data-date="2026-02-16">Feb 16, 2026</strong>: Metric Data overview now iPad-first with metadata and support docs</a>
+  <a href="/apps/release-assistant/features"><strong data-date="2026-02-16">Feb 16, 2026</strong>: Release Assistant workflow, gallery, and FAQ expanded</a>
 </div>
 
 <div class="startpage-release-strip" aria-label="App status snapshot">
   <article class="startpage-release-item">
     <strong>Neon</strong>
     <span>v0.4.23</span>
-    <span>Feb 16, 2026</span>
+    <span data-date="2026-02-16">Feb 16, 2026</span>
     <span>macOS, iPadOS, iOS</span>
     <a href="/apps/neon-vision-editor/changelog">Source: changelog</a>
     <a href="https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v0.4.23" target="_blank" rel="noreferrer noopener">Source: GitHub release</a>
@@ -64,14 +65,14 @@ features:
   <article class="startpage-release-item">
     <strong>Metric</strong>
     <span>Docs refresh</span>
-    <span>Feb 16, 2026</span>
+    <span data-date="2026-02-16">Feb 16, 2026</span>
     <span>macOS, iPadOS, iOS</span>
     <a href="/apps/metric-data/changelog">Source: changelog</a>
   </article>
   <article class="startpage-release-item">
     <strong>Release</strong>
     <span>Docs refresh</span>
-    <span>Feb 16, 2026</span>
+    <span data-date="2026-02-16">Feb 16, 2026</span>
     <span>macOS</span>
     <a href="/apps/release-assistant/changelog">Source: changelog</a>
   </article>
@@ -134,7 +135,10 @@ neon vision editor across iphone, mac, and ipad.
 </div>
 
 <div class="home-bottom-image startpage-focal-card">
-  <img src="/media/neon-vision-editor-hero.png" srcset="/media/neon-vision-editor-hero-640.png 640w, /media/neon-vision-editor-hero-960.png 960w, /media/neon-vision-editor-hero.png 1400w" sizes="(max-width: 768px) 92vw, (max-width: 1200px) 88vw, 960px" alt="Neon Vision Editor showcase" width="1400" height="875" loading="lazy" decoding="async" />
+  <picture>
+    <source type="image/webp" srcset="/media/neon-vision-editor-hero-640.webp 640w, /media/neon-vision-editor-hero-960.webp 960w, /media/neon-vision-editor-hero.webp 1400w" sizes="(max-width: 768px) 92vw, (max-width: 1200px) 88vw, 960px" />
+    <img src="/media/neon-vision-editor-hero.png" srcset="/media/neon-vision-editor-hero-640.png 640w, /media/neon-vision-editor-hero-960.png 960w, /media/neon-vision-editor-hero.png 1400w" sizes="(max-width: 768px) 92vw, (max-width: 1200px) 88vw, 960px" alt="Neon Vision Editor showcase" width="1400" height="787" loading="lazy" decoding="async" />
+  </picture>
 </div>
 
 <footer class="startpage-footer" aria-label="h3p links">
@@ -158,5 +162,6 @@ neon vision editor across iphone, mac, and ipad.
     <a href="/policies/security-and-trust">Security policy</a>
     <a href="/policies/privacy-policy">Privacy</a>
   </div>
+  <p class="startpage-shortcut-legend">Shortcuts: <kbd>/</kbd> search, <kbd>⌘</kbd> + <kbd>K</kbd> quick open.</p>
   <p>Copyright 2026 by h3p Hilthart Pedersen.</p>
 </footer>

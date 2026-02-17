@@ -5,6 +5,7 @@
   "scripts": {
     "docs:dev": "vitepress dev docs --host 127.0.0.1 --port 5173",
     "docs:build": "vitepress build docs",
+    "docs:images": "node scripts/optimize-doc-images.mjs",
     "docs:preview": "vitepress preview docs",
     "docs:sync-neon-release": "node scripts/sync-neon-release.mjs",
     "docs:sync-release": "node scripts/sync-neon-release.mjs"

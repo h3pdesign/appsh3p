@@ -74,6 +74,7 @@
         <div class="app-platform-pills">
           <span>macOS</span><span>iPadOS</span><span>iOS</span>
         </div>
+        <span class="app-doc-state app-doc-state-active">Docs: Active</span>
         <span class="app-updated-badge">updated recently</span>
       </div>
       <p>Native editor for macOS, iPadOS, and iOS with optional AI assistance and syntax highlighting.</p>
@@ -92,6 +93,7 @@
         <div class="app-platform-pills">
           <span>macOS</span><span>iPadOS</span><span>iOS</span>
         </div>
+        <span class="app-doc-state app-doc-state-active">Docs: Active</span>
         <span class="app-updated-badge">updated recently</span>
       </div>
       <p>Google AdSense analytics app with OAuth, multi-account switching, filters, and Swift Charts dashboards.</p>
@@ -110,6 +112,7 @@
         <div class="app-platform-pills">
           <span>macOS</span>
         </div>
+        <span class="app-doc-state app-doc-state-active">Docs: Active</span>
         <span class="app-updated-badge">updated recently</span>
       </div>
       <p>macOS orchestration tool for guarded release pipelines, workflow checks, and audit-oriented output.</p>
@@ -118,6 +121,12 @@
       </div>
     </div>
   </article>
+</div>
+
+<div class="apps-status-legend" aria-label="App status legend">
+  <span><strong>Public beta</strong>: open testing and active docs</span>
+  <span><strong>Private beta</strong>: limited testing and active docs</span>
+  <span><strong>Internal alpha</strong>: internal testing and active docs</span>
 </div>
 
 ## Source Code Repositories
@@ -194,6 +203,22 @@ See [GitHub Repositories](/apps/github-repositories) for repository links and cu
 .apps-release-item.neon .tag { color: #b88bff; border-color: rgba(184,139,255,0.45); }
 .apps-release-item.metric .tag { color: #5bd485; border-color: rgba(91,212,133,0.45); }
 .apps-release-item.release .tag { color: #69d7ff; border-color: rgba(105,215,255,0.45); }
+
+.apps-status-legend {
+  margin-top: 12px;
+  display: grid;
+  gap: 6px;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 12px;
+  padding: 10px 12px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  font-size: 12px;
+  color: var(--vp-c-text-2);
+}
+
+.apps-status-legend strong {
+  color: var(--vp-c-text-1);
+}
 
 .apps-carousel {
   margin-top: 14px;
@@ -508,6 +533,40 @@ See [GitHub Repositories](/apps/github-repositories) for repository links and cu
   background: rgba(255, 255, 255, 0.02);
   text-transform: lowercase;
   white-space: nowrap;
+}
+
+.app-updated-badge.freshness-today {
+  color: #53d2ff;
+  border-color: rgba(83, 210, 255, 0.45);
+  background: rgba(83, 210, 255, 0.1);
+}
+
+.app-updated-badge.freshness-recent {
+  color: #8be5aa;
+  border-color: rgba(139, 229, 170, 0.45);
+  background: rgba(139, 229, 170, 0.1);
+}
+
+.app-updated-badge.freshness-stale {
+  color: var(--vp-c-text-2);
+}
+
+.app-doc-state {
+  font-size: 10px;
+  line-height: 1;
+  padding: 5px 7px;
+  border-radius: 999px;
+  border: 1px solid var(--vp-c-divider);
+  white-space: nowrap;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-weight: 700;
+}
+
+.app-doc-state-active {
+  color: #53d2ff;
+  border-color: rgba(83, 210, 255, 0.45);
+  background: rgba(83, 210, 255, 0.1);
 }
 
 .app-card p {
