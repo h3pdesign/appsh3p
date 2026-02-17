@@ -110,11 +110,3 @@ neon vision editor across iphone, mac, and ipad.
   </div>
   <p>Copyright 2026 by h3p Hilthart Pedersen.</p>
 </footer>
-
-
-<nav class="startpage-mobile-toc" aria-label="Startpage quick navigation">
-  <a href="#whats-new-week">New</a>
-  <a href="#quick-start-60s">Quick start</a>
-  <a href="#featured-app">Featured</a>
-  <a href="#startpage-links">Links</a>
-</nav>
