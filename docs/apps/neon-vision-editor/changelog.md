@@ -10,18 +10,18 @@ head:
 
 # Neon Vision Editor Changelog
 
-_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on February 17, 2026._
+_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on February 16, 2026._
 
 ## v0.4.23 (published February 16, 2026)
 
 Release link: [GitHub Release v0.4.23](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v0.4.23)
 
-- Added optional support-purchase content in Welcome Tour page 2 with live StoreKit price and direct purchase action.
-- Improved welcome-tour flow with Toolbar Map moved to the final page and updated iPad hardware keyboard hints.
-- Improved Settings editor-layout readability with consistent left-aligned section structure.
-- Fixed Settings support UI by removing restore-purchase actions where restore flow is not supported.
-- Fixed refresh-price behavior to re-check StoreKit availability before refreshing metadata.
-- Fixed font chooser instability by removing the macOS `NSFontPanel` bridge path and using the in-settings font list flow.
+- Added optional support-purchase content to Welcome Tour page 2, including live StoreKit price and direct purchase action.
+- Improved welcome-tour flow by moving Toolbar Map to the final page and updating toolbar shortcut hints for iPad hardware keyboards.
+- Improved Settings editor-layout readability by left-aligning Editor tab section headers, controls, and helper text into a consistent single-column layout.
+- Fixed Settings support UI to remove restore-purchase actions where restore flow is not supported in current settings workflow.
+- Fixed Refresh Price behavior to re-evaluate StoreKit availability before refreshing product metadata.
+- Fixed font chooser instability by removing the macOS `NSFontPanel` bridge path and using the in-settings font list selector flow.
 
 ## v0.4.22 (published February 16, 2026)
 

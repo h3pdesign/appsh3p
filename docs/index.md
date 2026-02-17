@@ -25,6 +25,21 @@ features:
     link: /apps/github-repositories
 ---
 
+<div class="startpage-stats-row" aria-label="Docs quick stats">
+  <span>3 apps</span>
+  <span>1 docs hub</span>
+  <span>updated Feb 2026</span>
+  <span class="startpage-locale-hint">EN</span>
+</div>
+
+<h2 id="whats-new-week">what's new this week</h2>
+
+<div class="startpage-weekly-strip" aria-label="What's new this week">
+  <a href="/apps/neon-vision-editor/changelog">Neon Vision Editor v0.4.23 release notes and docs refresh</a>
+  <a href="/apps/metric-data/overview">Metric Data overview now iPad-first with metadata and support docs</a>
+  <a href="/apps/release-assistant/features">Release Assistant workflow, gallery, and FAQ expanded</a>
+</div>
+
 <div class="startpage-app-strip" aria-label="H3P apps quick links">
   <a class="startpage-app-item" href="/apps/neon-vision-editor/overview">
     <img src="/icons/neon-vision-editor.png" alt="Neon Vision Editor icon" />
@@ -47,9 +62,18 @@ features:
   <span class="startpage-testimonial-mark" aria-hidden="true">“</span>
   <p>"Built to stay out of the way so writing, analysis, and release work stay fast and focused."</p>
   <footer>H3P.</footer>
+  <a class="startpage-testimonial-cta" href="/apps/neon-vision-editor/overview">Open Neon Vision Editor docs</a>
 </blockquote>
 
-## featured app
+<h2 id="quick-start-60s">quick start in 60s</h2>
+
+<div class="startpage-quick-start" aria-label="Quick start">
+  <div><strong>1.</strong> Open <a href="/apps/index">All Apps</a> and choose your tool.</div>
+  <div><strong>2.</strong> Jump to <a href="/apps/neon-vision-editor/installation">Installation</a> for setup in under a minute.</div>
+  <div><strong>3.</strong> Use <a href="/apps/neon-vision-editor/faq">FAQ</a> and <a href="/support/">Support</a> for fast troubleshooting.</div>
+</div>
+
+<h2 id="featured-app">featured app</h2>
 
 neon vision editor across iphone, mac, and ipad.
 
@@ -59,7 +83,7 @@ neon vision editor across iphone, mac, and ipad.
   </a>
 </div>
 
-<div class="home-bottom-image">
+<div class="home-bottom-image startpage-focal-card">
   <img src="/media/neon-vision-editor-hero.png" alt="Neon Vision Editor showcase" />
 </div>
 
@@ -79,5 +103,18 @@ neon vision editor across iphone, mac, and ipad.
     <a href="/policies/privacy-policy">Privacy Policy</a>
     <a href="/policies/eu-cookie-notice">EU Cookie Notice</a>
   </div>
+  <div class="startpage-trust-row" id="startpage-links">
+    <a href="https://github.com/h3pdesign" target="_blank" rel="noreferrer">Open-source parts on GitHub</a>
+    <a href="/policies/security-and-trust">Security policy</a>
+    <a href="/policies/privacy-policy">Privacy</a>
+  </div>
   <p>Copyright 2026 by h3p Hilthart Pedersen.</p>
 </footer>
+
+
+<nav class="startpage-mobile-toc" aria-label="Startpage quick navigation">
+  <a href="#whats-new-week">New</a>
+  <a href="#quick-start-60s">Quick start</a>
+  <a href="#featured-app">Featured</a>
+  <a href="#startpage-links">Links</a>
+</nav>

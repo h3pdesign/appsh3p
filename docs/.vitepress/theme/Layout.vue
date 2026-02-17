@@ -61,7 +61,7 @@ const topSwitcherLinks = [
 ]
 
 const appUpdatedBySlug: Record<string, string> = {
-  'neon-vision-editor': 'February 17, 2026',
+  'neon-vision-editor': 'February 16, 2026',
   'metric-data': 'February 16, 2026',
   'release-assistant': 'February 16, 2026'
 }
@@ -514,6 +514,7 @@ function ensureHomeWidgets() {
           <li>Published on <a href="https://apps-h3p.com" target="_blank" rel="noreferrer noopener">apps-h3p.com</a></li>
           <li><a href="https://github.com/h3pdesign/appsh3p" target="_blank" rel="noreferrer noopener">Docs repo</a></li>
         </ul>
+        <div class="home-deploy-badge"><a href="https://github.com/h3pdesign/appsh3p/commit/ae3e8f2" target="_blank" rel="noreferrer noopener">Last deployment: February 17, 2026</a></div>
         <div class="home-hero-mini-apps" aria-label="App icons">
           <a href="/apps/neon-vision-editor/overview"><img class="mini-icon-neon" src="/icons/neon-vision-editor.png" alt="Neon Vision Editor" /></a>
           <a href="/apps/metric-data/overview"><img src="/icons/metric-data.png" alt="Metric Data" /></a>
@@ -544,6 +545,7 @@ function ensureHomeWidgets() {
   cleanupParallax()
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
   const widget = container.querySelector('.home-hero-widgets') as HTMLElement | null
+  const focalCard = document.querySelector('.startpage-focal-card') as HTMLElement | null
   if (!widget) return
 
   const onMove = (e: MouseEvent) => {
@@ -551,9 +553,13 @@ function ensureHomeWidgets() {
     const nx = ((e.clientX - rect.left) / rect.width) - 0.5
     const ny = ((e.clientY - rect.top) / rect.height) - 0.5
     widget.style.transform = `translate3d(${nx * 6}px, ${ny * 6}px, 0)`
+    if (focalCard) {
+      focalCard.style.transform = `translate3d(${nx * 4}px, ${ny * 4}px, 0)`
+    }
   }
   const onLeave = () => {
     widget.style.transform = 'translate3d(0,0,0)'
+    if (focalCard) focalCard.style.transform = 'translate3d(0,0,0)'
   }
   hero.addEventListener('mousemove', onMove)
   hero.addEventListener('mouseleave', onLeave)
@@ -562,6 +568,7 @@ function ensureHomeWidgets() {
     hero.removeEventListener('mousemove', onMove)
     hero.removeEventListener('mouseleave', onLeave)
     widget.style.transform = 'translate3d(0,0,0)'
+    if (focalCard) focalCard.style.transform = 'translate3d(0,0,0)'
   }
 }
 

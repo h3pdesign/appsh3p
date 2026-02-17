@@ -1,0 +1,75 @@
+name: Sync app release versions
+
+on:
+  workflow_dispatch:
+    inputs:
+      app:
+        description: "App key: neon | metric | release-assistant"
+        required: false
+        default: "neon"
+      repo:
+        description: "GitHub repo owner/name override"
+        required: false
+        default: ""
+  schedule:
+    - cron: "17 */4 * * *"
+  repository_dispatch:
+    types:
+      - neon_release_published
+      - metric_release_published
+      - release_assistant_release_published
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Resolve app target
+        id: target
+        run: |
+          APP="${{ github.event.client_payload.app }}"
+          REPO="${{ github.event.client_payload.repo }}"
+
+          if [ -z "$APP" ]; then
+            APP="${{ inputs.app }}"
+          fi
+
+          if [ -z "$APP" ]; then
+            APP="neon"
+          fi
+
+          if [ -z "$REPO" ]; then
+            REPO="${{ inputs.repo }}"
+          fi
+
+          echo "app=$APP" >> "$GITHUB_OUTPUT"
+          echo "repo=$REPO" >> "$GITHUB_OUTPUT"
+          echo "Sync target app=$APP repo=$REPO"
+
+      - name: Sync latest app release into docs
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node scripts/sync-neon-release.mjs "${{ steps.target.outputs.app }}" "${{ steps.target.outputs.repo }}"
+
+      - name: Commit and push if changed
+        run: |
+          if git diff --quiet; then
+            echo "No version changes detected"
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/index.md docs/apps/index.md docs/.vitepress/theme/Layout.vue docs/apps/neon-vision-editor/overview.md docs/apps/neon-vision-editor/changelog.md docs/apps/metric-data/overview.md docs/apps/metric-data/changelog.md docs/apps/release-assistant/overview.md docs/apps/release-assistant/changelog.md
+          git commit -m "Sync app release version references"
+          git push
