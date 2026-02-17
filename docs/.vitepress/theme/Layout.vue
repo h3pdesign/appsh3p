@@ -21,6 +21,11 @@ type QuickLink = {
   tone: 'neon' | 'metric' | 'release' | 'default'
 }
 
+type DocJumpLink = {
+  text: string
+  link: string
+}
+
 const headingCount = ref(0)
 const readingMinutes = ref(1)
 const heroFxEnabled = ref(true)
@@ -54,6 +59,44 @@ const topSwitcherLinks = [
   { key: 'metric-data', text: 'Metric', link: '/apps/metric-data/overview' },
   { key: 'release-assistant', text: 'Release', link: '/apps/release-assistant/overview' }
 ]
+
+const appUpdatedBySlug: Record<string, string> = {
+  'neon-vision-editor': 'February 17, 2026',
+  'metric-data': 'February 16, 2026',
+  'release-assistant': 'February 16, 2026'
+}
+
+const appDocTopLinks = computed<DocJumpLink[]>(() => {
+  if (!isAppDocPage.value) return []
+  const base = '/apps/' + appSlug.value
+  return [
+    { text: 'Overview', link: base + '/overview' },
+    { text: 'Install', link: base + '/installation' },
+    { text: 'Features', link: base + '/features' },
+    { text: 'FAQ', link: base + '/faq' }
+  ]
+})
+
+const appDocRelatedLinks = computed<DocJumpLink[]>(() => {
+  if (!isAppDocPage.value) return []
+  const base = '/apps/' + appSlug.value
+  const all: DocJumpLink[] = [
+    { text: 'Overview', link: base + '/overview' },
+    { text: 'Installation', link: base + '/installation' },
+    { text: 'Features', link: base + '/features' },
+    { text: 'Gallery', link: base + '/gallery' },
+    { text: 'Changelog', link: base + '/changelog' },
+    { text: 'Known Issues', link: base + '/known-issues' },
+    { text: 'FAQ', link: base + '/faq' }
+  ]
+  const currentPath = route.path.endsWith('/') ? route.path.slice(0, -1) : route.path
+  return all.filter((item) => item.link !== currentPath).slice(0, 4)
+})
+
+const currentAppUpdatedOn = computed(() => {
+  if (!isAppDocPage.value) return ''
+  return appUpdatedBySlug[appSlug.value] || 'February 17, 2026'
+})
 
 function activeSwitcher(linkKey: string) {
   return appSlug.value === linkKey
@@ -428,7 +471,7 @@ function setupHeadingTools() {
 }
 
 function setupImageSkeletons() {
-  const imgs = Array.from(document.querySelectorAll<HTMLImageElement>('.overview-app-shot, .apps-slide-media img:first-child, .home-bottom-image img'))
+  const imgs = Array.from(document.querySelectorAll<HTMLImageElement>('.overview-app-shot, .home-bottom-image img'))
   imgs.forEach((img) => {
     if (img.classList.contains('h3p-img-ready')) return
     img.classList.add('h3p-img-skeleton')
@@ -644,6 +687,10 @@ onBeforeUnmount(() => {
       <nav v-if="isAppDocPage" class="h3p-app-switcher" aria-label="App switcher">
         <a v-for="item in topSwitcherLinks" :key="item.key" :href="item.link" :class="{ active: activeSwitcher(item.key) }">{{ item.text }}</a>
       </nav>
+      <nav v-if="appDocTopLinks.length > 0" class="h3p-doc-jump-rail" aria-label="Quick jump">
+        <a v-for="item in appDocTopLinks" :key="item.link" :href="item.link">{{ item.text }}</a>
+      </nav>
+      <p v-if="isAppDocPage" class="h3p-doc-last-updated">Last updated: {{ currentAppUpdatedOn }}</p>
     </template>
 
     <template #aside-outline-before>
@@ -668,6 +715,18 @@ onBeforeUnmount(() => {
         </div>
       </section>
       <button v-if="isAppsRoute" class="h3p-aside-back-top" type="button" @click="backToTop">Back to top</button>
+    </template>
+
+    <template #doc-bottom>
+      <section v-if="appDocRelatedLinks.length > 0" class="h3p-related-pages" aria-label="Next recommended reads">
+        <h2>Next recommended read</h2>
+        <div class="h3p-related-grid">
+          <a v-for="item in appDocRelatedLinks" :key="item.link" :href="item.link" class="h3p-related-card">
+            <span>{{ item.text }}</span>
+            <strong>Open</strong>
+          </a>
+        </div>
+      </section>
     </template>
 
     <template #not-found>

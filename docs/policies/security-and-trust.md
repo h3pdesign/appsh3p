@@ -43,7 +43,7 @@ Check both apps-h3p.com and www.apps-h3p.com.
 ## Private security contact
 
 - GitHub Sponsors profile: [https://github.com/sponsors/h3pdesign](https://github.com/sponsors/h3pdesign)
-- Patreon: [https://www.patreon.com/h3palpha](https://www.patreon.com/h3palpha)
+- Patreon: [https://www.patreon.com/cw/h3p](https://www.patreon.com/cw/h3p)
 - GitHub profile: [https://github.com/h3pdesign](https://github.com/h3pdesign)
 
 If you report a security issue, include URL, timestamp, environment, and reproducible steps.

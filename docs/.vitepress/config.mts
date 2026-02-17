@@ -29,6 +29,10 @@ export default defineConfig({
     ['link', { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/favicon-32.png' }],
     ['link', { rel: 'icon', type: 'image/png', href: '/favicon.png' }],
     ['link', { rel: 'apple-touch-icon', sizes: '180x180', href: '/apple-touch-icon.png' }],
+    ['script', { type: 'application/ld+json' }, '{"@context":"https://schema.org","@type":"WebSite","name":"h3p apps","url":"https://apps-h3p.com","potentialAction":{"@type":"SearchAction","target":"https://apps-h3p.com/?q={search_term_string}","query-input":"required name=search_term_string"}}'],
+    ['link', { rel: 'icon', type: 'image/svg+xml', href: '/favicon-light.svg', media: '(prefers-color-scheme: light)' }],
+    ['link', { rel: 'icon', type: 'image/svg+xml', href: '/favicon-dark.svg', media: '(prefers-color-scheme: dark)' }],
+    ['link', { rel: 'mask-icon', href: '/safari-pinned-tab.svg', color: '#0b7cff' }],
     ['link', { rel: 'canonical', href: 'https://apps-h3p.com/' }]
   ],
   appearance: true,
@@ -37,6 +41,10 @@ export default defineConfig({
 
   themeConfig: {
     siteTitle: 'h3p apps',
+    footer: {
+      message: 'Clean and modern development',
+      copyright: 'Copyright 2026 by h3p Hilthart Pedersen.'
+    },
 
     search: {
       provider: 'local'
@@ -46,9 +54,10 @@ export default defineConfig({
       { text: 'Home', link: '/' },
       { text: 'Getting Started', link: '/getting-started/introduction' },
       { text: 'Apps', link: '/apps/index' },
+      { text: 'Changelog', link: '/changelog' },
       { text: 'Policies', link: '/policies/api-stability' },
       { text: 'Art & Blog', link: 'https://h3p.me/home' },
-      { text: 'Support', link: 'https://www.patreon.com/h3palpha' }
+      { text: 'Support', link: 'https://www.patreon.com/cw/h3p' }
     ],
 
     sidebar: [
@@ -67,6 +76,7 @@ export default defineConfig({
         items: [
           { text: 'All Apps', link: '/apps/index' },
           { text: 'GitHub Repositories', link: '/apps/github-repositories' },
+          { text: 'Docs Changelog', link: '/changelog' },
 
           { text: 'Neon Vision Editor: Overview', link: '/apps/neon-vision-editor/overview' },
           { text: 'Neon Vision Editor: Launch Story', link: '/apps/neon-vision-editor/launch-story' },
@@ -101,7 +111,10 @@ export default defineConfig({
           { text: 'Roadmap', link: '/policies/roadmap' },
           { text: 'Contributing', link: '/policies/contributing' },
           { text: 'License', link: '/policies/license' },
-          { text: 'Security and Trust', link: '/policies/security-and-trust' }
+          { text: 'Security and Trust', link: '/policies/security-and-trust' },
+          { text: 'Terms of Service', link: '/policies/terms-of-service' },
+          { text: 'Privacy Policy', link: '/policies/privacy-policy' },
+          { text: 'EU Cookie Notice', link: '/policies/eu-cookie-notice' }
         ]
       },
       {

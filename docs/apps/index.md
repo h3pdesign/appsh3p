@@ -69,7 +69,7 @@
   <article class="app-card app-card-neon" data-changelog="/apps/neon-vision-editor/changelog">
     <img src="/icons/neon-vision-editor.png" alt="Neon Vision Editor icon" class="app-icon" />
     <div class="app-card-content">
-      <h3><a class="app-title-link" href="/apps/neon-vision-editor/overview">Neon Vision Editor</a></h3>
+      <h3 class="app-title-row"><a class="app-title-link" href="/apps/neon-vision-editor/overview">Neon Vision Editor</a><span class="app-status app-status-beta">Public beta</span></h3>
       <div class="app-card-meta-row">
         <div class="app-platform-pills">
           <span>macOS</span><span>iPadOS</span><span>iOS</span>
@@ -87,7 +87,7 @@
   <article class="app-card app-card-metric" data-changelog="/apps/metric-data/changelog">
     <img src="/icons/metric-data.png" alt="Metric Data icon" class="app-icon" />
     <div class="app-card-content">
-      <h3><a class="app-title-link" href="/apps/metric-data/overview">Metric Data</a></h3>
+      <h3 class="app-title-row"><a class="app-title-link" href="/apps/metric-data/overview">Metric Data</a><span class="app-status app-status-private">Private beta</span></h3>
       <div class="app-card-meta-row">
         <div class="app-platform-pills">
           <span>macOS</span><span>iPadOS</span><span>iOS</span>
@@ -105,7 +105,7 @@
   <article class="app-card app-card-release" data-changelog="/apps/release-assistant/changelog">
     <img src="/icons/release-assistant.png" alt="Release Assistant icon" class="app-icon" />
     <div class="app-card-content">
-      <h3><a class="app-title-link" href="/apps/release-assistant/overview">Release Assistant</a></h3>
+      <h3 class="app-title-row"><a class="app-title-link" href="/apps/release-assistant/overview">Release Assistant</a><span class="app-status app-status-alpha">Internal alpha</span></h3>
       <div class="app-card-meta-row">
         <div class="app-platform-pills">
           <span>macOS</span>
@@ -428,6 +428,43 @@ See [GitHub Repositories](/apps/github-repositories) for repository links and cu
 .app-card-content { min-width: 0; }
 
 .app-card h3 { margin: 0 0 6px; }
+
+.app-title-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.app-status {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  border: 1px solid var(--vp-c-divider);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 4px 8px;
+}
+
+.app-status-beta {
+  color: #b78cff;
+  border-color: rgba(183,140,255,0.5);
+  background: rgba(143,77,255,0.14);
+}
+
+.app-status-private {
+  color: #59d07f;
+  border-color: rgba(89,208,127,0.5);
+  background: rgba(57,182,107,0.14);
+}
+
+.app-status-alpha {
+  color: #63d4ff;
+  border-color: rgba(99,212,255,0.5);
+  background: rgba(45,192,255,0.14);
+}
 
 .app-title-link {
   color: var(--vp-c-text-1);

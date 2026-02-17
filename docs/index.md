@@ -42,6 +42,13 @@ features:
 
 <p class="startpage-external-note">Explore photography, art, and writing on <a href="https://h3p.me/home" target="_blank" rel="noreferrer">h3p.me/home</a>.</p>
 
+<blockquote class="startpage-testimonial">
+  <span class="startpage-testimonial-kicker">from the maker</span>
+  <span class="startpage-testimonial-mark" aria-hidden="true">“</span>
+  <p>"Built to stay out of the way so writing, analysis, and release work stay fast and focused."</p>
+  <footer>H3P.</footer>
+</blockquote>
+
 ## featured app
 
 neon vision editor across iphone, mac, and ipad.
@@ -60,7 +67,7 @@ neon vision editor across iphone, mac, and ipad.
   <div class="startpage-footer-grid">
     <a href="https://github.com/h3pdesign" target="_blank" rel="noreferrer">GitHub Profile</a>
     <a href="https://github.com/sponsors/h3pdesign" target="_blank" rel="noreferrer">GitHub Sponsors</a>
-    <a href="https://www.patreon.com/h3palpha" target="_blank" rel="noreferrer">Patreon</a>
+    <a href="https://www.patreon.com/cw/h3p" target="_blank" rel="noreferrer">Patreon</a>
     <a href="https://h3p.me/home" target="_blank" rel="noreferrer">h3p.me Home</a>
     <a href="https://h3p.me/apps" target="_blank" rel="noreferrer">Apps</a>
     <a href="https://h3p.me/blog" target="_blank" rel="noreferrer">Blog</a>
@@ -68,6 +75,9 @@ neon vision editor across iphone, mac, and ipad.
     <a href="https://www.instagram.com/createurdeimagination/" target="_blank" rel="noreferrer">Instagram</a>
     <a href="https://www.behance.net/h3p" target="_blank" rel="noreferrer">Behance</a>
     <a href="https://500px.com/p/h3p" target="_blank" rel="noreferrer">500px</a>
+    <a href="/policies/terms-of-service">Terms of Service</a>
+    <a href="/policies/privacy-policy">Privacy Policy</a>
+    <a href="/policies/eu-cookie-notice">EU Cookie Notice</a>
   </div>
-  <p>h3p apps documentation hub</p>
+  <p>Copyright 2026 by h3p Hilthart Pedersen.</p>
 </footer>

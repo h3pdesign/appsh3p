@@ -4,7 +4,7 @@
 
 - GitHub profile: [h3pdesign](https://github.com/h3pdesign)
 - GitHub Sponsors: [Sponsor on GitHub](https://github.com/sponsors/h3pdesign)
-- Patreon: [Support on Patreon](https://www.patreon.com/h3palpha)
+- Patreon: [Support on Patreon](https://www.patreon.com/cw/h3p)
 - Art, blog, and portfolio: [h3p.me/home](https://h3p.me/home)
 
 ## Report issues

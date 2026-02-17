@@ -13,6 +13,8 @@ head:
 
 # Metric Data
 
+<div class="overview-status-pill overview-status-private">Status: Private beta</div>
+
 <p class="overview-last-updated">Last updated: February 16, 2026</p>
 
 <div class="overview-platform-badges overview-reveal" aria-label="supported platforms">

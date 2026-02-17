@@ -13,6 +13,8 @@ head:
 
 # Release Assistant
 
+<div class="overview-status-pill overview-status-alpha">Status: Internal alpha</div>
+
 <p class="overview-last-updated">Last updated: February 16, 2026</p>
 
 <div class="overview-platform-badges overview-reveal" aria-label="supported platforms">
