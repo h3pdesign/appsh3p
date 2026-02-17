@@ -332,6 +332,12 @@ body {
 @media (min-width: 960px) {
   .VPNavBarTitle.has-sidebar .title {
     border-bottom: none !important;
+    width: var(--vp-sidebar-width) !important;
+    max-width: var(--vp-sidebar-width) !important;
+    box-sizing: border-box;
+    justify-content: flex-start !important;
+    padding-left: 16px !important;
+    padding-right: 10px !important;
   }
 
   .VPSidebar {
@@ -1791,6 +1797,7 @@ html:not(.dark) .VPDocAside {
 .startpage-stats-row {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 8px;
   align-items: center;
   margin-top: 8px;
@@ -1799,6 +1806,7 @@ html:not(.dark) .VPDocAside {
 .startpage-hero-secondary-cta {
   margin: 10px 0 0;
   color: var(--vp-c-text-2);
+  text-align: center;
 }
 
 .startpage-hero-secondary-cta a {
@@ -1810,11 +1818,13 @@ html:not(.dark) .VPDocAside {
   margin: 8px 0 0;
   color: var(--vp-c-text-2);
   font-size: 13px;
+  text-align: center;
 }
 
 .startpage-search-examples {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 8px;
   margin: 8px 0 0;
 }
@@ -1926,35 +1936,35 @@ html:not(.dark) .VPDocAside {
 
 .startpage-release-strip {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 8px;
-  margin: 8px 0 12px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 6px;
+  margin: 8px 0 10px;
 }
 
 .startpage-release-item {
   border: 1px solid var(--vp-c-divider);
   border-radius: 10px;
-  padding: 10px 11px;
+  padding: 8px 9px;
   background: color-mix(in srgb, var(--vp-c-bg-soft) 90%, transparent);
   color: var(--vp-c-text-1);
   display: grid;
-  gap: 4px;
+  gap: 3px;
 }
 
 .startpage-release-item strong {
   color: var(--vp-c-brand-1);
-  font-size: 12px;
+  font-size: 11px;
   letter-spacing: 0.04em;
   text-transform: uppercase;
 }
 
 .startpage-release-item span {
-  font-size: 12px;
+  font-size: 11px;
 }
 
 .startpage-release-item a {
   text-decoration: none;
-  font-size: 12px;
+  font-size: 11px;
   color: var(--vp-c-brand-1);
   width: fit-content;
 }
@@ -1971,8 +1981,9 @@ html:not(.dark) .VPDocAside {
 .startpage-use-cases {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 8px;
-  margin: 4px 0 10px;
+  margin: 6px auto 10px;
 }
 
 .startpage-use-cases a {
@@ -2276,5 +2287,11 @@ html.compact-home-cards .startpage-quick-start {
   .h3p-back-apps-fab:hover {
     border-color: var(--vp-c-brand-1);
     color: var(--vp-c-brand-1);
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1280px) {
+  .startpage-release-strip {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }

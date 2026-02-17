@@ -23,7 +23,7 @@ features:
 ---
 
 <div class="startpage-stats-row" aria-label="Docs quick stats">
-  <span>3 apps</span>
+  <span>4 apps</span>
   <span>1 docs hub</span>
   <span class="startpage-updated-date">updated Feb 2026</span>
   <span class="startpage-synced-badge">GitHub synced Feb 2026</span>
@@ -51,6 +51,7 @@ features:
   <a href="/apps/neon-vision-editor/changelog"><strong data-date="2026-02-16">Feb 16, 2026</strong>: Neon Vision Editor v0.4.23 release notes and docs refresh</a>
   <a href="/apps/metric-data/overview"><strong data-date="2026-02-16">Feb 16, 2026</strong>: Metric Data overview now iPad-first with metadata and support docs</a>
   <a href="/apps/release-assistant/features"><strong data-date="2026-02-16">Feb 16, 2026</strong>: Release Assistant workflow, gallery, and FAQ expanded</a>
+  <a href="/apps/x-newsbook/overview"><strong data-date="2026-02-17">Feb 17, 2026</strong>: X-Newsbook added with overview, components, and support docs.</a>
 </div>
 
 <div class="startpage-release-strip" aria-label="App status snapshot">
@@ -76,11 +77,19 @@ features:
     <span>macOS</span>
     <a href="/apps/release-assistant/changelog">Source: changelog</a>
   </article>
+  <article class="startpage-release-item">
+    <strong>Newsbook</strong>
+    <span>Initial docs</span>
+    <span data-date="2026-02-17">Feb 17, 2026</span>
+    <span>macOS, iPadOS, iOS</span>
+    <a href="/apps/x-newsbook/changelog">Source: changelog</a>
+  </article>
 </div>
 
 <div class="startpage-use-cases" aria-label="Choose by use case">
   <a href="/apps/neon-vision-editor/overview">Write + Code</a>
   <a href="/apps/metric-data/overview">Track Metrics</a>
+  <a href="/apps/x-newsbook/overview">Read News</a>
   <a href="/apps/release-assistant/overview">Ship Releases</a>
 </div>
 
@@ -97,10 +106,14 @@ features:
     <img src="/icons/release-assistant.png" alt="Release Assistant icon" width="52" height="52" loading="lazy" decoding="async" />
     <span>Release Assistant</span>
   </a>
+  <a class="startpage-app-item" href="/apps/x-newsbook/overview">
+    <img src="/icons/x-newsbook.png" alt="X-Newsbook icon" width="52" height="52" loading="lazy" decoding="async" />
+    <span>X-Newsbook</span>
+  </a>
 </div>
 
 <div class="startpage-social-proof" aria-label="Trust signals">
-  <span>3 public app docs</span>
+  <span>4 public app docs</span>
   <span>Published on apps-h3p.com</span>
   <span>Neon release published Feb 16, 2026</span>
   <span>GitHub-backed changelogs</span>
@@ -110,7 +123,6 @@ features:
 
 <blockquote class="startpage-testimonial">
   <span class="startpage-testimonial-kicker">from the maker</span>
-  <span class="startpage-testimonial-mark" aria-hidden="true">“</span>
   <p>"Built to stay out of the way so writing, analysis, and release work stay fast and focused."</p>
   <footer>H3P.</footer>
   <a class="startpage-testimonial-cta" href="/apps/neon-vision-editor/overview">Open Neon Vision Editor docs</a>

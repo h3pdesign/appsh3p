@@ -62,12 +62,14 @@ const appQuickLinks = computed<QuickLink[]>(() => {
 const topSwitcherLinks = [
   { key: 'neon-vision-editor', text: 'Neon', link: '/apps/neon-vision-editor/overview' },
   { key: 'metric-data', text: 'Metric', link: '/apps/metric-data/overview' },
+  { key: 'x-newsbook', text: 'Newsbook', link: '/apps/x-newsbook/overview' },
   { key: 'release-assistant', text: 'Release', link: '/apps/release-assistant/overview' }
 ]
 
 const appUpdatedBySlug: Record<string, string> = {
   'neon-vision-editor': 'February 16, 2026',
   'metric-data': 'February 16, 2026',
+  'x-newsbook': 'February 17, 2026',
   'release-assistant': 'February 16, 2026'
 }
 
@@ -259,6 +261,7 @@ function applyAppThemeClass() {
   root.classList.remove('app-theme-neon', 'app-theme-metric', 'app-theme-release')
   if (appSlug.value === 'neon-vision-editor') root.classList.add('app-theme-neon')
   if (appSlug.value === 'metric-data') root.classList.add('app-theme-metric')
+  if (appSlug.value === 'x-newsbook') root.classList.add('app-theme-release')
   if (appSlug.value === 'release-assistant') root.classList.add('app-theme-release')
 }
 
@@ -640,7 +643,7 @@ function ensureHomeWidgets() {
       <section class="home-hero-widget-card">
         <h3>Status</h3>
         <ul>
-          <li><strong>3</strong> apps documented</li>
+          <li><strong>4</strong> apps documented</li>
           <li>Published on <a href="https://apps-h3p.com" target="_blank" rel="noreferrer noopener">apps-h3p.com</a></li>
           <li><a href="https://github.com/h3pdesign/appsh3p" target="_blank" rel="noreferrer noopener">Docs repo</a></li>
         </ul>
@@ -648,6 +651,7 @@ function ensureHomeWidgets() {
         <div class="home-hero-mini-apps" aria-label="App icons">
           <a href="/apps/neon-vision-editor/overview"><img class="mini-icon-neon" src="/icons/neon-vision-editor.png" alt="Neon Vision Editor" width="22" height="22" loading="lazy" decoding="async" /></a>
           <a href="/apps/metric-data/overview"><img src="/icons/metric-data.png" alt="Metric Data" width="22" height="22" loading="lazy" decoding="async" /></a>
+          <a href="/apps/x-newsbook/overview"><img src="/icons/x-newsbook.png" alt="X-Newsbook" width="22" height="22" loading="lazy" decoding="async" /></a>
           <a href="/apps/release-assistant/overview"><img src="/icons/release-assistant.png" alt="Release Assistant" width="22" height="22" loading="lazy" decoding="async" /></a>
         </div>
       </section>
@@ -657,6 +661,7 @@ function ensureHomeWidgets() {
         <div class="home-platform-matrix">
           <div class="home-platform-row"><span class="app">Neon</span><span class="plat">macOS</span><span class="plat">iPadOS</span><span class="plat">iOS</span></div>
           <div class="home-platform-row"><span class="app">Metric</span><span class="plat">macOS</span><span class="plat">iPadOS</span><span class="plat">iOS</span></div>
+          <div class="home-platform-row"><span class="app">Newsbook</span><span class="plat">macOS</span><span class="plat">iPadOS</span><span class="plat">iOS</span></div>
           <div class="home-platform-row"><span class="app">Release</span><span class="plat">macOS</span></div>
         </div>
       </section>

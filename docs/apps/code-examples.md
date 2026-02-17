@@ -50,6 +50,20 @@ scripts/run_selfhosted_notarized_release.sh "$VERSION"
 echo "Done"
 ```
 
+## X-Newsbook (Swift)
+
+```swift
+struct FeedSection: Identifiable {
+    let id: UUID
+    let title: String
+    let stories: [StoryPreview]
+}
+
+func sortedSections(_ sections: [FeedSection]) -> [FeedSection] {
+    sections.sorted { $0.title.localizedCaseInsensitiveCompare($1.title) == .orderedAscending }
+}
+```
+
 ## JSON Metadata Snippet
 
 ```json
@@ -67,4 +81,5 @@ echo "Done"
 - [All Apps](/apps/index)
 - [Neon Vision Editor Overview](/apps/neon-vision-editor/overview)
 - [Metric Data Overview](/apps/metric-data/overview)
+- [X-Newsbook Overview](/apps/x-newsbook/overview)
 - [Release Assistant Overview](/apps/release-assistant/overview)

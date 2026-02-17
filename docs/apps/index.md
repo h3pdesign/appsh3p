@@ -17,12 +17,14 @@
     <span>Neon Vision Editor docs expanded with changelog, known issues, and FAQ.</span>
     <span>Metric Data overview refreshed with iPad-first screenshots and SEO metadata.</span>
     <span>Release Assistant now includes structured install, gallery, and changelog docs.</span>
+    <span>X-Newsbook docs added with overview, components, installation, and FAQ.</span>
   </div>
 </div>
 
 <div class="apps-release-timeline" aria-label="Release timeline">
   <div class="apps-release-item neon"><span class="name">Neon Vision Editor</span><span class="tag">v0.4.23</span><span class="date">2026-02-16</span></div>
   <div class="apps-release-item metric"><span class="name">Metric Data</span><span class="tag">docs-sync</span><span class="date">2026-02-16</span></div>
+  <div class="apps-release-item newsbook"><span class="name">X-Newsbook</span><span class="tag">docs-init</span><span class="date">2026-02-17</span></div>
   <div class="apps-release-item release"><span class="name">Release Assistant</span><span class="tag">docs-sync</span><span class="date">2026-02-16</span></div>
 </div>
 
@@ -74,8 +76,10 @@
         <div class="app-platform-pills">
           <span>macOS</span><span>iPadOS</span><span>iOS</span>
         </div>
-        <span class="app-doc-state app-doc-state-active">Docs: Active</span>
-        <span class="app-updated-badge">updated recently</span>
+        <div class="app-meta-right">
+          <span class="app-doc-state app-doc-state-active">Docs: Active</span>
+          <span class="app-updated-badge">updated recently</span>
+        </div>
       </div>
       <p>Native editor for macOS, iPadOS, and iOS with optional AI assistance and syntax highlighting.</p>
       <div class="app-actions-row">
@@ -93,8 +97,10 @@
         <div class="app-platform-pills">
           <span>macOS</span><span>iPadOS</span><span>iOS</span>
         </div>
-        <span class="app-doc-state app-doc-state-active">Docs: Active</span>
-        <span class="app-updated-badge">updated recently</span>
+        <div class="app-meta-right">
+          <span class="app-doc-state app-doc-state-active">Docs: Active</span>
+          <span class="app-updated-badge">updated recently</span>
+        </div>
       </div>
       <p>Google AdSense analytics app with OAuth, multi-account switching, filters, and Swift Charts dashboards.</p>
       <div class="app-actions-row">
@@ -112,10 +118,32 @@
         <div class="app-platform-pills">
           <span>macOS</span>
         </div>
-        <span class="app-doc-state app-doc-state-active">Docs: Active</span>
-        <span class="app-updated-badge">updated recently</span>
+        <div class="app-meta-right">
+          <span class="app-doc-state app-doc-state-active">Docs: Active</span>
+          <span class="app-updated-badge">updated recently</span>
+        </div>
       </div>
       <p>macOS orchestration tool for guarded release pipelines, workflow checks, and audit-oriented output.</p>
+      <div class="app-actions-row">
+        <span class="chip">GitHub: repository not public yet</span>
+      </div>
+    </div>
+  </article>
+
+  <article class="app-card app-card-newsbook" data-changelog="/apps/x-newsbook/changelog">
+    <img src="/icons/x-newsbook.png" alt="X-Newsbook icon" class="app-icon" />
+    <div class="app-card-content">
+      <h3 class="app-title-row"><a class="app-title-link" href="/apps/x-newsbook/overview">X-Newsbook</a><span class="app-status app-status-private">Private beta</span></h3>
+      <div class="app-card-meta-row">
+        <div class="app-platform-pills">
+          <span>macOS</span><span>iPadOS</span><span>iOS</span>
+        </div>
+        <div class="app-meta-right">
+          <span class="app-doc-state app-doc-state-active">Docs: Active</span>
+          <span class="app-updated-badge">updated recently</span>
+        </div>
+      </div>
+      <p>News-focused reading app with curated feeds, saved items, and reading-first layout across Apple platforms.</p>
       <div class="app-actions-row">
         <span class="chip">GitHub: repository not public yet</span>
       </div>
@@ -212,6 +240,7 @@ See [GitHub Repositories](/apps/github-repositories) for repository links and cu
 
 .apps-release-item.neon .tag { color: #b88bff; border-color: rgba(184,139,255,0.45); }
 .apps-release-item.metric .tag { color: #5bd485; border-color: rgba(91,212,133,0.45); }
+.apps-release-item.newsbook .tag { color: #7ca8ff; border-color: rgba(124,168,255,0.45); }
 .apps-release-item.release .tag { color: #69d7ff; border-color: rgba(105,215,255,0.45); }
 
 .apps-status-legend {
@@ -342,9 +371,18 @@ See [GitHub Repositories](/apps/github-repositories) for repository links and cu
   letter-spacing: 0.06em;
   padding: 5px 9px;
   border-radius: 999px;
-  border: 1px solid var(--vp-c-divider);
-  background: rgba(3, 7, 14, 0.74);
-  color: var(--vp-c-text-1);
+  border: 1px solid rgba(11, 124, 255, 0.35);
+  background: rgba(237, 245, 255, 0.86);
+  color: var(--vp-c-brand-2);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 4px 14px rgba(11, 124, 255, 0.15);
+}
+
+.dark .apps-slide-cta {
+  border-color: rgba(83, 210, 255, 0.35);
+  background: rgba(10, 16, 26, 0.68);
+  color: #9ee6ff;
+  box-shadow: 0 4px 14px rgba(83, 210, 255, 0.16);
 }
 
 .apps-slide-title { font-size: 12px; font-weight: 700; }
@@ -452,6 +490,7 @@ See [GitHub Repositories](/apps/github-repositories) for repository links and cu
 
 .app-card-neon::before { background: linear-gradient(180deg, #8f4dff, #b682ff); }
 .app-card-metric::before { background: linear-gradient(180deg, #39b66b, #8be5aa); }
+.app-card-newsbook::before { background: linear-gradient(180deg, #4f86ff, #93b5ff); }
 .app-card-release::before { background: linear-gradient(180deg, #2dc0ff, #74e0ff); }
 
 .app-card:hover {
@@ -513,13 +552,23 @@ See [GitHub Repositories](/apps/github-repositories) for repository links and cu
 
 .app-card-meta-row {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
   gap: 8px;
   margin-bottom: 8px;
+  flex-wrap: nowrap;
 }
 
 .app-platform-pills { display: flex; flex-wrap: wrap; gap: 6px; }
+
+.app-meta-right {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: flex-start;
+  max-width: 100%;
+}
 
 .app-platform-pills span {
   display: inline-block;
@@ -640,6 +689,5 @@ See [GitHub Repositories](/apps/github-repositories) for repository links and cu
   .apps-top-row { flex-direction: column; align-items: flex-start; }
   .app-card { grid-template-columns: 48px 1fr; padding: 12px 14px 12px 20px; }
   .app-icon { width: 48px; height: 48px; }
-  .app-card-meta-row { flex-direction: column; align-items: flex-start; }
 }
 </style>

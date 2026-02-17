@@ -98,6 +98,15 @@ export default defineConfig({
           { text: 'Metric Data: Known Issues', link: '/apps/metric-data/known-issues' },
           { text: 'Metric Data: FAQ', link: '/apps/metric-data/faq' },
 
+          { text: 'X-Newsbook: Overview', link: '/apps/x-newsbook/overview' },
+          { text: 'X-Newsbook: Components Overview', link: '/apps/x-newsbook/components-overview' },
+          { text: 'X-Newsbook: Installation', link: '/apps/x-newsbook/installation' },
+          { text: 'X-Newsbook: Features', link: '/apps/x-newsbook/features' },
+          { text: 'X-Newsbook: Gallery', link: '/apps/x-newsbook/gallery' },
+          { text: 'X-Newsbook: Changelog', link: '/apps/x-newsbook/changelog' },
+          { text: 'X-Newsbook: Known Issues', link: '/apps/x-newsbook/known-issues' },
+          { text: 'X-Newsbook: FAQ', link: '/apps/x-newsbook/faq' },
+
           { text: 'Release Assistant: Overview', link: '/apps/release-assistant/overview' },
           { text: 'Release Assistant: Components Overview', link: '/apps/release-assistant/components-overview' },
           { text: 'Release Assistant: Installation', link: '/apps/release-assistant/installation' },

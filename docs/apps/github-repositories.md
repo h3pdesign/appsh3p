@@ -10,6 +10,7 @@ This page tracks repository mapping for all documented apps.
 ## Repositories Not Publicly Listed (as of February 16, 2026)
 
 - Metric Data
+- X-Newsbook
 - Release Assistant
 
 ## Publication Checklist
