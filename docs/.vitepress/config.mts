@@ -26,6 +26,9 @@ export default defineConfig({
     ['meta', { name: 'twitter:description', content: 'Clean and modern apps by H3P with guides, changelogs, and platform documentation.' }],
     ['meta', { name: 'twitter:image', content: 'https://apps-h3p.com/media/neon-vision-editor-hero.png' }],
     ['meta', { name: 'twitter:creator', content: '@h3palpha' }],
+    ['link', { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/favicon-32.png' }],
+    ['link', { rel: 'icon', type: 'image/png', href: '/favicon.png' }],
+    ['link', { rel: 'apple-touch-icon', sizes: '180x180', href: '/apple-touch-icon.png' }],
     ['link', { rel: 'canonical', href: 'https://apps-h3p.com/' }]
   ],
   appearance: true,
