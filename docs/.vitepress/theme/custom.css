@@ -1922,6 +1922,7 @@ html:not(.dark) .VPDocAside {
   flex-wrap: wrap;
   gap: 8px;
   margin-top: 10px;
+  justify-content: center;
 }
 
 .startpage-social-proof span {
