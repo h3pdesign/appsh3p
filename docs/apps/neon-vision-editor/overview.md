@@ -13,18 +13,46 @@ head:
 
 # Neon Vision Editor
 
-<div class="overview-media-stack">
-  <img src="/icons/neon-vision-editor.png" alt="Neon Vision Editor icon" class="overview-app-icon" />
-  <img src="/media/neon/editing-mac-frame.png" alt="Neon Vision Editor screenshot" class="overview-app-shot" />
+<p class="overview-last-updated">Last updated: February 17, 2026</p>
+
+<div class="overview-platform-badges overview-reveal" aria-label="supported platforms">
+  <span>macOS</span>
+  <span>iPadOS</span>
+  <span>iOS</span>
 </div>
 
-Neon Vision Editor is a lightweight, modern editor focused on speed, readability, and automatic syntax highlighting.
+<div class="overview-mini-stats overview-reveal" aria-label="app stats">
+  <div><span>latest version</span><strong>v0.4.23</strong></div>
+  <div><span>platforms</span><strong>macOS / iPadOS / iOS</strong></div>
+  <div><span>repo status</span><strong>public</strong></div>
+</div>
+<div class="overview-hero overview-app-neon overview-reveal">
+  <div class="overview-hero-copy">
+    <p>Neon Vision Editor is a lightweight, modern editor focused on speed, readability, and automatic syntax highlighting.</p>
+  </div>
+  <div class="overview-hero-media">
+    <img src="/icons/neon-vision-editor.png" alt="Neon Vision Editor icon" class="overview-app-icon" />
+    <div class="overview-shot-frame">
+      <img src="/media/neon/editing-mac-frame.png" alt="Neon Vision Editor screenshot" class="overview-app-shot" />
+    </div>
+  </div>
+</div>
 
 ## Quick Links
 
 - [App Store](https://apps.apple.com/de/app/neon-vision-editor/id6758950965)
 - [TestFlight](https://testflight.apple.com/join/YWB2fGAP)
 - [GitHub](https://github.com/h3pdesign/Neon-Vision-Editor)
+- [Latest GitHub Release (v0.4.23)](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v0.4.23)
+
+## GitHub Snapshot (as of February 17, 2026)
+
+- Repository stars: 116
+- Forks: 5
+- Open issues: 1
+- Primary language: Swift
+- Default branch: `main`
+- Latest push: February 16, 2026
 
 ## Platform Availability
 

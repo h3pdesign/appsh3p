@@ -13,12 +13,28 @@ head:
 
 # Release Assistant
 
-<div class="overview-media-stack">
-  <img src="/icons/release-assistant.png" alt="Release Assistant icon" class="overview-app-icon" />
-  <img src="/media/release-assistant/main-window.png" alt="Release Assistant screenshot" class="overview-app-shot" />
+<p class="overview-last-updated">Last updated: February 16, 2026</p>
+
+<div class="overview-platform-badges overview-reveal" aria-label="supported platforms">
+  <span>macOS</span>
 </div>
 
-Release Assistant is a macOS orchestration app for release pipelines in Xcode-based repositories that use `scripts/release_all.sh`.
+<div class="overview-mini-stats overview-reveal" aria-label="app stats">
+  <div><span>latest version</span><strong>docs synced 2026-02-16</strong></div>
+  <div><span>platforms</span><strong>macOS</strong></div>
+  <div><span>repo status</span><strong>private</strong></div>
+</div>
+<div class="overview-hero overview-app-release overview-reveal">
+  <div class="overview-hero-copy">
+    <p>Release Assistant is a macOS orchestration app for release pipelines in Xcode-based repositories that use <code>scripts/release_all.sh</code>.</p>
+  </div>
+  <div class="overview-hero-media">
+    <img src="/icons/release-assistant.png" alt="Release Assistant icon" class="overview-app-icon" />
+    <div class="overview-shot-frame">
+      <img src="/media/release-assistant/main-window.png" alt="Release Assistant screenshot" class="overview-app-shot" />
+    </div>
+  </div>
+</div>
 
 ## What It Manages
 

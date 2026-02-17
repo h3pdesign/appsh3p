@@ -2,10 +2,10 @@
 head:
   - - meta
     - property: og:image
-      content: https://apps-h3p.com/media/metrics/dashboard-iphone-frame.png
+      content: https://apps-h3p.com/media/metrics/dashboard-ipad-frame.png
   - - meta
     - name: twitter:image
-      content: https://apps-h3p.com/media/metrics/dashboard-iphone-frame.png
+      content: https://apps-h3p.com/media/metrics/dashboard-ipad-frame.png
   - - script
     - type: application/ld+json
     - '{"@context":"https://schema.org","@graph":[{"@type":"Organization","name":"H3P","url":"https://apps-h3p.com","sameAs":["https://github.com/h3pdesign"]},{"@type":"SoftwareApplication","name":"Metric Data","applicationCategory":"BusinessApplication","operatingSystem":"iOS, macOS","url":"https://apps-h3p.com/apps/metric-data/overview","publisher":{"@type":"Organization","name":"H3P"}}]}'
@@ -13,12 +13,34 @@ head:
 
 # Metric Data
 
-<div class="overview-media-stack">
-  <img src="/icons/metric-data.png" alt="Metric Data icon" class="overview-app-icon" />
-  <img src="/media/metrics/dashboard-iphone-frame.png" alt="Metric Data screenshot" class="overview-app-shot" />
+<p class="overview-last-updated">Last updated: February 16, 2026</p>
+
+<div class="overview-platform-badges overview-reveal" aria-label="supported platforms">
+  <span>macOS</span>
+  <span>iPadOS</span>
+  <span>iOS</span>
 </div>
 
-Metric Data is a SwiftUI analytics app for Google AdSense across iOS and macOS.
+<div class="overview-mini-stats overview-reveal" aria-label="app stats">
+  <div><span>latest version</span><strong>docs synced 2026-02-16</strong></div>
+  <div><span>platforms</span><strong>macOS / iPadOS / iOS</strong></div>
+  <div><span>repo status</span><strong>private</strong></div>
+</div>
+<div class="overview-hero overview-app-metric overview-reveal">
+  <div class="overview-hero-copy">
+    <p>Metric Data is a SwiftUI analytics app for Google AdSense across iOS and macOS.</p>
+  </div>
+  <div class="overview-hero-media">
+    <img src="/icons/metric-data.png" alt="Metric Data icon" class="overview-app-icon" />
+    <div class="overview-shot-frame">
+      <img src="/media/metrics/dashboard-ipad-frame.png" alt="Metric Data iPad screenshot" class="overview-app-shot" />
+    </div>
+  </div>
+</div>
+
+## Quick Links
+
+- [TestFlight](https://testflight.apple.com/join/mMyMAGjE)
 
 ## Core Capability Set
 

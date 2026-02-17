@@ -72,6 +72,7 @@ export default defineConfig({
           { text: 'Metric Data: Installation', link: '/apps/metric-data/installation' },
           { text: 'Metric Data: Features', link: '/apps/metric-data/features' },
           { text: 'Metric Data: Gallery', link: '/apps/metric-data/gallery' },
+          { text: 'Metric Data: Changelog', link: '/apps/metric-data/changelog' },
           { text: 'Metric Data: Known Issues', link: '/apps/metric-data/known-issues' },
           { text: 'Metric Data: FAQ', link: '/apps/metric-data/faq' },
 
@@ -79,6 +80,7 @@ export default defineConfig({
           { text: 'Release Assistant: Installation', link: '/apps/release-assistant/installation' },
           { text: 'Release Assistant: Features', link: '/apps/release-assistant/features' },
           { text: 'Release Assistant: Gallery', link: '/apps/release-assistant/gallery' },
+          { text: 'Release Assistant: Changelog', link: '/apps/release-assistant/changelog' },
           { text: 'Release Assistant: Known Issues', link: '/apps/release-assistant/known-issues' },
           { text: 'Release Assistant: FAQ', link: '/apps/release-assistant/faq' }
         ]
