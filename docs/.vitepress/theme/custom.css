@@ -1406,3 +1406,18 @@ html:not(.dark) .VPDocAside {
     margin-top: 14px;
   }
 }
+
+/* Mobile spacing fix: ensure hero heading is not tight under cards */
+@media (max-width: 768px) {
+  .VPHome .VPHero.has-home-widgets .home-hero-widgets {
+    margin-bottom: 20px;
+  }
+
+  .VPHome .VPHero.has-home-widgets .main {
+    margin-top: 0 !important;
+  }
+
+  .VPHome .VPHero.has-home-widgets .name {
+    margin-top: 20px !important;
+  }
+}
