@@ -10,6 +10,11 @@ head:
 
 # Metric Data FAQ
 
+<div class="app-empty-state app-empty-metric">
+  <img src="/icons/metric-data.png" alt="Metric Data" />
+  <p>FAQ for login, metrics filters, widgets, and account switching.</p>
+</div>
+
 ## Does Metric Data support multiple AdSense accounts?
 
 Yes. Account switching is supported.

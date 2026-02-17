@@ -10,6 +10,11 @@ head:
 
 # Metric Data Known Issues
 
+<div class="app-empty-state app-empty-metric">
+  <img src="/icons/metric-data.png" alt="Metric Data" />
+  <p>Current integration and distribution caveats are listed below.</p>
+</div>
+
 ## Google API Availability Dependency
 
 Metric retrieval depends on AdSense API availability and account permission scope.

@@ -10,6 +10,11 @@ head:
 
 # Release Assistant FAQ
 
+<div class="app-empty-state app-empty-release">
+  <img src="/icons/release-assistant.png" alt="Release Assistant" />
+  <p>FAQ for release modes, workflow requirements, and auth setup.</p>
+</div>
+
 ## Does Release Assistant replace release scripts?
 
 No. It orchestrates and safeguards script-based release pipelines.

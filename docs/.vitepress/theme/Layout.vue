@@ -10,6 +10,9 @@ const APP_STORE_URL = 'https://apps.apple.com/de/app/neon-vision-editor/id675895
 const HERO_FX_PREF_KEY = 'h3p_hero_fx_disabled'
 let revealObserver: IntersectionObserver | null = null
 let scrollHandler: (() => void) | null = null
+let carouselTimer: number | null = null
+let carouselPauseHandlers: Array<() => void> = []
+let parallaxCleanup: (() => void) | null = null
 
 type QuickLink = {
   text: string
@@ -28,6 +31,7 @@ const appSlug = computed(() => {
 })
 
 const isAppsRoute = computed(() => route.path.startsWith('/apps/'))
+const isAppsIndexRoute = computed(() => route.path === '/apps/' || route.path === '/apps/index')
 const isHomeRoute = computed(() => route.path === '/')
 
 const isAppDocPage = computed(() => {
@@ -44,6 +48,16 @@ const appQuickLinks = computed<QuickLink[]>(() => {
     { text: 'Changelog', link: `${base}/changelog`, icon: 'C', tone: 'release' }
   ]
 })
+
+const topSwitcherLinks = [
+  { key: 'neon-vision-editor', text: 'Neon', link: '/apps/neon-vision-editor/overview' },
+  { key: 'metric-data', text: 'Metric', link: '/apps/metric-data/overview' },
+  { key: 'release-assistant', text: 'Release', link: '/apps/release-assistant/overview' }
+]
+
+function activeSwitcher(linkKey: string) {
+  return appSlug.value === linkKey
+}
 
 function applyHeroFxClass() {
   document.documentElement.classList.toggle('no-hero-fx', !heroFxEnabled.value)
@@ -85,6 +99,22 @@ function cleanupAsideProgress() {
   document.documentElement.style.removeProperty('--h3p-aside-progress')
 }
 
+function cleanupCarousel() {
+  if (carouselTimer) {
+    window.clearInterval(carouselTimer)
+    carouselTimer = null
+  }
+  carouselPauseHandlers.forEach((fn) => fn())
+  carouselPauseHandlers = []
+}
+
+function cleanupParallax() {
+  if (parallaxCleanup) {
+    parallaxCleanup()
+    parallaxCleanup = null
+  }
+}
+
 function updateAsideProgress() {
   const docEl = document.documentElement
   const max = docEl.scrollHeight - window.innerHeight
@@ -123,6 +153,14 @@ function setupDocStats() {
   readingMinutes.value = Math.max(1, Math.ceil(words / 220))
 }
 
+function applyAppThemeClass() {
+  const root = document.documentElement
+  root.classList.remove('app-theme-neon', 'app-theme-metric', 'app-theme-release')
+  if (appSlug.value === 'neon-vision-editor') root.classList.add('app-theme-neon')
+  if (appSlug.value === 'metric-data') root.classList.add('app-theme-metric')
+  if (appSlug.value === 'release-assistant') root.classList.add('app-theme-release')
+}
+
 function parseDateFromChangelog(text: string): Date | null {
   const m1 = text.match(/published\s+([A-Za-z]+\s+\d{1,2},\s+\d{4})/i)
   if (m1) {
@@ -140,7 +178,7 @@ function parseDateFromChangelog(text: string): Date | null {
 }
 
 async function setupAppsIndexUpdateBadges() {
-  if (route.path !== '/apps/index') return
+  if (!isAppsIndexRoute.value) return
 
   const cards = Array.from(document.querySelectorAll<HTMLElement>('.app-card[data-changelog]'))
   await Promise.all(
@@ -158,10 +196,112 @@ async function setupAppsIndexUpdateBadges() {
         const days = Math.max(0, Math.floor((Date.now() - d.getTime()) / 86400000))
         badge.textContent = `updated ${days}d ago`
       } catch {
-        // keep fallback badge text
+        // keep fallback
       }
     })
   )
+}
+
+function setupAppsCarousel() {
+  cleanupCarousel()
+  if (!isAppsIndexRoute.value) return
+
+  const viewport = document.querySelector('.apps-carousel-viewport') as HTMLElement | null
+  const firstSlide = document.querySelector('.apps-slide') as HTMLElement | null
+  if (!viewport || !firstSlide) return
+
+  let paused = false
+  const step = () => {
+    if (paused) return
+    const cardWidth = firstSlide.getBoundingClientRect().width + 10
+    const end = viewport.scrollWidth - viewport.clientWidth - 4
+    if (viewport.scrollLeft >= end) {
+      viewport.scrollTo({ left: 0, behavior: 'smooth' })
+      return
+    }
+    viewport.scrollBy({ left: cardWidth, behavior: 'smooth' })
+  }
+
+  carouselTimer = window.setInterval(step, 3400)
+
+  const onEnter = () => { paused = true }
+  const onLeave = () => { paused = false }
+
+  viewport.addEventListener('mouseenter', onEnter)
+  viewport.addEventListener('mouseleave', onLeave)
+  viewport.addEventListener('touchstart', onEnter, { passive: true })
+  viewport.addEventListener('touchend', onLeave, { passive: true })
+
+  carouselPauseHandlers.push(() => viewport.removeEventListener('mouseenter', onEnter))
+  carouselPauseHandlers.push(() => viewport.removeEventListener('mouseleave', onLeave))
+  carouselPauseHandlers.push(() => viewport.removeEventListener('touchstart', onEnter))
+  carouselPauseHandlers.push(() => viewport.removeEventListener('touchend', onLeave))
+}
+
+function setupHeadingTools() {
+  if (!isAppsRoute.value) return
+  const doc = document.querySelector('.VPDoc .vp-doc') as HTMLElement | null
+  if (!doc) return
+
+  const labelFromTitle = (title: string): string | null => {
+    const t = title.toLowerCase()
+    if (t.includes('install') || t.includes('setup')) return 'Setup'
+    if (t.includes('feature') || t.includes('workflow') || t.includes('daily') || t.includes('quick')) return 'Daily use'
+    if (t.includes('known') || t.includes('faq') || t.includes('issue') || t.includes('support') || t.includes('troubleshoot')) return 'Troubleshooting'
+    return null
+  }
+
+  doc.querySelectorAll<HTMLElement>('h2, h3').forEach((h) => {
+    if (!h.id) return
+
+    if (!h.querySelector('.h3p-copy-link')) {
+      const btn = document.createElement('button')
+      btn.type = 'button'
+      btn.className = 'h3p-copy-link'
+      btn.textContent = '↗'
+      btn.title = 'Copy section link'
+      btn.setAttribute('aria-label', 'Copy section link')
+      btn.addEventListener('click', async () => {
+        const url = `${window.location.origin}${window.location.pathname}#${h.id}`
+        try {
+          await navigator.clipboard.writeText(url)
+          btn.textContent = '✓'
+          window.setTimeout(() => { btn.textContent = '↗' }, 1200)
+        } catch {
+          btn.textContent = '!'
+          window.setTimeout(() => { btn.textContent = '↗' }, 1200)
+        }
+      })
+      h.appendChild(btn)
+    }
+
+    if (h.tagName.toLowerCase() === 'h2' && !h.previousElementSibling?.classList.contains('h3p-section-kicker')) {
+      const label = labelFromTitle(h.textContent || '')
+      if (label) {
+        const div = document.createElement('div')
+        div.className = 'h3p-section-kicker'
+        div.textContent = label
+        h.parentNode?.insertBefore(div, h)
+      }
+    }
+  })
+}
+
+function setupImageSkeletons() {
+  const imgs = Array.from(document.querySelectorAll<HTMLImageElement>('.overview-app-shot, .apps-slide img, .home-bottom-image img'))
+  imgs.forEach((img) => {
+    if (img.classList.contains('h3p-img-ready')) return
+    img.classList.add('h3p-img-skeleton')
+    const markReady = () => {
+      img.classList.add('h3p-img-ready')
+    }
+    if (img.complete) {
+      markReady()
+    } else {
+      img.addEventListener('load', markReady, { once: true })
+      img.addEventListener('error', markReady, { once: true })
+    }
+  })
 }
 
 function removeHomeWidgets() {
@@ -172,59 +312,74 @@ function removeHomeWidgets() {
 function ensureHomeWidgets() {
   if (!isHomeRoute.value) {
     removeHomeWidgets()
+    cleanupParallax()
     return
   }
 
   const hero = document.querySelector('.VPHome .VPHero') as HTMLElement | null
   const container = document.querySelector('.VPHome .VPHero .container') as HTMLElement | null
   if (!hero || !container) return
-  if (container.querySelector('.home-hero-widgets')) return
-
-  const widget = document.createElement('aside')
-  widget.className = 'home-hero-widgets'
-  widget.setAttribute('aria-label', 'Startpage highlights')
-  widget.innerHTML = `
-    <section class="home-hero-widget-card">
-      <h3>Status</h3>
-      <ul>
-        <li><strong>3</strong> apps documented</li>
-        <li>Published on <a href="https://apps-h3p.com" target="_blank" rel="noreferrer noopener">apps-h3p.com</a></li>
-        <li><a href="https://github.com/h3pdesign/appsh3p" target="_blank" rel="noreferrer noopener">Docs repo</a></li>
-      </ul>
-      <div class="home-hero-mini-apps" aria-label="App icons">
-        <a href="/apps/neon-vision-editor/overview"><img src="/icons/neon-vision-editor.png" alt="Neon Vision Editor" /></a>
-        <a href="/apps/metric-data/overview"><img src="/icons/metric-data.png" alt="Metric Data" /></a>
-        <a href="/apps/release-assistant/overview"><img src="/icons/release-assistant.png" alt="Release Assistant" /></a>
-      </div>
-    </section>
-
-    <section class="home-hero-widget-card home-platform-matrix-card">
-      <h3>Platform matrix</h3>
-      <div class="home-platform-matrix">
-        <div class="home-platform-row">
-          <span class="app">Neon</span>
-          <span class="plat">macOS</span><span class="plat">iPadOS</span><span class="plat">iOS</span>
+  if (!container.querySelector('.home-hero-widgets')) {
+    const widget = document.createElement('aside')
+    widget.className = 'home-hero-widgets'
+    widget.setAttribute('aria-label', 'Startpage highlights')
+    widget.innerHTML = `
+      <section class="home-hero-widget-card">
+        <h3>Status</h3>
+        <ul>
+          <li><strong>3</strong> apps documented</li>
+          <li>Published on <a href="https://apps-h3p.com" target="_blank" rel="noreferrer noopener">apps-h3p.com</a></li>
+          <li><a href="https://github.com/h3pdesign/appsh3p" target="_blank" rel="noreferrer noopener">Docs repo</a></li>
+        </ul>
+        <div class="home-hero-mini-apps" aria-label="App icons">
+          <a href="/apps/neon-vision-editor/overview"><img src="/icons/neon-vision-editor.png" alt="Neon Vision Editor" /></a>
+          <a href="/apps/metric-data/overview"><img src="/icons/metric-data.png" alt="Metric Data" /></a>
+          <a href="/apps/release-assistant/overview"><img src="/icons/release-assistant.png" alt="Release Assistant" /></a>
         </div>
-        <div class="home-platform-row">
-          <span class="app">Metric</span>
-          <span class="plat">macOS</span><span class="plat">iPadOS</span><span class="plat">iOS</span>
-        </div>
-        <div class="home-platform-row">
-          <span class="app">Release</span>
-          <span class="plat">macOS</span>
-        </div>
-      </div>
-    </section>
+      </section>
 
-    <section class="home-hero-widget-card home-hero-ticker">
-      <h3>Latest release</h3>
-      <p><strong>Neon Vision Editor v0.4.23</strong> published on February 16, 2026.</p>
-      <a href="https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v0.4.23" target="_blank" rel="noreferrer noopener">View GitHub release</a>
-    </section>
-  `
+      <section class="home-hero-widget-card home-platform-matrix-card">
+        <h3>Platform matrix</h3>
+        <div class="home-platform-matrix">
+          <div class="home-platform-row"><span class="app">Neon</span><span class="plat">macOS</span><span class="plat">iPadOS</span><span class="plat">iOS</span></div>
+          <div class="home-platform-row"><span class="app">Metric</span><span class="plat">macOS</span><span class="plat">iPadOS</span><span class="plat">iOS</span></div>
+          <div class="home-platform-row"><span class="app">Release</span><span class="plat">macOS</span></div>
+        </div>
+      </section>
 
-  hero.classList.add('has-home-widgets')
-  container.appendChild(widget)
+      <section class="home-hero-widget-card home-hero-ticker">
+        <h3>Latest release</h3>
+        <p><strong>Neon Vision Editor v0.4.23</strong> published on February 16, 2026.</p>
+        <a href="https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v0.4.23" target="_blank" rel="noreferrer noopener">View GitHub release</a>
+      </section>
+    `
+
+    hero.classList.add('has-home-widgets')
+    container.appendChild(widget)
+  }
+
+  cleanupParallax()
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
+  const widget = container.querySelector('.home-hero-widgets') as HTMLElement | null
+  if (!widget) return
+
+  const onMove = (e: MouseEvent) => {
+    const rect = hero.getBoundingClientRect()
+    const nx = ((e.clientX - rect.left) / rect.width) - 0.5
+    const ny = ((e.clientY - rect.top) / rect.height) - 0.5
+    widget.style.transform = `translate3d(${nx * 6}px, ${ny * 6}px, 0)`
+  }
+  const onLeave = () => {
+    widget.style.transform = 'translate3d(0,0,0)'
+  }
+  hero.addEventListener('mousemove', onMove)
+  hero.addEventListener('mouseleave', onLeave)
+
+  parallaxCleanup = () => {
+    hero.removeEventListener('mousemove', onMove)
+    hero.removeEventListener('mouseleave', onLeave)
+    widget.style.transform = 'translate3d(0,0,0)'
+  }
 }
 
 function linkHomeHeroBadge() {
@@ -250,12 +405,9 @@ function setupOverviewReveal() {
   const container = document.querySelector('.VPDoc .vp-doc')
   if (!container) return
 
-  const targets = Array.from(
-    container.querySelectorAll<HTMLElement>('.overview-reveal, .overview-hero, h2, h3, p, ul')
-  ).filter((el) => !el.closest('pre, code'))
+  const targets = Array.from(container.querySelectorAll<HTMLElement>('.overview-reveal, .overview-hero, h2, h3, p, ul')).filter((el) => !el.closest('pre, code'))
 
   if (targets.length === 0) return
-
   targets.forEach((el, index) => {
     el.classList.add('overview-reveal')
     el.style.setProperty('--overview-reveal-delay', `${Math.min(index * 0.04, 0.3)}s`)
@@ -298,12 +450,16 @@ function triggerRouteFade() {
 async function applyPageEnhancements() {
   await nextTick()
   triggerRouteFade()
+  applyAppThemeClass()
   linkHomeHeroBadge()
   ensureHomeWidgets()
   setupOverviewReveal()
   setupAsideProgress()
   setupDocStats()
+  setupHeadingTools()
+  setupImageSkeletons()
   await setupAppsIndexUpdateBadges()
+  setupAppsCarousel()
 }
 
 onMounted(async () => {
@@ -321,6 +477,8 @@ watch(
 onBeforeUnmount(() => {
   cleanupRevealObserver()
   cleanupAsideProgress()
+  cleanupCarousel()
+  cleanupParallax()
 })
 </script>
 
@@ -340,6 +498,12 @@ onBeforeUnmount(() => {
         <img class="h3p-logo-light" src="/brand/logo-light.png" alt="H3P logo" />
         <img class="h3p-logo-dark" src="/brand/logo-dark.png" alt="H3P logo" />
       </a>
+    </template>
+
+    <template #doc-top>
+      <nav v-if="isAppDocPage" class="h3p-app-switcher" aria-label="App switcher">
+        <a v-for="item in topSwitcherLinks" :key="item.key" :href="item.link" :class="{ active: activeSwitcher(item.key) }">{{ item.text }}</a>
+      </nav>
     </template>
 
     <template #aside-outline-before>
@@ -364,6 +528,21 @@ onBeforeUnmount(() => {
         </div>
       </section>
       <button v-if="isAppsRoute" class="h3p-aside-back-top" type="button" @click="backToTop">Back to top</button>
+    </template>
+
+    <template #not-found>
+      <section class="h3p-not-found">
+        <h1>Page not found</h1>
+        <p>The page may have moved. Jump to a known section:</p>
+        <div class="h3p-not-found-links">
+          <a href="/">Home</a>
+          <a href="/apps/index">All Apps</a>
+          <a href="/apps/neon-vision-editor/overview">Neon Vision Editor</a>
+          <a href="/apps/metric-data/overview">Metric Data</a>
+          <a href="/apps/release-assistant/overview">Release Assistant</a>
+        </div>
+        <p class="hint">Tip: press <kbd>/</kbd> to search documentation.</p>
+      </section>
     </template>
   </Layout>
 </template>

@@ -10,6 +10,11 @@ head:
 
 # Release Assistant Known Issues
 
+<div class="app-empty-state app-empty-release">
+  <img src="/icons/release-assistant.png" alt="Release Assistant" />
+  <p>Known constraints and operational blockers are documented here.</p>
+</div>
+
 ## Missing Workflow Files Blocks Full Release
 
 If required workflow files are absent for selected mode, release is blocked by design.

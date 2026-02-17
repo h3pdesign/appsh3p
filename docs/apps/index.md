@@ -20,8 +20,15 @@
   </div>
 </div>
 
+<div class="apps-release-timeline" aria-label="Release timeline">
+  <div class="apps-release-item neon"><span class="name">Neon Vision Editor</span><span class="tag">v0.4.23</span><span class="date">2026-02-16</span></div>
+  <div class="apps-release-item metric"><span class="name">Metric Data</span><span class="tag">docs-sync</span><span class="date">2026-02-16</span></div>
+  <div class="apps-release-item release"><span class="name">Release Assistant</span><span class="tag">docs-sync</span><span class="date">2026-02-16</span></div>
+</div>
+
 <div class="apps-carousel" aria-label="Featured screenshots carousel">
-  <div class="apps-carousel-track">
+  <div class="apps-carousel-viewport">
+    <div class="apps-carousel-track">
     <a class="apps-slide neon" href="/apps/neon-vision-editor/gallery">
       <img src="/media/neon/editing-mac-frame.png" alt="Neon Vision Editor screenshot" />
       <span>Neon Vision Editor</span>
@@ -34,6 +41,7 @@
       <img src="/media/release-assistant/main-window.png" alt="Release Assistant screenshot" />
       <span>Release Assistant</span>
     </a>
+    </div>
   </div>
 </div>
 
@@ -131,6 +139,42 @@ See [GitHub Repositories](/apps/github-repositories) for repository links and cu
   color: var(--vp-c-text-1);
 }
 
+
+.apps-release-timeline {
+  margin-top: 14px;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 14px;
+  padding: 10px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  display: grid;
+  gap: 8px;
+}
+
+.apps-release-item {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 8px;
+  align-items: center;
+  padding: 7px 8px;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 10px;
+  font-size: 12px;
+}
+
+.apps-release-item .name { font-weight: 700; color: var(--vp-c-text-1); }
+.apps-release-item .tag {
+  font-family: var(--vp-font-family-mono);
+  font-size: 11px;
+  padding: 3px 7px;
+  border-radius: 999px;
+  border: 1px solid var(--vp-c-divider);
+}
+.apps-release-item .date { color: var(--vp-c-text-2); font-size: 11px; }
+
+.apps-release-item.neon .tag { color: #b88bff; border-color: rgba(184,139,255,0.45); }
+.apps-release-item.metric .tag { color: #5bd485; border-color: rgba(91,212,133,0.45); }
+.apps-release-item.release .tag { color: #69d7ff; border-color: rgba(105,215,255,0.45); }
+
 .apps-carousel {
   margin-top: 14px;
   border: 1px solid var(--vp-c-divider);
@@ -140,10 +184,20 @@ See [GitHub Repositories](/apps/github-repositories) for repository links and cu
   overflow: hidden;
 }
 
+.apps-carousel-viewport {
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+
+.apps-carousel-viewport::-webkit-scrollbar {
+  display: none;
+}
+
 .apps-carousel-track {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  display: flex;
   gap: 10px;
+  width: max-content;
 }
 
 .apps-slide {
@@ -154,6 +208,9 @@ See [GitHub Repositories](/apps/github-repositories) for repository links and cu
   border-radius: 10px;
   padding: 8px;
   border: 1px solid transparent;
+  width: min(360px, 70vw);
+  scroll-snap-align: start;
+  flex: 0 0 auto;
 }
 
 .apps-slide img {
@@ -319,9 +376,10 @@ See [GitHub Repositories](/apps/github-repositories) for repository links and cu
 }
 
 @media (max-width: 980px) {
-  .apps-carousel-track { grid-template-columns: 1fr; }
+  .apps-slide { width: min(86vw, 360px); }
   .apps-slide img { height: 160px; }
   .apps-grid { grid-template-columns: 1fr; }
+  .apps-release-item { grid-template-columns: 1fr; gap: 4px; }
 }
 
 @media (max-width: 768px) {

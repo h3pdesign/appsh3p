@@ -10,6 +10,11 @@ head:
 
 # Neon Vision Editor FAQ
 
+<div class="app-empty-state app-empty-neon">
+  <img src="/icons/neon-vision-editor.png" alt="Neon Vision Editor" />
+  <p>Quick answers for Neon Vision Editor beta and stable usage.</p>
+</div>
+
 ## Is Neon Vision Editor available on all Apple platforms?
 
 Yes. It is available for macOS, iPadOS, and iOS.

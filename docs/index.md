@@ -3,7 +3,7 @@ layout: home
 
 hero:
   name: "h3p apps"
-  text: "clean and modern apps"
+  text: "clean and modern development"
   tagline: "A focused portal for product docs, setup guides, and release workflows."
   actions:
     - theme: brand

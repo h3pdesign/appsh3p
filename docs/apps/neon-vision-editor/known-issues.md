@@ -10,6 +10,11 @@ head:
 
 # Neon Vision Editor Known Issues
 
+<div class="app-empty-state app-empty-neon">
+  <img src="/icons/neon-vision-editor.png" alt="Neon Vision Editor" />
+  <p>Known limitations are tracked here and updated with each release.</p>
+</div>
+
 ## UI Layout Differences Across Devices
 
 Some interface elements can wrap differently depending on screen size and dynamic type settings.

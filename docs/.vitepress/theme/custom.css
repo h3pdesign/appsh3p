@@ -1171,3 +1171,216 @@ html:not(.dark) .VPDocAside {
     grid-template-columns: 1fr;
   }
 }
+
+/* Nav spacing: keep FX/logo separated and push GitHub icon to far right */
+@media (min-width: 960px) {
+  .VPNavBar .extra {
+    order: 98;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-right: 0;
+  }
+
+  .VPNavBar .social-links {
+    order: 99;
+    margin-left: 18px;
+    margin-right: 0 !important;
+  }
+
+  .h3p-hero-fx-toggle {
+    margin-right: 14px;
+  }
+}
+
+/* Sticky mini app switcher on app docs */
+.h3p-app-switcher {
+  position: sticky;
+  top: calc(var(--vp-nav-height) + 8px);
+  z-index: 8;
+  display: inline-flex;
+  gap: 8px;
+  margin-bottom: 10px;
+  padding: 6px;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 999px;
+  background: var(--h3p-feature-bg);
+  backdrop-filter: blur(8px);
+}
+
+.h3p-app-switcher a {
+  text-decoration: none;
+  color: var(--vp-c-text-2);
+  font-size: 12px;
+  font-weight: 700;
+  border-radius: 999px;
+  padding: 6px 10px;
+}
+
+.h3p-app-switcher a.active,
+.h3p-app-switcher a:hover {
+  color: var(--vp-c-text-1);
+  background: rgba(83, 210, 255, 0.12);
+}
+
+/* Per-app overview header theme sync */
+.app-theme-neon .vp-doc h1 { color: #c6a4ff; text-shadow: 0 0 18px rgba(143,77,255,0.25); }
+.app-theme-metric .vp-doc h1 { color: #8ee6b0; text-shadow: 0 0 18px rgba(57,182,107,0.22); }
+.app-theme-release .vp-doc h1 { color: #8adfff; text-shadow: 0 0 18px rgba(45,192,255,0.22); }
+
+.app-theme-neon .overview-app-icon { box-shadow: 0 0 0 1px rgba(143,77,255,0.35), 0 0 18px rgba(143,77,255,0.25); }
+.app-theme-metric .overview-app-icon { box-shadow: 0 0 0 1px rgba(57,182,107,0.35), 0 0 18px rgba(57,182,107,0.22); }
+.app-theme-release .overview-app-icon { box-shadow: 0 0 0 1px rgba(45,192,255,0.35), 0 0 18px rgba(45,192,255,0.22); }
+
+.app-theme-neon .overview-platform-badges span { background: rgba(143,77,255,0.14); border-color: rgba(143,77,255,0.34); }
+.app-theme-metric .overview-platform-badges span { background: rgba(57,182,107,0.14); border-color: rgba(57,182,107,0.34); }
+.app-theme-release .overview-platform-badges span { background: rgba(45,192,255,0.14); border-color: rgba(45,192,255,0.34); }
+
+/* Tiny section dividers + copy link button */
+.h3p-section-kicker {
+  margin: 16px 0 6px;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--vp-c-text-2);
+  font-weight: 700;
+}
+
+.vp-doc h2,
+.vp-doc h3 {
+  position: relative;
+}
+
+.h3p-copy-link {
+  margin-left: 8px;
+  border: 1px solid var(--vp-c-divider);
+  background: transparent;
+  color: var(--vp-c-text-2);
+  border-radius: 6px;
+  width: 22px;
+  height: 22px;
+  font-size: 12px;
+  cursor: pointer;
+  vertical-align: middle;
+}
+
+.h3p-copy-link:hover {
+  border-color: var(--vp-c-brand-1);
+  color: var(--vp-c-brand-1);
+}
+
+/* Empty-state illustration blocks for FAQ/Known Issues */
+.app-empty-state {
+  margin: 8px 0 14px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid var(--vp-c-divider);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--h3p-feature-bg);
+}
+
+.app-empty-state img {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  object-fit: contain;
+}
+
+.app-empty-state p {
+  margin: 0;
+  color: var(--vp-c-text-2);
+  font-size: 13px;
+}
+
+.app-empty-neon { box-shadow: inset 3px 0 0 rgba(143,77,255,0.85); }
+.app-empty-metric { box-shadow: inset 3px 0 0 rgba(57,182,107,0.85); }
+.app-empty-release { box-shadow: inset 3px 0 0 rgba(45,192,255,0.85); }
+
+/* Image loading skeleton shimmer */
+.h3p-img-skeleton {
+  background: linear-gradient(90deg, rgba(255,255,255,0.03) 20%, rgba(120,160,255,0.16) 45%, rgba(255,255,255,0.03) 70%);
+  background-size: 200% 100%;
+  animation: h3p-img-shimmer 1.4s linear infinite;
+  filter: saturate(0.8);
+}
+
+.h3p-img-skeleton.h3p-img-ready {
+  animation: none;
+  filter: none;
+}
+
+@keyframes h3p-img-shimmer {
+  from { background-position: 200% 0; }
+  to { background-position: -200% 0; }
+}
+
+/* Polished custom 404 */
+.h3p-not-found {
+  max-width: 760px;
+  margin: 40px auto;
+  padding: 20px;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 16px;
+  background: var(--h3p-feature-bg);
+  text-align: center;
+}
+
+.h3p-not-found h1 {
+  margin: 0 0 10px;
+}
+
+.h3p-not-found-links {
+  margin-top: 12px;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.h3p-not-found-links a {
+  text-decoration: none;
+  padding: 6px 10px;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 999px;
+  color: var(--vp-c-text-1);
+}
+
+.h3p-not-found-links a:hover {
+  border-color: var(--vp-c-brand-1);
+  color: var(--vp-c-brand-1);
+}
+
+.h3p-not-found .hint {
+  margin-top: 10px;
+  color: var(--vp-c-text-2);
+}
+
+@media (max-width: 960px) {
+  .h3p-app-switcher {
+    position: static;
+    margin-bottom: 8px;
+  }
+}
+
+/* Remove three-dot topbar extra flyout menu */
+.VPNavBar .extra {
+  display: none !important;
+}
+
+/* Extra left breathing room before FX toggle */
+@media (min-width: 960px) {
+  .h3p-hero-fx-toggle {
+    margin-left: 16px;
+  }
+}
+
+/* More space between featured image and social footer links */
+.home-bottom-image {
+  margin-bottom: 18px;
+}
+
+.startpage-footer {
+  margin-top: 56px;
+}
