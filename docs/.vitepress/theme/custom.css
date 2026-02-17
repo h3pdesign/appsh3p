@@ -77,6 +77,12 @@ body {
   border-color: var(--vp-c-brand-1);
 }
 
+@media (min-width: 960px) {
+  .VPNavBarSearch {
+    display: none !important;
+  }
+}
+
 /* Sidebar surface */
 .VPSidebar {
   background: var(--h3p-sidebar-bg) !important;
