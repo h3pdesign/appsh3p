@@ -46,6 +46,7 @@ head:
 - [TestFlight](https://testflight.apple.com/join/YWB2fGAP)
 - [GitHub](https://github.com/h3pdesign/Neon-Vision-Editor)
 - [Latest GitHub Release (v0.4.23)](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v0.4.23)
+- [Code Examples](/apps/code-examples)
 
 ## GitHub Snapshot (as of February 17, 2026)
 
@@ -91,8 +92,10 @@ Neon Vision Editor keeps the interface out of your way so writing stays central.
 
 ## Related Pages
 
+- [Components Overview](/apps/neon-vision-editor/components-overview)
 - [Features](/apps/neon-vision-editor/features)
 - [Gallery](/apps/neon-vision-editor/gallery)
 - [Changelog](/apps/neon-vision-editor/changelog)
 - [Known Issues](/apps/neon-vision-editor/known-issues)
 - [FAQ](/apps/neon-vision-editor/faq)
+- [Code Examples](/apps/code-examples)

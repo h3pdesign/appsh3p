@@ -129,6 +129,16 @@
   <span><strong>Internal alpha</strong>: internal testing and active docs</span>
 </div>
 
+## Special Section
+
+See [Code Examples](/apps/code-examples) for syntax-highlighted snippets from Neon Vision Editor, Metric Data, and Release Assistant.
+
+## Components Overview
+
+- [Neon Vision Editor Components Overview](/apps/neon-vision-editor/components-overview)
+- [Metric Data Components Overview](/apps/metric-data/components-overview)
+- [Release Assistant Components Overview](/apps/release-assistant/components-overview)
+
 ## Source Code Repositories
 
 See [GitHub Repositories](/apps/github-repositories) for repository links and current publication status.

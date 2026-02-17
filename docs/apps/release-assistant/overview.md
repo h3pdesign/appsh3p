@@ -59,8 +59,10 @@ Provide safer release execution with workflow-aware guardrails and clear operati
 
 ## Related Pages
 
+- [Components Overview](/apps/release-assistant/components-overview)
 - [Installation](/apps/release-assistant/installation)
 - [Features](/apps/release-assistant/features)
 - [Gallery](/apps/release-assistant/gallery)
 - [Known Issues](/apps/release-assistant/known-issues)
 - [FAQ](/apps/release-assistant/faq)
+- [Code Examples](/apps/code-examples)

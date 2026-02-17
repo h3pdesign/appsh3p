@@ -43,6 +43,7 @@ head:
 ## Quick Links
 
 - [TestFlight](https://testflight.apple.com/join/mMyMAGjE)
+- [Code Examples](/apps/code-examples)
 
 ## Core Capability Set
 
@@ -76,8 +77,10 @@ The details here align with:
 
 ## Related Pages
 
+- [Components Overview](/apps/metric-data/components-overview)
 - [Installation](/apps/metric-data/installation)
 - [Features](/apps/metric-data/features)
 - [Gallery](/apps/metric-data/gallery)
 - [Known Issues](/apps/metric-data/known-issues)
 - [FAQ](/apps/metric-data/faq)
+- [Code Examples](/apps/code-examples)

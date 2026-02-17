@@ -75,10 +75,12 @@ export default defineConfig({
         text: 'Apps',
         items: [
           { text: 'All Apps', link: '/apps/index' },
+          { text: 'Code Examples', link: '/apps/code-examples' },
           { text: 'GitHub Repositories', link: '/apps/github-repositories' },
           { text: 'Docs Changelog', link: '/changelog' },
 
           { text: 'Neon Vision Editor: Overview', link: '/apps/neon-vision-editor/overview' },
+          { text: 'Neon Vision Editor: Components Overview', link: '/apps/neon-vision-editor/components-overview' },
           { text: 'Neon Vision Editor: Launch Story', link: '/apps/neon-vision-editor/launch-story' },
           { text: 'Neon Vision Editor: Installation', link: '/apps/neon-vision-editor/installation' },
           { text: 'Neon Vision Editor: Features', link: '/apps/neon-vision-editor/features' },
@@ -88,6 +90,7 @@ export default defineConfig({
           { text: 'Neon Vision Editor: FAQ', link: '/apps/neon-vision-editor/faq' },
 
           { text: 'Metric Data: Overview', link: '/apps/metric-data/overview' },
+          { text: 'Metric Data: Components Overview', link: '/apps/metric-data/components-overview' },
           { text: 'Metric Data: Installation', link: '/apps/metric-data/installation' },
           { text: 'Metric Data: Features', link: '/apps/metric-data/features' },
           { text: 'Metric Data: Gallery', link: '/apps/metric-data/gallery' },
@@ -96,6 +99,7 @@ export default defineConfig({
           { text: 'Metric Data: FAQ', link: '/apps/metric-data/faq' },
 
           { text: 'Release Assistant: Overview', link: '/apps/release-assistant/overview' },
+          { text: 'Release Assistant: Components Overview', link: '/apps/release-assistant/components-overview' },
           { text: 'Release Assistant: Installation', link: '/apps/release-assistant/installation' },
           { text: 'Release Assistant: Features', link: '/apps/release-assistant/features' },
           { text: 'Release Assistant: Gallery', link: '/apps/release-assistant/gallery' },
