@@ -18,6 +18,8 @@ For private app repositories, add this secret in `h3pdesign/appsh3p`:
 
 If all repos are public, default `GITHUB_TOKEN` is enough.
 
+Without `APP_RELEASES_PAT`, scheduled sync will skip inaccessible repos (private/missing) and continue syncing available public repos.
+
 ### App repo webhook workflow template
 
 Add this workflow to each app repo to notify docs on release publish:

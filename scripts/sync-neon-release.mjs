@@ -8,6 +8,7 @@ const ROOT = path.resolve(__dirname, '..')
 
 const APP_KEY = process.argv[2] || process.env.SYNC_APP || 'neon'
 const REPO_ARG = process.argv[3] || process.env.SYNC_REPO || ''
+const ALLOW_MISSING_RELEASE_REPO = process.env.SYNC_ALLOW_MISSING_REPO === '1'
 
 const APPS = {
   neon: {
@@ -129,6 +130,10 @@ async function fetchLatestRelease() {
   const res = await fetch(api, { headers })
   if (!res.ok) {
     const text = await res.text()
+    if (ALLOW_MISSING_RELEASE_REPO && (res.status == 404 || res.status == 403)) {
+      console.warn(`[${APP_KEY}] Skipping sync for ${repo}: ${res.status}`)
+      return null
+    }
     throw new Error(`Failed to fetch latest release for ${repo}: ${res.status} ${text}`)
   }
 
@@ -159,6 +164,7 @@ async function writeIfChanged(relPath, content) {
 
 async function main() {
   const rel = await fetchLatestRelease()
+  if (!rel) return
   console.log(`[${APP_KEY}] Latest release: ${rel.tag} (${rel.publishedLong}) from ${repo}`)
 
   const changed = []

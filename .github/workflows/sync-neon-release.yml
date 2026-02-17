@@ -90,6 +90,7 @@ jobs:
       - name: Sync all app releases into docs
         env:
           GITHUB_TOKEN: ${{ secrets.APP_RELEASES_PAT || secrets.GITHUB_TOKEN }}
+          SYNC_ALLOW_MISSING_REPO: "1"
         run: |
           node scripts/sync-neon-release.mjs neon
           node scripts/sync-neon-release.mjs metric
