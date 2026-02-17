@@ -668,7 +668,7 @@ function ensureHomeWidgets() {
 
       <section class="home-hero-widget-card home-hero-ticker">
         <h3>Latest release</h3>
-        <p><strong>Neon Vision Editor v0.4.23</strong> published on <span data-date="2026-02-16">February 16, 2026</span>.</p>
+        <p><strong>Neon Vision Editor v0.4.23</strong> published on February 16, 2026.</p>
         <a href="https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v0.4.23" target="_blank" rel="noreferrer noopener">View GitHub release</a>
       </section>
     `
