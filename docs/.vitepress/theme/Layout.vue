@@ -13,6 +13,7 @@ let scrollHandler: (() => void) | null = null
 let carouselTimer: number | null = null
 let carouselPauseHandlers: Array<() => void> = []
 let parallaxCleanup: (() => void) | null = null
+let analyticsCleanup: (() => void) | null = null
 
 type QuickLink = {
   text: string
@@ -155,6 +156,13 @@ function cleanupParallax() {
   if (parallaxCleanup) {
     parallaxCleanup()
     parallaxCleanup = null
+  }
+}
+
+function cleanupAnalytics() {
+  if (analyticsCleanup) {
+    analyticsCleanup()
+    analyticsCleanup = null
   }
 }
 
@@ -504,7 +512,7 @@ function ensureHomeWidgets() {
   if (!hero || !container) return
   if (!container.querySelector('.home-hero-widgets')) {
     const widget = document.createElement('aside')
-    widget.className = 'home-hero-widgets'
+    widget.className = 'home-hero-widgets is-loading'
     widget.setAttribute('aria-label', 'Startpage highlights')
     widget.innerHTML = `
       <section class="home-hero-widget-card">
@@ -540,6 +548,10 @@ function ensureHomeWidgets() {
 
     hero.classList.add('has-home-widgets')
     container.appendChild(widget)
+    requestAnimationFrame(() => {
+      widget.classList.add('is-ready')
+      widget.classList.remove('is-loading')
+    })
   }
 
   cleanupParallax()
@@ -570,6 +582,83 @@ function ensureHomeWidgets() {
     widget.style.transform = 'translate3d(0,0,0)'
     if (focalCard) focalCard.style.transform = 'translate3d(0,0,0)'
   }
+}
+
+function trackEvent(eventName: string, payload: Record<string, string>) {
+  try {
+    const gtag = (window as Window & { gtag?: (...args: unknown[]) => void }).gtag
+    if (typeof gtag === 'function') {
+      gtag('event', eventName, payload)
+    }
+  } catch {
+    // ignore analytics errors
+  }
+
+  try {
+    const dataLayer = (window as Window & { dataLayer?: unknown[] }).dataLayer
+    if (Array.isArray(dataLayer)) {
+      dataLayer.push({ event: eventName, ...payload })
+    }
+  } catch {
+    // ignore analytics errors
+  }
+}
+
+function setupHomeLastUpdated() {
+  if (!isHomeRoute.value) return
+  const output = document.querySelector('.startpage-updated-date') as HTMLElement | null
+  if (!output) return
+  const dateNodes = Array.from(document.querySelectorAll<HTMLElement>('.startpage-weekly-strip strong'))
+  if (dateNodes.length === 0) return
+
+  const dates = dateNodes
+    .map((node) => (node.textContent || '').replace(':', '').trim())
+    .map((raw) => new Date(raw))
+    .filter((d) => !Number.isNaN(d.getTime()))
+  if (dates.length === 0) return
+
+  const latest = new Date(Math.max(...dates.map((d) => d.getTime())))
+  const label = latest.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })
+  output.textContent = `updated ${label}`
+}
+
+function setupHomeAnalytics() {
+  cleanupAnalytics()
+  if (!isHomeRoute.value) return
+
+  const onClick = (evt: Event) => {
+    const target = evt.target as HTMLElement | null
+    if (!target) return
+    const link = target.closest('a') as HTMLAnchorElement | null
+    if (!link) return
+
+    if (link.closest('.VPHero') && link.getAttribute('href') === '/apps/index') {
+      trackEvent('home_primary_cta_click', { location: 'hero', target: '/apps/index' })
+      return
+    }
+
+    if (link.closest('.startpage-start-here')) {
+      trackEvent('home_start_here_click', { href: link.getAttribute('href') || '' })
+      return
+    }
+
+    if (link.closest('.startpage-release-item')) {
+      trackEvent('home_release_strip_click', { href: link.getAttribute('href') || '' })
+      return
+    }
+
+    if (link.closest('.startpage-use-cases')) {
+      trackEvent('home_use_case_click', { href: link.getAttribute('href') || '' })
+      return
+    }
+
+    if (link.closest('.startpage-search-examples')) {
+      trackEvent('home_search_example_click', { href: link.getAttribute('href') || '' })
+    }
+  }
+
+  document.addEventListener('click', onClick)
+  analyticsCleanup = () => document.removeEventListener('click', onClick)
 }
 
 function linkHomeHeroBadge() {
@@ -648,6 +737,8 @@ async function applyPageEnhancements() {
   setupDocStats()
   setupHeadingTools()
   setupImageSkeletons()
+  setupHomeLastUpdated()
+  setupHomeAnalytics()
   await setupAppsIndexUpdateBadges()
   setupAppsCarousel()
 }
@@ -669,6 +760,7 @@ onBeforeUnmount(() => {
   cleanupAsideProgress()
   cleanupCarousel()
   cleanupParallax()
+  cleanupAnalytics()
 })
 </script>
 

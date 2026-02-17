@@ -795,6 +795,17 @@ html:not(.dark) .VPDocAside {
   width: 280px;
 }
 
+.home-hero-widgets.is-loading .home-hero-widget-card {
+  opacity: 0.66;
+  transform: translateY(4px);
+}
+
+.home-hero-widgets.is-ready .home-hero-widget-card {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.28s ease, transform 0.28s ease;
+}
+
 .home-hero-widget-card {
   border: 1px solid var(--vp-c-divider);
   border-radius: 12px;
@@ -1004,6 +1015,12 @@ html.h3p-route-enter .VPContent {
 .h3p-hero-fx-toggle:hover {
   border-color: var(--vp-c-brand-1);
   color: var(--vp-c-brand-1);
+}
+
+@media (max-width: 768px) {
+  .h3p-hero-fx-toggle {
+    display: none;
+  }
 }
 
 /* Startpage subtle animated grid + noise (toggleable) */
@@ -1666,6 +1683,59 @@ html:not(.dark) .VPDocAside {
   font-size: 13px;
 }
 
+.startpage-search-examples {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 8px 0 0;
+}
+
+.startpage-search-examples a {
+  text-decoration: none;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 999px;
+  padding: 4px 9px;
+  font-size: 12px;
+  color: var(--vp-c-text-2);
+  background: color-mix(in srgb, var(--vp-c-bg-soft) 88%, transparent);
+}
+
+.startpage-search-examples a:hover {
+  color: var(--vp-c-brand-1);
+  border-color: var(--vp-c-brand-1);
+}
+
+.startpage-start-here {
+  margin: 12px 0 14px;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 12px;
+  padding: 12px;
+  background: color-mix(in srgb, var(--vp-c-bg-soft) 88%, transparent);
+}
+
+.startpage-start-here h2 {
+  margin: 0 0 6px;
+}
+
+.startpage-start-here p {
+  margin: 0 0 9px;
+  color: var(--vp-c-text-2);
+}
+
+.startpage-start-here a {
+  display: inline-flex;
+  text-decoration: none;
+  border: 1px solid var(--vp-c-brand-1);
+  border-radius: 999px;
+  padding: 6px 10px;
+  color: var(--vp-c-brand-1);
+  font-weight: 700;
+}
+
+.startpage-start-here a:hover {
+  background: rgba(83, 210, 255, 0.12);
+}
+
 .startpage-stats-row span {
   border: 1px solid var(--vp-c-divider);
   border-radius: 999px;
@@ -1711,14 +1781,13 @@ html:not(.dark) .VPDocAside {
 }
 
 .startpage-release-item {
-  text-decoration: none;
   border: 1px solid var(--vp-c-divider);
   border-radius: 10px;
   padding: 10px 11px;
   background: color-mix(in srgb, var(--vp-c-bg-soft) 90%, transparent);
   color: var(--vp-c-text-1);
   display: grid;
-  gap: 3px;
+  gap: 4px;
 }
 
 .startpage-release-item strong {
@@ -1732,8 +1801,42 @@ html:not(.dark) .VPDocAside {
   font-size: 12px;
 }
 
-.startpage-release-item:hover {
+.startpage-release-item a {
+  text-decoration: none;
+  font-size: 12px;
+  color: var(--vp-c-brand-1);
+  width: fit-content;
+}
+
+.startpage-release-item a:hover {
+  text-decoration: underline;
+}
+
+.startpage-release-item:hover,
+.startpage-release-item:focus-within {
   border-color: var(--vp-c-brand-1);
+}
+
+.startpage-use-cases {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 4px 0 10px;
+}
+
+.startpage-use-cases a {
+  text-decoration: none;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 999px;
+  padding: 6px 10px;
+  font-size: 12px;
+  color: var(--vp-c-text-1);
+  background: color-mix(in srgb, var(--vp-c-bg-soft) 88%, transparent);
+}
+
+.startpage-use-cases a:hover {
+  border-color: var(--vp-c-brand-1);
+  color: var(--vp-c-brand-1);
 }
 
 .startpage-app-item:nth-child(1):hover {
@@ -1814,6 +1917,22 @@ html:not(.dark) .VPDocAside {
   color: var(--vp-c-brand-1);
 }
 
+.startpage-social-proof {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.startpage-social-proof span {
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 999px;
+  padding: 5px 9px;
+  font-size: 11px;
+  color: var(--vp-c-text-2);
+  background: color-mix(in srgb, var(--vp-c-bg-soft) 88%, transparent);
+}
+
 .home-deploy-badge {
   margin-top: 8px;
 }
@@ -1836,6 +1955,12 @@ html:not(.dark) .VPDocAside {
 @media (max-width: 768px) {
   .startpage-release-strip {
     grid-template-columns: 1fr;
+  }
+
+  .startpage-search-examples,
+  .startpage-use-cases,
+  .startpage-social-proof {
+    gap: 6px;
   }
 
   .home-hero-widgets {
