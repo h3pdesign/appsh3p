@@ -516,9 +516,9 @@ function ensureHomeWidgets() {
         </ul>
         <div class="home-deploy-badge"><a href="https://github.com/h3pdesign/appsh3p/commit/ae3e8f2" target="_blank" rel="noreferrer noopener">Last deployment: February 17, 2026</a></div>
         <div class="home-hero-mini-apps" aria-label="App icons">
-          <a href="/apps/neon-vision-editor/overview"><img class="mini-icon-neon" src="/icons/neon-vision-editor.png" alt="Neon Vision Editor" /></a>
-          <a href="/apps/metric-data/overview"><img src="/icons/metric-data.png" alt="Metric Data" /></a>
-          <a href="/apps/release-assistant/overview"><img src="/icons/release-assistant.png" alt="Release Assistant" /></a>
+          <a href="/apps/neon-vision-editor/overview"><img class="mini-icon-neon" src="/icons/neon-vision-editor.png" alt="Neon Vision Editor" width="22" height="22" loading="lazy" decoding="async" /></a>
+          <a href="/apps/metric-data/overview"><img src="/icons/metric-data.png" alt="Metric Data" width="22" height="22" loading="lazy" decoding="async" /></a>
+          <a href="/apps/release-assistant/overview"><img src="/icons/release-assistant.png" alt="Release Assistant" width="22" height="22" loading="lazy" decoding="async" /></a>
         </div>
       </section>
 
