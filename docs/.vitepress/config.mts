@@ -104,6 +104,7 @@ export default defineConfig({
       {
         text: 'Support',
         items: [
+          { text: 'Support Home', link: '/support/' },
           { text: 'Support and Feedback', link: '/support/support-and-feedback' }
         ]
       }
