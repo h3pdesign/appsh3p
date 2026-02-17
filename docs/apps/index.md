@@ -38,10 +38,10 @@
 </div>
 
 <div class="apps-grid">
-  <a class="app-card app-card-neon" data-changelog="/apps/neon-vision-editor/changelog" href="/apps/neon-vision-editor/overview">
+  <article class="app-card app-card-neon" data-changelog="/apps/neon-vision-editor/changelog">
     <img src="/icons/neon-vision-editor.png" alt="Neon Vision Editor icon" class="app-icon" />
-    <div>
-      <h3>Neon Vision Editor</h3>
+    <div class="app-card-content">
+      <h3><a class="app-title-link" href="/apps/neon-vision-editor/overview">Neon Vision Editor</a></h3>
       <div class="app-card-meta-row">
         <div class="app-platform-pills">
           <span>macOS</span><span>iPadOS</span><span>iOS</span>
@@ -49,15 +49,17 @@
         <span class="app-updated-badge">updated recently</span>
       </div>
       <p>Native editor for macOS, iPadOS, and iOS with optional AI assistance and syntax highlighting.</p>
-      <span class="chip chip-live">GitHub: public repository</span>
-      <span class="chip"><a href="https://testflight.apple.com/join/YWB2fGAP" target="_blank" rel="noreferrer">TestFlight</a></span>
+      <div class="app-actions-row">
+        <span class="chip chip-live">GitHub: public repository</span>
+        <a class="chip chip-link" href="https://testflight.apple.com/join/YWB2fGAP" target="_blank" rel="noreferrer">TestFlight</a>
+      </div>
     </div>
-  </a>
+  </article>
 
-  <a class="app-card app-card-metric" data-changelog="/apps/metric-data/changelog" href="/apps/metric-data/overview">
+  <article class="app-card app-card-metric" data-changelog="/apps/metric-data/changelog">
     <img src="/icons/metric-data.png" alt="Metric Data icon" class="app-icon" />
-    <div>
-      <h3>Metric Data</h3>
+    <div class="app-card-content">
+      <h3><a class="app-title-link" href="/apps/metric-data/overview">Metric Data</a></h3>
       <div class="app-card-meta-row">
         <div class="app-platform-pills">
           <span>macOS</span><span>iPadOS</span><span>iOS</span>
@@ -65,15 +67,17 @@
         <span class="app-updated-badge">updated recently</span>
       </div>
       <p>Google AdSense analytics app with OAuth, multi-account switching, filters, and Swift Charts dashboards.</p>
-      <span class="chip">GitHub: repository not public yet</span>
-      <span class="chip"><a href="https://testflight.apple.com/join/mMyMAGjE" target="_blank" rel="noreferrer">TestFlight</a></span>
+      <div class="app-actions-row">
+        <span class="chip">GitHub: repository not public yet</span>
+        <a class="chip chip-link" href="https://testflight.apple.com/join/mMyMAGjE" target="_blank" rel="noreferrer">TestFlight</a>
+      </div>
     </div>
-  </a>
+  </article>
 
-  <a class="app-card app-card-release" data-changelog="/apps/release-assistant/changelog" href="/apps/release-assistant/overview">
+  <article class="app-card app-card-release" data-changelog="/apps/release-assistant/changelog">
     <img src="/icons/release-assistant.png" alt="Release Assistant icon" class="app-icon" />
-    <div>
-      <h3>Release Assistant</h3>
+    <div class="app-card-content">
+      <h3><a class="app-title-link" href="/apps/release-assistant/overview">Release Assistant</a></h3>
       <div class="app-card-meta-row">
         <div class="app-platform-pills">
           <span>macOS</span>
@@ -81,9 +85,11 @@
         <span class="app-updated-badge">updated recently</span>
       </div>
       <p>macOS orchestration tool for guarded release pipelines, workflow checks, and audit-oriented output.</p>
-      <span class="chip">GitHub: repository not public yet</span>
+      <div class="app-actions-row">
+        <span class="chip">GitHub: repository not public yet</span>
+      </div>
     </div>
-  </a>
+  </article>
 </div>
 
 ## Source Code Repositories
@@ -99,9 +105,7 @@ See [GitHub Repositories](/apps/github-repositories) for repository links and cu
   flex-wrap: wrap;
 }
 
-.apps-intro {
-  margin: 0;
-}
+.apps-intro { margin: 0; }
 
 .apps-whats-new {
   margin-top: 14px;
@@ -160,15 +164,8 @@ See [GitHub Repositories](/apps/github-repositories) for repository links and cu
   border: 1px solid var(--vp-c-divider);
 }
 
-.apps-slide span {
-  font-size: 12px;
-  font-weight: 700;
-}
-
-.apps-slide:hover {
-  border-color: var(--vp-c-brand-1);
-}
-
+.apps-slide span { font-size: 12px; font-weight: 700; }
+.apps-slide:hover { border-color: var(--vp-c-brand-1); }
 .apps-slide.neon span { color: #b682ff; }
 .apps-slide.metric span { color: #57d17f; }
 .apps-slide.release span { color: #63d4ff; }
@@ -183,28 +180,14 @@ See [GitHub Repositories](/apps/github-repositories) for repository links and cu
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.01));
 }
 
-.apps-avatar {
-  width: 40px;
-  height: 40px;
-  border-radius: 999px;
-  object-fit: cover;
-}
-
-.apps-avatar-meta {
-  display: flex;
-  flex-direction: column;
-  line-height: 1.2;
-}
-
-.apps-avatar-meta span {
-  font-size: 12px;
-  color: var(--vp-c-text-2);
-}
+.apps-avatar { width: 40px; height: 40px; border-radius: 999px; object-fit: cover; }
+.apps-avatar-meta { display: flex; flex-direction: column; line-height: 1.2; }
+.apps-avatar-meta span { font-size: 12px; color: var(--vp-c-text-2); }
 
 .apps-grid {
   display: grid;
-  gap: 16px;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 14px;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   margin-top: 16px;
 }
 
@@ -212,21 +195,21 @@ See [GitHub Repositories](/apps/github-repositories) for repository links and cu
   position: relative;
   border: 1px solid var(--vp-c-divider);
   border-radius: 14px;
-  padding: 16px;
-  display: flex;
-  gap: 14px;
+  padding: 14px 16px 14px 22px;
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  gap: 12px;
   align-items: center;
-  text-decoration: none;
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.01));
-  transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .app-card::before {
   content: '';
   position: absolute;
-  top: 12px;
+  top: 10px;
   left: 8px;
-  bottom: 12px;
+  bottom: 10px;
   width: 3px;
   border-radius: 4px;
   opacity: 0.9;
@@ -237,14 +220,23 @@ See [GitHub Repositories](/apps/github-repositories) for repository links and cu
 .app-card-release::before { background: linear-gradient(180deg, #2dc0ff, #74e0ff); }
 
 .app-card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-2px);
   border-color: var(--vp-c-brand-1);
-  box-shadow: 0 10px 24px rgba(14, 143, 255, 0.15);
+  box-shadow: 0 8px 20px rgba(14, 143, 255, 0.14);
 }
 
-.app-card h3 {
-  margin: 0 0 6px;
+.app-card-content { min-width: 0; }
+
+.app-card h3 { margin: 0 0 6px; }
+
+.app-title-link {
   color: var(--vp-c-text-1);
+  text-decoration: none;
+}
+
+.app-title-link:hover {
+  color: var(--vp-c-brand-1);
+  text-decoration: underline;
 }
 
 .app-card-meta-row {
@@ -255,11 +247,7 @@ See [GitHub Repositories](/apps/github-repositories) for repository links and cu
   margin-bottom: 8px;
 }
 
-.app-platform-pills {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-}
+.app-platform-pills { display: flex; flex-wrap: wrap; gap: 6px; }
 
 .app-platform-pills span {
   display: inline-block;
@@ -282,32 +270,46 @@ See [GitHub Repositories](/apps/github-repositories) for repository links and cu
   color: var(--vp-c-text-2);
   background: rgba(255, 255, 255, 0.02);
   text-transform: lowercase;
+  white-space: nowrap;
 }
 
 .app-card p {
   margin: 0 0 8px;
   color: var(--vp-c-text-2);
   font-size: 14px;
+  line-height: 1.4;
 }
 
 .app-icon {
-  width: 42px;
-  height: 42px;
-  border-radius: 12px;
-  flex: 0 0 auto;
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
   border: none;
   background: transparent;
   object-fit: contain;
 }
 
+.app-actions-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
 .chip {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
   font-size: 12px;
   line-height: 1;
   padding: 6px 8px;
   border-radius: 999px;
   border: 1px solid var(--vp-c-divider);
   color: var(--vp-c-text-2);
+  text-decoration: none;
+}
+
+.chip-link:hover {
+  border-color: var(--vp-c-brand-1);
+  color: var(--vp-c-brand-1);
 }
 
 .chip-live {
@@ -317,24 +319,15 @@ See [GitHub Repositories](/apps/github-repositories) for repository links and cu
 }
 
 @media (max-width: 980px) {
-  .apps-carousel-track {
-    grid-template-columns: 1fr;
-  }
-
-  .apps-slide img {
-    height: 160px;
-  }
+  .apps-carousel-track { grid-template-columns: 1fr; }
+  .apps-slide img { height: 160px; }
+  .apps-grid { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 768px) {
-  .apps-top-row {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .app-card-meta-row {
-    flex-direction: column;
-    align-items: flex-start;
-  }
+  .apps-top-row { flex-direction: column; align-items: flex-start; }
+  .app-card { grid-template-columns: 48px 1fr; padding: 12px 14px 12px 20px; }
+  .app-icon { width: 48px; height: 48px; }
+  .app-card-meta-row { flex-direction: column; align-items: flex-start; }
 }
 </style>
