@@ -1710,97 +1710,121 @@ html:not(.dark) .VPDocAside {
 }
 
 /* Startpage testimonial block */
-.startpage-testimonial {
-  margin: 14px auto 0;
-  text-align: center;
-  width: min(760px, 100%);
-  border: 1px solid var(--vp-c-divider);
-  border-radius: 14px;
-  padding: 12px 14px;
-  background: var(--h3p-feature-bg);
-}
-
-.startpage-testimonial p {
-  margin: 0;
-  text-align: center;
-  color: var(--vp-c-text-1);
-  font-size: 15px;
-}
-
-.startpage-testimonial footer {
-  margin-top: 6px;
-  color: var(--vp-c-text-2);
-  font-size: 12px;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-}
-
-/* Center testimonial attribution label */
-.startpage-testimonial footer {
-  text-align: center;
-}
-
-/* Force-center startpage testimonial card and content */
 .VPHome .vp-doc blockquote.startpage-testimonial {
-  width: min(760px, 100%);
-  max-width: 760px;
-  margin: 18px auto 0 !important;
-  padding: 14px 16px;
+  width: min(900px, 100%);
+  max-width: 900px;
+  margin: 20px auto 0 !important;
+  padding: 0;
   box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  border-left: none;
-}
-
-.VPHome .vp-doc blockquote.startpage-testimonial p,
-.VPHome .vp-doc blockquote.startpage-testimonial footer {
-  width: 100%;
-  text-align: center;
-}
-
-/* Testimonial premium pass: kicker, quote icon, narrower width, glow */
-.VPHome .vp-doc blockquote.startpage-testimonial {
-  width: min(680px, 100%);
-  max-width: 680px;
-  position: relative;
+  border: 1px solid color-mix(in srgb, var(--vp-c-brand-1) 22%, var(--vp-c-divider));
+  border-left: 1px solid color-mix(in srgb, var(--vp-c-brand-1) 22%, var(--vp-c-divider));
+  border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 18px 44px rgba(11, 124, 255, 0.14), 0 10px 30px rgba(83, 210, 255, 0.1);
-}
-
-.VPHome .vp-doc blockquote.startpage-testimonial::before {
-  content: '';
-  position: absolute;
-  inset: -30% -12% auto -12%;
-  height: 120px;
-  background: radial-gradient(circle at 50% 40%, rgba(83, 210, 255, 0.28), rgba(83, 210, 255, 0));
-  pointer-events: none;
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--vp-c-brand-1) 22%, transparent), color-mix(in srgb, var(--vp-c-bg-soft) 84%, transparent) 36%, color-mix(in srgb, var(--vp-c-bg-soft) 95%, transparent)),
+    var(--h3p-feature-bg);
+  box-shadow: 0 20px 44px rgba(11, 124, 255, 0.12), 0 8px 18px rgba(11, 124, 255, 0.08);
+  text-align: center;
 }
 
 .startpage-testimonial-kicker {
-  display: inline-flex;
-  margin-bottom: 8px;
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 26px 18px 18px;
   font-size: 10px;
-  font-weight: 700;
+  font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--vp-c-text-2);
+  letter-spacing: 0.14em;
+  color: color-mix(in srgb, var(--vp-c-brand-3) 72%, var(--vp-c-text-1));
 }
 
-.startpage-testimonial-mark {
-  display: block;
+.VPHome .vp-doc blockquote.startpage-testimonial p {
+  position: relative;
+  width: min(900px, 92%);
+  margin: 0 auto;
+  padding: 2px 24px 0;
+  color: var(--vp-c-text-1);
+  font-size: clamp(24px, 2.2vw, 42px);
+  line-height: 1.26;
+  letter-spacing: 0.01em;
+  font-weight: 500;
+}
+
+.VPHome .vp-doc blockquote.startpage-testimonial p::before,
+.VPHome .vp-doc blockquote.startpage-testimonial p::after {
+  position: absolute;
+  color: color-mix(in srgb, var(--vp-c-brand-1) 60%, transparent);
+  font-size: clamp(34px, 3vw, 52px);
   line-height: 1;
-  font-size: 34px;
+}
+
+.VPHome .vp-doc blockquote.startpage-testimonial p::before {
+  content: '“';
+  left: 0;
+  top: -8px;
+}
+
+.VPHome .vp-doc blockquote.startpage-testimonial p::after {
+  content: '”';
+  right: 0;
+  bottom: -12px;
+}
+
+.VPHome .vp-doc blockquote.startpage-testimonial footer {
+  margin-top: 16px;
+  font-size: 12px;
+  color: var(--vp-c-text-2);
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  text-align: center;
+}
+
+.startpage-testimonial-cta {
+  margin: 18px auto 26px;
+  display: inline-flex;
+  text-decoration: none;
+  border: 1px solid color-mix(in srgb, var(--vp-c-brand-1) 68%, var(--vp-c-divider));
+  border-radius: 999px;
+  padding: 9px 18px;
+  font-size: 13px;
   font-weight: 700;
   color: var(--vp-c-brand-1);
-  margin-bottom: 4px;
+  background: linear-gradient(180deg, color-mix(in srgb, var(--vp-c-bg) 70%, transparent), color-mix(in srgb, var(--vp-c-bg-soft) 90%, transparent));
+  box-shadow: 0 6px 16px rgba(11, 124, 255, 0.12);
 }
 
-.startpage-testimonial p {
-  max-width: 620px;
-  margin: 0 auto;
+.startpage-testimonial-cta:hover {
+  color: #fff;
+  border-color: var(--vp-c-brand-1);
+  background: linear-gradient(180deg, var(--vp-c-brand-1), var(--vp-c-brand-2));
+  box-shadow: 0 10px 22px rgba(11, 124, 255, 0.26);
+}
+
+@media (max-width: 768px) {
+  .VPHome .vp-doc blockquote.startpage-testimonial {
+    border-radius: 16px;
+  }
+
+  .startpage-testimonial-kicker {
+    padding-top: 20px;
+    padding-bottom: 12px;
+  }
+
+  .VPHome .vp-doc blockquote.startpage-testimonial p {
+    font-size: clamp(20px, 6.2vw, 30px);
+    line-height: 1.3;
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .VPHome .vp-doc blockquote.startpage-testimonial p::before {
+    top: -6px;
+  }
+
+  .VPHome .vp-doc blockquote.startpage-testimonial p::after {
+    bottom: -10px;
+  }
 }
 
 
@@ -2030,22 +2054,6 @@ html:not(.dark) .VPDocAside {
 
 .startpage-app-item:nth-child(3):hover {
   box-shadow: 0 0 0 1px rgba(45,192,255,0.42), 0 0 18px rgba(45,192,255,0.26);
-}
-
-.startpage-testimonial-cta {
-  margin-top: 10px;
-  display: inline-flex;
-  text-decoration: none;
-  border: 1px solid var(--vp-c-brand-1);
-  border-radius: 999px;
-  padding: 6px 10px;
-  font-size: 12px;
-  font-weight: 700;
-  color: var(--vp-c-brand-1);
-}
-
-.startpage-testimonial-cta:hover {
-  background: rgba(83, 210, 255, 0.12);
 }
 
 .startpage-quick-start {
@@ -2312,5 +2320,94 @@ html.compact-home-cards .startpage-quick-start {
 @media (min-width: 769px) and (max-width: 1280px) {
   .startpage-release-strip {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Mobile cleanup pass: prevent overlap and reduce visual clutter */
+@media (max-width: 768px) {
+  /* Remove decorative MacBook on small screens to avoid card overlap */
+  .VPHome .VPFeatures a[href="/getting-started/introduction"] .h3p-search-macbook,
+  .VPHome .VPFeatures a[href="/getting-started/introduction"] .h3p-search-macbook-shadow {
+    display: none !important;
+  }
+
+  .VPHome .VPFeatures a[href="/getting-started/introduction"] .box {
+    min-height: 0;
+  }
+
+  /* Slightly calmer hero scale for better first-screen balance */
+  .VPHome .VPHero .name {
+    font-size: clamp(1.95rem, 9.6vw, 2.5rem);
+    line-height: 1.06;
+  }
+
+  .VPHome .VPHero .text {
+    font-size: clamp(2.15rem, 9.8vw, 2.75rem);
+    line-height: 1.06;
+    margin-top: 4px;
+  }
+
+  .VPHome .VPHero .tagline {
+    margin-top: 12px;
+    font-size: 1.88rem;
+    line-height: 1.34;
+  }
+
+  /* Release cards become a horizontal snap row instead of a long vertical stack */
+  .startpage-release-strip {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    padding: 2px 2px 8px;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .startpage-release-item {
+    flex: 0 0 min(86vw, 340px);
+    min-width: min(86vw, 340px);
+    scroll-snap-align: start;
+    padding: 10px 11px;
+    gap: 5px;
+  }
+
+  /* Use-case chips as a horizontal compact row */
+  .startpage-use-cases {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    overflow-x: auto;
+    padding-bottom: 4px;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .startpage-use-cases a {
+    white-space: nowrap;
+    flex: 0 0 auto;
+  }
+
+  /* Footer links: single-column compact list for cleaner rhythm */
+  .startpage-footer-grid {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .startpage-footer-grid a {
+    min-height: 36px;
+    font-size: 0.95rem;
+    padding: 7px 10px;
+  }
+
+  .startpage-trust-row {
+    gap: 6px;
+  }
+
+  .startpage-trust-row a {
+    font-size: 11px;
+    padding: 6px 9px;
+  }
+
+  .startpage-shortcut-legend {
+    font-size: 11px;
+    line-height: 1.35;
   }
 }

@@ -122,7 +122,7 @@ features:
 
 <blockquote class="startpage-testimonial">
   <span class="startpage-testimonial-kicker">from the maker</span>
-  <p>"Built to stay out of the way so writing, analysis, and release work stay fast and focused."</p>
+  <p>Built to stay out of the way so writing, analysis, and release work stay fast and focused.</p>
   <footer>H3P.</footer>
   <a class="startpage-testimonial-cta" href="/apps/neon-vision-editor/overview">Open Neon Vision Editor docs</a>
 </blockquote>
