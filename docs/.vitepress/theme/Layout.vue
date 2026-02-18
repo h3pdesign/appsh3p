@@ -67,7 +67,7 @@ const topSwitcherLinks = [
 ]
 
 const appUpdatedBySlug: Record<string, string> = {
-  'neon-vision-editor': 'February 16, 2026',
+  'neon-vision-editor': 'February 18, 2026',
   'metric-data': 'February 16, 2026',
   'x-newsbook': 'February 17, 2026',
   'release-assistant': 'February 16, 2026'
@@ -668,8 +668,8 @@ function ensureHomeWidgets() {
 
       <section class="home-hero-widget-card home-hero-ticker">
         <h3>Latest release</h3>
-        <p><strong>Neon Vision Editor v0.4.23</strong> published on February 16, 2026.</p>
-        <a href="https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v0.4.23" target="_blank" rel="noreferrer noopener">View GitHub release</a>
+        <p><strong>Neon Vision Editor v0.4.25</strong> published on February 18, 2026.</p>
+        <a href="https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v0.4.25" target="_blank" rel="noreferrer noopener">View GitHub release</a>
       </section>
     `
 

@@ -10,18 +10,17 @@ head:
 
 # Neon Vision Editor Changelog
 
-_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on February 16, 2026._
+_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on February 18, 2026._
 
-## v0.4.23 (published February 16, 2026)
+## v0.4.25 (published February 18, 2026)
 
-Release link: [GitHub Release v0.4.23](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v0.4.23)
+Release link: [GitHub Release v0.4.25](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v0.4.25)
 
-- Added optional support-purchase content to Welcome Tour page 2, including live StoreKit price and direct purchase action.
-- Improved welcome-tour flow by moving Toolbar Map to the final page and updating toolbar shortcut hints for iPad hardware keyboards.
-- Improved Settings editor-layout readability by left-aligning Editor tab section headers, controls, and helper text into a consistent single-column layout.
-- Fixed Settings support UI to remove restore-purchase actions where restore flow is not supported in current settings workflow.
-- Fixed Refresh Price behavior to re-evaluate StoreKit availability before refreshing product metadata.
-- Fixed font chooser instability by removing the macOS `NSFontPanel` bridge path and using the in-settings font list selector flow.
+- Added completion/signpost instrumentation (`os_signpost`) for inline completion, syntax highlighting, and file save paths to support performance profiling.
+- Improved inline code completion responsiveness with trigger-aware scheduling, adaptive debounce, and short-lived context caching.
+- Improved editor rendering performance with coalesced highlight refreshes and reduced heavy-feature work on very large documents.
+- Fixed redundant save writes by skipping unchanged file content saves via content fingerprinting.
+- Fixed macOS syntax-highlighting churn during typing by limiting many highlight passes to local edited regions when safe.
 
 ## v0.4.22 (published February 16, 2026)
 
