@@ -24,7 +24,7 @@ head:
 </div>
 
 <div class="overview-mini-stats overview-reveal" aria-label="app stats">
-  <div><span>latest version</span><strong>v0.4.25</strong></div>
+  <div><span>latest version</span><strong>v0.4.26</strong></div>
   <div><span>platforms</span><strong>macOS / iPadOS / iOS</strong></div>
   <div><span>repo status</span><strong>public</strong></div>
 </div>
@@ -45,7 +45,7 @@ head:
 - [App Store](https://apps.apple.com/de/app/neon-vision-editor/id6758950965)
 - [TestFlight](https://testflight.apple.com/join/YWB2fGAP)
 - [GitHub](https://github.com/h3pdesign/Neon-Vision-Editor)
-- [Latest GitHub Release (v0.4.25)](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v0.4.25)
+- [Latest GitHub Release (v0.4.26)](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v0.4.26)
 - [Code Examples](/apps/code-examples)
 
 ## GitHub Snapshot (as of February 17, 2026)
