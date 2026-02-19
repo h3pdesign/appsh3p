@@ -47,7 +47,7 @@ features:
 <h2 id="whats-new-week">what's new this week</h2>
 
 <div class="startpage-weekly-strip" aria-label="What's new this week">
-  <a href="/apps/neon-vision-editor/changelog"><strong data-date="2026-02-16">Feb 16, 2026</strong>: Neon Vision Editor v0.4.26 release notes and docs refresh</a>
+  <a href="/apps/neon-vision-editor/changelog"><strong data-date="2026-02-16">Feb 16, 2026</strong>: Neon Vision Editor v0.4.27 release notes and docs refresh</a>
   <a href="/apps/metric-data/overview"><strong data-date="2026-02-16">Feb 16, 2026</strong>: Metric Data overview now iPad-first with metadata and support docs</a>
   <a href="/apps/release-assistant/features"><strong data-date="2026-02-16">Feb 16, 2026</strong>: Release Assistant workflow, gallery, and FAQ expanded</a>
   <a href="/apps/x-newsbook/overview"><strong data-date="2026-02-17">Feb 17, 2026</strong>: X-Newsbook added with overview, components, and support docs.</a>

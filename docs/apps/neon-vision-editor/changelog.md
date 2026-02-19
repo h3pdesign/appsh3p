@@ -12,17 +12,14 @@ head:
 
 _Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on February 19, 2026._
 
-## v0.4.26 (published February 19, 2026)
+## v0.4.27 (published February 19, 2026)
 
-Release link: [GitHub Release v0.4.26](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v0.4.26)
+Release link: [GitHub Release v0.4.27](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v0.4.27)
 
-- Added cross-platform bracket helper insertion controls: keyboard accessory helper on iOS/iPadOS and a toggleable helper bar on macOS.
-- Added a dedicated macOS toolbar toggle to show/hide the bracket helper bar on demand.
-- Improved settings/navigation polish across iOS, iPadOS, and macOS, including tab defaults and visual consistency for support-focused flows.
-- Improved release automation reliability for `v0.4.26` by validating and aligning versioning/preflight flow with current project state.
-- Fixed iOS/iPadOS build regression in `NeonSettingsView` (`some View` opaque return inference failure).
-- Fixed post-rebase project-tree compile break on macOS by restoring refresh-generation state wiring and compatible node construction.
-- Fixed toolbar/theme consistency regressions that reintroduced pink-accent styling in iOS settings paths.
+- Added compact iOS/iPadOS toolbar language labels and tightened picker widths to free toolbar space on smaller screens.
+- Improved iPad toolbar density/alignment so more actions are visible before overflow and controls start further left.
+- Improved macOS translucent chrome consistency between toolbar, tab strip, and project-sidebar header surfaces.
+- Fixed macOS project-sidebar top/header transparency bleed when unified translucent toolbar backgrounds are enabled.
 
 ## v0.4.22 (published February 16, 2026)
 
