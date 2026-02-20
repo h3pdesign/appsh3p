@@ -18,19 +18,40 @@ const APPS = {
     timelineClass: 'neon',
     updateOverview(content, rel) {
       let out = content
+      out = out.replace(/(<p class="overview-last-updated">Last updated: <span data-date=")\d{4}-\d{2}-\d{2}(">)[^<]+(<\/span><\/p>)/, `$1${rel.publishedDate}$2${rel.publishedLong}$3`)
       out = out.replace(/(<p class="overview-last-updated">Last updated: )[^<]+(<\/p>)/, `$1${rel.publishedLong}$2`)
       out = out.replace(/(<div><span>latest version<\/span><strong>)v\d+\.\d+\.\d+(<\/strong><\/div>)/, `$1${rel.tag}$2`)
       out = out.replace(/\[Latest GitHub Release \(v\d+\.\d+\.\d+\)\]\(https:\/\/github.com\/h3pdesign\/Neon-Vision-Editor\/releases\/tag\/v\d+\.\d+\.\d+\)/, `[Latest GitHub Release (${rel.tag})](${rel.url})`)
+      out = out.replace(/("softwareVersion":")\d+\.\d+\.\d+(")/, `$1${rel.tag.replace(/^v/, '')}$2`)
       return out
     },
     updateHome(content, rel) {
-      return content.replace(/Neon Vision Editor v\d+\.\d+\.\d+ release notes and docs refresh/g, `Neon Vision Editor ${rel.tag} release notes and docs refresh`)
+      let out = content
+      out = out.replace(
+        /(<a href="\/apps\/neon-vision-editor\/changelog"><strong data-date=")\d{4}-\d{2}-\d{2}(">)[^<]+(<\/strong>: Neon Vision Editor )v\d+\.\d+\.\d+( release notes and docs refresh<\/a>)/,
+        `$1${rel.publishedDate}$2${rel.publishedShort}$3${rel.tag}$4`
+      )
+      out = out.replace(/Neon Vision Editor v\d+\.\d+\.\d+ release notes and docs refresh/g, `Neon Vision Editor ${rel.tag} release notes and docs refresh`)
+      out = out.replace(
+        /(<article class="startpage-release-item release-neon">[\s\S]*?<span>)v\d+\.\d+\.\d+(<\/span>)/,
+        `$1${rel.tag}$2`
+      )
+      out = out.replace(
+        /(<article class="startpage-release-item release-neon">[\s\S]*?<span data-date=")\d{4}-\d{2}-\d{2}(">)[^<]+(<\/span>)/,
+        `$1${rel.publishedDate}$2${rel.publishedShort}$3`
+      )
+      out = out.replace(/https:\/\/github.com\/h3pdesign\/Neon-Vision-Editor\/releases\/tag\/v\d+\.\d+\.\d+/, rel.url)
+      out = out.replace(/(<span>Neon release published )[^<]+(<\/span>)/, `$1${rel.publishedShort}$2`)
+      out = out.replace(/(<span class="startpage-updated-date">)updated [^<]+(<\/span>)/, `$1updated ${rel.publishedShort}$2`)
+      out = out.replace(/(<span class="startpage-synced-badge">)GitHub synced [^<]+(<\/span>)/, `$1GitHub synced ${rel.publishedShort}$2`)
+      return out
     },
     updateLayout(content, rel) {
       let out = content
       out = out.replace(/('neon-vision-editor': ')[^']+(',)/, `$1${rel.publishedLong}$2`)
       out = out.replace(/(<p><strong>Neon Vision Editor )v\d+\.\d+\.\d+(<\/strong> published on )[^.]+(\.<\/p>)/, `$1${rel.tag}$2${rel.publishedLong}$3`)
       out = out.replace(/https:\/\/github.com\/h3pdesign\/Neon-Vision-Editor\/releases\/tag\/v\d+\.\d+\.\d+/, rel.url)
+      out = out.replace(/(<span data-date=")\d{4}-\d{2}-\d{2}(">)\w+ \d{1,2}, \d{4}(<\/span><\/a><\/div>)/, `$1${rel.publishedDate}$2${rel.publishedLong}$3`)
       return out
     },
     updateChangelog(content, rel) {
@@ -110,6 +131,10 @@ function formatIsoDate(iso) {
   return new Date(iso).toISOString().slice(0, 10)
 }
 
+function formatShortDate(iso) {
+  return new Date(iso).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric', timeZone: 'UTC' })
+}
+
 function extractReleaseBullets(body) {
   const lines = (body || '').split(/\r?\n/)
   const bullets = lines
@@ -143,6 +168,7 @@ async function fetchLatestRelease() {
     url: json.html_url,
     publishedIso: json.published_at,
     publishedLong: formatLongDate(json.published_at),
+    publishedShort: formatShortDate(json.published_at),
     publishedDate: formatIsoDate(json.published_at),
     bullets: extractReleaseBullets(json.body || '')
   }

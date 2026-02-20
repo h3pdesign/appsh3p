@@ -673,7 +673,7 @@ function ensureHomeWidgets() {
           <li>Published on <a href="https://apps-h3p.com" target="_blank" rel="noreferrer noopener">apps-h3p.com</a></li>
           <li><a href="https://github.com/h3pdesign/appsh3p" target="_blank" rel="noreferrer noopener">Docs repo</a></li>
         </ul>
-        <div class="home-deploy-badge"><a href="https://github.com/h3pdesign/appsh3p/commit/ae3e8f2" target="_blank" rel="noreferrer noopener">Last deployment: <span data-date="2026-02-17">February 17, 2026</span></a></div>
+        <div class="home-deploy-badge"><a href="https://github.com/h3pdesign/appsh3p/commit/ae3e8f2" target="_blank" rel="noreferrer noopener">Last deployment: <span data-date="2026-02-19">February 19, 2026</span></a></div>
         <div class="home-hero-mini-apps" aria-label="App icons">
           <a href="/apps/neon-vision-editor/overview"><img class="mini-icon-neon" src="/icons/neon-vision-editor.png" alt="Neon Vision Editor" width="22" height="22" loading="lazy" decoding="async" /></a>
           <a href="/apps/metric-data/overview"><img src="/icons/metric-data.png" alt="Metric Data" width="22" height="22" loading="lazy" decoding="async" /></a>
@@ -761,6 +761,7 @@ function setupHomeLastUpdated() {
   if (!isHomeRoute.value) return
   const output = document.querySelector('.startpage-updated-date') as HTMLElement | null
   const syncOutput = document.querySelector('.startpage-synced-badge') as HTMLElement | null
+  const deployDate = document.querySelector('.home-deploy-badge [data-date]') as HTMLElement | null
   if (!output) return
   const dateNodes = Array.from(document.querySelectorAll<HTMLElement>('.startpage-weekly-strip strong[data-date]'))
   if (dateNodes.length === 0) return
@@ -772,9 +773,14 @@ function setupHomeLastUpdated() {
   if (dates.length === 0) return
 
   const latest = new Date(Math.max(...dates.map((d) => d.getTime())))
+  const iso = latest.toISOString().slice(0, 10)
   const label = latest.toLocaleDateString(undefined, { month: 'short', day: 'numeric', year: 'numeric' })
   output.textContent = `updated ${label}`
   if (syncOutput) syncOutput.textContent = `GitHub synced ${label}`
+  if (deployDate) {
+    deployDate.dataset.date = iso
+    deployDate.textContent = latest.toLocaleDateString(undefined, { month: 'long', day: 'numeric', year: 'numeric' })
+  }
 }
 
 function setupHomeWhatsNewDelta() {
@@ -1199,12 +1205,14 @@ onBeforeUnmount(() => {
     </template>
 
     <template #doc-top>
-      <nav v-if="isAppDocPage" class="h3p-app-switcher" aria-label="App switcher">
-        <a v-for="item in topSwitcherLinks" :key="item.key" :href="item.link" :class="{ active: activeSwitcher(item.key) }">{{ item.text }}</a>
-      </nav>
-      <nav v-if="appDocTopLinks.length > 0" class="h3p-doc-jump-rail" aria-label="Quick jump">
-        <a v-for="item in appDocTopLinks" :key="item.link" :href="item.link">{{ item.text }}</a>
-      </nav>
+      <div v-if="isAppDocPage || appDocTopLinks.length > 0" class="h3p-doc-top-navs">
+        <nav v-if="isAppDocPage" class="h3p-app-switcher" aria-label="App switcher">
+          <a v-for="item in topSwitcherLinks" :key="item.key" :href="item.link" :class="{ active: activeSwitcher(item.key) }">{{ item.text }}</a>
+        </nav>
+        <nav v-if="appDocTopLinks.length > 0" class="h3p-doc-jump-rail" aria-label="Quick jump">
+          <a v-for="item in appDocTopLinks" :key="item.link" :href="item.link">{{ item.text }}</a>
+        </nav>
+      </div>
       <p v-if="isAppDocPage" class="h3p-doc-last-updated">Last updated: {{ currentAppUpdatedOn }}</p>
     </template>
 

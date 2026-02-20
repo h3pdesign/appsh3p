@@ -354,6 +354,11 @@ body {
 
 /* Fix broken sidebar title divider alignment */
 @media (min-width: 960px) {
+  .VPNavBar .content,
+  .VPNavBar .content-body {
+    overflow: visible !important;
+  }
+
   .VPNavBar,
   .VPNavBar .content,
   .VPNavBar .content-body,
@@ -365,6 +370,7 @@ body {
 
   .VPNavBarTitle.has-sidebar {
     border-right: 1px solid var(--h3p-sidebar-border) !important;
+    z-index: 1;
   }
 
   .VPNavBarTitle.has-sidebar .title {
@@ -375,6 +381,23 @@ body {
     justify-content: flex-start !important;
     padding-left: 16px !important;
     padding-right: 10px !important;
+  }
+
+  .VPNavBarMenu {
+    position: relative;
+    z-index: 2;
+    margin-left: 0 !important;
+    padding-left: 24px !important;
+    overflow: visible !important;
+    mask-image: none !important;
+    -webkit-mask-image: none !important;
+  }
+
+  .VPNavBarMenu .VPNavBarMenuLink:first-child,
+  .VPNavBarMenu .VPNavBarMenuGroup:first-child {
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+    transform: none !important;
   }
 
   .VPSidebar {
@@ -1446,19 +1469,29 @@ html:not(.dark) .VPDocAside {
   }
 }
 
+/* Top app-doc nav rows */
+.h3p-doc-top-navs {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 0 auto 10px;
+  width: 100%;
+}
+
 /* Sticky mini app switcher on app docs */
 .h3p-app-switcher {
-  position: sticky;
-  top: calc(var(--vp-nav-height) + 8px);
-  z-index: 8;
-  display: inline-flex;
+  position: static;
+  display: flex;
   gap: 8px;
-  margin-bottom: 10px;
+  margin: 0;
   padding: 6px;
   border: 1px solid var(--vp-c-divider);
   border-radius: 999px;
   background: var(--h3p-feature-bg);
   backdrop-filter: blur(8px);
+  width: fit-content;
 }
 
 .h3p-app-switcher a {
@@ -1611,9 +1644,25 @@ html:not(.dark) .VPDocAside {
 }
 
 @media (max-width: 960px) {
+  .h3p-doc-top-navs {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
   .h3p-app-switcher {
     position: static;
     margin-bottom: 8px;
+  }
+
+  .h3p-doc-jump-rail {
+    flex-wrap: wrap;
+    margin-bottom: 8px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .h3p-doc-top-navs {
+    flex-wrap: nowrap;
   }
 }
 
@@ -1677,13 +1726,12 @@ html:not(.dark) .VPDocAside {
 
 /* Quick jump rail + per-page freshness */
 .h3p-doc-jump-rail {
-  position: sticky;
-  top: calc(var(--vp-nav-height) + 54px);
-  z-index: 7;
-  display: inline-flex;
+  position: static;
+  display: flex;
   gap: 8px;
-  flex-wrap: wrap;
-  margin-bottom: 8px;
+  flex-wrap: nowrap;
+  margin: 0;
+  width: fit-content;
 }
 
 .h3p-doc-jump-rail a {
@@ -1706,6 +1754,7 @@ html:not(.dark) .VPDocAside {
   margin: 0 0 12px;
   font-size: 12px;
   color: var(--vp-c-text-2);
+  text-align: left;
 }
 
 /* Related pages cards at bottom of app docs */
@@ -2804,5 +2853,94 @@ html.compact-home-cards .startpage-quick-start {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+/* Footer links polish: narrower, centered, cleaner card layout */
+.startpage-footer-collapsible {
+  width: min(1240px, 96%);
+  margin-left: auto;
+  margin-right: auto;
+  padding: 12px 14px;
+  border-radius: 16px;
+}
+
+.startpage-footer-collapsible summary {
+  margin-bottom: 6px;
+}
+
+.startpage-footer-panel .startpage-footer-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 10px 12px;
+  justify-items: center;
+}
+
+.startpage-footer-grid a {
+  min-height: 42px;
+  padding: 8px 12px;
+  font-size: 0.95rem;
+  font-weight: 650;
+  justify-self: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  background: linear-gradient(180deg, color-mix(in srgb, var(--vp-c-bg-soft) 94%, transparent), color-mix(in srgb, var(--vp-c-bg-soft) 84%, transparent));
+  box-shadow: 0 6px 14px rgba(16, 58, 120, 0.08);
+}
+
+.startpage-footer-grid a:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 20px rgba(16, 58, 120, 0.13);
+}
+
+.startpage-footer-tabs {
+  justify-content: center;
+}
+
+.startpage-trust-row {
+  justify-content: center;
+  text-align: center;
+}
+
+.startpage-shortcut-legend,
+.startpage-footer p {
+  text-align: center;
+}
+
+@media (max-width: 1440px) {
+  .startpage-footer-panel .startpage-footer-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 1180px) {
+  .startpage-footer-panel .startpage-footer-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 920px) {
+  .startpage-footer-panel .startpage-footer-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .startpage-footer-collapsible {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 12px;
+  }
+
+  .startpage-footer-panel .startpage-footer-grid {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .startpage-footer-grid a {
+    width: 100%;
+    min-height: 38px;
+    font-size: 0.95rem;
   }
 }
