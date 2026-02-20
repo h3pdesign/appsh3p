@@ -843,8 +843,7 @@ function setupHomeFeaturedPreviewToggle() {
     btn.onclick = () => setTheme(btn.dataset.previewTheme || 'dark')
   })
 
-  const prefersDark = document.documentElement.classList.contains('dark')
-  setTheme(prefersDark ? 'dark' : 'light')
+  setTheme('dark')
 }
 
 function setupHomeFooterTabs() {
@@ -1133,7 +1132,6 @@ onBeforeUnmount(() => {
         Search <kbd>/</kbd>
       </a>
       <button
-        v-if="isHomeRoute"
         class="h3p-compact-toggle"
         type="button"
         :aria-pressed="compactCardsEnabled"
@@ -1142,7 +1140,6 @@ onBeforeUnmount(() => {
         Compact {{ compactCardsEnabled ? 'On' : 'Off' }}
       </button>
       <button
-        v-if="isHomeRoute"
         class="h3p-hero-fx-toggle"
         type="button"
         :aria-pressed="heroFxEnabled"
@@ -1151,7 +1148,6 @@ onBeforeUnmount(() => {
         FX {{ heroFxEnabled ? 'On' : 'Off' }}
       </button>
       <button
-        v-if="isHomeRoute"
         class="h3p-lang-selector"
         type="button"
         aria-label="Language selector"
