@@ -9,6 +9,7 @@ const route = useRoute()
 const APP_STORE_URL = 'https://apps.apple.com/de/app/neon-vision-editor/id6758950965'
 const HERO_FX_PREF_KEY = 'h3p_hero_fx_disabled'
 const COMPACT_CARDS_PREF_KEY = 'h3p_compact_cards'
+const READING_MODE_PREF_KEY = 'h3p_reading_mode'
 let revealObserver: IntersectionObserver | null = null
 let scrollHandler: (() => void) | null = null
 let carouselTimer: number | null = null
@@ -33,6 +34,7 @@ const headingCount = ref(0)
 const readingMinutes = ref(1)
 const heroFxEnabled = ref(true)
 const compactCardsEnabled = ref(false)
+const readingModeEnabled = ref(false)
 
 const appSlug = computed(() => {
   const match = route.path.match(/^\/apps\/([^/]+)/)
@@ -140,6 +142,11 @@ function applyHeroFxClass() {
   document.documentElement.classList.toggle('no-hero-fx', !heroFxEnabled.value)
 }
 
+function applyReadingModeClass() {
+  const enabled = readingModeEnabled.value && !isHomeRoute.value
+  document.documentElement.classList.toggle('h3p-reading-mode', enabled)
+}
+
 function loadHeroFxPreference() {
   try {
     const stored = localStorage.getItem(HERO_FX_PREF_KEY)
@@ -157,6 +164,15 @@ function loadCompactCardsPreference() {
     compactCardsEnabled.value = false
   }
   applyCompactCardsClass()
+}
+
+function loadReadingModePreference() {
+  try {
+    readingModeEnabled.value = localStorage.getItem(READING_MODE_PREF_KEY) === '1'
+  } catch {
+    readingModeEnabled.value = false
+  }
+  applyReadingModeClass()
 }
 
 function toggleHeroFx() {
@@ -177,6 +193,16 @@ function toggleCompactCards() {
     // ignore storage errors
   }
   applyCompactCardsClass()
+}
+
+function toggleReadingMode() {
+  readingModeEnabled.value = !readingModeEnabled.value
+  try {
+    localStorage.setItem(READING_MODE_PREF_KEY, readingModeEnabled.value ? '1' : '0')
+  } catch {
+    // ignore storage errors
+  }
+  applyReadingModeClass()
 }
 
 function cleanupRevealObserver() {
@@ -1106,12 +1132,14 @@ async function applyPageEnhancements() {
 onMounted(async () => {
   loadHeroFxPreference()
   loadCompactCardsPreference()
+  loadReadingModePreference()
   await applyPageEnhancements()
 })
 
 watch(
   () => route.path,
   async () => {
+    applyReadingModeClass()
     await applyPageEnhancements()
   }
 )
@@ -1154,6 +1182,15 @@ onBeforeUnmount(() => {
         title="Language: English"
       >
         EN
+      </button>
+      <button
+        v-if="!isHomeRoute"
+        class="h3p-reading-toggle"
+        type="button"
+        :aria-pressed="readingModeEnabled"
+        @click="toggleReadingMode"
+      >
+        Read {{ readingModeEnabled ? 'On' : 'Off' }}
       </button>
       <a class="h3p-top-logo" href="/" aria-label="h3p apps home">
         <img class="h3p-logo-light" src="/brand/logo-light.png" alt="H3P logo" />

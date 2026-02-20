@@ -17,6 +17,11 @@
   --h3p-sidebar-border: #c4d8fb;
   --h3p-feature-bg: linear-gradient(180deg, rgba(11, 124, 255, 0.12), rgba(11, 124, 255, 0.04));
   --h3p-page-bg: radial-gradient(900px 500px at 85% -20%, rgba(83, 210, 255, 0.14), transparent 60%), radial-gradient(700px 400px at 15% -10%, rgba(90, 126, 255, 0.16), transparent 55%), var(--vp-c-bg);
+  --h3p-radius-pill: 999px;
+  --h3p-radius-card: 12px;
+  --h3p-space-1: 6px;
+  --h3p-space-2: 10px;
+  --h3p-space-3: 14px;
 
   /* Compact desktop sidebar width */
   --vp-sidebar-width: clamp(170px, 13vw, 190px);
@@ -71,14 +76,14 @@ body {
 .h3p-nav-search-hint {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: var(--h3p-space-1);
   text-decoration: none;
   border: 1px solid var(--vp-c-divider);
-  border-radius: 999px;
+  border-radius: var(--h3p-radius-pill);
   min-height: 30px;
-  padding: 0 10px;
+  padding: 0 var(--h3p-space-2);
   margin-left: 12px;
-  margin-right: 10px;
+  margin-right: var(--h3p-space-2);
   color: var(--vp-c-text-2);
   font-size: 12px;
   font-weight: 700;
@@ -1148,10 +1153,10 @@ html.h3p-route-enter .VPContent {
 
 /* Startpage hero FX toggle */
 .h3p-hero-fx-toggle {
-  margin-right: 10px;
+  margin-right: var(--h3p-space-2);
   min-height: 30px;
-  padding: 0 10px;
-  border-radius: 999px;
+  padding: 0 var(--h3p-space-2);
+  border-radius: var(--h3p-radius-pill);
   border: 1px solid var(--vp-c-divider);
   background: var(--h3p-feature-bg);
   color: var(--vp-c-text-1);
@@ -1170,7 +1175,7 @@ html.h3p-route-enter .VPContent {
   min-height: 30px;
   min-width: 48px;
   padding: 0 12px;
-  border-radius: 999px;
+  border-radius: var(--h3p-radius-pill);
   border: 1px solid var(--vp-c-divider);
   background: var(--h3p-feature-bg);
   color: var(--vp-c-text-1);
@@ -1180,10 +1185,10 @@ html.h3p-route-enter .VPContent {
 }
 
 .h3p-compact-toggle {
-  margin-right: 10px;
+  margin-right: var(--h3p-space-2);
   min-height: 30px;
-  padding: 0 10px;
-  border-radius: 999px;
+  padding: 0 var(--h3p-space-2);
+  border-radius: var(--h3p-radius-pill);
   border: 1px solid var(--vp-c-divider);
   background: var(--h3p-feature-bg);
   color: var(--vp-c-text-1);
@@ -1197,12 +1202,57 @@ html.h3p-route-enter .VPContent {
   color: var(--vp-c-brand-1);
 }
 
+.h3p-reading-toggle {
+  margin-right: var(--h3p-space-2);
+  min-height: 30px;
+  padding: 0 var(--h3p-space-2);
+  border-radius: var(--h3p-radius-pill);
+  border: 1px solid var(--vp-c-divider);
+  background: var(--h3p-feature-bg);
+  color: var(--vp-c-text-1);
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.h3p-reading-toggle:hover {
+  border-color: var(--vp-c-brand-1);
+  color: var(--vp-c-brand-1);
+}
+
 @media (max-width: 768px) {
   .h3p-compact-toggle,
   .h3p-hero-fx-toggle,
-  .h3p-lang-selector {
+  .h3p-lang-selector,
+  .h3p-reading-toggle {
     display: none;
   }
+}
+
+/* Reading mode: calmer docs surface and improved reading width */
+html.h3p-reading-mode body {
+  background: var(--vp-c-bg);
+}
+
+html.h3p-reading-mode .VPDoc .container,
+html.h3p-reading-mode .VPDoc .content,
+html.h3p-reading-mode .vp-doc {
+  max-width: 920px;
+}
+
+html.h3p-reading-mode .VPDoc .vp-doc {
+  line-height: 1.72;
+}
+
+html.h3p-reading-mode .VPDoc .vp-doc p,
+html.h3p-reading-mode .VPDoc .vp-doc li {
+  color: var(--vp-c-text-1);
+}
+
+html.h3p-reading-mode .VPDocAside,
+html.h3p-reading-mode .h3p-doc-jump-rail,
+html.h3p-reading-mode .h3p-app-switcher {
+  opacity: 0.72;
 }
 
 /* Startpage subtle animated grid + noise (toggleable) */
