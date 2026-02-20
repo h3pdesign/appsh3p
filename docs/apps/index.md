@@ -67,8 +67,17 @@
   <div class="apps-carousel-drag-hint" aria-hidden="true">drag to browse</div>
 </div>
 
+<div class="apps-filter-bar" aria-label="Filter apps">
+  <button class="is-active" type="button" data-app-filter="all">All</button>
+  <button type="button" data-app-filter="status:public">Public</button>
+  <button type="button" data-app-filter="status:private">Private</button>
+  <button type="button" data-app-filter="platform:macOS">macOS</button>
+  <button type="button" data-app-filter="platform:iPadOS">iPadOS</button>
+  <button type="button" data-app-filter="platform:iOS">iOS</button>
+</div>
+
 <div class="apps-grid">
-  <article class="app-card app-card-neon" data-changelog="/apps/neon-vision-editor/changelog">
+  <article class="app-card app-card-neon" data-changelog="/apps/neon-vision-editor/changelog" data-status="public" data-platforms="macos,ipados,ios">
     <img src="/icons/neon-vision-editor.png" alt="Neon Vision Editor icon" class="app-icon" />
     <div class="app-card-content">
       <h3 class="app-title-row"><a class="app-title-link" href="/apps/neon-vision-editor/overview">Neon Vision Editor</a><span class="app-status app-status-beta">Public beta</span></h3>
@@ -89,7 +98,7 @@
     </div>
   </article>
 
-  <article class="app-card app-card-metric" data-changelog="/apps/metric-data/changelog">
+  <article class="app-card app-card-metric" data-changelog="/apps/metric-data/changelog" data-status="private" data-platforms="macos,ipados,ios">
     <img src="/icons/metric-data.png" alt="Metric Data icon" class="app-icon" />
     <div class="app-card-content">
       <h3 class="app-title-row"><a class="app-title-link" href="/apps/metric-data/overview">Metric Data</a><span class="app-status app-status-private">Private beta</span></h3>
@@ -110,7 +119,7 @@
     </div>
   </article>
 
-  <article class="app-card app-card-release" data-changelog="/apps/release-assistant/changelog">
+  <article class="app-card app-card-release" data-changelog="/apps/release-assistant/changelog" data-status="internal" data-platforms="macos">
     <img src="/icons/release-assistant.png" alt="Release Assistant icon" class="app-icon" />
     <div class="app-card-content">
       <h3 class="app-title-row"><a class="app-title-link" href="/apps/release-assistant/overview">Release Assistant</a><span class="app-status app-status-alpha">Internal alpha</span></h3>
@@ -130,7 +139,7 @@
     </div>
   </article>
 
-  <article class="app-card app-card-newsbook" data-changelog="/apps/x-newsbook/changelog">
+  <article class="app-card app-card-newsbook" data-changelog="/apps/x-newsbook/changelog" data-status="private" data-platforms="macos,ipados,ios">
     <img src="/icons/x-newsbook.png" alt="X-Newsbook icon" class="app-icon" />
     <div class="app-card-content">
       <h3 class="app-title-row"><a class="app-title-link" href="/apps/x-newsbook/overview">X-Newsbook</a><span class="app-status app-status-private">Private beta</span></h3>
@@ -457,6 +466,36 @@ See [GitHub Repositories](/apps/github-repositories) for repository links and cu
 .apps-avatar-meta { display: flex; flex-direction: column; line-height: 1.2; }
 .apps-avatar-meta span { font-size: 12px; color: var(--vp-c-text-2); }
 
+.apps-filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 10px 0 12px;
+}
+
+.apps-filter-bar button {
+  appearance: none;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--vp-c-bg-soft) 88%, transparent);
+  color: var(--vp-c-text-1);
+  font-size: 12px;
+  font-weight: 700;
+  padding: 6px 11px;
+  cursor: pointer;
+}
+
+.apps-filter-bar button:hover {
+  border-color: var(--vp-c-brand-1);
+  color: var(--vp-c-brand-1);
+}
+
+.apps-filter-bar button.is-active {
+  border-color: rgba(83, 210, 255, 0.55);
+  color: var(--vp-c-brand-1);
+  background: rgba(83, 210, 255, 0.14);
+}
+
 .apps-grid {
   display: grid;
   gap: 14px;
@@ -497,6 +536,10 @@ See [GitHub Repositories](/apps/github-repositories) for repository links and cu
   transform: translateY(-2px);
   border-color: var(--vp-c-brand-1);
   box-shadow: 0 8px 20px rgba(14, 143, 255, 0.14);
+}
+
+.app-card.is-filter-hidden {
+  display: none;
 }
 
 .app-card-content { min-width: 0; }
@@ -681,6 +724,18 @@ See [GitHub Repositories](/apps/github-repositories) for repository links and cu
 }
 
 @media (max-width: 768px) {
+  .apps-filter-bar {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding: 0 2px 4px;
+  }
+
+  .apps-filter-bar button {
+    white-space: nowrap;
+    flex: 0 0 auto;
+  }
+
   .apps-carousel { padding: 10px 38px; }
   .apps-carousel-btn { width: 26px; height: 26px; font-size: 16px; top: calc(50% - 15px); }
   .apps-slide-icon { top: 8px; left: 8px; width: 30px; height: 30px; }

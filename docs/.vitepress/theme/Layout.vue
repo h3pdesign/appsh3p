@@ -792,6 +792,118 @@ function setupHomeWhatsNewDelta() {
   }
 }
 
+function setupHomeReleaseFreshnessBadges() {
+  if (!isHomeRoute.value) return
+  const cards = Array.from(document.querySelectorAll<HTMLElement>('.startpage-release-item'))
+  if (cards.length === 0) return
+
+  const now = new Date()
+  const nowUTC = Date.UTC(now.getFullYear(), now.getMonth(), now.getDate())
+
+  cards.forEach((card) => {
+    card.querySelector('.startpage-age-badge')?.remove()
+    const dateNode = card.querySelector<HTMLElement>('[data-date]')
+    const raw = dateNode?.dataset.date || ''
+    if (!raw) return
+    const d = new Date(raw)
+    if (Number.isNaN(d.getTime())) return
+
+    const dateUTC = Date.UTC(d.getFullYear(), d.getMonth(), d.getDate())
+    const days = Math.max(0, Math.floor((nowUTC - dateUTC) / 86400000))
+    const label = days === 0 ? 'Updated today' : days === 1 ? 'Updated 1 day ago' : `Updated ${days} days ago`
+
+    const badge = document.createElement('span')
+    badge.className = 'startpage-age-badge'
+    badge.textContent = label
+    const head = card.querySelector('.startpage-release-head')
+    if (head) {
+      head.insertAdjacentElement('afterend', badge)
+    } else {
+      card.prepend(badge)
+    }
+  })
+}
+
+function setupHomeFeaturedPreviewToggle() {
+  if (!isHomeRoute.value) return
+  const wrap = document.querySelector<HTMLElement>('.startpage-feature-preview')
+  const buttons = Array.from(document.querySelectorAll<HTMLButtonElement>('.startpage-feature-theme-toggle button[data-preview-theme]'))
+  if (!wrap || buttons.length === 0) return
+
+  const setTheme = (theme: string) => {
+    wrap.setAttribute('data-preview-active', theme)
+    buttons.forEach((btn) => {
+      const active = btn.dataset.previewTheme === theme
+      btn.classList.toggle('is-active', active)
+      btn.setAttribute('aria-pressed', active ? 'true' : 'false')
+    })
+  }
+
+  buttons.forEach((btn) => {
+    btn.onclick = () => setTheme(btn.dataset.previewTheme || 'dark')
+  })
+
+  const prefersDark = document.documentElement.classList.contains('dark')
+  setTheme(prefersDark ? 'dark' : 'light')
+}
+
+function setupHomeFooterTabs() {
+  if (!isHomeRoute.value) return
+  const tabs = Array.from(document.querySelectorAll<HTMLButtonElement>('.startpage-footer-tabs button[data-footer-tab]'))
+  const panels = Array.from(document.querySelectorAll<HTMLElement>('.startpage-footer-panel[data-footer-panel]'))
+  if (tabs.length === 0 || panels.length === 0) return
+
+  const setTab = (key: string) => {
+    tabs.forEach((tab) => {
+      const active = tab.dataset.footerTab === key
+      tab.classList.toggle('is-active', active)
+      tab.setAttribute('aria-selected', active ? 'true' : 'false')
+    })
+    panels.forEach((panel) => {
+      panel.classList.toggle('is-active', panel.dataset.footerPanel === key)
+    })
+  }
+
+  tabs.forEach((tab) => {
+    tab.onclick = () => setTab(tab.dataset.footerTab || 'core')
+  })
+  setTab('core')
+}
+
+function setupAppsIndexFilters() {
+  if (!(route.path === '/apps/' || route.path === '/apps/index')) return
+  const bar = document.querySelector('.apps-filter-bar')
+  const buttons = Array.from(document.querySelectorAll<HTMLButtonElement>('.apps-filter-bar button[data-app-filter]'))
+  const cards = Array.from(document.querySelectorAll<HTMLElement>('.apps-grid .app-card'))
+  if (!bar || buttons.length === 0 || cards.length === 0) return
+
+  const matchesFilter = (card: HTMLElement, filter: string) => {
+    if (filter === 'all') return true
+    const [kind, valueRaw] = filter.split(':', 2)
+    const value = (valueRaw || '').toLowerCase()
+    if (kind === 'status') {
+      return (card.dataset.status || '').toLowerCase() === value
+    }
+    if (kind === 'platform') {
+      const platforms = (card.dataset.platforms || '').toLowerCase().split(',').map((v) => v.trim())
+      return platforms.includes(value)
+    }
+    return true
+  }
+
+  const applyFilter = (filter: string) => {
+    buttons.forEach((btn) => btn.classList.toggle('is-active', (btn.dataset.appFilter || 'all') === filter))
+    cards.forEach((card) => {
+      card.classList.toggle('is-filter-hidden', !matchesFilter(card, filter))
+    })
+  }
+
+  buttons.forEach((btn) => {
+    btn.onclick = () => applyFilter(btn.dataset.appFilter || 'all')
+  })
+  applyFilter('all')
+}
+
 async function loadMediaHashes() {
   if (mediaHashCache) return mediaHashCache
   try {
@@ -982,6 +1094,10 @@ async function applyPageEnhancements() {
   setupHomeFeatureDecor()
   setupHomeLastUpdated()
   setupHomeWhatsNewDelta()
+  setupHomeReleaseFreshnessBadges()
+  setupHomeFeaturedPreviewToggle()
+  setupHomeFooterTabs()
+  setupAppsIndexFilters()
   setupClickAnalytics()
   await setupMediaCacheKeys()
   await setupAppsIndexUpdateBadges()

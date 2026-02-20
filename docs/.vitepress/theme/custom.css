@@ -1977,6 +1977,10 @@ html:not(.dark) .VPDocAside {
   color: var(--vp-c-brand-1);
 }
 
+.startpage-mobile-jump-links {
+  display: none;
+}
+
 .startpage-release-strip {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -1992,6 +1996,18 @@ html:not(.dark) .VPDocAside {
   color: var(--vp-c-text-1);
   display: grid;
   gap: 3px;
+  position: relative;
+  overflow: hidden;
+}
+
+.startpage-release-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: rgba(83, 210, 255, 0.45);
 }
 
 .startpage-release-item strong {
@@ -2000,6 +2016,36 @@ html:not(.dark) .VPDocAside {
   letter-spacing: 0.04em;
   text-transform: uppercase;
 }
+
+.startpage-release-head {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.startpage-release-head img {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+}
+
+.startpage-release-item .startpage-age-badge {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 999px;
+  padding: 2px 7px;
+  font-size: 10px;
+  line-height: 1;
+  color: var(--vp-c-text-2);
+  background: color-mix(in srgb, var(--vp-c-bg-soft) 88%, transparent);
+}
+
+.release-neon::before { background: linear-gradient(180deg, #a865ff, #53d2ff); }
+.release-metric::before { background: linear-gradient(180deg, #51cc7a, #9de8b6); }
+.release-release::before { background: linear-gradient(180deg, #53d2ff, #8ca9ff); }
+.release-newsbook::before { background: linear-gradient(180deg, #4f8dff, #7fa9ff); }
 
 .startpage-release-item span {
   font-size: 11px;
@@ -2487,12 +2533,76 @@ html.compact-home-cards .startpage-quick-start {
   margin-top: 10px;
 }
 
+.startpage-feature-theme-toggle {
+  display: inline-flex;
+  gap: 8px;
+  margin: 8px 0 10px;
+}
+
+.startpage-feature-theme-toggle button {
+  appearance: none;
+  border: 1px solid var(--h3p-border-soft);
+  border-radius: 999px;
+  padding: 6px 10px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--vp-c-text-2);
+  background: color-mix(in srgb, var(--vp-c-bg-soft) 90%, transparent);
+  cursor: pointer;
+}
+
+.startpage-feature-theme-toggle button.is-active {
+  color: var(--vp-c-brand-1);
+  border-color: rgba(83, 210, 255, 0.55);
+  background: rgba(83, 210, 255, 0.14);
+}
+
+.startpage-feature-preview [data-preview-pane] {
+  display: none;
+}
+
+.startpage-feature-preview[data-preview-active="dark"] [data-preview-pane="dark"],
+.startpage-feature-preview[data-preview-active="light"] [data-preview-pane="light"] {
+  display: block;
+}
+
+.startpage-footer-tabs {
+  display: none;
+}
+
+.startpage-footer-panel {
+  display: block;
+}
+
 /* Mobile sticky open-apps CTA */
 .startpage-mobile-open-apps {
   display: none;
 }
 
 @media (max-width: 768px) {
+  .startpage-mobile-jump-links {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding: 2px 10px 6px;
+    margin: 6px 0 2px;
+    mask-image: linear-gradient(90deg, transparent 0, #000 10px, #000 calc(100% - 10px), transparent 100%);
+    -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 10px, #000 calc(100% - 10px), transparent 100%);
+  }
+
+  .startpage-mobile-jump-links a {
+    flex: 0 0 auto;
+    text-decoration: none;
+    border: 1px solid var(--h3p-border-soft);
+    border-radius: 999px;
+    padding: 6px 10px;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--vp-c-text-1);
+    background: color-mix(in srgb, var(--vp-c-bg-soft) 90%, transparent);
+  }
+
   .startpage-mobile-open-apps {
     display: inline-flex;
     position: fixed;
@@ -2535,6 +2645,47 @@ html.compact-home-cards .startpage-quick-start {
 
   .startpage-footer {
     margin-top: 32px;
+  }
+
+  .startpage-feature-theme-toggle {
+    display: flex;
+    width: 100%;
+  }
+
+  .startpage-feature-theme-toggle button {
+    flex: 1 1 0;
+    text-align: center;
+  }
+
+  .startpage-footer-tabs {
+    display: flex;
+    gap: 8px;
+    margin-top: 8px;
+  }
+
+  .startpage-footer-tabs button {
+    appearance: none;
+    border: 1px solid var(--h3p-border-soft);
+    border-radius: 999px;
+    padding: 6px 10px;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--vp-c-text-1);
+    background: color-mix(in srgb, var(--vp-c-bg-soft) 90%, transparent);
+  }
+
+  .startpage-footer-tabs button.is-active {
+    color: var(--vp-c-brand-1);
+    border-color: rgba(83, 210, 255, 0.55);
+    background: rgba(83, 210, 255, 0.14);
+  }
+
+  .startpage-footer-panel {
+    display: none;
+  }
+
+  .startpage-footer-panel.is-active {
+    display: block;
   }
 
   .startpage-footer-grid {
