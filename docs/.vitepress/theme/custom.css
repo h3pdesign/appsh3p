@@ -2411,3 +2411,165 @@ html.compact-home-cards .startpage-quick-start {
     line-height: 1.35;
   }
 }
+
+/* Startpage design system pass */
+:root {
+  --h3p-surface-radius: 12px;
+  --h3p-pill-radius: 999px;
+  --h3p-border-soft: color-mix(in srgb, var(--vp-c-divider) 82%, var(--vp-c-brand-1) 18%);
+  --h3p-icon-size-startpage: 52px;
+  --h3p-icon-size-mini: 22px;
+}
+
+.VPFeature,
+.home-hero-widget-card,
+.startpage-release-item,
+.startpage-weekly-strip a,
+.startpage-start-here,
+.startpage-quick-start > div {
+  border-radius: var(--h3p-surface-radius);
+  border-color: var(--h3p-border-soft);
+}
+
+.startpage-use-cases a,
+.startpage-search-examples a,
+.startpage-trust-row a,
+.startpage-social-proof span,
+.startpage-stats-row span,
+.startpage-footer-grid a {
+  border-radius: var(--h3p-pill-radius);
+  border-color: var(--h3p-border-soft);
+}
+
+.startpage-app-item img {
+  width: var(--h3p-icon-size-startpage);
+  height: var(--h3p-icon-size-startpage);
+  object-fit: contain;
+}
+
+.home-hero-mini-apps img {
+  width: var(--h3p-icon-size-mini);
+  height: var(--h3p-icon-size-mini);
+  object-fit: contain;
+}
+
+/* Collapsible sections */
+.startpage-collapsible {
+  margin-top: 8px;
+  border: 1px solid var(--h3p-border-soft);
+  border-radius: var(--h3p-surface-radius);
+  padding: 8px 10px;
+  background: color-mix(in srgb, var(--vp-c-bg-soft) 90%, transparent);
+}
+
+.startpage-collapsible summary {
+  cursor: pointer;
+  list-style: none;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--vp-c-brand-1);
+}
+
+.startpage-collapsible summary::-webkit-details-marker {
+  display: none;
+}
+
+.startpage-collapsible summary::after {
+  content: ' +';
+}
+
+.startpage-collapsible[open] summary::after {
+  content: ' -';
+}
+
+.startpage-quick-collapsible .startpage-quick-start,
+.startpage-footer-collapsible .startpage-footer-grid {
+  margin-top: 10px;
+}
+
+/* Mobile sticky open-apps CTA */
+.startpage-mobile-open-apps {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .startpage-mobile-open-apps {
+    display: inline-flex;
+    position: fixed;
+    right: 12px;
+    bottom: calc(12px + env(safe-area-inset-bottom));
+    z-index: 36;
+    text-decoration: none;
+    border: 1px solid color-mix(in srgb, var(--vp-c-brand-1) 60%, var(--vp-c-divider));
+    border-radius: 999px;
+    padding: 9px 14px;
+    font-size: 12px;
+    font-weight: 800;
+    color: #fff;
+    background: linear-gradient(180deg, var(--vp-c-brand-1), var(--vp-c-brand-2));
+    box-shadow: 0 10px 24px rgba(11, 124, 255, 0.28);
+  }
+
+  /* Mobile rows: horizontal scroll with fade affordance */
+  .startpage-search-examples,
+  .startpage-use-cases,
+  .startpage-social-proof,
+  .startpage-trust-row {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    mask-image: linear-gradient(90deg, transparent 0, #000 12px, #000 calc(100% - 12px), transparent 100%);
+    -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 12px, #000 calc(100% - 12px), transparent 100%);
+    padding-inline: 10px;
+    gap: 8px;
+  }
+
+  .startpage-search-examples a,
+  .startpage-use-cases a,
+  .startpage-social-proof span,
+  .startpage-trust-row a {
+    white-space: nowrap;
+    flex: 0 0 auto;
+  }
+
+  .startpage-footer {
+    margin-top: 32px;
+  }
+
+  .startpage-footer-grid {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+}
+
+/* First-view stagger animation */
+@media (prefers-reduced-motion: no-preference) {
+  .VPHome .VPFeatures .item,
+  .VPHome .startpage-release-item,
+  .VPHome .startpage-weekly-strip a,
+  .VPHome .startpage-stats-row span {
+    opacity: 0;
+    transform: translateY(10px);
+    animation: h3pFadeLift 480ms ease forwards;
+  }
+
+  .VPHome .VPFeatures .item:nth-child(1),
+  .VPHome .startpage-weekly-strip a:nth-child(1),
+  .VPHome .startpage-release-item:nth-child(1) { animation-delay: 40ms; }
+  .VPHome .VPFeatures .item:nth-child(2),
+  .VPHome .startpage-weekly-strip a:nth-child(2),
+  .VPHome .startpage-release-item:nth-child(2) { animation-delay: 90ms; }
+  .VPHome .VPFeatures .item:nth-child(3),
+  .VPHome .startpage-weekly-strip a:nth-child(3),
+  .VPHome .startpage-release-item:nth-child(3) { animation-delay: 140ms; }
+  .VPHome .startpage-weekly-strip a:nth-child(4),
+  .VPHome .startpage-release-item:nth-child(4) { animation-delay: 190ms; }
+}
+
+@keyframes h3pFadeLift {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

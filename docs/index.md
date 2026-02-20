@@ -31,6 +31,7 @@ features:
 <p class="startpage-hero-secondary-cta">
   Need setup help? <a href="/getting-started/introduction">Read the quick introduction</a>
 </p>
+<a class="startpage-mobile-open-apps" href="/apps/index" aria-label="Open all apps">Open apps</a>
 <p class="startpage-search-hint" aria-label="Search shortcut hint">Tip: press <kbd>/</kbd> to search docs instantly.</p>
 <div class="startpage-search-examples" aria-label="Search examples">
   <a href="/apps/neon-vision-editor/installation">installation</a>
@@ -129,11 +130,14 @@ features:
 
 <h2 id="quick-start-60s">quick start in 60s</h2>
 
-<div class="startpage-quick-start" aria-label="Quick start">
-  <div><strong>1.</strong> Open <a href="/apps/index">All Apps</a> and choose your tool.</div>
-  <div><strong>2.</strong> Jump to <a href="/apps/neon-vision-editor/installation">Installation</a> for setup in under a minute.</div>
-  <div><strong>3.</strong> Use <a href="/apps/neon-vision-editor/faq">FAQ</a> and <a href="/support/">Support</a> for fast troubleshooting.</div>
-</div>
+<details class="startpage-collapsible startpage-quick-collapsible">
+  <summary>Show quick-start steps</summary>
+  <div class="startpage-quick-start" aria-label="Quick start">
+    <div><strong>1.</strong> Open <a href="/apps/index">All Apps</a> and choose your tool.</div>
+    <div><strong>2.</strong> Jump to <a href="/apps/neon-vision-editor/installation">Installation</a> for setup in under a minute.</div>
+    <div><strong>3.</strong> Use <a href="/apps/neon-vision-editor/faq">FAQ</a> and <a href="/support/">Support</a> for fast troubleshooting.</div>
+  </div>
+</details>
 
 <h2 id="featured-app">featured app</h2>
 
@@ -153,21 +157,24 @@ neon vision editor across iphone, mac, and ipad.
 </div>
 
 <footer class="startpage-footer" aria-label="h3p links">
-  <div class="startpage-footer-grid">
-    <a href="https://github.com/h3pdesign" target="_blank" rel="noreferrer">GitHub Profile</a>
-    <a href="https://github.com/sponsors/h3pdesign" target="_blank" rel="noreferrer">GitHub Sponsors</a>
-    <a href="https://www.patreon.com/cw/h3p" target="_blank" rel="noreferrer">Patreon</a>
-    <a href="https://h3p.me/home" target="_blank" rel="noreferrer">h3p.me Home</a>
-    <a href="https://h3p.me/apps" target="_blank" rel="noreferrer">Apps</a>
-    <a href="https://h3p.me/blog" target="_blank" rel="noreferrer">Blog</a>
-    <a href="https://twitter.com/h3palpha" target="_blank" rel="noreferrer">X / Twitter</a>
-    <a href="https://www.instagram.com/createurdeimagination/" target="_blank" rel="noreferrer">Instagram</a>
-    <a href="https://www.behance.net/h3p" target="_blank" rel="noreferrer">Behance</a>
-    <a href="https://500px.com/p/h3p" target="_blank" rel="noreferrer">500px</a>
-    <a href="/policies/terms-of-service">Terms of Service</a>
-    <a href="/policies/privacy-policy">Privacy Policy</a>
-    <a href="/policies/eu-cookie-notice">EU Cookie Notice</a>
-  </div>
+  <details class="startpage-collapsible startpage-footer-collapsible">
+    <summary>Show all links</summary>
+    <div class="startpage-footer-grid">
+      <a href="https://github.com/h3pdesign" target="_blank" rel="noreferrer">GitHub Profile</a>
+      <a href="https://github.com/sponsors/h3pdesign" target="_blank" rel="noreferrer">GitHub Sponsors</a>
+      <a href="https://www.patreon.com/cw/h3p" target="_blank" rel="noreferrer">Patreon</a>
+      <a href="https://h3p.me/home" target="_blank" rel="noreferrer">h3p.me Home</a>
+      <a href="https://h3p.me/apps" target="_blank" rel="noreferrer">Apps</a>
+      <a href="https://h3p.me/blog" target="_blank" rel="noreferrer">Blog</a>
+      <a href="https://twitter.com/h3palpha" target="_blank" rel="noreferrer">X / Twitter</a>
+      <a href="https://www.instagram.com/createurdeimagination/" target="_blank" rel="noreferrer">Instagram</a>
+      <a href="https://www.behance.net/h3p" target="_blank" rel="noreferrer">Behance</a>
+      <a href="https://500px.com/p/h3p" target="_blank" rel="noreferrer">500px</a>
+      <a href="/policies/terms-of-service">Terms of Service</a>
+      <a href="/policies/privacy-policy">Privacy Policy</a>
+      <a href="/policies/eu-cookie-notice">EU Cookie Notice</a>
+    </div>
+  </details>
   <div class="startpage-trust-row" id="startpage-links">
     <a href="https://github.com/h3pdesign" target="_blank" rel="noreferrer">Open-source parts on GitHub</a>
     <a href="/policies/security-and-trust">Security policy</a>
