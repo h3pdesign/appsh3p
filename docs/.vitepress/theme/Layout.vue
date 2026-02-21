@@ -69,7 +69,7 @@ const topSwitcherLinks = [
 ]
 
 const appUpdatedBySlug: Record<string, string> = {
-  'neon-vision-editor': 'February 20, 2026',
+  'neon-vision-editor': 'February 21, 2026',
   'metric-data': 'February 16, 2026',
   'x-newsbook': 'February 17, 2026',
   'release-assistant': 'February 16, 2026'
@@ -673,7 +673,7 @@ function ensureHomeWidgets() {
           <li>Published on <a href="https://apps-h3p.com" target="_blank" rel="noreferrer noopener">apps-h3p.com</a></li>
           <li><a href="https://github.com/h3pdesign/appsh3p" target="_blank" rel="noreferrer noopener">Docs repo</a></li>
         </ul>
-        <div class="home-deploy-badge"><a href="https://github.com/h3pdesign/appsh3p/commit/ae3e8f2" target="_blank" rel="noreferrer noopener">Last deployment: <span data-date="2026-02-20">February 20, 2026</span></a></div>
+        <div class="home-deploy-badge"><a href="https://github.com/h3pdesign/appsh3p/commit/ae3e8f2" target="_blank" rel="noreferrer noopener">Last deployment: <span data-date="2026-02-21">February 21, 2026</span></a></div>
         <div class="home-hero-mini-apps" aria-label="App icons">
           <a href="/apps/neon-vision-editor/overview"><img class="mini-icon-neon" src="/icons/neon-vision-editor.png" alt="Neon Vision Editor" width="22" height="22" loading="lazy" decoding="async" /></a>
           <a href="/apps/metric-data/overview"><img src="/icons/metric-data.png" alt="Metric Data" width="22" height="22" loading="lazy" decoding="async" /></a>
@@ -694,7 +694,7 @@ function ensureHomeWidgets() {
 
       <section class="home-hero-widget-card home-hero-ticker">
         <h3>Latest release</h3>
-        <p><strong>Neon Vision Editor v0.4.28</strong> published on February 20, 2026.</p>
+        <p><strong>Neon Vision Editor v0.4.28</strong> published on February 21, 2026.</p>
         <a href="https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v0.4.28" target="_blank" rel="noreferrer noopener">View GitHub release</a>
       </section>
     `
