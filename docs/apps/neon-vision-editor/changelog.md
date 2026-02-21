@@ -10,16 +10,16 @@ head:
 
 # Neon Vision Editor Changelog
 
-_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on February 19, 2026._
+_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on February 20, 2026._
 
-## v0.4.27 (published February 19, 2026)
+## v0.4.28 (published February 20, 2026)
 
-Release link: [GitHub Release v0.4.27](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v0.4.27)
+Release link: [GitHub Release v0.4.28](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v0.4.28)
 
-- Added compact iOS/iPadOS toolbar language labels and tightened picker widths to free toolbar space on smaller screens.
-- Improved iPad toolbar density/alignment so more actions are visible before overflow and controls start further left.
-- Improved macOS translucent chrome consistency between toolbar, tab strip, and project-sidebar header surfaces.
-- Fixed macOS project-sidebar top/header transparency bleed when unified translucent toolbar backgrounds are enabled.
+- Added faster large-file loading safeguards to keep full-content attachment reliable across repeated opens.
+- Improved large HTML/CSV editing responsiveness by reducing expensive full-buffer sanitization and update-path overhead.
+- Improved macOS Settings UX with smoother tab-to-tab size transitions and tighter dynamic window sizing.
+- Fixed an intermittent large-file regression where only an initial preview-sized portion (around ~500 lines) remained visible after reopen.
 
 ## v0.4.22 (published February 16, 2026)
 
