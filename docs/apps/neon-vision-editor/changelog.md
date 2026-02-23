@@ -12,20 +12,16 @@ head:
 
 _Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on February 23, 2026._
 
-## v0.4.28 (published February 23, 2026)
+## v0.4.29 (published February 23, 2026)
 
-Release link: [GitHub Release v0.4.28](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v0.4.28)
+Release link: [GitHub Release v0.4.29](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v0.4.29)
 
-- Added faster large-file loading safeguards to keep full-content attachment reliable across repeated opens.
-- Added cross-platform `Save As…` command wiring so renamed saves are accessible from toolbar/menu flows on macOS, iOS, and iPadOS.
-- Improved large HTML/CSV editing responsiveness by reducing expensive full-buffer sanitization and update-path overhead.
-- Improved macOS Settings UX with smoother tab-to-tab size transitions and tighter dynamic window sizing.
-- Improved iOS/iPadOS toolbar language picker sizing so compact labels remain single-line and avoid clipping.
-- Improved iPadOS toolbar responsiveness by rebalancing promoted actions vs `...` overflow based on live window width.
-- Improved iPadOS toolbar overflow stability to prevent temporary clipping/jitter of the `...` menu during interaction.
-- Fixed an intermittent large-file regression where only an initial preview-sized portion (around ~500 lines) remained visible after reopen.
-- Fixed iPadOS narrow-window tab overlap with window controls by increasing/adjusting tab strip leading clearance.
-- Fixed macOS welcome/start screen presentation so it opens centered and remains draggable as a regular window.
+- Added explicit English (`en`) and German (`de`) support strings for the Support/IAP settings surface to keep release copy consistent across locales.
+- Added support-price freshness state with a visible “Last updated” timestamp in Support settings after successful App Store product refreshes.
+- Improved updater version normalization so release tags with suffix metadata (for example `+build`, `(build 123)`, or prefixed release labels) are compared using the semantic core version.
+- Improved Support settings refresh UX with a loading spinner on the “Retry App Store” action and clearer status messaging when price data is temporarily unavailable.
+- Fixed updater detection for same-version releases where build numbers differ, ensuring higher build updates are still detected correctly.
+- Fixed release automation safety when tags already exist by validating both local and remote tag targets against `HEAD` before proceeding without `--retag`.
 
 ## v0.4.22 (published February 16, 2026)
 
