@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="X-Newsbook icon">
+  <rect width="64" height="64" rx="14" fill="#1b2f52"/>
+  <rect x="12" y="12" width="40" height="40" rx="10" fill="#4f86ff"/>
+  <path d="M20 25h24v4H20zm0 8h18v4H20zm0 8h14v4H20z" fill="#f6fbff"/>
+  <path d="M41 37l5 7h-3l-3-4-3 4h-3l5-7-5-7h3l3 4 3-4h3z" fill="#f6fbff"/>
+</svg>
