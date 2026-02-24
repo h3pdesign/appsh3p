@@ -1,12 +1,21 @@
 # Terms of Service
 
-_Last updated: February 17, 2026_
+_Last updated: February 24, 2026_
 
 These Terms of Service govern use of the h3p apps documentation website at https://apps-h3p.com.
 
 ## 1. Scope
 
 This website provides documentation, guides, release notes, and support references for h3p apps.
+
+These terms also apply to your use of h3p-provided apps referenced on this site, including:
+
+- Neon Vision Editor
+- Metric Data
+- Release Assistant
+- X-Newsbook
+
+Use of each app must follow applicable platform terms (for example Apple App Store or TestFlight terms) in addition to these terms.
 
 ## 2. Acceptable use
 
@@ -32,6 +41,8 @@ Links to third-party services (for example GitHub, Apple, Patreon, TestFlight) a
 ## 6. Liability
 
 To the maximum extent permitted by law, h3p Hilthart Pedersen is not liable for indirect or consequential damages from use of this website.
+
+For h3p apps, this includes damages resulting from data loss, workflow interruption, analytics/reporting differences, or third-party API/provider changes.
 
 ## 7. Changes
 

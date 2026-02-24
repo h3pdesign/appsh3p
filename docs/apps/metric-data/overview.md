@@ -71,9 +71,9 @@ head:
 
 The details here align with:
 
-- `/Users/h3p/Coding/XCode Projects/Metrics/README.md`
-- `/Users/h3p/Coding/XCode Projects/Metrics/PRIVACY.md`
-- `/Users/h3p/Coding/XCode Projects/Metrics/TERMS.md`
+- `README.md`
+- `PRIVACY.md`
+- `TERMS.md`
 
 ## Related Pages
 

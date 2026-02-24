@@ -14,7 +14,7 @@ head:
 
 Open project:
 
-- `/Users/h3p/Coding/XCode Projects/Metrics/Metrics.xcodeproj`
+- `Metrics.xcodeproj`
 
 Schemes:
 
@@ -29,7 +29,7 @@ Both iOS and macOS targets use URL scheme redirect handling based on `GOOGLE_RED
 Required configuration:
 
 1. Set `GOOGLE_REDIRECT_SCHEME` in target build settings.
-2. Update `/Users/h3p/Coding/XCode Projects/Metrics/Metrics/Resources/AppConfig.json`:
+2. Update `Metrics/Resources/AppConfig.json`:
 
 ```json
 {
@@ -61,8 +61,8 @@ For direct/notarized distribution:
 ## Build Verification Commands
 
 ```bash
-xcodebuild -project "/Users/h3p/Coding/XCode Projects/Metrics/Metrics.xcodeproj" -scheme "Metrics" -configuration Debug -destination "generic/platform=iOS" -derivedDataPath ./.DerivedData CODE_SIGNING_ALLOWED=NO build
-xcodebuild -project "/Users/h3p/Coding/XCode Projects/Metrics/Metrics.xcodeproj" -scheme "Metrics-macOS-AppStore" -configuration Debug -destination "platform=macOS" -derivedDataPath ./.DerivedData CODE_SIGNING_ALLOWED=NO build
+xcodebuild -project "Metrics.xcodeproj" -scheme "Metrics" -configuration Debug -destination "generic/platform=iOS" -derivedDataPath ./.DerivedData CODE_SIGNING_ALLOWED=NO build
+xcodebuild -project "Metrics.xcodeproj" -scheme "Metrics-macOS-AppStore" -configuration Debug -destination "platform=macOS" -derivedDataPath ./.DerivedData CODE_SIGNING_ALLOWED=NO build
 ```
 
 ## Related Pages
