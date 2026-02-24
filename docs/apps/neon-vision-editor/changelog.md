@@ -10,18 +10,18 @@ head:
 
 # Neon Vision Editor Changelog
 
-_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on February 23, 2026._
+_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on February 24, 2026._
 
-## v0.4.29 (published February 23, 2026)
+## v0.4.30 (published February 24, 2026)
 
-Release link: [GitHub Release v0.4.29](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v0.4.29)
+Release link: [GitHub Release v0.4.30](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v0.4.30)
 
-- Added explicit English (`en`) and German (`de`) support strings for the Support/IAP settings surface to keep release copy consistent across locales.
-- Added support-price freshness state with a visible “Last updated” timestamp in Support settings after successful App Store product refreshes.
-- Improved updater version normalization so release tags with suffix metadata (for example `+build`, `(build 123)`, or prefixed release labels) are compared using the semantic core version.
-- Improved Support settings refresh UX with a loading spinner on the “Retry App Store” action and clearer status messaging when price data is temporarily unavailable.
-- Fixed updater detection for same-version releases where build numbers differ, ensuring higher build updates are still detected correctly.
-- Fixed release automation safety when tags already exist by validating both local and remote tag targets against `HEAD` before proceeding without `--retag`.
+- Added a native macOS Markdown preview web view with template presets (Default, Docs, Article, Compact) and toolbar access.
+- Added richer Markdown-to-HTML rendering for headings, lists, blockquotes, code fences, links, and inline formatting in preview mode.
+- Improved Markdown code-block typography/spacing in preview so fenced blocks render with tighter, editor-like line density.
+- Improved editor-to-binding synchronization safeguards while the text view has focus to prevent stale-state overwrites during active interaction.
+- Fixed cursor/caret jump regressions where selection could unexpectedly snap to a much earlier position after paste/update timing races.
+- Fixed cursor stability during click placement/editing across Markdown and other text files by preserving live editor state during view updates.
 
 ## v0.4.22 (published February 16, 2026)
 
