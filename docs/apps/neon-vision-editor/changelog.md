@@ -12,16 +12,20 @@ head:
 
 _Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on February 25, 2026._
 
-## v0.4.30 (published February 25, 2026)
+## v0.4.31 (published February 25, 2026)
 
-Release link: [GitHub Release v0.4.30](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v0.4.30)
+Release link: [GitHub Release v0.4.31](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v0.4.31)
 
-- Added a native macOS Markdown preview web view with template presets (Default, Docs, Article, Compact) and toolbar access.
-- Added richer Markdown-to-HTML rendering for headings, lists, blockquotes, code fences, links, and inline formatting in preview mode.
-- Improved Markdown code-block typography/spacing in preview so fenced blocks render with tighter, editor-like line density.
-- Improved editor-to-binding synchronization safeguards while the text view has focus to prevent stale-state overwrites during active interaction.
-- Fixed cursor/caret jump regressions where selection could unexpectedly snap to a much earlier position after paste/update timing races.
-- Fixed cursor stability during click placement/editing across Markdown and other text files by preserving live editor state during view updates.
+- Added an AI Activity Log on macOS with a dedicated diagnostics window and menu entry to inspect startup/provider events.
+- Added centralized macOS app command wiring for settings, AI diagnostics, updater, editor actions, and window-level command routing.
+- Added a full Flux/command-pattern redesign completed in a parallel session.
+- Improved release automation resiliency in `scripts/release_all.sh` with fail-fast `gh` auth checks, workflow/runner prechecks, stricter workflow status handling, and retryable asset verification.
+- Improved settings startup behavior to preserve user-selected tabs/preferences and avoid redundant refresh work when opening Settings.
+- Improved Settings responsiveness by moving font discovery off the main thread and reducing unnecessary window configurator reapplication churn.
+- Improved Swift 6 readiness with a full concurrency hardening audit completed beyond this patch scope.
+- Fixed startup preference regressions that previously re-disabled completion and other editor behaviors on every launch.
+- Fixed settings invocation edge cases on macOS by removing duplicate keyboard interception and avoiding double signaling when system Settings handling succeeds.
+- Fixed release flow false-success scenarios by requiring notarized workflow success (`gh run watch --exit-status`) and surfacing failed-job logs immediately.
 
 ## v0.4.22 (published February 16, 2026)
 
