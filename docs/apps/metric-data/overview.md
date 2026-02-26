@@ -44,6 +44,7 @@ head:
 
 - [TestFlight](https://testflight.apple.com/join/mMyMAGjE)
 - [Code Examples](/apps/code-examples)
+- [Privacy Policy](/policies/privacy-policy)
 
 ## Core Capability Set
 
