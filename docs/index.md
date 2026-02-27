@@ -54,7 +54,7 @@ features:
 <h2 id="whats-new-week">what's new this week</h2>
 
 <div class="startpage-weekly-strip" aria-label="What's new this week">
-  <a href="/apps/neon-vision-editor/changelog"><strong data-date="2026-02-27">Feb 27, 2026</strong>: Neon Vision Editor v0.4.31 release notes and docs refresh</a>
+  <a href="/apps/neon-vision-editor/changelog"><strong data-date="2026-02-27">Feb 27, 2026</strong>: Neon Vision Editor v0.4.32 release notes and docs refresh</a>
   <a href="/apps/metric-data/overview"><strong data-date="2026-02-16">Feb 16, 2026</strong>: Metric Data overview now iPad-first with metadata and support docs</a>
   <a href="/apps/release-assistant/features"><strong data-date="2026-02-16">Feb 16, 2026</strong>: Release Assistant workflow, gallery, and FAQ expanded</a>
   <a href="/apps/x-newsbook/overview"><strong data-date="2026-02-17">Feb 17, 2026</strong>: X-Newsbook added with overview, components, and support docs.</a>
@@ -66,11 +66,11 @@ features:
       <img src="/icons/neon-vision-editor.png" alt="" aria-hidden="true" loading="lazy" decoding="async" />
       <strong>Neon</strong>
     </div>
-    <span>v0.4.31</span>
+    <span>v0.4.32</span>
     <span data-date="2026-02-27">Feb 27, 2026</span>
     <span>macOS, iPadOS, iOS</span>
     <a href="/apps/neon-vision-editor/changelog">Source: changelog</a>
-    <a href="https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v0.4.31" target="_blank" rel="noreferrer noopener">Source: GitHub release</a>
+    <a href="https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v0.4.32" target="_blank" rel="noreferrer noopener">Source: GitHub release</a>
   </article>
   <article class="startpage-release-item release-metric">
     <div class="startpage-release-head">

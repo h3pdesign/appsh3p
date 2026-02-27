@@ -8,7 +8,7 @@ head:
       content: https://apps-h3p.com/media/neon-vision-editor-hero.png
   - - script
     - type: application/ld+json
-    - '{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://apps-h3p.com/#organization","name":"H3P","url":"https://apps-h3p.com","sameAs":["https://github.com/h3pdesign"]},{"@type":"SoftwareApplication","@id":"https://apps-h3p.com/apps/neon-vision-editor/overview#app","name":"Neon Vision Editor","applicationCategory":"DeveloperApplication","operatingSystem":"macOS, iPadOS, iOS","url":"https://apps-h3p.com/apps/neon-vision-editor/overview","downloadUrl":"https://apps.apple.com/de/app/neon-vision-editor/id6758950965","softwareVersion":"0.4.31","isAccessibleForFree":true,"publisher":{"@id":"https://apps-h3p.com/#organization"}}]}'
+    - '{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://apps-h3p.com/#organization","name":"H3P","url":"https://apps-h3p.com","sameAs":["https://github.com/h3pdesign"]},{"@type":"SoftwareApplication","@id":"https://apps-h3p.com/apps/neon-vision-editor/overview#app","name":"Neon Vision Editor","applicationCategory":"DeveloperApplication","operatingSystem":"macOS, iPadOS, iOS","url":"https://apps-h3p.com/apps/neon-vision-editor/overview","downloadUrl":"https://apps.apple.com/de/app/neon-vision-editor/id6758950965","softwareVersion":"0.4.32","isAccessibleForFree":true,"publisher":{"@id":"https://apps-h3p.com/#organization"}}]}'
 ---
 
 # Neon Vision Editor
@@ -24,7 +24,7 @@ head:
 </div>
 
 <div class="overview-mini-stats overview-reveal" aria-label="app stats">
-  <div><span>latest version</span><strong>v0.4.31</strong></div>
+  <div><span>latest version</span><strong>v0.4.32</strong></div>
   <div><span>platforms</span><strong>macOS / iPadOS / iOS</strong></div>
   <div><span>repo status</span><strong>public</strong></div>
 </div>
@@ -45,7 +45,7 @@ head:
 - [App Store](https://apps.apple.com/de/app/neon-vision-editor/id6758950965)
 - [TestFlight](https://testflight.apple.com/join/YWB2fGAP)
 - [GitHub](https://github.com/h3pdesign/Neon-Vision-Editor)
-- [Latest GitHub Release (v0.4.31)](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v0.4.31)
+- [Latest GitHub Release (v0.4.32)](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v0.4.32)
 - [Code Examples](/apps/code-examples)
 
 ## GitHub Snapshot (as of February 17, 2026)
