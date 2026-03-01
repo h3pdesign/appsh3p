@@ -57,7 +57,7 @@ export default defineConfig({
       { text: 'Changelog', link: '/changelog' },
       { text: 'Policies', link: '/policies/api-stability' },
       { text: 'Art & Blog', link: 'https://h3p.me/home' },
-      { text: 'Support', link: 'https://www.patreon.com/cw/h3p' }
+      { text: 'Support', link: '/support/' }
     ],
 
     sidebar: [
