@@ -78,7 +78,7 @@ const APPS = {
       return out
     },
     updateHome(content, rel) {
-      return content.replace(/Metric Data overview now iPad-first with metadata and support docs/g, `Metric Data ${rel.tag} docs and support updates`)    
+      return content.replace(/Metrics Data overview now iPad-first with metadata and support docs/g, `Metrics Data ${rel.tag} docs and support updates`)    
     },
     updateLayout(content, rel) {
       return content.replace(/('metric-data': ')[^']+(',)/, `$1${rel.publishedLong}$2`)

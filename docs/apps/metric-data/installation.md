@@ -8,7 +8,7 @@ head:
       content: https://apps-h3p.com/media/metrics/dashboard-ipad-frame.png
 ---
 
-# Metric Data Installation
+# Metrics Data Installation
 
 ## Open in Xcode
 

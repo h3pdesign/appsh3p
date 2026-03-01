@@ -10,12 +10,12 @@ Track the latest documentation updates across all apps.
 
 ## February 16, 2026
 
-- Metric Data overview refreshed with iPad-first screenshots and app metadata.
+- Metrics Data overview refreshed with iPad-first screenshots and app metadata.
 - Release Assistant docs expanded with installation, features, gallery, changelog, and support pages.
 - Added app-level carousel, timeline, and navigation improvements on /apps/.
 
 ## App Changelogs
 
 - [Neon Vision Editor](/apps/neon-vision-editor/changelog)
-- [Metric Data](/apps/metric-data/changelog)
+- [Metrics Data](/apps/metric-data/changelog)
 - [Release Assistant](/apps/release-assistant/changelog)

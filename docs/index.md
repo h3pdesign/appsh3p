@@ -55,7 +55,7 @@ features:
 
 <div class="startpage-weekly-strip" aria-label="What's new this week">
   <a href="/apps/neon-vision-editor/changelog"><strong data-date="2026-02-28">Feb 28, 2026</strong>: Neon Vision Editor v0.4.32 release notes and docs refresh</a>
-  <a href="/apps/metric-data/overview"><strong data-date="2026-02-16">Feb 16, 2026</strong>: Metric Data overview now iPad-first with metadata and support docs</a>
+  <a href="/apps/metric-data/overview"><strong data-date="2026-02-16">Feb 16, 2026</strong>: Metrics Data overview now iPad-first with metadata and support docs</a>
   <a href="/apps/release-assistant/features"><strong data-date="2026-02-16">Feb 16, 2026</strong>: Release Assistant workflow, gallery, and FAQ expanded</a>
   <a href="/apps/x-newsbook/overview"><strong data-date="2026-02-17">Feb 17, 2026</strong>: X-Newsbook added with overview, components, and support docs.</a>
 </div>
@@ -117,8 +117,8 @@ features:
     <span>Neon Vision Editor</span>
   </a>
   <a class="startpage-app-item" href="/apps/metric-data/overview">
-    <img src="/icons/metric-data.png" alt="Metric Data icon" width="52" height="52" loading="lazy" decoding="async" />
-    <span>Metric Data</span>
+    <img src="/icons/metric-data.png" alt="Metrics Data icon" width="52" height="52" loading="lazy" decoding="async" />
+    <span>Metrics Data</span>
   </a>
   <a class="startpage-app-item" href="/apps/release-assistant/overview">
     <img src="/icons/release-assistant.png" alt="Release Assistant icon" width="52" height="52" loading="lazy" decoding="async" />

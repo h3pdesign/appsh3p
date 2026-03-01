@@ -8,7 +8,7 @@ head:
       content: https://apps-h3p.com/media/metrics/dashboard-ipad-frame.png
 ---
 
-# Metric Data Features
+# Metrics Data Features
 
 ## Authentication and Account Handling
 
@@ -26,13 +26,13 @@ head:
   - Platform
   - Ad Unit
 
-![Metric Data iPhone dashboard](/media/metrics/dashboard-iphone-frame.png)
+![Metrics Data iPhone dashboard](/media/metrics/dashboard-iphone-frame.png)
 
 ## iPad and Large-Screen Usage
 
 The dashboard scales to iPad form factors for broader analytics visibility.
 
-![Metric Data iPad dashboard](/media/metrics/dashboard-ipad-frame.png)
+![Metrics Data iPad dashboard](/media/metrics/dashboard-ipad-frame.png)
 
 ## Widget Data Flow
 

@@ -8,10 +8,10 @@ head:
       content: https://apps-h3p.com/media/metrics/dashboard-ipad-frame.png
 ---
 
-# Metric Data Known Issues
+# Metrics Data Known Issues
 
 <div class="app-empty-state app-empty-metric">
-  <img src="/icons/metric-data.png" alt="Metric Data" />
+  <img src="/icons/metric-data.png" alt="Metrics Data" />
   <p>Current integration and distribution caveats are listed below.</p>
 </div>
 

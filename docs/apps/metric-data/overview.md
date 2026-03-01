@@ -8,10 +8,10 @@ head:
       content: https://apps-h3p.com/media/metrics/dashboard-ipad.png
   - - script
     - type: application/ld+json
-    - '{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://apps-h3p.com/#organization","name":"H3P","url":"https://apps-h3p.com","sameAs":["https://github.com/h3pdesign"]},{"@type":"SoftwareApplication","@id":"https://apps-h3p.com/apps/metric-data/overview#app","name":"Metric Data","applicationCategory":"BusinessApplication","operatingSystem":"macOS, iPadOS, iOS","url":"https://apps-h3p.com/apps/metric-data/overview","softwareVersion":"docs-sync-2026-02-16","isAccessibleForFree":true,"publisher":{"@id":"https://apps-h3p.com/#organization"}}]}'
+    - '{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://apps-h3p.com/#organization","name":"H3P","url":"https://apps-h3p.com","sameAs":["https://github.com/h3pdesign"]},{"@type":"SoftwareApplication","@id":"https://apps-h3p.com/apps/metric-data/overview#app","name":"Metrics Data","applicationCategory":"BusinessApplication","operatingSystem":"macOS, iPadOS, iOS","url":"https://apps-h3p.com/apps/metric-data/overview","softwareVersion":"docs-sync-2026-02-16","isAccessibleForFree":true,"publisher":{"@id":"https://apps-h3p.com/#organization"}}]}'
 ---
 
-# Metric Data
+# Metrics Data
 
 <div class="overview-status-pill overview-status-private">Status: Private beta</div>
 
@@ -19,13 +19,13 @@ head:
 
 ## Application Identity
 
-- Application name: **Metric Data**
+- Application name: **Metrics Data**
 - Google Cloud project: `pocket-tagging` (`702241209783`)
-- OAuth consent screen app name should be **Metric Data** to match this homepage.
+- OAuth consent screen app name should be **Metrics Data** to match this homepage.
 
 ## Application Purpose
 
-Metric Data is an analytics app that lets users securely connect their own Google AdSense account and view performance metrics in a focused dashboard.
+Metrics Data is an analytics app that lets users securely connect their own Google AdSense account and view performance metrics in a focused dashboard.
 
 Primary use:
 
@@ -49,12 +49,12 @@ This app is not a public data crawler and does not access data outside the Googl
 </div>
 <div class="overview-hero overview-app-metric overview-reveal">
   <div class="overview-hero-copy">
-    <p>Metric Data is a SwiftUI analytics app for Google AdSense across iOS and macOS.</p>
+    <p>Metrics Data is a SwiftUI analytics app for Google AdSense across iOS and macOS.</p>
   </div>
   <div class="overview-hero-media">
-    <img src="/icons/metric-data.png" alt="Metric Data icon" class="overview-app-icon" />
+    <img src="/icons/metric-data.png" alt="Metrics Data icon" class="overview-app-icon" />
     <div class="overview-shot-frame">
-      <img src="/media/metrics/dashboard-ipad.png" alt="Metric Data iPad screenshot" class="overview-app-shot" />
+      <img src="/media/metrics/dashboard-ipad.png" alt="Metrics Data iPad screenshot" class="overview-app-shot" />
     </div>
   </div>
 </div>

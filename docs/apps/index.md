@@ -15,7 +15,7 @@
   <div class="apps-whats-new-title">What's new</div>
   <div class="apps-whats-new-items">
     <span>Neon Vision Editor docs expanded with changelog, known issues, and FAQ.</span>
-    <span>Metric Data overview refreshed with iPad-first screenshots and SEO metadata.</span>
+    <span>Metrics Data overview refreshed with iPad-first screenshots and SEO metadata.</span>
     <span>Release Assistant now includes structured install, gallery, and changelog docs.</span>
     <span>X-Newsbook docs added with overview, components, installation, and FAQ.</span>
   </div>
@@ -23,7 +23,7 @@
 
 <div class="apps-release-timeline" aria-label="Release timeline">
   <div class="apps-release-item neon"><span class="name">Neon Vision Editor</span><span class="tag">v0.4.32</span><span class="date">2026-02-28</span></div>
-  <div class="apps-release-item metric"><span class="name">Metric Data</span><span class="tag">docs-sync</span><span class="date">2026-02-16</span></div>
+  <div class="apps-release-item metric"><span class="name">Metrics Data</span><span class="tag">docs-sync</span><span class="date">2026-02-16</span></div>
   <div class="apps-release-item newsbook"><span class="name">X-Newsbook</span><span class="tag">docs-init</span><span class="date">2026-02-17</span></div>
   <div class="apps-release-item release"><span class="name">Release Assistant</span><span class="tag">docs-sync</span><span class="date">2026-02-16</span></div>
 </div>
@@ -43,11 +43,11 @@
     </a>
     <a class="apps-slide metric" href="/apps/metric-data/gallery">
       <div class="apps-slide-media">
-        <img src="/media/metrics/dashboard-ipad-frame.png" alt="Metric Data screenshot" />
+        <img src="/media/metrics/dashboard-ipad-frame.png" alt="Metrics Data screenshot" />
         <img class="apps-slide-icon" src="/icons/metric-data.png" alt="" aria-hidden="true" />
         <span class="apps-slide-cta">open gallery</span>
       </div>
-      <span class="apps-slide-title">Metric Data</span>
+      <span class="apps-slide-title">Metrics Data</span>
     </a>
     <a class="apps-slide release" href="/apps/release-assistant/gallery">
       <div class="apps-slide-media">
@@ -99,9 +99,9 @@
   </article>
 
   <article class="app-card app-card-metric" data-changelog="/apps/metric-data/changelog" data-status="private" data-platforms="macos,ipados,ios">
-    <img src="/icons/metric-data.png" alt="Metric Data icon" class="app-icon" />
+    <img src="/icons/metric-data.png" alt="Metrics Data icon" class="app-icon" />
     <div class="app-card-content">
-      <h3 class="app-title-row"><a class="app-title-link" href="/apps/metric-data/overview">Metric Data</a><span class="app-status app-status-private">Private beta</span></h3>
+      <h3 class="app-title-row"><a class="app-title-link" href="/apps/metric-data/overview">Metrics Data</a><span class="app-status app-status-private">Private beta</span></h3>
       <div class="app-card-meta-row">
         <div class="app-platform-pills">
           <span>macOS</span><span>iPadOS</span><span>iOS</span>
@@ -168,12 +168,12 @@
 
 ## Special Section
 
-See [Code Examples](/apps/code-examples) for syntax-highlighted snippets from Neon Vision Editor, Metric Data, and Release Assistant.
+See [Code Examples](/apps/code-examples) for syntax-highlighted snippets from Neon Vision Editor, Metrics Data, and Release Assistant.
 
 ## Components Overview
 
 - [Neon Vision Editor Components Overview](/apps/neon-vision-editor/components-overview)
-- [Metric Data Components Overview](/apps/metric-data/components-overview)
+- [Metrics Data Components Overview](/apps/metric-data/components-overview)
 - [Release Assistant Components Overview](/apps/release-assistant/components-overview)
 
 ## Source Code Repositories

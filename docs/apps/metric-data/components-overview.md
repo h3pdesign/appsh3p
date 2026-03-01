@@ -1,8 +1,8 @@
-# Metric Data Components Overview
+# Metrics Data Components Overview
 
 ## Design Philosophy
 
-Metric Data components are built around clarity of analytics flow: authenticate, fetch, aggregate, visualize.
+Metrics Data components are built around clarity of analytics flow: authenticate, fetch, aggregate, visualize.
 
 ## Core Components
 

@@ -8,23 +8,23 @@ head:
       content: https://apps-h3p.com/media/metrics/dashboard-ipad-frame.png
 ---
 
-# Metric Data Gallery
+# Metrics Data Gallery
 
 ## iPhone (Framed)
 
-![Metric Data iPhone framed screenshot](/media/metrics/dashboard-iphone-frame.png)
+![Metrics Data iPhone framed screenshot](/media/metrics/dashboard-iphone-frame.png)
 
 ## iPad (Framed)
 
-![Metric Data iPad framed screenshot](/media/metrics/dashboard-ipad-frame.png)
+![Metrics Data iPad framed screenshot](/media/metrics/dashboard-ipad-frame.png)
 
 ## iPhone (Raw)
 
-![Metric Data iPhone screenshot](/media/metrics/dashboard-iphone.png)
+![Metrics Data iPhone screenshot](/media/metrics/dashboard-iphone.png)
 
 ## iPad (Raw)
 
-![Metric Data iPad screenshot](/media/metrics/dashboard-ipad.png)
+![Metrics Data iPad screenshot](/media/metrics/dashboard-ipad.png)
 
 ## Related Pages
 

@@ -49,7 +49,7 @@ jobs:
 Use event/app values:
 
 - Neon Vision Editor: `event_type=neon_release_published`, `app-key=neon`, `repo=h3pdesign/Neon-Vision-Editor`
-- Metric Data: `event_type=metric_release_published`, `app-key=metric`, `repo=h3pdesign/Metrics`
+- Metrics Data: `event_type=metric_release_published`, `app-key=metric`, `repo=h3pdesign/Metrics`
 - Release Assistant: `event_type=release_assistant_release_published`, `app-key=release-assistant`, `repo=h3pdesign/Release-Assistant`
 
 ## Release content checklist

@@ -8,14 +8,14 @@ head:
       content: https://apps-h3p.com/media/metrics/dashboard-ipad-frame.png
 ---
 
-# Metric Data FAQ
+# Metrics Data FAQ
 
 <div class="app-empty-state app-empty-metric">
-  <img src="/icons/metric-data.png" alt="Metric Data" />
+  <img src="/icons/metric-data.png" alt="Metrics Data" />
   <p>FAQ for login, metrics filters, widgets, and account switching.</p>
 </div>
 
-## Does Metric Data support multiple AdSense accounts?
+## Does Metrics Data support multiple AdSense accounts?
 
 Yes. Account switching is supported.
 

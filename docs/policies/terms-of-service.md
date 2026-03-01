@@ -11,7 +11,7 @@ This website provides documentation, guides, release notes, and support referenc
 These terms also apply to your use of h3p-provided apps referenced on this site, including:
 
 - Neon Vision Editor
-- Metric Data
+- Metrics Data
 - Release Assistant
 - X-Newsbook
 

@@ -1,4 +1,4 @@
-# Metric Data Changelog
+# Metrics Data Changelog
 
 ## 2026-02-16
 

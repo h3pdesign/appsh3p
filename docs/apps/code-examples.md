@@ -15,7 +15,7 @@ struct EditorAppearance {
 }
 ```
 
-## Metric Data (Swift + Async/Await)
+## Metrics Data (Swift + Async/Await)
 
 ```swift
 struct MetricPoint: Decodable {
@@ -80,6 +80,6 @@ func sortedSections(_ sections: [FeedSection]) -> [FeedSection] {
 
 - [All Apps](/apps/index)
 - [Neon Vision Editor Overview](/apps/neon-vision-editor/overview)
-- [Metric Data Overview](/apps/metric-data/overview)
+- [Metrics Data Overview](/apps/metric-data/overview)
 - [X-Newsbook Overview](/apps/x-newsbook/overview)
 - [Release Assistant Overview](/apps/release-assistant/overview)
