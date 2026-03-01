@@ -23,7 +23,7 @@ features:
 ---
 
 <div class="startpage-stats-row" aria-label="Docs quick stats">
-  <span>4 apps</span>
+  <span>8 apps</span>
   <span>1 docs hub</span>
   <span class="startpage-updated-date">updated Feb 28, 2026</span>
   <span class="startpage-synced-badge">GitHub synced Feb 28, 2026</span>
@@ -128,10 +128,26 @@ features:
     <img src="/icons/x-newsbook.png" alt="X-Newsbook icon" width="52" height="52" loading="lazy" decoding="async" />
     <span>X-Newsbook</span>
   </a>
+  <a class="startpage-app-item" href="/apps/image-sorter/overview">
+    <img src="/icons/image-sorter.png" alt="Image Sorter icon" width="52" height="52" loading="lazy" decoding="async" />
+    <span>Image Sorter</span>
+  </a>
+  <a class="startpage-app-item" href="/apps/syntaxhighlight-quicklook/overview">
+    <img src="/icons/syntaxhighlight-quicklook.svg" alt="SyntaxHighlightQuickLook icon" width="52" height="52" loading="lazy" decoding="async" />
+    <span>SyntaxHighlightQuickLook</span>
+  </a>
+  <a class="startpage-app-item" href="/apps/vistral/overview">
+    <img src="/icons/vistral.png" alt="Vistral icon" width="52" height="52" loading="lazy" decoding="async" />
+    <span>Vistral</span>
+  </a>
+  <a class="startpage-app-item" href="/apps/history-vision/overview">
+    <img src="/icons/history-vision.png" alt="History Vision icon" width="52" height="52" loading="lazy" decoding="async" />
+    <span>History Vision</span>
+  </a>
 </div>
 
 <div class="startpage-social-proof" aria-label="Trust signals">
-  <span>4 public app docs</span>
+  <span>8 app docs</span>
   <span>Published on apps-h3p.com</span>
   <span>Neon release published Feb 28, 2026</span>
   <span>GitHub-backed changelogs</span>

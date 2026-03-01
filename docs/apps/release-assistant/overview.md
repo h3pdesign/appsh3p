@@ -38,6 +38,16 @@ head:
   </div>
 </div>
 
+## Application Purpose
+
+Release Assistant is a macOS release operations app for repositories that ship through scripted pipelines. Its purpose is to reduce release risk by guiding users through validated release metadata, guarded execution modes, and reproducible workflow steps.
+
+Primary user outcomes:
+
+- prepare release input with consistent version, tag, and date handling
+- run scripted release pipelines with preflight checks and controlled modes
+- capture operational context and diagnostics for troubleshooting and auditability
+
 ## What It Manages
 
 - project discovery and switching

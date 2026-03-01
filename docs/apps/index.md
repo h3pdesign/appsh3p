@@ -13,11 +13,15 @@
 
 <div class="apps-whats-new" aria-label="Latest updates">
   <div class="apps-whats-new-title">What's new</div>
-  <div class="apps-whats-new-items">
+<div class="apps-whats-new-items">
     <span>Neon Vision Editor docs expanded with changelog, known issues, and FAQ.</span>
     <span>Metrics Data overview refreshed with iPad-first screenshots and SEO metadata.</span>
     <span>Release Assistant now includes structured install, gallery, and changelog docs.</span>
     <span>X-Newsbook docs added with overview, components, installation, and FAQ.</span>
+    <span>Image Sorter docs added with queue workflow, installation, and support pages.</span>
+    <span>SyntaxHighlightQuickLook docs added with extension purpose and setup details.</span>
+    <span>Vistral docs added with multi-platform scope and local-first analytics purpose.</span>
+    <span>History Vision docs added with reader + data-visualization product overview.</span>
   </div>
 </div>
 
@@ -26,6 +30,10 @@
   <div class="apps-release-item metric"><span class="name">Metrics Data</span><span class="tag">docs-sync</span><span class="date">2026-02-16</span></div>
   <div class="apps-release-item newsbook"><span class="name">X-Newsbook</span><span class="tag">docs-init</span><span class="date">2026-02-17</span></div>
   <div class="apps-release-item release"><span class="name">Release Assistant</span><span class="tag">docs-sync</span><span class="date">2026-02-16</span></div>
+  <div class="apps-release-item release"><span class="name">Image Sorter</span><span class="tag">docs-init</span><span class="date">2026-03-01</span></div>
+  <div class="apps-release-item neon"><span class="name">SyntaxHighlightQuickLook</span><span class="tag">docs-init</span><span class="date">2026-03-01</span></div>
+  <div class="apps-release-item metric"><span class="name">Vistral</span><span class="tag">docs-init</span><span class="date">2026-03-01</span></div>
+  <div class="apps-release-item newsbook"><span class="name">History Vision</span><span class="tag">docs-init</span><span class="date">2026-03-01</span></div>
 </div>
 
 <div class="apps-carousel" aria-label="Featured screenshots carousel">
@@ -158,6 +166,86 @@
       </div>
     </div>
   </article>
+
+  <article class="app-card app-card-release" data-changelog="/apps/image-sorter/changelog" data-status="private" data-platforms="macos">
+    <img src="/icons/image-sorter.png" alt="Image Sorter icon" class="app-icon" />
+    <div class="app-card-content">
+      <h3 class="app-title-row"><a class="app-title-link" href="/apps/image-sorter/overview">Image Sorter</a><span class="app-status app-status-private">Private beta</span></h3>
+      <div class="app-card-meta-row">
+        <div class="app-platform-pills">
+          <span>macOS</span>
+        </div>
+        <div class="app-meta-right">
+          <span class="app-doc-state app-doc-state-active">Docs: Active</span>
+          <span class="app-updated-badge">updated recently</span>
+        </div>
+      </div>
+      <p>macOS queue-based image ingest and processing tool with category, naming, duplicate, and diagnostics workflows.</p>
+      <div class="app-actions-row">
+        <span class="chip">GitHub: repository not public yet</span>
+      </div>
+    </div>
+  </article>
+
+  <article class="app-card app-card-neon" data-changelog="/apps/syntaxhighlight-quicklook/changelog" data-status="internal" data-platforms="macos">
+    <img src="/icons/syntaxhighlight-quicklook.svg" alt="SyntaxHighlightQuickLook icon" class="app-icon" />
+    <div class="app-card-content">
+      <h3 class="app-title-row"><a class="app-title-link" href="/apps/syntaxhighlight-quicklook/overview">SyntaxHighlightQuickLook</a><span class="app-status app-status-alpha">Internal alpha</span></h3>
+      <div class="app-card-meta-row">
+        <div class="app-platform-pills">
+          <span>macOS</span>
+        </div>
+        <div class="app-meta-right">
+          <span class="app-doc-state app-doc-state-active">Docs: Active</span>
+          <span class="app-updated-badge">updated recently</span>
+        </div>
+      </div>
+      <p>Quick Look extension for Finder previews with syntax highlighting for common text and source file formats.</p>
+      <div class="app-actions-row">
+        <span class="chip">GitHub: repository not public yet</span>
+      </div>
+    </div>
+  </article>
+
+  <article class="app-card app-card-metric" data-changelog="/apps/vistral/changelog" data-status="private" data-platforms="macos,ipados,ios,tvos,watchos,visionos">
+    <img src="/icons/vistral.png" alt="Vistral icon" class="app-icon" />
+    <div class="app-card-content">
+      <h3 class="app-title-row"><a class="app-title-link" href="/apps/vistral/overview">Vistral</a><span class="app-status app-status-private">Private beta</span></h3>
+      <div class="app-card-meta-row">
+        <div class="app-platform-pills">
+          <span>macOS</span><span>iPadOS</span><span>iOS</span><span>tvOS</span><span>watchOS</span><span>visionOS</span>
+        </div>
+        <div class="app-meta-right">
+          <span class="app-doc-state app-doc-state-active">Docs: Active</span>
+          <span class="app-updated-badge">updated recently</span>
+        </div>
+      </div>
+      <p>Personal data visualization app with local-first analytics dashboards and explainable insight blocks.</p>
+      <div class="app-actions-row">
+        <span class="chip">GitHub: repository not public yet</span>
+      </div>
+    </div>
+  </article>
+
+  <article class="app-card app-card-newsbook" data-changelog="/apps/history-vision/changelog" data-status="private" data-platforms="macos,ipados,ios">
+    <img src="/icons/history-vision.png" alt="History Vision icon" class="app-icon" />
+    <div class="app-card-content">
+      <h3 class="app-title-row"><a class="app-title-link" href="/apps/history-vision/overview">History Vision</a><span class="app-status app-status-private">Private beta</span></h3>
+      <div class="app-card-meta-row">
+        <div class="app-platform-pills">
+          <span>macOS</span><span>iPadOS</span><span>iOS</span>
+        </div>
+        <div class="app-meta-right">
+          <span class="app-doc-state app-doc-state-active">Docs: Active</span>
+          <span class="app-updated-badge">updated recently</span>
+        </div>
+      </div>
+      <p>History reading and visualization app combining curated narratives with source-aware timelines and comparison views.</p>
+      <div class="app-actions-row">
+        <span class="chip">GitHub: repository not public yet</span>
+      </div>
+    </div>
+  </article>
 </div>
 
 <div class="apps-status-legend" aria-label="App status legend">
@@ -175,6 +263,11 @@ See [Code Examples](/apps/code-examples) for syntax-highlighted snippets from Ne
 - [Neon Vision Editor Components Overview](/apps/neon-vision-editor/components-overview)
 - [Metrics Data Components Overview](/apps/metric-data/components-overview)
 - [Release Assistant Components Overview](/apps/release-assistant/components-overview)
+- [X-Newsbook Components Overview](/apps/x-newsbook/components-overview)
+- [Image Sorter Components Overview](/apps/image-sorter/components-overview)
+- [SyntaxHighlightQuickLook Components Overview](/apps/syntaxhighlight-quicklook/components-overview)
+- [Vistral Components Overview](/apps/vistral/components-overview)
+- [History Vision Components Overview](/apps/history-vision/components-overview)
 
 ## Source Code Repositories
 

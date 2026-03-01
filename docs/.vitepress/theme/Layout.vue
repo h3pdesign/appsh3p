@@ -63,16 +63,24 @@ const appQuickLinks = computed<QuickLink[]>(() => {
 
 const topSwitcherLinks = [
   { key: 'neon-vision-editor', text: 'Neon', link: '/apps/neon-vision-editor/overview' },
-  { key: 'metric-data', text: 'Metric', link: '/apps/metric-data/overview' },
+  { key: 'metric-data', text: 'Metrics', link: '/apps/metric-data/overview' },
   { key: 'x-newsbook', text: 'Newsbook', link: '/apps/x-newsbook/overview' },
-  { key: 'release-assistant', text: 'Release', link: '/apps/release-assistant/overview' }
+  { key: 'release-assistant', text: 'Release', link: '/apps/release-assistant/overview' },
+  { key: 'image-sorter', text: 'ImageSorter', link: '/apps/image-sorter/overview' },
+  { key: 'syntaxhighlight-quicklook', text: 'QuickLook', link: '/apps/syntaxhighlight-quicklook/overview' },
+  { key: 'vistral', text: 'Vistral', link: '/apps/vistral/overview' },
+  { key: 'history-vision', text: 'History', link: '/apps/history-vision/overview' }
 ]
 
 const appUpdatedBySlug: Record<string, string> = {
   'neon-vision-editor': 'February 28, 2026',
   'metric-data': 'February 16, 2026',
   'x-newsbook': 'February 17, 2026',
-  'release-assistant': 'February 16, 2026'
+  'release-assistant': 'February 16, 2026',
+  'image-sorter': 'March 1, 2026',
+  'syntaxhighlight-quicklook': 'March 1, 2026',
+  'vistral': 'March 1, 2026',
+  'history-vision': 'March 1, 2026'
 }
 
 const appDocTopLinks = computed<DocJumpLink[]>(() => {
@@ -289,6 +297,10 @@ function applyAppThemeClass() {
   if (appSlug.value === 'metric-data') root.classList.add('app-theme-metric')
   if (appSlug.value === 'x-newsbook') root.classList.add('app-theme-release')
   if (appSlug.value === 'release-assistant') root.classList.add('app-theme-release')
+  if (appSlug.value === 'image-sorter') root.classList.add('app-theme-release')
+  if (appSlug.value === 'syntaxhighlight-quicklook') root.classList.add('app-theme-neon')
+  if (appSlug.value === 'vistral') root.classList.add('app-theme-metric')
+  if (appSlug.value === 'history-vision') root.classList.add('app-theme-neon')
 }
 
 function parseDateFromChangelog(text: string): Date | null {
@@ -669,16 +681,20 @@ function ensureHomeWidgets() {
       <section class="home-hero-widget-card">
         <h3>Status</h3>
         <ul>
-          <li><strong>4</strong> apps documented</li>
+          <li><strong>8</strong> apps documented</li>
           <li>Published on <a href="https://apps-h3p.com" target="_blank" rel="noreferrer noopener">apps-h3p.com</a></li>
           <li><a href="https://github.com/h3pdesign/appsh3p" target="_blank" rel="noreferrer noopener">Docs repo</a></li>
         </ul>
         <div class="home-deploy-badge"><a href="https://github.com/h3pdesign/appsh3p/commit/ae3e8f2" target="_blank" rel="noreferrer noopener">Last deployment: <span data-date="2026-02-28">February 28, 2026</span></a></div>
         <div class="home-hero-mini-apps" aria-label="App icons">
           <a href="/apps/neon-vision-editor/overview"><img class="mini-icon-neon" src="/icons/neon-vision-editor.png" alt="Neon Vision Editor" width="22" height="22" loading="lazy" decoding="async" /></a>
-          <a href="/apps/metric-data/overview"><img src="/icons/metric-data.png" alt="Metric Data" width="22" height="22" loading="lazy" decoding="async" /></a>
+          <a href="/apps/metric-data/overview"><img src="/icons/metric-data.png" alt="Metrics Data" width="22" height="22" loading="lazy" decoding="async" /></a>
           <a href="/apps/x-newsbook/overview"><img src="/icons/x-newsbook.png" alt="X-Newsbook" width="22" height="22" loading="lazy" decoding="async" /></a>
           <a href="/apps/release-assistant/overview"><img src="/icons/release-assistant.png" alt="Release Assistant" width="22" height="22" loading="lazy" decoding="async" /></a>
+          <a href="/apps/image-sorter/overview"><img src="/icons/image-sorter.png" alt="Image Sorter" width="22" height="22" loading="lazy" decoding="async" /></a>
+          <a href="/apps/syntaxhighlight-quicklook/overview"><img src="/icons/syntaxhighlight-quicklook.svg" alt="SyntaxHighlightQuickLook" width="22" height="22" loading="lazy" decoding="async" /></a>
+          <a href="/apps/vistral/overview"><img src="/icons/vistral.png" alt="Vistral" width="22" height="22" loading="lazy" decoding="async" /></a>
+          <a href="/apps/history-vision/overview"><img src="/icons/history-vision.png" alt="History Vision" width="22" height="22" loading="lazy" decoding="async" /></a>
         </div>
       </section>
 
@@ -686,7 +702,7 @@ function ensureHomeWidgets() {
         <h3>Platform matrix</h3>
         <div class="home-platform-matrix">
           <div class="home-platform-row"><span class="app">Neon</span><span class="plat">macOS</span><span class="plat">iPadOS</span><span class="plat">iOS</span></div>
-          <div class="home-platform-row"><span class="app">Metric</span><span class="plat">macOS</span><span class="plat">iPadOS</span><span class="plat">iOS</span></div>
+          <div class="home-platform-row"><span class="app">Metrics</span><span class="plat">macOS</span><span class="plat">iPadOS</span><span class="plat">iOS</span></div>
           <div class="home-platform-row"><span class="app">Newsbook</span><span class="plat">macOS</span><span class="plat">iPadOS</span><span class="plat">iOS</span></div>
           <div class="home-platform-row"><span class="app">Release</span><span class="plat">macOS</span></div>
         </div>
@@ -1270,8 +1286,12 @@ onBeforeUnmount(() => {
           <a href="/">Home</a>
           <a href="/apps/index">All Apps</a>
           <a href="/apps/neon-vision-editor/overview">Neon Vision Editor</a>
-          <a href="/apps/metric-data/overview">Metric Data</a>
+          <a href="/apps/metric-data/overview">Metrics Data</a>
           <a href="/apps/release-assistant/overview">Release Assistant</a>
+          <a href="/apps/image-sorter/overview">Image Sorter</a>
+          <a href="/apps/syntaxhighlight-quicklook/overview">SyntaxHighlightQuickLook</a>
+          <a href="/apps/vistral/overview">Vistral</a>
+          <a href="/apps/history-vision/overview">History Vision</a>
         </div>
         <p class="hint">Tip: press <kbd>/</kbd> to search documentation.</p>
       </section>

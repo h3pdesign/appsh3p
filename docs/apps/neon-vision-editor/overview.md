@@ -48,6 +48,16 @@ head:
 - [Latest GitHub Release (v0.4.32)](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v0.4.32)
 - [Code Examples](/apps/code-examples)
 
+## Application Purpose
+
+Neon Vision Editor is a native writing and coding editor for Apple platforms. Its purpose is to provide a fast, distraction-light editing environment with syntax highlighting, optional AI assistance, and consistent behavior across macOS, iPadOS, and iOS.
+
+Primary user outcomes:
+
+- create and edit plain text, markdown, and code with low-latency input handling
+- review and organize content in focused document workflows
+- maintain consistent editing behavior across desktop and mobile devices
+
 ## GitHub Snapshot (as of February 17, 2026)
 
 - Repository stars: 116

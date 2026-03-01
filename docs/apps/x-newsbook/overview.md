@@ -43,6 +43,16 @@ head:
 - [Code Examples](/apps/code-examples)
 - [Components Overview](/apps/x-newsbook/components-overview)
 
+## Application Purpose
+
+X-Newsbook is a reading-first app for curated news and saved stories. Its purpose is to help users follow selected sources with a cleaner reading workflow, reduced visual noise, and consistent experience across macOS, iPadOS, and iOS.
+
+Primary user outcomes:
+
+- browse and read curated content in a focused layout
+- save items for later review and cross-device reading
+- keep a lightweight, distraction-reduced reading routine
+
 ## Related Pages
 
 - [Components Overview](/apps/x-newsbook/components-overview)
