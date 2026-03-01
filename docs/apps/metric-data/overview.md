@@ -17,6 +17,25 @@ head:
 
 <p class="overview-last-updated">Last updated: <span data-date="2026-02-16">February 16, 2026</span></p>
 
+## Application Identity
+
+- Application name: **Metric Data**
+- Google Cloud project: `pocket-tagging` (`702241209783`)
+- OAuth consent screen app name should be **Metric Data** to match this homepage.
+
+## Application Purpose
+
+Metric Data is an analytics app that lets users securely connect their own Google AdSense account and view performance metrics in a focused dashboard.
+
+Primary use:
+
+- sign in with Google OAuth 2.0 (Authorization Code + PKCE)
+- fetch AdSense reporting data for authorized users
+- display trends, dimensions, and account-level performance summaries
+- support daily analytics workflows across macOS, iPadOS, and iOS
+
+This app is not a public data crawler and does not access data outside the Google accounts explicitly authorized by the signed-in user.
+
 <div class="overview-platform-badges overview-reveal" aria-label="supported platforms">
   <span>macOS</span>
   <span>iPadOS</span>
