@@ -750,6 +750,59 @@ nav {
   color: var(--text-primary);
 }
 
+.conflict-news-ticker {
+  margin-top: 0.75rem;
+  border: 1px solid var(--border-subtle);
+  border-radius: 6px;
+  background: rgba(255,255,255,0.02);
+  overflow: hidden;
+}
+
+.conflict-news-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem;
+  padding: 0.45rem 0.65rem;
+  border-bottom: 1px solid var(--border-subtle);
+  font-family: var(--font-mono);
+  font-size: 0.67rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.conflict-news-track {
+  display: flex;
+  gap: 1.4rem;
+  padding: 0.58rem 0.65rem;
+  overflow-x: auto;
+  white-space: nowrap;
+  scrollbar-width: thin;
+}
+
+.conflict-news-item {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 0.78rem;
+}
+
+.conflict-news-item:hover {
+  color: var(--text-primary);
+}
+
+.conflict-news-time {
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  margin-right: 0.38rem;
+}
+
+.conflict-news-empty {
+  color: var(--text-muted);
+  font-size: 0.75rem;
+}
+
 .conflict-legend {
   display: flex;
   flex-wrap: wrap;
@@ -1264,6 +1317,10 @@ footer a:hover { border-bottom-color: var(--accent-gold); }
         <a id="iranWarSource" href="https://en.wikipedia.org/wiki/2026_Iran_conflict" target="_blank" rel="noopener">Source 1: live conflict data feed</a>
         <a id="iranWarSource2" href="https://www.understandingwar.org/" target="_blank" rel="noopener">Source 2: additional conflict source</a>
       </div>
+      <div class="conflict-news-ticker" id="iranNewsTicker">
+        <div class="conflict-news-head"><span>Live Conflict Newsticker</span><span id="iranNewsUpdated">--</span></div>
+        <div class="conflict-news-track" id="iranNewsTrack"><span class="conflict-news-empty">Loading latest conflict headlines...</span></div>
+      </div>
       <div class="conflict-metrics-grid" id="conflictMetrics">
         <div class="iran-stat"><div class="iran-stat-label">Loading metrics</div><div class="iran-stat-value">--</div></div>
       </div>
@@ -1313,6 +1370,10 @@ footer a:hover { border-bottom-color: var(--accent-gold); }
         <span id="ukraineSourceQuality">&#9670; Confidence: --</span>
         <a id="ukraineSource" href="https://en.wikipedia.org/wiki/Russian_invasion_of_Ukraine" target="_blank" rel="noopener">Source 1: live conflict data feed</a>
         <a id="ukraineSource2" href="https://www.understandingwar.org/" target="_blank" rel="noopener">Source 2: additional conflict source</a>
+      </div>
+      <div class="conflict-news-ticker" id="ukraineNewsTicker">
+        <div class="conflict-news-head"><span>Live Conflict Newsticker</span><span id="ukraineNewsUpdated">--</span></div>
+        <div class="conflict-news-track" id="ukraineNewsTrack"><span class="conflict-news-empty">Loading latest conflict headlines...</span></div>
       </div>
       <div class="conflict-metrics-grid" id="ukraineMetrics">
         <div class="iran-stat"><div class="iran-stat-label">Loading metrics</div><div class="iran-stat-value">--</div></div>
@@ -2281,6 +2342,7 @@ footer a:hover { border-bottom-color: var(--accent-gold); }
 <script>
 const POLYMARKET_API = 'https://gamma-api.polymarket.com/markets';
 const CONFLICT_MONITOR_URL = '/polymarket-us-politics/data/iran-war-metrics.json';
+const CONFLICT_NEWS_URL = '/polymarket-us-politics/data/conflict-news.json';
 const ONE_HOUR_MS = 60 * 60 * 1000;
 const THEME_KEY = 'pmir-theme';
 const LAST_SYNC_KEY = 'pmir-last-successful-sync';
@@ -2296,6 +2358,15 @@ function normalize(value) {
     .replace(/[^\w\s-]/g, '')
     .replace(/\s+/g, ' ')
     .trim();
+}
+
+function escapeHtml(value) {
+  return String(value || '')
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
 }
 
 function asArray(value) {
@@ -2550,6 +2621,57 @@ function setSyncStatus(state, detail) {
     : normalized === 'delayed'
       ? 'Using delayed or fallback data'
       : 'Waiting for live sync');
+}
+
+function formatTickerTime(value) {
+  const ts = parseTimestamp(value);
+  if (!Number.isFinite(ts)) return '--';
+  return new Intl.DateTimeFormat(undefined, {
+    month: 'short',
+    day: '2-digit',
+    hour: '2-digit',
+    minute: '2-digit',
+    timeZoneName: 'short'
+  }).format(new Date(ts));
+}
+
+function renderConflictTicker(conflictId, trackId, updatedId, feed) {
+  const track = document.getElementById(trackId);
+  const updated = document.getElementById(updatedId);
+  if (!track || !updated) return;
+
+  const list = Array.isArray(feed?.conflicts?.[conflictId]) ? feed.conflicts[conflictId] : [];
+  const updatedAt = feed?.updated_at_utc || null;
+  updated.textContent = `Updated: ${formatTickerTime(updatedAt)}`;
+
+  if (list.length === 0) {
+    track.innerHTML = '<span class="conflict-news-empty">No live headlines available right now.</span>';
+    return;
+  }
+
+  track.innerHTML = list.slice(0, 12).map(item => {
+    const title = escapeHtml(item.title || 'Headline');
+    const link = item.url || '#';
+    const source = escapeHtml(item.source || 'news');
+    const published = formatTickerTime(item.published_at_utc);
+    return `<a class="conflict-news-item" href="${link}" target="_blank" rel="noopener"><span class="conflict-news-time">${published}</span>${title} <span class="conflict-news-time">(${source})</span></a>`;
+  }).join('');
+}
+
+async function refreshConflictNews() {
+  try {
+    const response = await fetch(`${CONFLICT_NEWS_URL}?t=${Date.now()}`, { cache: 'no-store' });
+    if (!response.ok) throw new Error(`Conflict news fetch failed: ${response.status}`);
+    const feed = await response.json();
+    renderConflictTicker('iran_2026', 'iranNewsTrack', 'iranNewsUpdated', feed);
+    renderConflictTicker('ukraine_2026', 'ukraineNewsTrack', 'ukraineNewsUpdated', feed);
+  } catch (error) {
+    const iranTrack = document.getElementById('iranNewsTrack');
+    const ukrTrack = document.getElementById('ukraineNewsTrack');
+    if (iranTrack) iranTrack.innerHTML = '<span class="conflict-news-empty">Live ticker unavailable.</span>';
+    if (ukrTrack) ukrTrack.innerHTML = '<span class="conflict-news-empty">Live ticker unavailable.</span>';
+    console.error(error);
+  }
 }
 
 function setIranWarSync(message) {
@@ -3178,6 +3300,7 @@ function refreshAllData() {
   refreshLiveData();
   refreshIranWarMetrics();
   refreshUkraineMetrics();
+  refreshConflictNews();
 }
 
 refreshAllData();

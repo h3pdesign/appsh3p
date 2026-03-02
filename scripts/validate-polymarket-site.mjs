@@ -24,6 +24,9 @@ const requiredPageSnippets = [
   "function formatDualTimestamp(",
   "id=\"conflictTimelineList\"",
   "id=\"iranWarSource2\"",
+  "id=\"ukraine-war\"",
+  "CONFLICT_NEWS_URL",
+  "renderConflictTicker(",
 ];
 
 function fail(message) {
@@ -111,6 +114,30 @@ function validateConflictFeed() {
   }
 }
 
-validatePages();
-validateConflictFeed();
-console.log("Polymarket site validation passed.");
+validatePages();\nvalidateConflictFeed();\n
+function validateConflictNewsFeed() {
+  const feedPath = path.join(baseDir, "data", "conflict-news.json");
+  assertFileExists(feedPath);
+  const raw = fs.readFileSync(feedPath, "utf8");
+
+  let parsed;
+  try {
+    parsed = JSON.parse(raw);
+  } catch (error) {
+    fail(`Invalid JSON in ${feedPath}: ${error.message}`);
+  }
+
+  if (!parsed || typeof parsed !== "object") {
+    fail(`${feedPath} must be a JSON object`);
+  }
+  if (!parsed.conflicts || typeof parsed.conflicts !== "object") {
+    fail(`${feedPath} must include conflicts object`);
+  }
+
+  for (const id of ["iran_2026", "ukraine_2026"]) {
+    if (!Array.isArray(parsed.conflicts[id])) {
+      fail(`${feedPath} conflicts.${id} must be an array`);
+    }
+  }
+}
+\nvalidateConflictNewsFeed();\nconsole.log("Polymarket site validation passed.");
