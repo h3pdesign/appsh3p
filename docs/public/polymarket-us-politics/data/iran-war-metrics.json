@@ -5,7 +5,7 @@
     {
       "id": "iran_2026",
       "title": "Iran Conflict Monitor",
-      "subtitle": "Live casualties and projectile/operation indicators. Map and metrics refresh every hour.",
+      "subtitle": "Live conflict metrics plus daily composite intensity index (casualties, projectile activity, operational impacts), refreshed every hour.",
       "as_of_utc": "2026-03-02T12:54:58Z",
       "updated_at_utc": "2026-03-02T13:30:00Z",
       "source_name": "Wikipedia: 2026 Iran conflict + Twelve-Day War",
@@ -41,7 +41,8 @@
           "value": 555,
           "source": "Wikipedia + ISW + public reporting",
           "confidence": "Medium",
-          "tone": "red"
+          "tone": "red",
+          "scope": "Reported total deaths in Iran (civilian + military combined where sources are mixed)."
         },
         {
           "id": "iran_injured",
@@ -49,7 +50,8 @@
           "value": 747,
           "source": "Wikipedia + ISW + public reporting",
           "confidence": "Medium",
-          "tone": "red"
+          "tone": "red",
+          "scope": "Reported total injured in Iran (civilian + military combined where sources are mixed)."
         },
         {
           "id": "israel_killed",
@@ -57,7 +59,8 @@
           "value": 12,
           "source": "Wikipedia + ISW + public reporting",
           "confidence": "Medium",
-          "tone": "red"
+          "tone": "red",
+          "scope": "Reported total deaths in Israel (civilian + military combined where sources are mixed)."
         },
         {
           "id": "israel_injured",
@@ -65,7 +68,8 @@
           "value": 777,
           "source": "Wikipedia + ISW + public reporting",
           "confidence": "Medium",
-          "tone": "red"
+          "tone": "red",
+          "scope": "Reported total injured in Israel (civilian + military combined where sources are mixed)."
         },
         {
           "id": "us_killed",
@@ -73,7 +77,8 @@
           "value": 4,
           "source": "Wikipedia + ISW + public reporting",
           "confidence": "Medium",
-          "tone": "red"
+          "tone": "red",
+          "scope": "US military personnel deaths (military only)."
         },
         {
           "id": "us_seriously_injured",
@@ -81,7 +86,8 @@
           "value": 5,
           "source": "Wikipedia + ISW + public reporting",
           "confidence": "Medium",
-          "tone": "red"
+          "tone": "red",
+          "scope": "US military personnel seriously injured (military only)."
         },
         {
           "id": "missiles_benchmark",
@@ -89,7 +95,8 @@
           "value": 520,
           "source": "Wikipedia + ISW + public reporting",
           "confidence": "Medium",
-          "tone": "amber"
+          "tone": "amber",
+          "scope": "Projectile benchmark volume (historical reference, not daily launches)."
         },
         {
           "id": "drones_benchmark",
@@ -97,7 +104,8 @@
           "value": 950,
           "source": "Wikipedia + ISW + public reporting",
           "confidence": "Medium",
-          "tone": "amber"
+          "tone": "amber",
+          "scope": "Drone benchmark volume (historical reference, not daily launches)."
         },
         {
           "id": "total_reported_killed",
@@ -105,7 +113,8 @@
           "value": 571,
           "source": "Wikipedia + ISW + public reporting",
           "confidence": "Medium",
-          "tone": "red"
+          "tone": "red",
+          "scope": "Aggregate reported deaths across tracked parties (source-mixed civilian+military where not separated)."
         },
         {
           "id": "total_reported_injured",
@@ -113,7 +122,8 @@
           "value": 1529,
           "source": "Wikipedia + ISW + public reporting",
           "confidence": "Medium",
-          "tone": "red"
+          "tone": "red",
+          "scope": "Aggregate reported injured across tracked parties (source-mixed civilian+military where not separated)."
         },
         {
           "id": "air_defense_intercepts_7d",
@@ -121,7 +131,8 @@
           "value": 312,
           "source": "Wikipedia + ISW + public reporting",
           "confidence": "Low",
-          "tone": "amber"
+          "tone": "amber",
+          "scope": "Estimated/compiled 7-day air-defense intercept count (mixed-source operational metric)."
         },
         {
           "id": "critical_infrastructure_impacts_7d",
@@ -129,7 +140,8 @@
           "value": 37,
           "source": "Wikipedia + ISW + public reporting",
           "confidence": "Low",
-          "tone": "green"
+          "tone": "green",
+          "scope": "Estimated/compiled 7-day critical infrastructure impact incidents (operational metric)."
         }
       ],
       "map_points": [
@@ -229,7 +241,8 @@
           "date": "2026-03-02",
           "value": 63
         }
-      ]
+      ],
+      "daily_series_definition": "Composite index (0-100) combining normalized casualties, projectile activity, and operational impact signals from the conflict feed. Not a direct daily deaths chart."
     }
   ]
 }

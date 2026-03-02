@@ -737,6 +737,19 @@ nav {
 .conflict-trend-tooltip .delta-down { color: var(--tone-red); }
 .conflict-trend-tooltip .delta-flat { color: var(--tone-amber); }
 
+.conflict-explainer {
+  margin-top: 0.65rem;
+  border-top: 1px dashed var(--border-subtle);
+  padding-top: 0.6rem;
+  color: var(--text-secondary);
+  font-size: 0.74rem;
+  line-height: 1.45;
+}
+
+.conflict-explainer strong {
+  color: var(--text-primary);
+}
+
 .conflict-legend {
   display: flex;
   flex-wrap: wrap;
@@ -1239,7 +1252,7 @@ footer a:hover { border-bottom-color: var(--accent-gold); }
     <div class="section-header reveal">
       <div class="section-number">Top Priority</div>
       <h2 class="section-title" id="conflictTitle">Conflict Monitor</h2>
-      <p class="section-subtitle" id="conflictSubtitle">Live conflict metrics (casualties, missile activity, and operational footprint), refreshed every hour.</p>
+      <p class="section-subtitle" id="conflictSubtitle">Live conflict metrics and a daily composite intensity graph (casualties, missile activity, operational footprint), refreshed every hour.</p>
     </div>
     <div class="iran-monitor reveal">
       <div class="iran-meta">
@@ -1262,6 +1275,9 @@ footer a:hover { border-bottom-color: var(--accent-gold); }
           </div>
           <svg class="conflict-trend-chart" id="conflictTrendChart" viewBox="0 0 700 170" role="img" aria-label="Daily conflict intensity trend"></svg>
           <div class="conflict-trend-tooltip" id="conflictTrendTooltip" aria-hidden="true"></div>
+          <div class="conflict-explainer" id="conflictExplainer">
+            <strong>Graph definition:</strong> each dot is one day and represents a <strong>composite conflict intensity index</strong> (0–100) built from the data feed (casualties, projectile activity, and operational impacts). It is not a direct daily death count.
+          </div>
         </div>
       </div>
       <div class="conflict-legend" id="conflictLegend"></div>
@@ -2538,11 +2554,19 @@ function renderConflictMetrics(metrics) {
     meta.className = 'iran-stat-meta';
     const confidence = metric.confidence || 'n/a';
     const source = metric.source || 'live conflict feed';
+    const scope = metric.scope || metric.definition || '';
     meta.textContent = `Source: ${source} | Confidence: ${confidence}`;
 
     card.appendChild(label);
     card.appendChild(value);
     card.appendChild(meta);
+
+    if (scope) {
+      const scopeNode = document.createElement('div');
+      scopeNode.className = 'iran-stat-meta';
+      scopeNode.textContent = `Scope: ${scope}`;
+      card.appendChild(scopeNode);
+    }
     container.appendChild(card);
   });
 }
@@ -2679,7 +2703,7 @@ function renderConflictTrend(series) {
     const deltaRaw = Number(target.getAttribute('data-delta'));
     const delta = formatDelta(deltaRaw);
 
-    tooltip.innerHTML = `Date: ${label}<br>Value: ${value}<br>Delta vs prev: <span class="${delta.cls}">${delta.text}</span>`;
+    tooltip.innerHTML = `Date: ${label}<br>Index value: ${value}<br>Delta vs prev day: <span class="${delta.cls}">${delta.text}</span>`;
 
     const bounds = trendWrap.getBoundingClientRect();
     const x = Math.max(12, Math.min(bounds.width - 12, eventX - bounds.left));
@@ -2706,7 +2730,7 @@ function renderConflictTrend(series) {
   });
 
   if (rangeNode) {
-    rangeNode.textContent = `${points[0].date || points[0].day || 'Start'} → ${points[points.length - 1].date || points[points.length - 1].day || 'Now'}`;
+    rangeNode.textContent = `Index 0-100 | ${points[0].date || points[0].day || 'Start'} → ${points[points.length - 1].date || points[points.length - 1].day || 'Now'}`;
   }
 }
 
