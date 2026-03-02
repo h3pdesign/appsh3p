@@ -3,7 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Congress - State of US Politics</title>
+<title>Congress | STATE OF US & WORLD POLITICS</title>
+<meta name="description" content="Live Polymarket intelligence dashboard for US and world politics: conflict monitor, election probabilities, economy, congress, legal and social media trends.">
+<link rel="canonical" href="https://apps-h3p.com/polymarket-us-politics/congress.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="h3p">
+<meta property="og:title" content="Congress | STATE OF US & WORLD POLITICS">
+<meta property="og:description" content="Live Polymarket intelligence dashboard for US and world politics: conflict monitor, election probabilities, economy, congress, legal and social media trends.">
+<meta property="og:url" content="https://apps-h3p.com/polymarket-us-politics/congress.html">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Congress | STATE OF US & WORLD POLITICS">
+<meta name="twitter:description" content="Live Polymarket intelligence dashboard for US and world politics: conflict monitor, election probabilities, economy, congress, legal and social media trends.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -46,6 +56,12 @@
   --nav-link-color: #9b9a97;
   --nav-link-color-active: #e8e6e1;
   --hamburger-color: #9b9a97;
+  --status-live-bg: rgba(34,197,94,0.16);
+  --status-live-fg: #86efac;
+  --status-delayed-bg: rgba(245,158,11,0.16);
+  --status-delayed-fg: #fcd34d;
+  --status-pending-bg: rgba(148,163,184,0.16);
+  --status-pending-fg: #cbd5e1;
 }
 
 :root[data-theme='light'] {
@@ -67,11 +83,17 @@
   --accent-purple: #7c3aed;
   --accent-teal: #0f766e;
   --noise-opacity: 0.02;
-  --nav-bg: rgba(244, 241, 233, 0.96);
-  --nav-link-bg-hover: rgba(33, 30, 24, 0.08);
-  --nav-link-color: #4d473a;
-  --nav-link-color-active: #1f1e1a;
-  --hamburger-color: #4d473a;
+  --nav-bg: rgba(250, 247, 240, 0.98);
+  --nav-link-bg-hover: rgba(33, 30, 24, 0.12);
+  --nav-link-color: #383223;
+  --nav-link-color-active: #16130d;
+  --hamburger-color: #383223;
+  --status-live-bg: rgba(34,197,94,0.15);
+  --status-live-fg: #166534;
+  --status-delayed-bg: rgba(245,158,11,0.18);
+  --status-delayed-fg: #92400e;
+  --status-pending-bg: rgba(100,116,139,0.16);
+  --status-pending-fg: #334155;
 }
 
 /* ========================================
@@ -145,8 +167,10 @@ nav {
 
 .nav-links {
   display: flex;
+  flex: 1 1 auto;
   gap: 0.25rem;
   list-style: none;
+  margin-left: 0.6rem;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
@@ -155,6 +179,9 @@ nav {
 .nav-links::-webkit-scrollbar { display: none; }
 
 .nav-links a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
   color: var(--nav-link-color);
   text-decoration: none;
   font-size: 0.75rem;
@@ -177,7 +204,8 @@ nav {
   display: flex;
   align-items: center;
   gap: 0.65rem;
-  margin-left: 0.35rem;
+  margin-left: auto;
+  padding-left: 0.65rem;
 }
 
 .theme-toggle {
@@ -185,13 +213,14 @@ nav {
   background: rgba(255,255,255,0.02);
   color: var(--text-secondary);
   border-radius: 999px;
-  padding: 0.32rem 0.65rem;
+  padding: 0.34rem 0.75rem;
+  line-height: 1;
   font-family: var(--font-mono);
-  font-size: 0.68rem;
+  font-size: 0.72rem;
   letter-spacing: 0.03em;
   cursor: pointer;
   white-space: nowrap;
-  min-width: 92px;
+  min-width: 106px;
   transition: color 0.2s, border-color 0.2s, background 0.2s;
 }
 
@@ -236,9 +265,10 @@ nav {
   position: fixed;
   inset: 0;
   top: var(--nav-height);
-  background: rgba(10, 10, 15, 0.97);
+  background: color-mix(in oklab, var(--nav-bg) 94%, black 6%);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
+  border-top: 1px solid var(--border-color);
   z-index: 999;
   padding: 2rem 1.5rem;
   overflow-y: auto;
@@ -338,7 +368,9 @@ nav {
 .hero-meta {
   display: flex;
   justify-content: center;
-  gap: 2rem;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.25rem;
   font-size: 0.78rem;
   color: var(--text-muted);
   font-family: var(--font-mono);
@@ -347,12 +379,39 @@ nav {
 
 .hero-meta span { display: flex; align-items: center; gap: 0.35rem; }
 
+.status-pill {
+  border-radius: 999px;
+  padding: 0.22rem 0.58rem;
+  border: 1px solid transparent;
+  font-size: 0.72rem;
+}
+
+.status-live {
+  color: var(--status-live-fg);
+  background: var(--status-live-bg);
+  border-color: color-mix(in oklab, var(--status-live-fg) 35%, transparent);
+}
+
+.status-delayed {
+  color: var(--status-delayed-fg);
+  background: var(--status-delayed-bg);
+  border-color: color-mix(in oklab, var(--status-delayed-fg) 35%, transparent);
+}
+
+.status-pending {
+  color: var(--status-pending-fg);
+  background: var(--status-pending-bg);
+  border-color: color-mix(in oklab, var(--status-pending-fg) 35%, transparent);
+}
+
 /* ========================================
    Section Headers
    ======================================== */
 .section {
   padding: var(--section-gap) 0;
   border-top: 1px solid var(--border-color);
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 980px;
 }
 
 .section-header {
@@ -521,6 +580,14 @@ nav {
   color: var(--text-primary);
 }
 
+.iran-stat-meta {
+  margin-top: 0.45rem;
+  font-size: 0.66rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
 .conflict-map-wrap {
   margin-top: 1rem;
   border: 1px solid var(--border-subtle);
@@ -561,6 +628,49 @@ nav {
   width: 10px;
   height: 10px;
   border-radius: 999px;
+}
+
+.conflict-timeline {
+  margin-top: 1rem;
+  border-top: 1px dashed var(--border-subtle);
+  padding-top: 0.9rem;
+}
+
+.conflict-timeline h3 {
+  font-size: 0.82rem;
+  font-family: var(--font-mono);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 0.6rem;
+}
+
+.conflict-timeline-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 0.65rem;
+}
+
+.conflict-timeline-item {
+  border: 1px solid var(--border-subtle);
+  border-radius: 4px;
+  padding: 0.65rem 0.75rem;
+  background: rgba(255,255,255,0.02);
+}
+
+.conflict-timeline-time {
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.conflict-timeline-text {
+  margin-top: 0.25rem;
+  font-size: 0.79rem;
+  line-height: 1.45;
+  color: var(--text-secondary);
 }
 
 .conflict-metrics-grid {
@@ -991,9 +1101,9 @@ footer a:hover { border-bottom-color: var(--accent-gold); }
     <h1>STATE OF<br><span>US & WORLD POLITICS</span></h1>
     <p class="hero-subtitle">Prediction Market Intelligence Report</p>
     <div class="hero-meta">
-      <span id="asOfDate">&#9670; As of --</span>
+      <span id="asOfDate">&#9670; Last updated: --</span>
       <span>&#9670; Source: Polymarket</span>
-      <span id="syncStatus" aria-live="polite">&#9670; Sync pending</span>
+      <span id="syncStatus" class="status-pill status-pending" aria-live="polite" title="Waiting for live sync">Health: Pending</span>
     </div>
   </header>
 
@@ -1006,9 +1116,11 @@ footer a:hover { border-bottom-color: var(--accent-gold); }
     </div>
     <div class="iran-monitor reveal">
       <div class="iran-meta">
-        <span id="iranWarAsOf">&#9670; As of: waiting for live metrics</span>
+        <span id="iranWarAsOf">&#9670; Last updated: waiting for live metrics</span>
         <span id="iranWarSync">&#9670; Syncing metrics...</span>
-        <a id="iranWarSource" href="https://en.wikipedia.org/wiki/2026_Iran_conflict" target="_blank" rel="noopener">Source: live conflict data feed</a>
+        <span id="conflictSourceQuality">&#9670; Confidence: --</span>
+        <a id="iranWarSource" href="https://en.wikipedia.org/wiki/2026_Iran_conflict" target="_blank" rel="noopener">Source 1: live conflict data feed</a>
+        <a id="iranWarSource2" href="https://www.understandingwar.org/" target="_blank" rel="noopener">Source 2: additional conflict source</a>
       </div>
       <div class="conflict-metrics-grid" id="conflictMetrics">
         <div class="iran-stat"><div class="iran-stat-label">Loading metrics</div><div class="iran-stat-value">--</div></div>
@@ -1018,6 +1130,12 @@ footer a:hover { border-bottom-color: var(--accent-gold); }
         <div class="conflict-map-status" id="conflictMapStatus">Loading conflict map...</div>
       </div>
       <div class="conflict-legend" id="conflictLegend"></div>
+      <div class="conflict-timeline" id="conflictTimeline">
+        <h3>Timeline</h3>
+        <div class="conflict-timeline-list" id="conflictTimelineList">
+          <div class="conflict-timeline-item"><div class="conflict-timeline-time">Loading</div><div class="conflict-timeline-text">Waiting for timeline updates...</div></div>
+        </div>
+      </div>
     </div>
     <div class="methodology reveal" style="margin-top:1rem;">
       <h3>Adaptable Conflict Template</h3>
@@ -1962,7 +2080,7 @@ footer a:hover { border-bottom-color: var(--accent-gold); }
   </div>
 </footer>
 
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" defer></script>
 <script>
 const POLYMARKET_API = 'https://gamma-api.polymarket.com/markets';
 const CONFLICT_MONITOR_URL = '/polymarket-us-politics/data/iran-war-metrics.json';
@@ -2147,20 +2265,42 @@ function updateVolume(card, market) {
   volumeNode.textContent = formatted;
 }
 
-function updateTimestamp(sourceTime) {
+function formatDualTimestamp(sourceTime) {
   const timestamp = Number.isFinite(sourceTime) ? sourceTime : Date.now();
-  const formatted = new Date(timestamp).toLocaleString(undefined, {
+  const date = new Date(timestamp);
+
+  const local = new Intl.DateTimeFormat(undefined, {
     year: 'numeric',
     month: 'long',
     day: 'numeric',
     hour: '2-digit',
-    minute: '2-digit'
-  });
+    minute: '2-digit',
+    timeZoneName: 'short'
+  }).format(date);
 
+  const utc = new Intl.DateTimeFormat(undefined, {
+    year: 'numeric',
+    month: 'short',
+    day: '2-digit',
+    hour: '2-digit',
+    minute: '2-digit',
+    hour12: false,
+    timeZone: 'UTC',
+    timeZoneName: 'short'
+  }).format(date);
+
+  return { local, utc };
+}
+
+function updateTimestamp(sourceTime) {
+  const { local, utc } = formatDualTimestamp(sourceTime);
   const headerDate = document.getElementById('asOfDate');
   const footerDate = document.getElementById('footerTimestamp');
-  if (headerDate) headerDate.textContent = `\u25c6 As of ${formatted}`;
-  if (footerDate) footerDate.innerHTML = 'Data sourced from <a href="https://polymarket.com" target="_blank" rel="noopener">Polymarket</a> prediction markets. Probabilities refresh automatically every 6 hours.';
+
+  if (headerDate) headerDate.textContent = `◆ Last updated: ${local} (${utc})`;
+  if (footerDate) {
+    footerDate.innerHTML = 'Data sourced from <a href="https://polymarket.com" target="_blank" rel="noopener">Polymarket</a> prediction markets. Last refresh: every 6 hours. Displayed timestamps include local time and UTC.';
+  }
 }
 
 function readStoredSyncTime() {
@@ -2172,14 +2312,26 @@ function readStoredSyncTime() {
   return parsed;
 }
 
-function setSyncStatus(message) {
+function setSyncStatus(state, detail) {
   const node = document.getElementById('syncStatus');
   if (!node) return;
-  if (!message) {
-    node.textContent = '';
-    return;
-  }
-  node.textContent = `\u25c6 ${message}`;
+
+  const normalized = state === 'live' || state === 'delayed' ? state : 'pending';
+  node.classList.remove('status-live', 'status-delayed', 'status-pending');
+  node.classList.add('status-pill', `status-${normalized}`);
+
+  const labels = {
+    pending: 'Health: Pending',
+    live: 'Health: Live',
+    delayed: 'Health: Delayed'
+  };
+
+  node.textContent = labels[normalized];
+  node.title = detail || (normalized === 'live'
+    ? 'Live sync is healthy'
+    : normalized === 'delayed'
+      ? 'Using delayed or fallback data'
+      : 'Waiting for live sync');
 }
 
 function setIranWarSync(message) {
@@ -2193,20 +2345,12 @@ function updateIranWarTimestamp(asOfValue) {
 
   const asOfTime = parseTimestamp(asOfValue);
   if (!Number.isFinite(asOfTime)) {
-    node.textContent = '\u25c6 As of: latest successful sync';
+    node.textContent = '◆ Last updated: latest successful sync';
     return;
   }
 
-  const formatted = new Date(asOfTime).toLocaleString(undefined, {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric',
-    hour: '2-digit',
-    minute: '2-digit',
-    timeZone: 'UTC',
-    timeZoneName: 'short'
-  });
-  node.textContent = `\u25c6 As of: ${formatted}`;
+  const { local, utc } = formatDualTimestamp(asOfTime);
+  node.textContent = `◆ Last updated: ${local} (${utc})`;
 }
 
 function renderConflictMetrics(metrics) {
@@ -2226,8 +2370,15 @@ function renderConflictMetrics(metrics) {
     value.className = 'iran-stat-value';
     value.textContent = formatInteger(metric.value);
 
+    const meta = document.createElement('div');
+    meta.className = 'iran-stat-meta';
+    const confidence = metric.confidence || 'n/a';
+    const source = metric.source || 'live conflict feed';
+    meta.textContent = `Source: ${source} | Confidence: ${confidence}`;
+
     card.appendChild(label);
     card.appendChild(value);
+    card.appendChild(meta);
     container.appendChild(card);
   });
 }
@@ -2251,6 +2402,36 @@ function renderConflictLegend(legend) {
     row.appendChild(swatch);
     row.appendChild(text);
     container.appendChild(row);
+  });
+}
+
+function renderConflictTimeline(events) {
+  const container = document.getElementById('conflictTimelineList');
+  if (!container) return;
+
+  const rows = Array.isArray(events) ? events : [];
+  container.innerHTML = '';
+
+  if (rows.length === 0) {
+    container.innerHTML = '<div class="conflict-timeline-item"><div class="conflict-timeline-time">No timeline</div><div class="conflict-timeline-text">No recent timeline entries in feed.</div></div>';
+    return;
+  }
+
+  rows.slice(0, 8).forEach(item => {
+    const card = document.createElement('div');
+    card.className = 'conflict-timeline-item';
+
+    const time = document.createElement('div');
+    time.className = 'conflict-timeline-time';
+    time.textContent = item.time || item.date || 'Update';
+
+    const text = document.createElement('div');
+    text.className = 'conflict-timeline-text';
+    text.textContent = item.text || item.summary || 'No details available.';
+
+    card.appendChild(time);
+    card.appendChild(text);
+    container.appendChild(card);
   });
 }
 
@@ -2332,12 +2513,25 @@ function hydrateConflictHeader(conflict) {
   const titleNode = document.getElementById('conflictTitle');
   const subtitleNode = document.getElementById('conflictSubtitle');
   const sourceNode = document.getElementById('iranWarSource');
+  const sourceNode2 = document.getElementById('iranWarSource2');
+  const qualityNode = document.getElementById('conflictSourceQuality');
 
   if (titleNode) titleNode.textContent = conflict.title || 'Conflict Monitor';
   if (subtitleNode) subtitleNode.textContent = conflict.subtitle || 'Live conflict metrics refreshed every 6 hours.';
+  if (qualityNode) qualityNode.textContent = `◆ Confidence: ${conflict.confidence || 'Medium'}`;
   if (sourceNode) {
-    sourceNode.textContent = `Source: ${conflict.source_name || 'live conflict data feed'}`;
+    sourceNode.textContent = `Source 1: ${conflict.source_name || 'live conflict data feed'}`;
     if (conflict.source_url) sourceNode.href = conflict.source_url;
+  }
+  if (sourceNode2) {
+    const secondaryName = conflict.secondary_source_name || 'additional conflict source';
+    sourceNode2.textContent = `Source 2: ${secondaryName}`;
+    if (conflict.secondary_source_url) {
+      sourceNode2.href = conflict.secondary_source_url;
+      sourceNode2.style.display = '';
+    } else {
+      sourceNode2.style.display = 'none';
+    }
   }
 }
 
@@ -2354,12 +2548,13 @@ async function refreshIranWarMetrics() {
     hydrateConflictHeader(conflict);
     renderConflictMetrics(Array.isArray(conflict.metrics) ? conflict.metrics : []);
     renderConflictLegend(Array.isArray(conflict.legend) ? conflict.legend : []);
+    renderConflictTimeline(Array.isArray(conflict.timeline) ? conflict.timeline : []);
     upsertConflictMap(conflict.map || {}, Array.isArray(conflict.map_points) ? conflict.map_points : [], Array.isArray(conflict.legend) ? conflict.legend : []);
 
     updateIranWarTimestamp(conflict.as_of_utc || conflict.updated_at_utc || feed.updated_at_utc);
     setIranWarSync('Live metrics synced');
   } catch (error) {
-    setIranWarSync('Live metrics unavailable');
+    setIranWarSync('Metrics delayed');
     console.error(error);
   }
 }
@@ -2383,7 +2578,7 @@ function preferredTheme() {
 }
 
 async function refreshLiveData() {
-  setSyncStatus('Syncing live data...');
+  setSyncStatus('pending', 'Syncing live data');
   const cards = Array.from(document.querySelectorAll('.card'));
 
   const results = await Promise.all(cards.map(async card => {
@@ -2421,11 +2616,11 @@ async function refreshLiveData() {
     const syncTime = Number.isFinite(freshestTimestamp) ? freshestTimestamp : Date.now();
     localStorage.setItem(LAST_SYNC_KEY, String(syncTime));
     updateTimestamp(syncTime);
-    setSyncStatus(`Live data synced (${successful} markets)`);
+    setSyncStatus('live', `${successful} markets synced`);
   } else {
     const lastSuccessful = readStoredSyncTime();
     updateTimestamp(Number.isFinite(lastSuccessful) ? lastSuccessful : Date.now());
-    setSyncStatus('');
+    setSyncStatus('delayed', 'Using last known values');
   }
 }
 
@@ -2495,23 +2690,27 @@ const observer = new IntersectionObserver(entries => {
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
 // ========================================
-// Active nav link on scroll
+// Active nav link (desktop + mobile)
 // ========================================
-const sections = document.querySelectorAll('.section[id]');
-const navLinks = document.querySelectorAll('.nav-links a');
+const currentPath = window.location.pathname.replace(/\/$/, '');
+const allNavLinks = document.querySelectorAll('.nav-links a, .mobile-menu a.mobile-link');
 
-const navObserver = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      const id = entry.target.id;
-      navLinks.forEach(link => {
-        link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
-      });
-    }
-  });
-}, { threshold: 0.2, rootMargin: '-80px 0px -60% 0px' });
+allNavLinks.forEach(link => {
+  const href = link.getAttribute('href') || '';
+  if (!href.startsWith('/')) return;
 
-sections.forEach(section => navObserver.observe(section));
+  const absolute = new URL(href, window.location.origin);
+  const linkPath = absolute.pathname.replace(/\/$/, '');
+  const linkHash = absolute.hash;
+
+  const isPathMatch = linkPath === currentPath;
+  const isHashMatch = linkHash && window.location.hash && linkHash === window.location.hash;
+
+  if (isPathMatch || isHashMatch) {
+    link.classList.add('active');
+    if (link.classList.contains('mobile-link')) link.setAttribute('aria-current', 'page');
+  }
+});
 
 const focusSection = document.body.dataset.focusSection;
 if (focusSection) {

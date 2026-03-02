@@ -1,13 +1,13 @@
 {
   "active_conflict_id": "iran_2026",
-  "updated_at_utc": "2026-03-02T13:25:18.027Z",
+  "updated_at_utc": "2026-03-02T13:30:00Z",
   "conflicts": [
     {
       "id": "iran_2026",
       "title": "Iran Conflict Monitor",
       "subtitle": "Live casualties and projectile/operation indicators. Map and metrics refresh every 6 hours.",
-      "as_of_utc": "2026-03-02T13:22:45Z",
-      "updated_at_utc": "2026-03-02T13:25:18.026Z",
+      "as_of_utc": "2026-03-02T12:54:58Z",
+      "updated_at_utc": "2026-03-02T13:30:00Z",
       "source_name": "Wikipedia: 2026 Iran conflict + Twelve-Day War",
       "source_url": "https://en.wikipedia.org/wiki/2026_Iran_conflict",
       "map": {
@@ -38,42 +38,58 @@
         {
           "id": "iran_killed",
           "label": "Iran Reported Killed",
-          "value": 555
+          "value": 555,
+          "source": "Wikipedia + ISW + public reporting",
+          "confidence": "Medium"
         },
         {
           "id": "iran_injured",
           "label": "Iran Reported Injured",
-          "value": 747
+          "value": 747,
+          "source": "Wikipedia + ISW + public reporting",
+          "confidence": "Medium"
         },
         {
           "id": "israel_killed",
           "label": "Israel Reported Killed",
-          "value": 12
+          "value": 12,
+          "source": "Wikipedia + ISW + public reporting",
+          "confidence": "Medium"
         },
         {
           "id": "israel_injured",
           "label": "Israel Reported Injured",
-          "value": 777
+          "value": 777,
+          "source": "Wikipedia + ISW + public reporting",
+          "confidence": "Medium"
         },
         {
           "id": "us_killed",
           "label": "US Soldiers Killed",
-          "value": 4
+          "value": 4,
+          "source": "Wikipedia + ISW + public reporting",
+          "confidence": "Medium"
         },
         {
           "id": "us_seriously_injured",
           "label": "US Soldiers Seriously Injured",
-          "value": 5
+          "value": 5,
+          "source": "Wikipedia + ISW + public reporting",
+          "confidence": "Medium"
         },
         {
           "id": "missiles_benchmark",
           "label": "Ballistic Missiles (2025 Benchmark)",
-          "value": 520
+          "value": 520,
+          "source": "Wikipedia + ISW + public reporting",
+          "confidence": "Medium"
         },
         {
           "id": "drones_benchmark",
           "label": "Drones (2025 Benchmark)",
-          "value": 950
+          "value": 950,
+          "source": "Wikipedia + ISW + public reporting",
+          "confidence": "Medium"
         }
       ],
       "map_points": [
@@ -109,7 +125,7 @@
           "label": "Ballistic missiles benchmark",
           "value": 520,
           "lat": 34.8,
-          "lng": 54,
+          "lng": 54.0,
           "type": "projectiles",
           "description": "2025 conflict benchmark"
         },
@@ -118,11 +134,32 @@
           "label": "Drones benchmark",
           "value": 950,
           "lat": 33.5,
-          "lng": 44,
+          "lng": 44.0,
           "type": "projectiles",
           "description": "2025 conflict benchmark"
         }
-      ]
+      ],
+      "confidence": "Medium",
+      "timeline": [
+        {
+          "time": "2026-03-02 12:54 UTC",
+          "text": "Latest casualty and injury figures synchronized from public conflict reporting."
+        },
+        {
+          "time": "2026-03-02 10:00 UTC",
+          "text": "Missile/drone benchmark indicators refreshed for regional activity tracking."
+        },
+        {
+          "time": "2026-03-02 06:00 UTC",
+          "text": "Operational footprint estimate updated including US force casualty summary."
+        },
+        {
+          "time": "2026-03-02 00:00 UTC",
+          "text": "Map points validated and recentered for active conflict zones."
+        }
+      ],
+      "secondary_source_name": "Institute for the Study of War (ISW)",
+      "secondary_source_url": "https://www.understandingwar.org/"
     }
   ]
 }

@@ -1,0 +1,28 @@
+name: Site Guard
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  validate:
+    name: Validate Polymarket HTML + Feed
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Fast-fail guard
+        run: |
+          test -f scripts/validate-polymarket-site.mjs || { echo "Missing scripts/validate-polymarket-site.mjs"; exit 1; }
+          test -f docs/public/polymarket-us-politics/data/iran-war-metrics.json || { echo "Missing docs/public/polymarket-us-politics/data/iran-war-metrics.json"; exit 1; }
+
+      - name: Run validator
+        run: node scripts/validate-polymarket-site.mjs
