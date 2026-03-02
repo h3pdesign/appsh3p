@@ -49,7 +49,7 @@ body {
   background: var(--h3p-page-bg);
 }
 
-.VPNav,
+.VPNavBar,
 .VPLocalNav {
   backdrop-filter: blur(8px);
 }
