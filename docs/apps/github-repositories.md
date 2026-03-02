@@ -13,7 +13,6 @@ This page tracks repository mapping for all documented apps.
 - X-Newsbook
 - Release Assistant
 - Image Sorter
-- SyntaxHighlightQuickLook
 - Vistral
 - History Vision
 

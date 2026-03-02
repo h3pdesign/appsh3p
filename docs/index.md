@@ -132,10 +132,6 @@ features:
     <img src="/icons/image-sorter.png?v=20260302-1" alt="Image Sorter icon" width="52" height="52" loading="lazy" decoding="async" />
     <span>Image Sorter</span>
   </a>
-  <a class="startpage-app-item" href="/apps/syntaxhighlight-quicklook/overview">
-    <img src="/icons/syntaxhighlight-quicklook.svg" alt="SyntaxHighlightQuickLook icon" width="52" height="52" loading="lazy" decoding="async" />
-    <span>SyntaxHighlightQuickLook</span>
-  </a>
   <a class="startpage-app-item" href="/apps/vistral/overview">
     <img src="/icons/vistral.png?v=20260302-1" alt="Vistral icon" width="52" height="52" loading="lazy" decoding="async" />
     <span>Vistral</span>
@@ -147,7 +143,7 @@ features:
 </div>
 
 <div class="startpage-social-proof" aria-label="Trust signals">
-  <span>8 app docs</span>
+  <span>7 app docs</span>
   <span>Published on apps-h3p.com</span>
   <span>Neon release published Feb 28, 2026</span>
   <span>GitHub-backed changelogs</span>

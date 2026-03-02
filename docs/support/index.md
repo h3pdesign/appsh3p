@@ -30,7 +30,6 @@ Support guidance applies to:
 - Release Assistant
 - X-Newsbook
 - Image Sorter
-- SyntaxHighlightQuickLook
 - Vistral
 - History Vision
 
