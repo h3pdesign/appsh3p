@@ -648,6 +648,7 @@ nav {
 }
 
 .conflict-trend {
+  position: relative;
   border-top: 1px solid var(--border-subtle);
   padding: 0.75rem;
   background: rgba(255,255,255,0.02);
@@ -707,6 +708,34 @@ nav {
   font-family: var(--font-mono);
   font-size: 10px;
 }
+
+.conflict-trend-tooltip {
+  position: absolute;
+  z-index: 5;
+  min-width: 150px;
+  max-width: 220px;
+  padding: 0.45rem 0.55rem;
+  border-radius: 6px;
+  border: 1px solid var(--border-color);
+  background: color-mix(in oklab, var(--bg-card) 92%, black 8%);
+  color: var(--text-primary);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.25);
+  font-size: 0.68rem;
+  line-height: 1.35;
+  font-family: var(--font-mono);
+  pointer-events: none;
+  opacity: 0;
+  transform: translate(-50%, -115%);
+  transition: opacity 0.12s ease;
+}
+
+.conflict-trend-tooltip.visible {
+  opacity: 1;
+}
+
+.conflict-trend-tooltip .delta-up { color: var(--tone-green); }
+.conflict-trend-tooltip .delta-down { color: var(--tone-red); }
+.conflict-trend-tooltip .delta-flat { color: var(--tone-amber); }
 
 .conflict-legend {
   display: flex;
@@ -1232,6 +1261,7 @@ footer a:hover { border-bottom-color: var(--accent-gold); }
             <span id="conflictTrendRange">--</span>
           </div>
           <svg class="conflict-trend-chart" id="conflictTrendChart" viewBox="0 0 700 170" role="img" aria-label="Daily conflict intensity trend"></svg>
+          <div class="conflict-trend-tooltip" id="conflictTrendTooltip" aria-hidden="true"></div>
         </div>
       </div>
       <div class="conflict-legend" id="conflictLegend"></div>
@@ -2578,7 +2608,10 @@ function renderConflictTrend(series) {
     const x = padX + (innerW * index) / Math.max(1, points.length - 1);
     const ratio = (Number(point.value) - minV) / span;
     const y = padY + innerH - ratio * innerH;
-    return { x, y, value: Number(point.value), label: point.date || point.day || `D${index + 1}` };
+    const value = Number(point.value);
+    const prev = index > 0 ? Number(points[index - 1].value) : null;
+    const delta = Number.isFinite(prev) ? value - prev : null;
+    return { x, y, value, label: point.date || point.day || `D${index + 1}`, delta };
   });
 
   const d = coords.map((p, i) => `${i === 0 ? 'M' : 'L'} ${p.x.toFixed(2)} ${p.y.toFixed(2)}`).join(' ');
@@ -2588,7 +2621,8 @@ function renderConflictTrend(series) {
     const isCurrent = i === coords.length - 1;
     const color = isCurrent ? 'var(--accent-teal)' : 'var(--accent-blue)';
     const cls = isCurrent ? 'conflict-trend-point current' : 'conflict-trend-point';
-    return `<circle class="${cls}" cx="${p.x.toFixed(2)}" cy="${p.y.toFixed(2)}" r="4.2" fill="${color}"><title>${p.label}: ${p.value}</title></circle>`;
+    const deltaAttr = Number.isFinite(p.delta) ? p.delta : '';
+    return `<circle class="${cls}" cx="${p.x.toFixed(2)}" cy="${p.y.toFixed(2)}" r="4.2" fill="${color}" tabindex="0" data-label="${p.label}" data-value="${p.value}" data-delta="${deltaAttr}"><title>${p.label}: ${p.value}</title></circle>`;
   }).join('');
 
   const labels = coords.map((p, i) => {
@@ -2609,6 +2643,48 @@ function renderConflictTrend(series) {
     ${circles}
     ${labels}
   `;
+
+  const tooltip = document.getElementById('conflictTrendTooltip');
+  const trendWrap = document.getElementById('conflictTrend');
+  const formatDelta = value => {
+    if (!Number.isFinite(value)) return { text: 'n/a', cls: 'delta-flat' };
+    if (value > 0) return { text: `+${value}`, cls: 'delta-up' };
+    if (value < 0) return { text: `${value}`, cls: 'delta-down' };
+    return { text: '0', cls: 'delta-flat' };
+  };
+
+  const showTooltip = (target, eventX, eventY) => {
+    if (!tooltip || !trendWrap) return;
+    const label = target.getAttribute('data-label') || 'Day';
+    const value = target.getAttribute('data-value') || '--';
+    const deltaRaw = Number(target.getAttribute('data-delta'));
+    const delta = formatDelta(deltaRaw);
+
+    tooltip.innerHTML = `Date: ${label}<br>Value: ${value}<br>Delta vs prev: <span class="${delta.cls}">${delta.text}</span>`;
+
+    const bounds = trendWrap.getBoundingClientRect();
+    const x = Math.max(12, Math.min(bounds.width - 12, eventX - bounds.left));
+    const y = Math.max(12, eventY - bounds.top);
+    tooltip.style.left = `${x}px`;
+    tooltip.style.top = `${y}px`;
+    tooltip.classList.add('visible');
+  };
+
+  const hideTooltip = () => {
+    if (!tooltip) return;
+    tooltip.classList.remove('visible');
+  };
+
+  svg.querySelectorAll('.conflict-trend-point').forEach(point => {
+    point.addEventListener('mouseenter', evt => showTooltip(point, evt.clientX, evt.clientY));
+    point.addEventListener('mousemove', evt => showTooltip(point, evt.clientX, evt.clientY));
+    point.addEventListener('mouseleave', hideTooltip);
+    point.addEventListener('focus', evt => {
+      const rect = point.getBoundingClientRect();
+      showTooltip(point, rect.left + rect.width / 2, rect.top);
+    });
+    point.addEventListener('blur', hideTooltip);
+  });
 
   if (rangeNode) {
     rangeNode.textContent = `${points[0].date || points[0].day || 'Start'} → ${points[points.length - 1].date || points[points.length - 1].day || 'Now'}`;
