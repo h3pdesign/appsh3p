@@ -3968,9 +3968,11 @@ async function refreshLiveData() {
     return latest;
   }, null);
 
-  if (successful > 0) {
     const snapshotSyncTime = await readSnapshotSyncTime();
-    const syncTime = Number.isFinite(snapshotSyncTime)
+  const hasSnapshotSync = Number.isFinite(snapshotSyncTime);
+
+  if (successful > 0) {
+    const syncTime = hasSnapshotSync
       ? snapshotSyncTime
       : (Number.isFinite(freshestTimestamp) ? freshestTimestamp : Date.now());
 
@@ -3979,35 +3981,34 @@ async function refreshLiveData() {
     const ageText = formatRelativeAge(Math.max(0, Date.now() - syncTime));
     setSyncStatus('live', successful + ' markets synced', 'Health: Updated ' + ageText);
   } else {
-    const lastSuccessful = readStoredSyncTime();
+    const storedSyncTime = readStoredSyncTime();
+    const fallbackSyncTime = hasSnapshotSync ? snapshotSyncTime : storedSyncTime;
 
-    if (!Number.isFinite(lastSuccessful)) {
-      const snapshotSyncTime = await readSnapshotSyncTime();
-      if (Number.isFinite(snapshotSyncTime)) {
-        localStorage.setItem(LAST_SYNC_KEY, String(snapshotSyncTime));
-        updateTimestamp(snapshotSyncTime);
-        const snapshotAgeText = formatRelativeAge(Math.max(0, Date.now() - snapshotSyncTime));
-        setSyncStatus('delayed', 'Live API unavailable - using packaged snapshot', 'Health: Snapshot (' + snapshotAgeText + ')');
-      } else {
-        updateTimestamp(Date.now());
-        setSyncStatus('error', 'Live API unreachable and no snapshot metadata available', 'Health: Error');
-      }
+    if (!Number.isFinite(fallbackSyncTime)) {
+      updateTimestamp(Date.now());
+      setSyncStatus('error', 'Live API unreachable and no snapshot metadata available', 'Health: Error');
       return;
     }
 
-    const ageMs = Date.now() - lastSuccessful;
+    localStorage.setItem(LAST_SYNC_KEY, String(fallbackSyncTime));
+    const ageMs = Date.now() - fallbackSyncTime;
     const ageText = formatRelativeAge(Math.max(0, ageMs));
-    updateTimestamp(lastSuccessful);
+    updateTimestamp(fallbackSyncTime);
 
     if (ageMs <= FRESH_SYNC_MAX_MS) {
-      setSyncStatus('live', 'No new fetch this cycle, using recent successful sync', 'Health: Updated ' + ageText);
+      const detail = hasSnapshotSync
+        ? 'No new fetch this cycle, using latest published snapshot'
+        : 'No new fetch this cycle, using recent successful sync';
+      setSyncStatus('live', detail, 'Health: Updated ' + ageText);
     } else if (ageMs <= DELAYED_SYNC_MAX_MS) {
-      setSyncStatus('delayed', 'Using delayed values from last successful sync', 'Health: Delayed (' + ageText + ')');
+      const detail = hasSnapshotSync
+        ? 'Using delayed published snapshot values'
+        : 'Using delayed values from last successful sync';
+      setSyncStatus('delayed', detail, 'Health: Delayed (' + ageText + ')');
     } else {
       setSyncStatus('error', 'Live sync stale - waiting for fresh data', 'Health: Stale (' + ageText + ')');
     }
   }
-}
 
 // ========================================
 // Hamburger Menu
