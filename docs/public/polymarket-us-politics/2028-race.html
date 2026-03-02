@@ -40,6 +40,11 @@
   --card-radius: 6px;
   --nav-height: 56px;
   --noise-opacity: 0.035;
+  --nav-bg: rgba(10, 10, 15, 0.88);
+  --nav-link-bg-hover: rgba(255,255,255,0.05);
+  --nav-link-color: #9b9a97;
+  --nav-link-color-active: #e8e6e1;
+  --hamburger-color: #9b9a97;
 }
 
 :root[data-theme='light'] {
@@ -61,6 +66,11 @@
   --accent-purple: #7c3aed;
   --accent-teal: #0f766e;
   --noise-opacity: 0.02;
+  --nav-bg: rgba(244, 241, 233, 0.96);
+  --nav-link-bg-hover: rgba(33, 30, 24, 0.08);
+  --nav-link-color: #4d473a;
+  --nav-link-color-active: #1f1e1a;
+  --hamburger-color: #4d473a;
 }
 
 /* ========================================
@@ -105,7 +115,7 @@ nav {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: rgba(10, 10, 15, 0.88);
+  background: var(--nav-bg);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--border-color);
@@ -144,7 +154,7 @@ nav {
 .nav-links::-webkit-scrollbar { display: none; }
 
 .nav-links a {
-  color: var(--text-secondary);
+  color: var(--nav-link-color);
   text-decoration: none;
   font-size: 0.75rem;
   font-weight: 500;
@@ -158,8 +168,8 @@ nav {
 
 .nav-links a:hover,
 .nav-links a.active {
-  color: var(--text-primary);
-  background: rgba(255,255,255,0.05);
+  color: var(--nav-link-color-active);
+  background: var(--nav-link-bg-hover);
 }
 
 .nav-controls {
@@ -203,7 +213,7 @@ nav {
   display: block;
   width: 22px;
   height: 2px;
-  background: var(--text-secondary);
+  background: var(--hamburger-color);
   border-radius: 2px;
   transition: transform 0.3s, opacity 0.3s;
 }
