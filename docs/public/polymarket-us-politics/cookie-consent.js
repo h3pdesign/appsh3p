@@ -265,6 +265,15 @@
     const modal = createModal();
     const manage = createManageButton();
 
+    function isMobileViewport() {
+      return window.matchMedia('(max-width: 768px)').matches;
+    }
+
+    function updateManageVisibility() {
+      const hasChoice = Boolean(readConsent());
+      manage.style.display = (isMobileViewport() && hasChoice) ? 'none' : '';
+    }
+
     function closeModal() {
       modal.classList.remove('open');
       modal.setAttribute('aria-hidden', 'true');
@@ -286,12 +295,14 @@
       persistConsent({ ...DEFAULT_PREFS, preferences: false, analytics: false, marketing: false });
       removeBanner();
       closeModal();
+      updateManageVisibility();
     }
 
     function saveAll() {
       persistConsent({ ...DEFAULT_PREFS, preferences: true, analytics: true, marketing: true });
       removeBanner();
       closeModal();
+      updateManageVisibility();
     }
 
     function saveFromModal() {
@@ -301,6 +312,7 @@
       persistConsent({ ...DEFAULT_PREFS, preferences: Boolean(pref), analytics: Boolean(analytics), marketing: Boolean(marketing) });
       removeBanner();
       closeModal();
+      updateManageVisibility();
     }
 
     banner.addEventListener('click', event => {
@@ -327,6 +339,8 @@
 
     document.body.appendChild(modal);
     document.body.appendChild(manage);
+    updateManageVisibility();
+    window.addEventListener('resize', updateManageVisibility);
 
     if (!current) {
       document.body.appendChild(banner);
