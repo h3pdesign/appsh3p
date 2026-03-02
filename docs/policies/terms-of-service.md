@@ -1,6 +1,6 @@
 # Terms of Service
 
-_Last updated: February 24, 2026_
+_Last updated: March 2, 2026_
 
 These Terms of Service govern use of the h3p apps documentation website at https://apps-h3p.com.
 
@@ -51,3 +51,10 @@ These terms may be updated. Material changes are reflected by the "Last updated"
 ## 8. Contact
 
 For support and legal requests, use [Support and Feedback](/support/support-and-feedback).
+
+## 9. Privacy and cookies
+
+Data handling and cookie usage are governed by:
+
+- [Privacy Policy](/policies/privacy-policy)
+- [EU Cookie Notice](/policies/eu-cookie-notice)

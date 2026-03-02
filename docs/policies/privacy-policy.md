@@ -1,6 +1,6 @@
 # Privacy Policy
 
-_Last updated: February 24, 2026_
+_Last updated: March 2, 2026_
 
 This Privacy Policy explains how data is handled on https://apps-h3p.com.
 
@@ -20,7 +20,8 @@ Hosting providers and CDNs may process technical request data (for example IP ad
 
 ## 3. Cookies and local storage
 
-The site uses limited local browser storage for UI preferences (for example visual effect toggle) and may use cookies required by hosting or third-party embedded services.
+The site uses limited browser storage and technical cookies for core operation, plus optional preference storage for UI settings.
+For EU/EEA users, non-essential cookie categories are not intended to be set before consent where legally required.
 
 See [EU Cookie Notice](/policies/eu-cookie-notice).
 
