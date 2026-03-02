@@ -125,15 +125,6 @@ export default defineConfig({
           { text: 'Image Sorter: Known Issues', link: '/apps/image-sorter/known-issues' },
           { text: 'Image Sorter: FAQ', link: '/apps/image-sorter/faq' },
 
-          { text: 'SyntaxHighlightQuickLook: Overview', link: '/apps/syntaxhighlight-quicklook/overview' },
-          { text: 'SyntaxHighlightQuickLook: Components Overview', link: '/apps/syntaxhighlight-quicklook/components-overview' },
-          { text: 'SyntaxHighlightQuickLook: Installation', link: '/apps/syntaxhighlight-quicklook/installation' },
-          { text: 'SyntaxHighlightQuickLook: Features', link: '/apps/syntaxhighlight-quicklook/features' },
-          { text: 'SyntaxHighlightQuickLook: Gallery', link: '/apps/syntaxhighlight-quicklook/gallery' },
-          { text: 'SyntaxHighlightQuickLook: Changelog', link: '/apps/syntaxhighlight-quicklook/changelog' },
-          { text: 'SyntaxHighlightQuickLook: Known Issues', link: '/apps/syntaxhighlight-quicklook/known-issues' },
-          { text: 'SyntaxHighlightQuickLook: FAQ', link: '/apps/syntaxhighlight-quicklook/faq' },
-
           { text: 'Vistral: Overview', link: '/apps/vistral/overview' },
           { text: 'Vistral: Components Overview', link: '/apps/vistral/components-overview' },
           { text: 'Vistral: Installation', link: '/apps/vistral/installation' },

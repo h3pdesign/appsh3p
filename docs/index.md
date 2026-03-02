@@ -23,7 +23,7 @@ features:
 ---
 
 <div class="startpage-stats-row" aria-label="Docs quick stats">
-  <span>8 apps</span>
+  <span>7 apps</span>
   <span>1 docs hub</span>
   <span class="startpage-updated-date">updated Feb 28, 2026</span>
   <span class="startpage-synced-badge">GitHub synced Feb 28, 2026</span>

@@ -67,7 +67,6 @@ const topSwitcherLinks = [
   { key: 'x-newsbook', text: 'Newsbook', link: '/apps/x-newsbook/overview' },
   { key: 'release-assistant', text: 'Release', link: '/apps/release-assistant/overview' },
   { key: 'image-sorter', text: 'ImageSorter', link: '/apps/image-sorter/overview' },
-  { key: 'syntaxhighlight-quicklook', text: 'QuickLook', link: '/apps/syntaxhighlight-quicklook/overview' },
   { key: 'vistral', text: 'Vistral', link: '/apps/vistral/overview' },
   { key: 'history-vision', text: 'History', link: '/apps/history-vision/overview' }
 ]
@@ -78,7 +77,6 @@ const appUpdatedBySlug: Record<string, string> = {
   'x-newsbook': 'February 17, 2026',
   'release-assistant': 'February 16, 2026',
   'image-sorter': 'March 1, 2026',
-  'syntaxhighlight-quicklook': 'March 1, 2026',
   'vistral': 'March 1, 2026',
   'history-vision': 'March 1, 2026'
 }
@@ -298,7 +296,6 @@ function applyAppThemeClass() {
   if (appSlug.value === 'x-newsbook') root.classList.add('app-theme-release')
   if (appSlug.value === 'release-assistant') root.classList.add('app-theme-release')
   if (appSlug.value === 'image-sorter') root.classList.add('app-theme-release')
-  if (appSlug.value === 'syntaxhighlight-quicklook') root.classList.add('app-theme-neon')
   if (appSlug.value === 'vistral') root.classList.add('app-theme-metric')
   if (appSlug.value === 'history-vision') root.classList.add('app-theme-neon')
 }
@@ -681,7 +678,7 @@ function ensureHomeWidgets() {
       <section class="home-hero-widget-card">
         <h3>Status</h3>
         <ul>
-          <li><strong>8</strong> apps documented</li>
+          <li><strong>7</strong> apps documented</li>
           <li>Published on <a href="https://apps-h3p.com" target="_blank" rel="noreferrer noopener">apps-h3p.com</a></li>
           <li><a href="https://github.com/h3pdesign/appsh3p" target="_blank" rel="noreferrer noopener">Docs repo</a></li>
         </ul>
@@ -692,7 +689,6 @@ function ensureHomeWidgets() {
           <a href="/apps/x-newsbook/overview"><img src="/icons/x-newsbook.png" alt="X-Newsbook" width="22" height="22" loading="lazy" decoding="async" /></a>
           <a href="/apps/release-assistant/overview"><img src="/icons/release-assistant.png" alt="Release Assistant" width="22" height="22" loading="lazy" decoding="async" /></a>
           <a href="/apps/image-sorter/overview"><img src="/icons/image-sorter.png" alt="Image Sorter" width="22" height="22" loading="lazy" decoding="async" /></a>
-          <a href="/apps/syntaxhighlight-quicklook/overview"><img src="/icons/syntaxhighlight-quicklook.svg" alt="SyntaxHighlightQuickLook" width="22" height="22" loading="lazy" decoding="async" /></a>
           <a href="/apps/vistral/overview"><img src="/icons/vistral.png" alt="Vistral" width="22" height="22" loading="lazy" decoding="async" /></a>
           <a href="/apps/history-vision/overview"><img src="/icons/history-vision.png" alt="History Vision" width="22" height="22" loading="lazy" decoding="async" /></a>
         </div>
@@ -1289,7 +1285,6 @@ onBeforeUnmount(() => {
           <a href="/apps/metric-data/overview">Metrics Data</a>
           <a href="/apps/release-assistant/overview">Release Assistant</a>
           <a href="/apps/image-sorter/overview">Image Sorter</a>
-          <a href="/apps/syntaxhighlight-quicklook/overview">SyntaxHighlightQuickLook</a>
           <a href="/apps/vistral/overview">Vistral</a>
           <a href="/apps/history-vision/overview">History Vision</a>
         </div>
