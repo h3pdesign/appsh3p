@@ -23,8 +23,12 @@ jobs:
 
       - name: Guard workflow syntax and config
         id: workflow_guard
-        uses: rhysd/actionlint@v1
         continue-on-error: true
+        shell: bash
+        run: |
+          set -euo pipefail
+          curl -sSfL https://raw.githubusercontent.com/rhysd/actionlint/main/scripts/download-actionlint.bash | bash -s -- latest
+          ./actionlint -color
 
       - name: Fail fast if workflow guard fails
         if: steps.workflow_guard.outcome == 'failure'
