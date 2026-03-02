@@ -266,7 +266,7 @@
     const manage = createManageButton();
 
     function isMobileViewport() {
-      return window.matchMedia('(max-width: 768px)').matches;
+      return window.matchMedia('(max-width: 1024px), (pointer: coarse)').matches;
     }
 
     function updateManageVisibility() {
