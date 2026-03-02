@@ -448,6 +448,76 @@ nav {
 }
 
 /* ========================================
+   Iran War Monitor
+   ======================================== */
+.iran-monitor {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--card-radius);
+  padding: 1.6rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.iran-monitor::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--red-low), var(--amber-mid), var(--accent-gold));
+}
+
+.iran-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem 1.1rem;
+  margin-top: 0.7rem;
+  font-size: 0.75rem;
+  font-family: var(--font-mono);
+  color: var(--text-muted);
+}
+
+.iran-meta a {
+  color: var(--accent-gold);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+
+.iran-meta a:hover { border-bottom-color: var(--accent-gold); }
+
+.iran-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.iran-stat {
+  border: 1px solid var(--border-subtle);
+  background: rgba(255,255,255,0.02);
+  border-radius: 4px;
+  padding: 0.9rem;
+}
+
+.iran-stat-label {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  margin-bottom: 0.3rem;
+}
+
+.iran-stat-value {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--text-primary);
+}
+
+/* ========================================
    Card Grid
    ======================================== */
 .card-grid {
@@ -821,6 +891,7 @@ footer a:hover { border-bottom-color: var(--accent-gold); }
     <div class="nav-brand">h3p</div>
     <ul class="nav-links">
       <li><a href="https://apps-h3p.com" target="_blank" rel="noopener">apps-h3p.com</a></li>
+      <li><a href="/polymarket-us-politics/state-of-us-politics.html#iran-war">Iran War Monitor</a></li>
       <li><a href="/polymarket-us-politics/state-of-us-politics.html">Summary</a></li>
       <li><a href="/polymarket-us-politics/foreign-policy.html">Foreign Policy</a></li>
       <li><a href="/polymarket-us-politics/2028-race.html">2028 Race</a></li>
@@ -843,6 +914,7 @@ footer a:hover { border-bottom-color: var(--accent-gold); }
 <!-- Mobile menu -->
 <div class="mobile-menu" id="mobileMenu">
   <a href="https://apps-h3p.com" target="_blank" rel="noopener">apps-h3p.com</a>
+  <a href="/polymarket-us-politics/state-of-us-politics.html#iran-war" class="mobile-link">Iran War Monitor</a>
   <a href="/polymarket-us-politics/state-of-us-politics.html" class="mobile-link">Executive Summary</a>
   <a href="/polymarket-us-politics/foreign-policy.html" class="mobile-link">Foreign Policy & Military</a>
   <a href="/polymarket-us-politics/2028-race.html" class="mobile-link">2028 Presidential Race</a>
@@ -867,6 +939,32 @@ footer a:hover { border-bottom-color: var(--accent-gold); }
       <span id="syncStatus" aria-live="polite">&#9670; Sync pending</span>
     </div>
   </header>
+
+  <!-- ====== IRAN WAR MONITOR ====== -->
+  <section class="section" id="iran-war">
+    <div class="section-header reveal">
+      <div class="section-number">Top Priority</div>
+      <h2 class="section-title">Iran War Monitor</h2>
+      <p class="section-subtitle">Live conflict metrics (casualties, missile activity, and operational footprint), refreshed every 6 hours.</p>
+    </div>
+    <div class="iran-monitor reveal">
+      <div class="iran-meta">
+        <span id="iranWarAsOf">&#9670; As of: waiting for live metrics</span>
+        <span id="iranWarSync">&#9670; Syncing metrics...</span>
+        <a id="iranWarSource" href="https://en.wikipedia.org/wiki/2026_Iran_conflict" target="_blank" rel="noopener">Source: live conflict data feed</a>
+      </div>
+      <div class="iran-grid">
+        <div class="iran-stat"><div class="iran-stat-label">Iran Reported Killed</div><div class="iran-stat-value" id="iranKilled">--</div></div>
+        <div class="iran-stat"><div class="iran-stat-label">Iran Reported Injured</div><div class="iran-stat-value" id="iranInjured">--</div></div>
+        <div class="iran-stat"><div class="iran-stat-label">Israel Reported Killed</div><div class="iran-stat-value" id="israelKilled">--</div></div>
+        <div class="iran-stat"><div class="iran-stat-label">Israel Reported Injured</div><div class="iran-stat-value" id="israelInjured">--</div></div>
+        <div class="iran-stat"><div class="iran-stat-label">US Soldiers Killed</div><div class="iran-stat-value" id="usKilled">--</div></div>
+        <div class="iran-stat"><div class="iran-stat-label">US Soldiers Seriously Injured</div><div class="iran-stat-value" id="usSeriouslyInjured">--</div></div>
+        <div class="iran-stat"><div class="iran-stat-label">Ballistic Missiles (2025 War Benchmark)</div><div class="iran-stat-value" id="warBenchmarkMissiles">--</div></div>
+        <div class="iran-stat"><div class="iran-stat-label">Drones (2025 War Benchmark)</div><div class="iran-stat-value" id="warBenchmarkDrones">--</div></div>
+      </div>
+    </div>
+  </section>
 
   <!-- ====== EXECUTIVE SUMMARY ====== -->
   <section class="section" id="summary">
@@ -1804,6 +1902,7 @@ footer a:hover { border-bottom-color: var(--accent-gold); }
 
 <script>
 const POLYMARKET_API = 'https://gamma-api.polymarket.com/markets';
+const IRAN_WAR_METRICS_URL = '/polymarket-us-politics/data/iran-war-metrics.json';
 const SIX_HOURS_MS = 6 * 60 * 60 * 1000;
 const marketCache = new Map();
 
@@ -1869,6 +1968,11 @@ function marketOutcomePrice(market, outcomeName) {
 
 function formatPercent(value) {
   return `${Math.round(value)}%`;
+}
+
+function formatInteger(value) {
+  const num = Number(value);
+  return Number.isFinite(num) ? num.toLocaleString() : '--';
 }
 
 function parseTimestamp(value) {
@@ -1995,6 +2099,69 @@ function updateTimestamp(sourceTime) {
 function setSyncStatus(message) {
   const node = document.getElementById('syncStatus');
   if (node) node.textContent = `\u25c6 ${message}`;
+}
+
+function setIranWarSync(message) {
+  const node = document.getElementById('iranWarSync');
+  if (node) node.textContent = `\u25c6 ${message}`;
+}
+
+function setIranMetric(id, value) {
+  const node = document.getElementById(id);
+  if (!node) return;
+  node.textContent = formatInteger(value);
+}
+
+function updateIranWarTimestamp(asOfValue) {
+  const node = document.getElementById('iranWarAsOf');
+  if (!node) return;
+
+  const asOfTime = parseTimestamp(asOfValue);
+  if (!Number.isFinite(asOfTime)) {
+    node.textContent = '\u25c6 As of: latest successful sync';
+    return;
+  }
+
+  const formatted = new Date(asOfTime).toLocaleString(undefined, {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+    hour: '2-digit',
+    minute: '2-digit',
+    timeZone: 'UTC',
+    timeZoneName: 'short'
+  });
+  node.textContent = `\u25c6 As of: ${formatted}`;
+}
+
+async function refreshIranWarMetrics() {
+  setIranWarSync('Syncing metrics...');
+  try {
+    const response = await fetch(`${IRAN_WAR_METRICS_URL}?t=${Date.now()}`, { cache: 'no-store' });
+    if (!response.ok) throw new Error(`Iran war metrics fetch failed: ${response.status}`);
+
+    const data = await response.json();
+    setIranMetric('iranKilled', data.iran_reported_killed);
+    setIranMetric('iranInjured', data.iran_reported_injured);
+    setIranMetric('israelKilled', data.israel_reported_killed);
+    setIranMetric('israelInjured', data.israel_reported_injured);
+    setIranMetric('usKilled', data.us_soldiers_killed);
+    setIranMetric('usSeriouslyInjured', data.us_soldiers_seriously_injured);
+    setIranMetric('warBenchmarkMissiles', data.war_2025_ballistic_missiles);
+    setIranMetric('warBenchmarkDrones', data.war_2025_drones);
+
+    const sourceNode = document.getElementById('iranWarSource');
+    if (sourceNode) {
+      if (data.source_url) sourceNode.href = data.source_url;
+      if (data.source_name) sourceNode.textContent = `Source: ${data.source_name}`;
+    }
+
+    updateIranWarTimestamp(data.as_of_utc || data.updated_at_utc);
+    setIranWarSync('Live metrics synced');
+  } catch (error) {
+    setIranWarSync('Live metrics unavailable');
+    console.error(error);
+  }
 }
 
 function applyTheme(theme) {
@@ -2128,8 +2295,13 @@ if (focusSection) {
   }
 }
 
-refreshLiveData();
-setInterval(refreshLiveData, SIX_HOURS_MS);
+function refreshAllData() {
+  refreshLiveData();
+  refreshIranWarMetrics();
+}
+
+refreshAllData();
+setInterval(refreshAllData, SIX_HOURS_MS);
 </script>
 </body>
 </html>
