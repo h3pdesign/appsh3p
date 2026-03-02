@@ -1243,7 +1243,7 @@ html.h3p-route-enter .VPContent {
   color: var(--vp-c-brand-1);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 959px) {
   .h3p-compact-toggle,
   .h3p-hero-fx-toggle,
   .h3p-lang-selector,
@@ -1666,9 +1666,20 @@ html:not(.dark) .VPDocAside {
   }
 }
 
-/* Remove three-dot topbar extra flyout menu */
-.VPNavBar .extra {
-  display: none !important;
+/* Remove three-dot topbar extra flyout menu only on desktop */
+@media (min-width: 960px) {
+  .VPNavBar .extra {
+    display: none !important;
+  }
+}
+
+/* Mobile/tablet nav safety: keep menu triggers visible and clickable */
+@media (max-width: 959px) {
+  .VPNavBarHamburger,
+  .VPLocalNav .menu {
+    position: relative;
+    z-index: 40;
+  }
 }
 
 /* Extra left breathing room before FX toggle */
