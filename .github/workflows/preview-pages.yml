@@ -7,11 +7,9 @@ on:
 
 permissions:
   contents: read
-  pages: write
-  id-token: write
 
 concurrency:
-  group: preview-pages-${{ github.event.pull_request.number || github.run_id }}
+  group: preview-pages-${{ github.event.pull_request.number || github.ref }}
   cancel-in-progress: true
 
 jobs:
@@ -37,21 +35,8 @@ jobs:
         run: npm run docs:build
 
       - name: Upload preview artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
+          name: docs-preview-${{ github.run_id }}
           path: docs/.vitepress/dist
-
-  deploy-preview:
-    needs: build-preview
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-    steps:
-      - name: Deploy preview
-        id: deploy
-        uses: actions/deploy-pages@v4
-        with:
-          preview: true
-
-      - name: Report preview URL
-        run: echo "Preview URL: ${{ steps.deploy.outputs.page_url }}"
+          retention-days: 7
