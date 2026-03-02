@@ -393,10 +393,10 @@ nav {
 }
 
 .trend-card {
-  border: 1px solid var(--border);
+  border: 1px solid var(--border-color);
   border-radius: 8px;
   padding: 0.55rem 0.7rem;
-  background: color-mix(in oklab, var(--card-bg) 90%, transparent);
+  background: color-mix(in oklab, var(--bg-card) 90%, transparent);
 }
 
 .trend-card-head {
@@ -414,7 +414,7 @@ nav {
   margin-top: 0.3rem;
   font-size: 1rem;
   font-weight: 700;
-  color: var(--text-main);
+  color: var(--text-primary);
 }
 
 .trend-deltas {
@@ -431,10 +431,10 @@ nav {
 
 .changes-block {
   margin-top: 0.7rem;
-  border: 1px solid var(--border);
+  border: 1px solid var(--border-color);
   border-radius: 8px;
   padding: 0.6rem 0.75rem;
-  background: color-mix(in oklab, var(--card-bg) 90%, transparent);
+  background: color-mix(in oklab, var(--bg-card) 90%, transparent);
 }
 
 .changes-head {
@@ -452,7 +452,7 @@ nav {
   display: grid;
   gap: 0.2rem;
   font-size: 0.8rem;
-  color: var(--text-main);
+  color: var(--text-primary);
 }
 
 .conflict-map-toolbar {
@@ -470,9 +470,9 @@ nav {
 }
 
 .map-reset-btn {
-  border: 1px solid var(--border);
-  background: var(--card-bg);
-  color: var(--text-main);
+  border: 1px solid var(--border-color);
+  background: var(--bg-card);
+  color: var(--text-primary);
   border-radius: 999px;
   font-family: var(--font-mono);
   font-size: 0.68rem;
@@ -486,10 +486,10 @@ nav {
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
-  border: 1px solid var(--border);
+  border: 1px solid var(--border-color);
   border-radius: 999px;
-  background: var(--card-bg);
-  color: var(--text-main);
+  background: var(--bg-card);
+  color: var(--text-primary);
   padding: 0.22rem 0.58rem;
   font-family: var(--font-mono);
   font-size: 0.66rem;
@@ -509,7 +509,7 @@ nav {
   font-size: 0.58rem;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  border: 1px solid var(--border);
+  border: 1px solid var(--border-color);
   border-radius: 999px;
   padding: 0.12rem 0.38rem;
   color: var(--text-muted);
@@ -1479,7 +1479,7 @@ footer a:hover { border-bottom-color: var(--accent-gold); }
     <p class="hero-subtitle">Prediction Market Intelligence Reports & Conflict Monitoring</p>
     <div class="hero-meta">
       <span id="asOfDate">&#9670; Last updated: --</span>
-      <span>&#9670; Source: <a href="https://polymarket.com" target="_blank" rel="noopener">Polymarket</a></span>
+      <span>&#9670; Source: Polymarket</span>
       <span id="syncStatus" class="status-pill status-pending" aria-live="polite" title="Waiting for live sync">Health: Pending</span>
     </div>
   </header>
