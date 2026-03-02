@@ -1904,6 +1904,7 @@ footer a:hover { border-bottom-color: var(--accent-gold); }
 const POLYMARKET_API = 'https://gamma-api.polymarket.com/markets';
 const IRAN_WAR_METRICS_URL = '/polymarket-us-politics/data/iran-war-metrics.json';
 const SIX_HOURS_MS = 6 * 60 * 60 * 1000;
+const THEME_KEY = 'pmir-theme';
 const marketCache = new Map();
 
 function normalize(value) {
@@ -2169,10 +2170,17 @@ function applyTheme(theme) {
   const themeToggle = document.getElementById('themeToggle');
   if (!themeToggle) return;
 
-  themeToggle.textContent = 'System mode';
-  themeToggle.setAttribute('aria-label', 'Theme follows system mode');
-  themeToggle.setAttribute('aria-pressed', 'false');
-  themeToggle.disabled = true;
+  const lightActive = theme === 'light';
+  themeToggle.textContent = lightActive ? 'Dark mode' : 'Light mode';
+  themeToggle.setAttribute('aria-label', lightActive ? 'Switch to dark mode' : 'Switch to light mode');
+  themeToggle.setAttribute('aria-pressed', String(lightActive));
+  themeToggle.disabled = false;
+}
+
+function preferredTheme() {
+  const stored = localStorage.getItem(THEME_KEY);
+  if (stored === 'light' || stored === 'dark') return stored;
+  return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
 }
 
 async function refreshLiveData() {
@@ -2219,8 +2227,18 @@ const mobileMenu = document.getElementById('mobileMenu');
 const themeToggle = document.getElementById('themeToggle');
 const systemThemeMedia = window.matchMedia('(prefers-color-scheme: light)');
 
-applyTheme(systemThemeMedia.matches ? 'light' : 'dark');
+applyTheme(preferredTheme());
+
+themeToggle?.addEventListener('click', () => {
+  const current = document.documentElement.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
+  const next = current === 'light' ? 'dark' : 'light';
+  localStorage.setItem(THEME_KEY, next);
+  applyTheme(next);
+});
+
 systemThemeMedia.addEventListener('change', event => {
+  const stored = localStorage.getItem(THEME_KEY);
+  if (stored === 'light' || stored === 'dark') return;
   applyTheme(event.matches ? 'light' : 'dark');
 });
 
