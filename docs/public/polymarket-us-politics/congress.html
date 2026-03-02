@@ -639,6 +639,14 @@ nav {
   width: 100%;
 }
 
+.conflict-map.map-theme-dark .leaflet-tile {
+  filter: brightness(0.58) invert(1) contrast(1.22) hue-rotate(198deg) saturate(0.28);
+}
+
+.conflict-map.map-theme-light .leaflet-tile {
+  filter: none;
+}
+
 .conflict-map-status {
   padding: 0.55rem 0.75rem;
   font-size: 0.74rem;
@@ -1381,13 +1389,13 @@ footer a:hover { border-bottom-color: var(--accent-gold); }
               <button class="conflict-trend-btn" id="conflictTrendNewer" type="button">Neuer</button>
             </div>
             <label class="conflict-trend-zoom">Zoom
-              <input id="conflictTrendZoom" type="range" min="30" max="365" value="90" step="1" aria-label="Zoom timeline window">
+              <input id="conflictTrendZoom" type="range" min="7" max="365" value="7" step="1" aria-label="Zoom timeline window">
             </label>
           </div>
           <svg class="conflict-trend-chart" id="conflictTrendChart" viewBox="0 0 700 170" role="img" aria-label="Daily conflict intensity trend"></svg>
           <div class="conflict-trend-tooltip" id="conflictTrendTooltip" aria-hidden="true"></div>
           <div class="conflict-explainer" id="conflictExplainer">
-            <strong>Graph definition:</strong> each dot is one day and represents a <strong>composite conflict intensity index</strong> (0–100) built from the data feed (casualties, projectile activity, and operational impacts). It is not a direct daily death count.
+            <strong>Graph definition:</strong> each dot is one day and represents a <strong>composite conflict intensity index</strong> (0-100) built from the data feed (casualties, projectile activity, and operational impacts). It is not a direct daily death count. <strong>Delta math:</strong> Delta (1d) = I_t - I_{t-1}; Delta (7d) = I_t - I_{t-7}; Momentum = Delta (7d) / 7.
           </div>
         </div>
       </div>
@@ -1445,13 +1453,13 @@ footer a:hover { border-bottom-color: var(--accent-gold); }
               <button class="conflict-trend-btn" id="ukraineTrendNewer" type="button">Neuer</button>
             </div>
             <label class="conflict-trend-zoom">Zoom
-              <input id="ukraineTrendZoom" type="range" min="30" max="365" value="90" step="1" aria-label="Zoom timeline window">
+              <input id="ukraineTrendZoom" type="range" min="7" max="365" value="7" step="1" aria-label="Zoom timeline window">
             </label>
           </div>
           <svg class="conflict-trend-chart" id="ukraineTrendChart" viewBox="0 0 700 170" role="img" aria-label="Daily Ukraine conflict intensity trend"></svg>
           <div class="conflict-trend-tooltip" id="ukraineTrendTooltip" aria-hidden="true"></div>
           <div class="conflict-explainer" id="ukraineExplainer">
-            <strong>Graph definition:</strong> each dot is one day and represents a <strong>composite conflict intensity index</strong> (0–100) built from casualties, strike activity, and operational impact. It is not a direct daily death count.
+            <strong>Graph definition:</strong> each dot is one day and represents a <strong>composite conflict intensity index</strong> (0-100) built from casualties, strike activity, and operational impact. It is not a direct daily death count. <strong>Delta math:</strong> Delta (1d) = I_t - I_{t-1}; Delta (7d) = I_t - I_{t-7}; Momentum = Delta (7d) / 7.
           </div>
         </div>
       </div>
@@ -2416,6 +2424,52 @@ let ukraineMarkersLayer = null;
 let conflictBaseLayer = null;
 let ukraineBaseLayer = null;
 const trendStates = new Map();
+let leafletReadyPromise = null;
+
+function ensureLeafletStylesheet(href) {
+  if (document.querySelector('link[data-leaflet-fallback="true"]')) return;
+  const link = document.createElement('link');
+  link.rel = 'stylesheet';
+  link.href = href;
+  link.setAttribute('data-leaflet-fallback', 'true');
+  document.head.appendChild(link);
+}
+
+function loadScript(src) {
+  return new Promise((resolve, reject) => {
+    const existing = document.querySelector(`script[src="${src}"]`);
+    if (existing) {
+      if (existing.dataset.loaded === 'true') return resolve();
+      existing.addEventListener('load', () => resolve(), { once: true });
+      existing.addEventListener('error', () => reject(new Error('Script failed')), { once: true });
+      return;
+    }
+
+    const script = document.createElement('script');
+    script.src = src;
+    script.async = true;
+    script.addEventListener('load', () => {
+      script.dataset.loaded = 'true';
+      resolve();
+    }, { once: true });
+    script.addEventListener('error', () => reject(new Error('Script failed')), { once: true });
+    document.head.appendChild(script);
+  });
+}
+
+async function ensureLeafletReady() {
+  if (typeof L !== 'undefined') return;
+  if (!leafletReadyPromise) {
+    leafletReadyPromise = (async () => {
+      ensureLeafletStylesheet('https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css');
+      await loadScript('https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js');
+      if (typeof L === 'undefined') {
+        throw new Error('Leaflet library unavailable after fallback load');
+      }
+    })();
+  }
+  await leafletReadyPromise;
+}
 
 function normalize(value) {
   return String(value || '')
@@ -2887,12 +2941,12 @@ function renderConflictTrend(series, config = {}) {
     return;
   }
 
-  const minWindow = Math.min(30, allPoints.length);
+  const minWindow = Math.min(7, allPoints.length);
   let state = trendStates.get(stateKey);
   if (!state || state.total !== allPoints.length) {
     state = {
       total: allPoints.length,
-      window: Math.min(90, allPoints.length),
+      window: Math.min(7, allPoints.length),
       offset: 0,
       bound: false
     };
@@ -2911,9 +2965,17 @@ function renderConflictTrend(series, config = {}) {
 
   const formatDelta = value => {
     if (!Number.isFinite(value)) return { text: 'n/a', cls: 'delta-flat' };
-    if (value > 0) return { text: `+${value}`, cls: 'delta-up' };
-    if (value < 0) return { text: `${value}`, cls: 'delta-down' };
-    return { text: '0', cls: 'delta-flat' };
+    const rounded = Math.round(value * 10) / 10;
+    if (rounded > 0) return { text: `+${rounded.toFixed(1)}`, cls: 'delta-up' };
+    if (rounded < 0) return { text: `${rounded.toFixed(1)}`, cls: 'delta-down' };
+    return { text: '0.0', cls: 'delta-flat' };
+  };
+
+  const formatPercentDelta = (value, base) => {
+    if (!Number.isFinite(value) || !Number.isFinite(base) || base === 0) return 'n/a';
+    const pct = (value / base) * 100;
+    const rounded = Math.round(pct * 10) / 10;
+    return rounded > 0 ? `+${rounded.toFixed(1)}%` : `${rounded.toFixed(1)}%`;
   };
 
   const draw = () => {
@@ -2931,10 +2993,18 @@ function renderConflictTrend(series, config = {}) {
       const ratio = (Number(point.value) - minV) / span;
       const y = padY + innerH - ratio * innerH;
       const value = Number(point.value);
-      const prev = index > 0 ? Number(points[index - 1].value) : null;
+      const globalIndex = start + index;
+      const prevPoint = globalIndex > 0 ? allPoints[globalIndex - 1] : null;
+      const prev7Point = globalIndex > 6 ? allPoints[globalIndex - 7] : null;
+      const prev = prevPoint ? Number(prevPoint.value) : null;
+      const prev7 = prev7Point ? Number(prev7Point.value) : null;
       const delta = Number.isFinite(prev) ? value - prev : null;
+      const delta7 = Number.isFinite(prev7) ? value - prev7 : null;
+      const pct1d = Number.isFinite(prev) ? (delta / prev) * 100 : null;
+      const pct7d = Number.isFinite(prev7) ? (delta7 / prev7) * 100 : null;
+      const momentum = Number.isFinite(delta7) ? delta7 / 7 : null;
       const label = point.date || point.day || `D${index + 1}`;
-      return { x, y, value, label, delta };
+      return { x, y, value, label, delta, delta7, pct1d, pct7d, momentum, prev, prev7 };
     });
 
     const d = coords.map((pt, i) => `${i === 0 ? 'M' : 'L'} ${pt.x.toFixed(2)} ${pt.y.toFixed(2)}`).join(' ');
@@ -2945,7 +3015,13 @@ function renderConflictTrend(series, config = {}) {
       const color = isCurrent ? 'var(--accent-teal)' : 'var(--accent-blue)';
       const cls = isCurrent ? 'conflict-trend-point current' : 'conflict-trend-point';
       const deltaAttr = Number.isFinite(pt.delta) ? pt.delta : '';
-      return `<circle class="${cls}" cx="${pt.x.toFixed(2)}" cy="${pt.y.toFixed(2)}" r="4.2" fill="${color}" tabindex="0" data-label="${pt.label}" data-value="${pt.value}" data-delta="${deltaAttr}"><title>${pt.label}: ${pt.value}</title></circle>`;
+      const delta7Attr = Number.isFinite(pt.delta7) ? pt.delta7 : '';
+      const pct1dAttr = Number.isFinite(pt.pct1d) ? pt.pct1d : '';
+      const pct7dAttr = Number.isFinite(pt.pct7d) ? pt.pct7d : '';
+      const momentumAttr = Number.isFinite(pt.momentum) ? pt.momentum : '';
+      const prevAttr = Number.isFinite(pt.prev) ? pt.prev : '';
+      const prev7Attr = Number.isFinite(pt.prev7) ? pt.prev7 : '';
+      return `<circle class="${cls}" cx="${pt.x.toFixed(2)}" cy="${pt.y.toFixed(2)}" r="4.2" fill="${color}" tabindex="0" data-label="${pt.label}" data-value="${pt.value}" data-delta="${deltaAttr}" data-delta7="${delta7Attr}" data-pct1d="${pct1dAttr}" data-pct7d="${pct7dAttr}" data-momentum="${momentumAttr}" data-prev="${prevAttr}" data-prev7="${prev7Attr}"><title>${pt.label}: ${pt.value}</title></circle>`;
     }).join('');
 
     const labels = coords.map((pt, i) => {
@@ -2973,9 +3049,20 @@ function renderConflictTrend(series, config = {}) {
       const label = target.getAttribute('data-label') || 'Day';
       const value = target.getAttribute('data-value') || '--';
       const deltaRaw = Number(target.getAttribute('data-delta'));
-      const delta = formatDelta(deltaRaw);
+      const delta7Raw = Number(target.getAttribute('data-delta7'));
+      const pct1dRaw = Number(target.getAttribute('data-pct1d'));
+      const pct7dRaw = Number(target.getAttribute('data-pct7d'));
+      const momentumRaw = Number(target.getAttribute('data-momentum'));
+      const prevRaw = Number(target.getAttribute('data-prev'));
+      const prev7Raw = Number(target.getAttribute('data-prev7'));
 
-      tooltip.innerHTML = `Date: ${label}<br>Index value: ${value}<br>Delta vs prev day: <span class="${delta.cls}">${delta.text}</span>`;
+      const delta = formatDelta(deltaRaw);
+      const delta7 = formatDelta(delta7Raw);
+      const momentum = formatDelta(momentumRaw);
+      const pct1d = formatPercentDelta(deltaRaw, prevRaw);
+      const pct7d = formatPercentDelta(delta7Raw, prev7Raw);
+
+      tooltip.innerHTML = `Date: ${label}<br>Index value: ${value}<br>Delta (1d): <span class="${delta.cls}">${delta.text}</span> (${pct1d})<br>Delta (7d): <span class="${delta7.cls}">${delta7.text}</span> (${pct7d})<br>Momentum (avg/day, 7d): <span class="${momentum.cls}">${momentum.text}</span>`;
 
       const bounds = trendWrap.getBoundingClientRect();
       const x = Math.max(12, Math.min(bounds.width - 12, eventX - bounds.left));
@@ -3054,24 +3141,12 @@ function currentThemeMode() {
   return document.documentElement.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
 }
 
-function tileConfigForTheme(theme) {
-  if (theme === 'light') {
-    return {
-      url: 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',
-      options: {
-        subdomains: 'abcd',
-        attribution: '&copy; OpenStreetMap contributors &copy; CARTO',
-        maxZoom: 20
-      }
-    };
-  }
-
+function tileConfigForTheme() {
   return {
-    url: 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',
+    url: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
     options: {
-      subdomains: 'abcd',
-      attribution: '&copy; OpenStreetMap contributors &copy; CARTO',
-      maxZoom: 20
+      attribution: '&copy; OpenStreetMap contributors',
+      maxZoom: 19
     }
   };
 }
@@ -3079,8 +3154,20 @@ function tileConfigForTheme(theme) {
 function replaceMapBaseLayer(mapRef, moduleName) {
   if (!mapRef || typeof L === 'undefined') return;
 
-  const config = tileConfigForTheme(currentThemeMode());
+  const theme = currentThemeMode();
+  const container = mapRef.getContainer();
+  if (container) {
+    container.classList.toggle('map-theme-dark', theme === 'dark');
+    container.classList.toggle('map-theme-light', theme === 'light');
+  }
+
+  const config = tileConfigForTheme();
   const existing = moduleName === 'ukraine' ? ukraineBaseLayer : conflictBaseLayer;
+
+  if (existing && existing._url === config.url) {
+    return;
+  }
+
   if (existing) {
     mapRef.removeLayer(existing);
   }
@@ -3259,6 +3346,7 @@ async function refreshUkraineMetrics() {
 
     const feed = await response.json();
     const conflict = pickConflictById(feed, 'ukraine_2026');
+    await ensureLeafletReady();
     if (!conflict) {
       setUkraineSync('No Ukraine feed configured');
       return;
@@ -3284,6 +3372,21 @@ async function refreshUkraineMetrics() {
       module: 'ukraine'
     });
 
+    const ukraineContent = document.getElementById('ukraineContent');
+    if (ukraineContent && !ukraineContent.hidden && ukraineMap && typeof ukraineMap.invalidateSize === 'function') {
+      setTimeout(() => {
+        ukraineMap.invalidateSize();
+        const markerBounds = ukraineMarkersLayer && typeof ukraineMarkersLayer.getBounds === 'function'
+          ? ukraineMarkersLayer.getBounds()
+          : null;
+        if (markerBounds && markerBounds.isValid && markerBounds.isValid()) {
+          ukraineMap.fitBounds(markerBounds.pad(0.18));
+        } else {
+          ukraineMap.setView([49.0, 31.3], 5);
+        }
+      }, 80);
+    }
+
     updateUkraineTimestamp(conflict.as_of_utc || conflict.updated_at_utc || feed.updated_at_utc);
     setUkraineSync('Live metrics synced');
   } catch (error) {
@@ -3300,6 +3403,7 @@ async function refreshIranWarMetrics() {
 
     const feed = await response.json();
     const conflict = pickActiveConflict(feed);
+    await ensureLeafletReady();
     if (!conflict) throw new Error('Conflict feed missing conflicts');
 
     hydrateConflictHeader(conflict);
@@ -3498,8 +3602,18 @@ function initUkraineCollapse() {
 
     if (!collapsed) {
       setTimeout(() => {
-        if (ukraineMap && typeof ukraineMap.invalidateSize === 'function') ukraineMap.invalidateSize();
-      }, 120);
+        if (ukraineMap && typeof ukraineMap.invalidateSize === 'function') {
+          ukraineMap.invalidateSize();
+          const markerBounds = ukraineMarkersLayer && typeof ukraineMarkersLayer.getBounds === 'function'
+            ? ukraineMarkersLayer.getBounds()
+            : null;
+          if (markerBounds && markerBounds.isValid && markerBounds.isValid()) {
+            ukraineMap.fitBounds(markerBounds.pad(0.18));
+          } else {
+            ukraineMap.setView([49.0, 31.3], 5);
+          }
+        }
+      }, 180);
     }
   };
 
