@@ -673,6 +673,49 @@ nav {
   display: block;
 }
 
+.conflict-trend-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem;
+  margin-bottom: 0.45rem;
+  flex-wrap: wrap;
+}
+
+.conflict-trend-nav {
+  display: inline-flex;
+  gap: 0.35rem;
+}
+
+.conflict-trend-btn {
+  border: 1px solid var(--border-color);
+  background: rgba(255,255,255,0.02);
+  color: var(--text-secondary);
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  padding: 0.22rem 0.52rem;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.conflict-trend-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.conflict-trend-zoom {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+}
+
+.conflict-trend-zoom input {
+  width: 130px;
+}
+
 .conflict-trend-axis {
   stroke: color-mix(in oklab, var(--text-muted) 45%, transparent);
   stroke-width: 1;
@@ -1294,7 +1337,7 @@ footer a:hover { border-bottom-color: var(--accent-gold); }
   <header class="hero reveal">
     <p class="hero-tag">Polymarket Intelligence Briefing</p>
     <h1>STATE OF<br><span>US & WORLD POLITICS</span></h1>
-    <p class="hero-subtitle">Prediction Market Intelligence Report</p>
+    <p class="hero-subtitle">Prediction Market Intelligence Reports & Conflict Monitoring</p>
     <div class="hero-meta">
       <span id="asOfDate">&#9670; Last updated: --</span>
       <span>&#9670; Source: Polymarket</span>
@@ -1332,6 +1375,15 @@ footer a:hover { border-bottom-color: var(--accent-gold); }
             <span>Daily Conflict Intensity</span>
             <span id="conflictTrendRange">--</span>
           </div>
+          <div class="conflict-trend-controls">
+            <div class="conflict-trend-nav">
+              <button class="conflict-trend-btn" id="conflictTrendOlder" type="button">Aelter</button>
+              <button class="conflict-trend-btn" id="conflictTrendNewer" type="button">Neuer</button>
+            </div>
+            <label class="conflict-trend-zoom">Zoom
+              <input id="conflictTrendZoom" type="range" min="30" max="365" value="90" step="1" aria-label="Zoom timeline window">
+            </label>
+          </div>
           <svg class="conflict-trend-chart" id="conflictTrendChart" viewBox="0 0 700 170" role="img" aria-label="Daily conflict intensity trend"></svg>
           <div class="conflict-trend-tooltip" id="conflictTrendTooltip" aria-hidden="true"></div>
           <div class="conflict-explainer" id="conflictExplainer">
@@ -1362,8 +1414,9 @@ footer a:hover { border-bottom-color: var(--accent-gold); }
       <div class="section-number">Priority Monitor</div>
       <h2 class="section-title" id="ukraineTitle">Ukraine Conflict Monitor</h2>
       <p class="section-subtitle" id="ukraineSubtitle">Live conflict metrics and a daily composite intensity graph for Ukraine, refreshed every hour.</p>
+      <button class="section-collapse-btn" id="ukraineToggleBtn" type="button" aria-expanded="false" aria-controls="ukraineContent">Monitor anzeigen</button>
     </div>
-    <div class="iran-monitor reveal">
+    <div class="iran-monitor reveal" id="ukraineContent" hidden>
       <div class="iran-meta">
         <span id="ukraineAsOf">&#9670; Last updated: waiting for live metrics</span>
         <span id="ukraineSync">&#9670; Syncing metrics...</span>
@@ -1385,6 +1438,15 @@ footer a:hover { border-bottom-color: var(--accent-gold); }
           <div class="conflict-trend-head">
             <span>Daily Conflict Intensity</span>
             <span id="ukraineTrendRange">--</span>
+          </div>
+          <div class="conflict-trend-controls">
+            <div class="conflict-trend-nav">
+              <button class="conflict-trend-btn" id="ukraineTrendOlder" type="button">Aelter</button>
+              <button class="conflict-trend-btn" id="ukraineTrendNewer" type="button">Neuer</button>
+            </div>
+            <label class="conflict-trend-zoom">Zoom
+              <input id="ukraineTrendZoom" type="range" min="30" max="365" value="90" step="1" aria-label="Zoom timeline window">
+            </label>
           </div>
           <svg class="conflict-trend-chart" id="ukraineTrendChart" viewBox="0 0 700 170" role="img" aria-label="Daily Ukraine conflict intensity trend"></svg>
           <div class="conflict-trend-tooltip" id="ukraineTrendTooltip" aria-hidden="true"></div>
@@ -2351,6 +2413,9 @@ let conflictMap = null;
 let conflictMarkersLayer = null;
 let ukraineMap = null;
 let ukraineMarkersLayer = null;
+let conflictBaseLayer = null;
+let ukraineBaseLayer = null;
+const trendStates = new Map();
 
 function normalize(value) {
   return String(value || '')
@@ -2798,16 +2863,44 @@ function renderConflictTrend(series, config = {}) {
   const rangeId = config.rangeId || 'conflictTrendRange';
   const tooltipId = config.tooltipId || 'conflictTrendTooltip';
   const trendId = config.trendId || 'conflictTrend';
+  const olderId = config.olderId || 'conflictTrendOlder';
+  const newerId = config.newerId || 'conflictTrendNewer';
+  const zoomId = config.zoomId || 'conflictTrendZoom';
+  const stateKey = config.stateKey || chartId;
+
   const svg = document.getElementById(chartId);
   const rangeNode = document.getElementById(rangeId);
+  const tooltip = document.getElementById(tooltipId);
+  const trendWrap = document.getElementById(trendId);
+  const olderBtn = document.getElementById(olderId);
+  const newerBtn = document.getElementById(newerId);
+  const zoomInput = document.getElementById(zoomId);
   if (!svg) return;
 
-  const points = Array.isArray(series) ? series.filter(p => Number.isFinite(Number(p?.value))) : [];
-  if (points.length === 0) {
+  const allPoints = (Array.isArray(series) ? series : [])
+    .filter(p => Number.isFinite(Number(p?.value)) && (p?.date || p?.day))
+    .sort((a, b) => String(a?.date || a?.day).localeCompare(String(b?.date || b?.day)));
+
+  if (allPoints.length === 0) {
     svg.innerHTML = '';
     if (rangeNode) rangeNode.textContent = 'No daily points';
     return;
   }
+
+  const minWindow = Math.min(30, allPoints.length);
+  let state = trendStates.get(stateKey);
+  if (!state || state.total !== allPoints.length) {
+    state = {
+      total: allPoints.length,
+      window: Math.min(90, allPoints.length),
+      offset: 0,
+      bound: false
+    };
+    trendStates.set(stateKey, state);
+  }
+
+  state.window = Math.max(minWindow, Math.min(state.window, allPoints.length));
+  state.offset = Math.max(0, Math.min(state.offset, Math.max(0, allPoints.length - state.window)));
 
   const width = 700;
   const height = 170;
@@ -2816,53 +2909,6 @@ function renderConflictTrend(series, config = {}) {
   const innerW = width - padX * 2;
   const innerH = height - padY * 2;
 
-  const values = points.map(p => Number(p.value));
-  const minV = Math.min(...values);
-  const maxV = Math.max(...values);
-  const span = Math.max(1, maxV - minV);
-
-  const coords = points.map((point, index) => {
-    const x = padX + (innerW * index) / Math.max(1, points.length - 1);
-    const ratio = (Number(point.value) - minV) / span;
-    const y = padY + innerH - ratio * innerH;
-    const value = Number(point.value);
-    const prev = index > 0 ? Number(points[index - 1].value) : null;
-    const delta = Number.isFinite(prev) ? value - prev : null;
-    return { x, y, value, label: point.date || point.day || `D${index + 1}`, delta };
-  });
-
-  const d = coords.map((p, i) => `${i === 0 ? 'M' : 'L'} ${p.x.toFixed(2)} ${p.y.toFixed(2)}`).join(' ');
-  const area = `${d} L ${coords[coords.length - 1].x.toFixed(2)} ${(height - padY).toFixed(2)} L ${coords[0].x.toFixed(2)} ${(height - padY).toFixed(2)} Z`;
-
-  const circles = coords.map((p, i) => {
-    const isCurrent = i === coords.length - 1;
-    const color = isCurrent ? 'var(--accent-teal)' : 'var(--accent-blue)';
-    const cls = isCurrent ? 'conflict-trend-point current' : 'conflict-trend-point';
-    const deltaAttr = Number.isFinite(p.delta) ? p.delta : '';
-    return `<circle class="${cls}" cx="${p.x.toFixed(2)}" cy="${p.y.toFixed(2)}" r="4.2" fill="${color}" tabindex="0" data-label="${p.label}" data-value="${p.value}" data-delta="${deltaAttr}"><title>${p.label}: ${p.value}</title></circle>`;
-  }).join('');
-
-  const labels = coords.map((p, i) => {
-    if (i !== 0 && i !== coords.length - 1 && i % 2 !== 0) return '';
-    return `<text class="conflict-trend-label" x="${p.x.toFixed(2)}" y="${(height - 6).toFixed(2)}" text-anchor="middle">${p.label.slice(5) || p.label}</text>`;
-  }).join('');
-
-  const grid = [0.25, 0.5, 0.75].map(r => {
-    const gy = (padY + innerH * r).toFixed(2);
-    return `<line class="conflict-trend-grid" x1="${padX}" y1="${gy}" x2="${width - padX}" y2="${gy}"></line>`;
-  }).join('');
-
-  svg.innerHTML = `
-    ${grid}
-    <line class="conflict-trend-axis" x1="${padX}" y1="${height - padY}" x2="${width - padX}" y2="${height - padY}"></line>
-    <path class="conflict-trend-area" d="${area}"></path>
-    <path class="conflict-trend-line" d="${d}"></path>
-    ${circles}
-    ${labels}
-  `;
-
-  const tooltip = document.getElementById(tooltipId);
-  const trendWrap = document.getElementById(trendId);
   const formatDelta = value => {
     if (!Number.isFinite(value)) return { text: 'n/a', cls: 'delta-flat' };
     if (value > 0) return { text: `+${value}`, cls: 'delta-up' };
@@ -2870,42 +2916,131 @@ function renderConflictTrend(series, config = {}) {
     return { text: '0', cls: 'delta-flat' };
   };
 
-  const showTooltip = (target, eventX, eventY) => {
-    if (!tooltip || !trendWrap) return;
-    const label = target.getAttribute('data-label') || 'Day';
-    const value = target.getAttribute('data-value') || '--';
-    const deltaRaw = Number(target.getAttribute('data-delta'));
-    const delta = formatDelta(deltaRaw);
+  const draw = () => {
+    const end = allPoints.length - state.offset;
+    const start = Math.max(0, end - state.window);
+    const points = allPoints.slice(start, end);
 
-    tooltip.innerHTML = `Date: ${label}<br>Index value: ${value}<br>Delta vs prev day: <span class="${delta.cls}">${delta.text}</span>`;
+    const values = points.map(p => Number(p.value));
+    const minV = Math.min(...values);
+    const maxV = Math.max(...values);
+    const span = Math.max(1, maxV - minV);
 
-    const bounds = trendWrap.getBoundingClientRect();
-    const x = Math.max(12, Math.min(bounds.width - 12, eventX - bounds.left));
-    const y = Math.max(12, eventY - bounds.top);
-    tooltip.style.left = `${x}px`;
-    tooltip.style.top = `${y}px`;
-    tooltip.classList.add('visible');
-  };
-
-  const hideTooltip = () => {
-    if (!tooltip) return;
-    tooltip.classList.remove('visible');
-  };
-
-  svg.querySelectorAll('.conflict-trend-point').forEach(point => {
-    point.addEventListener('mouseenter', evt => showTooltip(point, evt.clientX, evt.clientY));
-    point.addEventListener('mousemove', evt => showTooltip(point, evt.clientX, evt.clientY));
-    point.addEventListener('mouseleave', hideTooltip);
-    point.addEventListener('focus', evt => {
-      const rect = point.getBoundingClientRect();
-      showTooltip(point, rect.left + rect.width / 2, rect.top);
+    const coords = points.map((point, index) => {
+      const x = padX + (innerW * index) / Math.max(1, points.length - 1);
+      const ratio = (Number(point.value) - minV) / span;
+      const y = padY + innerH - ratio * innerH;
+      const value = Number(point.value);
+      const prev = index > 0 ? Number(points[index - 1].value) : null;
+      const delta = Number.isFinite(prev) ? value - prev : null;
+      const label = point.date || point.day || `D${index + 1}`;
+      return { x, y, value, label, delta };
     });
-    point.addEventListener('blur', hideTooltip);
-  });
 
-  if (rangeNode) {
-    rangeNode.textContent = `Index 0-100 | ${points[0].date || points[0].day || 'Start'} → ${points[points.length - 1].date || points[points.length - 1].day || 'Now'}`;
+    const d = coords.map((pt, i) => `${i === 0 ? 'M' : 'L'} ${pt.x.toFixed(2)} ${pt.y.toFixed(2)}`).join(' ');
+    const area = `${d} L ${coords[coords.length - 1].x.toFixed(2)} ${(height - padY).toFixed(2)} L ${coords[0].x.toFixed(2)} ${(height - padY).toFixed(2)} Z`;
+
+    const circles = coords.map((pt, i) => {
+      const isCurrent = i === coords.length - 1;
+      const color = isCurrent ? 'var(--accent-teal)' : 'var(--accent-blue)';
+      const cls = isCurrent ? 'conflict-trend-point current' : 'conflict-trend-point';
+      const deltaAttr = Number.isFinite(pt.delta) ? pt.delta : '';
+      return `<circle class="${cls}" cx="${pt.x.toFixed(2)}" cy="${pt.y.toFixed(2)}" r="4.2" fill="${color}" tabindex="0" data-label="${pt.label}" data-value="${pt.value}" data-delta="${deltaAttr}"><title>${pt.label}: ${pt.value}</title></circle>`;
+    }).join('');
+
+    const labels = coords.map((pt, i) => {
+      if (i !== 0 && i !== coords.length - 1 && i % 6 !== 0) return '';
+      const shortLabel = String(pt.label).slice(5) || pt.label;
+      return `<text class="conflict-trend-label" x="${pt.x.toFixed(2)}" y="${(height - 6).toFixed(2)}" text-anchor="middle">${shortLabel}</text>`;
+    }).join('');
+
+    const grid = [0.25, 0.5, 0.75].map(r => {
+      const gy = (padY + innerH * r).toFixed(2);
+      return `<line class="conflict-trend-grid" x1="${padX}" y1="${gy}" x2="${width - padX}" y2="${gy}"></line>`;
+    }).join('');
+
+    svg.innerHTML = `
+      ${grid}
+      <line class="conflict-trend-axis" x1="${padX}" y1="${height - padY}" x2="${width - padX}" y2="${height - padY}"></line>
+      <path class="conflict-trend-area" d="${area}"></path>
+      <path class="conflict-trend-line" d="${d}"></path>
+      ${circles}
+      ${labels}
+    `;
+
+    const showTooltip = (target, eventX, eventY) => {
+      if (!tooltip || !trendWrap) return;
+      const label = target.getAttribute('data-label') || 'Day';
+      const value = target.getAttribute('data-value') || '--';
+      const deltaRaw = Number(target.getAttribute('data-delta'));
+      const delta = formatDelta(deltaRaw);
+
+      tooltip.innerHTML = `Date: ${label}<br>Index value: ${value}<br>Delta vs prev day: <span class="${delta.cls}">${delta.text}</span>`;
+
+      const bounds = trendWrap.getBoundingClientRect();
+      const x = Math.max(12, Math.min(bounds.width - 12, eventX - bounds.left));
+      const y = Math.max(12, eventY - bounds.top);
+      tooltip.style.left = `${x}px`;
+      tooltip.style.top = `${y}px`;
+      tooltip.classList.add('visible');
+    };
+
+    const hideTooltip = () => {
+      if (!tooltip) return;
+      tooltip.classList.remove('visible');
+    };
+
+    svg.querySelectorAll('.conflict-trend-point').forEach(point => {
+      point.addEventListener('mouseenter', evt => showTooltip(point, evt.clientX, evt.clientY));
+      point.addEventListener('mousemove', evt => showTooltip(point, evt.clientX, evt.clientY));
+      point.addEventListener('mouseleave', hideTooltip);
+      point.addEventListener('focus', () => {
+        const rect = point.getBoundingClientRect();
+        showTooltip(point, rect.left + rect.width / 2, rect.top);
+      });
+      point.addEventListener('blur', hideTooltip);
+    });
+
+    if (rangeNode) {
+      rangeNode.textContent = `Window: ${points[0].date || points[0].day} -> ${points[points.length - 1].date || points[points.length - 1].day} | Full: ${allPoints[0].date || allPoints[0].day} -> ${allPoints[allPoints.length - 1].date || allPoints[allPoints.length - 1].day}`;
+    }
+
+    if (olderBtn) olderBtn.disabled = start === 0;
+    if (newerBtn) newerBtn.disabled = state.offset === 0;
+    if (zoomInput) zoomInput.value = String(state.window);
+  };
+
+  if (!state.bound) {
+    if (zoomInput) {
+      zoomInput.min = String(minWindow);
+      zoomInput.max = String(allPoints.length);
+      zoomInput.step = '1';
+      zoomInput.addEventListener('input', () => {
+        state.window = Number(zoomInput.value) || state.window;
+        state.window = Math.max(minWindow, Math.min(state.window, allPoints.length));
+        state.offset = Math.min(state.offset, Math.max(0, allPoints.length - state.window));
+        draw();
+      });
+    }
+
+    if (olderBtn) {
+      olderBtn.addEventListener('click', () => {
+        state.offset = Math.min(state.offset + state.window, Math.max(0, allPoints.length - state.window));
+        draw();
+      });
+    }
+
+    if (newerBtn) {
+      newerBtn.addEventListener('click', () => {
+        state.offset = Math.max(0, state.offset - state.window);
+        draw();
+      });
+    }
+
+    state.bound = true;
   }
+
+  draw();
 }
 
 function conflictColorMap(legend) {
@@ -2913,6 +3048,51 @@ function conflictColorMap(legend) {
     if (item?.type) map[item.type] = item.color || '#9b9a97';
     return map;
   }, {});
+}
+
+function currentThemeMode() {
+  return document.documentElement.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
+}
+
+function tileConfigForTheme(theme) {
+  if (theme === 'light') {
+    return {
+      url: 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',
+      options: {
+        subdomains: 'abcd',
+        attribution: '&copy; OpenStreetMap contributors &copy; CARTO',
+        maxZoom: 20
+      }
+    };
+  }
+
+  return {
+    url: 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',
+    options: {
+      subdomains: 'abcd',
+      attribution: '&copy; OpenStreetMap contributors &copy; CARTO',
+      maxZoom: 20
+    }
+  };
+}
+
+function replaceMapBaseLayer(mapRef, moduleName) {
+  if (!mapRef || typeof L === 'undefined') return;
+
+  const config = tileConfigForTheme(currentThemeMode());
+  const existing = moduleName === 'ukraine' ? ukraineBaseLayer : conflictBaseLayer;
+  if (existing) {
+    mapRef.removeLayer(existing);
+  }
+
+  const nextLayer = L.tileLayer(config.url, config.options);
+  nextLayer.addTo(mapRef);
+
+  if (moduleName === 'ukraine') {
+    ukraineBaseLayer = nextLayer;
+  } else {
+    conflictBaseLayer = nextLayer;
+  }
 }
 
 function upsertConflictMap(mapConfig, points, legend, config = {}) {
@@ -2937,18 +3117,16 @@ function upsertConflictMap(mapConfig, points, legend, config = {}) {
       scrollWheelZoom: false,
       zoomControl: true
     }).setView(center, zoom);
-
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      attribution: '&copy; OpenStreetMap contributors'
-    }).addTo(conflictMap);
+    replaceMapBaseLayer(mapRef, moduleName);
   } else {
-    conflictMap.setView(center, zoom);
+    mapRef.setView(center, zoom);
+    replaceMapBaseLayer(mapRef, moduleName);
   }
 
-  if (conflictMarkersLayer) {
-    conflictMarkersLayer.clearLayers();
+  if (layerRef) {
+    layerRef.clearLayers();
   } else {
-    conflictMarkersLayer = L.layerGroup().addTo(conflictMap);
+    layerRef = L.layerGroup().addTo(mapRef);
   }
 
   const colorByType = conflictColorMap(legend);
@@ -3094,7 +3272,11 @@ async function refreshUkraineMetrics() {
       chartId: 'ukraineTrendChart',
       rangeId: 'ukraineTrendRange',
       tooltipId: 'ukraineTrendTooltip',
-      trendId: 'ukraineTrend'
+      trendId: 'ukraineTrend',
+      olderId: 'ukraineTrendOlder',
+      newerId: 'ukraineTrendNewer',
+      zoomId: 'ukraineTrendZoom',
+      stateKey: 'ukraine'
     });
     upsertConflictMap(conflict.map || {}, Array.isArray(conflict.map_points) ? conflict.map_points : [], Array.isArray(conflict.legend) ? conflict.legend : [], {
       mapId: 'ukraineMap',
@@ -3124,7 +3306,12 @@ async function refreshIranWarMetrics() {
     renderConflictMetrics(Array.isArray(conflict.metrics) ? conflict.metrics : []);
     renderConflictLegend(Array.isArray(conflict.legend) ? conflict.legend : []);
     renderConflictTimeline(Array.isArray(conflict.timeline) ? conflict.timeline : []);
-    renderConflictTrend(Array.isArray(conflict.daily_series) ? conflict.daily_series : []);
+    renderConflictTrend(Array.isArray(conflict.daily_series) ? conflict.daily_series : [], {
+      olderId: 'conflictTrendOlder',
+      newerId: 'conflictTrendNewer',
+      zoomId: 'conflictTrendZoom',
+      stateKey: 'iran'
+    });
     upsertConflictMap(conflict.map || {}, Array.isArray(conflict.map_points) ? conflict.map_points : [], Array.isArray(conflict.legend) ? conflict.legend : []);
 
     updateIranWarTimestamp(conflict.as_of_utc || conflict.updated_at_utc || feed.updated_at_utc);
@@ -3145,6 +3332,9 @@ function applyTheme(theme) {
   themeToggle.setAttribute('aria-label', lightActive ? 'Switch to dark mode' : 'Switch to light mode');
   themeToggle.setAttribute('aria-pressed', String(lightActive));
   themeToggle.disabled = false;
+
+  replaceMapBaseLayer(conflictMap, 'iran');
+  replaceMapBaseLayer(ukraineMap, 'ukraine');
 }
 
 function preferredTheme() {
@@ -3296,6 +3486,33 @@ if (focusSection) {
   }
 }
 
+function initUkraineCollapse() {
+  const toggleBtn = document.getElementById('ukraineToggleBtn');
+  const content = document.getElementById('ukraineContent');
+  if (!toggleBtn || !content) return;
+
+  const setCollapsed = (collapsed) => {
+    content.hidden = collapsed;
+    toggleBtn.setAttribute('aria-expanded', String(!collapsed));
+    toggleBtn.textContent = collapsed ? 'Monitor anzeigen' : 'Monitor ausblenden';
+
+    if (!collapsed) {
+      setTimeout(() => {
+        if (ukraineMap && typeof ukraineMap.invalidateSize === 'function') ukraineMap.invalidateSize();
+      }, 120);
+    }
+  };
+
+  const startExpanded = window.location.hash === '#ukraine-war';
+  setCollapsed(!startExpanded);
+
+  toggleBtn.addEventListener('click', () => {
+    const nextCollapsed = !content.hidden;
+    setCollapsed(nextCollapsed);
+    if (!nextCollapsed) refreshUkraineMetrics();
+  });
+}
+
 function refreshAllData() {
   refreshLiveData();
   refreshIranWarMetrics();
@@ -3303,6 +3520,7 @@ function refreshAllData() {
   refreshConflictNews();
 }
 
+initUkraineCollapse();
 refreshAllData();
 setInterval(refreshAllData, ONE_HOUR_MS);
 </script>

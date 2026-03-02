@@ -2,7 +2,7 @@ name: Update Iran war metrics
 
 on:
   schedule:
-    - cron: '0 */6 * * *'
+    - cron: '10 * * * *'
   workflow_dispatch:
 
 permissions:
@@ -22,6 +22,9 @@ jobs:
 
       - name: Update metrics JSON
         run: node scripts/update-iran-war-metrics.mjs
+
+      - name: Validate site
+        run: node scripts/validate-polymarket-site.mjs
 
       - name: Commit and push if changed
         run: |
