@@ -2174,7 +2174,12 @@ function readStoredSyncTime() {
 
 function setSyncStatus(message) {
   const node = document.getElementById('syncStatus');
-  if (node) node.textContent = `\u25c6 ${message}`;
+  if (!node) return;
+  if (!message) {
+    node.textContent = '';
+    return;
+  }
+  node.textContent = `\u25c6 ${message}`;
 }
 
 function setIranWarSync(message) {
@@ -2420,7 +2425,7 @@ async function refreshLiveData() {
   } else {
     const lastSuccessful = readStoredSyncTime();
     updateTimestamp(Number.isFinite(lastSuccessful) ? lastSuccessful : Date.now());
-    setSyncStatus('Live sync unavailable - showing last known values');
+    setSyncStatus('');
   }
 }
 
