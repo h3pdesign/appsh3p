@@ -5,7 +5,7 @@
     {
       "id": "iran_2026",
       "title": "Iran Conflict Monitor",
-      "subtitle": "Live casualties and projectile/operation indicators. Map and metrics refresh every 6 hours.",
+      "subtitle": "Live casualties and projectile/operation indicators. Map and metrics refresh every hour.",
       "as_of_utc": "2026-03-02T12:54:58Z",
       "updated_at_utc": "2026-03-02T13:30:00Z",
       "source_name": "Wikipedia: 2026 Iran conflict + Twelve-Day War",
@@ -40,56 +40,64 @@
           "label": "Iran Reported Killed",
           "value": 555,
           "source": "Wikipedia + ISW + public reporting",
-          "confidence": "Medium"
+          "confidence": "Medium",
+          "tone": "red"
         },
         {
           "id": "iran_injured",
           "label": "Iran Reported Injured",
           "value": 747,
           "source": "Wikipedia + ISW + public reporting",
-          "confidence": "Medium"
+          "confidence": "Medium",
+          "tone": "red"
         },
         {
           "id": "israel_killed",
           "label": "Israel Reported Killed",
           "value": 12,
           "source": "Wikipedia + ISW + public reporting",
-          "confidence": "Medium"
+          "confidence": "Medium",
+          "tone": "red"
         },
         {
           "id": "israel_injured",
           "label": "Israel Reported Injured",
           "value": 777,
           "source": "Wikipedia + ISW + public reporting",
-          "confidence": "Medium"
+          "confidence": "Medium",
+          "tone": "red"
         },
         {
           "id": "us_killed",
           "label": "US Soldiers Killed",
           "value": 4,
           "source": "Wikipedia + ISW + public reporting",
-          "confidence": "Medium"
+          "confidence": "Medium",
+          "tone": "red"
         },
         {
           "id": "us_seriously_injured",
           "label": "US Soldiers Seriously Injured",
           "value": 5,
           "source": "Wikipedia + ISW + public reporting",
-          "confidence": "Medium"
+          "confidence": "Medium",
+          "tone": "red"
         },
         {
           "id": "missiles_benchmark",
           "label": "Ballistic Missiles (2025 Benchmark)",
           "value": 520,
           "source": "Wikipedia + ISW + public reporting",
-          "confidence": "Medium"
+          "confidence": "Medium",
+          "tone": "amber"
         },
         {
           "id": "drones_benchmark",
           "label": "Drones (2025 Benchmark)",
           "value": 950,
           "source": "Wikipedia + ISW + public reporting",
-          "confidence": "Medium"
+          "confidence": "Medium",
+          "tone": "amber"
         }
       ],
       "map_points": [
@@ -159,7 +167,37 @@
         }
       ],
       "secondary_source_name": "Institute for the Study of War (ISW)",
-      "secondary_source_url": "https://www.understandingwar.org/"
+      "secondary_source_url": "https://www.understandingwar.org/",
+      "daily_series": [
+        {
+          "date": "2026-02-24",
+          "value": 46
+        },
+        {
+          "date": "2026-02-25",
+          "value": 51
+        },
+        {
+          "date": "2026-02-26",
+          "value": 55
+        },
+        {
+          "date": "2026-02-27",
+          "value": 58
+        },
+        {
+          "date": "2026-02-28",
+          "value": 54
+        },
+        {
+          "date": "2026-03-01",
+          "value": 61
+        },
+        {
+          "date": "2026-03-02",
+          "value": 63
+        }
+      ]
     }
   ]
 }

@@ -1002,7 +1002,7 @@ footer a:hover { border-bottom-color: var(--accent-gold); }
     <div class="section-header reveal">
       <div class="section-number">Top Priority</div>
       <h2 class="section-title" id="conflictTitle">Conflict Monitor</h2>
-      <p class="section-subtitle" id="conflictSubtitle">Live conflict metrics (casualties, missile activity, and operational footprint), refreshed every 6 hours.</p>
+      <p class="section-subtitle" id="conflictSubtitle">Live conflict metrics (casualties, missile activity, and operational footprint), refreshed every hour.</p>
     </div>
     <div class="iran-monitor reveal">
       <div class="iran-meta">
@@ -1957,7 +1957,7 @@ footer a:hover { border-bottom-color: var(--accent-gold); }
 <!-- ====== FOOTER ====== -->
 <footer>
   <div class="container">
-    <p id="footerTimestamp">Data sourced from <a href="https://polymarket.com" target="_blank" rel="noopener">Polymarket</a> prediction markets. Probabilities refresh automatically every 6 hours. This is not financial advice.</p>
+    <p id="footerTimestamp">Data sourced from <a href="https://polymarket.com" target="_blank" rel="noopener">Polymarket</a> prediction markets. Probabilities refresh automatically every hour. This is not financial advice.</p>
     <p>Copyright by h3p 2026</p>
   </div>
 </footer>
@@ -1966,7 +1966,7 @@ footer a:hover { border-bottom-color: var(--accent-gold); }
 <script>
 const POLYMARKET_API = 'https://gamma-api.polymarket.com/markets';
 const CONFLICT_MONITOR_URL = '/polymarket-us-politics/data/iran-war-metrics.json';
-const SIX_HOURS_MS = 6 * 60 * 60 * 1000;
+const ONE_HOUR_MS = 60 * 60 * 1000;
 const THEME_KEY = 'pmir-theme';
 const LAST_SYNC_KEY = 'pmir-last-successful-sync';
 const marketCache = new Map();
@@ -2006,7 +2006,7 @@ async function fetchMarketByQuestion(question) {
   const key = normalize(question);
   if (!key) return null;
   const cached = marketCache.get(key);
-  if (cached && (Date.now() - cached.fetchedAt) < SIX_HOURS_MS) {
+  if (cached && (Date.now() - cached.fetchedAt) < ONE_HOUR_MS) {
     return cached.market;
   }
 
@@ -2160,7 +2160,7 @@ function updateTimestamp(sourceTime) {
   const headerDate = document.getElementById('asOfDate');
   const footerDate = document.getElementById('footerTimestamp');
   if (headerDate) headerDate.textContent = `\u25c6 As of ${formatted}`;
-  if (footerDate) footerDate.innerHTML = 'Data sourced from <a href="https://polymarket.com" target="_blank" rel="noopener">Polymarket</a> prediction markets. Probabilities refresh automatically every 6 hours.';
+  if (footerDate) footerDate.innerHTML = 'Data sourced from <a href="https://polymarket.com" target="_blank" rel="noopener">Polymarket</a> prediction markets. Probabilities refresh automatically every hour.';
 }
 
 function readStoredSyncTime() {
@@ -2334,7 +2334,7 @@ function hydrateConflictHeader(conflict) {
   const sourceNode = document.getElementById('iranWarSource');
 
   if (titleNode) titleNode.textContent = conflict.title || 'Conflict Monitor';
-  if (subtitleNode) subtitleNode.textContent = conflict.subtitle || 'Live conflict metrics refreshed every 6 hours.';
+  if (subtitleNode) subtitleNode.textContent = conflict.subtitle || 'Live conflict metrics refreshed every hour.';
   if (sourceNode) {
     sourceNode.textContent = `Source: ${conflict.source_name || 'live conflict data feed'}`;
     if (conflict.source_url) sourceNode.href = conflict.source_url;
@@ -2529,7 +2529,7 @@ function refreshAllData() {
 }
 
 refreshAllData();
-setInterval(refreshAllData, SIX_HOURS_MS);
+setInterval(refreshAllData, ONE_HOUR_MS);
 </script>
 </body>
 </html>

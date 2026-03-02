@@ -559,10 +559,20 @@ nav {
 
 .iran-stat {
   border: 1px solid var(--border-subtle);
-  background: rgba(255,255,255,0.02);
-  border-radius: 4px;
-  padding: 0.9rem;
+  background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+  border-radius: 6px;
+  padding: 0.95rem;
+  box-shadow: 0 10px 22px rgba(0,0,0,0.14);
+  transition: transform 0.2s ease, border-color 0.2s ease;
 }
+
+.iran-stat:hover {
+  transform: translateY(-2px);
+}
+
+.iran-stat-red { border-color: rgba(239,68,68,0.35); }
+.iran-stat-amber { border-color: rgba(245,158,11,0.35); }
+.iran-stat-green { border-color: rgba(34,197,94,0.35); }
 
 .iran-stat-label {
   font-size: 0.72rem;
@@ -579,6 +589,10 @@ nav {
   line-height: 1;
   color: var(--text-primary);
 }
+
+.iran-stat-value.tone-red { color: var(--red-low); }
+.iran-stat-value.tone-amber { color: var(--amber-mid); }
+.iran-stat-value.tone-green { color: var(--green-high); }
 
 .iran-stat-meta {
   margin-top: 0.45rem;
@@ -607,6 +621,53 @@ nav {
   color: var(--text-muted);
   font-family: var(--font-mono);
   border-top: 1px solid var(--border-subtle);
+}
+
+.conflict-trend {
+  border-top: 1px solid var(--border-subtle);
+  padding: 0.75rem;
+  background: rgba(255,255,255,0.02);
+}
+
+.conflict-trend-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.4rem;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.conflict-trend-chart {
+  width: 100%;
+  height: 170px;
+  display: block;
+}
+
+.conflict-trend-axis {
+  stroke: color-mix(in oklab, var(--text-muted) 45%, transparent);
+  stroke-width: 1;
+}
+
+.conflict-trend-line {
+  fill: none;
+  stroke: var(--accent-blue);
+  stroke-width: 2.2;
+}
+
+.conflict-trend-point {
+  stroke: var(--bg-card);
+  stroke-width: 1.5;
+}
+
+.conflict-trend-label {
+  fill: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 10px;
 }
 
 .conflict-legend {
@@ -1112,7 +1173,7 @@ footer a:hover { border-bottom-color: var(--accent-gold); }
     <div class="section-header reveal">
       <div class="section-number">Top Priority</div>
       <h2 class="section-title" id="conflictTitle">Conflict Monitor</h2>
-      <p class="section-subtitle" id="conflictSubtitle">Live conflict metrics (casualties, missile activity, and operational footprint), refreshed every 6 hours.</p>
+      <p class="section-subtitle" id="conflictSubtitle">Live conflict metrics (casualties, missile activity, and operational footprint), refreshed every hour.</p>
     </div>
     <div class="iran-monitor reveal">
       <div class="iran-meta">
@@ -1128,6 +1189,13 @@ footer a:hover { border-bottom-color: var(--accent-gold); }
       <div class="conflict-map-wrap">
         <div class="conflict-map" id="conflictMap"></div>
         <div class="conflict-map-status" id="conflictMapStatus">Loading conflict map...</div>
+        <div class="conflict-trend" id="conflictTrend">
+          <div class="conflict-trend-head">
+            <span>Daily Conflict Intensity</span>
+            <span id="conflictTrendRange">--</span>
+          </div>
+          <svg class="conflict-trend-chart" id="conflictTrendChart" viewBox="0 0 700 170" role="img" aria-label="Daily conflict intensity trend"></svg>
+        </div>
       </div>
       <div class="conflict-legend" id="conflictLegend"></div>
       <div class="conflict-timeline" id="conflictTimeline">
@@ -2075,7 +2143,7 @@ footer a:hover { border-bottom-color: var(--accent-gold); }
 <!-- ====== FOOTER ====== -->
 <footer>
   <div class="container">
-    <p id="footerTimestamp">Data sourced from <a href="https://polymarket.com" target="_blank" rel="noopener">Polymarket</a> prediction markets. Probabilities refresh automatically every 6 hours. This is not financial advice.</p>
+    <p id="footerTimestamp">Data sourced from <a href="https://polymarket.com" target="_blank" rel="noopener">Polymarket</a> prediction markets. Probabilities refresh automatically every hour. This is not financial advice.</p>
     <p>Copyright by h3p 2026</p>
   </div>
 </footer>
@@ -2084,7 +2152,7 @@ footer a:hover { border-bottom-color: var(--accent-gold); }
 <script>
 const POLYMARKET_API = 'https://gamma-api.polymarket.com/markets';
 const CONFLICT_MONITOR_URL = '/polymarket-us-politics/data/iran-war-metrics.json';
-const SIX_HOURS_MS = 6 * 60 * 60 * 1000;
+const ONE_HOUR_MS = 60 * 60 * 1000;
 const THEME_KEY = 'pmir-theme';
 const LAST_SYNC_KEY = 'pmir-last-successful-sync';
 const marketCache = new Map();
@@ -2124,7 +2192,7 @@ async function fetchMarketByQuestion(question) {
   const key = normalize(question);
   if (!key) return null;
   const cached = marketCache.get(key);
-  if (cached && (Date.now() - cached.fetchedAt) < SIX_HOURS_MS) {
+  if (cached && (Date.now() - cached.fetchedAt) < ONE_HOUR_MS) {
     return cached.market;
   }
 
@@ -2299,7 +2367,7 @@ function updateTimestamp(sourceTime) {
 
   if (headerDate) headerDate.textContent = `◆ Last updated: ${local} (${utc})`;
   if (footerDate) {
-    footerDate.innerHTML = 'Data sourced from <a href="https://polymarket.com" target="_blank" rel="noopener">Polymarket</a> prediction markets. Last refresh: every 6 hours. Displayed timestamps include local time and UTC.';
+    footerDate.innerHTML = 'Data sourced from <a href="https://polymarket.com" target="_blank" rel="noopener">Polymarket</a> prediction markets. Last refresh: every hour. Displayed timestamps include local time and UTC.';
   }
 }
 
@@ -2353,21 +2421,29 @@ function updateIranWarTimestamp(asOfValue) {
   node.textContent = `◆ Last updated: ${local} (${utc})`;
 }
 
+function conflictMetricTone(metric) {
+  const probe = `${metric?.id || ''} ${metric?.label || ''}`.toLowerCase();
+  if (probe.includes('killed') || probe.includes('injured') || probe.includes('casual')) return 'red';
+  if (probe.includes('missile') || probe.includes('drone') || probe.includes('rocket') || probe.includes('projectile')) return 'amber';
+  return 'green';
+}
+
 function renderConflictMetrics(metrics) {
   const container = document.getElementById('conflictMetrics');
   if (!container) return;
 
   container.innerHTML = '';
   metrics.forEach(metric => {
+    const tone = conflictMetricTone(metric);
     const card = document.createElement('div');
-    card.className = 'iran-stat';
+    card.className = `iran-stat iran-stat-${tone}`;
 
     const label = document.createElement('div');
     label.className = 'iran-stat-label';
     label.textContent = metric.label || 'Metric';
 
     const value = document.createElement('div');
-    value.className = 'iran-stat-value';
+    value.className = `iran-stat-value tone-${tone}`;
     value.textContent = formatInteger(metric.value);
 
     const meta = document.createElement('div');
@@ -2433,6 +2509,61 @@ function renderConflictTimeline(events) {
     card.appendChild(text);
     container.appendChild(card);
   });
+}
+
+function renderConflictTrend(series) {
+  const svg = document.getElementById('conflictTrendChart');
+  const rangeNode = document.getElementById('conflictTrendRange');
+  if (!svg) return;
+
+  const points = Array.isArray(series) ? series.filter(p => Number.isFinite(Number(p?.value))) : [];
+  if (points.length === 0) {
+    svg.innerHTML = '';
+    if (rangeNode) rangeNode.textContent = 'No daily points';
+    return;
+  }
+
+  const width = 700;
+  const height = 170;
+  const padX = 34;
+  const padY = 18;
+  const innerW = width - padX * 2;
+  const innerH = height - padY * 2;
+
+  const values = points.map(p => Number(p.value));
+  const minV = Math.min(...values);
+  const maxV = Math.max(...values);
+  const span = Math.max(1, maxV - minV);
+
+  const coords = points.map((point, index) => {
+    const x = padX + (innerW * index) / Math.max(1, points.length - 1);
+    const ratio = (Number(point.value) - minV) / span;
+    const y = padY + innerH - ratio * innerH;
+    return { x, y, value: Number(point.value), label: point.date || point.day || `D${index + 1}` };
+  });
+
+  const d = coords.map((p, i) => `${i === 0 ? 'M' : 'L'} ${p.x.toFixed(2)} ${p.y.toFixed(2)}`).join(' ');
+
+  const circles = coords.map((p, i) => {
+    const color = i === coords.length - 1 ? 'var(--accent-teal)' : 'var(--accent-blue)';
+    return `<circle class="conflict-trend-point" cx="${p.x.toFixed(2)}" cy="${p.y.toFixed(2)}" r="4.2" fill="${color}"><title>${p.label}: ${p.value}</title></circle>`;
+  }).join('');
+
+  const labels = coords.map((p, i) => {
+    if (i !== 0 && i !== coords.length - 1 && i % 2 !== 0) return '';
+    return `<text class="conflict-trend-label" x="${p.x.toFixed(2)}" y="${(height - 6).toFixed(2)}" text-anchor="middle">${p.label.slice(5) || p.label}</text>`;
+  }).join('');
+
+  svg.innerHTML = `
+    <line class="conflict-trend-axis" x1="${padX}" y1="${height - padY}" x2="${width - padX}" y2="${height - padY}"></line>
+    <path class="conflict-trend-line" d="${d}"></path>
+    ${circles}
+    ${labels}
+  `;
+
+  if (rangeNode) {
+    rangeNode.textContent = `${points[0].date || points[0].day || 'Start'} → ${points[points.length - 1].date || points[points.length - 1].day || 'Now'}`;
+  }
 }
 
 function conflictColorMap(legend) {
@@ -2517,7 +2648,7 @@ function hydrateConflictHeader(conflict) {
   const qualityNode = document.getElementById('conflictSourceQuality');
 
   if (titleNode) titleNode.textContent = conflict.title || 'Conflict Monitor';
-  if (subtitleNode) subtitleNode.textContent = conflict.subtitle || 'Live conflict metrics refreshed every 6 hours.';
+  if (subtitleNode) subtitleNode.textContent = conflict.subtitle || 'Live conflict metrics refreshed every hour.';
   if (qualityNode) qualityNode.textContent = `◆ Confidence: ${conflict.confidence || 'Medium'}`;
   if (sourceNode) {
     sourceNode.textContent = `Source 1: ${conflict.source_name || 'live conflict data feed'}`;
@@ -2549,6 +2680,7 @@ async function refreshIranWarMetrics() {
     renderConflictMetrics(Array.isArray(conflict.metrics) ? conflict.metrics : []);
     renderConflictLegend(Array.isArray(conflict.legend) ? conflict.legend : []);
     renderConflictTimeline(Array.isArray(conflict.timeline) ? conflict.timeline : []);
+    renderConflictTrend(Array.isArray(conflict.daily_series) ? conflict.daily_series : []);
     upsertConflictMap(conflict.map || {}, Array.isArray(conflict.map_points) ? conflict.map_points : [], Array.isArray(conflict.legend) ? conflict.legend : []);
 
     updateIranWarTimestamp(conflict.as_of_utc || conflict.updated_at_utc || feed.updated_at_utc);
@@ -2728,7 +2860,7 @@ function refreshAllData() {
 }
 
 refreshAllData();
-setInterval(refreshAllData, SIX_HOURS_MS);
+setInterval(refreshAllData, ONE_HOUR_MS);
 </script>
 </body>
 </html>
