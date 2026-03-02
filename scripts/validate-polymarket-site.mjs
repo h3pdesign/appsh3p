@@ -49,9 +49,13 @@ function validatePages() {
       }
     }
 
-    const titleCount = (html.match(/<title>/g) || []).length;
-    if (titleCount !== 1) {
-      fail(`${page} must contain exactly one <title> tag (found ${titleCount})`);
+    const headMatch = html.match(/<head[\s\S]*?<\/head>/i);
+    if (!headMatch) {
+      fail(`${page} is missing a <head> block`);
+    }
+    const headTitleCount = (headMatch[0].match(/<title>/g) || []).length;
+    if (headTitleCount !== 1) {
+      fail(`${page} must contain exactly one <title> tag inside <head> (found ${headTitleCount})`);
     }
   }
 }

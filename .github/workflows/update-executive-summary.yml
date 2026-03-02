@@ -1,0 +1,40 @@
+name: Update Executive Summary Daily
+
+on:
+  schedule:
+    # Run at 04:00 and 05:00 UTC; script applies only at 06:00 Europe/Berlin.
+    - cron: '0 4,5 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-summary:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Update Executive Summary + section card
+        run: node scripts/update-executive-summary.mjs
+
+      - name: Validate site after update
+        run: node scripts/validate-polymarket-site.mjs
+
+      - name: Commit and push if changed
+        run: |
+          if git diff --quiet docs/public/polymarket-us-politics; then
+            echo "No summary change"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/public/polymarket-us-politics
+          git commit -m "Daily executive summary update from Polymarket"
+          git push
