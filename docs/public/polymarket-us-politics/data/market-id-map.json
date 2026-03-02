@@ -1,0 +1,465 @@
+{
+  "updated_at_utc": "2026-03-02T19:02:19.857Z",
+  "total_questions": 63,
+  "mapped_questions": 49,
+  "unmapped_questions": 14,
+  "entries": [
+    {
+      "question": "US-Iran diplomatic meeting location",
+      "market_id": "1389831",
+      "market_slug": "will-the-next-diplomatic-us-iran-meeting-be-in-oman",
+      "market_question": "Will the next diplomatic US-Iran meeting be in Oman?",
+      "score": 0.435,
+      "active": true,
+      "closed": true
+    },
+    {
+      "question": "Iran agrees to end enrichment by March 31?",
+      "market_id": "1285886",
+      "market_slug": "iran-agrees-to-end-enrichment-of-uranium-by-march-31",
+      "market_question": " Iran agrees to end enrichment of uranium by March 31?",
+      "score": 0.953,
+      "active": true,
+      "closed": false
+    },
+    {
+      "question": "Iran strike on US military by Feb 28?",
+      "market_id": "1198784",
+      "market_slug": "iran-strike-on-us-military-by-february-28",
+      "market_question": "Iran strike on US military by February 28?",
+      "score": 0.66,
+      "active": true,
+      "closed": true
+    },
+    {
+      "question": "Times US strikes Somalia in February",
+      "market_id": "1280179",
+      "market_slug": "will-there-be-5-or-fewer-us-strikes-on-somalia-in-february-2026",
+      "market_question": "Will there be 5 or fewer US strikes on Somalia in February 2026?",
+      "score": 0.435,
+      "active": true,
+      "closed": true
+    },
+    {
+      "question": "US strike on Mexico by Dec 31?",
+      "market_id": "1107381",
+      "market_slug": "us-strike-on-mexico-by-december-31",
+      "market_question": "US strike on Mexico by December 31?",
+      "score": 0.56,
+      "active": true,
+      "closed": false
+    },
+    {
+      "question": "US anti-cartel ground operation in Mexico by June 30?",
+      "market_id": "1367007",
+      "market_slug": "us-anti-cartel-ground-operation-in-mexico-by-june-30",
+      "market_question": "U.S. anti-cartel ground operation in Mexico by June 30?",
+      "score": 1,
+      "active": true,
+      "closed": false
+    },
+    {
+      "question": "US forces enter Iran by Dec 31?",
+      "market_id": "1162935",
+      "market_slug": "us-forces-enter-iran-by-january-31",
+      "market_question": "US forces enter Iran by January 31?",
+      "score": 0.66,
+      "active": true,
+      "closed": true
+    },
+    {
+      "question": "Democratic Presidential Nominee 2028",
+      "market_id": "1389020",
+      "market_slug": "will-the-2028-democratic-presidential-nominee-be-a-woman",
+      "market_question": "Will the 2028 Democratic Presidential nominee be a woman?",
+      "score": 0.691,
+      "active": true,
+      "closed": false
+    },
+    {
+      "question": "Republican Presidential Nominee 2028",
+      "market_id": "1389060",
+      "market_slug": "will-the-2028-republican-presidential-nominee-be-a-woman",
+      "market_question": "Will the 2028 Republican Presidential nominee be a woman?",
+      "score": 0.691,
+      "active": true,
+      "closed": false
+    },
+    {
+      "question": "Presidential Election Winner 2028",
+      "market_id": "561308",
+      "market_slug": "will-person-bg-win-the-2028-us-presidential-election",
+      "market_question": "Will Person BG win the 2028 US Presidential Election?",
+      "score": 0.435,
+      "active": false,
+      "closed": false
+    },
+    {
+      "question": "Trump out as President before 2027?",
+      "market_id": "666861",
+      "market_slug": "trump-out-as-president-before-2027",
+      "market_question": "Trump out as President before 2027?",
+      "score": 1,
+      "active": true,
+      "closed": false
+    },
+    {
+      "question": "Trump out by March 31?",
+      "market_id": "666860",
+      "market_slug": "trump-out-as-president-by-march-31",
+      "market_question": "Trump out as President by March 31?",
+      "score": 0.81,
+      "active": true,
+      "closed": false
+    },
+    {
+      "question": "Will Trump be impeached by June 30?",
+      "market_id": "665209",
+      "market_slug": "will-trump-be-impeached-by-june-30",
+      "market_question": "Will Trump be impeached by June 30?",
+      "score": 1,
+      "active": true,
+      "closed": false
+    },
+    {
+      "question": "Will Trump visit China by March 31?",
+      "market_id": "604490",
+      "market_slug": "will-trump-visit-china-by-march-31",
+      "market_question": "Will Trump visit China by March 31?",
+      "score": 1,
+      "active": true,
+      "closed": false
+    },
+    {
+      "question": "Will Trump visit China by April 30?",
+      "market_id": "706279",
+      "market_slug": "will-trump-visit-china-by-april-30",
+      "market_question": "Will Trump visit China by April 30?",
+      "score": 1,
+      "active": true,
+      "closed": false
+    },
+    {
+      "question": "Will Trump acquire Greenland before 2027?",
+      "market_id": "997488",
+      "market_slug": "will-trump-acquire-greenland-before-2027",
+      "market_question": "Will Trump acquire Greenland before 2027?",
+      "score": 1,
+      "active": true,
+      "closed": false
+    },
+    {
+      "question": "Trump Truth Social posts Feb 20–27",
+      "market_id": "523522",
+      "market_slug": "will-donald-trump-post-60-69-times-on-truth-social-from-feb-14-21",
+      "market_question": "Will Donald Trump post 60-69 times on Truth Social from Feb 14-21?",
+      "score": 0.453,
+      "active": true,
+      "closed": true
+    },
+    {
+      "question": "Who will Trump nominate as Fed Chair?",
+      "market_id": "572499",
+      "market_slug": "will-trump-nominate-individual-t-as-the-next-fed-chair",
+      "market_question": "Will Trump nominate Individual T as the next Fed chair?",
+      "score": 0.676,
+      "active": false,
+      "closed": false
+    },
+    {
+      "question": "Kevin Warsh formally nominated by March 31?",
+      "market_id": "1389074",
+      "market_slug": "will-kevin-warsh-be-formally-nominated-to-be-chair-of-the-federal-reserve-by-march-31-2026",
+      "market_question": "Will Kevin Warsh be formally nominated to be Chair of the Federal Reserve by March 31, 2026?",
+      "score": 0.575,
+      "active": true,
+      "closed": false
+    },
+    {
+      "question": "Jerome Powell out by March 31?",
+      "market_id": "1092481",
+      "market_slug": "jerome-powell-out-as-fed-chair-by-march-31-2026",
+      "market_question": "Jerome Powell out as Fed Chair by March 31, 2026?",
+      "score": 0.691,
+      "active": true,
+      "closed": false
+    },
+    {
+      "question": "Jerome Powell out by May 14?",
+      "market_id": "1092482",
+      "market_slug": "jerome-powell-out-as-fed-chair-by-may-14-2026",
+      "market_question": "Jerome Powell out as Fed Chair by May 14, 2026?",
+      "score": 0.691,
+      "active": true,
+      "closed": false
+    },
+    {
+      "question": "Fed decision — March",
+      "market_id": "1287863",
+      "market_slug": "will-no-one-dissent-the-march-fed-decision",
+      "market_question": "Will no one dissent the March Fed decision?",
+      "score": 0.489,
+      "active": true,
+      "closed": false
+    },
+    {
+      "question": "US tariff rate on China — March 31",
+      "market_id": "1403726",
+      "market_slug": "will-the-us-tariff-rate-on-china-be-35-or-greater-on-march-31",
+      "market_question": "Will the U.S. tariff rate on China be 35% or greater on March 31?",
+      "score": 0.691,
+      "active": true,
+      "closed": false
+    },
+    {
+      "question": "Will Congress pass any tariffs by March 31?",
+      "market_id": "1403262",
+      "market_slug": "will-congress-pass-any-tariffs-by-march-31",
+      "market_question": "Will Congress pass any tariffs by March 31?",
+      "score": 1,
+      "active": true,
+      "closed": false
+    },
+    {
+      "question": "Blue wave in 2026?",
+      "market_id": "919484",
+      "market_slug": "blue-wave-in-2026",
+      "market_question": "Blue wave in 2026?",
+      "score": 1,
+      "active": true,
+      "closed": false
+    },
+    {
+      "question": "Blue tsunami in 2026?",
+      "market_id": "1170844",
+      "market_slug": "blue-tsunami-in-2026",
+      "market_question": "Blue tsunami in 2026?",
+      "score": 1,
+      "active": true,
+      "closed": false
+    },
+    {
+      "question": "Republican Senate seats after midterms",
+      "market_id": "943819",
+      "market_slug": "will-the-republican-party-hold-47-or-fewer-senate-seats-after-the-2026-midterm-elections",
+      "market_question": "Will the Republican Party hold 47 or fewer Senate seats after the 2026 midterm elections?",
+      "score": 0.428,
+      "active": true,
+      "closed": false
+    },
+    {
+      "question": "ACA credits not extended & Dem House",
+      "market_id": "902970",
+      "market_slug": "will-aca-premium-tax-credits-not-be-extended-and-will-the-democratic-party-win-the-house-in-2026",
+      "market_question": "Will ACA premium tax credits not be extended and will the Democratic Party win the House in 2026?",
+      "score": 0.453,
+      "active": true,
+      "closed": false
+    },
+    {
+      "question": "Will Republicans lose House majority before midterms?",
+      "market_id": "1178757",
+      "market_slug": "will-republicans-lose-house-majority-before-the-midterms",
+      "market_question": "Will Republicans lose House majority before the midterms?",
+      "score": 0.995,
+      "active": true,
+      "closed": false
+    },
+    {
+      "question": "Mike Johnson out as Speaker by Dec 31, 2026?",
+      "market_id": "535741",
+      "market_slug": "mike-johnson-out-as-speaker-in-2025",
+      "market_question": "Mike Johnson out as Speaker by December 31?",
+      "score": 0.691,
+      "active": true,
+      "closed": true
+    },
+    {
+      "question": "Mitch McConnell step down?",
+      "market_id": "637910",
+      "market_slug": "will-mitch-mcconnell-resign-from-the-senate-before-his-term-ends",
+      "market_question": "Will Mitch McConnell step down from the Senate before his term ends?",
+      "score": 0.633,
+      "active": true,
+      "closed": false
+    },
+    {
+      "question": "Republicans win Trifecta with Senate Supermajority?",
+      "market_id": "1060867",
+      "market_slug": "republican-trifecta-with-supermajority-in-the-senate",
+      "market_question": "Republicans win Trifecta with Senate Supermajority in midterms?",
+      "score": 1,
+      "active": true,
+      "closed": false
+    },
+    {
+      "question": "Texas Dem Senate Primary",
+      "market_id": "1420545",
+      "market_slug": "will-a-candidate-win-outright-in-the-texas-dem-senate-primary",
+      "market_question": "Will a candidate win outright in the Texas Dem Senate Primary?",
+      "score": 0.744,
+      "active": true,
+      "closed": false
+    },
+    {
+      "question": "When will DHS shutdown end?",
+      "market_id": "1378913",
+      "market_slug": "will-the-dhs-shutdown-end-before-february-16-2026",
+      "market_question": "Will the DHS shutdown end before February 16, 2026?",
+      "score": 0.564,
+      "active": true,
+      "closed": true
+    },
+    {
+      "question": "SAVE Act signed 2026?",
+      "market_id": "1329554",
+      "market_slug": "save-act-signed-into-law-in-2026",
+      "market_question": "SAVE Act signed into law in 2026?",
+      "score": 0.787,
+      "active": true,
+      "closed": false
+    },
+    {
+      "question": "Clarity Act signed 2026?",
+      "market_id": "1163699",
+      "market_slug": "clarity-act-signed-into-law-in-2026",
+      "market_question": "Clarity Act signed into law in 2026?",
+      "score": 0.787,
+      "active": true,
+      "closed": false
+    },
+    {
+      "question": "DEFIANCE Act becomes law",
+      "market_id": "1426251",
+      "market_slug": "will-the-defiance-act-become-law-this-year",
+      "market_question": "Will the DEFIANCE Act become law this year?",
+      "score": 0.393,
+      "active": true,
+      "closed": false
+    },
+    {
+      "question": "SELF DRIVE Act",
+      "market_id": "1426255",
+      "market_slug": "will-the-self-drive-act-become-law-this-year",
+      "market_question": "Will the SELF DRIVE Act become law this year?",
+      "score": 0.573,
+      "active": true,
+      "closed": false
+    },
+    {
+      "question": "FISA 702 Reauthorization",
+      "market_id": "1426252",
+      "market_slug": "will-fisa-section-702-reauthorization-become-law-this-year",
+      "market_question": "Will FISA Section 702 reauthorization become law this year?",
+      "score": 0.393,
+      "active": true,
+      "closed": false
+    },
+    {
+      "question": "House passes Iran war powers resolution this week?",
+      "market_id": "1422556",
+      "market_slug": "house-passes-iran-war-powers-resolution-this-week",
+      "market_question": "House passes Iran war powers resolution this week?",
+      "score": 1,
+      "active": true,
+      "closed": true
+    },
+    {
+      "question": "Clintons held in contempt of Congress by Feb 28?",
+      "market_id": "1236839",
+      "market_slug": "will-bill-or-hillary-clinton-be-held-in-contempt-of-congress-by-feb-28",
+      "market_question": "Will Bill or Hillary Clinton be held in contempt of Congress by Feb 28?",
+      "score": 0.564,
+      "active": true,
+      "closed": true
+    },
+    {
+      "question": "Kristi Noem impeached in 2026?",
+      "market_id": "1185461",
+      "market_slug": "kristi-noem-impeached-in-2026",
+      "market_question": "Kristi Noem impeached in 2026?",
+      "score": 1,
+      "active": true,
+      "closed": false
+    },
+    {
+      "question": "Congress member out over Epstein files by April 30?",
+      "market_id": "690213",
+      "market_slug": "us-congress-member-out-over-epstein-files-before-april-30",
+      "market_question": "U.S. Congress member out over Epstein files by April 30?",
+      "score": 1,
+      "active": true,
+      "closed": false
+    },
+    {
+      "question": "Epstein confirmed alive before 2027?",
+      "market_id": "1059772",
+      "market_slug": "is-jeffrey-epstein-alive-498",
+      "market_question": "Jeffrey Epstein confirmed to be alive before 2027?",
+      "score": 0.953,
+      "active": true,
+      "closed": false
+    },
+    {
+      "question": "Bill Clinton charged by March 31?",
+      "market_id": "1235970",
+      "market_slug": "bill-clinton-charged-by-march-31",
+      "market_question": "Bill Clinton charged by March 31?",
+      "score": 1,
+      "active": true,
+      "closed": false
+    },
+    {
+      "question": "Hillary Clinton charged by March 31?",
+      "market_id": "1235976",
+      "market_slug": "hillary-clinton-charged-by-march-31",
+      "market_question": "Hillary Clinton charged by March 31?",
+      "score": 1,
+      "active": true,
+      "closed": false
+    },
+    {
+      "question": "SBF released from custody in 2026?",
+      "market_id": "1422097",
+      "market_slug": "sbf-released-from-custody-in-2026",
+      "market_question": "SBF released from custody in 2026?",
+      "score": 1,
+      "active": true,
+      "closed": false
+    },
+    {
+      "question": "US confirms aliens exist before 2027?",
+      "market_id": "703257",
+      "market_slug": "will-the-us-confirm-that-aliens-exist-before-2027",
+      "market_question": "Will the US confirm that aliens exist before 2027?",
+      "score": 0.564,
+      "active": true,
+      "closed": false
+    },
+    {
+      "question": "Tony Gonzalez out as Rep by March 31?",
+      "market_id": "1429512",
+      "market_slug": "tony-gonzalez-out-as-us-rep-by-march-31",
+      "market_question": "Tony Gonzalez out as US Rep by March 31?",
+      "score": 1,
+      "active": true,
+      "closed": false
+    }
+  ],
+  "unmapped": [
+    "US/Israel strikes on Iran — Escalation Timeline",
+    "US strike on Somalia by Feb 28?",
+    "Next country US strikes",
+    "Trump deportations in 2025",
+    "Fed decision — April",
+    "Revenue from tariffs 2025",
+    "House Popular Vote Margin",
+    "Government shutdown & House winner",
+    "DHS Shutdown Duration",
+    "DHS full-year funding by Feb 28?",
+    "Film/TV Expensing",
+    "Epstein files — names mentioned by Feb 28",
+    "Elon Musk tweets Feb 23–25",
+    "Elon Musk tweets Feb 20–27"
+  ]
+}

@@ -1,0 +1,39 @@
+name: Update Polymarket market ID map
+
+on:
+  schedule:
+    - cron: '20 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-market-map:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Rebuild market ID map
+        run: node scripts/update-market-id-map.mjs
+
+      - name: Validate site
+        run: node scripts/validate-polymarket-site.mjs
+
+      - name: Commit and push if changed
+        run: |
+          if git diff --quiet docs/public/polymarket-us-politics/data/market-id-map.json; then
+            echo "No market map change"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/public/polymarket-us-politics/data/market-id-map.json
+          git commit -m "Update Polymarket market ID map"
+          git push
