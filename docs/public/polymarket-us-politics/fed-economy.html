@@ -197,6 +197,11 @@ nav {
   background: rgba(255,255,255,0.06);
 }
 
+.theme-toggle:disabled {
+  opacity: 1;
+  cursor: default;
+}
+
 /* Hamburger */
 .hamburger {
   display: none;
@@ -1800,7 +1805,6 @@ footer a:hover { border-bottom-color: var(--accent-gold); }
 const POLYMARKET_API = 'https://gamma-api.polymarket.com/markets';
 const SIX_HOURS_MS = 6 * 60 * 60 * 1000;
 const marketCache = new Map();
-const THEME_KEY = 'pmir-theme';
 
 function normalize(value) {
   return String(value || '')
@@ -1992,21 +1996,15 @@ function setSyncStatus(message) {
   if (node) node.textContent = `\u25c6 ${message}`;
 }
 
-function preferredTheme() {
-  const stored = localStorage.getItem(THEME_KEY);
-  if (stored === 'light' || stored === 'dark') return stored;
-  return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
-}
-
 function applyTheme(theme) {
   document.documentElement.setAttribute('data-theme', theme);
   const themeToggle = document.getElementById('themeToggle');
   if (!themeToggle) return;
 
-  const lightActive = theme === 'light';
-  themeToggle.textContent = lightActive ? 'Dark mode' : 'Light mode';
-  themeToggle.setAttribute('aria-label', lightActive ? 'Switch to dark mode' : 'Switch to light mode');
-  themeToggle.setAttribute('aria-pressed', String(lightActive));
+  themeToggle.textContent = 'System mode';
+  themeToggle.setAttribute('aria-label', 'Theme follows system mode');
+  themeToggle.setAttribute('aria-pressed', 'false');
+  themeToggle.disabled = true;
 }
 
 async function refreshLiveData() {
@@ -2051,14 +2049,11 @@ async function refreshLiveData() {
 const hamburger = document.getElementById('hamburgerBtn');
 const mobileMenu = document.getElementById('mobileMenu');
 const themeToggle = document.getElementById('themeToggle');
+const systemThemeMedia = window.matchMedia('(prefers-color-scheme: light)');
 
-applyTheme(preferredTheme());
-
-themeToggle?.addEventListener('click', () => {
-  const current = document.documentElement.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
-  const next = current === 'light' ? 'dark' : 'light';
-  localStorage.setItem(THEME_KEY, next);
-  applyTheme(next);
+applyTheme(systemThemeMedia.matches ? 'light' : 'dark');
+systemThemeMedia.addEventListener('change', event => {
+  applyTheme(event.matches ? 'light' : 'dark');
 });
 
 hamburger.addEventListener('click', () => {
