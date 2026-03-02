@@ -2,10 +2,10 @@
 head:
   - - meta
     - property: og:image
-      content: https://apps-h3p.com/icons/image-sorter.png
+      content: https://apps-h3p.com/icons/image-sorter.png?v=20260302-1
   - - meta
     - name: twitter:image
-      content: https://apps-h3p.com/icons/image-sorter.png
+      content: https://apps-h3p.com/icons/image-sorter.png?v=20260302-1
 ---
 
 # Image Sorter
@@ -40,7 +40,7 @@ Primary user outcomes:
     <p>Queue-first image processing workflow with category rules, naming templates, duplicate policies, and a dedicated library/preview window.</p>
   </div>
   <div class="overview-hero-media">
-    <img src="/icons/image-sorter.png" alt="Image Sorter icon" class="overview-app-icon" />
+    <img src="/icons/image-sorter.png?v=20260302-1" alt="Image Sorter icon" class="overview-app-icon" />
   </div>
 </div>
 

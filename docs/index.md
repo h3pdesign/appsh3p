@@ -63,7 +63,7 @@ features:
 <div class="startpage-release-strip" aria-label="App status snapshot">
   <article class="startpage-release-item release-neon">
     <div class="startpage-release-head">
-      <img src="/icons/neon-vision-editor.png" alt="" aria-hidden="true" loading="lazy" decoding="async" />
+      <img src="/icons/neon-vision-editor.png?v=20260302-1" alt="" aria-hidden="true" loading="lazy" decoding="async" />
       <strong>Neon</strong>
     </div>
     <span>v0.4.32</span>
@@ -74,7 +74,7 @@ features:
   </article>
   <article class="startpage-release-item release-metric">
     <div class="startpage-release-head">
-      <img src="/icons/metric-data.png" alt="" aria-hidden="true" loading="lazy" decoding="async" />
+      <img src="/icons/metric-data.png?v=20260302-1" alt="" aria-hidden="true" loading="lazy" decoding="async" />
       <strong>Metric</strong>
     </div>
     <span>Docs refresh</span>
@@ -84,7 +84,7 @@ features:
   </article>
   <article class="startpage-release-item release-release">
     <div class="startpage-release-head">
-      <img src="/icons/release-assistant.png" alt="" aria-hidden="true" loading="lazy" decoding="async" />
+      <img src="/icons/release-assistant.png?v=20260302-1" alt="" aria-hidden="true" loading="lazy" decoding="async" />
       <strong>Release</strong>
     </div>
     <span>Docs refresh</span>
@@ -94,7 +94,7 @@ features:
   </article>
   <article class="startpage-release-item release-newsbook">
     <div class="startpage-release-head">
-      <img src="/icons/x-newsbook.png" alt="" aria-hidden="true" loading="lazy" decoding="async" />
+      <img src="/icons/x-newsbook.png?v=20260302-1" alt="" aria-hidden="true" loading="lazy" decoding="async" />
       <strong>Newsbook</strong>
     </div>
     <span>Initial docs</span>
@@ -113,23 +113,23 @@ features:
 
 <div class="startpage-app-strip" aria-label="H3P apps quick links">
   <a class="startpage-app-item" href="/apps/neon-vision-editor/overview">
-    <img src="/icons/neon-vision-editor.png" alt="Neon Vision Editor icon" width="52" height="52" loading="lazy" decoding="async" />
+    <img src="/icons/neon-vision-editor.png?v=20260302-1" alt="Neon Vision Editor icon" width="52" height="52" loading="lazy" decoding="async" />
     <span>Neon Vision Editor</span>
   </a>
   <a class="startpage-app-item" href="/apps/metric-data/overview">
-    <img src="/icons/metric-data.png" alt="Metrics Data icon" width="52" height="52" loading="lazy" decoding="async" />
+    <img src="/icons/metric-data.png?v=20260302-1" alt="Metrics Data icon" width="52" height="52" loading="lazy" decoding="async" />
     <span>Metrics Data</span>
   </a>
   <a class="startpage-app-item" href="/apps/release-assistant/overview">
-    <img src="/icons/release-assistant.png" alt="Release Assistant icon" width="52" height="52" loading="lazy" decoding="async" />
+    <img src="/icons/release-assistant.png?v=20260302-1" alt="Release Assistant icon" width="52" height="52" loading="lazy" decoding="async" />
     <span>Release Assistant</span>
   </a>
   <a class="startpage-app-item" href="/apps/x-newsbook/overview">
-    <img src="/icons/x-newsbook.png" alt="X-Newsbook icon" width="52" height="52" loading="lazy" decoding="async" />
+    <img src="/icons/x-newsbook.png?v=20260302-1" alt="X-Newsbook icon" width="52" height="52" loading="lazy" decoding="async" />
     <span>X-Newsbook</span>
   </a>
   <a class="startpage-app-item" href="/apps/image-sorter/overview">
-    <img src="/icons/image-sorter.png" alt="Image Sorter icon" width="52" height="52" loading="lazy" decoding="async" />
+    <img src="/icons/image-sorter.png?v=20260302-1" alt="Image Sorter icon" width="52" height="52" loading="lazy" decoding="async" />
     <span>Image Sorter</span>
   </a>
   <a class="startpage-app-item" href="/apps/syntaxhighlight-quicklook/overview">
@@ -137,11 +137,11 @@ features:
     <span>SyntaxHighlightQuickLook</span>
   </a>
   <a class="startpage-app-item" href="/apps/vistral/overview">
-    <img src="/icons/vistral.png" alt="Vistral icon" width="52" height="52" loading="lazy" decoding="async" />
+    <img src="/icons/vistral.png?v=20260302-1" alt="Vistral icon" width="52" height="52" loading="lazy" decoding="async" />
     <span>Vistral</span>
   </a>
   <a class="startpage-app-item" href="/apps/history-vision/overview">
-    <img src="/icons/history-vision.png" alt="History Vision icon" width="52" height="52" loading="lazy" decoding="async" />
+    <img src="/icons/history-vision.png?v=20260302-1" alt="History Vision icon" width="52" height="52" loading="lazy" decoding="async" />
     <span>History Vision</span>
   </a>
 </div>
