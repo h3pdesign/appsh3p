@@ -23,6 +23,7 @@ jobs:
         run: |
           test -f scripts/validate-polymarket-site.mjs || { echo "Missing scripts/validate-polymarket-site.mjs"; exit 1; }
           test -f docs/public/polymarket-us-politics/data/iran-war-metrics.json || { echo "Missing docs/public/polymarket-us-politics/data/iran-war-metrics.json"; exit 1; }
+          test -f docs/public/polymarket-us-politics/data/polymarket-market-snapshot.json || { echo "Missing docs/public/polymarket-us-politics/data/polymarket-market-snapshot.json"; exit 1; }
 
       - name: Run validator
         run: node scripts/validate-polymarket-site.mjs

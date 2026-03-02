@@ -27,6 +27,8 @@ const requiredPageSnippets = [
   "id=\"ukraine-war\"",
   "CONFLICT_NEWS_URL",
   "renderConflictTicker(",
+  "POLYMARKET_SNAPSHOT_URL",
+  "loadPolymarketSnapshot(",
 ];
 
 function fail(message) {
@@ -114,8 +116,6 @@ function validateConflictFeed() {
   }
 }
 
-validatePages();
-validateConflictFeed();
 function validateConflictNewsFeed() {
   const feedPath = path.join(baseDir, "data", "conflict-news.json");
   assertFileExists(feedPath);
@@ -141,5 +141,41 @@ function validateConflictNewsFeed() {
     }
   }
 }
+
+function validatePolymarketSnapshot() {
+  const snapshotPath = path.join(baseDir, "data", "polymarket-market-snapshot.json");
+  assertFileExists(snapshotPath);
+  const raw = fs.readFileSync(snapshotPath, "utf8");
+
+  let parsed;
+  try {
+    parsed = JSON.parse(raw);
+  } catch (error) {
+    fail(`Invalid JSON in ${snapshotPath}: ${error.message}`);
+  }
+
+  if (!parsed || typeof parsed !== "object") {
+    fail(`${snapshotPath} must be a JSON object`);
+  }
+
+  if (!Array.isArray(parsed.markets) || parsed.markets.length === 0) {
+    fail(`${snapshotPath} must include a non-empty markets array`);
+  }
+
+  if (!parsed.updated_at_utc) {
+    fail(`${snapshotPath} must include updated_at_utc`);
+  }
+
+  const first = parsed.markets[0];
+  for (const key of ["id", "question", "outcomes", "outcomePrices"]) {
+    if (!(key in first)) {
+      fail(`${snapshotPath} first market missing field: ${key}`);
+    }
+  }
+}
+
+validatePages();
+validateConflictFeed();
 validateConflictNewsFeed();
+validatePolymarketSnapshot();
 console.log("Polymarket site validation passed.");

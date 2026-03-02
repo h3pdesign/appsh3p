@@ -62,6 +62,8 @@
   --status-delayed-fg: #fcd34d;
   --status-pending-bg: rgba(148,163,184,0.16);
   --status-pending-fg: #cbd5e1;
+  --status-error-bg: rgba(239,68,68,0.2);
+  --status-error-fg: #fecaca;
   --tone-red: #ef4444;
   --tone-amber: #f59e0b;
   --tone-green: #22c55e;
@@ -97,6 +99,8 @@
   --status-delayed-fg: #92400e;
   --status-pending-bg: rgba(100,116,139,0.16);
   --status-pending-fg: #334155;
+  --status-error-bg: rgba(239,68,68,0.16);
+  --status-error-fg: #991b1b;
   --tone-red: #dc2626;
   --tone-amber: #b45309;
   --tone-green: #15803d;
@@ -539,6 +543,12 @@ nav {
   color: var(--status-pending-fg);
   background: var(--status-pending-bg);
   border-color: color-mix(in oklab, var(--status-pending-fg) 35%, transparent);
+}
+
+.status-error {
+  color: var(--status-error-fg);
+  background: var(--status-error-bg);
+  border-color: color-mix(in oklab, var(--status-error-fg) 35%, transparent);
 }
 
 /* ========================================
@@ -2541,12 +2551,13 @@ footer a:hover { border-bottom-color: var(--accent-gold); }
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script>
-const POLYMARKET_API = 'https://gamma-api.polymarket.com/markets';
 const CONFLICT_MONITOR_URL = '/polymarket-us-politics/data/iran-war-metrics.json';
 const CONFLICT_NEWS_URL = '/polymarket-us-politics/data/conflict-news.json';
 const MARKET_ID_MAP_URL = '/polymarket-us-politics/data/market-id-map.json';
-const PUBLIC_SEARCH_API = 'https://gamma-api.polymarket.com/public-search';
+const POLYMARKET_SNAPSHOT_URL = '/polymarket-us-politics/data/polymarket-market-snapshot.json';
+const DAILY_SUMMARY_STATE_URL = '/polymarket-us-politics/data/daily-summary-state.json';
 const ONE_HOUR_MS = 60 * 60 * 1000;
+const LIVE_FETCH_TIMEOUT_MS = 8000;
 const LIVE_MARKET_INTERVAL_MS = 15 * 60 * 1000;
 const CONFLICT_NEWS_INTERVAL_MS = 10 * 60 * 1000;
 const CONFLICT_MONITOR_INTERVAL_MS = ONE_HOUR_MS;
@@ -2674,14 +2685,54 @@ function similarityScore(a, b) {
 }
 
 let marketIdMapPromise = null;
+let marketSnapshotPromise = null;
+let summaryStatePromise = null;
+
+async function fetchWithTimeout(url, options = {}, timeoutMs = LIVE_FETCH_TIMEOUT_MS) {
+  const controller = new AbortController();
+  const timeoutId = setTimeout(() => controller.abort(), timeoutMs);
+  try {
+    return await fetch(url, { ...options, signal: controller.signal });
+  } finally {
+    clearTimeout(timeoutId);
+  }
+}
 
 async function loadMarketIdMap() {
   if (!marketIdMapPromise) {
-    marketIdMapPromise = fetch(MARKET_ID_MAP_URL + '?t=' + Date.now(), { cache: 'no-store' })
+    marketIdMapPromise = fetchWithTimeout(MARKET_ID_MAP_URL + '?t=' + Date.now(), { cache: 'no-store' })
       .then(response => response.ok ? response.json() : { entries: [] })
       .catch(() => ({ entries: [] }));
   }
   return marketIdMapPromise;
+}
+
+async function loadPolymarketSnapshot() {
+  if (!marketSnapshotPromise) {
+    marketSnapshotPromise = fetchWithTimeout(POLYMARKET_SNAPSHOT_URL + '?t=' + Date.now(), { cache: 'no-store' })
+      .then(response => response.ok ? response.json() : { markets: [] })
+      .catch(() => ({ markets: [] }));
+  }
+  return marketSnapshotPromise;
+}
+
+function snapshotMarkets(payload) {
+  return Array.isArray(payload?.markets) ? payload.markets : [];
+}
+
+async function readSnapshotSyncTime() {
+  const snapshot = await loadPolymarketSnapshot();
+  const snapshotSyncTime = parseTimestamp(snapshot?.updated_at_utc || snapshot?.as_of_utc || null);
+  if (Number.isFinite(snapshotSyncTime)) return snapshotSyncTime;
+
+  if (!summaryStatePromise) {
+    summaryStatePromise = fetchWithTimeout(DAILY_SUMMARY_STATE_URL + '?t=' + Date.now(), { cache: 'no-store' })
+      .then(response => response.ok ? response.json() : null)
+      .catch(() => null);
+  }
+
+  const payload = await summaryStatePromise;
+  return parseTimestamp(payload?.updated_at_utc || payload?.as_of_utc || null);
 }
 
 function mappedIdForQuestion(mapPayload, question) {
@@ -2706,9 +2757,8 @@ async function fetchMarketById(id) {
     return cached.market;
   }
 
-  const response = await fetch('https://gamma-api.polymarket.com/markets/' + encodeURIComponent(id), { cache: 'no-store' });
-  if (!response.ok) return null;
-  const market = await response.json();
+  const snapshot = await loadPolymarketSnapshot();
+  const market = snapshotMarkets(snapshot).find(item => String(item?.id || '') === String(id)) || null;
   marketCache.set(cacheKey, { market, fetchedAt: Date.now() });
   return market;
 }
@@ -2721,13 +2771,8 @@ async function fetchMarketByQuestion(question) {
     return cached.market;
   }
 
-  const url = PUBLIC_SEARCH_API + '?q=' + encodeURIComponent(question) + '&limit=20';
-  const response = await fetch(url, { cache: 'no-store' });
-  if (!response.ok) return null;
-  const payload = await response.json();
-  const events = Array.isArray(payload?.events) ? payload.events : [];
-  const markets = events.flatMap(event => Array.isArray(event?.markets) ? event.markets : []);
-
+  const snapshot = await loadPolymarketSnapshot();
+  const markets = snapshotMarkets(snapshot);
   const market = pickMarket(markets, question);
   marketCache.set(key, { market, fetchedAt: Date.now() });
   return market;
@@ -2950,14 +2995,15 @@ function setSyncStatus(state, detail, labelOverride) {
   const node = document.getElementById('syncStatus');
   if (!node) return;
 
-  const normalized = state === 'live' || state === 'delayed' ? state : 'pending';
-  node.classList.remove('status-live', 'status-delayed', 'status-pending');
+  const normalized = state === 'live' || state === 'delayed' || state === 'error' ? state : 'pending';
+  node.classList.remove('status-live', 'status-delayed', 'status-pending', 'status-error');
   node.classList.add('status-pill', 'status-' + normalized);
 
   const labels = {
     pending: 'Health: Pending',
     live: 'Health: Live',
-    delayed: 'Health: Delayed'
+    delayed: 'Health: Delayed',
+    error: 'Health: Error'
   };
 
   node.textContent = labelOverride || labels[normalized];
@@ -2965,7 +3011,9 @@ function setSyncStatus(state, detail, labelOverride) {
     ? 'Live sync is healthy'
     : normalized === 'delayed'
       ? 'Using delayed or fallback data'
-      : 'Waiting for live sync');
+      : normalized === 'error'
+        ? 'Live sync failed'
+        : 'Waiting for live sync');
 }
 
 function formatTickerTime(value) {
@@ -3904,8 +3952,16 @@ async function refreshLiveData() {
     const lastSuccessful = readStoredSyncTime();
 
     if (!Number.isFinite(lastSuccessful)) {
-      updateTimestamp(Date.now());
-      setSyncStatus('pending', 'Awaiting first successful sync', 'Health: Pending');
+      const snapshotSyncTime = await readSnapshotSyncTime();
+      if (Number.isFinite(snapshotSyncTime)) {
+        localStorage.setItem(LAST_SYNC_KEY, String(snapshotSyncTime));
+        updateTimestamp(snapshotSyncTime);
+        const snapshotAgeText = formatRelativeAge(Math.max(0, Date.now() - snapshotSyncTime));
+        setSyncStatus('delayed', 'Live API unavailable - using packaged snapshot', 'Health: Snapshot (' + snapshotAgeText + ')');
+      } else {
+        updateTimestamp(Date.now());
+        setSyncStatus('error', 'Live API unreachable and no snapshot metadata available', 'Health: Error');
+      }
       return;
     }
 
@@ -3918,7 +3974,7 @@ async function refreshLiveData() {
     } else if (ageMs <= DELAYED_SYNC_MAX_MS) {
       setSyncStatus('delayed', 'Using delayed values from last successful sync', 'Health: Delayed (' + ageText + ')');
     } else {
-      setSyncStatus('pending', 'Live sync stale - waiting for fresh data', 'Health: Stale (' + ageText + ')');
+      setSyncStatus('error', 'Live sync stale - waiting for fresh data', 'Health: Stale (' + ageText + ')');
     }
   }
 }
