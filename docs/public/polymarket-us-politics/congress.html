@@ -1508,6 +1508,8 @@ footer a:hover { border-bottom-color: var(--accent-gold); }
         <span id="conflictSourceQuality">&#9670; Confidence: --</span>
         <a id="iranWarSource" href="https://en.wikipedia.org/wiki/2026_Iran_conflict" target="_blank" rel="noopener">Source 1: live conflict data feed</a>
         <a id="iranWarSource2" href="https://www.understandingwar.org/" target="_blank" rel="noopener">Source 2: additional conflict source</a>
+        <a id="iranWarSource3" href="https://acleddata.com/" target="_blank" rel="noopener">Source 3: additional conflict source</a>
+        <a id="iranWarSource4" href="https://www.unocha.org/" target="_blank" rel="noopener">Source 4: additional conflict source</a>
       </div>
       <div class="conflict-news-ticker" id="iranNewsTicker">
         <div class="conflict-news-head"><span>Live Conflict Newsticker</span><span id="iranNewsUpdated">--</span></div>
@@ -1572,6 +1574,8 @@ footer a:hover { border-bottom-color: var(--accent-gold); }
         <span id="ukraineSourceQuality">&#9670; Confidence: --</span>
         <a id="ukraineSource" href="https://en.wikipedia.org/wiki/Russian_invasion_of_Ukraine" target="_blank" rel="noopener">Source 1: live conflict data feed</a>
         <a id="ukraineSource2" href="https://www.understandingwar.org/" target="_blank" rel="noopener">Source 2: additional conflict source</a>
+        <a id="ukraineSource3" href="https://www.ohchr.org/en/countries/ukraine" target="_blank" rel="noopener">Source 3: additional conflict source</a>
+        <a id="ukraineSource4" href="https://acleddata.com/" target="_blank" rel="noopener">Source 4: additional conflict source</a>
       </div>
       <div class="conflict-news-ticker" id="ukraineNewsTicker">
         <div class="conflict-news-head"><span>Live Conflict Newsticker</span><span id="ukraineNewsUpdated">--</span></div>
@@ -2549,6 +2553,7 @@ footer a:hover { border-bottom-color: var(--accent-gold); }
   </div>
 </footer>
 
+<script src="/polymarket-us-politics/cookie-consent.js" defer></script>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script>
 const CONFLICT_MONITOR_URL = '/polymarket-us-politics/data/iran-war-metrics.json';
@@ -2967,7 +2972,7 @@ function updateTimestamp(sourceTime) {
 
   if (headerDate) headerDate.textContent = `◆ Last updated: ${local} (${utc})`;
   if (footerDate) {
-    footerDate.innerHTML = 'Data sourced from <a href="https://polymarket.com" target="_blank" rel="noopener">Polymarket</a> prediction markets. Last refresh: every hour. Displayed timestamps include local time and UTC.';
+    footerDate.innerHTML = 'Data sourced from <a href="https://polymarket.com" target="_blank" rel="noopener">Polymarket</a> prediction markets. Last refresh: every hour. Displayed timestamps include local time and UTC. <a href="/polymarket-us-politics/cookie-policy.html" target="_blank" rel="noopener">Cookie Policy</a>.';
   }
 }
 
@@ -3644,6 +3649,8 @@ function hydrateConflictHeader(conflict) {
   const subtitleNode = document.getElementById('conflictSubtitle');
   const sourceNode = document.getElementById('iranWarSource');
   const sourceNode2 = document.getElementById('iranWarSource2');
+  const sourceNode3 = document.getElementById('iranWarSource3');
+  const sourceNode4 = document.getElementById('iranWarSource4');
   const qualityNode = document.getElementById('conflictSourceQuality');
 
   if (titleNode) titleNode.textContent = conflict.title || 'Conflict Monitor';
@@ -3653,16 +3660,24 @@ function hydrateConflictHeader(conflict) {
     sourceNode.textContent = `Source 1: ${conflict.source_name || 'live conflict data feed'}`;
     if (conflict.source_url) sourceNode.href = conflict.source_url;
   }
-  if (sourceNode2) {
-    const secondaryName = conflict.secondary_source_name || 'additional conflict source';
-    sourceNode2.textContent = `Source 2: ${secondaryName}`;
-    if (conflict.secondary_source_url) {
-      sourceNode2.href = conflict.secondary_source_url;
-      sourceNode2.style.display = '';
+
+  const sourceSlots = [
+    { node: sourceNode2, name: conflict.secondary_source_name, url: conflict.secondary_source_url, index: 2 },
+    { node: sourceNode3, name: conflict.tertiary_source_name, url: conflict.tertiary_source_url, index: 3 },
+    { node: sourceNode4, name: conflict.quaternary_source_name, url: conflict.quaternary_source_url, index: 4 }
+  ];
+
+  sourceSlots.forEach(slot => {
+    if (!slot.node) return;
+    const label = slot.name || 'additional conflict source';
+    slot.node.textContent = `Source ${slot.index}: ${label}`;
+    if (slot.url) {
+      slot.node.href = slot.url;
+      slot.node.style.display = '';
     } else {
-      sourceNode2.style.display = 'none';
+      slot.node.style.display = 'none';
     }
-  }
+  });
 }
 
 function setUkraineSync(message) {
@@ -3689,6 +3704,8 @@ function hydrateUkraineHeader(conflict) {
   const subtitleNode = document.getElementById('ukraineSubtitle');
   const sourceNode = document.getElementById('ukraineSource');
   const sourceNode2 = document.getElementById('ukraineSource2');
+  const sourceNode3 = document.getElementById('ukraineSource3');
+  const sourceNode4 = document.getElementById('ukraineSource4');
   const qualityNode = document.getElementById('ukraineSourceQuality');
 
   if (titleNode) titleNode.textContent = conflict.title || 'Ukraine Conflict Monitor';
@@ -3698,16 +3715,24 @@ function hydrateUkraineHeader(conflict) {
     sourceNode.textContent = `Source 1: ${conflict.source_name || 'live conflict data feed'}`;
     if (conflict.source_url) sourceNode.href = conflict.source_url;
   }
-  if (sourceNode2) {
-    const secondaryName = conflict.secondary_source_name || 'additional conflict source';
-    sourceNode2.textContent = `Source 2: ${secondaryName}`;
-    if (conflict.secondary_source_url) {
-      sourceNode2.href = conflict.secondary_source_url;
-      sourceNode2.style.display = '';
+
+  const sourceSlots = [
+    { node: sourceNode2, name: conflict.secondary_source_name, url: conflict.secondary_source_url, index: 2 },
+    { node: sourceNode3, name: conflict.tertiary_source_name, url: conflict.tertiary_source_url, index: 3 },
+    { node: sourceNode4, name: conflict.quaternary_source_name, url: conflict.quaternary_source_url, index: 4 }
+  ];
+
+  sourceSlots.forEach(slot => {
+    if (!slot.node) return;
+    const label = slot.name || 'additional conflict source';
+    slot.node.textContent = `Source ${slot.index}: ${label}`;
+    if (slot.url) {
+      slot.node.href = slot.url;
+      slot.node.style.display = '';
     } else {
-      sourceNode2.style.display = 'none';
+      slot.node.style.display = 'none';
     }
-  }
+  });
 }
 
 function classifyDeltaTone(delta) {
@@ -3904,7 +3929,8 @@ function applyTheme(theme) {
 }
 
 function preferredTheme() {
-  const stored = localStorage.getItem(THEME_KEY);
+  const allowPrefs = !window.PMIRCookieConsent || window.PMIRCookieConsent.hasConsent('preferences');
+  const stored = allowPrefs ? localStorage.getItem(THEME_KEY) : null;
   if (stored === 'light' || stored === 'dark') return stored;
   return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
 }
@@ -3943,7 +3969,11 @@ async function refreshLiveData() {
   }, null);
 
   if (successful > 0) {
-    const syncTime = Number.isFinite(freshestTimestamp) ? freshestTimestamp : Date.now();
+    const snapshotSyncTime = await readSnapshotSyncTime();
+    const syncTime = Number.isFinite(snapshotSyncTime)
+      ? snapshotSyncTime
+      : (Number.isFinite(freshestTimestamp) ? freshestTimestamp : Date.now());
+
     localStorage.setItem(LAST_SYNC_KEY, String(syncTime));
     updateTimestamp(syncTime);
     const ageText = formatRelativeAge(Math.max(0, Date.now() - syncTime));
@@ -3992,12 +4022,22 @@ applyTheme(preferredTheme());
 themeToggle?.addEventListener('click', () => {
   const current = document.documentElement.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
   const next = current === 'light' ? 'dark' : 'light';
-  localStorage.setItem(THEME_KEY, next);
+
+  const allowPrefs = !window.PMIRCookieConsent || window.PMIRCookieConsent.hasConsent('preferences');
+  if (!allowPrefs && window.PMIRCookieConsent?.openPreferences) {
+    window.PMIRCookieConsent.openPreferences();
+    return;
+  }
+
+  if (allowPrefs) {
+    localStorage.setItem(THEME_KEY, next);
+  }
   applyTheme(next);
 });
 
 systemThemeMedia.addEventListener('change', event => {
-  const stored = localStorage.getItem(THEME_KEY);
+  const allowPrefs = !window.PMIRCookieConsent || window.PMIRCookieConsent.hasConsent('preferences');
+  const stored = allowPrefs ? localStorage.getItem(THEME_KEY) : null;
   if (stored === 'light' || stored === 'dark') return;
   applyTheme(event.matches ? 'light' : 'dark');
 });
@@ -4129,6 +4169,10 @@ refreshConflictMonitors();
 refreshConflictNews();
 
 setInterval(refreshLiveData, LIVE_MARKET_INTERVAL_MS);
+
+window.PMIRCookieConsent?.onChange(() => {
+  applyTheme(preferredTheme());
+});
 setInterval(refreshConflictNews, CONFLICT_NEWS_INTERVAL_MS);
 setInterval(refreshConflictMonitors, CONFLICT_MONITOR_INTERVAL_MS);
 </script>

@@ -39,7 +39,7 @@
           "id": "iran_killed",
           "label": "Iran Reported Killed",
           "value": 555,
-          "source": "Wikipedia + ISW + public reporting",
+          "source": "Wikipedia + ISW + ACLED + OCHA + public reporting",
           "confidence": "Medium",
           "tone": "red",
           "scope": "Reported total deaths in Iran (civilian + military combined where sources are mixed)."
@@ -48,7 +48,7 @@
           "id": "iran_injured",
           "label": "Iran Reported Injured",
           "value": 747,
-          "source": "Wikipedia + ISW + public reporting",
+          "source": "Wikipedia + ISW + ACLED + OCHA + public reporting",
           "confidence": "Medium",
           "tone": "red",
           "scope": "Reported total injured in Iran (civilian + military combined where sources are mixed)."
@@ -57,7 +57,7 @@
           "id": "israel_killed",
           "label": "Israel Reported Killed",
           "value": 12,
-          "source": "Wikipedia + ISW + public reporting",
+          "source": "Wikipedia + ISW + ACLED + OCHA + public reporting",
           "confidence": "Medium",
           "tone": "red",
           "scope": "Reported total deaths in Israel (civilian + military combined where sources are mixed)."
@@ -66,7 +66,7 @@
           "id": "israel_injured",
           "label": "Israel Reported Injured",
           "value": 777,
-          "source": "Wikipedia + ISW + public reporting",
+          "source": "Wikipedia + ISW + ACLED + OCHA + public reporting",
           "confidence": "Medium",
           "tone": "red",
           "scope": "Reported total injured in Israel (civilian + military combined where sources are mixed)."
@@ -75,7 +75,7 @@
           "id": "us_killed",
           "label": "US Soldiers Killed",
           "value": 4,
-          "source": "Wikipedia + ISW + public reporting",
+          "source": "Wikipedia + ISW + ACLED + OCHA + public reporting",
           "confidence": "Medium",
           "tone": "red",
           "scope": "US military personnel deaths (military only)."
@@ -84,7 +84,7 @@
           "id": "us_seriously_injured",
           "label": "US Soldiers Seriously Injured",
           "value": 5,
-          "source": "Wikipedia + ISW + public reporting",
+          "source": "Wikipedia + ISW + ACLED + OCHA + public reporting",
           "confidence": "Medium",
           "tone": "red",
           "scope": "US military personnel seriously injured (military only)."
@@ -93,7 +93,7 @@
           "id": "missiles_benchmark",
           "label": "Ballistic Missiles (2025 Benchmark)",
           "value": 520,
-          "source": "Wikipedia + ISW + public reporting",
+          "source": "Wikipedia + ISW + ACLED + OCHA + public reporting",
           "confidence": "Medium",
           "tone": "amber",
           "scope": "Projectile benchmark volume (historical reference, not daily launches)."
@@ -102,7 +102,7 @@
           "id": "drones_benchmark",
           "label": "Drones (2025 Benchmark)",
           "value": 950,
-          "source": "Wikipedia + ISW + public reporting",
+          "source": "Wikipedia + ISW + ACLED + OCHA + public reporting",
           "confidence": "Medium",
           "tone": "amber",
           "scope": "Drone benchmark volume (historical reference, not daily launches)."
@@ -111,7 +111,7 @@
           "id": "total_reported_killed",
           "label": "Total Reported Killed",
           "value": 571,
-          "source": "Wikipedia + ISW + public reporting",
+          "source": "Wikipedia + ISW + ACLED + OCHA + public reporting",
           "confidence": "Medium",
           "tone": "red",
           "scope": "Aggregate reported deaths across tracked parties (source-mixed civilian+military where not separated)."
@@ -120,7 +120,7 @@
           "id": "total_reported_injured",
           "label": "Total Reported Injured",
           "value": 1529,
-          "source": "Wikipedia + ISW + public reporting",
+          "source": "Wikipedia + ISW + ACLED + OCHA + public reporting",
           "confidence": "Medium",
           "tone": "red",
           "scope": "Aggregate reported injured across tracked parties (source-mixed civilian+military where not separated)."
@@ -129,7 +129,7 @@
           "id": "air_defense_intercepts_7d",
           "label": "Air Defense Intercepts (7d)",
           "value": 312,
-          "source": "Wikipedia + ISW + public reporting",
+          "source": "Wikipedia + ISW + ACLED + OCHA + public reporting",
           "confidence": "Low",
           "tone": "amber",
           "scope": "Estimated/compiled 7-day air-defense intercept count (mixed-source operational metric)."
@@ -138,7 +138,7 @@
           "id": "critical_infrastructure_impacts_7d",
           "label": "Critical Infrastructure Impacts (7d)",
           "value": 37,
-          "source": "Wikipedia + ISW + public reporting",
+          "source": "Wikipedia + ISW + ACLED + OCHA + public reporting",
           "confidence": "Low",
           "tone": "green",
           "scope": "Estimated/compiled 7-day critical infrastructure impact incidents (operational metric)."
@@ -1314,7 +1314,11 @@
           "value": 68
         }
       ],
-      "daily_series_definition": "Composite index (0-100) combining normalized casualties, projectile activity, and operational impact signals from the conflict feed. Not a direct daily deaths chart."
+      "daily_series_definition": "Composite index (0-100) combining normalized casualties, projectile activity, and operational impact signals from the conflict feed. Not a direct daily deaths chart.",
+      "tertiary_source_name": "ACLED (Armed Conflict Location & Event Data)",
+      "tertiary_source_url": "https://acleddata.com/",
+      "quaternary_source_name": "UN OCHA (Humanitarian Situation Reports)",
+      "quaternary_source_url": "https://www.unocha.org/"
     },
     {
       "id": "ukraine_2026",
@@ -1356,7 +1360,7 @@
           "id": "ukr_civilians_killed_reported",
           "label": "Ukraine Reported Killed",
           "value": 46210,
-          "source": "Wikipedia + ISW + UN/public reporting",
+          "source": "Wikipedia + ISW + OHCHR + ACLED + public reporting",
           "confidence": "Medium",
           "tone": "red",
           "scope": "Reported total deaths in Ukraine (civilian + military combined where sources are mixed)."
@@ -1365,7 +1369,7 @@
           "id": "ukr_civilians_injured_reported",
           "label": "Ukraine Reported Injured",
           "value": 81540,
-          "source": "Wikipedia + ISW + UN/public reporting",
+          "source": "Wikipedia + ISW + OHCHR + ACLED + public reporting",
           "confidence": "Medium",
           "tone": "red",
           "scope": "Reported total injured in Ukraine (civilian + military combined where sources are mixed)."
@@ -1374,7 +1378,7 @@
           "id": "russia_killed_reported",
           "label": "Russia Reported Killed",
           "value": 68750,
-          "source": "Wikipedia + ISW + public reporting",
+          "source": "Wikipedia + ISW + ACLED + public reporting",
           "confidence": "Low",
           "tone": "red",
           "scope": "Reported Russian military deaths (military-only estimates where available)."
@@ -1383,7 +1387,7 @@
           "id": "russia_injured_reported",
           "label": "Russia Reported Injured",
           "value": 160200,
-          "source": "Wikipedia + ISW + public reporting",
+          "source": "Wikipedia + ISW + ACLED + public reporting",
           "confidence": "Low",
           "tone": "red",
           "scope": "Reported Russian military injured (military-only estimates where available)."
@@ -1392,7 +1396,7 @@
           "id": "ukraine_intercepts_7d",
           "label": "Air Defense Intercepts (7d)",
           "value": 289,
-          "source": "Wikipedia + ISW + public reporting",
+          "source": "Wikipedia + ISW + ACLED + public reporting",
           "confidence": "Low",
           "tone": "amber",
           "scope": "Estimated/compiled 7-day intercept count (operational metric)."
@@ -1401,7 +1405,7 @@
           "id": "ukraine_strike_incidents_7d",
           "label": "Strike Incidents (7d)",
           "value": 174,
-          "source": "Wikipedia + ISW + public reporting",
+          "source": "Wikipedia + ISW + ACLED + public reporting",
           "confidence": "Low",
           "tone": "amber",
           "scope": "Estimated/compiled 7-day missile/drone strike incidents."
@@ -1410,7 +1414,7 @@
           "id": "critical_infra_impacts_7d_ua",
           "label": "Critical Infrastructure Impacts (7d)",
           "value": 42,
-          "source": "Wikipedia + ISW + public reporting",
+          "source": "Wikipedia + ISW + ACLED + public reporting",
           "confidence": "Low",
           "tone": "green",
           "scope": "Estimated/compiled 7-day critical infrastructure impact incidents."
@@ -1419,7 +1423,7 @@
           "id": "frontline_pressure_index",
           "label": "Frontline Pressure Index",
           "value": 67,
-          "source": "Wikipedia + ISW + public reporting",
+          "source": "Wikipedia + ISW + ACLED + public reporting",
           "confidence": "Low",
           "tone": "green",
           "scope": "Composite operational pressure indicator (0-100), not a casualty count."
@@ -1428,7 +1432,7 @@
           "id": "ukraine_displaced_population_m",
           "label": "Displaced Population (M)",
           "value": 6.7,
-          "source": "UN + public reporting",
+          "source": "UN/OHCHR + public reporting",
           "confidence": "Medium",
           "tone": "red",
           "scope": "Estimated displaced persons in millions (civilian displacement metric)."
@@ -1437,7 +1441,7 @@
           "id": "ukraine_energy_sites_damaged_30d",
           "label": "Energy Sites Damaged (30d)",
           "value": 84,
-          "source": "ISW + public reporting",
+          "source": "ISW + ACLED + public reporting",
           "confidence": "Low",
           "tone": "amber",
           "scope": "Estimated/compiled energy-infrastructure damage incidents over the last 30 days."
@@ -1446,7 +1450,7 @@
           "id": "ukraine_drone_wave_incidents_7d",
           "label": "Drone Wave Incidents (7d)",
           "value": 121,
-          "source": "ISW + public reporting",
+          "source": "ISW + ACLED + public reporting",
           "confidence": "Low",
           "tone": "amber",
           "scope": "Estimated/compiled drone-wave strike incidents over the last 7 days."
@@ -1455,7 +1459,7 @@
           "id": "ukraine_frontline_settlement_changes_7d",
           "label": "Frontline Settlement Changes (7d)",
           "value": 19,
-          "source": "ISW + public reporting",
+          "source": "ISW + ACLED + public reporting",
           "confidence": "Low",
           "tone": "green",
           "scope": "Estimated settlements with reported control/contestation changes in the last 7 days."
@@ -7400,7 +7404,11 @@
           "value": 68
         }
       ],
-      "daily_series_definition": "Composite index (0-100) combining normalized casualties, strike activity, and operational impact signals. Not a direct daily deaths chart."
+      "daily_series_definition": "Composite index (0-100) combining normalized casualties, strike activity, and operational impact signals. Not a direct daily deaths chart.",
+      "tertiary_source_name": "OHCHR Ukraine (UN Human Rights)",
+      "tertiary_source_url": "https://www.ohchr.org/en/countries/ukraine",
+      "quaternary_source_name": "ACLED (Armed Conflict Location & Event Data)",
+      "quaternary_source_url": "https://acleddata.com/"
     }
   ]
 }
