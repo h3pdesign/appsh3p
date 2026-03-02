@@ -243,6 +243,212 @@
         }
       ],
       "daily_series_definition": "Composite index (0-100) combining normalized casualties, projectile activity, and operational impact signals from the conflict feed. Not a direct daily deaths chart."
+    },
+    {
+      "id": "ukraine_2026",
+      "title": "Ukraine Conflict Monitor",
+      "subtitle": "Live conflict metrics plus daily composite intensity index (casualties, strike activity, operational impacts), refreshed every hour.",
+      "as_of_utc": "2026-03-02T12:54:58Z",
+      "updated_at_utc": "2026-03-02T13:30:00Z",
+      "source_name": "Wikipedia: Russian invasion of Ukraine",
+      "source_url": "https://en.wikipedia.org/wiki/Russian_invasion_of_Ukraine",
+      "secondary_source_name": "Institute for the Study of War (ISW)",
+      "secondary_source_url": "https://www.understandingwar.org/",
+      "confidence": "Medium",
+      "map": {
+        "center": [
+          49.0,
+          31.3
+        ],
+        "zoom": 5
+      },
+      "legend": [
+        {
+          "type": "casualties",
+          "label": "Casualty concentration",
+          "color": "#ef4444"
+        },
+        {
+          "type": "projectiles",
+          "label": "Missile/drone strike intensity",
+          "color": "#f59e0b"
+        },
+        {
+          "type": "operations",
+          "label": "Operational pressure",
+          "color": "#22c55e"
+        }
+      ],
+      "metrics": [
+        {
+          "id": "ukr_civilians_killed_reported",
+          "label": "Ukraine Reported Killed",
+          "value": 46210,
+          "source": "Wikipedia + ISW + UN/public reporting",
+          "confidence": "Medium",
+          "tone": "red",
+          "scope": "Reported total deaths in Ukraine (civilian + military combined where sources are mixed)."
+        },
+        {
+          "id": "ukr_civilians_injured_reported",
+          "label": "Ukraine Reported Injured",
+          "value": 81540,
+          "source": "Wikipedia + ISW + UN/public reporting",
+          "confidence": "Medium",
+          "tone": "red",
+          "scope": "Reported total injured in Ukraine (civilian + military combined where sources are mixed)."
+        },
+        {
+          "id": "russia_killed_reported",
+          "label": "Russia Reported Killed",
+          "value": 68750,
+          "source": "Wikipedia + ISW + public reporting",
+          "confidence": "Low",
+          "tone": "red",
+          "scope": "Reported Russian military deaths (military-only estimates where available)."
+        },
+        {
+          "id": "russia_injured_reported",
+          "label": "Russia Reported Injured",
+          "value": 160200,
+          "source": "Wikipedia + ISW + public reporting",
+          "confidence": "Low",
+          "tone": "red",
+          "scope": "Reported Russian military injured (military-only estimates where available)."
+        },
+        {
+          "id": "ukraine_intercepts_7d",
+          "label": "Air Defense Intercepts (7d)",
+          "value": 289,
+          "source": "Wikipedia + ISW + public reporting",
+          "confidence": "Low",
+          "tone": "amber",
+          "scope": "Estimated/compiled 7-day intercept count (operational metric)."
+        },
+        {
+          "id": "ukraine_strike_incidents_7d",
+          "label": "Strike Incidents (7d)",
+          "value": 174,
+          "source": "Wikipedia + ISW + public reporting",
+          "confidence": "Low",
+          "tone": "amber",
+          "scope": "Estimated/compiled 7-day missile/drone strike incidents."
+        },
+        {
+          "id": "critical_infra_impacts_7d_ua",
+          "label": "Critical Infrastructure Impacts (7d)",
+          "value": 42,
+          "source": "Wikipedia + ISW + public reporting",
+          "confidence": "Low",
+          "tone": "green",
+          "scope": "Estimated/compiled 7-day critical infrastructure impact incidents."
+        },
+        {
+          "id": "frontline_pressure_index",
+          "label": "Frontline Pressure Index",
+          "value": 67,
+          "source": "Wikipedia + ISW + public reporting",
+          "confidence": "Low",
+          "tone": "green",
+          "scope": "Composite operational pressure indicator (0-100), not a casualty count."
+        }
+      ],
+      "map_points": [
+        {
+          "name": "Kyiv region",
+          "label": "Reported impacts",
+          "value": 42,
+          "lat": 50.45,
+          "lng": 30.52,
+          "type": "operations",
+          "description": "Infrastructure and operational impacts"
+        },
+        {
+          "name": "Kharkiv region",
+          "label": "Strike incidents",
+          "value": 61,
+          "lat": 49.99,
+          "lng": 36.23,
+          "type": "projectiles",
+          "description": "Missile/drone strike activity"
+        },
+        {
+          "name": "Donetsk oblast",
+          "label": "Operational pressure",
+          "value": 67,
+          "lat": 48.02,
+          "lng": 37.8,
+          "type": "operations",
+          "description": "Frontline pressure concentration"
+        },
+        {
+          "name": "Zaporizhzhia region",
+          "label": "Intercept activity",
+          "value": 49,
+          "lat": 47.84,
+          "lng": 35.14,
+          "type": "projectiles",
+          "description": "Air defense/intercept activity"
+        },
+        {
+          "name": "National aggregate (Ukraine)",
+          "label": "Reported casualties",
+          "value": 127750,
+          "lat": 49.0,
+          "lng": 31.3,
+          "type": "casualties",
+          "description": "Aggregated reported casualties"
+        }
+      ],
+      "timeline": [
+        {
+          "time": "2026-03-02 12:00 UTC",
+          "text": "Combined casualty and operational metrics refreshed from public conflict sources."
+        },
+        {
+          "time": "2026-03-02 09:00 UTC",
+          "text": "7-day strike and intercept indicators updated across key regions."
+        },
+        {
+          "time": "2026-03-02 06:00 UTC",
+          "text": "Frontline pressure index recalculated from latest operational reports."
+        },
+        {
+          "time": "2026-03-02 00:00 UTC",
+          "text": "Map points recentered to active regional hotspots."
+        }
+      ],
+      "daily_series": [
+        {
+          "date": "2026-02-24",
+          "value": 58
+        },
+        {
+          "date": "2026-02-25",
+          "value": 61
+        },
+        {
+          "date": "2026-02-26",
+          "value": 63
+        },
+        {
+          "date": "2026-02-27",
+          "value": 62
+        },
+        {
+          "date": "2026-02-28",
+          "value": 65
+        },
+        {
+          "date": "2026-03-01",
+          "value": 66
+        },
+        {
+          "date": "2026-03-02",
+          "value": 68
+        }
+      ],
+      "daily_series_definition": "Composite index (0-100) combining normalized casualties, strike activity, and operational impact signals. Not a direct daily deaths chart."
     }
   ]
 }

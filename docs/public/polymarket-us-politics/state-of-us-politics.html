@@ -1199,6 +1199,7 @@ footer a:hover { border-bottom-color: var(--accent-gold); }
       <li><a href="https://apps-h3p.com" target="_blank" rel="noopener">apps-h3p.com</a></li>
       <li><a href="https://medium.com/@h3palpha" target="_blank" rel="noopener">Medium</a></li>
       <li><a href="/polymarket-us-politics/state-of-us-politics.html#iran-war">Iran War Monitor</a></li>
+      <li><a href="/polymarket-us-politics/state-of-us-politics.html#ukraine-war">Ukraine War Monitor</a></li>
       <li><a href="/polymarket-us-politics/state-of-us-politics.html">Summary</a></li>
       <li><a href="/polymarket-us-politics/foreign-policy.html">Foreign Policy</a></li>
       <li><a href="/polymarket-us-politics/2028-race.html">2028 Race</a></li>
@@ -1222,6 +1223,7 @@ footer a:hover { border-bottom-color: var(--accent-gold); }
   <a href="https://apps-h3p.com" target="_blank" rel="noopener">apps-h3p.com</a>
   <a href="https://medium.com/@h3palpha" target="_blank" rel="noopener">Medium Profile</a>
   <a href="/polymarket-us-politics/state-of-us-politics.html#iran-war" class="mobile-link">Iran War Monitor</a>
+  <a href="/polymarket-us-politics/state-of-us-politics.html#ukraine-war" class="mobile-link">Ukraine War Monitor</a>
   <a href="/polymarket-us-politics/state-of-us-politics.html" class="mobile-link">Executive Summary</a>
   <a href="/polymarket-us-politics/foreign-policy.html" class="mobile-link">Foreign Policy & Military</a>
   <a href="/polymarket-us-politics/2028-race.html" class="mobile-link">2028 Presidential Race</a>
@@ -1296,6 +1298,50 @@ footer a:hover { border-bottom-color: var(--accent-gold); }
     </div>
   </section>
 
+
+  <!-- ====== UKRAINE WAR MONITOR ====== -->
+  <section class="section" id="ukraine-war">
+    <div class="section-header reveal">
+      <div class="section-number">Priority Monitor</div>
+      <h2 class="section-title" id="ukraineTitle">Ukraine Conflict Monitor</h2>
+      <p class="section-subtitle" id="ukraineSubtitle">Live conflict metrics and a daily composite intensity graph for Ukraine, refreshed every hour.</p>
+    </div>
+    <div class="iran-monitor reveal">
+      <div class="iran-meta">
+        <span id="ukraineAsOf">&#9670; Last updated: waiting for live metrics</span>
+        <span id="ukraineSync">&#9670; Syncing metrics...</span>
+        <span id="ukraineSourceQuality">&#9670; Confidence: --</span>
+        <a id="ukraineSource" href="https://en.wikipedia.org/wiki/Russian_invasion_of_Ukraine" target="_blank" rel="noopener">Source 1: live conflict data feed</a>
+        <a id="ukraineSource2" href="https://www.understandingwar.org/" target="_blank" rel="noopener">Source 2: additional conflict source</a>
+      </div>
+      <div class="conflict-metrics-grid" id="ukraineMetrics">
+        <div class="iran-stat"><div class="iran-stat-label">Loading metrics</div><div class="iran-stat-value">--</div></div>
+      </div>
+      <div class="conflict-map-wrap">
+        <div class="conflict-map" id="ukraineMap"></div>
+        <div class="conflict-map-status" id="ukraineMapStatus">Loading conflict map...</div>
+        <div class="conflict-trend" id="ukraineTrend">
+          <div class="conflict-trend-head">
+            <span>Daily Conflict Intensity</span>
+            <span id="ukraineTrendRange">--</span>
+          </div>
+          <svg class="conflict-trend-chart" id="ukraineTrendChart" viewBox="0 0 700 170" role="img" aria-label="Daily Ukraine conflict intensity trend"></svg>
+          <div class="conflict-trend-tooltip" id="ukraineTrendTooltip" aria-hidden="true"></div>
+          <div class="conflict-explainer" id="ukraineExplainer">
+            <strong>Graph definition:</strong> each dot is one day and represents a <strong>composite conflict intensity index</strong> (0–100) built from casualties, strike activity, and operational impact. It is not a direct daily death count.
+          </div>
+        </div>
+      </div>
+      <div class="conflict-legend" id="ukraineLegend"></div>
+      <div class="conflict-timeline" id="ukraineTimeline">
+        <h3>Timeline</h3>
+        <div class="conflict-timeline-list" id="ukraineTimelineList">
+          <div class="conflict-timeline-item"><div class="conflict-timeline-time">Loading</div><div class="conflict-timeline-text">Waiting for timeline updates...</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ====== EXECUTIVE SUMMARY ====== -->
   <section class="section" id="summary">
     <div class="section-header reveal">
@@ -1306,7 +1352,6 @@ footer a:hover { border-bottom-color: var(--accent-gold); }
       <p class="exec-text">
         <strong>Kevin Warsh</strong> holds a commanding 94% probability to be nominated as the next Federal Reserve Chair, signaling an imminent leadership transition at the central bank. The political pendulum is swinging sharply left: markets price a <strong>72% chance of a Blue Wave</strong> in the 2026 midterms, with Democrats heavily favored to retake the House. Meanwhile, the probability of <strong>Trump leaving office before 2027 remains low at 15%</strong>, suggesting markets see his presidency as stable despite political headwinds. On the geopolitical front, <strong>US-Iran tensions are elevated</strong> — a 61% chance of a US or Israeli strike on Iran by March 31 underscores the gravity of the current standoff.
       </p>
-      <p class="exec-text auto-daily-summary" id="dailyPolymarketUpdate"><strong>Daily Polymarket update (2026-03-02, 06:00 Europe/Berlin):</strong> The market currently prices <strong>"Will LeBron James win the 2028 US Presidential Election?"</strong> at <strong>99%</strong> for <strong>No</strong>, with approximately <strong>$33.2M</strong> in traded volume.</p>
       <div class="exec-highlights">
         <div class="exec-stat">
           <div class="exec-stat-value green">94%</div>
@@ -1482,19 +1527,7 @@ footer a:hover { border-bottom-color: var(--accent-gold); }
     </div>
 
     <div class="card-grid">
-      <article class="card reveal auto-news-card" data-market-question="Will LeBron James win the 2028 US Presidential Election?">
-        <span class="tag-badge watch">Daily Update</span>
-        <div class="card-header">
-          <h3 class="card-question">Will LeBron James win the 2028 US Presidential Election?</h3>
-          <span class="card-volume">$33.2M vol</span>
-        </div>
-        <div class="prob-single">
-          <span class="prob-big-value green">99%</span>
-          <div class="prob-big-bar"><div class="prob-big-fill green" data-width="99"></div></div>
-        </div>
-        <p class="prob-tag">Top market outcome: No</p>
-      </article>
-            <!-- Dem Nominee -->
+      <!-- Dem Nominee -->
       <article class="card reveal">
         <div class="card-header">
           <h3 class="card-question">Democratic Presidential Nominee 2028</h3>
@@ -2254,6 +2287,8 @@ const LAST_SYNC_KEY = 'pmir-last-successful-sync';
 const marketCache = new Map();
 let conflictMap = null;
 let conflictMarkersLayer = null;
+let ukraineMap = null;
+let ukraineMarkersLayer = null;
 
 function normalize(value) {
   return String(value || '')
@@ -2545,8 +2580,8 @@ function conflictMetricTone(metric) {
   return 'green';
 }
 
-function renderConflictMetrics(metrics) {
-  const container = document.getElementById('conflictMetrics');
+function renderConflictMetrics(metrics, containerId = 'conflictMetrics') {
+  const container = document.getElementById(containerId);
   if (!container) return;
 
   container.innerHTML = '';
@@ -2584,8 +2619,8 @@ function renderConflictMetrics(metrics) {
   });
 }
 
-function renderConflictLegend(legend) {
-  const container = document.getElementById('conflictLegend');
+function renderConflictLegend(legend, containerId = 'conflictLegend') {
+  const container = document.getElementById(containerId);
   if (!container) return;
   container.innerHTML = '';
 
@@ -2606,8 +2641,8 @@ function renderConflictLegend(legend) {
   });
 }
 
-function renderConflictTimeline(events) {
-  const container = document.getElementById('conflictTimelineList');
+function renderConflictTimeline(events, containerId = 'conflictTimelineList') {
+  const container = document.getElementById(containerId);
   if (!container) return;
 
   const rows = Array.isArray(events) ? events : [];
@@ -2636,9 +2671,13 @@ function renderConflictTimeline(events) {
   });
 }
 
-function renderConflictTrend(series) {
-  const svg = document.getElementById('conflictTrendChart');
-  const rangeNode = document.getElementById('conflictTrendRange');
+function renderConflictTrend(series, config = {}) {
+  const chartId = config.chartId || 'conflictTrendChart';
+  const rangeId = config.rangeId || 'conflictTrendRange';
+  const tooltipId = config.tooltipId || 'conflictTrendTooltip';
+  const trendId = config.trendId || 'conflictTrend';
+  const svg = document.getElementById(chartId);
+  const rangeNode = document.getElementById(rangeId);
   if (!svg) return;
 
   const points = Array.isArray(series) ? series.filter(p => Number.isFinite(Number(p?.value))) : [];
@@ -2700,8 +2739,8 @@ function renderConflictTrend(series) {
     ${labels}
   `;
 
-  const tooltip = document.getElementById('conflictTrendTooltip');
-  const trendWrap = document.getElementById('conflictTrend');
+  const tooltip = document.getElementById(tooltipId);
+  const trendWrap = document.getElementById(trendId);
   const formatDelta = value => {
     if (!Number.isFinite(value)) return { text: 'n/a', cls: 'delta-flat' };
     if (value > 0) return { text: `+${value}`, cls: 'delta-up' };
@@ -2754,9 +2793,12 @@ function conflictColorMap(legend) {
   }, {});
 }
 
-function upsertConflictMap(mapConfig, points, legend) {
-  const mapNode = document.getElementById('conflictMap');
-  const statusNode = document.getElementById('conflictMapStatus');
+function upsertConflictMap(mapConfig, points, legend, config = {}) {
+  const mapId = config.mapId || 'conflictMap';
+  const statusId = config.statusId || 'conflictMapStatus';
+  const moduleName = config.module || 'iran';
+  const mapNode = document.getElementById(mapId);
+  const statusNode = document.getElementById(statusId);
   if (!mapNode || typeof L === 'undefined') {
     if (statusNode) statusNode.textContent = 'Map library unavailable in this environment.';
     return;
@@ -2765,8 +2807,11 @@ function upsertConflictMap(mapConfig, points, legend) {
   const center = Array.isArray(mapConfig?.center) ? mapConfig.center : [31.0, 48.0];
   const zoom = Number.isFinite(mapConfig?.zoom) ? mapConfig.zoom : 4;
 
-  if (!conflictMap) {
-    conflictMap = L.map(mapNode, {
+  let mapRef = moduleName === 'ukraine' ? ukraineMap : conflictMap;
+  let layerRef = moduleName === 'ukraine' ? ukraineMarkersLayer : conflictMarkersLayer;
+
+  if (!mapRef) {
+    mapRef = L.map(mapNode, {
       scrollWheelZoom: false,
       zoomControl: true
     }).setView(center, zoom);
@@ -2800,17 +2845,31 @@ function upsertConflictMap(mapConfig, points, legend) {
     const valueLabel = Number.isFinite(point.value) ? formatInteger(point.value) : '--';
     const popup = `<strong>${point.name || 'Event'}</strong><br>${point.label || 'Metric'}: ${valueLabel}<br>${point.description || ''}`;
     marker.bindPopup(popup);
-    conflictMarkersLayer.addLayer(marker);
+    layerRef.addLayer(marker);
   });
 
   if (validPoints.length > 1) {
     const bounds = L.latLngBounds(validPoints.map(point => [point.lat, point.lng]));
-    conflictMap.fitBounds(bounds.pad(0.15));
+    mapRef.fitBounds(bounds.pad(0.15));
   }
 
   if (statusNode) {
     statusNode.textContent = `Mapped events: ${validPoints.length}`;
   }
+
+  if (moduleName === 'ukraine') {
+    ukraineMap = mapRef;
+    ukraineMarkersLayer = layerRef;
+  } else {
+    conflictMap = mapRef;
+    conflictMarkersLayer = layerRef;
+  }
+}
+
+function pickConflictById(feed, conflictId) {
+  if (!feed || !conflictId) return null;
+  const conflicts = Array.isArray(feed.conflicts) ? feed.conflicts : [];
+  return conflicts.find(conflict => conflict.id === conflictId) || null;
 }
 
 function pickActiveConflict(feed) {
@@ -2844,6 +2903,88 @@ function hydrateConflictHeader(conflict) {
     } else {
       sourceNode2.style.display = 'none';
     }
+  }
+}
+
+function setUkraineSync(message) {
+  const node = document.getElementById('ukraineSync');
+  if (node) node.textContent = `◆ ${message}`;
+}
+
+function updateUkraineTimestamp(asOfValue) {
+  const node = document.getElementById('ukraineAsOf');
+  if (!node) return;
+
+  const asOfTime = parseTimestamp(asOfValue);
+  if (!Number.isFinite(asOfTime)) {
+    node.textContent = '◆ Last updated: latest successful sync';
+    return;
+  }
+
+  const { local, utc } = formatDualTimestamp(asOfTime);
+  node.textContent = `◆ Last updated: ${local} (${utc})`;
+}
+
+function hydrateUkraineHeader(conflict) {
+  const titleNode = document.getElementById('ukraineTitle');
+  const subtitleNode = document.getElementById('ukraineSubtitle');
+  const sourceNode = document.getElementById('ukraineSource');
+  const sourceNode2 = document.getElementById('ukraineSource2');
+  const qualityNode = document.getElementById('ukraineSourceQuality');
+
+  if (titleNode) titleNode.textContent = conflict.title || 'Ukraine Conflict Monitor';
+  if (subtitleNode) subtitleNode.textContent = conflict.subtitle || 'Live conflict metrics refreshed every hour.';
+  if (qualityNode) qualityNode.textContent = `◆ Confidence: ${conflict.confidence || 'Medium'}`;
+  if (sourceNode) {
+    sourceNode.textContent = `Source 1: ${conflict.source_name || 'live conflict data feed'}`;
+    if (conflict.source_url) sourceNode.href = conflict.source_url;
+  }
+  if (sourceNode2) {
+    const secondaryName = conflict.secondary_source_name || 'additional conflict source';
+    sourceNode2.textContent = `Source 2: ${secondaryName}`;
+    if (conflict.secondary_source_url) {
+      sourceNode2.href = conflict.secondary_source_url;
+      sourceNode2.style.display = '';
+    } else {
+      sourceNode2.style.display = 'none';
+    }
+  }
+}
+
+async function refreshUkraineMetrics() {
+  setUkraineSync('Syncing metrics...');
+  try {
+    const response = await fetch(`${CONFLICT_MONITOR_URL}?t=${Date.now()}`, { cache: 'no-store' });
+    if (!response.ok) throw new Error(`Ukraine metrics fetch failed: ${response.status}`);
+
+    const feed = await response.json();
+    const conflict = pickConflictById(feed, 'ukraine_2026');
+    if (!conflict) {
+      setUkraineSync('No Ukraine feed configured');
+      return;
+    }
+
+    hydrateUkraineHeader(conflict);
+    renderConflictMetrics(Array.isArray(conflict.metrics) ? conflict.metrics : [], 'ukraineMetrics');
+    renderConflictLegend(Array.isArray(conflict.legend) ? conflict.legend : [], 'ukraineLegend');
+    renderConflictTimeline(Array.isArray(conflict.timeline) ? conflict.timeline : [], 'ukraineTimelineList');
+    renderConflictTrend(Array.isArray(conflict.daily_series) ? conflict.daily_series : [], {
+      chartId: 'ukraineTrendChart',
+      rangeId: 'ukraineTrendRange',
+      tooltipId: 'ukraineTrendTooltip',
+      trendId: 'ukraineTrend'
+    });
+    upsertConflictMap(conflict.map || {}, Array.isArray(conflict.map_points) ? conflict.map_points : [], Array.isArray(conflict.legend) ? conflict.legend : [], {
+      mapId: 'ukraineMap',
+      statusId: 'ukraineMapStatus',
+      module: 'ukraine'
+    });
+
+    updateUkraineTimestamp(conflict.as_of_utc || conflict.updated_at_utc || feed.updated_at_utc);
+    setUkraineSync('Live metrics synced');
+  } catch (error) {
+    setUkraineSync('Metrics delayed');
+    console.error(error);
   }
 }
 
@@ -3036,6 +3177,7 @@ if (focusSection) {
 function refreshAllData() {
   refreshLiveData();
   refreshIranWarMetrics();
+  refreshUkraineMetrics();
 }
 
 refreshAllData();
