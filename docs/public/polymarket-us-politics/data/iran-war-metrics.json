@@ -98,6 +98,38 @@
           "source": "Wikipedia + ISW + public reporting",
           "confidence": "Medium",
           "tone": "amber"
+        },
+        {
+          "id": "total_reported_killed",
+          "label": "Total Reported Killed",
+          "value": 571,
+          "source": "Wikipedia + ISW + public reporting",
+          "confidence": "Medium",
+          "tone": "red"
+        },
+        {
+          "id": "total_reported_injured",
+          "label": "Total Reported Injured",
+          "value": 1529,
+          "source": "Wikipedia + ISW + public reporting",
+          "confidence": "Medium",
+          "tone": "red"
+        },
+        {
+          "id": "air_defense_intercepts_7d",
+          "label": "Air Defense Intercepts (7d)",
+          "value": 312,
+          "source": "Wikipedia + ISW + public reporting",
+          "confidence": "Low",
+          "tone": "amber"
+        },
+        {
+          "id": "critical_infrastructure_impacts_7d",
+          "label": "Critical Infrastructure Impacts (7d)",
+          "value": 37,
+          "source": "Wikipedia + ISW + public reporting",
+          "confidence": "Low",
+          "tone": "green"
         }
       ],
       "map_points": [

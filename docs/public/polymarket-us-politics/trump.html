@@ -2272,6 +2272,25 @@ async function fetchMarketByQuestion(question) {
   return market;
 }
 
+function questionFallbacks(question) {
+  const clean = String(question || '').trim();
+  if (!clean) return [];
+  const compact = clean.replace(/[—–-]/g, ' ').replace(/\s+/g, ' ').trim();
+  const short = compact.split('?')[0].trim();
+  const prefix = compact.slice(0, 72).trim();
+  return Array.from(new Set([clean, compact, short, prefix].filter(Boolean)));
+}
+
+async function fetchBestMarketForCard(card) {
+  const baseQuestion = card.dataset.marketQuestion || card.querySelector('.card-question')?.textContent?.trim() || '';
+  const attempts = questionFallbacks(baseQuestion);
+  for (const query of attempts) {
+    const market = await fetchMarketByQuestion(query);
+    if (market) return market;
+  }
+  return null;
+}
+
 function marketOutcomePrice(market, outcomeName) {
   if (!market || !outcomeName) return null;
   const outcomes = asArray(market.outcomes);
@@ -2840,9 +2859,7 @@ async function refreshLiveData() {
 
   const results = await Promise.all(cards.map(async card => {
     try {
-      const question = card.querySelector('.card-question')?.textContent?.trim();
-      if (!question) return { ok: false, timestamp: null };
-      const market = await fetchMarketByQuestion(question);
+      const market = await fetchBestMarketForCard(card);
       if (!market) return { ok: false, timestamp: null };
 
       updateVolume(card, market);
