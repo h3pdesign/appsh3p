@@ -1,13 +1,13 @@
 {
   "active_conflict_id": "iran_2026",
-  "updated_at_utc": "2026-03-02T13:24:07.661Z",
+  "updated_at_utc": "2026-03-02T13:25:18.027Z",
   "conflicts": [
     {
       "id": "iran_2026",
       "title": "Iran Conflict Monitor",
       "subtitle": "Live casualties and projectile/operation indicators. Map and metrics refresh every 6 hours.",
       "as_of_utc": "2026-03-02T13:22:45Z",
-      "updated_at_utc": "2026-03-02T13:24:07.660Z",
+      "updated_at_utc": "2026-03-02T13:25:18.026Z",
       "source_name": "Wikipedia: 2026 Iran conflict + Twelve-Day War",
       "source_url": "https://en.wikipedia.org/wiki/2026_Iran_conflict",
       "map": {
