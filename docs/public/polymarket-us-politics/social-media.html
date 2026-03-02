@@ -934,7 +934,7 @@ footer a:hover { border-bottom-color: var(--accent-gold); }
     <h1>STATE OF<br><span>US & WORLD POLITICS</span></h1>
     <p class="hero-subtitle">Prediction Market Intelligence Report</p>
     <div class="hero-meta">
-      <span id="asOfDate">&#9670; As of latest live sync</span>
+      <span id="asOfDate">&#9670; As of --</span>
       <span>&#9670; Source: Polymarket</span>
       <span id="syncStatus" aria-live="polite">&#9670; Sync pending</span>
     </div>
@@ -1905,6 +1905,7 @@ const POLYMARKET_API = 'https://gamma-api.polymarket.com/markets';
 const IRAN_WAR_METRICS_URL = '/polymarket-us-politics/data/iran-war-metrics.json';
 const SIX_HOURS_MS = 6 * 60 * 60 * 1000;
 const THEME_KEY = 'pmir-theme';
+const LAST_SYNC_KEY = 'pmir-last-successful-sync';
 const marketCache = new Map();
 
 function normalize(value) {
@@ -2093,7 +2094,7 @@ function updateTimestamp(sourceTime) {
 
   const headerDate = document.getElementById('asOfDate');
   const footerDate = document.getElementById('footerTimestamp');
-  if (headerDate) headerDate.textContent = `\u25c6 Updated ${formatted}`;
+  if (headerDate) headerDate.textContent = `\u25c6 As of ${formatted}`;
   if (footerDate) footerDate.innerHTML = 'Data sourced from <a href="https://polymarket.com" target="_blank" rel="noopener">Polymarket</a> prediction markets. Probabilities refresh automatically every 6 hours.';
 }
 
@@ -2187,12 +2188,12 @@ async function refreshLiveData() {
   setSyncStatus('Syncing live data...');
   const cards = Array.from(document.querySelectorAll('.card'));
 
-  try {
-    const timestamps = await Promise.all(cards.map(async card => {
+  const results = await Promise.all(cards.map(async card => {
+    try {
       const question = card.querySelector('.card-question')?.textContent?.trim();
-      if (!question) return null;
+      if (!question) return { ok: false, timestamp: null };
       const market = await fetchMarketByQuestion(question);
-      if (!market) return null;
+      if (!market) return { ok: false, timestamp: null };
 
       updateVolume(card, market);
       if (card.querySelector('.race-grid')) {
@@ -2202,20 +2203,31 @@ async function refreshLiveData() {
       } else if (card.querySelector('.prob-single')) {
         updateSingleCard(card, market);
       }
-      return extractMarketTimestamp(market);
-    }));
 
-    const freshestTimestamp = timestamps.reduce((latest, value) => {
-      if (!Number.isFinite(value)) return latest;
-      if (!Number.isFinite(latest) || value > latest) return value;
-      return latest;
-    }, null);
+      return { ok: true, timestamp: extractMarketTimestamp(market) };
+    } catch (error) {
+      console.error(error);
+      return { ok: false, timestamp: null };
+    }
+  }));
 
-    updateTimestamp(freshestTimestamp);
-    setSyncStatus('Live data synced');
-  } catch (error) {
-    setSyncStatus('Live sync unavailable');
-    console.error(error);
+  const successful = results.filter(result => result.ok).length;
+  const freshestTimestamp = results.reduce((latest, result) => {
+    const value = result.timestamp;
+    if (!Number.isFinite(value)) return latest;
+    if (!Number.isFinite(latest) || value > latest) return value;
+    return latest;
+  }, null);
+
+  if (successful > 0) {
+    const syncTime = Number.isFinite(freshestTimestamp) ? freshestTimestamp : Date.now();
+    localStorage.setItem(LAST_SYNC_KEY, String(syncTime));
+    updateTimestamp(syncTime);
+    setSyncStatus(`Live data synced (${successful} markets)`);
+  } else {
+    const lastSuccessful = Number(localStorage.getItem(LAST_SYNC_KEY));
+    updateTimestamp(Number.isFinite(lastSuccessful) ? lastSuccessful : Date.now());
+    setSyncStatus('Live sync unavailable - showing last known values');
   }
 }
 
