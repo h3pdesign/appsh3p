@@ -3406,11 +3406,24 @@ function currentThemeMode() {
 }
 
 function tileConfigForTheme() {
+  const theme = currentThemeMode();
+  if (theme === 'light') {
+    return {
+      url: 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',
+      options: {
+        subdomains: 'abcd',
+        attribution: '&copy; OpenStreetMap contributors &copy; CARTO',
+        maxZoom: 20
+      }
+    };
+  }
+
   return {
-    url: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+    url: 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',
     options: {
-      attribution: '&copy; OpenStreetMap contributors',
-      maxZoom: 19
+      subdomains: 'abcd',
+      attribution: '&copy; OpenStreetMap contributors &copy; CARTO',
+      maxZoom: 20
     }
   };
 }
