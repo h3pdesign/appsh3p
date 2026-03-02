@@ -2162,6 +2162,15 @@ function updateTimestamp(sourceTime) {
   if (footerDate) footerDate.innerHTML = 'Data sourced from <a href="https://polymarket.com" target="_blank" rel="noopener">Polymarket</a> prediction markets. Probabilities refresh automatically every 6 hours.';
 }
 
+function readStoredSyncTime() {
+  const raw = localStorage.getItem(LAST_SYNC_KEY);
+  if (!raw) return null;
+  const parsed = Number(raw);
+  // Guard against invalid/epoch-like values (for example null -> 0).
+  if (!Number.isFinite(parsed) || parsed < 946684800000) return null; // Jan 1, 2000 UTC
+  return parsed;
+}
+
 function setSyncStatus(message) {
   const node = document.getElementById('syncStatus');
   if (node) node.textContent = `\u25c6 ${message}`;
@@ -2408,7 +2417,7 @@ async function refreshLiveData() {
     updateTimestamp(syncTime);
     setSyncStatus(`Live data synced (${successful} markets)`);
   } else {
-    const lastSuccessful = Number(localStorage.getItem(LAST_SYNC_KEY));
+    const lastSuccessful = readStoredSyncTime();
     updateTimestamp(Number.isFinite(lastSuccessful) ? lastSuccessful : Date.now());
     setSyncStatus('Live sync unavailable - showing last known values');
   }
