@@ -12,6 +12,10 @@ const SOURCES = {
     {
       source: 'Google News',
       url: 'https://news.google.com/rss/search?q=Iran+US+strike+when:1d&hl=en-US&gl=US&ceid=US:en'
+    },
+    {
+      source: 'Bing News',
+      url: 'https://www.bing.com/news/search?q=Iran+Israel+conflict&format=RSS'
     }
   ],
   ukraine_2026: [
@@ -24,6 +28,11 @@ const SOURCES = {
       url: 'https://news.google.com/rss/search?q=Russia+Ukraine+frontline+when:1d&hl=en-US&gl=US&ceid=US:en'
     }
   ]
+}
+
+const CONFLICT_KEYWORDS = {
+  iran_2026: ['iran', 'israel', 'tehran', 'khamenei', 'us strike', 'middle east'],
+  ukraine_2026: ['ukraine', 'russia', 'kyiv', 'donetsk', 'zaporizhzhia', 'black sea']
 }
 
 function decodeEntities(text) {
@@ -72,6 +81,20 @@ function dedupeAndSort(items) {
   return clean.sort((a, b) => (Date.parse(b.published_at_utc || '') || 0) - (Date.parse(a.published_at_utc || '') || 0))
 }
 
+function normalize(text) {
+  return String(text || '')
+    .toLowerCase()
+    .replace(/[^a-z0-9\s]/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim()
+}
+
+function matchesConflict(item, conflictId) {
+  const haystack = normalize(`${item.title} ${item.source}`)
+  const keywords = CONFLICT_KEYWORDS[conflictId] || []
+  return keywords.some(k => haystack.includes(normalize(k)))
+}
+
 async function fetchText(url) {
   const response = await fetch(url, { headers: { 'user-agent': USER_AGENT } })
   if (!response.ok) throw new Error(`Feed fetch failed (${response.status}) for ${url}`)
@@ -88,7 +111,8 @@ async function buildConflictNews(conflictId, entries) {
       console.error(`[${conflictId}] ${error.message}`)
     }
   }
-  return dedupeAndSort(all).slice(0, 20)
+  const filtered = all.filter(item => matchesConflict(item, conflictId))
+  return dedupeAndSort(filtered).slice(0, 20)
 }
 
 async function main() {

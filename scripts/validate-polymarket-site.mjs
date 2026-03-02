@@ -114,7 +114,8 @@ function validateConflictFeed() {
   }
 }
 
-validatePages();\nvalidateConflictFeed();\n
+validatePages();
+validateConflictFeed();
 function validateConflictNewsFeed() {
   const feedPath = path.join(baseDir, "data", "conflict-news.json");
   assertFileExists(feedPath);
@@ -140,4 +141,5 @@ function validateConflictNewsFeed() {
     }
   }
 }
-\nvalidateConflictNewsFeed();\nconsole.log("Polymarket site validation passed.");
+validateConflictNewsFeed();
+console.log("Polymarket site validation passed.");
