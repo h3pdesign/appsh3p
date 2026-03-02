@@ -19,6 +19,18 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Guard workflow syntax and config
+        id: workflow_guard
+        uses: rhysd/actionlint@v1
+        continue-on-error: true
+
+      - name: Fail fast if workflow guard fails
+        if: steps.workflow_guard.outcome == 'failure'
+        run: |
+          echo "::error::Workflow guard failed. One or more files in .github/workflows has invalid syntax or config."
+          echo "::error::Fix workflow issues first, then re-run CI."
+          exit 1
+
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
