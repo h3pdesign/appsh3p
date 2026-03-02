@@ -1824,14 +1824,17 @@ function pickMarket(markets, question) {
 async function fetchMarketByQuestion(question) {
   const key = normalize(question);
   if (!key) return null;
-  if (marketCache.has(key)) return marketCache.get(key);
+  const cached = marketCache.get(key);
+  if (cached && (Date.now() - cached.fetchedAt) < SIX_HOURS_MS) {
+    return cached.market;
+  }
 
   const url = `${POLYMARKET_API}?active=true&closed=false&archived=false&limit=25&search=${encodeURIComponent(question)}`;
-  const response = await fetch(url);
+  const response = await fetch(url, { cache: 'no-store' });
   if (!response.ok) throw new Error(`Polymarket API error: ${response.status}`);
   const markets = await response.json();
   const market = pickMarket(Array.isArray(markets) ? markets : [], question);
-  marketCache.set(key, market);
+  marketCache.set(key, { market, fetchedAt: Date.now() });
   return market;
 }
 
