@@ -3889,15 +3889,20 @@ async function refreshLiveData() {
     setSyncStatus('live', successful + ' markets synced', 'Health: Updated ' + ageText);
   } else {
     const lastSuccessful = readStoredSyncTime();
-    const fallbackTime = Number.isFinite(lastSuccessful) ? lastSuccessful : Date.now();
-    const ageMs = Date.now() - fallbackTime;
+
+    if (!Number.isFinite(lastSuccessful)) {
+      updateTimestamp(Date.now());
+      setSyncStatus('pending', 'Awaiting first successful sync', 'Health: Pending');
+      return;
+    }
+
+    const ageMs = Date.now() - lastSuccessful;
     const ageText = formatRelativeAge(Math.max(0, ageMs));
+    updateTimestamp(lastSuccessful);
 
-    updateTimestamp(fallbackTime);
-
-    if (Number.isFinite(lastSuccessful) && ageMs <= FRESH_SYNC_MAX_MS) {
+    if (ageMs <= FRESH_SYNC_MAX_MS) {
       setSyncStatus('live', 'No new fetch this cycle, using recent successful sync', 'Health: Updated ' + ageText);
-    } else if (Number.isFinite(lastSuccessful) && ageMs <= DELAYED_SYNC_MAX_MS) {
+    } else if (ageMs <= DELAYED_SYNC_MAX_MS) {
       setSyncStatus('delayed', 'Using delayed values from last successful sync', 'Health: Delayed (' + ageText + ')');
     } else {
       setSyncStatus('pending', 'Live sync stale - waiting for fresh data', 'Health: Stale (' + ageText + ')');
