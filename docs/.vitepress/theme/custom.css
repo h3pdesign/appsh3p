@@ -1686,7 +1686,7 @@ html:not(.dark) .VPDocAside {
   }
 
   .VPNavScreen {
-    z-index: 39;
+    z-index: 60 !important;
     background: var(--vp-c-bg) !important;
   }
 
