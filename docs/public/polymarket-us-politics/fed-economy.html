@@ -857,7 +857,7 @@ footer a:hover { border-bottom-color: var(--accent-gold); }
     <h1>STATE OF<br><span>US POLITICS</span></h1>
     <p class="hero-subtitle">Prediction Market Intelligence Report</p>
     <div class="hero-meta">
-      <span id="asOfDate">&#9670; As of February 25, 2026</span>
+      <span id="asOfDate">&#9670; As of latest live sync</span>
       <span>&#9670; Source: Polymarket</span>
       <span id="syncStatus" aria-live="polite">&#9670; Sync pending</span>
     </div>
@@ -1782,7 +1782,7 @@ footer a:hover { border-bottom-color: var(--accent-gold); }
     <div class="methodology reveal">
       <h3>What Are Prediction Markets?</h3>
       <p>
-        Prediction markets are exchange-traded markets where participants buy and sell contracts that pay out based on the outcome of future events. Prices reflect the crowd's aggregate probability assessment for each outcome. Unlike polls or pundit opinions, prediction markets are backed by real financial stakes — participants must put money behind their beliefs, which creates powerful incentives for accuracy. Academic research has consistently found that prediction markets outperform polls, expert panels, and statistical models at forecasting political events. The probabilities shown in this report represent the market-implied likelihood of each outcome as of February 25, 2026. Volume figures indicate total trading activity, serving as a proxy for market liquidity and information density. Higher volume generally corresponds to more reliable probability estimates.
+        Prediction markets are exchange-traded markets where participants buy and sell contracts that pay out based on the outcome of future events. Prices reflect the crowd's aggregate probability assessment for each outcome. Unlike polls or pundit opinions, prediction markets are backed by real financial stakes — participants must put money behind their beliefs, which creates powerful incentives for accuracy. Academic research has consistently found that prediction markets outperform polls, expert panels, and statistical models at forecasting political events. The probabilities shown in this report represent the market-implied likelihood of each outcome as of the latest successful live sync. Volume figures indicate total trading activity, serving as a proxy for market liquidity and information density. Higher volume generally corresponds to more reliable probability estimates.
       </p>
     </div>
   </section>
@@ -1864,6 +1864,24 @@ function marketOutcomePrice(market, outcomeName) {
 
 function formatPercent(value) {
   return `${Math.round(value)}%`;
+}
+
+function parseTimestamp(value) {
+  if (!value) return null;
+  const time = new Date(value).getTime();
+  return Number.isFinite(time) ? time : null;
+}
+
+function extractMarketTimestamp(market) {
+  if (!market) return null;
+  return parseTimestamp(
+    market.updatedAt ||
+    market.updated_at ||
+    market.lastUpdated ||
+    market.last_updated ||
+    market.createdAt ||
+    market.created_at
+  );
 }
 
 function toneClass(value) {
@@ -1953,9 +1971,9 @@ function updateVolume(card, market) {
   volumeNode.textContent = formatted;
 }
 
-function updateTimestamp() {
-  const now = new Date();
-  const formatted = now.toLocaleString(undefined, {
+function updateTimestamp(sourceTime) {
+  const timestamp = Number.isFinite(sourceTime) ? sourceTime : Date.now();
+  const formatted = new Date(timestamp).toLocaleString(undefined, {
     year: 'numeric',
     month: 'long',
     day: 'numeric',
@@ -1996,11 +2014,11 @@ async function refreshLiveData() {
   const cards = Array.from(document.querySelectorAll('.card'));
 
   try {
-    await Promise.all(cards.map(async card => {
+    const timestamps = await Promise.all(cards.map(async card => {
       const question = card.querySelector('.card-question')?.textContent?.trim();
-      if (!question) return;
+      if (!question) return null;
       const market = await fetchMarketByQuestion(question);
-      if (!market) return;
+      if (!market) return null;
 
       updateVolume(card, market);
       if (card.querySelector('.race-grid')) {
@@ -2010,9 +2028,16 @@ async function refreshLiveData() {
       } else if (card.querySelector('.prob-single')) {
         updateSingleCard(card, market);
       }
+      return extractMarketTimestamp(market);
     }));
 
-    updateTimestamp();
+    const freshestTimestamp = timestamps.reduce((latest, value) => {
+      if (!Number.isFinite(value)) return latest;
+      if (!Number.isFinite(latest) || value > latest) return value;
+      return latest;
+    }, null);
+
+    updateTimestamp(freshestTimestamp);
     setSyncStatus('Live data synced');
   } catch (error) {
     setSyncStatus('Live sync unavailable');
