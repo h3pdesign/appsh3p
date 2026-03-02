@@ -54,6 +54,7 @@ export default defineConfig({
       { text: 'Home', link: '/' },
       { text: 'Getting Started', link: '/getting-started/introduction' },
       { text: 'Apps', link: '/apps/index' },
+      { text: 'Polymarket', link: '/polymarket-us-politics/' },
       { text: 'Changelog', link: '/changelog' },
       { text: 'Policies', link: '/policies/api-stability' },
       { text: 'Art & Blog', link: 'https://h3p.me/home' },
