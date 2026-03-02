@@ -1,14 +1,128 @@
 {
-  "as_of_utc": "2026-03-02T12:56:54Z",
-  "updated_at_utc": "2026-03-02T12:57:41.988Z",
-  "source_name": "Wikipedia: 2026 Iran conflict + Twelve-Day War",
-  "source_url": "https://en.wikipedia.org/wiki/2026_Iran_conflict",
-  "iran_reported_killed": 555,
-  "iran_reported_injured": 747,
-  "israel_reported_killed": 12,
-  "israel_reported_injured": 777,
-  "us_soldiers_killed": 4,
-  "us_soldiers_seriously_injured": 5,
-  "war_2025_ballistic_missiles": 520,
-  "war_2025_drones": 950
+  "active_conflict_id": "iran_2026",
+  "updated_at_utc": "2026-03-02T13:24:07.661Z",
+  "conflicts": [
+    {
+      "id": "iran_2026",
+      "title": "Iran Conflict Monitor",
+      "subtitle": "Live casualties and projectile/operation indicators. Map and metrics refresh every 6 hours.",
+      "as_of_utc": "2026-03-02T13:22:45Z",
+      "updated_at_utc": "2026-03-02T13:24:07.660Z",
+      "source_name": "Wikipedia: 2026 Iran conflict + Twelve-Day War",
+      "source_url": "https://en.wikipedia.org/wiki/2026_Iran_conflict",
+      "map": {
+        "center": [
+          31.2,
+          49.5
+        ],
+        "zoom": 4
+      },
+      "legend": [
+        {
+          "type": "casualties",
+          "label": "Casualty concentration",
+          "color": "#ef4444"
+        },
+        {
+          "type": "projectiles",
+          "label": "Missile/drone indicator",
+          "color": "#f59e0b"
+        },
+        {
+          "type": "operations",
+          "label": "Operational impact",
+          "color": "#22c55e"
+        }
+      ],
+      "metrics": [
+        {
+          "id": "iran_killed",
+          "label": "Iran Reported Killed",
+          "value": 555
+        },
+        {
+          "id": "iran_injured",
+          "label": "Iran Reported Injured",
+          "value": 747
+        },
+        {
+          "id": "israel_killed",
+          "label": "Israel Reported Killed",
+          "value": 12
+        },
+        {
+          "id": "israel_injured",
+          "label": "Israel Reported Injured",
+          "value": 777
+        },
+        {
+          "id": "us_killed",
+          "label": "US Soldiers Killed",
+          "value": 4
+        },
+        {
+          "id": "us_seriously_injured",
+          "label": "US Soldiers Seriously Injured",
+          "value": 5
+        },
+        {
+          "id": "missiles_benchmark",
+          "label": "Ballistic Missiles (2025 Benchmark)",
+          "value": 520
+        },
+        {
+          "id": "drones_benchmark",
+          "label": "Drones (2025 Benchmark)",
+          "value": 950
+        }
+      ],
+      "map_points": [
+        {
+          "name": "Iran (national)",
+          "label": "Reported killed",
+          "value": 555,
+          "lat": 32.4279,
+          "lng": 53.688,
+          "type": "casualties",
+          "description": "Country-level reported deaths"
+        },
+        {
+          "name": "Israel (national)",
+          "label": "Reported injured",
+          "value": 777,
+          "lat": 31.0461,
+          "lng": 34.8516,
+          "type": "casualties",
+          "description": "Country-level reported injuries"
+        },
+        {
+          "name": "US force footprint (Kuwait)",
+          "label": "US military casualties",
+          "value": 9,
+          "lat": 29.3117,
+          "lng": 47.4818,
+          "type": "operations",
+          "description": "Killed + seriously injured"
+        },
+        {
+          "name": "Iran launch profile",
+          "label": "Ballistic missiles benchmark",
+          "value": 520,
+          "lat": 34.8,
+          "lng": 54,
+          "type": "projectiles",
+          "description": "2025 conflict benchmark"
+        },
+        {
+          "name": "Regional drone activity",
+          "label": "Drones benchmark",
+          "value": 950,
+          "lat": 33.5,
+          "lng": 44,
+          "type": "projectiles",
+          "description": "2025 conflict benchmark"
+        }
+      ]
+    }
+  ]
 }

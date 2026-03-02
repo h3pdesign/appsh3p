@@ -7,6 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
 <style>
 /* ========================================
    CSS Custom Properties
@@ -517,6 +518,55 @@ nav {
   color: var(--text-primary);
 }
 
+.conflict-map-wrap {
+  margin-top: 1rem;
+  border: 1px solid var(--border-subtle);
+  border-radius: 4px;
+  overflow: hidden;
+  background: rgba(255,255,255,0.02);
+}
+
+.conflict-map {
+  height: 360px;
+  width: 100%;
+}
+
+.conflict-map-status {
+  padding: 0.55rem 0.75rem;
+  font-size: 0.74rem;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  border-top: 1px solid var(--border-subtle);
+}
+
+.conflict-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem 0.8rem;
+  margin-top: 0.85rem;
+  font-size: 0.72rem;
+  color: var(--text-secondary);
+}
+
+.conflict-legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.conflict-legend-swatch {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+}
+
+.conflict-metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(185px, 1fr));
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
 /* ========================================
    Card Grid
    ======================================== */
@@ -873,6 +923,8 @@ footer a:hover { border-bottom-color: var(--accent-gold); }
   .card { padding: 1.1rem; }
 
   .executive-summary { padding: 1.5rem; }
+
+  .conflict-map { height: 300px; }
 }
 
 @media (max-width: 480px) {
@@ -946,8 +998,8 @@ footer a:hover { border-bottom-color: var(--accent-gold); }
   <section class="section" id="iran-war">
     <div class="section-header reveal">
       <div class="section-number">Top Priority</div>
-      <h2 class="section-title">Iran War Monitor</h2>
-      <p class="section-subtitle">Live conflict metrics (casualties, missile activity, and operational footprint), refreshed every 6 hours.</p>
+      <h2 class="section-title" id="conflictTitle">Conflict Monitor</h2>
+      <p class="section-subtitle" id="conflictSubtitle">Live conflict metrics (casualties, missile activity, and operational footprint), refreshed every 6 hours.</p>
     </div>
     <div class="iran-monitor reveal">
       <div class="iran-meta">
@@ -955,16 +1007,20 @@ footer a:hover { border-bottom-color: var(--accent-gold); }
         <span id="iranWarSync">&#9670; Syncing metrics...</span>
         <a id="iranWarSource" href="https://en.wikipedia.org/wiki/2026_Iran_conflict" target="_blank" rel="noopener">Source: live conflict data feed</a>
       </div>
-      <div class="iran-grid">
-        <div class="iran-stat"><div class="iran-stat-label">Iran Reported Killed</div><div class="iran-stat-value" id="iranKilled">--</div></div>
-        <div class="iran-stat"><div class="iran-stat-label">Iran Reported Injured</div><div class="iran-stat-value" id="iranInjured">--</div></div>
-        <div class="iran-stat"><div class="iran-stat-label">Israel Reported Killed</div><div class="iran-stat-value" id="israelKilled">--</div></div>
-        <div class="iran-stat"><div class="iran-stat-label">Israel Reported Injured</div><div class="iran-stat-value" id="israelInjured">--</div></div>
-        <div class="iran-stat"><div class="iran-stat-label">US Soldiers Killed</div><div class="iran-stat-value" id="usKilled">--</div></div>
-        <div class="iran-stat"><div class="iran-stat-label">US Soldiers Seriously Injured</div><div class="iran-stat-value" id="usSeriouslyInjured">--</div></div>
-        <div class="iran-stat"><div class="iran-stat-label">Ballistic Missiles (2025 War Benchmark)</div><div class="iran-stat-value" id="warBenchmarkMissiles">--</div></div>
-        <div class="iran-stat"><div class="iran-stat-label">Drones (2025 War Benchmark)</div><div class="iran-stat-value" id="warBenchmarkDrones">--</div></div>
+      <div class="conflict-metrics-grid" id="conflictMetrics">
+        <div class="iran-stat"><div class="iran-stat-label">Loading metrics</div><div class="iran-stat-value">--</div></div>
       </div>
+      <div class="conflict-map-wrap">
+        <div class="conflict-map" id="conflictMap"></div>
+        <div class="conflict-map-status" id="conflictMapStatus">Loading conflict map...</div>
+      </div>
+      <div class="conflict-legend" id="conflictLegend"></div>
+    </div>
+    <div class="methodology reveal" style="margin-top:1rem;">
+      <h3>Adaptable Conflict Template</h3>
+      <p>
+        This featured module is data-driven and can be reused for future conflicts by updating the conflict feed with a new active conflict ID, map center, metric cards, legend schema, and geotagged events. No structural HTML changes are required.
+      </p>
     </div>
   </section>
 
@@ -1902,13 +1958,16 @@ footer a:hover { border-bottom-color: var(--accent-gold); }
   </div>
 </footer>
 
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script>
 const POLYMARKET_API = 'https://gamma-api.polymarket.com/markets';
-const IRAN_WAR_METRICS_URL = '/polymarket-us-politics/data/iran-war-metrics.json';
+const CONFLICT_MONITOR_URL = '/polymarket-us-politics/data/iran-war-metrics.json';
 const SIX_HOURS_MS = 6 * 60 * 60 * 1000;
 const THEME_KEY = 'pmir-theme';
 const LAST_SYNC_KEY = 'pmir-last-successful-sync';
 const marketCache = new Map();
+let conflictMap = null;
+let conflictMarkersLayer = null;
 
 function normalize(value) {
   return String(value || '')
@@ -2110,12 +2169,6 @@ function setIranWarSync(message) {
   if (node) node.textContent = `\u25c6 ${message}`;
 }
 
-function setIranMetric(id, value) {
-  const node = document.getElementById(id);
-  if (!node) return;
-  node.textContent = formatInteger(value);
-}
-
 function updateIranWarTimestamp(asOfValue) {
   const node = document.getElementById('iranWarAsOf');
   if (!node) return;
@@ -2138,29 +2191,154 @@ function updateIranWarTimestamp(asOfValue) {
   node.textContent = `\u25c6 As of: ${formatted}`;
 }
 
+function renderConflictMetrics(metrics) {
+  const container = document.getElementById('conflictMetrics');
+  if (!container) return;
+
+  container.innerHTML = '';
+  metrics.forEach(metric => {
+    const card = document.createElement('div');
+    card.className = 'iran-stat';
+
+    const label = document.createElement('div');
+    label.className = 'iran-stat-label';
+    label.textContent = metric.label || 'Metric';
+
+    const value = document.createElement('div');
+    value.className = 'iran-stat-value';
+    value.textContent = formatInteger(metric.value);
+
+    card.appendChild(label);
+    card.appendChild(value);
+    container.appendChild(card);
+  });
+}
+
+function renderConflictLegend(legend) {
+  const container = document.getElementById('conflictLegend');
+  if (!container) return;
+  container.innerHTML = '';
+
+  legend.forEach(item => {
+    const row = document.createElement('span');
+    row.className = 'conflict-legend-item';
+
+    const swatch = document.createElement('span');
+    swatch.className = 'conflict-legend-swatch';
+    swatch.style.background = item.color || '#9b9a97';
+
+    const text = document.createElement('span');
+    text.textContent = item.label || item.type || 'Event';
+
+    row.appendChild(swatch);
+    row.appendChild(text);
+    container.appendChild(row);
+  });
+}
+
+function conflictColorMap(legend) {
+  return legend.reduce((map, item) => {
+    if (item?.type) map[item.type] = item.color || '#9b9a97';
+    return map;
+  }, {});
+}
+
+function upsertConflictMap(mapConfig, points, legend) {
+  const mapNode = document.getElementById('conflictMap');
+  const statusNode = document.getElementById('conflictMapStatus');
+  if (!mapNode || typeof L === 'undefined') {
+    if (statusNode) statusNode.textContent = 'Map library unavailable in this environment.';
+    return;
+  }
+
+  const center = Array.isArray(mapConfig?.center) ? mapConfig.center : [31.0, 48.0];
+  const zoom = Number.isFinite(mapConfig?.zoom) ? mapConfig.zoom : 4;
+
+  if (!conflictMap) {
+    conflictMap = L.map(mapNode, {
+      scrollWheelZoom: false,
+      zoomControl: true
+    }).setView(center, zoom);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; OpenStreetMap contributors'
+    }).addTo(conflictMap);
+  } else {
+    conflictMap.setView(center, zoom);
+  }
+
+  if (conflictMarkersLayer) {
+    conflictMarkersLayer.clearLayers();
+  } else {
+    conflictMarkersLayer = L.layerGroup().addTo(conflictMap);
+  }
+
+  const colorByType = conflictColorMap(legend);
+  const validPoints = points.filter(point => Number.isFinite(point.lat) && Number.isFinite(point.lng));
+
+  validPoints.forEach(point => {
+    const color = colorByType[point.type] || '#f59e0b';
+    const marker = L.circleMarker([point.lat, point.lng], {
+      radius: 7,
+      color,
+      fillColor: color,
+      fillOpacity: 0.75,
+      weight: 1
+    });
+
+    const valueLabel = Number.isFinite(point.value) ? formatInteger(point.value) : '--';
+    const popup = `<strong>${point.name || 'Event'}</strong><br>${point.label || 'Metric'}: ${valueLabel}<br>${point.description || ''}`;
+    marker.bindPopup(popup);
+    conflictMarkersLayer.addLayer(marker);
+  });
+
+  if (validPoints.length > 1) {
+    const bounds = L.latLngBounds(validPoints.map(point => [point.lat, point.lng]));
+    conflictMap.fitBounds(bounds.pad(0.15));
+  }
+
+  if (statusNode) {
+    statusNode.textContent = `Mapped events: ${validPoints.length}`;
+  }
+}
+
+function pickActiveConflict(feed) {
+  if (!feed) return null;
+  const conflicts = Array.isArray(feed.conflicts) ? feed.conflicts : [];
+  if (conflicts.length === 0) return null;
+  if (!feed.active_conflict_id) return conflicts[0];
+  return conflicts.find(conflict => conflict.id === feed.active_conflict_id) || conflicts[0];
+}
+
+function hydrateConflictHeader(conflict) {
+  const titleNode = document.getElementById('conflictTitle');
+  const subtitleNode = document.getElementById('conflictSubtitle');
+  const sourceNode = document.getElementById('iranWarSource');
+
+  if (titleNode) titleNode.textContent = conflict.title || 'Conflict Monitor';
+  if (subtitleNode) subtitleNode.textContent = conflict.subtitle || 'Live conflict metrics refreshed every 6 hours.';
+  if (sourceNode) {
+    sourceNode.textContent = `Source: ${conflict.source_name || 'live conflict data feed'}`;
+    if (conflict.source_url) sourceNode.href = conflict.source_url;
+  }
+}
+
 async function refreshIranWarMetrics() {
   setIranWarSync('Syncing metrics...');
   try {
-    const response = await fetch(`${IRAN_WAR_METRICS_URL}?t=${Date.now()}`, { cache: 'no-store' });
+    const response = await fetch(`${CONFLICT_MONITOR_URL}?t=${Date.now()}`, { cache: 'no-store' });
     if (!response.ok) throw new Error(`Iran war metrics fetch failed: ${response.status}`);
 
-    const data = await response.json();
-    setIranMetric('iranKilled', data.iran_reported_killed);
-    setIranMetric('iranInjured', data.iran_reported_injured);
-    setIranMetric('israelKilled', data.israel_reported_killed);
-    setIranMetric('israelInjured', data.israel_reported_injured);
-    setIranMetric('usKilled', data.us_soldiers_killed);
-    setIranMetric('usSeriouslyInjured', data.us_soldiers_seriously_injured);
-    setIranMetric('warBenchmarkMissiles', data.war_2025_ballistic_missiles);
-    setIranMetric('warBenchmarkDrones', data.war_2025_drones);
+    const feed = await response.json();
+    const conflict = pickActiveConflict(feed);
+    if (!conflict) throw new Error('Conflict feed missing conflicts');
 
-    const sourceNode = document.getElementById('iranWarSource');
-    if (sourceNode) {
-      if (data.source_url) sourceNode.href = data.source_url;
-      if (data.source_name) sourceNode.textContent = `Source: ${data.source_name}`;
-    }
+    hydrateConflictHeader(conflict);
+    renderConflictMetrics(Array.isArray(conflict.metrics) ? conflict.metrics : []);
+    renderConflictLegend(Array.isArray(conflict.legend) ? conflict.legend : []);
+    upsertConflictMap(conflict.map || {}, Array.isArray(conflict.map_points) ? conflict.map_points : [], Array.isArray(conflict.legend) ? conflict.legend : []);
 
-    updateIranWarTimestamp(data.as_of_utc || data.updated_at_utc);
+    updateIranWarTimestamp(conflict.as_of_utc || conflict.updated_at_utc || feed.updated_at_utc);
     setIranWarSync('Live metrics synced');
   } catch (error) {
     setIranWarSync('Live metrics unavailable');
