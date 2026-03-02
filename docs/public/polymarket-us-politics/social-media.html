@@ -62,6 +62,9 @@
   --status-delayed-fg: #fcd34d;
   --status-pending-bg: rgba(148,163,184,0.16);
   --status-pending-fg: #cbd5e1;
+  --tone-red: #ef4444;
+  --tone-amber: #f59e0b;
+  --tone-green: #22c55e;
 }
 
 :root[data-theme='light'] {
@@ -94,6 +97,9 @@
   --status-delayed-fg: #92400e;
   --status-pending-bg: rgba(100,116,139,0.16);
   --status-pending-fg: #334155;
+  --tone-red: #dc2626;
+  --tone-amber: #b45309;
+  --tone-green: #15803d;
 }
 
 /* ========================================
@@ -570,9 +576,18 @@ nav {
   transform: translateY(-2px);
 }
 
-.iran-stat-red { border-color: rgba(239,68,68,0.35); }
-.iran-stat-amber { border-color: rgba(245,158,11,0.35); }
-.iran-stat-green { border-color: rgba(34,197,94,0.35); }
+.iran-stat-red {
+  border-color: color-mix(in oklab, var(--tone-red) 45%, transparent);
+  background: linear-gradient(180deg, color-mix(in oklab, var(--tone-red) 12%, var(--bg-card)) 0%, var(--bg-card) 72%);
+}
+.iran-stat-amber {
+  border-color: color-mix(in oklab, var(--tone-amber) 45%, transparent);
+  background: linear-gradient(180deg, color-mix(in oklab, var(--tone-amber) 12%, var(--bg-card)) 0%, var(--bg-card) 72%);
+}
+.iran-stat-green {
+  border-color: color-mix(in oklab, var(--tone-green) 45%, transparent);
+  background: linear-gradient(180deg, color-mix(in oklab, var(--tone-green) 12%, var(--bg-card)) 0%, var(--bg-card) 72%);
+}
 
 .iran-stat-label {
   font-size: 0.72rem;
@@ -590,9 +605,18 @@ nav {
   color: var(--text-primary);
 }
 
-.iran-stat-value.tone-red { color: var(--red-low); }
-.iran-stat-value.tone-amber { color: var(--amber-mid); }
-.iran-stat-value.tone-green { color: var(--green-high); }
+.iran-stat-value.tone-red {
+  color: var(--tone-red);
+  text-shadow: 0 0 16px color-mix(in oklab, var(--tone-red) 28%, transparent);
+}
+.iran-stat-value.tone-amber {
+  color: var(--tone-amber);
+  text-shadow: 0 0 16px color-mix(in oklab, var(--tone-amber) 28%, transparent);
+}
+.iran-stat-value.tone-green {
+  color: var(--tone-green);
+  text-shadow: 0 0 16px color-mix(in oklab, var(--tone-green) 28%, transparent);
+}
 
 .iran-stat-meta {
   margin-top: 0.45rem;
@@ -653,15 +677,29 @@ nav {
   stroke-width: 1;
 }
 
+.conflict-trend-grid {
+  stroke: color-mix(in oklab, var(--text-muted) 20%, transparent);
+  stroke-width: 1;
+}
+
+.conflict-trend-area {
+  fill: color-mix(in oklab, var(--accent-blue) 20%, transparent);
+}
+
 .conflict-trend-line {
   fill: none;
   stroke: var(--accent-blue);
-  stroke-width: 2.2;
+  stroke-width: 2.4;
 }
 
 .conflict-trend-point {
   stroke: var(--bg-card);
-  stroke-width: 1.5;
+  stroke-width: 1.8;
+}
+
+.conflict-trend-point.current {
+  r: 5.5;
+  fill: var(--accent-teal);
 }
 
 .conflict-trend-label {
@@ -2422,6 +2460,8 @@ function updateIranWarTimestamp(asOfValue) {
 }
 
 function conflictMetricTone(metric) {
+  const direct = (metric?.tone || '').toLowerCase();
+  if (direct === 'red' || direct === 'amber' || direct === 'green') return direct;
   const probe = `${metric?.id || ''} ${metric?.label || ''}`.toLowerCase();
   if (probe.includes('killed') || probe.includes('injured') || probe.includes('casual')) return 'red';
   if (probe.includes('missile') || probe.includes('drone') || probe.includes('rocket') || probe.includes('projectile')) return 'amber';
@@ -2543,10 +2583,13 @@ function renderConflictTrend(series) {
   });
 
   const d = coords.map((p, i) => `${i === 0 ? 'M' : 'L'} ${p.x.toFixed(2)} ${p.y.toFixed(2)}`).join(' ');
+  const area = `${d} L ${coords[coords.length - 1].x.toFixed(2)} ${(height - padY).toFixed(2)} L ${coords[0].x.toFixed(2)} ${(height - padY).toFixed(2)} Z`;
 
   const circles = coords.map((p, i) => {
-    const color = i === coords.length - 1 ? 'var(--accent-teal)' : 'var(--accent-blue)';
-    return `<circle class="conflict-trend-point" cx="${p.x.toFixed(2)}" cy="${p.y.toFixed(2)}" r="4.2" fill="${color}"><title>${p.label}: ${p.value}</title></circle>`;
+    const isCurrent = i === coords.length - 1;
+    const color = isCurrent ? 'var(--accent-teal)' : 'var(--accent-blue)';
+    const cls = isCurrent ? 'conflict-trend-point current' : 'conflict-trend-point';
+    return `<circle class="${cls}" cx="${p.x.toFixed(2)}" cy="${p.y.toFixed(2)}" r="4.2" fill="${color}"><title>${p.label}: ${p.value}</title></circle>`;
   }).join('');
 
   const labels = coords.map((p, i) => {
@@ -2554,8 +2597,15 @@ function renderConflictTrend(series) {
     return `<text class="conflict-trend-label" x="${p.x.toFixed(2)}" y="${(height - 6).toFixed(2)}" text-anchor="middle">${p.label.slice(5) || p.label}</text>`;
   }).join('');
 
+  const grid = [0.25, 0.5, 0.75].map(r => {
+    const gy = (padY + innerH * r).toFixed(2);
+    return `<line class="conflict-trend-grid" x1="${padX}" y1="${gy}" x2="${width - padX}" y2="${gy}"></line>`;
+  }).join('');
+
   svg.innerHTML = `
+    ${grid}
     <line class="conflict-trend-axis" x1="${padX}" y1="${height - padY}" x2="${width - padX}" y2="${height - padY}"></line>
+    <path class="conflict-trend-area" d="${area}"></path>
     <path class="conflict-trend-line" d="${d}"></path>
     ${circles}
     ${labels}
