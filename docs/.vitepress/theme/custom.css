@@ -23,8 +23,8 @@
   --h3p-space-2: 10px;
   --h3p-space-3: 14px;
 
-  /* Compact desktop sidebar width */
-  --vp-sidebar-width: clamp(170px, 13vw, 190px);
+  /* Keep default mobile drawer width; compact width is applied on desktop only */
+  --vp-sidebar-width: 272px;
 }
 
 .dark {
@@ -141,6 +141,10 @@ body {
 
 /* Force compact layout at desktop widths */
 @media (min-width: 960px) {
+  :root {
+    --vp-sidebar-width: clamp(170px, 13vw, 190px);
+  }
+
   .VPSidebar {
     width: var(--vp-sidebar-width) !important;
   }
@@ -1679,6 +1683,15 @@ html:not(.dark) .VPDocAside {
   .VPLocalNav .menu {
     position: relative;
     z-index: 40;
+  }
+
+  .VPNavScreen {
+    z-index: 39;
+    background: var(--vp-c-bg) !important;
+  }
+
+  .VPNavScreen .container {
+    background: var(--vp-c-bg) !important;
   }
 }
 
