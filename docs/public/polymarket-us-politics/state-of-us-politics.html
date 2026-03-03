@@ -2580,8 +2580,10 @@ const ONE_HOUR_MS = 60 * 60 * 1000;
 const LIVE_FETCH_TIMEOUT_MS = 8000;
 const LIVE_MARKET_INTERVAL_MS = 15 * 60 * 1000;
 const SNAPSHOT_CACHE_TTL_MS = 5 * 60 * 1000;
+const MARKET_ID_MAP_CACHE_TTL_MS = 15 * 60 * 1000;
+const SUMMARY_STATE_CACHE_TTL_MS = 15 * 60 * 1000;
 const CONFLICT_NEWS_INTERVAL_MS = 10 * 60 * 1000;
-const CONFLICT_MONITOR_INTERVAL_MS = ONE_HOUR_MS;
+const CONFLICT_MONITOR_INTERVAL_MS = 10 * 60 * 1000;
 const THEME_KEY = 'pmir-theme';
 const THEME_MODE_KEY = 'pmir-theme-mode';
 const LAST_SYNC_KEY = 'pmir-last-successful-sync';
@@ -2709,9 +2711,11 @@ function similarityScore(a, b) {
 }
 
 let marketIdMapPromise = null;
+let marketIdMapFetchedAt = 0;
 let marketSnapshotPromise = null;
 let marketSnapshotFetchedAt = 0;
 let summaryStatePromise = null;
+let summaryStateFetchedAt = 0;
 
 async function fetchWithTimeout(url, options = {}, timeoutMs = LIVE_FETCH_TIMEOUT_MS) {
   const controller = new AbortController();
@@ -2724,8 +2728,10 @@ async function fetchWithTimeout(url, options = {}, timeoutMs = LIVE_FETCH_TIMEOU
 }
 
 async function loadMarketIdMap() {
-  if (!marketIdMapPromise) {
-    marketIdMapPromise = fetchWithTimeout(MARKET_ID_MAP_URL + '?t=' + Date.now(), { cache: 'no-store' })
+  const now = Date.now();
+  if (!marketIdMapPromise || (now - marketIdMapFetchedAt) > MARKET_ID_MAP_CACHE_TTL_MS) {
+    marketIdMapFetchedAt = now;
+    marketIdMapPromise = fetchWithTimeout(MARKET_ID_MAP_URL + '?t=' + now, { cache: 'no-store' })
       .then(response => response.ok ? response.json() : { entries: [] })
       .catch(() => ({ entries: [] }));
   }
@@ -2753,8 +2759,10 @@ async function readSnapshotSyncTime() {
   const snapshotSyncTime = parseTimestamp(snapshot?.updated_at_utc || snapshot?.as_of_utc || null);
   if (Number.isFinite(snapshotSyncTime)) return snapshotSyncTime;
 
-  if (!summaryStatePromise) {
-    summaryStatePromise = fetchWithTimeout(DAILY_SUMMARY_STATE_URL + '?t=' + Date.now(), { cache: 'no-store' })
+  const now = Date.now();
+  if (!summaryStatePromise || (now - summaryStateFetchedAt) > SUMMARY_STATE_CACHE_TTL_MS) {
+    summaryStateFetchedAt = now;
+    summaryStatePromise = fetchWithTimeout(DAILY_SUMMARY_STATE_URL + '?t=' + now, { cache: 'no-store' })
       .then(response => response.ok ? response.json() : null)
       .catch(() => null);
   }
@@ -2862,9 +2870,9 @@ function parseTimestamp(value) {
   return Number.isFinite(time) ? time : null;
 }
 
-function extractMarketTimestamp(market) {
-  if (!market) return null;
-  return parseTimestamp(
+function extractMarketTimestamp(market, fallbackTime = null) {
+  if (!market) return Number.isFinite(fallbackTime) ? fallbackTime : null;
+  const direct = parseTimestamp(
     market.updatedAt ||
     market.updated_at ||
     market.lastUpdated ||
@@ -2872,6 +2880,8 @@ function extractMarketTimestamp(market) {
     market.createdAt ||
     market.created_at
   );
+  if (Number.isFinite(direct)) return direct;
+  return Number.isFinite(fallbackTime) ? fallbackTime : null;
 }
 
 function toneClass(value) {
@@ -4278,7 +4288,7 @@ async function refreshLiveData() {
         updateSingleCard(card, market);
       }
 
-      return { ok: true, timestamp: extractMarketTimestamp(market) };
+      return { ok: true, timestamp: extractMarketTimestamp(market, snapshotSyncTime) };
     } catch (error) {
       console.error(error);
       return { ok: false, timestamp: null };
