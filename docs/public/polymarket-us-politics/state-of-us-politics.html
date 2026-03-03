@@ -3239,6 +3239,25 @@ function setSyncStatus(state, detail, labelOverride) {
         : 'Waiting for live sync');
 }
 
+function refreshSyncStatusAge() {
+  const node = document.getElementById('syncStatus');
+  if (!node || node.classList.contains('status-pending')) return;
+
+  const syncTime = readStoredSyncTime();
+  if (!Number.isFinite(syncTime)) return;
+
+  const ageMs = Math.max(0, Date.now() - syncTime);
+  const ageText = formatRelativeAge(ageMs);
+
+  if (ageMs <= FRESH_SYNC_MAX_MS) {
+    setSyncStatus('live', 'Last successful sync age updated', 'Health: Updated ' + ageText);
+  } else if (ageMs <= DELAYED_SYNC_MAX_MS) {
+    setSyncStatus('delayed', 'Using delayed values from last successful sync', 'Health: Delayed (' + ageText + ')');
+  } else {
+    setSyncStatus('error', 'Live sync stale - waiting for fresh data', 'Health: Stale (' + ageText + ')');
+  }
+}
+
 function formatTickerTime(value) {
   const ts = parseTimestamp(value);
   if (!Number.isFinite(ts)) return '--';
@@ -4454,8 +4473,14 @@ initMapResetButtons();
 refreshLiveData();
 refreshConflictMonitors();
 refreshConflictNews();
+refreshSyncStatusAge();
 
 setInterval(refreshLiveData, LIVE_MARKET_INTERVAL_MS);
+setInterval(refreshSyncStatusAge, 60 * 1000);
+document.addEventListener('visibilitychange', () => {
+  if (!document.hidden) refreshSyncStatusAge();
+});
+window.addEventListener('focus', refreshSyncStatusAge);
 
 window.PMIRCookieConsent?.onChange(() => {
   applyTheme(preferredTheme());
