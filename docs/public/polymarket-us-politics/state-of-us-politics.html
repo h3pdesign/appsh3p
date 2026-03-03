@@ -3414,39 +3414,35 @@ function conflictMetricTone(metric) {
   return 'green';
 }
 
-function normalizeSourceLabel(value) {
-  return normalize(String(value || '').replace(/^source\s*\d*\s*:\s*/i, ''));
-}
+function classifyScopeCategory(scopeValue) {
+  const text = String(scopeValue || '').trim();
+  const probe = normalize(text);
 
-function collectHeaderSources(conflict) {
-  const values = [
-    conflict?.source_name,
-    conflict?.secondary_source_name,
-    conflict?.tertiary_source_name,
-    conflict?.quaternary_source_name
-  ];
-
-  const set = new Set();
-  values.forEach(value => {
-    const normalized = normalizeSourceLabel(value);
-    if (normalized) set.add(normalized);
-  });
-  return set;
-}
-
-function scopeColorForIndex(index) {
-  const palette = ['var(--tone-red)', 'var(--tone-amber)', 'var(--tone-green)', 'var(--accent-blue)', 'var(--accent-purple)', 'var(--accent-teal)'];
-  return palette[Math.abs(index) % palette.length];
+  if (!probe) return null;
+  if (probe.includes('benchmark') || probe.includes('historical')) {
+    return { key: 'benchmark', label: 'Benchmark / Historical', color: 'var(--accent-purple)' };
+  }
+  if (probe.includes('7 day') || probe.includes('7day') || probe.includes('operational') || probe.includes('intercept') || probe.includes('impact incidents')) {
+    return { key: 'operational', label: 'Operational (7D)', color: 'var(--tone-amber)' };
+  }
+  if (probe.includes('aggregate') || probe.includes('source mixed') || probe.includes('mixed civilian military')) {
+    return { key: 'aggregate', label: 'Aggregate Mixed', color: 'var(--accent-blue)' };
+  }
+  if (probe.includes('reported')) {
+    return { key: 'reported', label: 'Reported Totals', color: 'var(--tone-red)' };
+  }
+  return { key: 'other', label: 'Other Scope', color: 'var(--tone-green)' };
 }
 
 function buildScopePalette(metrics) {
-  const palette = new Map();
+  const categories = new Map();
   (Array.isArray(metrics) ? metrics : []).forEach(metric => {
-    const scope = String(metric?.scope || metric?.definition || '').trim();
-    if (!scope || palette.has(scope)) return;
-    palette.set(scope, scopeColorForIndex(palette.size));
+    const scopeRaw = metric?.scope || metric?.definition || '';
+    const category = classifyScopeCategory(scopeRaw);
+    if (!category || categories.has(category.key)) return;
+    categories.set(category.key, category);
   });
-  return palette;
+  return categories;
 }
 
 function renderScopeLegend(scopePalette, legendId) {
@@ -3456,16 +3452,16 @@ function renderScopeLegend(scopePalette, legendId) {
   node.innerHTML = '';
   if (!scopePalette || scopePalette.size === 0) return;
 
-  scopePalette.forEach((color, scope) => {
+  scopePalette.forEach(category => {
     const item = document.createElement('span');
     item.className = 'metric-scope-legend-item';
 
     const dot = document.createElement('span');
     dot.className = 'metric-scope-dot';
-    dot.style.background = color;
+    dot.style.background = category.color;
 
     const text = document.createElement('span');
-    text.textContent = scope;
+    text.textContent = category.label;
 
     item.appendChild(dot);
     item.appendChild(text);
@@ -3477,7 +3473,6 @@ function renderConflictMetrics(metrics, containerId = 'conflictMetrics', options
   const container = document.getElementById(containerId);
   if (!container) return;
 
-  const headerSourceSet = options.headerSourceSet instanceof Set ? options.headerSourceSet : new Set();
   const scopePalette = buildScopePalette(metrics);
   renderScopeLegend(scopePalette, options.scopeLegendId);
 
@@ -3509,37 +3504,8 @@ function renderConflictMetrics(metrics, containerId = 'conflictMetrics', options
     value.className = 'iran-stat-value tone-' + tone;
     value.textContent = formatInteger(metric.value);
 
-    const source = metric.source || '';
-    const normalizedMetricSource = normalizeSourceLabel(source);
-    const showSource = normalizedMetricSource && !headerSourceSet.has(normalizedMetricSource);
-
     card.appendChild(labelRow);
     card.appendChild(value);
-
-    if (showSource) {
-      const meta = document.createElement('div');
-      meta.className = 'iran-stat-meta';
-      meta.textContent = 'Source: ' + source;
-      card.appendChild(meta);
-    }
-
-    const scope = String(metric.scope || metric.definition || '').trim();
-    if (scope) {
-      const scopeNode = document.createElement('div');
-      scopeNode.className = 'iran-stat-meta metric-scope';
-
-      const dot = document.createElement('span');
-      dot.className = 'metric-scope-dot';
-      dot.style.background = scopePalette.get(scope) || 'var(--text-muted)';
-
-      const scopeText = document.createElement('span');
-      scopeText.className = 'metric-scope-text';
-      scopeText.textContent = scope;
-
-      scopeNode.appendChild(dot);
-      scopeNode.appendChild(scopeText);
-      card.appendChild(scopeNode);
-    }
     container.appendChild(card);
   });
 }
@@ -4289,7 +4255,7 @@ async function refreshUkraineMetrics() {
     }
 
     hydrateUkraineHeader(conflict);
-    renderConflictMetrics(Array.isArray(conflict.metrics) ? conflict.metrics : [], 'ukraineMetrics', { headerSourceSet: collectHeaderSources(conflict), scopeLegendId: 'ukraineScopeLegend' });
+    renderConflictMetrics(Array.isArray(conflict.metrics) ? conflict.metrics : [], 'ukraineMetrics', { scopeLegendId: 'ukraineScopeLegend' });
     renderConflictLegend(Array.isArray(conflict.legend) ? conflict.legend : [], 'ukraineLegend', 'ukraine');
     renderConflictTimeline(Array.isArray(conflict.timeline) ? conflict.timeline : [], 'ukraineTimelineList');
     const ukraineSeries = Array.isArray(conflict.daily_series) ? conflict.daily_series : [];
@@ -4347,7 +4313,7 @@ async function refreshIranWarMetrics() {
     if (!conflict) throw new Error('Conflict feed missing conflicts');
 
     hydrateConflictHeader(conflict);
-    renderConflictMetrics(Array.isArray(conflict.metrics) ? conflict.metrics : [], 'conflictMetrics', { headerSourceSet: collectHeaderSources(conflict), scopeLegendId: 'conflictScopeLegend' });
+    renderConflictMetrics(Array.isArray(conflict.metrics) ? conflict.metrics : [], 'conflictMetrics', { scopeLegendId: 'conflictScopeLegend' });
     renderConflictLegend(Array.isArray(conflict.legend) ? conflict.legend : [], 'conflictLegend', 'iran');
     renderConflictTimeline(Array.isArray(conflict.timeline) ? conflict.timeline : []);
     const iranSeries = Array.isArray(conflict.daily_series) ? conflict.daily_series : [];
