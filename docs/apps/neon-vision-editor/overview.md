@@ -48,6 +48,13 @@ head:
 - [Latest GitHub Release (v0.4.32)](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v0.4.32)
 - [Code Examples](/apps/code-examples)
 
+<a href="https://www.producthunt.com/products/neon-vision-editor?embed=true&utm_source=badge-featured&utm_medium=badge&utm_campaign=badge-neon-vision-editor" target="_blank" rel="noopener noreferrer" aria-label="Neon Vision Editor on Product Hunt">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1079678&theme=dark&t=1772536380711" />
+    <img alt="Neon Vision Editor - A lightweight and modern text editor for MacOS | Product Hunt" width="250" height="54" src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1079678&theme=light&t=1772536380711" />
+  </picture>
+</a>
+
 ## Application Purpose
 
 Neon Vision Editor is a native writing and coding editor for Apple platforms. Its purpose is to provide a fast, distraction-light editing environment with syntax highlighting, optional AI assistance, and consistent behavior across macOS, iPadOS, and iOS.
