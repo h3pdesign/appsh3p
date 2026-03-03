@@ -2581,6 +2581,7 @@ const SNAPSHOT_CACHE_TTL_MS = 5 * 60 * 1000;
 const CONFLICT_NEWS_INTERVAL_MS = 10 * 60 * 1000;
 const CONFLICT_MONITOR_INTERVAL_MS = ONE_HOUR_MS;
 const THEME_KEY = 'pmir-theme';
+const THEME_MODE_KEY = 'pmir-theme-mode';
 const LAST_SYNC_KEY = 'pmir-last-successful-sync';
 const FRESH_SYNC_MAX_MS = 2 * ONE_HOUR_MS;
 const DELAYED_SYNC_MAX_MS = 8 * ONE_HOUR_MS;
@@ -3946,10 +3947,17 @@ function applyTheme(theme) {
   replaceMapBaseLayer(ukraineMap, 'ukraine');
 }
 
-function preferredTheme() {
+function themeModeIsManual() {
   const allowPrefs = !window.PMIRCookieConsent || window.PMIRCookieConsent.hasConsent('preferences');
-  const stored = allowPrefs ? localStorage.getItem(THEME_KEY) : null;
-  if (stored === 'light' || stored === 'dark') return stored;
+  if (!allowPrefs) return false;
+  return localStorage.getItem(THEME_MODE_KEY) === 'manual';
+}
+
+function preferredTheme() {
+  if (themeModeIsManual()) {
+    const stored = localStorage.getItem(THEME_KEY);
+    if (stored === 'light' || stored === 'dark') return stored;
+  }
   return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
 }
 
@@ -4051,14 +4059,13 @@ themeToggle?.addEventListener('click', () => {
 
   if (allowPrefs) {
     localStorage.setItem(THEME_KEY, next);
+    localStorage.setItem(THEME_MODE_KEY, 'manual');
   }
   applyTheme(next);
 });
 
 systemThemeMedia.addEventListener('change', event => {
-  const allowPrefs = !window.PMIRCookieConsent || window.PMIRCookieConsent.hasConsent('preferences');
-  const stored = allowPrefs ? localStorage.getItem(THEME_KEY) : null;
-  if (stored === 'light' || stored === 'dark') return;
+  if (themeModeIsManual()) return;
   applyTheme(event.matches ? 'light' : 'dark');
 });
 

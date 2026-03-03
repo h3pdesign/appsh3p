@@ -1968,6 +1968,7 @@ const POLYMARKET_API = 'https://gamma-api.polymarket.com/markets';
 const CONFLICT_MONITOR_URL = '/polymarket-us-politics/data/iran-war-metrics.json';
 const ONE_HOUR_MS = 60 * 60 * 1000;
 const THEME_KEY = 'pmir-theme';
+const THEME_MODE_KEY = 'pmir-theme-mode';
 const LAST_SYNC_KEY = 'pmir-last-successful-sync';
 const marketCache = new Map();
 let conflictMap = null;
@@ -2376,9 +2377,15 @@ function applyTheme(theme) {
   themeToggle.disabled = false;
 }
 
+function themeModeIsManual() {
+  return localStorage.getItem(THEME_MODE_KEY) === 'manual';
+}
+
 function preferredTheme() {
-  const stored = localStorage.getItem(THEME_KEY);
-  if (stored === 'light' || stored === 'dark') return stored;
+  if (themeModeIsManual()) {
+    const stored = localStorage.getItem(THEME_KEY);
+    if (stored === 'light' || stored === 'dark') return stored;
+  }
   return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
 }
 
@@ -2443,12 +2450,12 @@ themeToggle?.addEventListener('click', () => {
   const current = document.documentElement.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
   const next = current === 'light' ? 'dark' : 'light';
   localStorage.setItem(THEME_KEY, next);
+  localStorage.setItem(THEME_MODE_KEY, 'manual');
   applyTheme(next);
 });
 
 systemThemeMedia.addEventListener('change', event => {
-  const stored = localStorage.getItem(THEME_KEY);
-  if (stored === 'light' || stored === 'dark') return;
+  if (themeModeIsManual()) return;
   applyTheme(event.matches ? 'light' : 'dark');
 });
 
