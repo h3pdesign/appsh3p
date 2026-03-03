@@ -2,15 +2,23 @@ name: Update Polymarket snapshot
 
 on:
   schedule:
-    - cron: '35 * * * *'
+    # GitHub cron is UTC + best-effort; run twice per hour to reduce "stale" windows.
+    - cron: "5 * * * *"
+    - cron: "35 * * * *"
   workflow_dispatch:
 
 permissions:
   contents: write
 
+concurrency:
+  group: update-polymarket-snapshot
+  cancel-in-progress: true
+
 jobs:
   update-polymarket-snapshot:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -28,23 +36,31 @@ jobs:
 
       - name: Commit and push if changed
         run: |
-          if git diff --quiet docs/public/polymarket-us-politics/data/polymarket-market-snapshot.json; then
-            echo "No snapshot change"
+          SNAP="docs/public/polymarket-us-politics/data/polymarket-market-snapshot.json"
+          META="docs/public/polymarket-us-politics/data/polymarket-snapshot-meta.json"
+
+          if git diff --quiet -- "$SNAP" "$META"; then
+            echo "No snapshot/meta change"
             exit 0
           fi
+
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add docs/public/polymarket-us-politics/data/polymarket-market-snapshot.json
-          git commit -m "Update Polymarket market snapshot"
+
+          git add "$SNAP" "$META"
+          git commit -m "Update Polymarket snapshot"
+
           for attempt in 1 2 3; do
             if git push; then
               echo "Push succeeded on attempt ${attempt}"
               exit 0
             fi
+
             if [ "${attempt}" -eq 3 ]; then
               echo "Push failed after ${attempt} attempts"
               exit 1
             fi
+
             echo "Push rejected (attempt ${attempt}), rebasing and retrying..."
             git pull --rebase origin main
           done
