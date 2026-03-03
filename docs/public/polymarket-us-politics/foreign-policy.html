@@ -4258,9 +4258,7 @@ async function refreshLiveData() {
   const hasSnapshotSync = Number.isFinite(snapshotSyncTime);
 
   if (successful > 0) {
-    const syncTime = hasSnapshotSync
-      ? snapshotSyncTime
-      : (Number.isFinite(freshestTimestamp) ? freshestTimestamp : Date.now());
+    const syncTime = Date.now();
 
     localStorage.setItem(LAST_SYNC_KEY, String(syncTime));
     updateTimestamp(syncTime);
