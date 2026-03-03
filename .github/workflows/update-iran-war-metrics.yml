@@ -36,4 +36,15 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add docs/public/polymarket-us-politics/data/iran-war-metrics.json
           git commit -m "Update Iran war metrics"
-          git push
+          for attempt in 1 2 3; do
+            if git push; then
+              echo "Push succeeded on attempt ${attempt}"
+              exit 0
+            fi
+            if [ "${attempt}" -eq 3 ]; then
+              echo "Push failed after ${attempt} attempts"
+              exit 1
+            fi
+            echo "Push rejected (attempt ${attempt}), rebasing and retrying..."
+            git pull --rebase origin main
+          done
