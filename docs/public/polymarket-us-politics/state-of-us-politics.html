@@ -3582,7 +3582,7 @@ function formatMetricNumber(value) {
 }
 
 function formatMetricDelta(delta) {
-  if (!Number.isFinite(delta)) return { text: 'n/a', cls: 'metric-delta-flat' };
+  if (!Number.isFinite(delta)) return { text: 'new', cls: 'metric-delta-flat' };
   if (delta > 0) return { text: '+' + Math.round(delta), cls: 'metric-delta-up' };
   if (delta < 0) return { text: String(Math.round(delta)), cls: 'metric-delta-down' };
   return { text: '0', cls: 'metric-delta-flat' };
@@ -3734,7 +3734,7 @@ function renderConflictMetrics(metrics, containerId = 'conflictMetrics', options
       const deltaFmt = formatMetricDelta(delta);
       const deltaNode = document.createElement('div');
       deltaNode.className = 'metric-delta ' + deltaFmt.cls;
-      deltaNode.textContent = deltaFmt.text + ' vs prev';
+      deltaNode.textContent = deltaFmt.text === 'new' ? 'new' : (deltaFmt.text + ' vs prev');
 
       valueRow.appendChild(value);
       valueRow.appendChild(deltaNode);
