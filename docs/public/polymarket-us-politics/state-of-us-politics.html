@@ -1446,13 +1446,13 @@ footer a:hover { border-bottom-color: var(--accent-gold); }
       <li><a href="/polymarket-us-politics/state-of-us-politics.html#iran-war">Iran War Monitor</a></li>
       <li><a href="/polymarket-us-politics/state-of-us-politics.html#ukraine-war">Ukraine War Monitor</a></li>
       <li><a href="/polymarket-us-politics/state-of-us-politics.html">Summary</a></li>
-      <li><a href="/polymarket-us-politics/foreign-policy.html">Foreign Policy</a></li>
-      <li><a href="/polymarket-us-politics/2028-race.html">2028 Race</a></li>
-      <li><a href="/polymarket-us-politics/trump.html">Trump</a></li>
-      <li><a href="/polymarket-us-politics/fed-economy.html">Fed & Economy</a></li>
-      <li><a href="/polymarket-us-politics/midterms.html">Midterms</a></li>
-      <li><a href="/polymarket-us-politics/congress.html">Congress</a></li>
-      <li><a href="/polymarket-us-politics/legal.html">Legal</a></li>
+      <li><a href="/polymarket-us-politics/state-of-us-politics.html?focus=foreign">Foreign Policy</a></li>
+      <li><a href="/polymarket-us-politics/state-of-us-politics.html?focus=race">2028 Race</a></li>
+      <li><a href="/polymarket-us-politics/state-of-us-politics.html?focus=trump">Trump</a></li>
+      <li><a href="/polymarket-us-politics/state-of-us-politics.html?focus=fed">Fed & Economy</a></li>
+      <li><a href="/polymarket-us-politics/state-of-us-politics.html?focus=midterms">Midterms</a></li>
+      <li><a href="/polymarket-us-politics/state-of-us-politics.html?focus=congress">Congress</a></li>
+      <li><a href="/polymarket-us-politics/state-of-us-politics.html?focus=legal">Legal</a></li>
     </ul>
     <div class="nav-controls">
       <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to light mode" aria-pressed="false">Light mode</button>
@@ -1470,14 +1470,14 @@ footer a:hover { border-bottom-color: var(--accent-gold); }
   <a href="/polymarket-us-politics/state-of-us-politics.html#iran-war" class="mobile-link">Iran War Monitor</a>
   <a href="/polymarket-us-politics/state-of-us-politics.html#ukraine-war" class="mobile-link">Ukraine War Monitor</a>
   <a href="/polymarket-us-politics/state-of-us-politics.html" class="mobile-link">Executive Summary</a>
-  <a href="/polymarket-us-politics/foreign-policy.html" class="mobile-link">Foreign Policy & Military</a>
-  <a href="/polymarket-us-politics/2028-race.html" class="mobile-link">2028 Presidential Race</a>
-  <a href="/polymarket-us-politics/trump.html" class="mobile-link">Trump Presidency</a>
-  <a href="/polymarket-us-politics/fed-economy.html" class="mobile-link">Federal Reserve & Economy</a>
-  <a href="/polymarket-us-politics/midterms.html" class="mobile-link">2026 Midterm Elections</a>
-  <a href="/polymarket-us-politics/congress.html" class="mobile-link">Congress & Legislation</a>
-  <a href="/polymarket-us-politics/legal.html" class="mobile-link">Legal & Miscellaneous</a>
-  <a href="/polymarket-us-politics/social-media.html" class="mobile-link">Social Media Tracker</a>
+  <a href="/polymarket-us-politics/state-of-us-politics.html?focus=foreign" class="mobile-link">Foreign Policy & Military</a>
+  <a href="/polymarket-us-politics/state-of-us-politics.html?focus=race" class="mobile-link">2028 Presidential Race</a>
+  <a href="/polymarket-us-politics/state-of-us-politics.html?focus=trump" class="mobile-link">Trump Presidency</a>
+  <a href="/polymarket-us-politics/state-of-us-politics.html?focus=fed" class="mobile-link">Federal Reserve & Economy</a>
+  <a href="/polymarket-us-politics/state-of-us-politics.html?focus=midterms" class="mobile-link">2026 Midterm Elections</a>
+  <a href="/polymarket-us-politics/state-of-us-politics.html?focus=congress" class="mobile-link">Congress & Legislation</a>
+  <a href="/polymarket-us-politics/state-of-us-politics.html?focus=legal" class="mobile-link">Legal & Miscellaneous</a>
+  <a href="/polymarket-us-politics/state-of-us-politics.html?focus=social" class="mobile-link">Social Media Tracker</a>
 </div>
 
 <div class="container">
@@ -4393,6 +4393,7 @@ document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 // ========================================
 // Active nav link (desktop + mobile)
 // ========================================
+const queryFocus = new URLSearchParams(window.location.search).get('focus') || '';
 const currentPath = window.location.pathname.replace(/\/$/, '');
 const allNavLinks = document.querySelectorAll('.nav-links a, .mobile-menu a.mobile-link');
 
@@ -4402,18 +4403,19 @@ allNavLinks.forEach(link => {
 
   const absolute = new URL(href, window.location.origin);
   const linkPath = absolute.pathname.replace(/\/$/, '');
+  const linkFocus = absolute.searchParams.get('focus') || '';
   const linkHash = absolute.hash;
 
   const isPathMatch = linkPath === currentPath;
+  const isFocusMatch = linkFocus ? linkFocus === queryFocus : !queryFocus;
   const isHashMatch = linkHash && window.location.hash && linkHash === window.location.hash;
 
-  if (isPathMatch || isHashMatch) {
+  if ((isPathMatch && isFocusMatch) || isHashMatch) {
     link.classList.add('active');
     if (link.classList.contains('mobile-link')) link.setAttribute('aria-current', 'page');
   }
 });
 
-const queryFocus = new URLSearchParams(window.location.search).get('focus');
 const focusMap = { iran: 'iran-war', ukraine: 'ukraine-war', summary: 'summary', foreign: 'foreign', race: 'presidential', trump: 'trump', fed: 'fed', midterms: 'midterms', congress: 'congress', legal: 'legal', social: 'social', methodology: 'methodology' };
 const focusSection = focusMap[queryFocus] || document.body.dataset.focusSection;
 if (focusSection) {
