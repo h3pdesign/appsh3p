@@ -520,10 +520,22 @@ nav {
   font-family: var(--font-mono);
 }
 
-.metric-scope {
-  display: inline-flex;
-  align-items: flex-start;
-  gap: 0.42rem;
+.metric-confidence-low {
+  color: var(--tone-green);
+  border-color: color-mix(in oklab, var(--tone-green) 50%, transparent);
+  background: color-mix(in oklab, var(--tone-green) 14%, transparent);
+}
+
+.metric-confidence-medium {
+  color: var(--tone-amber);
+  border-color: color-mix(in oklab, var(--tone-amber) 50%, transparent);
+  background: color-mix(in oklab, var(--tone-amber) 14%, transparent);
+}
+
+.metric-confidence-high {
+  color: var(--tone-red);
+  border-color: color-mix(in oklab, var(--tone-red) 50%, transparent);
+  background: color-mix(in oklab, var(--tone-red) 14%, transparent);
 }
 
 .metric-scope-dot {
@@ -3483,7 +3495,11 @@ function renderConflictMetrics(metrics, containerId = 'conflictMetrics', options
     label.textContent = metric.label || 'Metric';
 
     const confidenceBadge = document.createElement('span');
+    const confidenceLabel = String(metric.confidence || 'n/a').toLowerCase();
     confidenceBadge.className = 'metric-confidence-badge';
+    if (confidenceLabel === 'low' || confidenceLabel === 'medium' || confidenceLabel === 'high') {
+      confidenceBadge.classList.add('metric-confidence-' + confidenceLabel);
+    }
     confidenceBadge.textContent = metric.confidence || 'n/a';
 
     labelRow.appendChild(label);
