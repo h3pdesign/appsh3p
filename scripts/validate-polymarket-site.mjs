@@ -3,8 +3,9 @@ import path from "node:path";
 
 const baseDir = path.join("docs", "public", "polymarket-us-politics");
 
-const pages = [
-  "state-of-us-politics.html",
+const centralPage = "state-of-us-politics.html";
+
+const wrapperPages = [
   "foreign-policy.html",
   "2028-race.html",
   "trump.html",
@@ -15,7 +16,9 @@ const pages = [
   "social-media.html",
 ];
 
-const requiredPageSnippets = [
+const pages = [centralPage, ...wrapperPages];
+
+const requiredCentralPageSnippets = [
   "<meta name=\"description\"",
   "<link rel=\"canonical\"",
   "id=\"syncStatus\"",
@@ -29,6 +32,13 @@ const requiredPageSnippets = [
   "renderConflictTicker(",
   "POLYMARKET_SNAPSHOT_URL",
   "loadPolymarketSnapshot(",
+];
+
+const requiredWrapperSnippets = [
+  "<meta name=\"description\"",
+  "<link rel=\"canonical\"",
+  "<meta http-equiv=\"refresh\"",
+  "/polymarket-us-politics/state-of-us-politics.html?focus=",
 ];
 
 function fail(message) {
@@ -48,7 +58,11 @@ function validatePages() {
     assertFileExists(pagePath);
     const html = fs.readFileSync(pagePath, "utf8");
 
-    for (const snippet of requiredPageSnippets) {
+    const requiredSnippets = page === centralPage
+      ? requiredCentralPageSnippets
+      : requiredWrapperSnippets;
+
+    for (const snippet of requiredSnippets) {
       if (!html.includes(snippet)) {
         fail(`${page} is missing required snippet: ${snippet}`);
       }
