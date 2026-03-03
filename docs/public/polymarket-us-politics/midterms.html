@@ -3854,8 +3854,20 @@ function upsertConflictMap(mapConfig, points, legend, config = {}) {
     : sourcePoints;
 
   const colorByType = conflictColorMap(moduleState ? moduleState.legend : legend);
-  const validPoints = filteredPoints.filter(point => Number.isFinite(point.lat) && Number.isFinite(point.lng));
-  const separatedPoints = separateMapPoints(validPoints, 0.22);
+  const normalizedFilteredPoints = filteredPoints.map(point => ({
+    ...point,
+    lat: Number(point?.lat),
+    lng: Number(point?.lng)
+  }));
+  const validPoints = normalizedFilteredPoints.filter(point => Number.isFinite(point.lat) && Number.isFinite(point.lng));
+  const fallbackPoints = validPoints.length === 0
+    ? sourcePoints
+        .map(point => ({ ...point, lat: Number(point?.lat), lng: Number(point?.lng) }))
+        .filter(point => Number.isFinite(point.lat) && Number.isFinite(point.lng))
+    : validPoints;
+  const separatedPoints = typeof separateMapPoints === 'function'
+    ? separateMapPoints(fallbackPoints, 0.22)
+    : fallbackPoints.map(point => ({ ...point, displayLat: point.lat, displayLng: point.lng }));
 
   separatedPoints.forEach(point => {
     const color = colorByType[point.type] || '#f59e0b';
@@ -3882,7 +3894,7 @@ function upsertConflictMap(mapConfig, points, legend, config = {}) {
     if (moduleState) moduleState.bounds = null;
   }
 
-  if (statusNode) statusNode.textContent = 'Mapped events: ' + validPoints.length;
+  if (statusNode) statusNode.textContent = 'Mapped events: ' + separatedPoints.length;
 
   if (moduleName === 'ukraine') {
     ukraineMap = mapRef;
