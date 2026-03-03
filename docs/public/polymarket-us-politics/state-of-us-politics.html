@@ -3363,9 +3363,31 @@ function conflictMetricTone(metric) {
   return 'green';
 }
 
-function renderConflictMetrics(metrics, containerId = 'conflictMetrics') {
+function normalizeSourceLabel(value) {
+  return normalize(String(value || '').replace(/^source\s*\d*\s*:\s*/i, ''));
+}
+
+function collectHeaderSources(conflict) {
+  const values = [
+    conflict?.source_name,
+    conflict?.secondary_source_name,
+    conflict?.tertiary_source_name,
+    conflict?.quaternary_source_name
+  ];
+
+  const set = new Set();
+  values.forEach(value => {
+    const normalized = normalizeSourceLabel(value);
+    if (normalized) set.add(normalized);
+  });
+  return set;
+}
+
+function renderConflictMetrics(metrics, containerId = 'conflictMetrics', options = {}) {
   const container = document.getElementById(containerId);
   if (!container) return;
+
+  const headerSourceSet = options.headerSourceSet instanceof Set ? options.headerSourceSet : new Set();
 
   container.innerHTML = '';
   metrics.forEach(metric => {
@@ -3391,16 +3413,21 @@ function renderConflictMetrics(metrics, containerId = 'conflictMetrics') {
     value.className = 'iran-stat-value tone-' + tone;
     value.textContent = formatInteger(metric.value);
 
-    const meta = document.createElement('div');
-    meta.className = 'iran-stat-meta';
-    const source = metric.source || 'live conflict feed';
-    const scope = metric.scope || metric.definition || '';
-    meta.textContent = 'Source: ' + source;
+    const source = metric.source || '';
+    const normalizedMetricSource = normalizeSourceLabel(source);
+    const showSource = normalizedMetricSource && !headerSourceSet.has(normalizedMetricSource);
 
     card.appendChild(labelRow);
     card.appendChild(value);
-    card.appendChild(meta);
 
+    if (showSource) {
+      const meta = document.createElement('div');
+      meta.className = 'iran-stat-meta';
+      meta.textContent = 'Source: ' + source;
+      card.appendChild(meta);
+    }
+
+    const scope = metric.scope || metric.definition || '';
     if (scope) {
       const scopeNode = document.createElement('div');
       scopeNode.className = 'iran-stat-meta';
@@ -4156,7 +4183,7 @@ async function refreshUkraineMetrics() {
     }
 
     hydrateUkraineHeader(conflict);
-    renderConflictMetrics(Array.isArray(conflict.metrics) ? conflict.metrics : [], 'ukraineMetrics');
+    renderConflictMetrics(Array.isArray(conflict.metrics) ? conflict.metrics : [], 'ukraineMetrics', { headerSourceSet: collectHeaderSources(conflict) });
     renderConflictLegend(Array.isArray(conflict.legend) ? conflict.legend : [], 'ukraineLegend', 'ukraine');
     renderConflictTimeline(Array.isArray(conflict.timeline) ? conflict.timeline : [], 'ukraineTimelineList');
     const ukraineSeries = Array.isArray(conflict.daily_series) ? conflict.daily_series : [];
@@ -4214,7 +4241,7 @@ async function refreshIranWarMetrics() {
     if (!conflict) throw new Error('Conflict feed missing conflicts');
 
     hydrateConflictHeader(conflict);
-    renderConflictMetrics(Array.isArray(conflict.metrics) ? conflict.metrics : []);
+    renderConflictMetrics(Array.isArray(conflict.metrics) ? conflict.metrics : [], 'conflictMetrics', { headerSourceSet: collectHeaderSources(conflict) });
     renderConflictLegend(Array.isArray(conflict.legend) ? conflict.legend : [], 'conflictLegend', 'iran');
     renderConflictTimeline(Array.isArray(conflict.timeline) ? conflict.timeline : []);
     const iranSeries = Array.isArray(conflict.daily_series) ? conflict.daily_series : [];
