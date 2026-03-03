@@ -509,6 +509,22 @@ nav {
   gap: 0.45rem;
 }
 
+.metric-label-left {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.38rem;
+  min-width: 0;
+}
+
+.metric-card-scope-dot {
+  display: inline-block;
+  width: 0.48rem;
+  height: 0.48rem;
+  border-radius: 999px;
+  flex: 0 0 auto;
+  box-shadow: 0 0 0 1px color-mix(in oklab, var(--bg-card) 80%, transparent);
+}
+
 .metric-confidence-badge {
   font-size: 0.58rem;
   text-transform: uppercase;
@@ -3695,6 +3711,20 @@ function renderConflictMetrics(metrics, containerId = 'conflictMetrics', options
       label.className = 'iran-stat-label';
       label.textContent = (metric && metric.label) ? metric.label : 'Metric';
 
+      const labelLeft = document.createElement('div');
+      labelLeft.className = 'metric-label-left';
+
+      const scopeCategory = classifyScopeCategory((metric && (metric.scope || metric.definition)) ? (metric.scope || metric.definition) : '');
+      if (scopeCategory) {
+        const scopeDot = document.createElement('span');
+        scopeDot.className = 'metric-card-scope-dot';
+        scopeDot.style.background = scopeCategory.color;
+        scopeDot.title = 'Scope: ' + scopeCategory.label;
+        scopeDot.setAttribute('aria-label', scopeDot.title);
+        labelLeft.appendChild(scopeDot);
+      }
+      labelLeft.appendChild(label);
+
       const info = document.createElement('span');
       info.className = 'metric-info';
       info.textContent = 'i';
@@ -3718,7 +3748,7 @@ function renderConflictMetrics(metrics, containerId = 'conflictMetrics', options
       rightCluster.appendChild(info);
       rightCluster.appendChild(confidenceBadge);
 
-      labelRow.appendChild(label);
+      labelRow.appendChild(labelLeft);
       labelRow.appendChild(rightCluster);
 
       const valueRow = document.createElement('div');
