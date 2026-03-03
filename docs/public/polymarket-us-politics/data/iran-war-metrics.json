@@ -1,13 +1,13 @@
 {
   "active_conflict_id": "iran_2026",
-  "updated_at_utc": "2026-03-03T07:42:49.978Z",
+  "updated_at_utc": "2026-03-03T07:49:43.469Z",
   "conflicts": [
     {
       "id": "iran_2026",
       "title": "Iran Conflict Monitor",
       "subtitle": "Live conflict metrics plus daily composite intensity index (casualties, projectile activity, operational impacts), refreshed every hour.",
-      "as_of_utc": "2026-03-03T07:42:49.978Z",
-      "updated_at_utc": "2026-03-03T07:42:49.978Z",
+      "as_of_utc": "2026-03-03T07:49:43.469Z",
+      "updated_at_utc": "2026-03-03T07:49:43.469Z",
       "source_name": "Wikipedia: 2026 Iran conflict (casualty tracker)",
       "source_url": "https://en.wikipedia.org/wiki/2026_Iran_conflict",
       "map": {
@@ -78,7 +78,8 @@
           "source": "Wikipedia + CENTCOM + CBS + Guardian live coverage",
           "confidence": "Low",
           "tone": "red",
-          "scope": "Reported US military personnel deaths; field reports are still evolving across sources."
+          "scope": "Reported US military personnel deaths; field reports are still evolving across sources.",
+          "note": "Source mix: CENTCOM press releases + major live reporting (CBS, The Guardian). Figures are provisional and may change intra-day."
         },
         {
           "id": "us_seriously_injured",
@@ -87,7 +88,8 @@
           "source": "Wikipedia + CENTCOM + CBS + Guardian live coverage",
           "confidence": "Low",
           "tone": "red",
-          "scope": "Reported US military serious injuries; figures vary by source update cadence."
+          "scope": "Reported US military serious injuries; figures vary by source update cadence.",
+          "note": "Source mix: CENTCOM press releases + major live reporting (CBS, The Guardian). Figures are provisional and may change intra-day."
         },
         {
           "id": "missiles_benchmark",
