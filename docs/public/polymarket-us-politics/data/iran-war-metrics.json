@@ -1,13 +1,13 @@
 {
   "active_conflict_id": "iran_2026",
-  "updated_at_utc": "2026-03-03T06:28:50.746Z",
+  "updated_at_utc": "2026-03-03T07:24:45.250Z",
   "conflicts": [
     {
       "id": "iran_2026",
       "title": "Iran Conflict Monitor",
       "subtitle": "Live conflict metrics plus daily composite intensity index (casualties, projectile activity, operational impacts), refreshed every hour.",
-      "as_of_utc": "2026-03-03T06:28:50.746Z",
-      "updated_at_utc": "2026-03-03T06:28:50.746Z",
+      "as_of_utc": "2026-03-03T07:24:45.250Z",
+      "updated_at_utc": "2026-03-03T07:24:45.250Z",
       "source_name": "Wikipedia: 2026 Iran conflict + Twelve-Day War",
       "source_url": "https://en.wikipedia.org/wiki/2026_Iran_conflict",
       "map": {
@@ -1328,8 +1328,8 @@
       "id": "ukraine_2026",
       "title": "Ukraine Conflict Monitor",
       "subtitle": "Live conflict metrics plus daily composite intensity index (casualties, strike activity, operational impacts), refreshed every hour.",
-      "as_of_utc": "2026-03-03T06:28:50.746Z",
-      "updated_at_utc": "2026-03-03T06:28:50.746Z",
+      "as_of_utc": "2026-03-03T07:24:45.250Z",
+      "updated_at_utc": "2026-03-03T07:24:45.250Z",
       "source_name": "Wikipedia: Russian invasion of Ukraine",
       "source_url": "https://en.wikipedia.org/wiki/Russian_invasion_of_Ukraine",
       "secondary_source_name": "Institute for the Study of War (ISW)",
