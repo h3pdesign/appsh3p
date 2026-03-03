@@ -1,14 +1,14 @@
 {
   "active_conflict_id": "iran_2026",
-  "updated_at_utc": "2026-03-03T07:28:44.490Z",
+  "updated_at_utc": "2026-03-03T07:42:49.978Z",
   "conflicts": [
     {
       "id": "iran_2026",
       "title": "Iran Conflict Monitor",
       "subtitle": "Live conflict metrics plus daily composite intensity index (casualties, projectile activity, operational impacts), refreshed every hour.",
-      "as_of_utc": "2026-03-03T07:28:44.490Z",
-      "updated_at_utc": "2026-03-03T07:28:44.490Z",
-      "source_name": "Wikipedia: 2026 Iran conflict + Twelve-Day War",
+      "as_of_utc": "2026-03-03T07:42:49.978Z",
+      "updated_at_utc": "2026-03-03T07:42:49.978Z",
+      "source_name": "Wikipedia: 2026 Iran conflict (casualty tracker)",
       "source_url": "https://en.wikipedia.org/wiki/2026_Iran_conflict",
       "map": {
         "center": [
@@ -73,21 +73,21 @@
         },
         {
           "id": "us_killed",
-          "label": "US Soldiers Killed",
-          "value": 4,
-          "source": "Wikipedia + ISW + ACLED + OCHA + public reporting",
-          "confidence": "Medium",
+          "label": "US Service Members Killed (reported)",
+          "value": 6,
+          "source": "Wikipedia + CENTCOM + CBS + Guardian live coverage",
+          "confidence": "Low",
           "tone": "red",
-          "scope": "US military personnel deaths (military only)."
+          "scope": "Reported US military personnel deaths; field reports are still evolving across sources."
         },
         {
           "id": "us_seriously_injured",
-          "label": "US Soldiers Seriously Injured",
-          "value": 5,
-          "source": "Wikipedia + ISW + ACLED + OCHA + public reporting",
-          "confidence": "Medium",
+          "label": "US Service Members Seriously Injured (reported)",
+          "value": 18,
+          "source": "Wikipedia + CENTCOM + CBS + Guardian live coverage",
+          "confidence": "Low",
           "tone": "red",
-          "scope": "US military personnel seriously injured (military only)."
+          "scope": "Reported US military serious injuries; figures vary by source update cadence."
         },
         {
           "id": "missiles_benchmark",
@@ -110,7 +110,7 @@
         {
           "id": "total_reported_killed",
           "label": "Total Reported Killed",
-          "value": 571,
+          "value": 573,
           "source": "Wikipedia + ISW + ACLED + OCHA + public reporting",
           "confidence": "Medium",
           "tone": "red",
@@ -119,7 +119,7 @@
         {
           "id": "total_reported_injured",
           "label": "Total Reported Injured",
-          "value": 1529,
+          "value": 1542,
           "source": "Wikipedia + ISW + ACLED + OCHA + public reporting",
           "confidence": "Medium",
           "tone": "red",
@@ -166,11 +166,11 @@
         {
           "name": "US force footprint (Kuwait)",
           "label": "US military casualties",
-          "value": 9,
+          "value": 24,
           "lat": 29.3117,
           "lng": 47.4818,
           "type": "operations",
-          "description": "Killed + seriously injured"
+          "description": "Reported US military killed + seriously injured (source-mixed, evolving)"
         },
         {
           "name": "Iran launch profile",
@@ -194,8 +194,8 @@
       "confidence": "Medium",
       "timeline": [
         {
-          "time": "2026-03-02 12:54 UTC",
-          "text": "Latest casualty and injury figures synchronized from public conflict reporting."
+          "time": "2026-03-03 07:42 UTC",
+          "text": "US casualty metrics raised to latest reported range and mapped as source-mixed provisional figures."
         },
         {
           "time": "2026-03-02 10:00 UTC",
@@ -210,8 +210,8 @@
           "text": "Map points validated and recentered for active conflict zones."
         }
       ],
-      "secondary_source_name": "Institute for the Study of War (ISW)",
-      "secondary_source_url": "https://www.understandingwar.org/",
+      "secondary_source_name": "U.S. Central Command (CENTCOM) updates",
+      "secondary_source_url": "https://www.centcom.mil/MEDIA/PRESS-RELEASES/",
       "daily_series": [
         {
           "date": "2025-06-01",
@@ -1319,10 +1319,10 @@
         }
       ],
       "daily_series_definition": "Composite index (0-100) combining normalized casualties, projectile activity, and operational impact signals from the conflict feed. Not a direct daily deaths chart.",
-      "tertiary_source_name": "ACLED (Armed Conflict Location & Event Data)",
-      "tertiary_source_url": "https://acleddata.com/",
-      "quaternary_source_name": "UN OCHA (Humanitarian Situation Reports)",
-      "quaternary_source_url": "https://www.unocha.org/"
+      "tertiary_source_name": "CBS News conflict update (March 2, 2026)",
+      "tertiary_source_url": "https://www.cbsnews.com/news/4-u-s-service-members-killed-in-iranian-strike-in-kuwait-pentagon-says/",
+      "quaternary_source_name": "The Guardian live coverage (March 2, 2026)",
+      "quaternary_source_url": "https://www.theguardian.com/world/live/2026/mar/02/us-israel-war-iran-live-updates-attacks-strikes-tehran-lebanon-beirut-hezbollah-dubai-latest-news"
     },
     {
       "id": "ukraine_2026",
