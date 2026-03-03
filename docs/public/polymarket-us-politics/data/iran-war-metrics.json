@@ -1,13 +1,13 @@
 {
   "active_conflict_id": "iran_2026",
-  "updated_at_utc": "2026-03-03T14:27:02.593Z",
+  "updated_at_utc": "2026-03-03T15:29:58.192Z",
   "conflicts": [
     {
       "id": "iran_2026",
       "title": "Iran Conflict Monitor",
       "subtitle": "Live conflict metrics plus daily composite intensity index (casualties, projectile activity, operational impacts), refreshed every hour.",
-      "as_of_utc": "2026-03-03T14:27:02.593Z",
-      "updated_at_utc": "2026-03-03T14:27:02.593Z",
+      "as_of_utc": "2026-03-03T15:29:58.192Z",
+      "updated_at_utc": "2026-03-03T15:29:58.192Z",
       "source_name": "Wikipedia: 2026 Iran conflict (casualty tracker)",
       "source_url": "https://en.wikipedia.org/wiki/2026_Iran_conflict",
       "map": {
@@ -156,7 +156,7 @@
           "type": "casualties",
           "description": "Iran reported deaths (country-level indicator)",
           "source": "Wikipedia: 2026 Iran conflict (casualty tracker) + U.S. Central Command (CENTCOM) updates + CBS News conflict update (March 2, 2026) + The Guardian live coverage (March 2, 2026)",
-          "reported_at_utc": "2026-03-03T14:27:02.593Z"
+          "reported_at_utc": "2026-03-03T15:29:58.192Z"
         },
         {
           "name": "Israel (national)",
@@ -167,7 +167,7 @@
           "type": "casualties",
           "description": "Israel reported injured (country-level indicator)",
           "source": "Wikipedia: 2026 Iran conflict (casualty tracker) + U.S. Central Command (CENTCOM) updates + CBS News conflict update (March 2, 2026) + The Guardian live coverage (March 2, 2026)",
-          "reported_at_utc": "2026-03-03T14:27:02.593Z"
+          "reported_at_utc": "2026-03-03T15:29:58.192Z"
         },
         {
           "name": "US force footprint (Kuwait)",
@@ -178,7 +178,7 @@
           "type": "operations",
           "description": "US reported killed + seriously injured (source-mixed provisional)",
           "source": "Wikipedia: 2026 Iran conflict (casualty tracker) + U.S. Central Command (CENTCOM) updates + CBS News conflict update (March 2, 2026) + The Guardian live coverage (March 2, 2026)",
-          "reported_at_utc": "2026-03-03T14:27:02.593Z"
+          "reported_at_utc": "2026-03-03T15:29:58.192Z"
         },
         {
           "name": "Western Iran launch corridor",
@@ -189,7 +189,7 @@
           "type": "projectiles",
           "description": "Ballistic missile benchmark indicator",
           "source": "Wikipedia: 2026 Iran conflict (casualty tracker) + U.S. Central Command (CENTCOM) updates + CBS News conflict update (March 2, 2026) + The Guardian live coverage (March 2, 2026)",
-          "reported_at_utc": "2026-03-03T14:27:02.593Z"
+          "reported_at_utc": "2026-03-03T15:29:58.192Z"
         },
         {
           "name": "Regional drone activity axis",
@@ -200,7 +200,7 @@
           "type": "projectiles",
           "description": "Drone benchmark indicator",
           "source": "Wikipedia: 2026 Iran conflict (casualty tracker) + U.S. Central Command (CENTCOM) updates + CBS News conflict update (March 2, 2026) + The Guardian live coverage (March 2, 2026)",
-          "reported_at_utc": "2026-03-03T14:27:02.593Z"
+          "reported_at_utc": "2026-03-03T15:29:58.192Z"
         }
       ],
       "confidence": "Medium",
@@ -1340,8 +1340,8 @@
       "id": "ukraine_2026",
       "title": "Ukraine Conflict Monitor",
       "subtitle": "Live conflict metrics plus daily composite intensity index (casualties, strike activity, operational impacts), refreshed every hour.",
-      "as_of_utc": "2026-03-03T14:27:02.593Z",
-      "updated_at_utc": "2026-03-03T14:27:02.593Z",
+      "as_of_utc": "2026-03-03T15:29:58.192Z",
+      "updated_at_utc": "2026-03-03T15:29:58.192Z",
       "source_name": "Wikipedia: Russian invasion of Ukraine",
       "source_url": "https://en.wikipedia.org/wiki/Russian_invasion_of_Ukraine",
       "secondary_source_name": "Institute for the Study of War (ISW)",
@@ -1491,7 +1491,7 @@
           "type": "operations",
           "description": "7-day infrastructure impact incidents",
           "source": "Wikipedia: Russian invasion of Ukraine + Institute for the Study of War (ISW) + OHCHR Ukraine (UN Human Rights) + ACLED (Armed Conflict Location & Event Data)",
-          "reported_at_utc": "2026-03-03T14:27:02.593Z"
+          "reported_at_utc": "2026-03-03T15:29:58.192Z"
         },
         {
           "name": "Kharkiv region",
@@ -1502,7 +1502,7 @@
           "type": "projectiles",
           "description": "7-day drone-wave strike incidents",
           "source": "Wikipedia: Russian invasion of Ukraine + Institute for the Study of War (ISW) + OHCHR Ukraine (UN Human Rights) + ACLED (Armed Conflict Location & Event Data)",
-          "reported_at_utc": "2026-03-03T14:27:02.593Z"
+          "reported_at_utc": "2026-03-03T15:29:58.192Z"
         },
         {
           "name": "Donetsk oblast",
@@ -1513,7 +1513,7 @@
           "type": "operations",
           "description": "Frontline pressure composite indicator",
           "source": "Wikipedia: Russian invasion of Ukraine + Institute for the Study of War (ISW) + OHCHR Ukraine (UN Human Rights) + ACLED (Armed Conflict Location & Event Data)",
-          "reported_at_utc": "2026-03-03T14:27:02.593Z"
+          "reported_at_utc": "2026-03-03T15:29:58.192Z"
         },
         {
           "name": "Odesa region",
@@ -1524,7 +1524,7 @@
           "type": "projectiles",
           "description": "7-day strike-incident indicator",
           "source": "Wikipedia: Russian invasion of Ukraine + Institute for the Study of War (ISW) + OHCHR Ukraine (UN Human Rights) + ACLED (Armed Conflict Location & Event Data)",
-          "reported_at_utc": "2026-03-03T14:27:02.593Z"
+          "reported_at_utc": "2026-03-03T15:29:58.192Z"
         },
         {
           "name": "Ukraine national aggregate",
@@ -1535,7 +1535,7 @@
           "type": "casualties",
           "description": "Aggregate reported killed (source-mixed indicator)",
           "source": "Wikipedia: Russian invasion of Ukraine + Institute for the Study of War (ISW) + OHCHR Ukraine (UN Human Rights) + ACLED (Armed Conflict Location & Event Data)",
-          "reported_at_utc": "2026-03-03T14:27:02.593Z"
+          "reported_at_utc": "2026-03-03T15:29:58.192Z"
         }
       ],
       "timeline": [
