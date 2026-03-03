@@ -4305,7 +4305,7 @@ function expandPointCloud(basePoint, zoom) {
   const lng = Number(basePoint?.lng);
   if (!Number.isFinite(lat) || !Number.isFinite(lng)) return [];
 
-  const rawCount = Math.max(1, Math.round(Number(basePoint?.value) || 1));
+  const rawCount = Math.max(1, Math.round(Number(basePoint?.marker_mass ?? basePoint?.value) || 1));
   const count = Math.max(1, Math.round(rawCount * zoomDensityFactor(zoom)));
   const spacingKm = kmPerPointByZoom(zoom);
   const golden = Math.PI * (3 - Math.sqrt(5));
@@ -4373,8 +4373,8 @@ function buildDisplayPointsForMap(points, zoom) {
     const labelProbe = normalize(String(point?.label || ''));
     const shouldCloud = labelProbe.includes('ballistic missiles')
       || labelProbe.includes('drones (2025 benchmark)')
-      || labelProbe.includes('air defense intercepts (7d)')
-      || labelProbe.includes('critical infrastructure impacts (7d)');
+      || labelProbe.includes('critical infrastructure impacts (7d)')
+      || labelProbe.includes('air strikes (reported sites)');
 
     if (shouldCloud) {
       expanded.push(...expandPointCloud(point, zoom));
