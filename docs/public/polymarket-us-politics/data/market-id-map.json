@@ -1,9 +1,18 @@
 {
-  "updated_at_utc": "2026-03-03T04:57:13.057Z",
-  "total_questions": 63,
-  "mapped_questions": 49,
+  "updated_at_utc": "2026-03-03T05:39:04.631Z",
+  "total_questions": 64,
+  "mapped_questions": 50,
   "unmapped_questions": 14,
   "entries": [
+    {
+      "question": "Will LeBron James win the 2028 US Presidential Election?",
+      "market_id": "561251",
+      "market_slug": "will-lebron-james-win-the-2028-us-presidential-election",
+      "market_question": "Will LeBron James win the 2028 US Presidential Election?",
+      "score": 1,
+      "active": true,
+      "closed": false
+    },
     {
       "question": "US-Iran diplomatic meeting location",
       "market_id": "1389831",
