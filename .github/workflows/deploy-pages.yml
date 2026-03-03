@@ -4,6 +4,14 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
+  workflow_run:
+    workflows:
+      - Update Polymarket snapshot
+      - Update Iran war metrics
+      - Update Conflict News Ticker
+      - Update Polymarket market ID map
+      - Update Executive Summary Daily
+    types: [completed]
 
 permissions:
   contents: read
@@ -16,10 +24,13 @@ concurrency:
 
 jobs:
   build:
+    if: github.event_name != 'workflow_run' || (github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.head_branch == 'main')
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          ref: main
 
       - name: Guard workflow syntax and config
         id: workflow_guard
