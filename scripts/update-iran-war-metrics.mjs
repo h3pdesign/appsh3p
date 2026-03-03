@@ -7,6 +7,8 @@ const HISTORY_START = {
   ukraine_2026: '2022-02-24'
 }
 
+const WIKI_IRAN_CONFLICT_API = 'https://en.wikipedia.org/w/api.php?action=parse&page=2026_Iran_conflict&prop=wikitext&format=json&formatversion=2'
+
 const clamp = (value, min, max) => Math.max(min, Math.min(max, value))
 
 function parseDay(iso) {
@@ -36,6 +38,126 @@ function metricMap(conflict) {
 function metricValue(map, id, fallback = 0) {
   const value = map.get(id)
   return Number.isFinite(value) ? value : fallback
+}
+
+function parseCount(value) {
+  const parsed = Number(String(value || '').replace(/,/g, ''))
+  return Number.isFinite(parsed) ? parsed : null
+}
+
+function extractMetric(line, pattern) {
+  const match = line.match(pattern)
+  if (!match || !match[1]) return null
+  return parseCount(match[1])
+}
+
+async function fetchWikipediaIranMetrics() {
+  try {
+    const response = await fetch(WIKI_IRAN_CONFLICT_API, {
+      headers: {
+        'user-agent': 'appsh3p-metrics-updater/1.0 (+https://apps-h3p.com)'
+      }
+    })
+    if (!response.ok) throw new Error('Wikipedia API status ' + response.status)
+
+    const payload = await response.json()
+    const wikitext = payload?.parse?.wikitext
+    if (typeof wikitext !== 'string' || wikitext.length < 100) throw new Error('Wikipedia wikitext missing')
+
+    const lines = wikitext.split('\n')
+    let inIsraelUS = false
+    let inIran = false
+
+    const parsed = {
+      israelKilled: null,
+      israelInjured: null,
+      usKilled: null,
+      usInjured: null,
+      iranKilled: null
+    }
+
+    for (const line of lines) {
+      const trimmed = line.trim()
+      if (trimmed.includes("*'''Per Israel and US:")) {
+        inIsraelUS = true
+        inIran = false
+        continue
+      }
+      if (trimmed.includes("*'''Per Iran:")) {
+        inIran = true
+        inIsraelUS = false
+        continue
+      }
+      if (trimmed.startsWith('===')) {
+        inIsraelUS = false
+        inIran = false
+      }
+
+      if (inIsraelUS) {
+        if (trimmed.startsWith('* {{flagu|Israel}}:')) continue
+        if (trimmed.startsWith('* {{flagu|United States}}:')) continue
+
+        if (parsed.israelKilled == null) parsed.israelKilled = extractMetric(trimmed, /^\*\*\s*([0-9][0-9,]*)\s+people killed/i)
+        if (parsed.israelInjured == null) parsed.israelInjured = extractMetric(trimmed, /^\*\*\s*([0-9][0-9,]*)\s+injured/i)
+
+        if (trimmed.includes('military personnel killed')) {
+          parsed.usKilled = extractMetric(trimmed, /^\*\*\s*([0-9][0-9,]*)\s+military personnel killed/i)
+        }
+        if (trimmed.includes('injured') && !trimmed.includes('DOD personnel')) {
+          const maybeUsInj = extractMetric(trimmed, /^\*\*\s*([0-9][0-9,]*)\s+injured/i)
+          if (maybeUsInj != null && parsed.usInjured == null && parsed.israelInjured !== maybeUsInj) parsed.usInjured = maybeUsInj
+        }
+      }
+
+      if (inIran) {
+        if (trimmed.startsWith('* {{flagu|Iran}}:')) continue
+        if (parsed.iranKilled == null) {
+          const byLine = extractMetric(trimmed, /^\*\s*([0-9][0-9,]*)\s+civilians killed/i)
+          if (byLine != null) parsed.iranKilled = byLine
+        }
+      }
+    }
+
+    return parsed
+  } catch (error) {
+    console.warn('Wikipedia metrics refresh skipped:', error.message)
+    return null
+  }
+}
+
+function refreshConflictMetricsFromSources(conflict, sourceMetrics) {
+  if (conflict?.id !== 'iran_2026' || !sourceMetrics) return conflict
+  const metrics = Array.isArray(conflict.metrics) ? conflict.metrics.map(item => ({ ...item })) : []
+  const byId = new Map(metrics.map(item => [item.id, item]))
+
+  const assignIfFinite = (id, value) => {
+    if (!Number.isFinite(value)) return
+    const metric = byId.get(id)
+    if (!metric) return
+    metric.value = value
+  }
+
+  assignIfFinite('iran_killed', sourceMetrics.iranKilled)
+  assignIfFinite('israel_killed', sourceMetrics.israelKilled)
+  assignIfFinite('israel_injured', sourceMetrics.israelInjured)
+  assignIfFinite('us_killed', sourceMetrics.usKilled)
+  assignIfFinite('us_seriously_injured', sourceMetrics.usInjured)
+
+  const iranKilled = Number(byId.get('iran_killed')?.value)
+  const israelKilled = Number(byId.get('israel_killed')?.value)
+  const usKilled = Number(byId.get('us_killed')?.value)
+  if (Number.isFinite(iranKilled) && Number.isFinite(israelKilled) && Number.isFinite(usKilled)) {
+    assignIfFinite('total_reported_killed', iranKilled + israelKilled + usKilled)
+  }
+
+  const iranInjured = Number(byId.get('iran_injured')?.value)
+  const israelInjured = Number(byId.get('israel_injured')?.value)
+  const usInjured = Number(byId.get('us_seriously_injured')?.value)
+  if (Number.isFinite(iranInjured) && Number.isFinite(israelInjured) && Number.isFinite(usInjured)) {
+    assignIfFinite('total_reported_injured', iranInjured + israelInjured + usInjured)
+  }
+
+  return { ...conflict, metrics }
 }
 
 function refreshMapPoints(conflict, now) {
@@ -272,15 +394,17 @@ async function main() {
   const payload = await loadMetrics()
   const now = new Date().toISOString()
   const today = getTodayISO()
+  const wikiMetrics = await fetchWikipediaIranMetrics()
 
   const conflicts = Array.isArray(payload?.conflicts) ? payload.conflicts : []
   const updatedConflicts = conflicts.map(conflict => {
-    const fullSeries = buildFullSeries(conflict, today)
+    const refreshedConflict = refreshConflictMetricsFromSources(conflict, wikiMetrics)
+    const fullSeries = buildFullSeries(refreshedConflict, today)
     return {
-      ...conflict,
+      ...refreshedConflict,
       as_of_utc: now,
       updated_at_utc: now,
-      map_points: refreshMapPoints(conflict, now),
+      map_points: refreshMapPoints(refreshedConflict, now),
       daily_series: fullSeries
     }
   })
