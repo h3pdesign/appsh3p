@@ -172,57 +172,46 @@ function refreshMapPoints(conflict, now) {
   if (conflict?.id === 'iran_2026') {
     return [
       {
-        name: 'Tehran region',
-        label: 'Reported killed',
-        value: metricValue(metrics, 'iran_killed'),
-        lat: 35.6892,
-        lng: 51.389,
-        type: 'casualties',
-        description: 'Iran reported deaths (country-level indicator)',
-        source: sourceLabel,
-        reported_at_utc: now
-      },
-      {
-        name: 'Israel (national)',
-        label: 'Reported injured',
-        value: metricValue(metrics, 'israel_injured'),
-        lat: 31.0461,
-        lng: 34.8516,
-        type: 'casualties',
-        description: 'Israel reported injured (country-level indicator)',
-        source: sourceLabel,
-        reported_at_utc: now
-      },
-      {
-        name: 'US force footprint (Kuwait)',
-        label: 'US military casualties',
-        value: metricValue(metrics, 'us_killed') + metricValue(metrics, 'us_seriously_injured'),
-        lat: 29.3117,
-        lng: 47.4818,
-        type: 'operations',
-        description: 'US reported killed + seriously injured (source-mixed provisional)',
-        source: sourceLabel,
-        reported_at_utc: now
-      },
-      {
-        name: 'Western Iran launch corridor',
-        label: 'Ballistic missile benchmark',
+        name: 'Kermanshah launch corridor',
+        label: 'Ballistic missiles (2025 benchmark)',
         value: metricValue(metrics, 'missiles_benchmark'),
-        lat: 34.3,
-        lng: 47.1,
+        lat: 34.3142,
+        lng: 47.065,
         type: 'projectiles',
-        description: 'Ballistic missile benchmark indicator',
+        description: 'Historical benchmark launch area (ballistic missiles).',
         source: sourceLabel,
         reported_at_utc: now
       },
       {
-        name: 'Regional drone activity axis',
-        label: 'Drone benchmark',
+        name: 'Isfahan UAV corridor',
+        label: 'Drones (2025 benchmark)',
         value: metricValue(metrics, 'drones_benchmark'),
-        lat: 33.2,
-        lng: 44.4,
+        lat: 32.6546,
+        lng: 51.668,
         type: 'projectiles',
-        description: 'Drone benchmark indicator',
+        description: 'Historical benchmark launch area (drone systems).',
+        source: sourceLabel,
+        reported_at_utc: now
+      },
+      {
+        name: 'Tel Aviv air-defense sector',
+        label: 'Air defense intercepts (7d)',
+        value: metricValue(metrics, 'air_defense_intercepts_7d'),
+        lat: 32.0853,
+        lng: 34.7818,
+        type: 'operations',
+        description: 'Estimated/compiled 7-day air-defense intercept count.',
+        source: sourceLabel,
+        reported_at_utc: now
+      },
+      {
+        name: 'Haifa critical infra zone',
+        label: 'Critical infrastructure impacts (7d)',
+        value: metricValue(metrics, 'critical_infrastructure_impacts_7d'),
+        lat: 32.794,
+        lng: 34.9896,
+        type: 'operations',
+        description: 'Estimated/compiled 7-day critical infrastructure impact incidents.',
         source: sourceLabel,
         reported_at_utc: now
       }
