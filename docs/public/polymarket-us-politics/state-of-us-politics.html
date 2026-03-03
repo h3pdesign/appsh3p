@@ -4637,6 +4637,8 @@ function preferredTheme() {
 async function refreshLiveData() {
   setSyncStatus('pending', 'Syncing live data');
   const cards = Array.from(document.querySelectorAll('.card'));
+  const snapshotSyncTime = await readSnapshotSyncTime();
+  const hasSnapshotSync = Number.isFinite(snapshotSyncTime);
 
   const results = await Promise.all(cards.map(async card => {
     try {
@@ -4670,9 +4672,6 @@ async function refreshLiveData() {
     if (!Number.isFinite(latest) || value > latest) return value;
     return latest;
   }, null);
-
-    const snapshotSyncTime = await readSnapshotSyncTime();
-  const hasSnapshotSync = Number.isFinite(snapshotSyncTime);
 
   if (successful > 0) {
     const iranDataTime = readStoredDataTime(LAST_IRAN_DATA_KEY);
