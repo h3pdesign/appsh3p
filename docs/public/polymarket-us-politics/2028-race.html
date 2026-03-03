@@ -3855,6 +3855,7 @@ function upsertConflictMap(mapConfig, points, legend, config = {}) {
 
   const colorByType = conflictColorMap(moduleState ? moduleState.legend : legend);
   const validPoints = filteredPoints.filter(point => Number.isFinite(point.lat) && Number.isFinite(point.lng));
+  const separatedPoints = separateMapPoints(validPoints, 0.22);
 
   separatedPoints.forEach(point => {
     const color = colorByType[point.type] || '#f59e0b';
@@ -3873,8 +3874,8 @@ function upsertConflictMap(mapConfig, points, legend, config = {}) {
     layerRef.addLayer(marker);
   });
 
-  if (validPoints.length > 1) {
-    const bounds = L.latLngBounds(validPoints.map(point => [point.lat, point.lng]));
+  if (separatedPoints.length > 1) {
+    const bounds = L.latLngBounds(separatedPoints.map(point => [point.displayLat ?? point.lat, point.displayLng ?? point.lng]));
     mapRef.fitBounds(bounds.pad(0.15));
     if (moduleState) moduleState.bounds = bounds;
   } else {
