@@ -3672,6 +3672,49 @@ function conflictColorMap(legend) {
   }, {});
 }
 
+function pointHashSeed(point, index) {
+  const input = (point?.name || 'point') + ':' + index;
+  let h = 2166136261;
+  for (let i = 0; i < input.length; i += 1) {
+    h ^= input.charCodeAt(i);
+    h = Math.imul(h, 16777619);
+  }
+  return h >>> 0;
+}
+
+function separateMapPoints(points, minDistance = 0.22) {
+  const placed = [];
+  return points.map((point, index) => {
+    const baseLat = Number(point.lat);
+    const baseLng = Number(point.lng);
+    if (!Number.isFinite(baseLat) || !Number.isFinite(baseLng)) return point;
+
+    let lat = baseLat;
+    let lng = baseLng;
+
+    for (let attempt = 0; attempt < 12; attempt += 1) {
+      const tooClose = placed.some(prev => {
+        const dLat = lat - prev.lat;
+        const latFactor = Math.cos(((lat + prev.lat) * 0.5) * (Math.PI / 180));
+        const dLng = (lng - prev.lng) * (Number.isFinite(latFactor) ? Math.max(0.25, latFactor) : 1);
+        return Math.hypot(dLat, dLng) < minDistance;
+      });
+
+      if (!tooClose) break;
+
+      const seed = pointHashSeed(point, index + attempt);
+      const angle = ((seed % 360) * Math.PI) / 180;
+      const ring = Math.floor(attempt / 3) + 1;
+      const radius = minDistance * (0.6 * ring);
+      lat = baseLat + Math.sin(angle) * radius;
+      lng = baseLng + Math.cos(angle) * radius;
+    }
+
+    placed.push({ lat, lng });
+    return { ...point, displayLat: lat, displayLng: lng };
+  });
+}
+
 function currentThemeMode() {
   return document.documentElement.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
 }
@@ -3813,9 +3856,9 @@ function upsertConflictMap(mapConfig, points, legend, config = {}) {
   const colorByType = conflictColorMap(moduleState ? moduleState.legend : legend);
   const validPoints = filteredPoints.filter(point => Number.isFinite(point.lat) && Number.isFinite(point.lng));
 
-  validPoints.forEach(point => {
+  separatedPoints.forEach(point => {
     const color = colorByType[point.type] || '#f59e0b';
-    const marker = L.circleMarker([point.lat, point.lng], {
+    const marker = L.circleMarker([point.displayLat ?? point.lat, point.displayLng ?? point.lng], {
       radius: 7,
       color,
       fillColor: color,
@@ -3824,7 +3867,8 @@ function upsertConflictMap(mapConfig, points, legend, config = {}) {
     });
 
     const valueLabel = Number.isFinite(point.value) ? formatInteger(point.value) : '--';
-    const popup = '<strong>' + (point.name || 'Event') + '</strong><br>' + (point.label || 'Metric') + ': ' + valueLabel + '<br>' + (point.description || '');
+    const sourceLabel = point.source ? ('<br>Source: ' + escapeHtml(point.source)) : '';
+    const popup = '<strong>' + (point.name || 'Event') + '</strong><br>' + (point.label || 'Metric') + ': ' + valueLabel + '<br>' + (point.description || '') + sourceLabel;
     marker.bindPopup(popup);
     layerRef.addLayer(marker);
   });

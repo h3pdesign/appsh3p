@@ -38,6 +38,138 @@ function metricValue(map, id, fallback = 0) {
   return Number.isFinite(value) ? value : fallback
 }
 
+function refreshMapPoints(conflict, now) {
+  const metrics = metricMap(conflict)
+  const sourceLabel = [
+    conflict?.source_name,
+    conflict?.secondary_source_name,
+    conflict?.tertiary_source_name,
+    conflict?.quaternary_source_name
+  ].filter(Boolean).join(' + ')
+
+  if (conflict?.id === 'iran_2026') {
+    return [
+      {
+        name: 'Tehran region',
+        label: 'Reported killed',
+        value: metricValue(metrics, 'iran_killed'),
+        lat: 35.6892,
+        lng: 51.389,
+        type: 'casualties',
+        description: 'Iran reported deaths (country-level indicator)',
+        source: sourceLabel,
+        reported_at_utc: now
+      },
+      {
+        name: 'Israel (national)',
+        label: 'Reported injured',
+        value: metricValue(metrics, 'israel_injured'),
+        lat: 31.0461,
+        lng: 34.8516,
+        type: 'casualties',
+        description: 'Israel reported injured (country-level indicator)',
+        source: sourceLabel,
+        reported_at_utc: now
+      },
+      {
+        name: 'US force footprint (Kuwait)',
+        label: 'US military casualties',
+        value: metricValue(metrics, 'us_killed') + metricValue(metrics, 'us_seriously_injured'),
+        lat: 29.3117,
+        lng: 47.4818,
+        type: 'operations',
+        description: 'US reported killed + seriously injured (source-mixed provisional)',
+        source: sourceLabel,
+        reported_at_utc: now
+      },
+      {
+        name: 'Western Iran launch corridor',
+        label: 'Ballistic missile benchmark',
+        value: metricValue(metrics, 'missiles_benchmark'),
+        lat: 34.3,
+        lng: 47.1,
+        type: 'projectiles',
+        description: 'Ballistic missile benchmark indicator',
+        source: sourceLabel,
+        reported_at_utc: now
+      },
+      {
+        name: 'Regional drone activity axis',
+        label: 'Drone benchmark',
+        value: metricValue(metrics, 'drones_benchmark'),
+        lat: 33.2,
+        lng: 44.4,
+        type: 'projectiles',
+        description: 'Drone benchmark indicator',
+        source: sourceLabel,
+        reported_at_utc: now
+      }
+    ]
+  }
+
+  if (conflict?.id === 'ukraine_2026') {
+    return [
+      {
+        name: 'Kyiv region',
+        label: 'Critical infrastructure impacts (7d)',
+        value: metricValue(metrics, 'critical_infra_impacts_7d_ua'),
+        lat: 50.4501,
+        lng: 30.5234,
+        type: 'operations',
+        description: '7-day infrastructure impact incidents',
+        source: sourceLabel,
+        reported_at_utc: now
+      },
+      {
+        name: 'Kharkiv region',
+        label: 'Drone-wave incidents (7d)',
+        value: metricValue(metrics, 'ukraine_drone_wave_incidents_7d'),
+        lat: 49.9935,
+        lng: 36.2304,
+        type: 'projectiles',
+        description: '7-day drone-wave strike incidents',
+        source: sourceLabel,
+        reported_at_utc: now
+      },
+      {
+        name: 'Donetsk oblast',
+        label: 'Frontline pressure index',
+        value: metricValue(metrics, 'frontline_pressure_index'),
+        lat: 48.0159,
+        lng: 37.8028,
+        type: 'operations',
+        description: 'Frontline pressure composite indicator',
+        source: sourceLabel,
+        reported_at_utc: now
+      },
+      {
+        name: 'Odesa region',
+        label: 'Strike incidents (7d)',
+        value: metricValue(metrics, 'ukraine_strike_incidents_7d'),
+        lat: 46.4825,
+        lng: 30.7233,
+        type: 'projectiles',
+        description: '7-day strike-incident indicator',
+        source: sourceLabel,
+        reported_at_utc: now
+      },
+      {
+        name: 'Ukraine national aggregate',
+        label: 'Reported casualties',
+        value: metricValue(metrics, 'ukr_civilians_killed_reported') + metricValue(metrics, 'russia_killed_reported'),
+        lat: 49.0,
+        lng: 31.3,
+        type: 'casualties',
+        description: 'Aggregate reported killed (source-mixed indicator)',
+        source: sourceLabel,
+        reported_at_utc: now
+      }
+    ]
+  }
+
+  return Array.isArray(conflict?.map_points) ? conflict.map_points : []
+}
+
 function computeTargetIntensity(conflict) {
   const metrics = metricMap(conflict)
 
@@ -148,6 +280,7 @@ async function main() {
       ...conflict,
       as_of_utc: now,
       updated_at_utc: now,
+      map_points: refreshMapPoints(conflict, now),
       daily_series: fullSeries
     }
   })
