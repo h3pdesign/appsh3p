@@ -591,9 +591,29 @@ nav {
 }
 
 .metric-group-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(188px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 0.75rem;
+}
+
+.metric-group-grid > .iran-stat {
+  flex: 0 1 calc((100% - (3 * 0.75rem)) / 4);
+  max-width: calc((100% - (3 * 0.75rem)) / 4);
+}
+
+@media (max-width: 1220px) {
+  .metric-group-grid > .iran-stat {
+    flex-basis: calc((100% - 0.75rem) / 2);
+    max-width: calc((100% - 0.75rem) / 2);
+  }
+}
+
+@media (max-width: 700px) {
+  .metric-group-grid > .iran-stat {
+    flex-basis: 100%;
+    max-width: 100%;
+  }
 }
 
 .metric-value-row {
