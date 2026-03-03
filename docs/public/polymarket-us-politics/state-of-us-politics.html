@@ -569,6 +569,88 @@ nav {
   letter-spacing: 0.04em;
 }
 
+.metric-group {
+  grid-column: 1 / -1;
+  display: grid;
+  gap: 0.55rem;
+}
+
+.metric-group-title {
+  font-size: 0.66rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  margin-top: 0.1rem;
+}
+
+.metric-group-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(188px, 1fr));
+  gap: 0.75rem;
+}
+
+.metric-value-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.55rem;
+  margin-top: 0.38rem;
+}
+
+.metric-delta {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.02em;
+}
+
+.metric-delta-up { color: var(--tone-red); }
+.metric-delta-down { color: var(--tone-green); }
+.metric-delta-flat { color: var(--text-muted); }
+
+.metric-micro-track {
+  height: 5px;
+  background: color-mix(in oklab, var(--bg-card) 72%, white 10%);
+  border: 1px solid var(--border-subtle);
+  border-radius: 999px;
+  overflow: hidden;
+  margin-top: 0.48rem;
+}
+
+.metric-micro-fill {
+  height: 100%;
+  border-radius: 999px;
+  transition: width 260ms ease;
+}
+
+.metric-sparkline {
+  width: 100%;
+  height: 18px;
+  margin-top: 0.42rem;
+}
+
+.metric-sparkline path {
+  fill: none;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  opacity: 0.9;
+}
+
+.metric-info {
+  border: 1px solid var(--border-color);
+  border-radius: 999px;
+  width: 1.1rem;
+  height: 1.1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-size: 0.58rem;
+  color: var(--text-muted);
+  background: color-mix(in oklab, var(--bg-card) 88%, transparent);
+}
+
 .status-pill {
   border-radius: 999px;
   padding: 0.22rem 0.58rem;
@@ -2653,6 +2735,7 @@ const trendStates = new Map();
 const conflictModuleState = { iran: { mapConfig: null, points: [], legend: [], bounds: null }, ukraine: { mapConfig: null, points: [], legend: [], bounds: null } };
 const legendFilterState = { iran: new Set(), ukraine: new Set() };
 const changeSummaryState = { iran: null, ukraine: null };
+const metricRenderState = { iran: new Map(), ukraine: new Map() };
 let leafletReadyPromise = null;
 
 function ensureLeafletStylesheet(href) {
@@ -3437,12 +3520,77 @@ function classifyScopeCategory(scopeValue) {
 function buildScopePalette(metrics) {
   const categories = new Map();
   (Array.isArray(metrics) ? metrics : []).forEach(metric => {
-    const scopeRaw = metric?.scope || metric?.definition || '';
+    const scopeRaw = metric && (metric.scope || metric.definition) ? (metric.scope || metric.definition) : '';
     const category = classifyScopeCategory(scopeRaw);
     if (!category || categories.has(category.key)) return;
     categories.set(category.key, category);
   });
   return categories;
+}
+
+function classifyMetricGroup(metric) {
+  const probe = normalize(String((metric && metric.id) || '') + ' ' + String((metric && metric.label) || ''));
+  if (probe.includes('killed') || probe.includes('injured') || probe.includes('casual') || probe.includes('deaths')) return 'casualties';
+  if (probe.includes('intercept') || probe.includes('impact') || probe.includes('infrastructure')) return 'infrastructure';
+  if (probe.includes('drone') || probe.includes('missile') || probe.includes('rocket') || probe.includes('projectile')) return 'operations';
+  if (probe.includes('total') || probe.includes('aggregate')) return 'totals';
+  return 'other';
+}
+
+function metricGroupLabel(key) {
+  const labels = {
+    casualties: 'Casualties',
+    totals: 'Totals',
+    operations: 'Operations',
+    infrastructure: 'Infrastructure',
+    other: 'Other Metrics'
+  };
+  return labels[key] || 'Other Metrics';
+}
+
+function formatMetricNumber(value) {
+  const num = Number(value);
+  if (!Number.isFinite(num)) return '--';
+  return Math.round(num).toString().replace(/\B(?=(\d{3})+(?!\d))/g, '\u202F');
+}
+
+function formatMetricDelta(delta) {
+  if (!Number.isFinite(delta)) return { text: 'n/a', cls: 'metric-delta-flat' };
+  if (delta > 0) return { text: '+' + Math.round(delta), cls: 'metric-delta-up' };
+  if (delta < 0) return { text: String(Math.round(delta)), cls: 'metric-delta-down' };
+  return { text: '0', cls: 'metric-delta-flat' };
+}
+
+function loadMetricHistory(moduleKey, metricId) {
+  try {
+    const raw = localStorage.getItem('pmir-metric-history-' + moduleKey + '-' + metricId);
+    if (!raw) return [];
+    const parsed = JSON.parse(raw);
+    return Array.isArray(parsed) ? parsed.filter(v => Number.isFinite(Number(v))).map(Number) : [];
+  } catch (_) {
+    return [];
+  }
+}
+
+function saveMetricHistory(moduleKey, metricId, values) {
+  try {
+    localStorage.setItem('pmir-metric-history-' + moduleKey + '-' + metricId, JSON.stringify(values.slice(-24)));
+  } catch (_) {
+    // ignore storage errors
+  }
+}
+
+function sparklinePath(values, width = 120, height = 18, pad = 2) {
+  const points = Array.isArray(values) ? values.filter(v => Number.isFinite(Number(v))).map(Number) : [];
+  if (points.length < 2) return '';
+  const min = Math.min(...points);
+  const max = Math.max(...points);
+  const span = Math.max(1, max - min);
+  return points.map((v, i) => {
+    const x = pad + ((width - pad * 2) * i) / Math.max(1, points.length - 1);
+    const y = pad + (height - pad * 2) - ((v - min) / span) * (height - pad * 2);
+    return (i === 0 ? 'M' : 'L') + ' ' + x.toFixed(2) + ' ' + y.toFixed(2);
+  }).join(' ');
 }
 
 function renderScopeLegend(scopePalette, legendId) {
@@ -3473,41 +3621,136 @@ function renderConflictMetrics(metrics, containerId = 'conflictMetrics', options
   const container = document.getElementById(containerId);
   if (!container) return;
 
+  const moduleKey = options.moduleKey || 'iran';
+  const previousByMetric = metricRenderState[moduleKey] || new Map();
+  const nextByMetric = new Map();
   const scopePalette = buildScopePalette(metrics);
   renderScopeLegend(scopePalette, options.scopeLegendId);
 
-  container.innerHTML = '';
-  metrics.forEach(metric => {
-    const tone = conflictMetricTone(metric);
-    const card = document.createElement('div');
-    card.className = 'iran-stat iran-stat-' + tone;
-
-    const labelRow = document.createElement('div');
-    labelRow.className = 'metric-label-row';
-
-    const label = document.createElement('div');
-    label.className = 'iran-stat-label';
-    label.textContent = metric.label || 'Metric';
-
-    const confidenceBadge = document.createElement('span');
-    const confidenceLabel = String(metric.confidence || 'n/a').toLowerCase();
-    confidenceBadge.className = 'metric-confidence-badge';
-    if (confidenceLabel === 'low' || confidenceLabel === 'medium' || confidenceLabel === 'high') {
-      confidenceBadge.classList.add('metric-confidence-' + confidenceLabel);
-    }
-    confidenceBadge.textContent = metric.confidence || 'n/a';
-
-    labelRow.appendChild(label);
-    labelRow.appendChild(confidenceBadge);
-
-    const value = document.createElement('div');
-    value.className = 'iran-stat-value tone-' + tone;
-    value.textContent = formatInteger(metric.value);
-
-    card.appendChild(labelRow);
-    card.appendChild(value);
-    container.appendChild(card);
+  const grouped = new Map();
+  (Array.isArray(metrics) ? metrics : []).forEach(metric => {
+    const groupKey = classifyMetricGroup(metric);
+    if (!grouped.has(groupKey)) grouped.set(groupKey, []);
+    grouped.get(groupKey).push(metric);
   });
+
+  const order = ['casualties', 'totals', 'operations', 'infrastructure', 'other'];
+  container.innerHTML = '';
+
+  order.forEach(groupKey => {
+    const groupMetrics = grouped.get(groupKey) || [];
+    if (groupMetrics.length === 0) return;
+
+    const values = groupMetrics.map(metric => Number(metric && metric.value)).filter(Number.isFinite);
+    const minV = values.length ? Math.min(...values) : 0;
+    const maxV = values.length ? Math.max(...values) : 1;
+    const span = Math.max(1, maxV - minV);
+
+    const groupWrap = document.createElement('div');
+    groupWrap.className = 'metric-group';
+
+    const groupTitle = document.createElement('div');
+    groupTitle.className = 'metric-group-title';
+    groupTitle.textContent = metricGroupLabel(groupKey);
+
+    const groupGrid = document.createElement('div');
+    groupGrid.className = 'metric-group-grid';
+
+    groupMetrics.forEach(metric => {
+      const tone = conflictMetricTone(metric);
+      const card = document.createElement('div');
+      card.className = 'iran-stat iran-stat-' + tone;
+
+      const labelRow = document.createElement('div');
+      labelRow.className = 'metric-label-row';
+
+      const label = document.createElement('div');
+      label.className = 'iran-stat-label';
+      label.textContent = (metric && metric.label) ? metric.label : 'Metric';
+
+      const info = document.createElement('span');
+      info.className = 'metric-info';
+      info.textContent = 'i';
+      const source = (metric && metric.source) ? metric.source : 'n/a';
+      const scope = (metric && (metric.scope || metric.definition)) ? (metric.scope || metric.definition) : 'n/a';
+      info.title = 'Source: ' + source + ' | Scope: ' + scope;
+      info.setAttribute('aria-label', info.title);
+
+      const confidenceBadge = document.createElement('span');
+      const confidenceLabel = String((metric && metric.confidence) ? metric.confidence : 'n/a').toLowerCase();
+      confidenceBadge.className = 'metric-confidence-badge';
+      if (confidenceLabel === 'low' || confidenceLabel === 'medium' || confidenceLabel === 'high') {
+        confidenceBadge.classList.add('metric-confidence-' + confidenceLabel);
+      }
+      confidenceBadge.textContent = (metric && metric.confidence) ? metric.confidence : 'n/a';
+
+      const rightCluster = document.createElement('div');
+      rightCluster.style.display = 'inline-flex';
+      rightCluster.style.gap = '0.32rem';
+      rightCluster.style.alignItems = 'center';
+      rightCluster.appendChild(info);
+      rightCluster.appendChild(confidenceBadge);
+
+      labelRow.appendChild(label);
+      labelRow.appendChild(rightCluster);
+
+      const valueRow = document.createElement('div');
+      valueRow.className = 'metric-value-row';
+
+      const value = document.createElement('div');
+      value.className = 'iran-stat-value tone-' + tone;
+      value.textContent = formatMetricNumber(metric && metric.value);
+
+      const metricId = (metric && metric.id) ? metric.id : String((metric && metric.label) || 'metric');
+      const prevValue = previousByMetric.get(metricId);
+      const delta = Number.isFinite(prevValue) ? Number(metric.value) - Number(prevValue) : null;
+      const deltaFmt = formatMetricDelta(delta);
+      const deltaNode = document.createElement('div');
+      deltaNode.className = 'metric-delta ' + deltaFmt.cls;
+      deltaNode.textContent = deltaFmt.text + ' vs prev';
+
+      valueRow.appendChild(value);
+      valueRow.appendChild(deltaNode);
+
+      const microTrack = document.createElement('div');
+      microTrack.className = 'metric-micro-track';
+      const microFill = document.createElement('div');
+      microFill.className = 'metric-micro-fill';
+      microFill.style.background = 'var(--tone-' + tone + ')';
+      const norm = Number.isFinite(Number(metric && metric.value)) ? ((Number(metric.value) - minV) / span) : 0;
+      microFill.style.width = String(Math.max(6, Math.round(norm * 100))) + '%';
+      microTrack.appendChild(microFill);
+
+      const history = loadMetricHistory(moduleKey, metricId);
+      history.push(Number(metric && metric.value));
+      saveMetricHistory(moduleKey, metricId, history);
+      const sparkValues = history.slice(-12);
+      const pathData = sparklinePath(sparkValues);
+      const spark = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+      spark.setAttribute('class', 'metric-sparkline');
+      spark.setAttribute('viewBox', '0 0 120 18');
+      if (pathData) {
+        const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+        path.setAttribute('d', pathData);
+        path.setAttribute('stroke', 'var(--tone-' + tone + ')');
+        spark.appendChild(path);
+      }
+
+      card.appendChild(labelRow);
+      card.appendChild(valueRow);
+      card.appendChild(microTrack);
+      card.appendChild(spark);
+      groupGrid.appendChild(card);
+
+      nextByMetric.set(metricId, Number(metric && metric.value));
+    });
+
+    groupWrap.appendChild(groupTitle);
+    groupWrap.appendChild(groupGrid);
+    container.appendChild(groupWrap);
+  });
+
+  metricRenderState[moduleKey] = nextByMetric;
 }
 
 function renderConflictLegend(legend, containerId = 'conflictLegend', moduleName = 'iran') {
@@ -4255,7 +4498,7 @@ async function refreshUkraineMetrics() {
     }
 
     hydrateUkraineHeader(conflict);
-    renderConflictMetrics(Array.isArray(conflict.metrics) ? conflict.metrics : [], 'ukraineMetrics', { scopeLegendId: 'ukraineScopeLegend' });
+    renderConflictMetrics(Array.isArray(conflict.metrics) ? conflict.metrics : [], 'ukraineMetrics', { moduleKey: 'ukraine', scopeLegendId: 'ukraineScopeLegend' });
     renderConflictLegend(Array.isArray(conflict.legend) ? conflict.legend : [], 'ukraineLegend', 'ukraine');
     renderConflictTimeline(Array.isArray(conflict.timeline) ? conflict.timeline : [], 'ukraineTimelineList');
     const ukraineSeries = Array.isArray(conflict.daily_series) ? conflict.daily_series : [];
@@ -4313,7 +4556,7 @@ async function refreshIranWarMetrics() {
     if (!conflict) throw new Error('Conflict feed missing conflicts');
 
     hydrateConflictHeader(conflict);
-    renderConflictMetrics(Array.isArray(conflict.metrics) ? conflict.metrics : [], 'conflictMetrics', { scopeLegendId: 'conflictScopeLegend' });
+    renderConflictMetrics(Array.isArray(conflict.metrics) ? conflict.metrics : [], 'conflictMetrics', { moduleKey: 'iran', scopeLegendId: 'conflictScopeLegend' });
     renderConflictLegend(Array.isArray(conflict.legend) ? conflict.legend : [], 'conflictLegend', 'iran');
     renderConflictTimeline(Array.isArray(conflict.timeline) ? conflict.timeline : []);
     const iranSeries = Array.isArray(conflict.daily_series) ? conflict.daily_series : [];
