@@ -71,7 +71,8 @@ async function fetchPublicSearch(query) {
 }
 
 function bestMarketForQuestion(markets, question) {
-  const ranked = markets
+  const openMarkets = markets.filter(market => !market?.closed)
+  const ranked = openMarkets
     .map(market => ({
       market,
       score: similarityScore(question, market?.question || '')

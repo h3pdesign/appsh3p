@@ -1817,6 +1817,7 @@ footer a:hover { border-bottom-color: var(--accent-gold); }
         <p class="prob-tag">Top market outcome: No</p>
       </article>
       
+      
       <!-- Dem Nominee -->
       <article class="card reveal">
         <div class="card-header">
@@ -2958,6 +2959,47 @@ function updateVolume(card, market) {
   volumeNode.textContent = formatted;
 }
 
+function isSocialCard(card) {
+  return Boolean(card?.closest('#social'));
+}
+
+function markCardMarketUnavailable(card, market) {
+  const isClosed = Boolean(market?.closed);
+  const reason = isClosed ? 'Archived market (closed)' : 'No active market currently';
+
+  const singleValue = card.querySelector('.prob-big-value');
+  const singleFill = card.querySelector('.prob-big-fill');
+  if (singleValue) {
+    singleValue.textContent = '--';
+    singleValue.classList.remove('green', 'amber', 'red');
+    singleValue.classList.add('amber');
+  }
+  if (singleFill) {
+    singleFill.dataset.width = '0';
+    singleFill.style.width = '0%';
+    singleFill.classList.remove('green', 'amber', 'red');
+    singleFill.classList.add('amber');
+  }
+
+  card.querySelectorAll('.prob-value').forEach(node => {
+    node.textContent = '--';
+    node.classList.remove('green', 'amber', 'red');
+    node.classList.add('amber');
+  });
+  card.querySelectorAll('.prob-bar-fill').forEach(node => {
+    node.dataset.width = '0';
+    node.style.width = '0%';
+    node.classList.remove('green', 'amber', 'red');
+    node.classList.add('amber');
+  });
+
+  const tag = card.querySelector('.prob-tag');
+  if (tag) tag.textContent = reason;
+
+  const volumeNode = card.querySelector('.card-volume');
+  if (volumeNode) volumeNode.textContent = 'Archived';
+}
+
 function formatDualTimestamp(sourceTime) {
   const timestamp = Number.isFinite(sourceTime) ? sourceTime : Date.now();
   const date = new Date(timestamp);
@@ -3969,6 +4011,10 @@ async function refreshLiveData() {
   const results = await Promise.all(cards.map(async card => {
     try {
       const market = await fetchBestMarketForCard(card);
+      if (isSocialCard(card) && (!market || market.closed || !market.active)) {
+        markCardMarketUnavailable(card, market);
+        return { ok: false, timestamp: null };
+      }
       if (!market) return { ok: false, timestamp: null };
 
       updateVolume(card, market);
