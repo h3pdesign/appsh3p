@@ -989,6 +989,22 @@ nav {
   width: 100%;
 }
 
+.map-marker-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  border: 1px solid color-mix(in oklab, var(--bg-card) 65%, black 25%);
+  box-shadow: 0 0 0 1px color-mix(in oklab, var(--bg-card) 80%, transparent);
+}
+
+.map-marker-triangle {
+  width: 9px;
+  height: 8px;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  border: 1px solid color-mix(in oklab, var(--bg-card) 65%, black 25%);
+  box-shadow: 0 0 0 1px color-mix(in oklab, var(--bg-card) 80%, transparent);
+}
+
 .conflict-map.map-theme-dark .leaflet-tile {
   filter: none;
 }
@@ -2812,7 +2828,7 @@ let ukraineMarkersLayer = null;
 let conflictBaseLayer = null;
 let ukraineBaseLayer = null;
 const trendStates = new Map();
-const conflictModuleState = { iran: { mapConfig: null, points: [], legend: [], bounds: null }, ukraine: { mapConfig: null, points: [], legend: [], bounds: null } };
+const conflictModuleState = { iran: { mapConfig: null, points: [], legend: [], bounds: null, didInitialFit: false, zoomBound: false }, ukraine: { mapConfig: null, points: [], legend: [], bounds: null, didInitialFit: false, zoomBound: false } };
 const legendFilterState = { iran: new Set(), ukraine: new Set() };
 const changeSummaryState = { iran: null, ukraine: null };
 const metricRenderState = { iran: new Map(), ukraine: new Map() };
@@ -4245,17 +4261,89 @@ function pointHashSeed(point, index) {
   return h >>> 0;
 }
 
+function pseudoRand(seed) {
+  let x = seed >>> 0;
+  x ^= x << 13;
+  x ^= x >>> 17;
+  x ^= x << 5;
+  return (x >>> 0) / 4294967295;
+}
+
+function markerKindForPoint(point) {
+  const probe = normalize(String(point?.label || '') + ' ' + String(point?.description || '') + ' ' + String(point?.type || ''));
+  if (probe.includes('missile') || probe.includes('drone') || probe.includes('projectile')) return 'triangle';
+  if (probe.includes('air defense') || probe.includes('intercept') || probe.includes('critical infrastructure') || probe.includes('air strike') || probe.includes('operations')) return 'dot';
+  return 'dot';
+}
+
+function zoomDensityFactor(zoom) {
+  if (zoom <= 4) return 0.12;
+  if (zoom === 5) return 0.2;
+  if (zoom === 6) return 0.38;
+  if (zoom === 7) return 0.65;
+  return 1;
+}
+
+function kmPerPointByZoom(zoom) {
+  if (zoom <= 4) return 9.0;
+  if (zoom === 5) return 6.5;
+  if (zoom === 6) return 4.2;
+  if (zoom === 7) return 2.8;
+  if (zoom === 8) return 1.8;
+  return 1.0;
+}
+
+function latLngOffsetFromKm(lat, dxKm, dyKm) {
+  const latRad = (Number(lat) || 0) * (Math.PI / 180);
+  const dLat = dyKm / 110.574;
+  const dLng = dxKm / Math.max(0.2, 111.32 * Math.cos(latRad));
+  return { dLat, dLng };
+}
+
+function expandPointCloud(basePoint, zoom) {
+  const lat = Number(basePoint?.lat);
+  const lng = Number(basePoint?.lng);
+  if (!Number.isFinite(lat) || !Number.isFinite(lng)) return [];
+
+  const rawCount = Math.max(1, Math.round(Number(basePoint?.value) || 1));
+  const count = Math.max(1, Math.round(rawCount * zoomDensityFactor(zoom)));
+  const spacingKm = kmPerPointByZoom(zoom);
+  const golden = Math.PI * (3 - Math.sqrt(5));
+
+  const cloud = [];
+  for (let i = 0; i < count; i += 1) {
+    const seed = pointHashSeed(basePoint, i + 1);
+    const jitter = (pseudoRand(seed) - 0.5) * 0.45;
+    const radiusKm = Math.sqrt(i + 1) * spacingKm * (0.72 + jitter * 0.25);
+    const angle = i * golden + jitter;
+    const dxKm = Math.cos(angle) * radiusKm;
+    const dyKm = Math.sin(angle) * radiusKm;
+    const off = latLngOffsetFromKm(lat, dxKm, dyKm);
+
+    cloud.push({
+      ...basePoint,
+      displayLat: lat + off.dLat,
+      displayLng: lng + off.dLng,
+      markerKind: markerKindForPoint(basePoint),
+      markerCountRaw: rawCount,
+      markerCountShown: count
+    });
+  }
+
+  return cloud;
+}
+
 function separateMapPoints(points, minDistance = 0.22) {
   const placed = [];
   return points.map((point, index) => {
-    const baseLat = Number(point.lat);
-    const baseLng = Number(point.lng);
+    const baseLat = Number(point.displayLat ?? point.lat);
+    const baseLng = Number(point.displayLng ?? point.lng);
     if (!Number.isFinite(baseLat) || !Number.isFinite(baseLng)) return point;
 
     let lat = baseLat;
     let lng = baseLng;
 
-    for (let attempt = 0; attempt < 12; attempt += 1) {
+    for (let attempt = 0; attempt < 8; attempt += 1) {
       const tooClose = placed.some(prev => {
         const dLat = lat - prev.lat;
         const latFactor = Math.cos(((lat + prev.lat) * 0.5) * (Math.PI / 180));
@@ -4265,16 +4353,48 @@ function separateMapPoints(points, minDistance = 0.22) {
 
       if (!tooClose) break;
 
-      const seed = pointHashSeed(point, index + attempt);
+      const seed = pointHashSeed(point, index + attempt + 1);
       const angle = ((seed % 360) * Math.PI) / 180;
-      const ring = Math.floor(attempt / 3) + 1;
-      const radius = minDistance * (0.6 * ring);
+      const radius = minDistance * (0.5 + attempt * 0.35);
       lat = baseLat + Math.sin(angle) * radius;
       lng = baseLng + Math.cos(angle) * radius;
     }
 
     placed.push({ lat, lng });
     return { ...point, displayLat: lat, displayLng: lng };
+  });
+}
+
+function buildDisplayPointsForMap(points, zoom) {
+  const list = Array.isArray(points) ? points : [];
+  const expanded = [];
+
+  list.forEach(point => {
+    const labelProbe = normalize(String(point?.label || ''));
+    const shouldCloud = labelProbe.includes('ballistic missiles')
+      || labelProbe.includes('drones (2025 benchmark)')
+      || labelProbe.includes('air defense intercepts (7d)')
+      || labelProbe.includes('critical infrastructure impacts (7d)');
+
+    if (shouldCloud) {
+      expanded.push(...expandPointCloud(point, zoom));
+    } else {
+      expanded.push({ ...point, markerKind: markerKindForPoint(point), markerCountRaw: 1, markerCountShown: 1 });
+    }
+  });
+
+  const minDistance = zoom <= 4 ? 0.25 : zoom <= 6 ? 0.16 : 0.08;
+  return separateMapPoints(expanded, minDistance);
+}
+
+function markerIconFor(kind, color) {
+  if (typeof L === 'undefined') return null;
+  const cls = kind === 'triangle' ? 'map-marker-triangle' : 'map-marker-dot';
+  return L.divIcon({
+    className: 'conflict-map-marker-wrap',
+    html: '<span class="' + cls + '" style="background:' + color + '"></span>',
+    iconSize: [10, 10],
+    iconAnchor: [5, 5]
   });
 }
 
@@ -4399,8 +4519,6 @@ function upsertConflictMap(mapConfig, points, legend, config = {}) {
 
   if (!mapRef) {
     mapRef = L.map(mapNode, { scrollWheelZoom: false, zoomControl: true }).setView(center, zoom);
-  } else {
-    mapRef.setView(center, zoom);
   }
   replaceMapBaseLayer(mapRef, moduleName);
 
@@ -4428,36 +4546,41 @@ function upsertConflictMap(mapConfig, points, legend, config = {}) {
         .map(point => ({ ...point, lat: Number(point?.lat), lng: Number(point?.lng) }))
         .filter(point => Number.isFinite(point.lat) && Number.isFinite(point.lng))
     : validPoints;
-  const separatedPoints = typeof separateMapPoints === 'function'
-    ? separateMapPoints(fallbackPoints, 0.22)
-    : fallbackPoints.map(point => ({ ...point, displayLat: point.lat, displayLng: point.lng }));
+  const zoomNow = Number.isFinite(mapRef.getZoom()) ? mapRef.getZoom() : zoom;
+  const separatedPoints = buildDisplayPointsForMap(fallbackPoints, zoomNow);
 
   separatedPoints.forEach(point => {
     const color = colorByType[point.type] || '#f59e0b';
-    const marker = L.circleMarker([point.displayLat ?? point.lat, point.displayLng ?? point.lng], {
-      radius: 7,
-      color,
-      fillColor: color,
-      fillOpacity: 0.75,
-      weight: 1
-    });
+    const icon = markerIconFor(point.markerKind, color);
+    const marker = L.marker([point.displayLat ?? point.lat, point.displayLng ?? point.lng], { icon });
 
     const valueLabel = Number.isFinite(point.value) ? formatInteger(point.value) : '--';
     const sourceLabel = point.source ? ('<br>Source: ' + escapeHtml(point.source)) : '';
-    const popup = '<strong>' + (point.name || 'Event') + '</strong><br>' + (point.label || 'Metric') + ': ' + valueLabel + '<br>' + (point.description || '') + sourceLabel;
+    const cloudLabel = Number.isFinite(point.markerCountRaw) && point.markerCountRaw > 1
+      ? ('<br>Rendered: ' + formatInteger(point.markerCountShown) + ' / ' + formatInteger(point.markerCountRaw) + ' points (zoom-dependent)')
+      : '';
+    const popup = '<strong>' + (point.name || 'Event') + '</strong><br>' + (point.label || 'Metric') + ': ' + valueLabel + '<br>' + (point.description || '') + sourceLabel + cloudLabel;
     marker.bindPopup(popup);
     layerRef.addLayer(marker);
   });
 
   if (separatedPoints.length > 1) {
     const bounds = L.latLngBounds(separatedPoints.map(point => [point.displayLat ?? point.lat, point.displayLng ?? point.lng]));
-    mapRef.fitBounds(bounds.pad(0.15));
+    if (moduleState && !moduleState.didInitialFit) {
+      mapRef.fitBounds(bounds.pad(0.15));
+      moduleState.didInitialFit = true;
+    }
     if (moduleState) moduleState.bounds = bounds;
   } else {
     if (moduleState) moduleState.bounds = null;
   }
 
-  if (statusNode) statusNode.textContent = 'Mapped events: ' + separatedPoints.length;
+  if (moduleState && !moduleState.zoomBound) {
+    moduleState.zoomBound = true;
+    mapRef.on('zoomend', () => redrawConflictMapForModule(moduleName));
+  }
+
+  if (statusNode) statusNode.textContent = 'Mapped events: ' + formatInteger(separatedPoints.length);
 
   if (moduleName === 'ukraine') {
     ukraineMap = mapRef;
