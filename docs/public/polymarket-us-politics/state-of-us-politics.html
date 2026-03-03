@@ -2585,6 +2585,8 @@ const CONFLICT_MONITOR_INTERVAL_MS = ONE_HOUR_MS;
 const THEME_KEY = 'pmir-theme';
 const THEME_MODE_KEY = 'pmir-theme-mode';
 const LAST_SYNC_KEY = 'pmir-last-successful-sync';
+const LAST_IRAN_DATA_KEY = 'pmir-last-iran-data-ts';
+const LAST_UKRAINE_DATA_KEY = 'pmir-last-ukraine-data-ts';
 const FRESH_SYNC_MAX_MS = 2 * ONE_HOUR_MS;
 const DELAYED_SYNC_MAX_MS = 8 * ONE_HOUR_MS;
 const marketCache = new Map();
@@ -3201,6 +3203,20 @@ function readStoredSyncTime() {
   // Guard against invalid/epoch-like values (for example null -> 0).
   if (!Number.isFinite(parsed) || parsed < 946684800000) return null; // Jan 1, 2000 UTC
   return parsed;
+}
+
+function readStoredDataTime(key) {
+  const raw = localStorage.getItem(key);
+  if (!raw) return null;
+  const parsed = Number(raw);
+  if (!Number.isFinite(parsed) || parsed < 946684800000) return null;
+  return parsed;
+}
+
+function oldestFiniteTimestamp(values) {
+  const valid = values.filter(value => Number.isFinite(value));
+  if (valid.length === 0) return null;
+  return Math.min(...valid);
 }
 
 function formatRelativeAge(ms) {
@@ -4166,6 +4182,8 @@ async function refreshUkraineMetrics() {
       }, 80);
     }
 
+    const ukraineDataTime = parseTimestamp(conflict.as_of_utc || conflict.updated_at_utc || feed.updated_at_utc);
+    if (Number.isFinite(ukraineDataTime)) localStorage.setItem(LAST_UKRAINE_DATA_KEY, String(ukraineDataTime));
     updateUkraineTimestamp(conflict.as_of_utc || conflict.updated_at_utc || feed.updated_at_utc);
     setUkraineSync('Live metrics synced');
   } catch (error) {
@@ -4199,6 +4217,8 @@ async function refreshIranWarMetrics() {
     updateTrendStrip('iran', iranSeries);
     upsertConflictMap(conflict.map || {}, Array.isArray(conflict.map_points) ? conflict.map_points : [], Array.isArray(conflict.legend) ? conflict.legend : [], { module: 'iran' });
 
+    const iranDataTime = parseTimestamp(conflict.as_of_utc || conflict.updated_at_utc || feed.updated_at_utc);
+    if (Number.isFinite(iranDataTime)) localStorage.setItem(LAST_IRAN_DATA_KEY, String(iranDataTime));
     updateIranWarTimestamp(conflict.as_of_utc || conflict.updated_at_utc || feed.updated_at_utc);
     setIranWarSync('Live metrics synced');
   } catch (error) {
@@ -4277,7 +4297,9 @@ async function refreshLiveData() {
   const hasSnapshotSync = Number.isFinite(snapshotSyncTime);
 
   if (successful > 0) {
-    const syncTime = Date.now();
+    const iranDataTime = readStoredDataTime(LAST_IRAN_DATA_KEY);
+    const ukraineDataTime = readStoredDataTime(LAST_UKRAINE_DATA_KEY);
+    const syncTime = oldestFiniteTimestamp([freshestTimestamp, iranDataTime, ukraineDataTime]) || freshestTimestamp || Date.now();
 
     localStorage.setItem(LAST_SYNC_KEY, String(syncTime));
     updateTimestamp(syncTime);
