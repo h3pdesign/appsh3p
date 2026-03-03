@@ -521,9 +521,15 @@ nav {
 }
 
 .metric-confidence-low {
-  color: var(--tone-amber);
-  border-color: color-mix(in oklab, var(--tone-amber) 50%, transparent);
-  background: color-mix(in oklab, var(--tone-amber) 14%, transparent);
+  color: #facc15;
+  border-color: color-mix(in oklab, #facc15 55%, transparent);
+  background: color-mix(in oklab, #facc15 16%, transparent);
+}
+
+:root[data-theme='light'] .metric-confidence-low {
+  color: #a16207;
+  border-color: color-mix(in oklab, #eab308 62%, transparent);
+  background: color-mix(in oklab, #eab308 24%, transparent);
 }
 
 .metric-confidence-medium {
