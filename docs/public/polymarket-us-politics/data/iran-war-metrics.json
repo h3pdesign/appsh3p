@@ -75,6 +75,7 @@
           "id": "us_killed",
           "label": "US Service Members Killed (reported)",
           "value": 6,
+          "primary_source_index": 2,
           "source": "Wikipedia + CENTCOM + CBS + Guardian live coverage",
           "confidence": "Low",
           "tone": "red",
@@ -85,6 +86,7 @@
           "id": "us_seriously_injured",
           "label": "US Service Members Seriously Injured (reported)",
           "value": 18,
+          "primary_source_index": 2,
           "source": "Wikipedia + CENTCOM + CBS + Guardian live coverage",
           "confidence": "Low",
           "tone": "red",
@@ -222,8 +224,8 @@
           "text": "Map points validated and recentered for active conflict zones."
         }
       ],
-      "secondary_source_name": "U.S. Central Command (CENTCOM) updates",
-      "secondary_source_url": "https://www.centcom.mil/MEDIA/PRESS-RELEASES/",
+      "secondary_source_name": "U.S. Central Command (CENTCOM) update (March 2, 2026, latest official statement)",
+      "secondary_source_url": "https://www.centcom.mil/MEDIA/STATEMENTS/Statements-View/Article/4418924/operation-epic-fury-update/",
       "daily_series": [
         {
           "date": "2025-06-01",
@@ -1331,10 +1333,10 @@
         }
       ],
       "daily_series_definition": "Composite index (0-100) combining normalized casualties, projectile activity, and operational impact signals from the conflict feed. Not a direct daily deaths chart.",
-      "tertiary_source_name": "CBS News conflict update (March 2, 2026)",
-      "tertiary_source_url": "https://www.cbsnews.com/news/4-u-s-service-members-killed-in-iranian-strike-in-kuwait-pentagon-says/",
-      "quaternary_source_name": "The Guardian live coverage (March 2, 2026)",
-      "quaternary_source_url": "https://www.theguardian.com/world/live/2026/mar/02/us-israel-war-iran-live-updates-attacks-strikes-tehran-lebanon-beirut-hezbollah-dubai-latest-news"
+      "tertiary_source_name": "CBS News conflict update (March 3, 2026)",
+      "tertiary_source_url": "https://www.cbsnews.com/amp/news/iran-strike-kuwait-officials-question-fortifications/",
+      "quaternary_source_name": "The Guardian live coverage (March 3, 2026)",
+      "quaternary_source_url": "https://www.theguardian.com/world/live/2026/mar/03/us-israel-war-iran-live-updates-attacks-strikes-trump-netanyahu-lebanon-middle-east-latest-news"
     },
     {
       "id": "ukraine_2026",

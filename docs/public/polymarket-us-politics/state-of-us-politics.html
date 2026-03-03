@@ -525,6 +525,15 @@ nav {
   box-shadow: 0 0 0 1px color-mix(in oklab, var(--bg-card) 80%, transparent);
 }
 
+.metric-card-source-dot {
+  display: inline-block;
+  width: 0.48rem;
+  height: 0.48rem;
+  border-radius: 999px;
+  flex: 0 0 auto;
+  box-shadow: 0 0 0 1px color-mix(in oklab, var(--bg-card) 80%, transparent);
+}
+
 .metric-confidence-badge {
   font-size: 0.58rem;
   text-transform: uppercase;
@@ -590,6 +599,23 @@ nav {
   color: var(--text-muted);
   text-transform: uppercase;
   letter-spacing: 0.04em;
+}
+
+.metric-source-legend {
+  margin-top: 0.35rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.6rem;
+}
+
+.metric-source-legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.62rem;
+  font-family: var(--font-mono);
+  color: var(--text-muted);
+  letter-spacing: 0.03em;
 }
 
 .metric-group {
@@ -1690,6 +1716,7 @@ footer a:hover { border-bottom-color: var(--accent-gold); }
         <div class="conflict-news-track" id="iranNewsTrack"><span class="conflict-news-empty">Loading latest conflict headlines...</span></div>
       </div>
       <div class="metric-scope-legend" id="conflictScopeLegend" aria-label="Scope legend"></div>
+      <div class="metric-source-legend" id="conflictSourceLegend" aria-label="Source legend"></div>
       <div class="conflict-metrics-grid" id="conflictMetrics">
         <div class="iran-stat"><div class="iran-stat-label">Loading metrics</div><div class="iran-stat-value">--</div></div>
       </div>
@@ -1757,6 +1784,7 @@ footer a:hover { border-bottom-color: var(--accent-gold); }
         <div class="conflict-news-track" id="ukraineNewsTrack"><span class="conflict-news-empty">Loading latest conflict headlines...</span></div>
       </div>
       <div class="metric-scope-legend" id="ukraineScopeLegend" aria-label="Scope legend"></div>
+      <div class="metric-source-legend" id="ukraineSourceLegend" aria-label="Source legend"></div>
       <div class="conflict-metrics-grid" id="ukraineMetrics">
         <div class="iran-stat"><div class="iran-stat-label">Loading metrics</div><div class="iran-stat-value">--</div></div>
       </div>
@@ -3636,6 +3664,74 @@ function sparklinePath(values, width = 120, height = 18, pad = 2) {
   }).join(' ');
 }
 
+function buildConflictSourceEntries(conflict) {
+  const palette = ['#ef4444', '#22c55e', '#3b82f6', '#f59e0b'];
+  const rows = [
+    { name: conflict && conflict.source_name, url: conflict && conflict.source_url },
+    { name: conflict && conflict.secondary_source_name, url: conflict && conflict.secondary_source_url },
+    { name: conflict && conflict.tertiary_source_name, url: conflict && conflict.tertiary_source_url },
+    { name: conflict && conflict.quaternary_source_name, url: conflict && conflict.quaternary_source_url }
+  ];
+
+  return rows
+    .map((row, idx) => ({
+      key: 'source' + String(idx + 1),
+      index: idx + 1,
+      name: row.name || '',
+      url: row.url || '',
+      color: palette[idx]
+    }))
+    .filter(row => row.name);
+}
+
+function renderSourceLegend(sourceEntries, legendId) {
+  const node = legendId ? document.getElementById(legendId) : null;
+  if (!node) return;
+
+  node.innerHTML = '';
+  if (!Array.isArray(sourceEntries) || sourceEntries.length === 0) return;
+
+  sourceEntries.forEach(entry => {
+    const item = document.createElement('span');
+    item.className = 'metric-source-legend-item';
+
+    const dot = document.createElement('span');
+    dot.className = 'metric-card-source-dot';
+    dot.style.background = entry.color;
+
+    const text = document.createElement('span');
+    text.textContent = 'S' + String(entry.index) + ' ' + entry.name;
+
+    item.appendChild(dot);
+    item.appendChild(text);
+    node.appendChild(item);
+  });
+}
+
+function deriveMetricPrimarySource(metric, sourceEntries) {
+  if (!Array.isArray(sourceEntries) || sourceEntries.length === 0) return null;
+
+  const explicit = Number(metric && metric.primary_source_index);
+  if (Number.isFinite(explicit) && explicit >= 1 && explicit <= sourceEntries.length) {
+    return sourceEntries[explicit - 1];
+  }
+
+  const haystack = normalize(String((metric && metric.source) || '') + ' ' + String((metric && metric.note) || ''));
+  if (!haystack) return sourceEntries[0];
+
+  const stop = new Set(['source', 'sources', 'update', 'updates', 'coverage', 'live', 'conflict', 'tracker', 'news', 'reporting', 'report', 'latest', 'official']);
+
+  for (const entry of sourceEntries) {
+    const tokens = normalize(entry.name)
+      .split(' ')
+      .map(token => token.trim())
+      .filter(token => token.length >= 4 && !stop.has(token));
+    if (tokens.some(token => haystack.includes(token))) return entry;
+  }
+
+  return sourceEntries[0];
+}
+
 function renderScopeLegend(scopePalette, legendId) {
   const node = legendId ? document.getElementById(legendId) : null;
   if (!node) return;
@@ -3669,6 +3765,9 @@ function renderConflictMetrics(metrics, containerId = 'conflictMetrics', options
   const nextByMetric = new Map();
   const scopePalette = buildScopePalette(metrics);
   renderScopeLegend(scopePalette, options.scopeLegendId);
+
+  const sourceEntries = Array.isArray(options.sourceEntries) ? options.sourceEntries : [];
+  renderSourceLegend(sourceEntries, options.sourceLegendId);
 
   const grouped = new Map();
   (Array.isArray(metrics) ? metrics : []).forEach(metric => {
@@ -3723,6 +3822,17 @@ function renderConflictMetrics(metrics, containerId = 'conflictMetrics', options
         scopeDot.setAttribute('aria-label', scopeDot.title);
         labelLeft.appendChild(scopeDot);
       }
+
+      const primarySource = deriveMetricPrimarySource(metric, sourceEntries);
+      if (primarySource) {
+        const sourceDot = document.createElement('span');
+        sourceDot.className = 'metric-card-source-dot';
+        sourceDot.style.background = primarySource.color;
+        sourceDot.title = 'Main source: Source ' + String(primarySource.index) + ' - ' + primarySource.name;
+        sourceDot.setAttribute('aria-label', sourceDot.title);
+        labelLeft.appendChild(sourceDot);
+      }
+
       labelLeft.appendChild(label);
 
       const info = document.createElement('span');
@@ -4555,7 +4665,8 @@ async function refreshUkraineMetrics() {
     }
 
     hydrateUkraineHeader(conflict);
-    renderConflictMetrics(Array.isArray(conflict.metrics) ? conflict.metrics : [], 'ukraineMetrics', { moduleKey: 'ukraine', scopeLegendId: 'ukraineScopeLegend' });
+    const ukraineSources = buildConflictSourceEntries(conflict);
+    renderConflictMetrics(Array.isArray(conflict.metrics) ? conflict.metrics : [], 'ukraineMetrics', { moduleKey: 'ukraine', scopeLegendId: 'ukraineScopeLegend', sourceLegendId: 'ukraineSourceLegend', sourceEntries: ukraineSources });
     renderConflictLegend(Array.isArray(conflict.legend) ? conflict.legend : [], 'ukraineLegend', 'ukraine');
     renderConflictTimeline(Array.isArray(conflict.timeline) ? conflict.timeline : [], 'ukraineTimelineList');
     const ukraineSeries = Array.isArray(conflict.daily_series) ? conflict.daily_series : [];
@@ -4613,7 +4724,8 @@ async function refreshIranWarMetrics() {
     if (!conflict) throw new Error('Conflict feed missing conflicts');
 
     hydrateConflictHeader(conflict);
-    renderConflictMetrics(Array.isArray(conflict.metrics) ? conflict.metrics : [], 'conflictMetrics', { moduleKey: 'iran', scopeLegendId: 'conflictScopeLegend' });
+    const iranSources = buildConflictSourceEntries(conflict);
+    renderConflictMetrics(Array.isArray(conflict.metrics) ? conflict.metrics : [], 'conflictMetrics', { moduleKey: 'iran', scopeLegendId: 'conflictScopeLegend', sourceLegendId: 'conflictSourceLegend', sourceEntries: iranSources });
     renderConflictLegend(Array.isArray(conflict.legend) ? conflict.legend : [], 'conflictLegend', 'iran');
     renderConflictTimeline(Array.isArray(conflict.timeline) ? conflict.timeline : []);
     const iranSeries = Array.isArray(conflict.daily_series) ? conflict.daily_series : [];
