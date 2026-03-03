@@ -3000,6 +3000,162 @@ function markCardMarketUnavailable(card, market) {
   if (volumeNode) volumeNode.textContent = 'Archived';
 }
 
+function isSocialCard(card) {
+  return Boolean(card?.closest('#social'));
+}
+
+const TOPIC_KEYWORDS = {
+  foreign: ['iran', 'israel', 'war', 'strike', 'ukraine', 'gaza', 'military', 'nato', 'china', 'taiwan', 'missile', 'drone'],
+  race2028: ['2028', 'presidential', 'nominee', 'election'],
+  trump: ['trump', 'truth social', 'impeach', 'greenland'],
+  fed: ['fed', 'powell', 'inflation', 'tariff', 'recession', 'rate'],
+  midterms: ['midterm', 'house', 'senate', 'blue wave', 'red wave'],
+  congress: ['congress', 'shutdown', 'speaker', 'legislation', 'bill', 'act'],
+  legal: ['charged', 'indicted', 'legal', 'court', 'trial', 'impeach'],
+  social: ['musk', 'elon', 'truth social', 'tweet', 'tweets', 'post', 'posts', 'x.com']
+};
+
+const DYNAMIC_SECTION_CONFIG = [
+  { sectionId: 'foreign', topic: 'foreign', count: 1 },
+  { sectionId: 'race2028', topic: 'race2028', count: 1 },
+  { sectionId: 'trump', topic: 'trump', count: 1 },
+  { sectionId: 'fed', topic: 'fed', count: 1 },
+  { sectionId: 'midterms', topic: 'midterms', count: 1 },
+  { sectionId: 'congress', topic: 'congress', count: 1 },
+  { sectionId: 'legal', topic: 'legal', count: 1 },
+  { sectionId: 'social', topic: 'social', count: 3 }
+];
+
+function marketMatchesTopic(market, topic) {
+  const keywords = TOPIC_KEYWORDS[topic] || [];
+  const haystack = normalize(`${market?.question || ''} ${market?.slug || ''}`);
+  if (!haystack || keywords.length === 0) return false;
+  return keywords.some(keyword => haystack.includes(normalize(keyword)));
+}
+
+function marketPriorityScore(market) {
+  const volume = Number(market?.volume);
+  const updated = extractMarketTimestamp(market) || 0;
+  return (Number.isFinite(volume) ? volume : 0) + (updated / 1_000_000_000);
+}
+
+async function findLiveMarketByTopic(topic, rank = 1) {
+  const snapshot = await loadPolymarketSnapshot();
+  const markets = snapshotMarkets(snapshot)
+    .filter(market => market && market.active && !market.closed && marketMatchesTopic(market, topic))
+    .sort((a, b) => marketPriorityScore(b) - marketPriorityScore(a));
+
+  if (markets.length === 0) return null;
+  const idx = Math.max(0, Number(rank || 1) - 1);
+  return markets[idx] || markets[0] || null;
+}
+
+function pickTopOutcome(market) {
+  const outcomes = asArray(market?.outcomes);
+  const prices = asArray(market?.outcomePrices).map(value => Number(value));
+  if (!outcomes.length || !prices.length) return null;
+
+  let bestIndex = -1;
+  let bestValue = -1;
+  for (let i = 0; i < Math.min(outcomes.length, prices.length); i += 1) {
+    const value = prices[i];
+    if (!Number.isFinite(value)) continue;
+    if (value > bestValue) {
+      bestValue = value;
+      bestIndex = i;
+    }
+  }
+
+  if (bestIndex < 0) return null;
+  return {
+    label: outcomes[bestIndex] || 'Top outcome',
+    probability: Math.max(0, Math.min(100, bestValue * 100))
+  };
+}
+
+function updateAutofillCard(card, market) {
+  const questionNode = card.querySelector('.card-question');
+  if (questionNode && market?.question) {
+    questionNode.textContent = market.question;
+  }
+
+  const top = pickTopOutcome(market);
+  if (!top) return;
+
+  const valueNode = card.querySelector('.prob-big-value');
+  const fillNode = card.querySelector('.prob-big-fill');
+  if (valueNode && fillNode) {
+    valueNode.textContent = formatPercent(top.probability);
+    fillNode.dataset.width = String(Math.round(top.probability));
+    fillNode.style.width = `${Math.round(top.probability)}%`;
+    setToneClasses(valueNode, ['green', 'amber', 'red'], top.probability);
+    setToneClasses(fillNode, ['green', 'amber', 'red'], top.probability);
+  }
+
+  const tag = card.querySelector('.prob-tag');
+  if (tag) tag.textContent = `Top outcome: ${top.label}`;
+  card.dataset.marketQuestion = market?.question || card.dataset.marketQuestion || '';
+}
+
+function markCardMarketUnavailable(card, market) {
+  const isClosed = Boolean(market?.closed);
+  const reason = isClosed ? 'Archived market (closed)' : 'No active market currently';
+
+  const singleValue = card.querySelector('.prob-big-value');
+  const singleFill = card.querySelector('.prob-big-fill');
+  if (singleValue) {
+    singleValue.textContent = '--';
+    singleValue.classList.remove('green', 'amber', 'red');
+    singleValue.classList.add('amber');
+  }
+  if (singleFill) {
+    singleFill.dataset.width = '0';
+    singleFill.style.width = '0%';
+    singleFill.classList.remove('green', 'amber', 'red');
+    singleFill.classList.add('amber');
+  }
+
+  card.querySelectorAll('.prob-value').forEach(node => {
+    node.textContent = '--';
+    node.classList.remove('green', 'amber', 'red');
+    node.classList.add('amber');
+  });
+  card.querySelectorAll('.prob-bar-fill').forEach(node => {
+    node.dataset.width = '0';
+    node.style.width = '0%';
+    node.classList.remove('green', 'amber', 'red');
+    node.classList.add('amber');
+  });
+
+  const tag = card.querySelector('.prob-tag');
+  if (tag) tag.textContent = reason;
+
+  const volumeNode = card.querySelector('.card-volume');
+  if (volumeNode) volumeNode.textContent = 'Archived';
+}
+
+function ensureDynamicTopicCards() {
+  DYNAMIC_SECTION_CONFIG.forEach(config => {
+    const section = document.getElementById(config.sectionId);
+    const grid = section?.querySelector('.card-grid');
+    if (!grid) return;
+
+    for (let i = 1; i <= config.count; i += 1) {
+      const existing = grid.querySelector(`.auto-topic-card[data-autofill-topic=\"${config.topic}\"][data-autofill-rank=\"${i}\"]`);
+      if (existing) continue;
+
+      const card = document.createElement('article');
+      card.className = 'card reveal auto-topic-card';
+      card.dataset.autofillTopic = config.topic;
+      card.dataset.autofillRank = String(i);
+
+      card.innerHTML =         '<span class="tag-badge watch">Live</span>' +        '<div class="card-header"><h3 class="card-question">Live market spotlight</h3><span class="card-volume">Live volume</span></div>' +        '<div class="prob-single">' +          '<span class="prob-big-value amber">--</span>' +          '<div class="prob-big-bar"><div class="prob-big-fill amber" data-width="0"></div></div>' +        '</div>' +        '<p class="prob-tag">Waiting for active market</p>';
+
+      grid.appendChild(card);
+    }
+  });
+}
+
 function formatDualTimestamp(sourceTime) {
   const timestamp = Number.isFinite(sourceTime) ? sourceTime : Date.now();
   const date = new Date(timestamp);
@@ -4134,6 +4290,8 @@ document.querySelectorAll('.mobile-link').forEach(link => {
 // ========================================
 // Intersection Observer — Reveal + Animate Bars
 // ========================================
+ensureDynamicTopicCards();
+
 const observerOptions = {
   threshold: 0.1,
   rootMargin: '0px 0px -40px 0px'
