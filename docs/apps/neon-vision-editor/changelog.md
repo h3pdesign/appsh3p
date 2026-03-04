@@ -10,21 +10,18 @@ head:
 
 # Neon Vision Editor Changelog
 
-_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on March 3, 2026._
+_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on March 4, 2026._
 
-## v0.4.33 (published March 3, 2026)
+## v0.4.34 (published March 4, 2026)
 
-Release link: [GitHub Release v0.4.33](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v0.4.33)
+Release link: [GitHub Release v0.4.34](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v0.4.34)
 
-- Added performance instrumentation for startup first-paint/first-keystroke and file-open latency in debug builds.
-- Added iPad hardware-keyboard shortcut bridging for New Tab, Open, Save, Find, Find in Files, and Command Palette.
-- Added local runtime reliability monitoring with previous-run crash bucketing and main-thread stall watchdog logging in debug.
-- Improved command palette behavior with fuzzy matching, command entries, and recent-selection ranking.
-- Improved large-file responsiveness by forcing throttle mode during load/import and reevaluating after idle.
-- Improved project-wide search on macOS via ripgrep-backed Find in Files with fallback scanning.
-- Improved iPad toolbar usability with larger minimum touch targets for promoted actions.
-- Fixed startup restore flow to recover unsaved draft checkpoints before blank-document startup mode.
-- Fixed command/find panels with explicit accessibility labels, hints, and initial focus behavior.
+- iPhone editor now shows a floating Liquid Glass status pill with live caret and word metrics.
+- Added a searchable Language picker (`Cmd+Shift+L`) on macOS, iOS, and iPadOS.
+- Language picker behavior is now consistent: compact toolbar labels with full language names in selection lists.
+- iOS/iPad settings cards were visually simplified by removing accent stripe lines across tabs.
+- Wrapped-line numbering on iOS/iPad now uses sticky logical line numbers instead of repeating on every visual wrap row.
+- Floating status pill word counts stay in sync with live editor content while typing.
 
 ## v0.4.22 (published February 16, 2026)
 
