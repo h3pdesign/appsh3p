@@ -1,8 +1,8 @@
 {
-  "updated_at_utc": "2026-03-04T20:42:27.701Z",
+  "updated_at_utc": "2026-03-04T21:43:27.273Z",
   "total_questions": 66,
-  "mapped_questions": 47,
-  "unmapped_questions": 19,
+  "mapped_questions": 46,
+  "unmapped_questions": 20,
   "entries": [
     {
       "question": "Will LeBron James win the 2028 US Presidential Election?",
@@ -146,15 +146,6 @@
       "market_question": "Will Trump nominate Rick Rieder as the next Fed chair?",
       "score": 0.62,
       "active": false,
-      "closed": false
-    },
-    {
-      "question": "Kevin Warsh formally nominated by March 31?",
-      "market_id": "1389074",
-      "market_slug": "will-kevin-warsh-be-formally-nominated-to-be-chair-of-the-federal-reserve-by-march-31-2026",
-      "market_question": "Will Kevin Warsh be formally nominated to be Chair of the Federal Reserve by March 31, 2026?",
-      "score": 0.575,
-      "active": true,
       "closed": false
     },
     {
@@ -436,6 +427,7 @@
     "Next country US strikes",
     "Trump deportations in 2025",
     "Trump Truth Social posts Feb 20–27",
+    "Kevin Warsh formally nominated by March 31?",
     "Fed decision — April",
     "Revenue from tariffs 2025",
     "House Popular Vote Margin",
