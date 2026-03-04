@@ -339,8 +339,9 @@ nav {
 }
 
 :focus-visible {
-  outline: 2px solid color-mix(in oklab, var(--accent-blue) 80%, white 20%);
-  outline-offset: 2px;
+  outline: 3px solid color-mix(in oklab, var(--accent-blue) 82%, white 18%);
+  outline-offset: 3px;
+  box-shadow: 0 0 0 3px color-mix(in oklab, var(--bg-card) 65%, transparent);
 }
 
 /* Hamburger */
@@ -384,22 +385,53 @@ nav {
 
 .mobile-menu.open { display: block; }
 
-.mobile-menu a {
-  display: block;
-  color: var(--text-secondary);
-  text-decoration: none;
-  font-size: 1rem;
-  font-weight: 500;
-  padding: 0.85rem 0;
-  border-bottom: 1px solid var(--border-color);
-  transition: color 0.2s;
+.mobile-menu-groups {
+  display: grid;
+  gap: 1rem;
 }
 
-.mobile-menu a:hover { color: var(--text-primary); }
+.mobile-menu-group-title {
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.4rem;
+}
+
+.mobile-chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.mobile-chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border-color);
+  border-radius: 999px;
+  background: color-mix(in oklab, var(--bg-card) 86%, transparent);
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  padding: 0.42rem 0.72rem;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.mobile-chip:hover { color: var(--text-primary); border-color: var(--accent-blue); }
+
+.mobile-chip-row-links {
+  border-top: 1px dashed var(--border-color);
+  padding-top: 0.8rem;
+}
 
 @media (max-width: 768px) {
   .nav-links { display: none; }
   .hamburger { display: flex; }
+  .mini-toc { display: none; }
   .theme-toggle {
     font-size: 0.64rem;
     padding: 0.28rem 0.55rem;
@@ -435,6 +467,186 @@ nav {
   width: 120px;
   height: 1px;
   background: linear-gradient(90deg, transparent, var(--accent-gold), transparent);
+}
+
+.freshness-panel {
+  margin: 1rem auto 0;
+  max-width: 980px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-card);
+  border-radius: 8px;
+  padding: 0.75rem;
+}
+
+.freshness-head {
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+}
+
+.freshness-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 0.5rem;
+}
+
+.freshness-item {
+  border: 1px solid var(--border-subtle);
+  border-radius: 6px;
+  padding: 0.45rem 0.55rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+.freshness-item.freshness-fresh { border-color: color-mix(in oklab, var(--tone-green) 45%, var(--border-subtle)); }
+.freshness-item.freshness-delayed { border-color: color-mix(in oklab, var(--tone-amber) 50%, var(--border-subtle)); }
+.freshness-item.freshness-stale { border-color: color-mix(in oklab, var(--tone-red) 58%, var(--border-subtle)); }
+.freshness-item.freshness-error { border-color: color-mix(in oklab, var(--text-muted) 58%, var(--border-subtle)); }
+
+.freshness-label {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.freshness-value {
+  font-family: var(--font-mono);
+  font-size: 0.64rem;
+}
+
+.delta-cards {
+  margin-top: 0.55rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 0.45rem;
+}
+
+.delta-card {
+  border: 1px solid var(--border-subtle);
+  border-radius: 6px;
+  padding: 0.45rem 0.55rem;
+  font-size: 0.7rem;
+  color: var(--text-secondary);
+}
+
+.delta-card strong { color: var(--text-primary); }
+.delta-meta {
+  display: block;
+  margin-top: 0.2rem;
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  color: var(--text-muted);
+}
+.delta-arrow { font-weight: 700; }
+.delta-arrow.up { color: var(--tone-red); }
+.delta-arrow.down { color: var(--tone-green); }
+.delta-arrow.flat { color: var(--text-muted); }
+
+.mini-toc {
+  position: sticky;
+  top: calc(var(--nav-height) + 8px);
+  z-index: 10;
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-bottom: 0.85rem;
+  padding: 0.35rem 0.45rem;
+  border: 1px solid var(--border-color);
+  border-radius: 999px;
+  background: color-mix(in oklab, var(--bg-card) 88%, transparent);
+}
+.mini-toc-current {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--text-primary);
+  border: 1px solid var(--border-subtle);
+  border-radius: 999px;
+  padding: 0.2rem 0.52rem;
+}
+
+.mini-toc a {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  border: 1px solid var(--border-subtle);
+  border-radius: 999px;
+  padding: 0.2rem 0.52rem;
+  text-decoration: none;
+}
+
+.mini-toc a.active {
+  color: var(--text-primary);
+  border-color: var(--accent-blue);
+  background: color-mix(in oklab, var(--accent-blue) 16%, transparent);
+}
+
+.shortcut-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1200;
+  display: grid;
+  place-items: center;
+  background: rgba(5,8,15,0.44);
+}
+
+.shortcut-overlay-card {
+  width: min(420px, calc(100vw - 2rem));
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  background: var(--bg-card);
+  padding: 0.9rem;
+}
+
+.shortcut-overlay-card h3 {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 0.55rem;
+}
+
+.shortcut-overlay-card ul {
+  display: grid;
+  gap: 0.38rem;
+  padding-left: 1rem;
+  color: var(--text-secondary);
+  font-size: 0.78rem;
+}
+
+.shortcut-overlay kbd {
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  padding: 0.04rem 0.28rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+}
+
+.module-skeleton {
+  position: relative;
+  overflow: hidden;
+}
+
+.module-skeleton::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.08), transparent);
+  transform: translateX(-100%);
+  animation: shimmer 1.4s infinite;
+}
+
+@keyframes shimmer {
+  to { transform: translateX(100%); }
 }
 
 .hero-tag {
@@ -1993,19 +2205,42 @@ footer a:hover { border-bottom-color: var(--accent-gold); }
 
 <!-- Mobile menu -->
 <div class="mobile-menu" id="mobileMenu">
-  <a href="https://apps-h3p.com" target="_blank" rel="noopener">apps-h3p.com</a>
-  <a href="https://medium.com/@h3palpha" target="_blank" rel="noopener">Medium Profile</a>
-  <a href="/polymarket-us-politics/state-of-us-politics.html#iran-war" class="mobile-link">Iran War Monitor</a>
-  <a href="/polymarket-us-politics/state-of-us-politics.html#ukraine-war" class="mobile-link">Ukraine War Monitor</a>
-  <a href="/polymarket-us-politics/state-of-us-politics.html" class="mobile-link">Executive Summary</a>
-  <a href="/polymarket-us-politics/state-of-us-politics.html?focus=foreign" class="mobile-link">Foreign Policy & Military</a>
-  <a href="/polymarket-us-politics/state-of-us-politics.html?focus=race" class="mobile-link">2028 Presidential Race</a>
-  <a href="/polymarket-us-politics/state-of-us-politics.html?focus=trump" class="mobile-link">Trump Presidency</a>
-  <a href="/polymarket-us-politics/state-of-us-politics.html?focus=fed" class="mobile-link">Federal Reserve & Economy</a>
-  <a href="/polymarket-us-politics/state-of-us-politics.html?focus=midterms" class="mobile-link">2026 Midterm Elections</a>
-  <a href="/polymarket-us-politics/state-of-us-politics.html?focus=congress" class="mobile-link">Congress & Legislation</a>
-  <a href="/polymarket-us-politics/state-of-us-politics.html?focus=legal" class="mobile-link">Legal & Miscellaneous</a>
-  <a href="/polymarket-us-politics/state-of-us-politics.html?focus=social" class="mobile-link">Social Media Tracker</a>
+  <div class="mobile-menu-groups">
+    <div class="mobile-menu-group">
+      <div class="mobile-menu-group-title">Conflict</div>
+      <div class="mobile-chip-row">
+        <a href="/polymarket-us-politics/state-of-us-politics.html#iran-war" class="mobile-link mobile-chip">Iran</a>
+        <a href="/polymarket-us-politics/state-of-us-politics.html#ukraine-war" class="mobile-link mobile-chip">Ukraine</a>
+        <a href="/polymarket-us-politics/state-of-us-politics.html?focus=foreign" class="mobile-link mobile-chip">Foreign Policy</a>
+      </div>
+    </div>
+    <div class="mobile-menu-group">
+      <div class="mobile-menu-group-title">Elections</div>
+      <div class="mobile-chip-row">
+        <a href="/polymarket-us-politics/state-of-us-politics.html?focus=race" class="mobile-link mobile-chip">2028 Race</a>
+        <a href="/polymarket-us-politics/state-of-us-politics.html?focus=midterms" class="mobile-link mobile-chip">Midterms</a>
+        <a href="/polymarket-us-politics/state-of-us-politics.html?focus=trump" class="mobile-link mobile-chip">Trump</a>
+      </div>
+    </div>
+    <div class="mobile-menu-group">
+      <div class="mobile-menu-group-title">Economy</div>
+      <div class="mobile-chip-row">
+        <a href="/polymarket-us-politics/state-of-us-politics.html?focus=fed" class="mobile-link mobile-chip">Fed & Economy</a>
+        <a href="/polymarket-us-politics/state-of-us-politics.html?focus=congress" class="mobile-link mobile-chip">Congress</a>
+      </div>
+    </div>
+    <div class="mobile-menu-group">
+      <div class="mobile-menu-group-title">Social</div>
+      <div class="mobile-chip-row">
+        <a href="/polymarket-us-politics/state-of-us-politics.html?focus=social" class="mobile-link mobile-chip">Social Tracker</a>
+        <a href="/polymarket-us-politics/state-of-us-politics.html?focus=legal" class="mobile-link mobile-chip">Legal</a>
+      </div>
+    </div>
+    <div class="mobile-chip-row mobile-chip-row-links">
+      <a href="https://apps-h3p.com" target="_blank" rel="noopener" class="mobile-chip">apps-h3p.com</a>
+      <a href="https://medium.com/@h3palpha" target="_blank" rel="noopener" class="mobile-chip">Medium</a>
+    </div>
+  </div>
 </div>
 
 <div class="container">
@@ -2020,8 +2255,29 @@ footer a:hover { border-bottom-color: var(--accent-gold); }
       <span>&#9670; Source: Polymarket</span>
       <span id="syncStatus" class="status-pill status-pending" aria-live="polite" title="Waiting for live sync">Health: Pending</span>
     </div>
+    <div class="freshness-panel" id="freshnessPanel" aria-live="polite">
+      <div class="freshness-head">Data Freshness</div>
+      <div class="freshness-grid" id="freshnessGrid">
+        <div class="freshness-item" data-feed="snapshot"><span class="freshness-label">Snapshot</span><span class="freshness-value">--</span></div>
+        <div class="freshness-item" data-feed="conflict_metrics"><span class="freshness-label">Conflict Metrics</span><span class="freshness-value">--</span></div>
+        <div class="freshness-item" data-feed="conflict_news"><span class="freshness-label">Conflict News</span><span class="freshness-value">--</span></div>
+        <div class="freshness-item" data-feed="social"><span class="freshness-label">Social</span><span class="freshness-value">--</span></div>
+      </div>
+      <div class="delta-cards" id="deltaCards" aria-label="What changed since last update">
+        <div class="delta-card">Waiting for section deltas...</div>
+      </div>
+    </div>
     <div id="globalLiveAnnouncer" class="sr-only" aria-live="polite" aria-atomic="true"></div>
   </header>
+
+  <nav class="mini-toc" id="miniToc" aria-label="Section quick navigation">
+    <span class="mini-toc-current" id="miniTocCurrent">You are here: Conflict</span>
+    <a href="#iran-war" data-section="iran-war">Conflict</a>
+    <a href="#summary" data-section="summary">Summary</a>
+    <a href="#presidential" data-section="presidential">Elections</a>
+    <a href="#fed" data-section="fed">Economy</a>
+    <a href="#social" data-section="social">Social</a>
+  </nav>
 
   <!-- ====== IRAN WAR MONITOR ====== -->
   <section class="section" id="iran-war">
@@ -3165,6 +3421,17 @@ footer a:hover { border-bottom-color: var(--accent-gold); }
   </div>
 </footer>
 
+<div class="shortcut-overlay" id="shortcutOverlay" hidden role="dialog" aria-modal="true" aria-labelledby="shortcutOverlayTitle">
+  <div class="shortcut-overlay-card">
+    <h3 id="shortcutOverlayTitle">Keyboard Shortcuts</h3>
+    <ul>
+      <li><kbd>Alt</kbd> + <kbd>1..9</kbd> Jump sections</li>
+      <li><kbd>?</kbd> Open/close shortcuts</li>
+      <li><kbd>Esc</kbd> Close menus/overlays</li>
+    </ul>
+  </div>
+</div>
+
 <script src="/polymarket-us-politics/cookie-consent.js?v=20260302c" defer></script>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script src="https://unpkg.com/leaflet.heat/dist/leaflet-heat.js"></script>
@@ -3195,6 +3462,12 @@ const LAST_IRAN_DATA_KEY = 'pmir-last-iran-data-ts';
 const LAST_UKRAINE_DATA_KEY = 'pmir-last-ukraine-data-ts';
 const FRESH_SYNC_MAX_MS = ONE_HOUR_MS;
 const DELAYED_SYNC_MAX_MS = 8 * ONE_HOUR_MS;
+const FRESHNESS_THRESHOLDS = {
+  snapshot: { fresh: ONE_HOUR_MS, delayed: 3 * ONE_HOUR_MS },
+  conflict_metrics: { fresh: ONE_HOUR_MS, delayed: 3 * ONE_HOUR_MS },
+  conflict_news: { fresh: 2 * ONE_HOUR_MS, delayed: 6 * ONE_HOUR_MS },
+  social: { fresh: 2 * ONE_HOUR_MS, delayed: 6 * ONE_HOUR_MS }
+};
 const marketCache = new Map();
 let conflictMap = null;
 let conflictMarkersLayer = null;
@@ -3265,6 +3538,17 @@ const legendFilterState = { iran: new Set(), ukraine: new Set() };
 const changeSummaryState = { iran: null, ukraine: null };
 const metricRenderState = { iran: new Map(), ukraine: new Map() };
 const feedPreviousSnapshotState = { iran: {}, ukraine: {} };
+const freshnessState = {
+  snapshot: { timestamp: null, label: 'Snapshot', source: 'Polymarket snapshot', status: 'error' },
+  conflict_metrics: { timestamp: null, label: 'Conflict Metrics', source: 'Conflict monitor feed', status: 'error' },
+  conflict_news: { timestamp: null, label: 'Conflict News', source: 'Conflict news feed', status: 'error' },
+  social: { timestamp: null, label: 'Social', source: 'Social tracker feed', status: 'error' }
+};
+let liveSnapshotTimestamp = null;
+let lastConflictMetricsTimestamp = null;
+let latestSocialFallbackTimestamp = null;
+let lastSocialFeedTimestamp = null;
+let lastConflictNewsTimestamp = null;
 let leafletReadyPromise = null;
 
 function ensureLeafletStylesheet(href) {
@@ -3701,7 +3985,13 @@ async function applySocialFallbackMetric(card) {
   }
 
   card.dataset.marketQuestion = metric.label || card.dataset.marketQuestion || '';
-  return parseTimestamp(metric.as_of_utc || payload.updated_at_utc || null);
+  const socialTs = parseTimestamp(metric.as_of_utc || payload.updated_at_utc || null);
+  if (Number.isFinite(socialTs)) {
+    latestSocialFallbackTimestamp = Math.max(latestSocialFallbackTimestamp || 0, socialTs);
+    lastSocialFeedTimestamp = Math.max(lastSocialFeedTimestamp || 0, socialTs);
+    setFeedFreshness('social', lastSocialFeedTimestamp, metric.source_name || 'Social tracker feed');
+  }
+  return socialTs;
 }
 
 function isSocialCard(card) {
@@ -3743,10 +4033,6 @@ function markCardMarketUnavailable(card, market) {
 
   const volumeNode = card.querySelector('.card-volume');
   if (volumeNode) volumeNode.textContent = 'Archived';
-}
-
-function isSocialCard(card) {
-  return Boolean(card?.closest('#social'));
 }
 
 const TOPIC_KEYWORDS = {
@@ -3973,6 +4259,125 @@ function formatRelativeAge(ms) {
   return days + ' d ago';
 }
 
+function formatShortLocalTimestamp(timestamp) {
+  if (!Number.isFinite(timestamp)) return '--';
+  return new Intl.DateTimeFormat(undefined, {
+    month: 'short',
+    day: '2-digit',
+    hour: '2-digit',
+    minute: '2-digit',
+    timeZoneName: 'short'
+  }).format(new Date(timestamp));
+}
+
+function freshnessStatusFor(feedKey, timestamp) {
+  if (!Number.isFinite(timestamp)) return 'error';
+  const thresholds = FRESHNESS_THRESHOLDS[feedKey] || { fresh: ONE_HOUR_MS, delayed: 3 * ONE_HOUR_MS };
+  const age = Math.max(0, Date.now() - timestamp);
+  if (age <= thresholds.fresh) return 'fresh';
+  if (age <= thresholds.delayed) return 'delayed';
+  return 'stale';
+}
+
+function setFeedFreshness(feedKey, timestamp, sourceLabel) {
+  if (!freshnessState[feedKey]) return;
+  const nextTs = Number.isFinite(timestamp) ? timestamp : null;
+  freshnessState[feedKey].timestamp = nextTs;
+  if (sourceLabel) freshnessState[feedKey].source = sourceLabel;
+  freshnessState[feedKey].status = freshnessStatusFor(feedKey, nextTs);
+  renderFreshnessPanel();
+}
+
+function renderFreshnessPanel() {
+  const grid = document.getElementById('freshnessGrid');
+  if (!grid) return;
+
+  const cards = Array.from(grid.querySelectorAll('.freshness-item'));
+  cards.forEach(card => {
+    const key = card.getAttribute('data-feed') || '';
+    const state = freshnessState[key];
+    const valueNode = card.querySelector('.freshness-value');
+    if (!state || !valueNode) return;
+
+    card.classList.remove('freshness-fresh', 'freshness-delayed', 'freshness-stale', 'freshness-error');
+    const status = freshnessStatusFor(key, state.timestamp);
+    card.classList.add('freshness-' + status);
+
+    if (!Number.isFinite(state.timestamp)) {
+      valueNode.textContent = 'Unavailable';
+      card.title = state.label + ': no timestamp available';
+      return;
+    }
+
+    const age = formatRelativeAge(Math.max(0, Date.now() - state.timestamp));
+    const absolute = formatShortLocalTimestamp(state.timestamp);
+    valueNode.textContent = age + ' · ' + absolute;
+    card.title = state.label + ' | ' + absolute + ' | Source: ' + (state.source || 'unknown');
+  });
+}
+
+function formatDeltaArrow(delta) {
+  if (!Number.isFinite(delta) || Math.abs(delta) < 0.05) return { cls: 'flat', symbol: '→' };
+  if (delta > 0) return { cls: 'up', symbol: '▲' };
+  return { cls: 'down', symbol: '▼' };
+}
+
+function topMetricDeltas(moduleKey, limit = 2) {
+  const prev = feedPreviousSnapshotState[moduleKey] || {};
+  const current = metricRenderState[moduleKey] || new Map();
+  const rows = [];
+  current.forEach((value, metricId) => {
+    const prevValue = Number(prev[metricId]);
+    if (!Number.isFinite(prevValue)) return;
+    const delta = Number(value) - prevValue;
+    if (!Number.isFinite(delta) || delta === 0) return;
+    rows.push({ metricId, delta });
+  });
+  rows.sort((a, b) => Math.abs(b.delta) - Math.abs(a.delta));
+  return rows.slice(0, limit);
+}
+
+function renderDeltaCards() {
+  const node = document.getElementById('deltaCards');
+  if (!node) return;
+
+  const cards = [];
+  const iranSummary = changeSummaryState.iran;
+  const ukraineSummary = changeSummaryState.ukraine;
+
+  if (iranSummary) cards.push({ section: 'Iran', delta: iranSummary.delta1, ts: lastConflictMetricsTimestamp });
+  if (ukraineSummary) cards.push({ section: 'Ukraine', delta: ukraineSummary.delta1, ts: lastConflictMetricsTimestamp });
+
+  topMetricDeltas('iran', 2).forEach(item => cards.push({
+    section: 'Iran ' + String(item.metricId).replace(/_/g, ' '),
+    delta: item.delta,
+    ts: lastConflictMetricsTimestamp
+  }));
+  topMetricDeltas('ukraine', 1).forEach(item => cards.push({
+    section: 'Ukraine ' + String(item.metricId).replace(/_/g, ' '),
+    delta: item.delta,
+    ts: lastConflictMetricsTimestamp
+  }));
+
+  if (cards.length === 0) {
+    node.innerHTML = '<div class="delta-card">Waiting for section deltas...</div>';
+    return;
+  }
+
+  node.innerHTML = cards.slice(0, 5).map(item => {
+    const arrow = formatDeltaArrow(item.delta);
+    const rounded = Number.isFinite(item.delta) ? (Math.round(item.delta * 10) / 10).toFixed(1) : 'n/a';
+    const stamp = Number.isFinite(item.ts) ? formatShortLocalTimestamp(item.ts) : 'timestamp n/a';
+    return '<div class="delta-card"><strong>' + escapeHtml(item.section) + '</strong> <span class="delta-arrow ' + arrow.cls + '">' + arrow.symbol + ' ' + rounded + '</span><span class="delta-meta">Source: ' + escapeHtml(stamp) + '</span></div>';
+  }).join('');
+}
+
+function setModuleLoading(moduleId, loading) {
+  const node = document.getElementById(moduleId);
+  if (!node) return;
+  node.classList.toggle('module-skeleton', Boolean(loading));
+}
+
 function setSyncStatus(state, detail, labelOverride) {
   const node = document.getElementById('syncStatus');
   if (!node) return;
@@ -4054,18 +4459,31 @@ function renderConflictTicker(conflictId, trackId, updatedId, feed) {
 }
 
 async function refreshConflictNews() {
+  setModuleLoading('iran-war', true);
   try {
     const response = await fetch(`${CONFLICT_NEWS_URL}?t=${Date.now()}`, { cache: 'no-store' });
     if (!response.ok) throw new Error(`Conflict news fetch failed: ${response.status}`);
     const feed = await response.json();
     renderConflictTicker('iran_2026', 'iranNewsTrack', 'iranNewsUpdated', feed);
     renderConflictTicker('ukraine_2026', 'ukraineNewsTrack', 'ukraineNewsUpdated', feed);
+    const newsTs = parseTimestamp(feed?.updated_at_utc || feed?.as_of_utc || null);
+    if (Number.isFinite(newsTs)) {
+      lastConflictNewsTimestamp = newsTs;
+      setFeedFreshness('conflict_news', newsTs, 'Conflict news feed');
+    }
   } catch (error) {
     const iranTrack = document.getElementById('iranNewsTrack');
     const ukrTrack = document.getElementById('ukraineNewsTrack');
     if (iranTrack) iranTrack.innerHTML = '<span class="conflict-news-empty">Live ticker unavailable.</span>';
     if (ukrTrack) ukrTrack.innerHTML = '<span class="conflict-news-empty">Live ticker unavailable.</span>';
+    if (Number.isFinite(lastConflictNewsTimestamp)) {
+      setFeedFreshness('conflict_news', lastConflictNewsTimestamp, 'Conflict news fallback');
+    } else {
+      setFeedFreshness('conflict_news', null, 'Conflict news unavailable');
+    }
     console.error(error);
+  } finally {
+    setModuleLoading('iran-war', false);
   }
 }
 
@@ -4196,6 +4614,13 @@ function sparklinePath(values, width = 120, height = 18, pad = 2) {
 
 function buildConflictSourceEntries(conflict) {
   const palette = ['#ef4444', '#22c55e', '#3b82f6', '#f59e0b'];
+  const defaults = [
+    { name: 'Wikipedia tracker', url: 'https://en.wikipedia.org/wiki/2026_Iran_conflict' },
+    { name: 'ISW updates', url: 'https://www.understandingwar.org/' },
+    { name: 'ACLED incidents', url: 'https://acleddata.com/' },
+    { name: 'UNOCHA/ReliefWeb updates', url: 'https://www.unocha.org/' }
+  ];
+
   const rows = [
     { name: conflict && conflict.source_name, url: conflict && conflict.source_url },
     { name: conflict && conflict.secondary_source_name, url: conflict && conflict.secondary_source_url },
@@ -4203,15 +4628,14 @@ function buildConflictSourceEntries(conflict) {
     { name: conflict && conflict.quaternary_source_name, url: conflict && conflict.quaternary_source_url }
   ];
 
-  return rows
-    .map((row, idx) => ({
-      key: 'source' + String(idx + 1),
-      index: idx + 1,
-      name: row.name || '',
-      url: row.url || '',
-      color: palette[idx]
-    }))
-    .filter(row => row.name);
+  return rows.map((row, idx) => ({
+    key: 'source' + String(idx + 1),
+    index: idx + 1,
+    name: row.name || defaults[idx].name,
+    url: row.url || defaults[idx].url,
+    color: palette[idx],
+    isFallback: !row.name
+  }));
 }
 
 function renderSourceLegend(sourceEntries, legendId) {
@@ -4230,7 +4654,7 @@ function renderSourceLegend(sourceEntries, legendId) {
     dot.style.background = entry.color;
 
     const text = document.createElement('span');
-    text.textContent = 'S' + String(entry.index) + ' ' + entry.name;
+    text.textContent = 'S' + String(entry.index) + ' ' + entry.name + (entry.isFallback ? ' (fallback)' : '');
 
     item.appendChild(dot);
     item.appendChild(text);
@@ -4522,6 +4946,13 @@ function renderConflictLegend(legend, containerId = 'conflictLegend', moduleName
     const text = document.createElement('span');
     text.textContent = item.label || type || 'Event';
 
+    const meaning = shapeForType(type) === 'triangle'
+      ? 'Triangle markers show strike/projectile events.'
+      : 'Dot markers show impact/casualty concentration events.';
+    const tooltip = (item.label || type || 'Event') + ' | Color identifies event family. ' + meaning + ' Mass in map popups is represented event count/weight after density and zoom filtering.';
+    button.title = tooltip;
+    button.setAttribute('aria-label', tooltip);
+
     button.appendChild(swatch);
     button.appendChild(text);
     button.addEventListener('click', () => {
@@ -4547,6 +4978,8 @@ function renderConflictLegend(legend, containerId = 'conflictLegend', moduleName
 
   const text = document.createElement('span');
   text.textContent = 'Newest update (red)';
+  note.title = 'Newest event in active window is highlighted in red.';
+  note.setAttribute('aria-label', note.title);
 
   note.appendChild(swatch);
   note.appendChild(text);
@@ -5610,6 +6043,23 @@ function pickActiveConflict(feed) {
   return conflicts.find(conflict => conflict.id === feed.active_conflict_id) || conflicts[0];
 }
 
+function applySourceSlot(node, index, name, url, fallbackName, fallbackUrl) {
+  if (!node) return;
+  const usingFallback = !name;
+  const resolvedName = name || fallbackName || 'fallback source';
+  const resolvedUrl = url || fallbackUrl || node.href || '#';
+  node.textContent = `Source ${index}${usingFallback ? ' (fallback)' : ''}: ${resolvedName}`;
+  if (resolvedUrl && resolvedUrl !== '#') {
+    node.href = resolvedUrl;
+    node.style.display = '';
+    node.removeAttribute('aria-disabled');
+  } else {
+    node.href = '#';
+    node.style.display = '';
+    node.setAttribute('aria-disabled', 'true');
+  }
+}
+
 function hydrateConflictHeader(conflict) {
   const titleNode = document.getElementById('conflictTitle');
   const subtitleNode = document.getElementById('conflictSubtitle');
@@ -5622,28 +6072,15 @@ function hydrateConflictHeader(conflict) {
   if (titleNode) titleNode.textContent = conflict.title || 'Conflict Monitor';
   if (subtitleNode) subtitleNode.textContent = conflict.subtitle || 'Live conflict metrics refreshed every hour.';
   if (qualityNode) qualityNode.textContent = `◆ Confidence: ${conflict.confidence || 'Medium'}`;
-  if (sourceNode) {
-    sourceNode.textContent = `Source 1: ${conflict.source_name || 'live conflict data feed'}`;
-    if (conflict.source_url) sourceNode.href = conflict.source_url;
-  }
+  applySourceSlot(sourceNode, 1, conflict.source_name, conflict.source_url, 'Wikipedia casualty tracker', 'https://en.wikipedia.org/wiki/2026_Iran_conflict');
 
   const sourceSlots = [
-    { node: sourceNode2, name: conflict.secondary_source_name, url: conflict.secondary_source_url, index: 2 },
-    { node: sourceNode3, name: conflict.tertiary_source_name, url: conflict.tertiary_source_url, index: 3 },
-    { node: sourceNode4, name: conflict.quaternary_source_name, url: conflict.quaternary_source_url, index: 4 }
+    { node: sourceNode2, name: conflict.secondary_source_name, url: conflict.secondary_source_url, index: 2, fallbackName: 'ISW updates', fallbackUrl: 'https://www.understandingwar.org/' },
+    { node: sourceNode3, name: conflict.tertiary_source_name, url: conflict.tertiary_source_url, index: 3, fallbackName: 'ACLED incidents', fallbackUrl: 'https://acleddata.com/' },
+    { node: sourceNode4, name: conflict.quaternary_source_name, url: conflict.quaternary_source_url, index: 4, fallbackName: 'UNOCHA reports', fallbackUrl: 'https://www.unocha.org/' }
   ];
 
-  sourceSlots.forEach(slot => {
-    if (!slot.node) return;
-    const label = slot.name || 'additional conflict source';
-    slot.node.textContent = `Source ${slot.index}: ${label}`;
-    if (slot.url) {
-      slot.node.href = slot.url;
-      slot.node.style.display = '';
-    } else {
-      slot.node.style.display = 'none';
-    }
-  });
+  sourceSlots.forEach(slot => applySourceSlot(slot.node, slot.index, slot.name, slot.url, slot.fallbackName, slot.fallbackUrl));
 }
 
 function setUkraineSync(message) {
@@ -5678,28 +6115,15 @@ function hydrateUkraineHeader(conflict) {
   if (titleNode) titleNode.textContent = conflict.title || 'Ukraine Conflict Monitor';
   if (subtitleNode) subtitleNode.textContent = conflict.subtitle || 'Live conflict metrics refreshed every hour.';
   if (qualityNode) qualityNode.textContent = `◆ Confidence: ${conflict.confidence || 'Medium'}`;
-  if (sourceNode) {
-    sourceNode.textContent = `Source 1: ${conflict.source_name || 'live conflict data feed'}`;
-    if (conflict.source_url) sourceNode.href = conflict.source_url;
-  }
+  applySourceSlot(sourceNode, 1, conflict.source_name, conflict.source_url, 'Wikipedia casualty tracker', 'https://en.wikipedia.org/wiki/Timeline_of_the_Russian_invasion_of_Ukraine');
 
   const sourceSlots = [
-    { node: sourceNode2, name: conflict.secondary_source_name, url: conflict.secondary_source_url, index: 2 },
-    { node: sourceNode3, name: conflict.tertiary_source_name, url: conflict.tertiary_source_url, index: 3 },
-    { node: sourceNode4, name: conflict.quaternary_source_name, url: conflict.quaternary_source_url, index: 4 }
+    { node: sourceNode2, name: conflict.secondary_source_name, url: conflict.secondary_source_url, index: 2, fallbackName: 'ISW updates', fallbackUrl: 'https://www.understandingwar.org/' },
+    { node: sourceNode3, name: conflict.tertiary_source_name, url: conflict.tertiary_source_url, index: 3, fallbackName: 'ACLED incidents', fallbackUrl: 'https://acleddata.com/' },
+    { node: sourceNode4, name: conflict.quaternary_source_name, url: conflict.quaternary_source_url, index: 4, fallbackName: 'ReliefWeb updates', fallbackUrl: 'https://reliefweb.int/' }
   ];
 
-  sourceSlots.forEach(slot => {
-    if (!slot.node) return;
-    const label = slot.name || 'additional conflict source';
-    slot.node.textContent = `Source ${slot.index}: ${label}`;
-    if (slot.url) {
-      slot.node.href = slot.url;
-      slot.node.style.display = '';
-    } else {
-      slot.node.style.display = 'none';
-    }
-  });
+  sourceSlots.forEach(slot => applySourceSlot(slot.node, slot.index, slot.name, slot.url, slot.fallbackName, slot.fallbackUrl));
 }
 
 function classifyDeltaTone(delta) {
@@ -5800,10 +6224,12 @@ function renderWhatChanged() {
     const moveText = move ? ('Largest move in last 7 days: ' + formatSigned(move.delta) + ' on ' + move.date + '.') : 'Largest move in last 7 days: n/a.';
     return '<li><strong>' + entry.label + '</strong>: last-hour signal ' + hourHint + ', feed delta ' + feedHint + ', 7d ' + formatSigned(summary.delta7) + '. ' + moveText + '</li>';
   }).join('');
+  renderDeltaCards();
 }
 
 async function refreshUkraineMetrics() {
   setUkraineSync('Syncing metrics...');
+  setModuleLoading('ukraine-war', true);
   try {
     const response = await fetch(`${CONFLICT_MONITOR_URL}?t=${Date.now()}`, { cache: 'no-store' });
     if (!response.ok) throw new Error(`Ukraine metrics fetch failed: ${response.status}`);
@@ -5855,17 +6281,28 @@ async function refreshUkraineMetrics() {
     }
 
     const ukraineDataTime = parseTimestamp(conflict.as_of_utc || conflict.updated_at_utc || feed.updated_at_utc);
-    if (Number.isFinite(ukraineDataTime)) localStorage.setItem(LAST_UKRAINE_DATA_KEY, String(ukraineDataTime));
+    if (Number.isFinite(ukraineDataTime)) {
+      localStorage.setItem(LAST_UKRAINE_DATA_KEY, String(ukraineDataTime));
+      lastConflictMetricsTimestamp = Math.max(lastConflictMetricsTimestamp || 0, ukraineDataTime);
+      setFeedFreshness('conflict_metrics', lastConflictMetricsTimestamp, 'Conflict monitor feed');
+    }
     updateUkraineTimestamp(conflict.as_of_utc || conflict.updated_at_utc || feed.updated_at_utc);
+    renderDeltaCards();
     setUkraineSync('Live metrics synced');
   } catch (error) {
-    setUkraineSync('Metrics delayed');
+    setUkraineSync('Metrics delayed - using fallback sources');
+    if (Number.isFinite(lastConflictMetricsTimestamp)) {
+      setFeedFreshness('conflict_metrics', lastConflictMetricsTimestamp, 'Conflict metrics fallback');
+    }
     console.error(error);
+  } finally {
+    setModuleLoading('ukraine-war', false);
   }
 }
 
 async function refreshIranWarMetrics() {
   setIranWarSync('Syncing metrics...');
+  setModuleLoading('iran-war', true);
   try {
     const response = await fetch(`${CONFLICT_MONITOR_URL}?t=${Date.now()}`, { cache: 'no-store' });
     if (!response.ok) throw new Error(`Iran war metrics fetch failed: ${response.status}`);
@@ -5891,12 +6328,22 @@ async function refreshIranWarMetrics() {
     upsertConflictMap(conflict.map || {}, Array.isArray(conflict.map_points) ? conflict.map_points : [], Array.isArray(conflict.legend) ? conflict.legend : [], { module: 'iran' });
 
     const iranDataTime = parseTimestamp(conflict.as_of_utc || conflict.updated_at_utc || feed.updated_at_utc);
-    if (Number.isFinite(iranDataTime)) localStorage.setItem(LAST_IRAN_DATA_KEY, String(iranDataTime));
+    if (Number.isFinite(iranDataTime)) {
+      localStorage.setItem(LAST_IRAN_DATA_KEY, String(iranDataTime));
+      lastConflictMetricsTimestamp = Math.max(lastConflictMetricsTimestamp || 0, iranDataTime);
+      setFeedFreshness('conflict_metrics', lastConflictMetricsTimestamp, 'Conflict monitor feed');
+    }
     updateIranWarTimestamp(conflict.as_of_utc || conflict.updated_at_utc || feed.updated_at_utc);
+    renderDeltaCards();
     setIranWarSync('Live metrics synced');
   } catch (error) {
-    setIranWarSync('Metrics delayed');
+    setIranWarSync('Metrics delayed - using fallback sources');
+    if (Number.isFinite(lastConflictMetricsTimestamp)) {
+      setFeedFreshness('conflict_metrics', lastConflictMetricsTimestamp, 'Conflict metrics fallback');
+    }
     console.error(error);
+  } finally {
+    setModuleLoading('iran-war', false);
   }
 }
 
@@ -5964,9 +6411,15 @@ function preferredTheme() {
 
 async function refreshLiveData() {
   setSyncStatus('pending', 'Syncing live data');
+  ['summary', 'presidential', 'fed', 'social'].forEach(id => setModuleLoading(id, true));
+
   const cards = Array.from(document.querySelectorAll('.card'));
   const snapshotSyncTime = await readSnapshotSyncTime();
   const hasSnapshotSync = Number.isFinite(snapshotSyncTime);
+  if (hasSnapshotSync) {
+    liveSnapshotTimestamp = snapshotSyncTime;
+    setFeedFreshness('snapshot', snapshotSyncTime, 'Polymarket snapshot');
+  }
 
   const results = await Promise.all(cards.map(async card => {
     try {
@@ -5977,6 +6430,7 @@ async function refreshLiveData() {
       if (!marketIsLive && socialCard) {
         const fallbackTs = await applySocialFallbackMetric(card);
         if (Number.isFinite(fallbackTs)) {
+          latestSocialFallbackTimestamp = Math.max(latestSocialFallbackTimestamp || 0, fallbackTs);
           return { ok: true, timestamp: fallbackTs };
         }
         markCardMarketUnavailable(card, market);
@@ -6009,6 +6463,13 @@ async function refreshLiveData() {
     return latest;
   }, null);
 
+  if (Number.isFinite(latestSocialFallbackTimestamp)) {
+    lastSocialFeedTimestamp = latestSocialFallbackTimestamp;
+    setFeedFreshness('social', latestSocialFallbackTimestamp, 'Social fallback feed');
+  } else if (Number.isFinite(lastSocialFeedTimestamp)) {
+    setFeedFreshness('social', lastSocialFeedTimestamp, 'Social tracker feed');
+  }
+
   if (successful > 0) {
     const iranDataTime = readStoredDataTime(LAST_IRAN_DATA_KEY);
     const ukraineDataTime = readStoredDataTime(LAST_UKRAINE_DATA_KEY);
@@ -6018,6 +6479,11 @@ async function refreshLiveData() {
     updateTimestamp(syncTime);
     const ageText = formatRelativeAge(Math.max(0, Date.now() - syncTime));
     setSyncStatus('live', successful + ' markets synced', 'Health: Updated ' + ageText);
+
+    if (Number.isFinite(freshestTimestamp)) {
+      liveSnapshotTimestamp = freshestTimestamp;
+      setFeedFreshness('snapshot', freshestTimestamp, 'Polymarket snapshot');
+    }
   } else {
     const storedSyncTime = readStoredSyncTime();
     const fallbackSyncTime = hasSnapshotSync ? snapshotSyncTime : storedSyncTime;
@@ -6025,6 +6491,8 @@ async function refreshLiveData() {
     if (!Number.isFinite(fallbackSyncTime)) {
       updateTimestamp(Date.now());
       setSyncStatus('error', 'Live API unreachable and no snapshot metadata available', 'Health: Error');
+      setFeedFreshness('snapshot', null, 'Snapshot unavailable');
+      ['summary', 'presidential', 'fed', 'social'].forEach(id => setModuleLoading(id, false));
       return;
     }
 
@@ -6046,7 +6514,12 @@ async function refreshLiveData() {
     } else {
       setSyncStatus('error', 'Live sync stale - waiting for fresh data', 'Health: Stale (' + ageText + ')');
     }
+
+    setFeedFreshness('snapshot', fallbackSyncTime, hasSnapshotSync ? 'Polymarket snapshot fallback' : 'Last successful sync fallback');
   }
+
+  renderDeltaCards();
+  ['summary', 'presidential', 'fed', 'social'].forEach(id => setModuleLoading(id, false));
 }
 
 // ========================================
@@ -6212,9 +6685,76 @@ function announceLive(message) {
   node.textContent = message;
 }
 
+function initMiniToc() {
+  const toc = document.getElementById('miniToc');
+  if (!toc) return;
+
+  const links = Array.from(toc.querySelectorAll('a[data-section]'));
+  const currentNode = document.getElementById('miniTocCurrent');
+  const targets = links
+    .map(link => ({ link, sectionId: link.getAttribute('data-section') || '', target: document.getElementById(link.getAttribute('data-section') || '') }))
+    .filter(entry => entry.target);
+
+  if (targets.length === 0) return;
+
+  const updateActive = sectionId => {
+    targets.forEach(entry => entry.link.classList.toggle('active', entry.sectionId === sectionId));
+    const current = targets.find(entry => entry.sectionId === sectionId);
+    if (currentNode && current) currentNode.textContent = 'You are here: ' + current.link.textContent;
+  };
+
+  const observer = new IntersectionObserver(entries => {
+    const visible = entries
+      .filter(entry => entry.isIntersecting)
+      .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+    if (!visible) return;
+    updateActive(visible.target.id);
+  }, { rootMargin: '-25% 0px -60% 0px', threshold: [0.15, 0.4, 0.65] });
+
+  targets.forEach(entry => observer.observe(entry.target));
+  updateActive(targets[0].sectionId);
+}
+
 function initKeyboardShortcuts() {
   const sections = ['summary', 'iran-war', 'ukraine-war', 'foreign', 'presidential', 'trump', 'fed', 'midterms', 'congress', 'legal', 'social', 'methodology'];
+  const overlay = document.getElementById('shortcutOverlay');
+  const closeOverlay = () => {
+    if (overlay) overlay.hidden = true;
+  };
+  const toggleOverlay = () => {
+    if (!overlay) return;
+    overlay.hidden = !overlay.hidden;
+    if (!overlay.hidden) {
+      const title = overlay.querySelector('h3');
+      if (title) title.setAttribute('tabindex', '-1');
+      title?.focus({ preventScroll: true });
+      announceLive('Keyboard shortcuts opened');
+    } else {
+      announceLive('Keyboard shortcuts closed');
+    }
+  };
+
+  overlay?.addEventListener('click', event => {
+    if (event.target === overlay) closeOverlay();
+  });
+
   window.addEventListener('keydown', event => {
+    if (event.key === '?' && !event.altKey && !event.metaKey && !event.ctrlKey) {
+      event.preventDefault();
+      toggleOverlay();
+      return;
+    }
+
+    if (event.key === 'Escape') {
+      closeOverlay();
+      if (mobileMenu?.classList.contains('open')) {
+        hamburger.classList.remove('open');
+        mobileMenu.classList.remove('open');
+        document.body.style.overflow = '';
+      }
+      return;
+    }
+
     if (!(event.altKey && !event.shiftKey && !event.ctrlKey && !event.metaKey)) return;
     const n = Number(event.key);
     if (!Number.isFinite(n) || n < 1 || n > 9) return;
@@ -6228,6 +6768,7 @@ function initKeyboardShortcuts() {
       heading.setAttribute('tabindex', '-1');
       heading.focus({ preventScroll: true });
     }
+    announceLive('Jumped to ' + (heading?.textContent || targetId));
   });
 }
 
@@ -6279,7 +6820,10 @@ function refreshConflictMonitors() {
 initUkraineCollapse();
 initMapLayerToggles();
 initMapResetButtons();
+initMiniToc();
 initKeyboardShortcuts();
+renderFreshnessPanel();
+renderDeltaCards();
 refreshLiveData();
 refreshConflictMonitors();
 refreshConflictNews();
@@ -6290,11 +6834,15 @@ setInterval(() => {
   refreshLiveData();
 }, LIVE_MARKET_INTERVAL_MS);
 setInterval(() => {
-  if (!document.hidden) refreshSyncStatusAge();
+  if (!document.hidden) {
+    refreshSyncStatusAge();
+    renderFreshnessPanel();
+  }
 }, 60 * 1000);
 document.addEventListener('visibilitychange', () => {
   if (!document.hidden) {
     refreshSyncStatusAge();
+    renderFreshnessPanel();
     refreshConflictMonitors();
   }
 });

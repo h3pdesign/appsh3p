@@ -4,12 +4,16 @@
       "numberOfRuns": 1,
       "url": [
         "http://127.0.0.1:4173/",
-        "http://127.0.0.1:4173/apps/index"
+        "http://127.0.0.1:4173/apps/index",
+        "http://127.0.0.1:4173/polymarket-us-politics/state-of-us-politics.html"
       ]
     },
     "assert": {
       "assertions": {
-        "categories:performance": ["warn", { "minScore": 0.8 }],
+        "categories:performance": ["error", { "minScore": 0.75 }],
+        "first-contentful-paint": ["error", { "maxNumericValue": 3500 }],
+        "largest-contentful-paint": ["error", { "maxNumericValue": 5000 }],
+        "total-blocking-time": ["error", { "maxNumericValue": 900 }],
         "categories:accessibility": ["warn", { "minScore": 0.9 }],
         "categories:best-practices": ["warn", { "minScore": 0.85 }],
         "categories:seo": ["warn", { "minScore": 0.9 }]

@@ -27,3 +27,6 @@ jobs:
 
       - name: Run validator
         run: node scripts/validate-polymarket-site.mjs
+
+      - name: Check performance budget
+        run: node scripts/check-performance-budget.mjs
