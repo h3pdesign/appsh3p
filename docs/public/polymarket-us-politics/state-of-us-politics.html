@@ -302,16 +302,19 @@ nav {
   gap: 0.35rem;
   border: 1px solid var(--border-color);
   border-radius: 999px;
-  padding: 0.24rem 0.44rem 0.24rem 0.58rem;
+  padding: 0.24rem 0.44rem;
   background: rgba(255,255,255,0.04);
+  white-space: nowrap;
+  flex-wrap: nowrap;
+}
+
+.theme-select-wrap.theme-select-compact {
+  gap: 0;
+  padding: 0.2rem 0.36rem;
 }
 
 .theme-select-label {
-  font-family: var(--font-mono);
-  font-size: 0.62rem;
-  color: var(--text-muted);
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
+  display: none;
 }
 
 .theme-select {
@@ -1979,8 +1982,8 @@ footer a:hover { border-bottom-color: var(--accent-gold); }
       <li><a href="/polymarket-us-politics/state-of-us-politics.html?focus=legal">Legal</a></li>
     </ul>
     <div class="nav-controls">
-      <label class="theme-select-wrap" for="themeModeSelect"><span class="theme-select-label">Theme</span><select class="theme-select" id="themeModeSelect" aria-label="Theme mode"><option value="system">System</option><option value="light">Light</option><option value="dark">Dark</option></select></label>
-      <label class="theme-select-wrap" for="lightVariantSelect"><span class="theme-select-label">Light Style</span><select class="theme-select" id="lightVariantSelect" aria-label="Light color style"><option value="classic">Classic</option><option value="vibrant">Vibrant</option></select></label>
+      <label class="theme-select-wrap theme-select-compact" for="themeModeSelect"><select class="theme-select" id="themeModeSelect" aria-label="Theme mode" title="Theme mode"><option value="system">System</option><option value="light">Light</option><option value="dark">Dark</option></select></label>
+      <label class="theme-select-wrap theme-select-compact" for="lightVariantSelect"><select class="theme-select" id="lightVariantSelect" aria-label="Light color style" title="Light color style"><option value="classic">Classic</option><option value="vibrant">Vibrant</option></select></label>
       <button class="hamburger" id="hamburgerBtn" aria-label="Menu">
         <span></span><span></span><span></span>
       </button>
