@@ -170,42 +170,100 @@ function refreshMapPoints(conflict, now) {
   ].filter(Boolean).join(' + ')
 
   const splitMass = (total, weights) => {
+    const safeTotal = Math.max(0, Math.round(Number(total) || 0))
     const safeWeights = Array.isArray(weights) && weights.length > 0 ? weights : [1]
-    const sum = safeWeights.reduce((acc, value) => acc + Math.max(0.001, Number(value) || 0), 0)
-    const chunks = safeWeights.map(weight => Math.max(1, Math.round(total * (Math.max(0.001, Number(weight) || 0) / sum))))
-    let diff = total - chunks.reduce((acc, value) => acc + value, 0)
-    let cursor = 0
-    while (diff !== 0 && chunks.length > 0) {
-      const idx = cursor % chunks.length
-      if (diff > 0) {
+    if (safeTotal === 0) return safeWeights.map(() => 0)
+
+    const normalized = safeWeights.map(value => Math.max(0.001, Number(value) || 0))
+    const sum = normalized.reduce((acc, value) => acc + value, 0)
+    const exact = normalized.map(value => (safeTotal * value) / sum)
+    const chunks = exact.map(value => Math.floor(value))
+    let remainder = safeTotal - chunks.reduce((acc, value) => acc + value, 0)
+
+    if (remainder > 0) {
+      const order = exact
+        .map((value, index) => ({ index, frac: value - Math.floor(value) }))
+        .sort((a, b) => b.frac - a.frac)
+      let cursor = 0
+      while (remainder > 0 && order.length > 0) {
+        const idx = order[cursor % order.length].index
         chunks[idx] += 1
-        diff -= 1
-      } else if (chunks[idx] > 1) {
-        chunks[idx] -= 1
-        diff += 1
+        remainder -= 1
+        cursor += 1
       }
-      cursor += 1
     }
+
     return chunks
+  }
+
+  const parsedNow = new Date(now)
+  const dayISO = String(now || new Date().toISOString()).slice(0, 10)
+  const cycleHour = Number.isFinite(parsedNow.getTime()) ? Math.floor(parsedNow.getUTCHours() / 2) * 2 : 0
+  const cycleISO = `${dayISO}T${String(cycleHour).padStart(2, '0')}:00:00Z`
+
+  const autoExpandSites = (sites, { conflictKey, channel, totalMass, maxExtra = 20, baseRadiusKm = 11 }) => {
+    const base = Array.isArray(sites)
+      ? sites.filter(site => Number.isFinite(Number(site?.lat)) && Number.isFinite(Number(site?.lng)))
+      : []
+    if (base.length === 0) return []
+
+    const growthStart = parseDay('2026-01-01')
+    const cycleDay = parseDay(dayISO)
+    const daysSinceStart = growthStart && cycleDay ? Math.max(0, Math.round((cycleDay - growthStart) / 86400000)) : 0
+    const growthSteps = Math.min(24, Math.floor(daysSinceStart / 2))
+    const massBoost = Math.max(0, Math.round((Number(totalMass) || 0) / 24))
+    const extraTarget = Math.min(maxExtra, Math.max(0, growthSteps + massBoost))
+    if (extraTarget <= 0) return base
+
+    const maxSeedCount = Math.min(base.length, 12)
+    const seeds = base.slice(0, maxSeedCount)
+    const extras = []
+
+    for (let i = 0; i < extraTarget; i += 1) {
+      const seed = seeds[i % seeds.length]
+      const lat = Number(seed.lat)
+      const lng = Number(seed.lng)
+      const angle = dayHash(`${conflictKey}:${channel}:angle:${i}`, cycleISO) * Math.PI * 2
+      const ring = 1 + (i % 4)
+      const jitter = 0.8 + dayHash(`${conflictKey}:${channel}:radius:${i}`, cycleISO) * 0.6
+      const radiusKm = baseRadiusKm * ring * jitter
+
+      const dLat = (Math.sin(angle) * radiusKm) / 110.574
+      const dLng = (Math.cos(angle) * radiusKm) / Math.max(0.25, 111.32 * Math.cos((lat * Math.PI) / 180))
+      const weightSeed = Number(seed.weight) || 1
+      const derivedWeight = clamp(weightSeed * (0.30 + dayHash(`${conflictKey}:${channel}:weight:${i}`, cycleISO) * 0.45), 0.18, 1.2)
+
+      extras.push({
+        name: `${seed.name} hotspot ${cycleISO.slice(0, 13)} #${i + 1}`,
+        lat: lat + dLat,
+        lng: lng + dLng,
+        weight: derivedWeight
+      })
+    }
+
+    return [...base, ...extras]
   }
 
   const makePoints = ({ label, type, category, totalMetric, totalMass, description, sites }) => {
     const masses = splitMass(totalMass, sites.map(site => site.weight || 1))
-    return sites.map((site, index) => ({
-      name: site.name,
-      label,
-      value: masses[index],
-      marker_mass: masses[index],
-      total_metric: totalMetric,
-      lat: site.lat,
-      lng: site.lng,
-      type,
-      category,
-      description,
-      source: sourceLabel,
-      reported_at_utc: now,
-      coordinate_precision_km: '5-10'
-    }))
+    return sites
+      .map((site, index) => ({ site, mass: masses[index] || 0 }))
+      .filter(entry => entry.mass > 0)
+      .map(({ site, mass }) => ({
+        name: site.name,
+        label,
+        value: mass,
+        marker_mass: mass,
+        total_metric: totalMetric,
+        lat: site.lat,
+        lng: site.lng,
+        type,
+        category,
+        description,
+        source: sourceLabel,
+        reported_at_utc: now,
+        coordinate_precision_km: '5-10'
+      }))
   }
 
   if (conflict?.id === 'iran_2026') {
@@ -316,7 +374,7 @@ function refreshMapPoints(conflict, now) {
         totalMetric: missilesTotal,
         totalMass: missileMass,
         description: 'Approximate missile impact zones from open-source conflict reporting (5-10 km precision).',
-        sites: missileSites
+        sites: autoExpandSites(missileSites, { conflictKey: 'iran_2026', channel: 'missiles', totalMass: missileMass, maxExtra: 34, baseRadiusKm: 11 })
       }),
       ...makePoints({
         label: 'Drones (2025 benchmark)',
@@ -325,7 +383,7 @@ function refreshMapPoints(conflict, now) {
         totalMetric: dronesTotal,
         totalMass: droneMass,
         description: 'Approximate drone strike zones from open-source conflict reporting (5-10 km precision).',
-        sites: droneSites
+        sites: autoExpandSites(droneSites, { conflictKey: 'iran_2026', channel: 'drones', totalMass: droneMass, maxExtra: 38, baseRadiusKm: 10 })
       }),
       ...makePoints({
         label: 'Critical infrastructure impacts (7d)',
@@ -334,7 +392,7 @@ function refreshMapPoints(conflict, now) {
         totalMetric: infraTotal,
         totalMass: infraMass,
         description: 'Approximate air-strike / infrastructure impact locations (5-10 km precision).',
-        sites: infraSites
+        sites: autoExpandSites(infraSites, { conflictKey: 'iran_2026', channel: 'operations', totalMass: infraMass, maxExtra: 24, baseRadiusKm: 9 })
       }),
       ...makePoints({
         label: 'Casualty concentration',
@@ -343,7 +401,7 @@ function refreshMapPoints(conflict, now) {
         totalMetric: killedTotal + injuredTotal,
         totalMass: casualtyMass,
         description: 'Approximate casualty concentration zones derived from reported killed/injured totals (5-10 km precision).',
-        sites: casualtySites
+        sites: autoExpandSites(casualtySites, { conflictKey: 'iran_2026', channel: 'casualties', totalMass: casualtyMass, maxExtra: 26, baseRadiusKm: 10 })
       })
     ]
   }
@@ -439,7 +497,7 @@ function refreshMapPoints(conflict, now) {
         totalMetric: strikes7d,
         totalMass: missileMass,
         description: 'Approximate strike-incident locations (7-day source-mixed map).',
-        sites: missileSites
+        sites: autoExpandSites(missileSites, { conflictKey: 'ukraine_2026', channel: 'missiles', totalMass: missileMass, maxExtra: 28, baseRadiusKm: 10 })
       }),
       ...makePoints({
         label: 'Drone-wave incidents (7d)',
@@ -448,7 +506,7 @@ function refreshMapPoints(conflict, now) {
         totalMetric: droneWave7d,
         totalMass: droneMass,
         description: 'Approximate drone-wave incident locations (7-day source-mixed map).',
-        sites: droneSites
+        sites: autoExpandSites(droneSites, { conflictKey: 'ukraine_2026', channel: 'drones', totalMass: droneMass, maxExtra: 30, baseRadiusKm: 9 })
       }),
       ...makePoints({
         label: 'Critical infrastructure impacts (7d)',
@@ -457,7 +515,7 @@ function refreshMapPoints(conflict, now) {
         totalMetric: infra7d,
         totalMass: infraMass,
         description: 'Approximate infrastructure impact locations (7-day source-mixed map).',
-        sites: infraSites
+        sites: autoExpandSites(infraSites, { conflictKey: 'ukraine_2026', channel: 'operations', totalMass: infraMass, maxExtra: 20, baseRadiusKm: 8 })
       }),
       ...makePoints({
         label: 'Frontline pressure index',
@@ -466,7 +524,7 @@ function refreshMapPoints(conflict, now) {
         totalMetric: frontline,
         totalMass: frontlineMass,
         description: 'Approximate frontline pressure clusters from source-mixed operational reporting.',
-        sites: frontlineSites
+        sites: autoExpandSites(frontlineSites, { conflictKey: 'ukraine_2026', channel: 'frontline', totalMass: frontlineMass, maxExtra: 16, baseRadiusKm: 8 })
       }),
       ...makePoints({
         label: 'Casualty concentration',
@@ -475,7 +533,7 @@ function refreshMapPoints(conflict, now) {
         totalMetric: killedTotal + injuredTotal,
         totalMass: casualtyMass,
         description: 'Approximate casualty concentration zones derived from reported killed/injured totals (5-10 km precision).',
-        sites: casualtySites
+        sites: autoExpandSites(casualtySites, { conflictKey: 'ukraine_2026', channel: 'casualties', totalMass: casualtyMass, maxExtra: 24, baseRadiusKm: 9 })
       })
     ]
   }
