@@ -4294,6 +4294,23 @@ function setSyncStatus(state, detail, labelOverride) {
   announceLive(node.textContent);
 }
 
+function recomputeCompositeSyncHealth() {
+  const snapshotTs = Number.isFinite(liveSnapshotTimestamp) ? liveSnapshotTimestamp : null;
+  const conflictStored = oldestFiniteTimestamp([
+    readStoredDataTime(LAST_IRAN_DATA_KEY),
+    readStoredDataTime(LAST_UKRAINE_DATA_KEY)
+  ]);
+  const conflictTs = Number.isFinite(lastConflictMetricsTimestamp) ? lastConflictMetricsTimestamp : conflictStored;
+
+  // Health should reflect live market cards + conflict sections.
+  const combinedTs = oldestFiniteTimestamp([snapshotTs, conflictTs]);
+  if (!Number.isFinite(combinedTs)) return;
+
+  localStorage.setItem(LAST_SYNC_KEY, String(combinedTs));
+  updateTimestamp(combinedTs);
+  refreshSyncStatusAge();
+}
+
 function refreshSyncStatusAge() {
   const node = document.getElementById('syncStatus');
   if (!node || node.classList.contains('status-pending')) return;
@@ -6254,6 +6271,7 @@ async function refreshUkraineMetrics() {
       setFeedFreshness('conflict_metrics', lastConflictMetricsTimestamp, 'Conflict monitor feed');
     }
     updateUkraineTimestamp(conflict.as_of_utc || conflict.updated_at_utc || feed.updated_at_utc);
+    recomputeCompositeSyncHealth();
     renderDeltaCards();
     setUkraineSync('Live metrics synced');
   } catch (error) {
@@ -6301,6 +6319,7 @@ async function refreshIranWarMetrics() {
       setFeedFreshness('conflict_metrics', lastConflictMetricsTimestamp, 'Conflict monitor feed');
     }
     updateIranWarTimestamp(conflict.as_of_utc || conflict.updated_at_utc || feed.updated_at_utc);
+    recomputeCompositeSyncHealth();
     renderDeltaCards();
     setIranWarSync('Live metrics synced');
   } catch (error) {
@@ -6386,6 +6405,7 @@ async function refreshLiveData() {
   if (hasSnapshotSync) {
     liveSnapshotTimestamp = snapshotSyncTime;
     setFeedFreshness('snapshot', snapshotSyncTime, 'Polymarket snapshot');
+    recomputeCompositeSyncHealth();
   }
 
   const results = await Promise.all(cards.map(async card => {
@@ -6451,6 +6471,7 @@ async function refreshLiveData() {
       liveSnapshotTimestamp = freshestTimestamp;
       setFeedFreshness('snapshot', freshestTimestamp, 'Polymarket snapshot');
     }
+    recomputeCompositeSyncHealth();
   } else {
     const storedSyncTime = readStoredSyncTime();
     const fallbackSyncTime = hasSnapshotSync ? snapshotSyncTime : storedSyncTime;
