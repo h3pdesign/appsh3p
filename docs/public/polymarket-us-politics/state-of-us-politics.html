@@ -495,6 +495,10 @@ nav {
 }
 
 .freshness-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
   font-family: var(--font-mono);
   font-size: 0.66rem;
   letter-spacing: 0.1em;
@@ -502,6 +506,21 @@ nav {
   color: var(--text-muted);
   margin-bottom: 0.5rem;
 }
+
+.freshness-toggle {
+  border: 1px solid var(--border-subtle);
+  background: var(--bg-card);
+  color: var(--text-secondary);
+  border-radius: 999px;
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 0.16rem 0.52rem;
+  cursor: pointer;
+}
+.freshness-toggle:hover { color: var(--text-primary); }
+.freshness-panel.is-collapsed .freshness-body { display: none; }
 
 .freshness-grid {
   display: grid;
@@ -2283,16 +2302,18 @@ footer a:hover { border-bottom-color: var(--accent-gold); }
       <span>&#9670; Source: Polymarket</span>
       <span id="syncStatus" class="status-pill status-pending" aria-live="polite" title="Waiting for live sync">Health: Pending</span>
     </div>
-    <div class="freshness-panel" id="freshnessPanel" aria-live="polite">
-      <div class="freshness-head">Data Freshness</div>
-      <div class="freshness-grid" id="freshnessGrid">
-        <div class="freshness-item" data-feed="snapshot"><span class="freshness-label">Snapshot</span><span class="freshness-value">--</span></div>
-        <div class="freshness-item" data-feed="conflict_metrics"><span class="freshness-label">Conflict Metrics</span><span class="freshness-value">--</span></div>
-        <div class="freshness-item" data-feed="conflict_news"><span class="freshness-label">Conflict News</span><span class="freshness-value">--</span></div>
-        <div class="freshness-item" data-feed="social"><span class="freshness-label">Social</span><span class="freshness-value">--</span></div>
-      </div>
-      <div class="delta-cards" id="deltaCards" aria-label="What changed since last update">
-        <div class="delta-card">Waiting for section deltas...</div>
+    <div class="freshness-panel is-collapsed" id="freshnessPanel" aria-live="polite">
+      <div class="freshness-head"><span>Data Freshness</span><button class="freshness-toggle" id="freshnessToggleBtn" type="button" aria-expanded="false" aria-controls="freshnessBody">Expand</button></div>
+      <div class="freshness-body" id="freshnessBody" hidden>
+        <div class="freshness-grid" id="freshnessGrid">
+          <div class="freshness-item" data-feed="snapshot"><span class="freshness-label">Snapshot</span><span class="freshness-value">--</span></div>
+          <div class="freshness-item" data-feed="conflict_metrics"><span class="freshness-label">Conflict Metrics</span><span class="freshness-value">--</span></div>
+          <div class="freshness-item" data-feed="conflict_news"><span class="freshness-label">Conflict News</span><span class="freshness-value">--</span></div>
+          <div class="freshness-item" data-feed="social"><span class="freshness-label">Social</span><span class="freshness-value">--</span></div>
+        </div>
+        <div class="delta-cards" id="deltaCards" aria-label="What changed since last update">
+          <div class="delta-card">Waiting for section deltas...</div>
+        </div>
       </div>
     </div>
     <div id="globalLiveAnnouncer" class="sr-only" aria-live="polite" aria-atomic="true"></div>
@@ -6714,6 +6735,25 @@ function announceLive(message) {
   node.textContent = message;
 }
 
+function initFreshnessPanel() {
+  const panel = document.getElementById('freshnessPanel');
+  const body = document.getElementById('freshnessBody');
+  const btn = document.getElementById('freshnessToggleBtn');
+  if (!panel || !body || !btn) return;
+
+  const setCollapsed = collapsed => {
+    panel.classList.toggle('is-collapsed', collapsed);
+    body.hidden = collapsed;
+    btn.setAttribute('aria-expanded', String(!collapsed));
+    btn.textContent = collapsed ? 'Expand' : 'Collapse';
+  };
+
+  setCollapsed(true);
+  btn.addEventListener('click', () => {
+    setCollapsed(!panel.classList.contains('is-collapsed'));
+  });
+}
+
 function initMiniToc() {
   const toc = document.getElementById('miniToc');
   if (!toc) return;
@@ -6846,6 +6886,7 @@ function refreshConflictMonitors() {
 initUkraineCollapse();
 initMapLayerToggles();
 initMapResetButtons();
+initFreshnessPanel();
 initMiniToc();
 initKeyboardShortcuts();
 renderFreshnessPanel();
