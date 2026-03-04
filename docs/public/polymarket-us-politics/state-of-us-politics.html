@@ -444,8 +444,16 @@ nav {
   padding-top: 0.8rem;
 }
 
-@media (max-width: 900px) {
-  .shortcut-overlay {
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
+  .theme-toggle {
+    font-size: 0.64rem;
+    padding: 0.28rem 0.55rem;
+  }
+}
+
+.shortcut-overlay {
   position: fixed;
   inset: 0;
   z-index: 1200;
