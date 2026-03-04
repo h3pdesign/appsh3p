@@ -3489,7 +3489,6 @@ footer a:hover { border-bottom-color: var(--accent-gold); }
 <script src="/polymarket-us-politics/cookie-consent.js?v=20260302c" defer></script>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script src="https://unpkg.com/leaflet.heat/dist/leaflet-heat.js"></script>
-<script src="https://unpkg.com/globe.gl"></script>
 <script>
 const CONFLICT_MONITOR_URL = '/polymarket-us-politics/data/iran-war-metrics.json';
 const CONFLICT_NEWS_URL = '/polymarket-us-politics/data/conflict-news.json';
@@ -3497,6 +3496,9 @@ const MARKET_ID_MAP_URL = '/polymarket-us-politics/data/market-id-map.json';
 const POLYMARKET_SNAPSHOT_URL = '/polymarket-us-politics/data/polymarket-market-snapshot.json';
 const DAILY_SUMMARY_STATE_URL = '/polymarket-us-politics/data/daily-summary-state.json';
 const SOCIAL_TRACKER_METRICS_URL = '/polymarket-us-politics/data/social-tracker-metrics.json';
+const GLOBE_GL_URL = 'https://unpkg.com/globe.gl';
+const GLOBE_HD_TEXTURE_URL = 'https://unpkg.com/three-globe/example/img/earth-blue-marble.jpg';
+const GLOBE_HD_BUMP_URL = 'https://unpkg.com/three-globe/example/img/earth-topology.png';
 const ONE_HOUR_MS = 60 * 60 * 1000;
 const LIVE_FETCH_TIMEOUT_MS = 8000;
 const LIVE_MARKET_INTERVAL_MS = 15 * 60 * 1000;
@@ -3612,6 +3614,7 @@ let lastSocialFeedTimestamp = null;
 let lastConflictNewsTimestamp = null;
 const tickerAutoScrollState = new Map();
 let leafletReadyPromise = null;
+let globeReadyPromise = null;
 
 function ensureLeafletStylesheet(href) {
   if (document.querySelector('link[data-leaflet-fallback="true"]')) return;
@@ -3656,6 +3659,19 @@ async function ensureLeafletReady() {
     })();
   }
   await leafletReadyPromise;
+}
+
+async function ensureGlobeReady() {
+  if (typeof Globe === 'function') return;
+  if (!globeReadyPromise) {
+    globeReadyPromise = (async () => {
+      await loadScript(GLOBE_GL_URL);
+      if (typeof Globe !== 'function') {
+        throw new Error('Globe library unavailable after load');
+      }
+    })();
+  }
+  await globeReadyPromise;
 }
 
 function normalize(value) {
@@ -6092,8 +6108,8 @@ function ensureConflictGlobe(moduleName) {
   if (!node) return null;
 
   const globe = Globe()(node)
-    .globeImageUrl('https://unpkg.com/three-globe/example/img/earth-blue-marble.jpg')
-    .bumpImageUrl('https://unpkg.com/three-globe/example/img/earth-topology.png')
+    .globeImageUrl(GLOBE_HD_TEXTURE_URL)
+    .bumpImageUrl(GLOBE_HD_BUMP_URL)
     .backgroundColor('rgba(0,0,0,0)')
     .showAtmosphere(true)
     .atmosphereColor('#60a5fa')
@@ -6173,16 +6189,26 @@ function refreshConflictGlobePoints(moduleName, points, colorByType, latestTs) {
   globe.pointsData(rows);
 }
 
-function toggleConflictGlobeMode(moduleName) {
+async function toggleConflictGlobeMode(moduleName) {
   const state = conflictModuleState[moduleName];
   if (!state) return;
 
   state.globeEnabled = !state.globeEnabled;
   if (state.globeEnabled) {
-    const globe = ensureConflictGlobe(moduleName);
-    fitConflictGlobeToFrame(moduleName);
     const ids = globeIdsForModule(moduleName);
     const status = document.getElementById(ids.statusId);
+    if (status) status.textContent = 'Loading HD globe...';
+    try {
+      await ensureGlobeReady();
+    } catch (_) {
+      state.globeEnabled = false;
+      if (status) status.textContent = 'Globe mode unavailable in this browser.';
+      setGlobeVisibility(moduleName);
+      return;
+    }
+
+    const globe = ensureConflictGlobe(moduleName);
+    fitConflictGlobeToFrame(moduleName);
     if (!globe) {
       state.globeEnabled = false;
       if (status) status.textContent = 'Globe mode unavailable in this browser.';
