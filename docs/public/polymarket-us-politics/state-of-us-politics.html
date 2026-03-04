@@ -581,6 +581,19 @@ nav {
 
 .conflict-legend-btn.is-off { opacity: 0.45; }
 
+
+.conflict-legend-note {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  border: 1px dashed var(--border-color);
+  border-radius: 999px;
+  padding: 0.22rem 0.58rem;
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  color: var(--text-muted);
+}
+
 .metric-label-row {
   display: flex;
   flex-direction: column;
@@ -1118,15 +1131,34 @@ nav {
 
 .map-marker-triangle {
   display: block;
-  width: 12px;
-  height: 11px;
-  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-  background: var(--marker-color, #f59e0b);
+  width: 14px;
+  height: 13px;
+  clip-path: polygon(50% 3%, 6% 97%, 94% 97%);
+  background: linear-gradient(
+    180deg,
+    color-mix(in oklab, var(--marker-color, #f59e0b) 72%, white 28%) 0%,
+    var(--marker-color, #f59e0b) 62%,
+    color-mix(in oklab, var(--marker-color, #f59e0b) 88%, black 12%) 100%
+  );
   color: var(--marker-color, #f59e0b);
-  border: 1.5px solid rgba(8, 10, 16, 0.9);
+  border: 1.4px solid rgba(8, 10, 16, 0.9);
   box-shadow:
     0 0 0 1.5px rgba(255, 255, 255, 0.82),
+    0 2px 8px rgba(0, 0, 0, 0.35),
     0 0 16px 2px color-mix(in oklab, var(--marker-color, #f59e0b) 78%, transparent);
+}
+
+.map-marker-triangle::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 4px;
+  width: 6px;
+  height: 5px;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  background: color-mix(in oklab, white 70%, var(--marker-color, #f59e0b) 30%);
+  opacity: 0.45;
+  pointer-events: none;
 }
 
 .conflict-map.map-theme-dark .map-marker-dot,
@@ -4268,6 +4300,20 @@ function renderConflictLegend(legend, containerId = 'conflictLegend', moduleName
     row.appendChild(button);
     container.appendChild(row);
   });
+
+  const note = document.createElement('span');
+  note.className = 'conflict-legend-note';
+
+  const swatch = document.createElement('span');
+  swatch.className = 'conflict-legend-swatch';
+  swatch.style.background = '#ef4444';
+
+  const text = document.createElement('span');
+  text.textContent = 'Newest update (red)';
+
+  note.appendChild(swatch);
+  note.appendChild(text);
+  container.appendChild(note);
 }
 
 function renderConflictTimeline(events, containerId = 'conflictTimelineList') {
@@ -4522,6 +4568,22 @@ function renderConflictTrend(series, config = {}) {
   }
 
   draw();
+}
+
+function mapPointTimestamp(point) {
+  const raw = point?.reported_at_utc || point?.as_of_utc || point?.updated_at_utc || null;
+  const ts = raw ? new Date(raw).getTime() : NaN;
+  return Number.isFinite(ts) ? ts : null;
+}
+
+function latestMapTimestamp(points) {
+  const list = Array.isArray(points) ? points : [];
+  let latest = null;
+  list.forEach(point => {
+    const ts = mapPointTimestamp(point);
+    if (Number.isFinite(ts) && (!Number.isFinite(latest) || ts > latest)) latest = ts;
+  });
+  return latest;
 }
 
 function conflictColorMap(legend) {
@@ -4865,6 +4927,7 @@ function upsertConflictMap(mapConfig, points, legend, config = {}) {
   }
 
   const sourcePoints = moduleState ? moduleState.points : (Array.isArray(points) ? points : []);
+  const latestTs = latestMapTimestamp(sourcePoints);
   const activeTypes = legendFilterState[moduleName];
   const typeFilteredPoints = activeTypes && activeTypes.size > 0
     ? sourcePoints.filter(point => !point?.type || activeTypes.has(point.type))
@@ -4894,7 +4957,9 @@ function upsertConflictMap(mapConfig, points, legend, config = {}) {
   const separatedPoints = buildDisplayPointsForMap(fallbackPoints, zoomNow, densityPercent);
 
   separatedPoints.forEach(point => {
-    const color = colorByType[point.type] || '#f59e0b';
+    const ts = mapPointTimestamp(point);
+    const isNewest = Number.isFinite(latestTs) && Number.isFinite(ts) && ts === latestTs;
+    const color = isNewest ? '#ef4444' : (colorByType[point.type] || '#f59e0b');
     const icon = markerIconFor(point.markerKind, color);
     const marker = L.marker([point.displayLat ?? point.lat, point.displayLng ?? point.lng], { icon });
 
@@ -4903,7 +4968,8 @@ function upsertConflictMap(mapConfig, points, legend, config = {}) {
     const cloudLabel = Number.isFinite(point.markerCountRaw) && point.markerCountRaw > 1
       ? ('<br>Rendered: ' + formatInteger(point.markerCountShown) + ' / ' + formatInteger(point.markerCountRaw) + ' points (zoom-dependent)')
       : '';
-    const popup = '<strong>' + (point.name || 'Event') + '</strong><br>' + (point.label || 'Metric') + ': ' + valueLabel + '<br>' + (point.description || '') + sourceLabel + cloudLabel;
+    const newestLabel = isNewest ? '<br><span style="color:#ef4444;font-weight:700;">Newest update</span>' : '';
+    const popup = '<strong>' + (point.name || 'Event') + '</strong><br>' + (point.label || 'Metric') + ': ' + valueLabel + '<br>' + (point.description || '') + sourceLabel + newestLabel + cloudLabel;
     marker.bindPopup(popup);
     layerRef.addLayer(marker);
   });
