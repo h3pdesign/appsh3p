@@ -445,202 +445,7 @@ nav {
 }
 
 @media (max-width: 900px) {
-  .mini-toc {
-    margin-left: 0;
-    margin-bottom: 1rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .nav-links { display: none; }
-  .hamburger { display: flex; }
-  .mini-toc { display: none; }
-  .theme-toggle {
-    font-size: 0.64rem;
-    padding: 0.28rem 0.55rem;
-  }
-}
-
-/* ========================================
-   Container
-   ======================================== */
-.container {
-  position: relative;
-  z-index: 1;
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 0 1.25rem;
-}
-
-/* ========================================
-   Header / Hero
-   ======================================== */
-.hero {
-  padding: 5rem 0 3rem;
-  text-align: center;
-  position: relative;
-}
-
-.hero::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 120px;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--accent-gold), transparent);
-}
-
-.freshness-panel {
-  margin: 1rem auto 0;
-  max-width: 980px;
-  border: 1px solid var(--border-color);
-  background: var(--bg-card);
-  border-radius: 8px;
-  padding: 0.75rem;
-}
-
-.freshness-head {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.5rem;
-  font-family: var(--font-mono);
-  font-size: 0.66rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--text-muted);
-  margin-bottom: 0.5rem;
-}
-
-.freshness-toggle {
-  border: 1px solid var(--border-subtle);
-  background: var(--bg-card);
-  color: var(--text-secondary);
-  border-radius: 999px;
-  font-family: var(--font-mono);
-  font-size: 0.62rem;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  padding: 0.16rem 0.52rem;
-  cursor: pointer;
-}
-.freshness-toggle:hover { color: var(--text-primary); }
-.freshness-panel.is-collapsed .freshness-body { display: none; }
-
-.freshness-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
-  gap: 0.5rem;
-}
-
-.freshness-item {
-  border: 1px solid var(--border-subtle);
-  border-radius: 6px;
-  padding: 0.45rem 0.55rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.5rem;
-}
-.freshness-item.freshness-fresh { border-color: color-mix(in oklab, var(--tone-green) 45%, var(--border-subtle)); }
-.freshness-item.freshness-delayed { border-color: color-mix(in oklab, var(--tone-amber) 50%, var(--border-subtle)); }
-.freshness-item.freshness-stale { border-color: color-mix(in oklab, var(--tone-red) 58%, var(--border-subtle)); }
-.freshness-item.freshness-error { border-color: color-mix(in oklab, var(--text-muted) 58%, var(--border-subtle)); }
-
-.freshness-label {
-  font-family: var(--font-mono);
-  font-size: 0.62rem;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--text-muted);
-}
-
-.freshness-value {
-  font-family: var(--font-mono);
-  font-size: 0.64rem;
-}
-
-.delta-cards {
-  margin-top: 0.55rem;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 0.45rem;
-}
-
-.delta-card {
-  border: 1px solid var(--border-subtle);
-  border-radius: 6px;
-  padding: 0.45rem 0.55rem;
-  font-size: 0.7rem;
-  color: var(--text-secondary);
-}
-
-.delta-card strong { color: var(--text-primary); }
-.delta-meta {
-  display: block;
-  margin-top: 0.2rem;
-  font-family: var(--font-mono);
-  font-size: 0.62rem;
-  color: var(--text-muted);
-}
-.delta-arrow { font-weight: 700; }
-.delta-arrow.up { color: var(--tone-red); }
-.delta-arrow.down { color: var(--tone-green); }
-.delta-arrow.flat { color: var(--text-muted); }
-
-.mini-toc {
-  position: sticky;
-  top: calc(var(--nav-height) + 8px);
-  z-index: 10;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 0.32rem;
-  width: max-content;
-  margin: 0 0 2.25rem -0.6rem;
-  padding: 0.5rem 0.6rem;
-  border: 1px solid var(--border-color);
-  border-radius: 14px;
-  background: color-mix(in oklab, var(--bg-card) 94%, transparent);
-}
-.mini-toc-current {
-  font-family: var(--font-mono);
-  font-size: 0.62rem;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  color: var(--text-primary);
-  border: 1px solid var(--border-subtle);
-  border-radius: 999px;
-  padding: 0.2rem 0.52rem;
-  margin-left: 0;
-}
-
-.mini-toc a {
-  font-family: var(--font-mono);
-  font-size: 0.62rem;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: var(--text-muted);
-  border: 1px solid var(--border-subtle);
-  border-radius: 999px;
-  padding: 0.2rem 0.52rem;
-  text-decoration: none;
-}
-.mini-toc a:nth-of-type(1) { margin-left: 0; }
-.mini-toc a:nth-of-type(2) { margin-left: 8px; }
-.mini-toc a:nth-of-type(3) { margin-left: 16px; }
-.mini-toc a:nth-of-type(4) { margin-left: 24px; }
-.mini-toc a:nth-of-type(5) { margin-left: 32px; }
-
-.mini-toc a.active {
-  color: var(--text-primary);
-  border-color: var(--accent-blue);
-  background: color-mix(in oklab, var(--accent-blue) 16%, transparent);
-}
-
-.shortcut-overlay {
+  .shortcut-overlay {
   position: fixed;
   inset: 0;
   z-index: 1200;
@@ -2361,14 +2166,7 @@ footer a:hover { border-bottom-color: var(--accent-gold); }
     <div id="globalLiveAnnouncer" class="sr-only" aria-live="polite" aria-atomic="true"></div>
   </header>
 
-  <nav class="mini-toc" id="miniToc" aria-label="Section quick navigation">
-    <span class="mini-toc-current" id="miniTocCurrent">You are here: Conflict</span>
-    <a href="#iran-war" data-section="iran-war">Conflict</a>
-    <a href="#summary" data-section="summary">Summary</a>
-    <a href="#presidential" data-section="presidential">Elections</a>
-    <a href="#fed" data-section="fed">Economy</a>
-    <a href="#social" data-section="social">Social</a>
-  </nav>
+  
 
   <!-- ====== IRAN WAR MONITOR ====== -->
   <section class="section" id="iran-war">
@@ -6874,36 +6672,6 @@ function initFreshnessPanel() {
   });
 }
 
-function initMiniToc() {
-  const toc = document.getElementById('miniToc');
-  if (!toc) return;
-
-  const links = Array.from(toc.querySelectorAll('a[data-section]'));
-  const currentNode = document.getElementById('miniTocCurrent');
-  const targets = links
-    .map(link => ({ link, sectionId: link.getAttribute('data-section') || '', target: document.getElementById(link.getAttribute('data-section') || '') }))
-    .filter(entry => entry.target);
-
-  if (targets.length === 0) return;
-
-  const updateActive = sectionId => {
-    targets.forEach(entry => entry.link.classList.toggle('active', entry.sectionId === sectionId));
-    const current = targets.find(entry => entry.sectionId === sectionId);
-    if (currentNode && current) currentNode.textContent = 'You are here: ' + current.link.textContent;
-  };
-
-  const observer = new IntersectionObserver(entries => {
-    const visible = entries
-      .filter(entry => entry.isIntersecting)
-      .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
-    if (!visible) return;
-    updateActive(visible.target.id);
-  }, { rootMargin: '-25% 0px -60% 0px', threshold: [0.15, 0.4, 0.65] });
-
-  targets.forEach(entry => observer.observe(entry.target));
-  updateActive(targets[0].sectionId);
-}
-
 function initKeyboardShortcuts() {
   const sections = ['summary', 'iran-war', 'ukraine-war', 'foreign', 'presidential', 'trump', 'fed', 'midterms', 'congress', 'legal', 'social', 'methodology'];
   const overlay = document.getElementById('shortcutOverlay');
@@ -7007,7 +6775,6 @@ initUkraineCollapse();
 initMapLayerToggles();
 initMapResetButtons();
 initFreshnessPanel();
-initMiniToc();
 initKeyboardShortcuts();
 renderFreshnessPanel();
 renderDeltaCards();
@@ -7043,3 +6810,4 @@ setInterval(refreshConflictMonitors, CONFLICT_MONITOR_INTERVAL_MS);
 </script>
 </body>
 </html>
+
