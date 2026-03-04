@@ -1,12 +1,78 @@
 {
-  "updated_at_utc": "2026-03-04T16:29:15.426Z",
+  "updated_at_utc": "2026-03-04T17:29:38.707Z",
   "conflicts": {
     "iran_2026": [
       {
-        "title": "US Senate poised to vote on presidential war powers as Iran attacks continue - BBC",
+        "title": "Merz sides with Trump over US-Israel war on Iran with no talk of strike legality - The Irish Times",
+        "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxPRm9GQW5iX01fcGcyMlZqUzhJTWw0LVhKTkhVLWtBT0Z1S1BCX20zdEhiWmN6XzRrRTNxUGtqSFF1SUxCNEZIU056eWh0NTA3Nzh3RWJkY0pCOC12WUpRbXc5c3U1VndTcEZPRXV3dTVMY1JySjFsZzYxMmpsdXFzZjBCMXNBLVN6cjlncVJOd3RvbWFkbXhtS01LNlA1VFY4dnAyeVlJUERxbHFLdmdNZW91dEt3WjdyNUdQTWlBQnBhQWZmUGNaaFRHcnpTb253S2dn?oc=5",
+        "source": "Google News",
+        "published_at_utc": "2026-03-04T17:24:30.000Z"
+      },
+      {
+        "title": "WATCH LIVE: White House briefing may address U.S. strikes on Iran, war powers vote - PBS",
+        "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPNWtzbjVHRzV5ZWVOdDNqcHo3X3RKZTFzWkZvM3dXUG83Qlg2cWl0a0JxbUlaMGl0VkZXc3M5RnVzRld5UUVRSzRzOE9keUlsQ015Y21HSVB1aGZPQmdvNXp2V0hQd1ZhUDRmOXhnQlNJQzUxRHU0YmNPVU5tNnhVLXN3MG04ODFsSHA3Ukk0VkI3SjFzVnhJbTV0c2xNTWJIaGkzbU5hUU9sdWoyS1IwRnF6bzFxakZK0gG-AUFVX3lxTFA5WW02Z2lyR0dTRVNHM3RBS05KbkZYejNhWWN1YVp5SWw1bVc2QTlWdkstb2R5SFR4UWJmSFR4OXhJZXZnUkx5TE9pUVczSXpndHgzZ2JwOXluaVlZdDR5eFJwejhCOFV4TDc5SmJBMlEyckRiUTlSLTI2ZFNJaUIyR0dLMlFoNVIxTlA2SXlwSlh5NVFHSUpTVDRHNHZyeDhWMm9zVXRNUjZ0c3VZZnJxSDNUTEM2VXRpYnhVd3c?oc=5",
+        "source": "Google News",
+        "published_at_utc": "2026-03-04T17:19:23.000Z"
+      },
+      {
+        "title": "U.S. Campaign in Iran Is ‘Far From Over,’ Joint Chiefs Chairman Says - The New York Times",
+        "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTFB1MlNCQWJfVF9JYUFUeWtSblhUajMtaERPckN2bkhWM2RWa1ZVLUJUb2dXZ016VFA0aDQ4WHNKSEctSi1UWkw0ZVI3N0hPaWRZeWo0WFJzaHItSWpyUk04akNwVFZvUlB1ZzBsMWc3OGw?oc=5",
+        "source": "Google News",
+        "published_at_utc": "2026-03-04T17:15:12.000Z"
+      },
+      {
+        "title": "Trump administration waging illegal war on Iran, experts say - The Guardian",
+        "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQUmJjelRjUFIzZGNLNU9ab19GckZaS1JHOWJWWG5mbzN0bEFubWZyLUpqNjM2RDdGS1hicWxaVXVaYldOcTBHSUI5WWdOanpNbG56X296aEV6VTZkVXJLajNobVB5d09oQkIzOTJ1cDlWUy1LcmgwWXdMQXMzLVhUcXNnZzlTb1BoLTJ2MHFqazRvcUMzSWc?oc=5",
+        "source": "Google News",
+        "published_at_utc": "2026-03-04T17:05:00.000Z"
+      },
+      {
+        "title": "US sinks Iranian warship as Iran warns of widespread destruction in the Middle East - AP News",
+        "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPSHNncUlOcDBNNmVnOE04S3hLWW1MSWhjZlhPMVZabUlNUDl2a1FEemxZaGlwUUNMXzAzc19NS2RwLUYwQ2thSkdUZHBtZS1tSERJcjRuSmp4WmtCSS0yRGMzbUhYcnlyc1M1U1Q2cHpscUpLWGJSeHRqaDB1aE9RN0N4VnBFSGhXLUtENWZyQk1ldw?oc=5",
+        "source": "Google News",
+        "published_at_utc": "2026-03-04T16:58:00.000Z"
+      },
+      {
+        "title": "Hegseth says U.S. 'can't stop everything' that Iran fires even as he asserts air dominance - PBS",
+        "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNZXdLMGR3VWh3TWpFX05RZGtmdFFpcG1LYzhhSUoxZG9JakpaeGEwYWlUbS1kRUltQmJxaVVLLTFnWkNhdkdZbGJ1LUw1U2Q3dExXUHRNU3NKanpNb1U1WEc4LXlNMkhKeUlxbERzejhITDROSC1YdUFlN1UwanhYanpCbHI2UU1rRkVlRkpMYVlVY21WZmtKdUFEbklUQlhWZHlscXdoZ3BFM0tGYzU3R25WSnNZamk5a1RKYTN30gHDAUFVX3lxTE44STB5MmZNRHY5RU4xN01FNlhDUGVzaTZkTWdhalpsZFRENlRwLXplSFp3bjR6ODdhTkh3Snl3aXlDUC1GTWpEeDFQZ1NqUjFvU0FOUUlVS2xwd1Q3S2JqTk5hYzNacWpEbGFnb1dTQ2JzcDFnSDNkLUhNWDFoV19BNzMtZXgxZnRPSHlEZ05ZX0FBZ2xuZVVseXk2SmphN3F1UHh4S1ZSb3g4cU5ZbjJMTmNRSXp6dExaMEpFYjJJbEpzMA?oc=5",
+        "source": "Google News",
+        "published_at_utc": "2026-03-04T16:52:15.000Z"
+      },
+      {
+        "title": "Preemptive War, Permanent Emergency: The Real Cost Of Trump’s Iran Strike – OpEd - Eurasia Review",
+        "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPRUVYUk5WeFB6LVRkNXJIRmVFZzE5bGlHZkstN1RIeFBDcTRqT0NmSWtsWGxaaUYzZEViMnlGcFRiaXhyNVVsOWo4ZFpRWTBzeTNPUXZrZ0pUREREbmkyX3VKNFFoMUhJZVdDZnFtZUJqUGUwUVNTNTN0RF9uOHpwcUduY0VNV3pXWGV2TE5IR1JDYTlsUFdleXBpUzE5RVU3ZW9IUW42VUVha2tWVDZDZnJ0LV8wQQ?oc=5",
+        "source": "Google News",
+        "published_at_utc": "2026-03-04T16:38:13.000Z"
+      },
+      {
+        "title": "Hegseth boasts of ‘incredible’ results of US war with Iran after four days - The Independent",
+        "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxONTRmSGMxanpFdjdBTFZPUjVHY0RPbmI2WUhIbXJuODZOX01GYUpTTkx1TTFYVnpNYlBxRVZUSk9jU3RtTjZjUlVTMFZBLXNQWTZ5TUktZFJyLU5PVFZmRWtCeldKYlE4dDRvUUprblpXb0xBZ050cDlURFFyTUtBMFlCRk40Q2tEcHdsS2hybEZRMktTVnJqYWZfTTdGLUU3MEpoWVhpQzhBanUwNjZnMWJZTQ?oc=5",
+        "source": "Google News",
+        "published_at_utc": "2026-03-04T16:21:00.000Z"
+      },
+      {
+        "title": "From petrol to groceries: how Middle East crisis is driving up prices - The Guardian",
+        "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQVnVyVExBU3FaU3FXcUYzbGRCNV9ua2pnX0VGckF4ZVo3b3RCdWQySFM1ZjllVEhkNDdFSzQydEI3Q2pSRGVNY0hyXzV3cndySUlSWkdralhmbFAyWkwtVFdleWR1amJpZWt0T0p2aEpuRFJqVXhFcFh4ODJmdVk3dzBtLVlBX01TYlB1dFBqRkhEakNtbWR5ck5LMA?oc=5",
+        "source": "Google News",
+        "published_at_utc": "2026-03-04T16:12:00.000Z"
+      },
+      {
+        "title": "Pete Hegseth says Iranian regime is ‘toast’ as US expands military offensive - The Guardian",
+        "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxOZ1lhTTVVSE9Uc29ab0ktbmsyaVp6R0JUWXVCbkRRNTFXWlBZOWtwZEhFYmcwTjM3QWtpRTVHUUpBbVFIRFN4MWxOZC14M0w2Y1ljdTYwTW5XZF9UZk1ZWEZ0N3RIY3VxVGdBOUJ3S0RwRVh1M1V2NkNUTEt1enlhTUItanlqUQ?oc=5",
+        "source": "Google News",
+        "published_at_utc": "2026-03-04T16:12:00.000Z"
+      },
+      {
+        "title": "US Senate to vote on Trump's war powers as Iran conflict continues - BBC",
         "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE53YjZmR3dyMnVRNWZFbm0zVkd1MVdqR3N6dC02dzY3MWd0VUNtU3c2aC1JN2Y4bE9Ic0R4bUNRUlFTcW9ZYlRTbDVDSXNJeHktMXhwNmtpdkk0QQ?oc=5",
         "source": "Google News",
         "published_at_utc": "2026-03-04T16:09:23.000Z"
+      },
+      {
+        "title": "U.S.-Iran attacks are putting a spotlight on drone technology. How to invest - CNBC",
+        "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNQ2d6cHJVMEpfUHoxdlFIVDBHdDhYd296TEFEOXYzbkFNTG1SQjdJZXFEWTh6azdtbnlZQ0ZSbjluZk84X2QxWTZtWHBPMnFBWldxUFBZVkcyV0xSSC1hR21Qd3RnLUkzNVZqNzRETHRZaVR2R1RrR0JWSGt6ZVlMc1lfN1lwdEVoQ3VMUzFic3JpbDRweThMOVBPUzlfLWlzLWF0QmhDVExYZ05XeHFR?oc=5",
+        "source": "Google News",
+        "published_at_utc": "2026-03-04T16:08:05.000Z"
       },
       {
         "title": "Israel F-35 downs Iranian fighter jet in first war dogfight - The Jerusalem Post",
@@ -27,10 +93,16 @@
         "published_at_utc": "2026-03-04T15:56:00.000Z"
       },
       {
+        "title": "Iran war: Iranian missile headed towards Turkey destroyed - dw.com",
+        "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQSEl0dnA4ODVFWUZLNHpzTHZpek5mcU9sZGhYNXR0UTNadHcycVBvd1hnTTFjM01WQ1RlT0ZoNzJrWFZXMW9ySEw2UktORVJOdGljZk8yMkgtLUdYUml0dW5udVpXLXRsbzhITGtYaVpKX3VOMEF5b3pzMzM5TmgzbENaTVhla1RF?oc=5",
+        "source": "Google News",
+        "published_at_utc": "2026-03-04T15:55:47.000Z"
+      },
+      {
         "title": "‘Quiet Death’: U.S. Sinks Iranian Warship With Torpedo - Time Magazine",
         "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQaHFabDBCZzNiTEwwSTZZVjJnc1B3bVZGcV9Ocm91NFpLejlxZ042dzRLWlB0bjNKWjhiclJyS3RKVDJTdFE3bE1WSURSNkVwUi1CZGdVT1BYMG9URml6TDIwM2R6QjhDVm5xcUFwMHh2bUNlM01sQXFwOXZsSlF3TThkMTFxdw?oc=5",
         "source": "Google News",
-        "published_at_utc": "2026-03-04T15:51:00.000Z"
+        "published_at_utc": "2026-03-04T15:52:27.000Z"
       },
       {
         "title": "Hegseth Says a U.S. Strike Killed an Iranian Who Plotted to Assassinate Trump - The New York Times",
@@ -45,85 +117,79 @@
         "published_at_utc": "2026-03-04T15:43:00.000Z"
       },
       {
-        "title": "US submarine sinks Iranian warship in first torpedo strike since World War II - WPEC",
-        "url": "https://news.google.com/rss/articles/CBMi4wJBVV95cUxOVkJDSnhtWWtDWHFvdmFxWWZXMFJELXpkUUpFNWNDUUd2WXprSjVFM19rOFBxeFNfZlozWDA4NVMzQnQ4LWF6REp6WDVDeWkyLXhsVFNXNENLSTBVRXhjNjZiWWdLM3ByRGtqREFZMHk5NzVOU0hzLWlhZVJMV3llVk9PeDlJRWs3OXp4eHdvNGpXcnZMSWdxWFZzeXpXUlZfODZkTTVJcUl0UkRrYW9oMEdIN3AzMmZDVy1qZnRfNm5haDkyTlZHeTVyUEdSOC1tQ2xnMGxMRFN0TTdsLU1kMnZOZENvMXQwQVB5Q2NqZXFwRDdFYURsekFfYUNXM25ZS2hNRHdPVHhBenJuYUlqdW1iaXhGbmlRbTBiaVpfWkpjeUlXNENCMGkweG43dGtxR0NmZE1tOUJ6WGhoSXBxb0UtcnlEVDhZQ2dPdFFOd1BLLTN6T0d4Y3lOY2N6WXMxTHkw?oc=5",
-        "source": "Google News",
-        "published_at_utc": "2026-03-04T15:42:40.000Z"
-      },
-      {
-        "title": "Trump administration waging illegal war on Iran, experts say - The Guardian",
-        "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQUmJjelRjUFIzZGNLNU9ab19GckZaS1JHOWJWWG5mbzN0bEFubWZyLUpqNjM2RDdGS1hicWxaVXVaYldOcTBHSUI5WWdOanpNbG56X296aEV6VTZkVXJLajNobVB5d09oQkIzOTJ1cDlWUy1LcmgwWXdMQXMzLVhUcXNnZzlTb1BoLTJ2MHFqazRvcUMzSWc?oc=5",
-        "source": "Google News",
-        "published_at_utc": "2026-03-04T15:42:00.000Z"
-      },
-      {
         "title": "Why is the U.S. attacking Iran? Here's what the Trump administration has said motivated the strikes. - CBS News",
         "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE5RWEM0NS02MGNudzR1LU9ONWRLZE15VFVVcERSQzBTcmIyUnFkR2ljc2lEeEpBdklVSi1iM2lFSDB3LVFWOHVaeHllSkktY3RjUWxFNGtROUtjMTd2X1AyaFZnV2lUQWdHOFdEX2xTUWtyZFBha251U9IBfkFVX3lxTE5wYnNiQlJJMzRfM3RLYVI3bWRDU3RZRExnVEZZaGdyaExyQzROMGIxTm5zZ1MwWHRiX0Y0ZkRIWjJDZTl4S01aVHljWU1HSmlaUWNtLU5oQVZKMGs1NlBxWm11WFd2Nk9PT3U0dnk3RFVzUVBsU2R6M2xTU3FLZw?oc=5",
         "source": "Google News",
         "published_at_utc": "2026-03-04T15:41:39.000Z"
-      },
-      {
-        "title": "The US Air Force just used its oldest bomber to attack Iran - Military Times",
-        "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxOMGdLLXRtZnl6Uno3WHlkQzFiZHlUS2tBVWhWeWxaV1B2Z2QxbGE1V0hxS3RYekVGRDJuYXJDQWVIQ1luYURpTUhXWDdlLXRyRURfRjhLMHFBRHNxNG91WUxDZXB0WW9YQWwyaWMwaU5ZSWNZdHlQTVhuNm40b20ydnZjdVdlRE5fRTBBN3hjUmNFd21KT09BbVQxOHllQVdGb1UyamwzcUd2YkF2SWljZmhLNlFUWW1kdFJETw?oc=5",
-        "source": "Google News",
-        "published_at_utc": "2026-03-04T15:37:13.000Z"
-      },
-      {
-        "title": "Pentagon: US airstrikes in Iran 'accelerating' as war shifts to new phase - AL-Monitor",
-        "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOR05tVkdyUEY0eXZ5YWFzMUZQRHd1bHdXVDhfTXJiNmJVSUhDSFdVNFYyeUVIT3NZVkN4NUxtUzk5LUhNMXRZVUQtbXpYdzZ6MFkzaURWSlROOGlmV0w3TjQ1SDA2c0tYRVdSYVVpVFNHazk1Y0Q5ZVVxMW1LWFNWN29qX0JDOV9ETmZ0cjJlMEZVUzMtUnM1emRNNGdTdzRrZGM3LWRjSkZvZw?oc=5",
-        "source": "Google News",
-        "published_at_utc": "2026-03-04T15:34:20.000Z"
-      },
-      {
-        "title": "Hegseth says U.S. is ‘accelerating’ war on Iran, but strike at Turkey won’t trigger NATO - Los Angeles Times",
-        "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxONTV3TFluWk5TWnBJNGtyR3VNQV8yMVc1WG4xMGJ5azd3WjhkNnFKYXN1MThqTExzZk51OGZCZjZadVFGNmZwTmxFTDY4NDNhN3oycTBoemJrZ1JGeGxmMTJ6WWFjOFhGTTZOcU1sV2FSdXpxNTVXOVZJU0ZpS1pPZzFwcEMzVEJDOTRqWXlJTlJ2bzJaSFpmdXhUdDBhYWtjUE1Db0hlN0RfaUVoYlR0Z3MwV3B2R29falUwWEVhaUlhSGM1eTVMcm4teWhrQQ?oc=5",
-        "source": "Google News",
-        "published_at_utc": "2026-03-04T15:29:04.000Z"
-      },
-      {
-        "title": "US submarine sank Iran’s warship off Sri Lanka coast, says Hegseth - Al Jazeera",
-        "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNWURHVWlCQzU5SVp1eDFLcm0zcGpFVGxhWVdZNm5xWDlIVnczZDR5NGNOT0xXWEhuVThTN28tNllHZVZnS2hSeHRTdk9LdmkxQ2ZvOFdRa3BQTDI3UzFOTjU3SkhZMURCS3pTaU13ZW83SG9xLUdwZWVBcEVaMEVmV1JuOEd2aUxtUG8zOUxQRWhaZHZLb1RKOUpwTk9YNDZraEZIY1BNRnZDc2RORlR5Z081MTjSAboBQVVfeXFMUGpkYmtGQlhkczgtY3NyQnFrSVdGd093TEhKY3RuQ1BoajdiNlRpVkRwX2VLcG9CUXNEZEFTajk1T2g1T2pmMEJsYVdFWUJldzNWeWd6YUdIMll4Y2hoVXB3d1VHUTNOZFhCWWVWNGU5c3BoWUFnR19pdTgtdEZXZ0tKU1VDLUUwSUJoOUNMMDAyd3k1SkF0UGdLMlJibXNmM0U4eVpFSDBpYWpNc191NjZ1V29GQWVaV0FB?oc=5",
-        "source": "Google News",
-        "published_at_utc": "2026-03-04T15:28:17.000Z"
-      },
-      {
-        "title": "WATCH LIVE: Senate expected to vote on war powers resolution after U.S.-Israeli strikes on Iran - PBS",
-        "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxNcnBJU0ZicVV2SFZVVVRGWVdfQ0YwZkN0cU5TUndGazg2VVlUOHMtdUVTQ1VidzNBdmhHdWs3YXlXYUFUckYzTkJvcFJqMVgxNEt4RF9OX1FVSEMtNjR4VmF5NE1vOGxPeDBLajNEOWJ0alQwMFFyM2xKR2VPUWtBZ3hhbFZObVNVN3JSVl9hazN0bGVEU3AxeDB3R25TN1pKc3ZqVGNwQlEzWjVWM1c0RG9XejI0ZFpLZWlsd3owZ1BGVFVhNWJMTVlLSdIB0AFBVV95cUxQRjZDNjNIWi1pY09Od1BNdFlRQm1FWjRWNGt6U1lUdlBuakN4QmlTRmtJS1h5LVJ5Y3pkbXdMa0ZPQnZzdC1CdFJSOXhTUzBTNFQwcFYyOHZnNXd4WWNxeG14YXAxLUFzVkYzVXFVX1VUMFNHWWQwREdUaGJMVmZ4em12NEJ5T2xLN3BFTVhwWkZuQkdjeExUcWZZLUZJTDBaU3RYdFRrNjAxTzQ5ZmtJaGhSY1JMcDVrMER6TXAyMlh6WEFJMTJSeGFsaEMwbXlQ?oc=5",
-        "source": "Google News",
-        "published_at_utc": "2026-03-04T15:28:02.000Z"
-      },
-      {
-        "title": "Iran conflict may boost Israel‑Gulf relations - The Jerusalem Post",
-        "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE9leTdyMFZoenI1MXByMWpDXzBaUWstNVd3SHRLbGtubnAwRERvNGlOdnIxZ2x6S1BpWndSYlFUUjNVeFNlSkI0V3JyajFCR2Fxc1NuOG9IYm96Uk43?oc=5",
-        "source": "Google News",
-        "published_at_utc": "2026-03-04T15:26:09.000Z"
-      },
-      {
-        "title": "'We are just getting started' | Hegseth says attacks on Iran still ramping up - WFAA",
-        "url": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxNMUUzeWljVE8tSFAyX19ub3F5bEZEV0ZiRGFsMmpxVExrX2R5UEdLa3VTbXpvYm9tbGZvQTFqcFJMOVRyYnNtNkFKeXRvbGVOMFVlSDBaVFRwa3RuSmE5c0FrV0hTZWVzVUJaVjRxM1phNjM1c05ZaTdTNzllclR1SUhJa0g0ZDZFNGhTZU1CNVZGakUtYlIwTnEtR19EM1FwbVpLU0dXcWtUal9ST3JCbEppSG1yVXdkZ09tUWwyN1ZzVVVuSnZpUnBGZlJCX0lCVWJpbEFWSG5aS21sOHpmSGxlNzY?oc=5",
-        "source": "Google News",
-        "published_at_utc": "2026-03-04T15:20:22.000Z"
-      },
-      {
-        "title": "Charting the US-Israel war with Iran - dw.com",
-        "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE11R3g5SjR6RnYyN2kyeXBWVkREUmJoOVkxNkxjUTVSNVNkT1BJeW1jOWZGWUg2M3pfQm9sLVlIUFdOQjNBcUc5elVIX2xKc3BnVzBsSG1ueTRob1p2b1htX1FXdEJxRkJUUWw1dnhWXy1mX3hxbXRCatIBeEFVX3lxTE91bVB4Nld0UFVZUnYwYVZ2MTl5d0NLLVhVWmdwbEc2RWVfYlVBc0k3UExNNFgzbC1ra2VoLS1DSXBwTVVwajNvRkNpTXNVeEI0NkxRYm5fTGNfQnpFbzFOMmFEbjdFLXR2ZkI0eWdybjFNbDc5aUQyUg?oc=5",
-        "source": "Google News",
-        "published_at_utc": "2026-03-04T15:19:13.000Z"
-      },
-      {
-        "title": "WATCH: U.S. sank Iranian warship, Hegseth announces - PBS",
-        "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNR2Y2NUZVYUVkY3hISVV1Mmpjak1rQ2FjQ2JlRXU1M2g3MzEyT1RvZkdCQ0JLSG5wRUNidWFWa1AzZndfX0t4bnNENTJMbkltLWNadzZnenBOX1pXcGxIZl9aMG5SekFWcUJ5NUVEdWV1ZDE5RDNDVW5RMjVhdm9RMUpkVFJEdlNTR1k40gGQAUFVX3lxTFB3TjVsc3pBdWVIMW5qMW0zU3ZvVkRCQ2lhdGx3dWR2V0FFYW9xamUwNFhnNTNPcTZuNTM3d1FUSnJPYVNEYmdNY2dYTnZSazZwZ1FFcmpDc0VIU3U1cGZlTzI2bTJXR1FqWVBxblFyVHVrdy1ycjlWUDBXT0lMdGNxeFBWaUdvTWZNenZmcndnMQ?oc=5",
-        "source": "Google News",
-        "published_at_utc": "2026-03-04T15:13:37.000Z"
-      },
-      {
-        "title": "US sinks Iranian warship as Iran warns of widespread destruction in the Middle East - AP News",
-        "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPSHNncUlOcDBNNmVnOE04S3hLWW1MSWhjZlhPMVZabUlNUDl2a1FEemxZaGlwUUNMXzAzc19NS2RwLUYwQ2thSkdUZHBtZS1tSERJcjRuSmp4WmtCSS0yRGMzbUhYcnlyc1M1U1Q2cHpscUpLWGJSeHRqaDB1aE9RN0N4VnBFSGhXLUtENWZyQk1ldw?oc=5",
-        "source": "Google News",
-        "published_at_utc": "2026-03-04T15:07:00.000Z"
       }
     ],
     "ukraine_2026": [
+      {
+        "title": "Middle East escalation pressures Ukraine as Trump stance could sway the war - mezha.net",
+        "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOV1NKNmxuZXBBeG5oQjhleVVWNGpobXNsTmNSbkRqX1VqX1hlRUZfTl83UFA1ZlRqRUdnUjVIZ1A5YldoWWxDcW1yN0pUUThra1Y1cHdZazFKSFdKWDQ5U1VpUGx1ZzJwdFRuMC0yWWpmNlEyaTB5UElVVEVQVWYyTXBGMnQ4dWZRQ09OT2dZcUJvME9LM19kSlh6NXU0YTlSS0tLQlZGWQ?oc=5",
+        "source": "Google News",
+        "published_at_utc": "2026-03-04T17:23:52.000Z"
+      },
+      {
+        "title": "Ukraine war today: Five hurt as Russia attacks passenger train and railway office - The Independent",
+        "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxPWU5YTUU1TVlaYUEtWlZLT0tadlhfZDNDRXRsQ3FLSk1MYlA0V2lxejNjdnFvTzFtYkROUHpfVEVQdi1WdTFBdjVpZUJ0VHJXcnJfZmhBaXlQTDVOeVdTNkNJWjg2NWpHZ3V4S1lXaG0yVkk5N0hSQkNCRUpTWkdmVU1nczVRVTdiMEgwWDZYRzB0VnkxVEtpdkFJQWRET0JSWGhTS1cwamx5SjZ2NmVFa3M4MmhhdTNLNHhWeXpCblZ5MU1vUzlhT3NtV0t0VDMzc2VUXw?oc=5",
+        "source": "Google News",
+        "published_at_utc": "2026-03-04T17:20:00.000Z"
+      },
+      {
+        "title": "Russia is funneling Ukraine's war veterans into Paralympic sport — and IPC is letting them compete - Euromaidan Press",
+        "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxPc09heWduQks4cVBfZThxeHY1X1FZYUl2TzNMWml5eWduSzdmMWlGSjQ5czQ1Umt5VjlZYk9BZ3loU2hVcmVES2FSbng3d3RsNHk3M0F3MmlXZGVXazYzb0FPV3lIelRPWXVlWEo0RVpGYXV3RXZLTkVMY3lxbUlZeEpGVld1dTh0UkQyMVNBbXN4VF9sZWpxR0FDWUY2MkhuU29wQjhuMXhQOUpXSzBVd2N5dENrcFBMN1dlbTV4STg5VnJVS2JkYlJjT2xxdDhU?oc=5",
+        "source": "Google News",
+        "published_at_utc": "2026-03-04T17:16:31.000Z"
+      },
+      {
+        "title": "With Trump's Eye On Iran, Merz Pressed Ukraine's Case In Washington - Radio Free Europe/Radio Liberty",
+        "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE1LeTFwTThBZ1ZGSUt0dm5rdjhUV1BKNWNETWE1SUdfanVjcEpiODRhQzI1Z1UzX1dHWl9pZ3pTVzk1ZTF5V0pfTGRfSFQtYlhIU2ZwNzdoN0tIVk1EM2dxUmdFQWw2dFg5X0NIMHlXUE1aNVJCeThXWkRiY1bSAX9BVV95cUxPckNDUUNUcFU4U1FoN0swWWpVbEpyek93VnlRbDh6bDdxd1E4YjR1R0hKc2hTQXNpZmpmLWR6V1ZxR3NIQ3lFY0o0Wm1OVmtkc2V1LUxNOWVHcHhWd2huSWhnYlpEcmlxWEgzRy1uOHExd2tGSktkODZCS1pKM1dB?oc=5",
+        "source": "Google News",
+        "published_at_utc": "2026-03-04T17:00:21.000Z"
+      },
+      {
+        "title": "How Iran war could reshape the state of play in Russia's war on Ukraine - France 24",
+        "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxOSm05eC1ZWERqcDNna3g2LU80aDZtZlNjNjdfOGRWcjBmSWc2WTNaNUFYUUpjbXNkRUNyUkxKbnFZQ0xBOW1SWi1FQ2o5X3FKLW42ajdvRXNsdjU1a2lqOHhsME1DbDhUMVJsM2Z4UlpkSmUxQXU5ZVFfWERVaWFnVFE2ZktEWEt3Y0REMnVVc0dJdmxfV2JBQTNRc2pCZlMyTHd3ald0Z3ZWZzhWX2xBNG9uUGxGZ0NWbTFBWg?oc=5",
+        "source": "Google News",
+        "published_at_utc": "2026-03-04T16:59:38.000Z"
+      },
+      {
+        "title": "Middle East Conflict Boosts Russian Oil Revenue, Strengthening Ukraine War Funding - Fine Day 102.3",
+        "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxORzV0U25FanpoUUMwY0lqbEszSEQ3anpVcm1qcE1oaWJGS3hjdGRnSEFaaFJ3YnFzY0N4U01TZUZZRkhydW15VDl1TGRoY2ZYZFhWVDZmN2VnOUFYbkhsdG5zNWo1djBmd3IycFE0WXRmVDBPVGNscExoajZkcVJJYWs4cUJwY2pCMkcyd0cycVdvR24wMGNmZkJJcUhxc1dQSkRacDlMdlc4dGhucGVmaUFLMlNlbTNQTlQxZFRTTExMZ3d1djRhWmhIdDJvU0tDNDVhT1hn?oc=5",
+        "source": "Google News",
+        "published_at_utc": "2026-03-04T16:55:06.000Z"
+      },
+      {
+        "title": "Ukraine hits five Russian warships, S-300, Pantsir, and six oil berths in one Novorossiysk night raid - Euromaidan Press",
+        "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxPV0NiUmdjbE1zOHFSWkVnWk5ITWlWNnktbnlWX2tUZHNwVzhaakZTMVZjc2k4LWpNN0V6RGpRd3RwWlRzR1k2eEVJZzMxZTJ3cktIRlBraTlZYW5tUmFHeWNjWTFmTGR0aUtCTXAtSUdpQm1teXVoYURKWWI3Sl9GQmVjWGNsOG1uZ243Rm5XQW5PUl9mOUNha01UOVlSOG9HLWhSaEZkdGhfV0paNDJBaVF3Tnd4RUZpbWxiWnZ3THJCMDJ2LWtMS0N0UVd4UlE1eWFyQg?oc=5",
+        "source": "Google News",
+        "published_at_utc": "2026-03-04T16:51:31.000Z"
+      },
+      {
+        "title": "Russia Hid True Cost of War as Budget Deficit 26% Higher Than Official Data, German Intelligence Reveals - UNITED24 Media",
+        "url": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxNTVRWaUpLbWlTQlR2Ri04bHJvOGExdWYteU9EWG50NHRPSnlSODI3Y2hQdDRFamh3TWtFeUlmYWkxM0lwMHktYmlvQ3R3bHFHQ0RZckpseEdMWDFKMVZ5Z2VXTUxsd2xoMXQ3YUJHU185ZGR5R2tVWGJWY0FFZE9hOW9ZUHdtNl9hSmZ3em9jY3p2YWt4SzNmamxwLWtyb0ZYX3NXOGRUT3puaGJMMXZURDZ6Ry1SazRZQllRSGYxQjQ5ZXNzdlJQWlJDRXlVRjh4S1lCaVlOM1d1OHF5bk9z?oc=5",
+        "source": "Google News",
+        "published_at_utc": "2026-03-04T16:50:31.000Z"
+      },
+      {
+        "title": "Russia’s Prisoner Recruitment Pool Dries Up After Mass Deployment of Inmates to War in Ukraine - UNITED24 Media",
+        "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxPSjA4YVZKZHdxY3RxeTYtWHExVE9qd0RoREN0LUpYU09NNEt6cWZVZFdrdTZjcXZqSDd2a01IZG5BeU56dGpodEFfTXlMWnhaZU95cHJqdDd2RHB0T1JaLWFGVTZhQTAxXzBZR1FqOEQ4QXk3LXBXTVdQT05NYXNZVkhwWENCOWRGb0JHeGJ5NzBOMUplVF8zd0F2cEhueU1SLTJfLVgzVElzR3E0ckV0TDdDSjZKMzNBNk1hUHFCSWpoYjlyejRrVXBVNU9fbkFqeDFF?oc=5",
+        "source": "Google News",
+        "published_at_utc": "2026-03-04T16:42:55.000Z"
+      },
+      {
+        "title": "From Ukraine to Iran, kamikaze drones are becoming indispensable to modern warfare - France 24",
+        "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNRWVTaEFQRGdLNHlER1NNVVdPU1JFYmkwMnA0dENFTWU4UFktR3ZhUWpJRUJ1VmswOTNJMFd4SFBhZEtYcWx3NHZNUlFvM1VvQndULWNuQmhUZHNNek9tbEp0VWNVcXUtRGhMR2x2M2N5ZkZjLVZNX2ZVenNWS1JrNENsdUtuSW5VTWhDYnhZVjhOUFc1dGZkcVQtZm5RWlFzM3JBbWh0d2ZTNDcwQlVsQnV1TFNtRUxOQXdUaQ?oc=5",
+        "source": "Google News",
+        "published_at_utc": "2026-03-04T16:42:02.000Z"
+      },
+      {
+        "title": "Rising energy prices from the Iran war could help Russia pay for fighting in Ukraine - Greenwich Time",
+        "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPOGtCajU3cmJMVGlRUDlYRVI4Q2J5bDREejBDYXBoUFFvOVRBeGt0UlBQRFhkZGR6WnlFeFF0b0d0RDRtd2NhVjR3bFZweWJqM1BWYkh5aWRQNmpKa2U5aDZaUVEwcEg5S0pudmxGdVc1YlRLZEZVUHQ5eG1zaHRjenNwTUt1RHNhUW1hSmZGU1dkcTRjaEJhdktBMWNFRGdDSnMwX0VkTDZXQ2dNdGNsdw?oc=5",
+        "source": "Google News",
+        "published_at_utc": "2026-03-04T16:10:22.000Z"
+      },
       {
         "title": "Russia Fast-Tracks Ukraine War Veterans Into Paralympic Sport – Investigation - The Moscow Times",
         "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPZjN0YzdUOTk5VjRYcExTOWFyTTJvcFNVY0E3U3hTOVRIZzJyemNJb25vcmV5ZlVLOHZ3TVR4X1VzTkw4UHVCTVR2ZEZYODV4eEZMeHBaMEZnX1VhUVB6WlpnWEMtVEdNdEJzMEYxMjlhUnFabDBfNFR3Njd4eVZVUktucm1GbUItLU1CZThXb1Zyejc3bzhCQ2NrN21IZkN3ZGJXeGtFNk8wT3B5d2NpSV9JNzdtZE9ybUhyeDFZeGtKQQ?oc=5",
@@ -131,14 +197,8 @@
         "published_at_utc": "2026-03-04T16:06:00.000Z"
       },
       {
-        "title": "Rising energy prices from the Iran war could help Russia pay for fighting in Ukraine - GazetteXtra",
-        "url": "https://news.google.com/rss/articles/CBMijAJBVV95cUxQRFNqVGlwUjQ1Sk12bzQtZHNSMF9vV0hlS3JwbEhGQ290WWZ4c3ZHVUFpNTNRby04eWg2UTFNbjFVRGNFazliaVVGZS1IWjhwOER1eUJ3cUpwekRHaEUtY2NLWThyMUxGT3A4VWZQS0dTRGZ5b0g0bkYzU09wamN0eWR6cDh5bENXdV9meHBrNW9zRkJzbXktOGN1NlFneFFDa2RDay1WYzNEamJWMnY2SEEtQjZLNkxZRXNscEl5QmhLaWVXYm42Uy00Z0duTGVPbXJJekVUamM0SXRvcGNaeFJqMkg1X0JINE5ZaEhVcDg4LU9GZ04wTTJWQkpDdnlYeElLdzZnRzA5VWNx?oc=5",
-        "source": "Google News",
-        "published_at_utc": "2026-03-04T16:05:35.000Z"
-      },
-      {
-        "title": "Rising energy prices from the Iran war could help Russia pay for fighting in Ukraine - Ottumwa Courier",
-        "url": "https://news.google.com/rss/articles/CBMikgJBVV95cUxON3FncGJMX2FsbXllOGFJWVFmbGtvS04zT2pLdVlVOS1VYWtsTlppSG9JRW1BWF9zcklzZzZaMFFqV0t4alJaLU8ta0tvMXFldklCZ3RZS2dnMUF2dWczdi1vU0JnSTFCbW1wLTE0Zm90MXpTTWVsUlRUNnBmU1JTWENsdjBGWkhBWHc1WVoxV3pzOWlSWEpRUEdIOTRGT2JHdzNMUFNOV1Z0WGYtVGhEVGs2NVJ3RWtOeTFpOGJNUXV5N25QU2E2cUNyeHMzZVlMX3lLUm81RFR2eTAzT05EYXpPTVJtN2NLZ1pfN0JxMldGMWI4ZFRibXNiYmtIN0NkUGdac1ZVZDVyZzU4dlNVaWF3?oc=5",
+        "title": "Rising energy prices from the Iran war could help Russia pay for fighting in Ukraine - Northeast Mississippi Daily Journal",
+        "url": "https://news.google.com/rss/articles/CBMiiAJBVV95cUxQTWdudlp6STFaSUxJSkJxYmpLLVJtZ2J5SEE5b1FsdUpMcF9HSGdaZlpmTi1oU2lONThmajYybUR0MUJwcjZiY3Y3VDJ1d0lyMDVnSHRWaHQ0c3pPdHNhTmJQR2ZnZjlySnhsM0MtOUNyb1lBcTlocktPR2tQVzNKZmpwVFZtZHVNeERMdGtKUW8xZ0lScEdvdnVWNU1qdkxjRENrRlBBdmZodEo5MG5xdjQzZmZjdzlpd1lGRG1UNEVlX2NNU1ZGejRuQmJjRWJaUzh6NVIwaUE2dkxRdUE2Y3BsUTBUQ3Vsb1o5LXliWG5teEJTTlNuVDRubmNPZFZweERnUkxZUVU?oc=5",
         "source": "Google News",
         "published_at_utc": "2026-03-04T16:05:35.000Z"
       },
@@ -173,76 +233,16 @@
         "published_at_utc": "2026-03-04T15:20:00.000Z"
       },
       {
-        "title": "Rights defenders from Ukraine raise alarm over ‘deceitful’ Russian recruitment of Bangladeshis to fight their war - Bangla Outlook English",
-        "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE05enFCbnZyUlhtQUczWkJvemMyY2w3bjBtdkc2UGY0TlA3Um52Mk93alE2U1o3ZVIyc0RFR1RPcUpKM1A1UUFxejJPa09HSmdsanEzNF9CblJSTm9l?oc=5",
+        "title": "Solutions to win: Ukraine’s Defense Forces codify Dzhankoi ground robot and Sokil reconnaissance drone for operational use - Рубрика",
+        "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNT2ZPd1BxWFhDbnpYRTZfMVhmNTFKWVNTZFQ3RWhJa18yNm9Ra1ExTk04SHlyenM1UVU5UU41LWw3Y3lza2JXRzN6MXBSdUVzcHItUG43V2Fyb2o1d3d5Tnpna05WNTRnc3VjUm1QY1ZKM2l2YVUtY2VtNEhFWTJsdQ?oc=5",
         "source": "Google News",
-        "published_at_utc": "2026-03-04T15:18:00.000Z"
+        "published_at_utc": "2026-03-04T15:11:15.000Z"
       },
       {
-        "title": "Russia blames Ukrainian sea drones for attacking tanker that sank in the Mediterranean - KTBS",
-        "url": "https://news.google.com/rss/articles/CBMigAJBVV95cUxQdlZrSTgxUS1nQ1hqTWkzWjl4R0p1UHNzaFFNRzVTYXExWVZmT2U3a2c2T1lrMDY1ZXZsWHRiRFJvTUxGX2I2bndzTG5UbHROUGhqemdSaEE3bkxxMjlIRGdSRGx2RWthVThHSDRRalM0UEpBUnVxa0JFT3ZQdWFJOXg4RnFneHlVdHhSWDdURkV6M2tGdzRrdWNpbEYxRTZBSUxjZmo3b3BZZFd4RklGRy0tRW5Xa3J3eERETGRZT2RwVF85SlRzUFc5Wks4WGFTX2hHVnpsMjRaUnpvMWNGWnNhYlpuRVhOLVRnN3NobTdxclhtR0ZaaHBHX3VoZ1Aw?oc=5",
+        "title": "Trump glosses over Ukraine during record-long SOTU speech on 4 year anniversary of brutal - AOL.com",
+        "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQWkV3X3NmUk5UVWNscDRDdEsyU1IxLVQ2WkU3NFhNNExNcVVFV1JJRjNPT0x6Rk01ZGMxUVRBVlZ4YnZHZ3ZrOXhjOExZMlB5ZDFlQ3VaX2R1MzJOR1hCZE9PeU9ELWpiYVdEWHdibklrWkEtVEtaMEhPOHpuU3RaUzVuNA?oc=5",
         "source": "Google News",
-        "published_at_utc": "2026-03-04T15:07:50.000Z"
-      },
-      {
-        "title": "Ukraine has documented more than 213,000 alleged war crimes by Russian invaders - The New Voice of Ukraine",
-        "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNVlBuLUMyY2hGUHZUSUhacWhVeFFoWHBpd01PS0VzdDlHZ0lPSGFGMVVZLW84SExVRVFoLTcxSWlfNGtsZ1lXVnFCWjVIN2JEblRaRFNENktLaGxTQmtMbWw3a3hpQVFTNUZDME9fdjA3X05MNVNGRExFSlRfWmVZVmwzT1k3QzJYV2pWRURhN0duRHhmNl80TWhjeVdCWHpnekY5d1ZCaGVrR2NuM203VW0tM2VtT2xueXBv0gGwAUFVX3lxTE1GdVNfUXA3YkdZdjJqT3VnZ182OXhaTjNRLXlvUzRJc0MwLU82MXpkcmlnT2RXalVKRXh4eW5JanVpWlZqSzRVUGVza3Z2VHNSNDBOMzBXdTJ2YTFYM0NKYmJfVk0yclFUTExULXlGQk5vZUt1elhQd1dqa2RwVk1lTTNJNXI1cTNuWnE4WDMzLXN6SGs1ZlMyQ19aTVBISGY1UG9tb3A1NUo4ZVZEMWF3?oc=5",
-        "source": "Google News",
-        "published_at_utc": "2026-03-04T15:06:00.000Z"
-      },
-      {
-        "title": "Why Won’t Trump Give More Air Power to Ukraine? - The National Interest",
-        "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQU2M5a2NGUWNXZTZZWFhzNm9QVUhjbWFlUXlpNl9MT2VZUjF3Zk9hcU9JSVlwUXlwLWFRN2pTQU00OTlxZXlCclB4dWUyNXJPUHlCcVBRYXNmeTUwclNQSk43ZzJNRWVXbTFSdUZRdVZTTGFLZk0tM1dTYkJqTGdZbDFpX2ZkUG9wZlYtdjBuVzRuc3Zybmo4Mnp3?oc=5",
-        "source": "Google News",
-        "published_at_utc": "2026-03-04T15:03:28.000Z"
-      },
-      {
-        "title": "How Iran war is impacting Russia-Ukraine conflict – Report - Vanguard News",
-        "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQbDNLeTlybGxfLXctNFJoTzJTNU9HMzZWUE04RHVydW1iOVdTNXptLWY5c19iN1o2cDRvR2NyUTNudkxDVGY0VDlES3ZsbXliUC11dWpCbWQ2bUEtNUdOSmU0eUY3T0xEVm43dlVNaS13QVRkdDNHQTF2Ry1jamxjR2twNVVkeTcxQVV6bFEwZmRIZlhhWkl0RdIBngFBVV95cUxNUzlRbWFYRHZid3ZFOWNuT2VtQ1ZmeE5iQ0w3U2lqeFRkc0kxa1R4UGcyZXlIOHFyMnlSRkRXTlJJOW85VzFHbTFDdF8xempDZnN1YU4xQ2lKcWFKMG1oU3NNcWNmUURqTU1QSmZtdC1sZ3UxeVp2ak9hXzFBS3BvVTZkNWN4dXJCZElsYVBoSXdmRVJMNUFSLWwwa2JsQQ?oc=5",
-        "source": "Google News",
-        "published_at_utc": "2026-03-04T14:59:45.000Z"
-      },
-      {
-        "title": "Middle East conflict offers economic lifeline to Russia’s flagging war machine - The Guardian",
-        "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPbEdKeTVPOEE4Q2lnUTZGSHRHX1p6VmJIcGwtWk55OF9MbmZSbzhkYWRzbm9Cbnd2eTZRX0xDc1FqSXpyYjIxTGFkZERBWFVNNEsxa0FWNUVuN0NjUDRWalFpTDAxMWFvcERlVW5fSXppV1pXRU5qaXJPNWl0ZmxQcGFVVEJvSTRldlBCbnVFc3l1UGM5NHdtbklQalA1bGxKNG5lM191cmctcjRMcGVxalowVEo0QW9zcjZGeklIa2o?oc=5",
-        "source": "Google News",
-        "published_at_utc": "2026-03-04T14:53:00.000Z"
-      },
-      {
-        "title": "Ukraine Documents Over 213,000 Russian War Crimes Since Start of Full-Scale Invasion - UNITED24 Media",
-        "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQWUhXWXJxX1J1aF9xRTY5ZnA2OG9NQVI1ZEVfenluZUdWbV9TZDVudXFjd19vdVozdzU3RXNUd0FQa013U1VhQkNUOFJZbGhfQVQ4WU4xSzdScVlaV25yOXNwVVM1SmtQV3Faci1QRjViN0RTVVNfb2lyOXN5UW8tSi1DdzNiV0o5TTdtQV95ejR3b3JuLXZiZkRLSU5QMmI1VUw2WERUWXFxNkVKRlBDZmhwWlcwQ2huQnFXOHFrQWpYNjFoenc?oc=5",
-        "source": "Google News",
-        "published_at_utc": "2026-03-04T14:37:57.000Z"
-      },
-      {
-        "title": "Putin Orders Russian Police to Recruit Ukraine Invasion Veterans to Fill Massive Staff Shortage - UNITED24 Media",
-        "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxOOVFJczh4YlVOREJ4ekhIOEctSloxaEJWQU1iSzY0TjdVb3FUeDJ1ZGlndFNUejRoSHV5VmdtSEhXVDZmOUctc0VSZ25CRm8tNmNVaUUxODlHWHBtV1BjTWVrMkFNYXE1VmZFTlltSmxNeEQzMWxTMTc5U20tUGY2SExFUXBaUWp6bVZrdGFFTHp3cmtUOFVjZk5OUGtfZ3pHUF9QQ2tQNVhvaXZUbzg4cUQxd05iUUdCODF0TmxWMjNrTndpZUNUdTdOcVFsQUpIZHNwRDZn?oc=5",
-        "source": "Google News",
-        "published_at_utc": "2026-03-04T14:37:21.000Z"
-      },
-      {
-        "title": "Russia’s air campaign has a second target: Ukraine’s labor market - Euromaidan Press",
-        "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQdnF1dkFMMy1RMTJWZ041UXlIS0hJam02YlFuaWI5WGh4a1F5Y1JDUzJHTkFxeUwtNWNkaHVFQ215TWUxU2kzbHZDRUpHQW02dGxXcHVib0hmSTgxYmNLSEV3cUg5eGFzdGEtT05tVVV1S3dKR0M5c3E2WFh0R29aZUlzT3lPRUFDYXFsSw?oc=5",
-        "source": "Google News",
-        "published_at_utc": "2026-03-04T14:36:19.000Z"
-      },
-      {
-        "title": "Russian Mi-8 helicopter crashes in Rostov Oblast after air defense strike - The New Voice of Ukraine",
-        "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOVWRqZjQ1eVY4bGhqMDBmelRYc0RUeWZHWkNZVHBJWHBlc2l0X3NfSjI1QXdwdi10S2lPcGV1WGkzN3ZCX09nWk9vUGlsUzVpVUluT3JQN0pBNi00cHVEbmlLb0xWRGRYMjJ2TkNldHRfVy1aMmFUaXVSSUwySEdjTElYM0JmWmlTNHRwcnRqNlByclhUOGdPaHczNzltV3pYblR0VnIyX08wekEzVGRUbzFGbmx1RkHSAbcBQVVfeXFMTlVkamY0NXlWOGxoajAwZnpUWHNEVHlmR1pDWVRwSVhwZXNpdF9zX0oyNUF3cHYtdEtpT3BldVhpMzd2Ql9PZ1pPb1BpbFM1aVVJbk9yUDdKQTYtNHB1RG5pS29MVkRkWDIydk5DZXR0X1ctWjJhVGl1UklMMkhHY0xJWDNCZlppUzR0cHJ0ajZQcnJYVDhnT2h3Mzc5bVd6WG5UdFZyMl9PMHpBM1RkVG8xRm5sdUZB?oc=5",
-        "source": "Google News",
-        "published_at_utc": "2026-03-04T14:33:00.000Z"
-      },
-      {
-        "title": "Four Years On, Russia’s Occupation of Zaporizhzhia Nuclear Plant Remains a Global Threat - UNITED24 Media",
-        "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxOTVFuZVNEYzVtM2Vhc2x0UGVHNXVzTmVreEFEbmc2UkpPZERVZDRPTVpmcm1kWXBoQ29LNFpPampHWjJfYkE0QUx5VXJDdXg4SXRSNEdVakNDYVF6dzhsNjhlNXNhLWtqSzhEUGlvalJYUGRSQ1JhMmFHaDA0eEtEbUcxMjZOTTlobzRuZXFwTE5ZdUNkWHlKV3lGb0JGc0Q1aGktbk9OYnVyTFFwNmR0dDZ5dlhNQzZfODhWVF82Z2cyZ0o2a1NyeHFB?oc=5",
-        "source": "Google News",
-        "published_at_utc": "2026-03-04T14:26:38.000Z"
-      },
-      {
-        "title": "Bangladeshi men trafficked to fight in Russia’s war in Ukraine: Rights groups urge action - Bangla Outlook English",
-        "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFB3enFtTUZ3QkZfVXphODMxc3BheUdtTzFWUElZNW9QU3pTUjBQUThZSElVbmFjTktCRlVURlF0TVNockRwcDNJNk9DTU00b3JqZXc?oc=5",
-        "source": "Google News",
-        "published_at_utc": "2026-03-04T14:07:46.000Z"
+        "published_at_utc": "2026-03-04T15:09:10.000Z"
       }
     ]
   }
