@@ -2,7 +2,7 @@ name: Update Polymarket market ID map
 
 on:
   schedule:
-    - cron: '20 * * * *'
+    - cron: '27 * * * *'
   workflow_dispatch:
 
 permissions:

@@ -2,8 +2,8 @@ name: Update Iran war metrics
 
 on:
   schedule:
-    - cron: '10 * * * *'
-    - cron: '40 * * * *'
+    - cron: '12 * * * *'
+    - cron: '42 * * * *'
   workflow_dispatch:
 
 permissions:

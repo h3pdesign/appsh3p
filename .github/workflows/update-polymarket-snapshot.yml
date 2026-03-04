@@ -3,8 +3,8 @@ name: Update Polymarket snapshot
 on:
   schedule:
     # GitHub cron is UTC + best-effort; run twice per hour to reduce "stale" windows.
-    - cron: "5 * * * *"
-    - cron: "35 * * * *"
+    - cron: "3 * * * *"
+    - cron: "33 * * * *"
   workflow_dispatch:
 
 permissions:

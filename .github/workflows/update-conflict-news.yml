@@ -2,7 +2,7 @@ name: Update Conflict News Ticker
 
 on:
   schedule:
-    - cron: '10 * * * *'
+    - cron: '18 * * * *'
   workflow_dispatch:
 
 permissions:
