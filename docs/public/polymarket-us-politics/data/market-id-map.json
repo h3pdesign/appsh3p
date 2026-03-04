@@ -1,5 +1,5 @@
 {
-  "updated_at_utc": "2026-03-04T19:42:34.622Z",
+  "updated_at_utc": "2026-03-04T20:42:27.701Z",
   "total_questions": 66,
   "mapped_questions": 47,
   "unmapped_questions": 19,
@@ -141,10 +141,10 @@
     },
     {
       "question": "Who will Trump nominate as Fed Chair?",
-      "market_id": "572499",
-      "market_slug": "will-trump-nominate-individual-t-as-the-next-fed-chair",
-      "market_question": "Will Trump nominate Individual T as the next Fed chair?",
-      "score": 0.676,
+      "market_id": "572493",
+      "market_slug": "will-trump-nominate-rick-rieder-as-the-next-fed-chair-917",
+      "market_question": "Will Trump nominate Rick Rieder as the next Fed chair?",
+      "score": 0.62,
       "active": false,
       "closed": false
     },
