@@ -4668,7 +4668,9 @@ function expandPointCloud(basePoint, zoom) {
       displayLng: lng + off.dLng,
       markerKind: markerKindForPoint(basePoint),
       markerCountRaw: rawCount,
-      markerCountShown: count
+      markerCountShown: count,
+      cloudIndex: i,
+      isClusterHead: i === 0
     });
   }
 
@@ -4960,7 +4962,9 @@ function upsertConflictMap(mapConfig, points, legend, config = {}) {
 
   separatedPoints.forEach(point => {
     const ts = mapPointTimestamp(point);
-    const isNewest = Number.isFinite(latestTs) && Number.isFinite(ts) && ts === latestTs;
+    const isTimestampNewest = Number.isFinite(latestTs) && Number.isFinite(ts) && ts === latestTs;
+    const isRepresentativeNewest = !Number.isFinite(point.markerCountRaw) || point.markerCountRaw <= 1 || point.isClusterHead === true;
+    const isNewest = isTimestampNewest && isRepresentativeNewest;
     const color = isNewest ? '#ef4444' : (colorByType[point.type] || '#f59e0b');
     const icon = markerIconFor(point.markerKind, color);
     const marker = L.marker([point.displayLat ?? point.lat, point.displayLng ?? point.lng], { icon });
