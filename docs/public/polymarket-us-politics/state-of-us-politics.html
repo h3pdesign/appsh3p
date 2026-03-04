@@ -1420,6 +1420,16 @@ nav {
   width: 100%;
 }
 
+.conflict-globe {
+  height: 500px;
+  width: 100%;
+  background: radial-gradient(circle at 35% 30%, rgba(96,165,250,0.12), rgba(8,10,16,0.88));
+}
+
+.conflict-globe[hidden] {
+  display: none !important;
+}
+
 .map-marker-dot {
   display: block;
   width: 11px;
@@ -2335,6 +2345,7 @@ footer a:hover { border-bottom-color: var(--accent-gold); }
       </div>
       <div class="conflict-map-wrap">
         <div class="conflict-map" id="conflictMap"></div>
+        <div class="conflict-globe" id="conflictGlobe" hidden></div>
         <div class="conflict-map-toolbar">
           <div class="conflict-map-status" id="conflictMapStatus">Loading conflict map...</div>
           <div class="map-controls" id="conflictMapControls">
@@ -2363,6 +2374,8 @@ footer a:hover { border-bottom-color: var(--accent-gold); }
             <label class="map-density">Density <input id="iranDensity" type="range" min="20" max="100" step="10" value="100" aria-label="Iran map marker density"></label>
           </div>
           <button class="map-mini-btn" id="iranReplayBtn" type="button">Replay</button>
+          <button class="map-mini-btn" id="iranGlobeToggleBtn" type="button">Globe</button>
+          <button class="map-mini-btn" id="iranMapFullscreenBtn" type="button">Fullscreen</button>
           <button class="map-reset-btn" id="conflictMapResetBtn" type="button">Reset view</button>
         </div>
         <div class="conflict-trend" id="conflictTrend">
@@ -2432,6 +2445,7 @@ footer a:hover { border-bottom-color: var(--accent-gold); }
       </div>
       <div class="conflict-map-wrap">
         <div class="conflict-map" id="ukraineMap"></div>
+        <div class="conflict-globe" id="ukraineGlobe" hidden></div>
         <div class="conflict-map-toolbar">
           <div class="conflict-map-status" id="ukraineMapStatus">Loading conflict map...</div>
           <div class="map-controls" id="ukraineMapControls">
@@ -2460,6 +2474,8 @@ footer a:hover { border-bottom-color: var(--accent-gold); }
             <label class="map-density">Density <input id="ukraineDensity" type="range" min="20" max="100" step="10" value="100" aria-label="Ukraine map marker density"></label>
           </div>
           <button class="map-mini-btn" id="ukraineReplayBtn" type="button">Replay</button>
+          <button class="map-mini-btn" id="ukraineGlobeToggleBtn" type="button">Globe</button>
+          <button class="map-mini-btn" id="ukraineMapFullscreenBtn" type="button">Fullscreen</button>
           <button class="map-reset-btn" id="ukraineMapResetBtn" type="button">Reset view</button>
         </div>
         <div class="conflict-trend" id="ukraineTrend">
@@ -3457,6 +3473,7 @@ footer a:hover { border-bottom-color: var(--accent-gold); }
       <li><kbd>Button</kbd> Open shortcuts</li>
       <li><kbd>Esc</kbd> Close menus/overlays</li>
       <li><kbd>Hold LMB</kbd> + <kbd>Wheel</kbd> Zoom map</li>
+      <li><kbd>Globe</kbd>/<kbd>Fullscreen</kbd> via map toolbar</li>
     </ul>
   </div>
 </div>
@@ -3464,6 +3481,7 @@ footer a:hover { border-bottom-color: var(--accent-gold); }
 <script src="/polymarket-us-politics/cookie-consent.js?v=20260302c" defer></script>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script src="https://unpkg.com/leaflet.heat/dist/leaflet-heat.js"></script>
+<script src="https://unpkg.com/globe.gl"></script>
 <script>
 const CONFLICT_MONITOR_URL = '/polymarket-us-politics/data/iran-war-metrics.json';
 const CONFLICT_NEWS_URL = '/polymarket-us-politics/data/conflict-news.json';
@@ -3504,6 +3522,7 @@ let conflictHeatLayer = null;
 let ukraineMap = null;
 let ukraineMarkersLayer = null;
 let ukraineHeatLayer = null;
+const conflictGlobeRefs = { iran: null, ukraine: null };
 let conflictBaseLayer = null;
 let ukraineBaseLayer = null;
 let conflictMapLayerMode = 'standard';
@@ -3541,7 +3560,9 @@ const conflictModuleState = {
     replayStep: 0,
     replayLatestTs: null,
     replayStartTs: null,
-    redrawQueued: false
+    redrawQueued: false,
+    globeEnabled: false,
+    globeRenderedPoints: []
   },
   ukraine: {
     mapConfig: null,
@@ -3560,7 +3581,9 @@ const conflictModuleState = {
     replayStep: 0,
     replayLatestTs: null,
     replayStartTs: null,
-    redrawQueued: false
+    redrawQueued: false,
+    globeEnabled: false,
+    globeRenderedPoints: []
   }
 };
 const legendFilterState = { iran: new Set(), ukraine: new Set() };
@@ -5959,6 +5982,154 @@ function bindLeftMouseWheelZoom(mapRef) {
   container.addEventListener('wheel', onWheel, { passive: false });
 }
 
+function globeIdsForModule(moduleName) {
+  if (moduleName === 'ukraine') {
+    return {
+      mapId: 'ukraineMap',
+      globeId: 'ukraineGlobe',
+      toggleBtnId: 'ukraineGlobeToggleBtn',
+      fullscreenBtnId: 'ukraineMapFullscreenBtn',
+      statusId: 'ukraineMapStatus'
+    };
+  }
+
+  return {
+    mapId: 'conflictMap',
+    globeId: 'conflictGlobe',
+    toggleBtnId: 'iranGlobeToggleBtn',
+    fullscreenBtnId: 'iranMapFullscreenBtn',
+    statusId: 'conflictMapStatus'
+  };
+}
+
+function ensureConflictGlobe(moduleName) {
+  if (conflictGlobeRefs[moduleName]) return conflictGlobeRefs[moduleName];
+  if (typeof Globe !== 'function') return null;
+
+  const ids = globeIdsForModule(moduleName);
+  const node = document.getElementById(ids.globeId);
+  if (!node) return null;
+
+  const globe = Globe()(node)
+    .globeImageUrl('https://unpkg.com/three-globe/example/img/earth-blue-marble.jpg')
+    .bumpImageUrl('https://unpkg.com/three-globe/example/img/earth-topology.png')
+    .backgroundColor('rgba(0,0,0,0)')
+    .showAtmosphere(true)
+    .atmosphereColor('#60a5fa')
+    .atmosphereAltitude(0.18)
+    .pointColor('color')
+    .pointAltitude('altitude')
+    .pointRadius('radius')
+    .pointLabel('label');
+
+  globe.controls().enablePan = false;
+  globe.controls().autoRotate = true;
+  globe.controls().autoRotateSpeed = 0.26;
+
+  conflictGlobeRefs[moduleName] = globe;
+  return globe;
+}
+
+function setGlobeVisibility(moduleName) {
+  const ids = globeIdsForModule(moduleName);
+  const mapNode = document.getElementById(ids.mapId);
+  const globeNode = document.getElementById(ids.globeId);
+  const toggleBtn = document.getElementById(ids.toggleBtnId);
+  const enabled = Boolean(conflictModuleState[moduleName]?.globeEnabled);
+
+  if (mapNode) mapNode.hidden = enabled;
+  if (globeNode) globeNode.hidden = !enabled;
+  if (toggleBtn) toggleBtn.classList.toggle('active', enabled);
+
+  if (!enabled) {
+    const mapRef = moduleName === 'ukraine' ? ukraineMap : conflictMap;
+    if (mapRef && typeof mapRef.invalidateSize === 'function') {
+      setTimeout(() => mapRef.invalidateSize(), 80);
+    }
+  }
+}
+
+function refreshConflictGlobePoints(moduleName, points, colorByType, latestTs) {
+  const state = conflictModuleState[moduleName];
+  if (!state) return;
+  state.globeRenderedPoints = Array.isArray(points) ? points : [];
+
+  if (!state.globeEnabled) return;
+  const globe = ensureConflictGlobe(moduleName);
+  if (!globe) return;
+
+  const rows = (state.globeRenderedPoints || [])
+    .filter(point => Number.isFinite(point?.lat) && Number.isFinite(point?.lng) && !point?.isCluster)
+    .map(point => {
+      const ts = mapPointTimestamp(point);
+      const isNewest = Number.isFinite(latestTs) && Number.isFinite(ts) && ts === latestTs;
+      const baseColor = colorByType.get(point.type) || '#9b9a97';
+      const mass = Math.max(1, Number(point.marker_mass ?? point.value) || 1);
+      return {
+        lat: Number(point.lat),
+        lng: Number(point.lng),
+        color: isNewest ? '#ef4444' : baseColor,
+        radius: Math.min(0.5, 0.12 + (Math.log10(mass + 1) * 0.1)),
+        altitude: Math.min(0.16, 0.03 + (Math.log10(mass + 1) * 0.018)),
+        label: `<strong>${escapeHtml(point.name || 'Event')}</strong><br>${escapeHtml(point.label || point.type || 'metric')}<br>Mass: ${formatInteger(point.marker_mass ?? point.value ?? 1)}${isNewest ? '<br><span style="color:#ef4444">Newest</span>' : ''}`
+      };
+    });
+
+  globe.pointsData(rows);
+}
+
+function toggleConflictGlobeMode(moduleName) {
+  const state = conflictModuleState[moduleName];
+  if (!state) return;
+
+  state.globeEnabled = !state.globeEnabled;
+  if (state.globeEnabled) {
+    const globe = ensureConflictGlobe(moduleName);
+    const ids = globeIdsForModule(moduleName);
+    const status = document.getElementById(ids.statusId);
+    if (!globe) {
+      state.globeEnabled = false;
+      if (status) status.textContent = 'Globe mode unavailable in this browser.';
+    }
+  }
+
+  setGlobeVisibility(moduleName);
+  const latestTs = latestMapTimestamp(state.points || []);
+  const colorByType = conflictColorMap(state.legend || []);
+  refreshConflictGlobePoints(moduleName, state.globeRenderedPoints || state.points || [], colorByType, latestTs);
+}
+
+function toggleConflictMapFullscreen(moduleName) {
+  const ids = globeIdsForModule(moduleName);
+  const state = conflictModuleState[moduleName];
+  const target = state?.globeEnabled ? document.getElementById(ids.globeId) : document.getElementById(ids.mapId);
+  if (!target) return;
+
+  if (!document.fullscreenElement) {
+    target.requestFullscreen?.();
+  } else if (document.fullscreenElement === target) {
+    document.exitFullscreen?.();
+  } else {
+    Promise.resolve(document.exitFullscreen?.()).then(() => target.requestFullscreen?.());
+  }
+}
+
+function bindMapModeButtons(moduleName) {
+  const ids = globeIdsForModule(moduleName);
+  const toggleBtn = document.getElementById(ids.toggleBtnId);
+  const fullscreenBtn = document.getElementById(ids.fullscreenBtnId);
+
+  if (toggleBtn && !toggleBtn.dataset.bound) {
+    toggleBtn.dataset.bound = 'true';
+    toggleBtn.addEventListener('click', () => toggleConflictGlobeMode(moduleName));
+  }
+
+  if (fullscreenBtn && !fullscreenBtn.dataset.bound) {
+    fullscreenBtn.dataset.bound = 'true';
+    fullscreenBtn.addEventListener('click', () => toggleConflictMapFullscreen(moduleName));
+  }
+}
+
 function bindMapControls(moduleName) {
   const state = conflictModuleState[moduleName];
   if (!state) return;
@@ -6065,6 +6236,7 @@ function upsertConflictMap(mapConfig, points, legend, config = {}) {
 
   const moduleState = conflictModuleState[moduleName];
   bindMapControls(moduleName);
+  bindMapModeButtons(moduleName);
   if (moduleState) {
     moduleState.mapConfig = mapConfig || {};
     moduleState.points = Array.isArray(points) ? points : [];
@@ -6081,6 +6253,7 @@ function upsertConflictMap(mapConfig, points, legend, config = {}) {
     mapRef = L.map(mapNode, { scrollWheelZoom: false, zoomControl: true }).setView(center, zoom);
   }
   bindLeftMouseWheelZoom(mapRef);
+  setGlobeVisibility(moduleName);
   replaceMapBaseLayer(mapRef, moduleName);
 
   if (layerRef) {
@@ -6128,6 +6301,7 @@ function upsertConflictMap(mapConfig, points, legend, config = {}) {
   const separatedPoints = clusterPoints(displayBasePoints, zoomNow, moduleState ? moduleState.clusteringEnabled : true);
 
   applyHeatLayer(mapRef, moduleName, displayBasePoints, moduleState ? moduleState.heatEnabled : false);
+  refreshConflictGlobePoints(moduleName, separatedPoints, colorByType, latestTs);
 
   separatedPoints.forEach(point => {
     const ts = mapPointTimestamp(point);
