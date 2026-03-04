@@ -1408,9 +1408,27 @@ nav {
 }
 
 .conflict-legend-swatch {
+  --legend-color: #9b9a97;
+  display: inline-block;
   width: 10px;
   height: 10px;
+  background: var(--legend-color);
   border-radius: 999px;
+}
+
+.conflict-legend-swatch.dot {
+  border-radius: 999px;
+}
+
+.conflict-legend-swatch.triangle {
+  width: 0;
+  height: 0;
+  background: transparent;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-bottom: 10px solid var(--legend-color);
+  border-radius: 1px;
+  transform: translateY(-1px);
 }
 
 .conflict-timeline {
@@ -4262,6 +4280,12 @@ function renderConflictLegend(legend, containerId = 'conflictLegend', moduleName
   if (!container) return;
   container.innerHTML = '';
 
+  const shapeForType = type => {
+    const probe = normalize(String(type || ''));
+    if (probe.includes('projectile') || probe.includes('missile') || probe.includes('drone')) return 'triangle';
+    return 'dot';
+  };
+
   const types = legend.map(item => item && item.type).filter(Boolean);
   if (legendFilterState[moduleName].size === 0 && types.length) {
     types.forEach(type => legendFilterState[moduleName].add(type));
@@ -4279,8 +4303,8 @@ function renderConflictLegend(legend, containerId = 'conflictLegend', moduleName
     button.setAttribute('aria-pressed', String(active));
 
     const swatch = document.createElement('span');
-    swatch.className = 'conflict-legend-swatch';
-    swatch.style.background = item.color || '#9b9a97';
+    swatch.className = 'conflict-legend-swatch ' + shapeForType(type);
+    swatch.style.setProperty('--legend-color', item.color || '#9b9a97');
 
     const text = document.createElement('span');
     text.textContent = item.label || type || 'Event';
@@ -4305,8 +4329,8 @@ function renderConflictLegend(legend, containerId = 'conflictLegend', moduleName
   note.className = 'conflict-legend-note';
 
   const swatch = document.createElement('span');
-  swatch.className = 'conflict-legend-swatch';
-  swatch.style.background = '#ef4444';
+  swatch.className = 'conflict-legend-swatch dot';
+  swatch.style.setProperty('--legend-color', '#ef4444');
 
   const text = document.createElement('span');
   text.textContent = 'Newest update (red)';
