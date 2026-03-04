@@ -245,6 +245,51 @@ nav {
   cursor: default;
 }
 
+
+.theme-select-wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  border: 1px solid var(--border-color);
+  border-radius: 999px;
+  padding: 0.24rem 0.44rem 0.24rem 0.58rem;
+  background: rgba(255,255,255,0.04);
+}
+
+.theme-select-label {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.theme-select {
+  border: 1px solid var(--border-subtle);
+  background: var(--bg-card);
+  color: var(--text-primary);
+  border-radius: 999px;
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  padding: 0.22rem 0.55rem;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+:focus-visible {
+  outline: 2px solid color-mix(in oklab, var(--accent-blue) 80%, white 20%);
+  outline-offset: 2px;
+}
+
 /* Hamburger */
 .hamburger {
   display: none;
@@ -466,6 +511,40 @@ nav {
   gap: 0.6rem;
   border-top: 1px solid var(--border-subtle);
   padding: 0.55rem 0.75rem;
+  flex-wrap: wrap;
+}
+
+.map-controls {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.4rem 0.6rem;
+}
+
+.map-filter {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.22rem;
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  color: var(--text-muted);
+}
+
+.map-filter input {
+  accent-color: var(--accent-blue);
+}
+
+.map-density {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  color: var(--text-muted);
+}
+
+.map-density input {
+  width: 84px;
 }
 
 .conflict-map-toolbar .conflict-map-status {
@@ -685,6 +764,37 @@ nav {
 .metric-delta-up { color: var(--tone-red); }
 .metric-delta-down { color: var(--tone-green); }
 .metric-delta-flat { color: var(--text-muted); }
+
+
+.metric-trust-strip {
+  margin-top: 0.35rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.28rem;
+}
+
+.metric-trust-item {
+  font-family: var(--font-mono);
+  font-size: 0.54rem;
+  letter-spacing: 0.03em;
+  color: var(--text-muted);
+  border: 1px solid var(--border-subtle);
+  border-radius: 999px;
+  padding: 0.08rem 0.35rem;
+  background: color-mix(in oklab, var(--bg-card) 88%, transparent);
+}
+
+.metric-uncertainty {
+  margin-left: 0.2rem;
+  font-family: var(--font-mono);
+  font-size: 0.54rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border: 1px solid var(--border-subtle);
+  border-radius: 999px;
+  color: var(--text-muted);
+  padding: 0.08rem 0.35rem;
+}
 
 .metric-micro-track {
   height: 5px;
@@ -1706,7 +1816,7 @@ footer a:hover { border-bottom-color: var(--accent-gold); }
       <li><a href="/polymarket-us-politics/state-of-us-politics.html?focus=legal">Legal</a></li>
     </ul>
     <div class="nav-controls">
-      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to light mode" aria-pressed="false">Light mode</button>
+      <label class="theme-select-wrap" for="themeModeSelect"><span class="theme-select-label">Theme</span><select class="theme-select" id="themeModeSelect" aria-label="Theme mode"><option value="system">System</option><option value="light">Light</option><option value="dark">Dark</option></select></label>
       <button class="hamburger" id="hamburgerBtn" aria-label="Menu">
         <span></span><span></span><span></span>
       </button>
@@ -1743,6 +1853,7 @@ footer a:hover { border-bottom-color: var(--accent-gold); }
       <span>&#9670; Source: Polymarket</span>
       <span id="syncStatus" class="status-pill status-pending" aria-live="polite" title="Waiting for live sync">Health: Pending</span>
     </div>
+    <div id="globalLiveAnnouncer" class="sr-only" aria-live="polite" aria-atomic="true"></div>
   </header>
 
   <!-- ====== IRAN WAR MONITOR ====== -->
@@ -1773,7 +1884,16 @@ footer a:hover { border-bottom-color: var(--accent-gold); }
       </div>
       <div class="conflict-map-wrap">
         <div class="conflict-map" id="conflictMap"></div>
-        <div class="conflict-map-toolbar"><div class="conflict-map-status" id="conflictMapStatus">Loading conflict map...</div><button class="map-reset-btn" id="conflictMapResetBtn" type="button">Reset view</button></div>
+        <div class="conflict-map-toolbar">
+          <div class="conflict-map-status" id="conflictMapStatus">Loading conflict map...</div>
+          <div class="map-controls" id="conflictMapControls">
+            <label class="map-filter"><input type="checkbox" id="iranFilterMissiles" checked>Missiles</label>
+            <label class="map-filter"><input type="checkbox" id="iranFilterDrones" checked>Drones</label>
+            <label class="map-filter"><input type="checkbox" id="iranFilterInfra" checked>Infrastructure</label>
+            <label class="map-density">Density <input id="iranDensity" type="range" min="20" max="100" step="10" value="100" aria-label="Iran map marker density"></label>
+          </div>
+          <button class="map-reset-btn" id="conflictMapResetBtn" type="button">Reset view</button>
+        </div>
         <div class="conflict-trend" id="conflictTrend">
           <div class="conflict-trend-head">
             <span>Daily Conflict Intensity</span>
@@ -1841,7 +1961,16 @@ footer a:hover { border-bottom-color: var(--accent-gold); }
       </div>
       <div class="conflict-map-wrap">
         <div class="conflict-map" id="ukraineMap"></div>
-        <div class="conflict-map-toolbar"><div class="conflict-map-status" id="ukraineMapStatus">Loading conflict map...</div><button class="map-reset-btn" id="ukraineMapResetBtn" type="button">Reset view</button></div>
+        <div class="conflict-map-toolbar">
+          <div class="conflict-map-status" id="ukraineMapStatus">Loading conflict map...</div>
+          <div class="map-controls" id="ukraineMapControls">
+            <label class="map-filter"><input type="checkbox" id="ukraineFilterMissiles" checked>Missiles</label>
+            <label class="map-filter"><input type="checkbox" id="ukraineFilterDrones" checked>Drones</label>
+            <label class="map-filter"><input type="checkbox" id="ukraineFilterInfra" checked>Infrastructure</label>
+            <label class="map-density">Density <input id="ukraineDensity" type="range" min="20" max="100" step="10" value="100" aria-label="Ukraine map marker density"></label>
+          </div>
+          <button class="map-reset-btn" id="ukraineMapResetBtn" type="button">Reset view</button>
+        </div>
         <div class="conflict-trend" id="ukraineTrend">
           <div class="conflict-trend-head">
             <span>Daily Conflict Intensity</span>
@@ -1869,6 +1998,13 @@ footer a:hover { border-bottom-color: var(--accent-gold); }
         <div class="conflict-timeline-list" id="ukraineTimelineList">
           <div class="conflict-timeline-item"><div class="conflict-timeline-time">Loading</div><div class="conflict-timeline-text">Waiting for timeline updates...</div></div>
         </div>
+      </div>
+      </div>
+      <div class="changes-block" role="status" aria-live="polite" aria-label="Latest conflict changes">
+        <div class="changes-head">What changed in the last hour</div>
+        <ul class="changes-list" id="changesList">
+          <li>Waiting for live conflict deltas...</li>
+        </ul>
       </div>
     </div>
   </section>
@@ -2843,6 +2979,7 @@ const THEME_KEY = 'pmir-theme';
 const THEME_MODE_KEY = 'pmir-theme-mode';
 const THEME_MANUAL_SET_AT_KEY = 'pmir-theme-manual-at';
 const THEME_MANUAL_MAX_AGE_MS = 7 * 24 * ONE_HOUR_MS;
+const FEED_METRIC_SNAPSHOT_KEY_PREFIX = 'pmir-feed-metric-snapshot-';
 const LAST_SYNC_KEY = 'pmir-last-successful-sync';
 const LAST_IRAN_DATA_KEY = 'pmir-last-iran-data-ts';
 const LAST_UKRAINE_DATA_KEY = 'pmir-last-ukraine-data-ts';
@@ -2856,10 +2993,11 @@ let ukraineMarkersLayer = null;
 let conflictBaseLayer = null;
 let ukraineBaseLayer = null;
 const trendStates = new Map();
-const conflictModuleState = { iran: { mapConfig: null, points: [], legend: [], bounds: null, didInitialFit: false, zoomBound: false }, ukraine: { mapConfig: null, points: [], legend: [], bounds: null, didInitialFit: false, zoomBound: false } };
+const conflictModuleState = { iran: { mapConfig: null, points: [], legend: [], bounds: null, didInitialFit: false, zoomBound: false, densityPercent: 100, filters: { missiles: true, drones: true, infra: true }, redrawQueued: false }, ukraine: { mapConfig: null, points: [], legend: [], bounds: null, didInitialFit: false, zoomBound: false, densityPercent: 100, filters: { missiles: true, drones: true, infra: true }, redrawQueued: false } };
 const legendFilterState = { iran: new Set(), ukraine: new Set() };
 const changeSummaryState = { iran: null, ukraine: null };
 const metricRenderState = { iran: new Map(), ukraine: new Map() };
+const feedPreviousSnapshotState = { iran: {}, ukraine: {} };
 let leafletReadyPromise = null;
 
 function ensureLeafletStylesheet(href) {
@@ -3521,6 +3659,7 @@ function setSyncStatus(state, detail, labelOverride) {
       : normalized === 'error'
         ? 'Live sync failed'
         : 'Waiting for live sync');
+  announceLive(node.textContent);
 }
 
 function refreshSyncStatusAge() {
@@ -3596,6 +3735,7 @@ async function refreshConflictNews() {
 function setIranWarSync(message) {
   const node = document.getElementById('iranWarSync');
   if (node) node.textContent = `\u25c6 ${message}`;
+  announceLive('Iran monitor: ' + message);
 }
 
 function updateIranWarTimestamp(asOfValue) {
@@ -3809,11 +3949,50 @@ function renderScopeLegend(scopePalette, legendId) {
   });
 }
 
+function parseMetricSnapshot(moduleKey) {
+  try {
+    const raw = localStorage.getItem(FEED_METRIC_SNAPSHOT_KEY_PREFIX + moduleKey);
+    if (!raw) return {};
+    const parsed = JSON.parse(raw);
+    return parsed && typeof parsed === 'object' ? parsed : {};
+  } catch {
+    return {};
+  }
+}
+
+function saveMetricSnapshot(moduleKey, metrics) {
+  const next = {};
+  (Array.isArray(metrics) ? metrics : []).forEach(metric => {
+    if (!metric || !metric.id || !Number.isFinite(Number(metric.value))) return;
+    next[metric.id] = Number(metric.value);
+  });
+  try { localStorage.setItem(FEED_METRIC_SNAPSHOT_KEY_PREFIX + moduleKey, JSON.stringify(next)); } catch {}
+}
+
+function shortAsOf(asOfUtc) {
+  const ts = parseTimestamp(asOfUtc);
+  if (!Number.isFinite(ts)) return 'as of --';
+  const d = new Date(ts);
+  const hh = String(d.getHours()).padStart(2, '0');
+  const mm = String(d.getMinutes()).padStart(2, '0');
+  return 'as of ' + d.toISOString().slice(0, 10) + ' ' + hh + ':' + mm + ' local';
+}
+
+function metricUncertaintyLabel(metric) {
+  const hay = normalize(String(metric?.scope || '') + ' ' + String(metric?.definition || '') + ' ' + String(metric?.source || ''));
+  if (hay.includes('estimated') || hay.includes('compiled')) return 'estimated';
+  if (hay.includes('mixed') || hay.includes('source-mixed')) return 'mixed-source';
+  return 'reported';
+}
+
 function renderConflictMetrics(metrics, containerId = 'conflictMetrics', options = {}) {
   const container = document.getElementById(containerId);
   if (!container) return;
 
   const moduleKey = options.moduleKey || 'iran';
+  const conflictAsOf = options.conflictAsOf || null;
+  const feedPrevMap = parseMetricSnapshot(moduleKey);
+  feedPreviousSnapshotState[moduleKey] = feedPrevMap;
   const previousByMetric = metricRenderState[moduleKey] || new Map();
   const nextByMetric = new Map();
   const scopePalette = buildScopePalette(metrics);
@@ -3888,6 +4067,11 @@ function renderConflictMetrics(metrics, containerId = 'conflictMetrics', options
 
       labelLeft.appendChild(label);
 
+      const uncertainty = document.createElement('span');
+      uncertainty.className = 'metric-uncertainty';
+      uncertainty.textContent = metricUncertaintyLabel(metric);
+      labelLeft.appendChild(uncertainty);
+
       const info = document.createElement('span');
       info.className = 'metric-info';
       info.textContent = 'i';
@@ -3957,7 +4141,32 @@ function renderConflictMetrics(metrics, containerId = 'conflictMetrics', options
       }
 
       card.appendChild(labelRow);
+      const feedPrev = Number(feedPrevMap[metricId]);
+      const feedDelta = Number.isFinite(feedPrev) && Number.isFinite(Number(metric && metric.value))
+        ? (Number(metric.value) - feedPrev)
+        : null;
+
+      const trustStrip = document.createElement('div');
+      trustStrip.className = 'metric-trust-strip';
+
+      const trustAsOf = document.createElement('span');
+      trustAsOf.className = 'metric-trust-item';
+      trustAsOf.textContent = shortAsOf(conflictAsOf);
+
+      const trustSource = document.createElement('span');
+      trustSource.className = 'metric-trust-item';
+      trustSource.textContent = primarySource ? ('main S' + String(primarySource.index)) : 'main source --';
+
+      const trustDelta = document.createElement('span');
+      trustDelta.className = 'metric-trust-item';
+      trustDelta.textContent = Number.isFinite(feedDelta) ? ('feed Δ ' + (feedDelta > 0 ? '+' : '') + String(Math.round(feedDelta))) : 'feed Δ n/a';
+
+      trustStrip.appendChild(trustAsOf);
+      trustStrip.appendChild(trustSource);
+      trustStrip.appendChild(trustDelta);
+
       card.appendChild(valueRow);
+      card.appendChild(trustStrip);
       card.appendChild(microTrack);
       card.appendChild(spark);
       groupGrid.appendChild(card);
@@ -3971,6 +4180,7 @@ function renderConflictMetrics(metrics, containerId = 'conflictMetrics', options
   });
 
   metricRenderState[moduleKey] = nextByMetric;
+  saveMetricSnapshot(moduleKey, Array.isArray(metrics) ? metrics : []);
 }
 
 function renderConflictLegend(legend, containerId = 'conflictLegend', moduleName = 'iran') {
@@ -4393,7 +4603,7 @@ function separateMapPoints(points, minDistance = 0.22) {
   });
 }
 
-function buildDisplayPointsForMap(points, zoom) {
+function buildDisplayPointsForMap(points, zoom, densityPercent = 100) {
   const list = Array.isArray(points) ? points : [];
   const expanded = [];
 
@@ -4405,7 +4615,9 @@ function buildDisplayPointsForMap(points, zoom) {
       || labelProbe.includes('air strikes (reported sites)');
 
     if (shouldCloud) {
-      expanded.push(...expandPointCloud(point, zoom));
+      const cloud = expandPointCloud(point, zoom);
+      const keep = Math.max(1, Math.round(cloud.length * (Math.max(20, Math.min(100, Number(densityPercent) || 100)) / 100)));
+      expanded.push(...cloud.slice(0, keep));
     } else {
       expanded.push({ ...point, markerKind: markerKindForPoint(point), markerCountRaw: 1, markerCountShown: 1 });
     }
@@ -4518,6 +4730,59 @@ function initMapResetButtons() {
   }
 }
 
+function classifyMapPointCategory(point) {
+  const probe = normalize(String(point?.category || '') + ' ' + String(point?.label || '') + ' ' + String(point?.description || ''));
+  if (probe.includes('missile')) return 'missiles';
+  if (probe.includes('drone')) return 'drones';
+  if (probe.includes('infrastructure') || probe.includes('air strike') || probe.includes('impact')) return 'infra';
+  return 'infra';
+}
+
+function queueRedrawConflictMap(moduleName) {
+  const state = conflictModuleState[moduleName];
+  if (!state || state.redrawQueued) return;
+  state.redrawQueued = true;
+  requestAnimationFrame(() => {
+    state.redrawQueued = false;
+    redrawConflictMapForModule(moduleName);
+  });
+}
+
+function bindMapControls(moduleName) {
+  const state = conflictModuleState[moduleName];
+  if (!state) return;
+  const prefix = moduleName === 'ukraine' ? 'ukraine' : 'iran';
+
+  const missile = document.getElementById(prefix + 'FilterMissiles');
+  const drones = document.getElementById(prefix + 'FilterDrones');
+  const infra = document.getElementById(prefix + 'FilterInfra');
+  const density = document.getElementById(prefix + 'Density');
+
+  if (missile && !missile.dataset.bound) {
+    missile.dataset.bound = 'true';
+    missile.checked = state.filters.missiles;
+    missile.addEventListener('change', () => { state.filters.missiles = missile.checked; queueRedrawConflictMap(moduleName); });
+  }
+  if (drones && !drones.dataset.bound) {
+    drones.dataset.bound = 'true';
+    drones.checked = state.filters.drones;
+    drones.addEventListener('change', () => { state.filters.drones = drones.checked; queueRedrawConflictMap(moduleName); });
+  }
+  if (infra && !infra.dataset.bound) {
+    infra.dataset.bound = 'true';
+    infra.checked = state.filters.infra;
+    infra.addEventListener('change', () => { state.filters.infra = infra.checked; queueRedrawConflictMap(moduleName); });
+  }
+  if (density && !density.dataset.bound) {
+    density.dataset.bound = 'true';
+    density.value = String(state.densityPercent);
+    density.addEventListener('input', () => {
+      state.densityPercent = Math.max(20, Math.min(100, Number(density.value) || 100));
+      queueRedrawConflictMap(moduleName);
+    });
+  }
+}
+
 function upsertConflictMap(mapConfig, points, legend, config = {}) {
   const mapId = config.mapId || (config.module === 'ukraine' ? 'ukraineMap' : 'conflictMap');
   const statusId = config.statusId || (config.module === 'ukraine' ? 'ukraineMapStatus' : 'conflictMapStatus');
@@ -4533,6 +4798,7 @@ function upsertConflictMap(mapConfig, points, legend, config = {}) {
   const zoom = Number.isFinite(mapConfig?.zoom) ? mapConfig.zoom : 4;
 
   const moduleState = conflictModuleState[moduleName];
+  bindMapControls(moduleName);
   if (moduleState) {
     moduleState.mapConfig = mapConfig || {};
     moduleState.points = Array.isArray(points) ? points : [];
@@ -4558,12 +4824,19 @@ function upsertConflictMap(mapConfig, points, legend, config = {}) {
 
   const sourcePoints = moduleState ? moduleState.points : (Array.isArray(points) ? points : []);
   const activeTypes = legendFilterState[moduleName];
-  const filteredPoints = activeTypes && activeTypes.size > 0
+  const typeFilteredPoints = activeTypes && activeTypes.size > 0
     ? sourcePoints.filter(point => !point?.type || activeTypes.has(point.type))
     : sourcePoints;
 
+  const categoryFilteredPoints = typeFilteredPoints.filter(point => {
+    const cat = classifyMapPointCategory(point);
+    if (cat === 'missiles') return moduleState ? moduleState.filters.missiles : true;
+    if (cat === 'drones') return moduleState ? moduleState.filters.drones : true;
+    return moduleState ? moduleState.filters.infra : true;
+  });
+
   const colorByType = conflictColorMap(moduleState ? moduleState.legend : legend);
-  const normalizedFilteredPoints = filteredPoints.map(point => ({
+  const normalizedFilteredPoints = categoryFilteredPoints.map(point => ({
     ...point,
     lat: Number(point?.lat),
     lng: Number(point?.lng)
@@ -4575,7 +4848,8 @@ function upsertConflictMap(mapConfig, points, legend, config = {}) {
         .filter(point => Number.isFinite(point.lat) && Number.isFinite(point.lng))
     : validPoints;
   const zoomNow = Number.isFinite(mapRef.getZoom()) ? mapRef.getZoom() : zoom;
-  const separatedPoints = buildDisplayPointsForMap(fallbackPoints, zoomNow);
+  const densityPercent = moduleState ? moduleState.densityPercent : 100;
+  const separatedPoints = buildDisplayPointsForMap(fallbackPoints, zoomNow, densityPercent);
 
   separatedPoints.forEach(point => {
     const color = colorByType[point.type] || '#f59e0b';
@@ -4608,7 +4882,7 @@ function upsertConflictMap(mapConfig, points, legend, config = {}) {
     mapRef.on('zoomend', () => redrawConflictMapForModule(moduleName));
   }
 
-  if (statusNode) statusNode.textContent = 'Mapped events: ' + formatInteger(separatedPoints.length);
+  if (statusNode) statusNode.textContent = 'Mapped events: ' + formatInteger(separatedPoints.length) + ' | Density: ' + String(densityPercent) + '%';
 
   if (moduleName === 'ukraine') {
     ukraineMap = mapRef;
@@ -4672,6 +4946,7 @@ function hydrateConflictHeader(conflict) {
 function setUkraineSync(message) {
   const node = document.getElementById('ukraineSync');
   if (node) node.textContent = `◆ ${message}`;
+  announceLive('Ukraine monitor: ' + message);
 }
 
 function updateUkraineTimestamp(asOfValue) {
@@ -4804,9 +5079,23 @@ function renderWhatChanged() {
   }
 
   list.innerHTML = entries.map(entry => {
-    const move = entry.summary.biggestRecentMove;
+    const summary = entry.summary;
+    const move = summary.biggestRecentMove;
+    const prev = feedPreviousSnapshotState[entry.key] || {};
+    const current = metricRenderState[entry.key] || new Map();
+
+    let biggest = null;
+    current.forEach((value, metricId) => {
+      const prevValue = Number(prev[metricId]);
+      if (!Number.isFinite(prevValue)) return;
+      const delta = Number(value) - prevValue;
+      if (!biggest || Math.abs(delta) > Math.abs(biggest.delta)) biggest = { metricId, delta };
+    });
+
+    const hourHint = Number.isFinite(summary.delta1) ? formatSigned(summary.delta1) : 'n/a';
+    const feedHint = biggest ? (biggest.metricId + ' ' + (biggest.delta > 0 ? '+' : '') + String(Math.round(biggest.delta))) : 'no metric delta';
     const moveText = move ? ('Largest move in last 7 days: ' + formatSigned(move.delta) + ' on ' + move.date + '.') : 'Largest move in last 7 days: n/a.';
-    return '<li><strong>' + entry.label + '</strong>: ' + formatSigned(entry.summary.delta1) + ' vs yesterday, ' + formatSigned(entry.summary.delta7) + ' vs 7 days. ' + moveText + '</li>';
+    return '<li><strong>' + entry.label + '</strong>: last-hour signal ' + hourHint + ', feed delta ' + feedHint + ', 7d ' + formatSigned(summary.delta7) + '. ' + moveText + '</li>';
   }).join('');
 }
 
@@ -4826,7 +5115,7 @@ async function refreshUkraineMetrics() {
 
     hydrateUkraineHeader(conflict);
     const ukraineSources = buildConflictSourceEntries(conflict);
-    renderConflictMetrics(Array.isArray(conflict.metrics) ? conflict.metrics : [], 'ukraineMetrics', { moduleKey: 'ukraine', scopeLegendId: 'ukraineScopeLegend', sourceLegendId: 'ukraineSourceLegend', sourceEntries: ukraineSources });
+    renderConflictMetrics(Array.isArray(conflict.metrics) ? conflict.metrics : [], 'ukraineMetrics', { moduleKey: 'ukraine', scopeLegendId: 'ukraineScopeLegend', sourceLegendId: 'ukraineSourceLegend', sourceEntries: ukraineSources, conflictAsOf: conflict.as_of_utc || conflict.updated_at_utc || feed.updated_at_utc });
     renderConflictLegend(Array.isArray(conflict.legend) ? conflict.legend : [], 'ukraineLegend', 'ukraine');
     renderConflictTimeline(Array.isArray(conflict.timeline) ? conflict.timeline : [], 'ukraineTimelineList');
     const ukraineSeries = Array.isArray(conflict.daily_series) ? conflict.daily_series : [];
@@ -4885,7 +5174,7 @@ async function refreshIranWarMetrics() {
 
     hydrateConflictHeader(conflict);
     const iranSources = buildConflictSourceEntries(conflict);
-    renderConflictMetrics(Array.isArray(conflict.metrics) ? conflict.metrics : [], 'conflictMetrics', { moduleKey: 'iran', scopeLegendId: 'conflictScopeLegend', sourceLegendId: 'conflictSourceLegend', sourceEntries: iranSources });
+    renderConflictMetrics(Array.isArray(conflict.metrics) ? conflict.metrics : [], 'conflictMetrics', { moduleKey: 'iran', scopeLegendId: 'conflictScopeLegend', sourceLegendId: 'conflictSourceLegend', sourceEntries: iranSources, conflictAsOf: conflict.as_of_utc || conflict.updated_at_utc || feed.updated_at_utc });
     renderConflictLegend(Array.isArray(conflict.legend) ? conflict.legend : [], 'conflictLegend', 'iran');
     renderConflictTimeline(Array.isArray(conflict.timeline) ? conflict.timeline : []);
     const iranSeries = Array.isArray(conflict.daily_series) ? conflict.daily_series : [];
@@ -4910,14 +5199,8 @@ async function refreshIranWarMetrics() {
 
 function applyTheme(theme) {
   document.documentElement.setAttribute('data-theme', theme);
-  const themeToggle = document.getElementById('themeToggle');
-  if (!themeToggle) return;
-
-  const lightActive = theme === 'light';
-  themeToggle.textContent = lightActive ? 'Dark mode' : 'Light mode';
-  themeToggle.setAttribute('aria-label', lightActive ? 'Switch to dark mode' : 'Switch to light mode');
-  themeToggle.setAttribute('aria-pressed', String(lightActive));
-  themeToggle.disabled = false;
+  const themeModeSelect = document.getElementById('themeModeSelect');
+  if (themeModeSelect && !themeModeIsManual()) themeModeSelect.value = 'system';
 
   replaceMapBaseLayer(conflictMap, 'iran');
   replaceMapBaseLayer(ukraineMap, 'ukraine');
@@ -5032,26 +5315,33 @@ async function refreshLiveData() {
 // ========================================
 const hamburger = document.getElementById('hamburgerBtn');
 const mobileMenu = document.getElementById('mobileMenu');
-const themeToggle = document.getElementById('themeToggle');
+const themeModeSelect = document.getElementById('themeModeSelect');
 const systemThemeMedia = window.matchMedia('(prefers-color-scheme: light)');
 
 applyTheme(preferredTheme());
+if (themeModeSelect) {
+  themeModeSelect.value = themeModeIsManual() ? (localStorage.getItem(THEME_KEY) || 'dark') : 'system';
+}
 
-themeToggle?.addEventListener('click', () => {
-  const current = document.documentElement.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
-  const next = current === 'light' ? 'dark' : 'light';
-
+themeModeSelect?.addEventListener('change', () => {
+  const next = themeModeSelect.value;
   const allowPrefs = !window.PMIRCookieConsent || window.PMIRCookieConsent.hasConsent('preferences');
   if (!allowPrefs && window.PMIRCookieConsent?.openPreferences) {
     window.PMIRCookieConsent.openPreferences();
+    themeModeSelect.value = 'system';
     return;
   }
 
-  if (allowPrefs) {
-    localStorage.setItem(THEME_KEY, next);
-    localStorage.setItem(THEME_MODE_KEY, 'manual');
-    localStorage.setItem(THEME_MANUAL_SET_AT_KEY, String(Date.now()));
+  if (next === 'system') {
+    localStorage.removeItem(THEME_MODE_KEY);
+    localStorage.removeItem(THEME_MANUAL_SET_AT_KEY);
+    applyTheme(preferredTheme());
+    return;
   }
+
+  localStorage.setItem(THEME_KEY, next);
+  localStorage.setItem(THEME_MODE_KEY, 'manual');
+  localStorage.setItem(THEME_MANUAL_SET_AT_KEY, String(Date.now()));
   applyTheme(next);
 });
 
@@ -5158,6 +5448,31 @@ if (focusSection) {
   }
 }
 
+function announceLive(message) {
+  const node = document.getElementById('globalLiveAnnouncer');
+  if (!node) return;
+  node.textContent = message;
+}
+
+function initKeyboardShortcuts() {
+  const sections = ['summary', 'iran-war', 'ukraine-war', 'foreign', 'presidential', 'trump', 'fed', 'midterms', 'congress', 'legal', 'social', 'methodology'];
+  window.addEventListener('keydown', event => {
+    if (!(event.altKey && !event.shiftKey && !event.ctrlKey && !event.metaKey)) return;
+    const n = Number(event.key);
+    if (!Number.isFinite(n) || n < 1 || n > 9) return;
+    const targetId = sections[n - 1];
+    const target = targetId ? document.getElementById(targetId) : null;
+    if (!target) return;
+    event.preventDefault();
+    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    const heading = target.querySelector('h2, h3, .section-title');
+    if (heading) {
+      heading.setAttribute('tabindex', '-1');
+      heading.focus({ preventScroll: true });
+    }
+  });
+}
+
 function initUkraineCollapse() {
   const toggleBtn = document.getElementById('ukraineToggleBtn');
   const content = document.getElementById('ukraineContent');
@@ -5198,20 +5513,31 @@ function initUkraineCollapse() {
 
 function refreshConflictMonitors() {
   refreshIranWarMetrics();
-  refreshUkraineMetrics();
+  const ukraineContent = document.getElementById('ukraineContent');
+  const shouldRefreshUkraine = !ukraineContent || !ukraineContent.hidden || window.location.hash === '#ukraine-war';
+  if (shouldRefreshUkraine) refreshUkraineMetrics();
 }
 
 initUkraineCollapse();
 initMapResetButtons();
+initKeyboardShortcuts();
 refreshLiveData();
 refreshConflictMonitors();
 refreshConflictNews();
 refreshSyncStatusAge();
 
-setInterval(refreshLiveData, LIVE_MARKET_INTERVAL_MS);
-setInterval(refreshSyncStatusAge, 60 * 1000);
-document.addEventListener('visibilitychange', () => {
+setInterval(() => {
+  if (document.hidden) return;
+  refreshLiveData();
+}, LIVE_MARKET_INTERVAL_MS);
+setInterval(() => {
   if (!document.hidden) refreshSyncStatusAge();
+}, 60 * 1000);
+document.addEventListener('visibilitychange', () => {
+  if (!document.hidden) {
+    refreshSyncStatusAge();
+    refreshConflictMonitors();
+  }
 });
 window.addEventListener('focus', refreshSyncStatusAge);
 

@@ -52,6 +52,21 @@ function assertFileExists(filePath) {
   }
 }
 
+function parseCliArgs(argv) {
+  const out = {};
+  for (const arg of argv.slice(2)) {
+    if (!arg.startsWith("--")) continue;
+    const [key, value] = arg.slice(2).split("=");
+    out[key] = value == null ? true : value;
+  }
+  return out;
+}
+
+function parseTimestamp(value) {
+  const ts = Date.parse(String(value || ""));
+  return Number.isFinite(ts) ? ts : NaN;
+}
+
 function validatePages() {
   for (const page of pages) {
     const pagePath = path.join(baseDir, page);
@@ -128,6 +143,8 @@ function validateConflictFeed() {
   if (!Array.isArray(active.timeline) || active.timeline.length === 0) {
     fail(`${feedPath} conflict ${active.id} must contain at least one timeline entry`);
   }
+
+  return parsed;
 }
 
 function validateConflictNewsFeed() {
@@ -154,6 +171,8 @@ function validateConflictNewsFeed() {
       fail(`${feedPath} conflicts.${id} must be an array`);
     }
   }
+
+  return parsed;
 }
 
 function validatePolymarketSnapshot() {
@@ -186,10 +205,54 @@ function validatePolymarketSnapshot() {
       fail(`${snapshotPath} first market missing field: ${key}`);
     }
   }
+
+  return parsed;
 }
 
+function validateFreshness(conflictFeed, newsFeed, snapshotFeed, maxAgeMinutes) {
+  const maxAgeMs = Math.max(1, Number(maxAgeMinutes) || 150) * 60 * 1000;
+  const now = Date.now();
+
+  const checks = [];
+  checks.push({ label: "polymarket snapshot", value: snapshotFeed?.updated_at_utc });
+  checks.push({ label: "conflict feed", value: conflictFeed?.updated_at_utc });
+  checks.push({ label: "conflict news", value: newsFeed?.updated_at_utc });
+
+  const conflicts = Array.isArray(conflictFeed?.conflicts) ? conflictFeed.conflicts : [];
+  conflicts.forEach(conflict => {
+    checks.push({
+      label: `conflict ${conflict.id || "unknown"}`,
+      value: conflict?.as_of_utc || conflict?.updated_at_utc || conflictFeed?.updated_at_utc,
+    });
+  });
+
+  for (const item of checks) {
+    if (!item.value) {
+      fail(`Freshness check failed: ${item.label} has no timestamp`);
+    }
+    const ts = parseTimestamp(item.value);
+    if (!Number.isFinite(ts)) {
+      fail(`Freshness check failed: ${item.label} timestamp invalid (${item.value})`);
+    }
+    const ageMs = now - ts;
+    if (ageMs > maxAgeMs) {
+      const ageMin = Math.round(ageMs / 60000);
+      fail(`Freshness check failed: ${item.label} is stale (${ageMin} min old, threshold ${Math.round(maxAgeMs / 60000)} min)`);
+    }
+  }
+}
+
+const args = parseCliArgs(process.argv);
+const checkStale = Boolean(args["check-stale"]);
+const maxAgeMinutes = Number(args["max-age-minutes"] || 150);
+
 validatePages();
-validateConflictFeed();
-validateConflictNewsFeed();
-validatePolymarketSnapshot();
+const conflictFeed = validateConflictFeed();
+const newsFeed = validateConflictNewsFeed();
+const snapshotFeed = validatePolymarketSnapshot();
+
+if (checkStale) {
+  validateFreshness(conflictFeed, newsFeed, snapshotFeed, maxAgeMinutes);
+}
+
 console.log("Polymarket site validation passed.");

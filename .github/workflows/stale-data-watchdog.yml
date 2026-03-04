@@ -1,0 +1,67 @@
+name: Stale Data Watchdog
+
+on:
+  schedule:
+    - cron: '15 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  stale-watchdog:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Validate freshness
+        id: stale_check
+        continue-on-error: true
+        run: node scripts/validate-polymarket-site.mjs --check-stale --max-age-minutes=150
+
+      - name: Open issue when stale
+        if: steps.stale_check.outcome == 'failure'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const owner = context.repo.owner;
+            const repo = context.repo.repo;
+            const title = 'Data stale watchdog alert';
+            const marker = '<!-- stale-data-watchdog -->';
+
+            const openIssues = await github.paginate(github.rest.issues.listForRepo, {
+              owner,
+              repo,
+              state: 'open',
+              per_page: 100,
+            });
+
+            const existing = openIssues.find(issue => issue.title === title || (issue.body || '').includes(marker));
+            if (existing) {
+              core.info(`Existing watchdog issue already open: #${existing.number}`);
+              return;
+            }
+
+            const runUrl = `https://github.com/${owner}/${repo}/actions/runs/${context.runId}`;
+            const body = `${marker}\nThe stale-data watchdog detected outdated feeds.\n\n- Workflow run: ${runUrl}\n- Command: \`node scripts/validate-polymarket-site.mjs --check-stale --max-age-minutes=150\`\n\nPlease refresh source jobs and verify timestamps in:\n- \`docs/public/polymarket-us-politics/data/iran-war-metrics.json\`\n- \`docs/public/polymarket-us-politics/data/conflict-news.json\`\n- \`docs/public/polymarket-us-politics/data/polymarket-market-snapshot.json\``;
+
+            await github.rest.issues.create({
+              owner,
+              repo,
+              title,
+              body,
+              labels: ['bug', 'data', 'monitoring'],
+            });
+
+      - name: Fail on stale data
+        if: steps.stale_check.outcome == 'failure'
+        run: |
+          echo "Stale data detected by watchdog"
+          exit 1
