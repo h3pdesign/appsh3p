@@ -6511,9 +6511,17 @@ if (lightVariantSelect) {
 themeModeSelect?.addEventListener('change', () => {
   const next = themeModeSelect.value;
   const allowPrefs = !window.PMIRCookieConsent || window.PMIRCookieConsent.hasConsent('preferences');
-  if (!allowPrefs && window.PMIRCookieConsent?.openPreferences) {
-    window.PMIRCookieConsent.openPreferences();
-    themeModeSelect.value = 'system';
+
+  // If preferences consent is not granted, still allow theme switching
+  // for the current session without persisting to storage.
+  if (!allowPrefs) {
+    if (next === 'system') {
+      applyTheme(window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+      themeModeSelect.value = 'system';
+    } else {
+      applyTheme(next);
+      themeModeSelect.value = next;
+    }
     return;
   }
 
@@ -6533,9 +6541,10 @@ themeModeSelect?.addEventListener('change', () => {
 lightVariantSelect?.addEventListener('change', () => {
   const next = lightVariantSelect.value === 'vibrant' ? 'vibrant' : 'classic';
   const allowPrefs = !window.PMIRCookieConsent || window.PMIRCookieConsent.hasConsent('preferences');
-  if (!allowPrefs && window.PMIRCookieConsent?.openPreferences) {
-    window.PMIRCookieConsent.openPreferences();
-    lightVariantSelect.value = preferredLightVariant();
+
+  if (!allowPrefs) {
+    applyLightVariant(next);
+    updateLightVariantControlState();
     return;
   }
 
