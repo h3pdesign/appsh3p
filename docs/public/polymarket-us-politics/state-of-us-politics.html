@@ -1033,6 +1033,7 @@ nav {
   gap: 0.35rem 0.6rem;
 }
 
+
 .metric-source-legend-item {
   display: inline-flex;
   align-items: center;
@@ -1041,6 +1042,27 @@ nav {
   font-family: var(--font-mono);
   color: var(--text-muted);
   letter-spacing: 0.03em;
+}
+
+.metric-confidence-guide {
+  margin-top: 0.35rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.32rem 0.45rem;
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  color: var(--text-muted);
+  letter-spacing: 0.03em;
+}
+
+.metric-confidence-guide-label {
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.metric-confidence-guide-text {
+  opacity: 0.92;
 }
 
 .metric-group {
@@ -2348,6 +2370,13 @@ footer a:hover { border-bottom-color: var(--accent-gold); }
       </div>
       <div class="metric-scope-legend" id="conflictScopeLegend" aria-label="Scope legend"></div>
       <div class="metric-source-legend" id="conflictSourceLegend" aria-label="Source legend"></div>
+      <div class="metric-confidence-guide" aria-label="Confidence marker legend">
+        <span class="metric-confidence-guide-label">Marker meaning:</span>
+        <span class="metric-confidence-badge metric-confidence-low">LOW</span>
+        <span class="metric-confidence-guide-text">higher uncertainty / fewer confirmations</span>
+        <span class="metric-confidence-badge metric-confidence-medium">MEDIUM</span>
+        <span class="metric-confidence-guide-text">partially confirmed / still evolving</span>
+      </div>
       <div class="conflict-metrics-grid" id="conflictMetrics">
         <div class="iran-stat"><div class="iran-stat-label">Loading metrics</div><div class="iran-stat-value">--</div></div>
       </div>
@@ -2448,6 +2477,13 @@ footer a:hover { border-bottom-color: var(--accent-gold); }
       </div>
       <div class="metric-scope-legend" id="ukraineScopeLegend" aria-label="Scope legend"></div>
       <div class="metric-source-legend" id="ukraineSourceLegend" aria-label="Source legend"></div>
+      <div class="metric-confidence-guide" aria-label="Confidence marker legend">
+        <span class="metric-confidence-guide-label">Marker meaning:</span>
+        <span class="metric-confidence-badge metric-confidence-low">LOW</span>
+        <span class="metric-confidence-guide-text">higher uncertainty / fewer confirmations</span>
+        <span class="metric-confidence-badge metric-confidence-medium">MEDIUM</span>
+        <span class="metric-confidence-guide-text">partially confirmed / still evolving</span>
+      </div>
       <div class="conflict-metrics-grid" id="ukraineMetrics">
         <div class="iran-stat"><div class="iran-stat-label">Loading metrics</div><div class="iran-stat-value">--</div></div>
       </div>
