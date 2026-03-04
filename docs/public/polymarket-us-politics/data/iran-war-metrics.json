@@ -1,13 +1,13 @@
 {
   "active_conflict_id": "iran_2026",
-  "updated_at_utc": "2026-03-04T10:23:19.726Z",
+  "updated_at_utc": "2026-03-04T10:27:22.099Z",
   "conflicts": [
     {
       "id": "iran_2026",
       "title": "Iran Conflict Monitor",
       "subtitle": "Live conflict metrics plus daily composite intensity index (casualties, projectile activity, operational impacts), refreshed every hour.",
-      "as_of_utc": "2026-03-04T10:23:19.726Z",
-      "updated_at_utc": "2026-03-04T10:23:19.726Z",
+      "as_of_utc": "2026-03-04T10:27:22.099Z",
+      "updated_at_utc": "2026-03-04T10:27:22.099Z",
       "source_name": "Wikipedia: 2026 Iran conflict (casualty tracker)",
       "source_url": "https://en.wikipedia.org/wiki/2026_Iran_conflict",
       "map": {
@@ -152,8 +152,8 @@
         {
           "name": "Tel Aviv metro impact cluster",
           "label": "Ballistic missiles (2025 benchmark)",
-          "value": 27,
-          "marker_mass": 27,
+          "value": 24,
+          "marker_mass": 24,
           "total_metric": 520,
           "lat": 32.0853,
           "lng": 34.7818,
@@ -161,14 +161,14 @@
           "category": "missile_strikes",
           "description": "Approximate missile impact zones from open-source conflict reporting (5-10 km precision).",
           "source": "Wikipedia: 2026 Iran conflict (casualty tracker) + U.S. Central Command (CENTCOM) update (March 2, 2026, latest official statement) + CBS News conflict update (March 3, 2026) + The Guardian live coverage (March 3, 2026)",
-          "reported_at_utc": "2026-03-04T10:23:19.726Z",
+          "reported_at_utc": "2026-03-04T10:27:22.099Z",
           "coordinate_precision_km": "5-10"
         },
         {
           "name": "Haifa metro impact cluster",
           "label": "Ballistic missiles (2025 benchmark)",
-          "value": 24,
-          "marker_mass": 24,
+          "value": 21,
+          "marker_mass": 21,
           "total_metric": 520,
           "lat": 32.794,
           "lng": 34.9896,
@@ -176,14 +176,14 @@
           "category": "missile_strikes",
           "description": "Approximate missile impact zones from open-source conflict reporting (5-10 km precision).",
           "source": "Wikipedia: 2026 Iran conflict (casualty tracker) + U.S. Central Command (CENTCOM) update (March 2, 2026, latest official statement) + CBS News conflict update (March 3, 2026) + The Guardian live coverage (March 3, 2026)",
-          "reported_at_utc": "2026-03-04T10:23:19.726Z",
+          "reported_at_utc": "2026-03-04T10:27:22.099Z",
           "coordinate_precision_km": "5-10"
         },
         {
           "name": "Beersheba impact cluster",
           "label": "Ballistic missiles (2025 benchmark)",
-          "value": 20,
-          "marker_mass": 20,
+          "value": 17,
+          "marker_mass": 17,
           "total_metric": 520,
           "lat": 31.252,
           "lng": 34.7915,
@@ -191,14 +191,14 @@
           "category": "missile_strikes",
           "description": "Approximate missile impact zones from open-source conflict reporting (5-10 km precision).",
           "source": "Wikipedia: 2026 Iran conflict (casualty tracker) + U.S. Central Command (CENTCOM) update (March 2, 2026, latest official statement) + CBS News conflict update (March 3, 2026) + The Guardian live coverage (March 3, 2026)",
-          "reported_at_utc": "2026-03-04T10:23:19.726Z",
+          "reported_at_utc": "2026-03-04T10:27:22.099Z",
           "coordinate_precision_km": "5-10"
         },
         {
           "name": "Jerusalem outskirts impact cluster",
           "label": "Ballistic missiles (2025 benchmark)",
-          "value": 17,
-          "marker_mass": 17,
+          "value": 15,
+          "marker_mass": 15,
           "total_metric": 520,
           "lat": 31.7683,
           "lng": 35.2137,
@@ -206,14 +206,14 @@
           "category": "missile_strikes",
           "description": "Approximate missile impact zones from open-source conflict reporting (5-10 km precision).",
           "source": "Wikipedia: 2026 Iran conflict (casualty tracker) + U.S. Central Command (CENTCOM) update (March 2, 2026, latest official statement) + CBS News conflict update (March 3, 2026) + The Guardian live coverage (March 3, 2026)",
-          "reported_at_utc": "2026-03-04T10:23:19.726Z",
+          "reported_at_utc": "2026-03-04T10:27:22.099Z",
           "coordinate_precision_km": "5-10"
         },
         {
           "name": "Ashdod coastal impact cluster",
           "label": "Ballistic missiles (2025 benchmark)",
-          "value": 15,
-          "marker_mass": 15,
+          "value": 13,
+          "marker_mass": 13,
           "total_metric": 520,
           "lat": 31.8014,
           "lng": 34.6435,
@@ -221,14 +221,14 @@
           "category": "missile_strikes",
           "description": "Approximate missile impact zones from open-source conflict reporting (5-10 km precision).",
           "source": "Wikipedia: 2026 Iran conflict (casualty tracker) + U.S. Central Command (CENTCOM) update (March 2, 2026, latest official statement) + CBS News conflict update (March 3, 2026) + The Guardian live coverage (March 3, 2026)",
-          "reported_at_utc": "2026-03-04T10:23:19.726Z",
+          "reported_at_utc": "2026-03-04T10:27:22.099Z",
           "coordinate_precision_km": "5-10"
         },
         {
           "name": "Ashkelon impact cluster",
           "label": "Ballistic missiles (2025 benchmark)",
-          "value": 14,
-          "marker_mass": 14,
+          "value": 12,
+          "marker_mass": 12,
           "total_metric": 520,
           "lat": 31.6688,
           "lng": 34.5743,
@@ -236,14 +236,14 @@
           "category": "missile_strikes",
           "description": "Approximate missile impact zones from open-source conflict reporting (5-10 km precision).",
           "source": "Wikipedia: 2026 Iran conflict (casualty tracker) + U.S. Central Command (CENTCOM) update (March 2, 2026, latest official statement) + CBS News conflict update (March 3, 2026) + The Guardian live coverage (March 3, 2026)",
-          "reported_at_utc": "2026-03-04T10:23:19.726Z",
+          "reported_at_utc": "2026-03-04T10:27:22.099Z",
           "coordinate_precision_km": "5-10"
         },
         {
           "name": "Rishon LeZion impact cluster",
           "label": "Ballistic missiles (2025 benchmark)",
-          "value": 13,
-          "marker_mass": 13,
+          "value": 12,
+          "marker_mass": 12,
           "total_metric": 520,
           "lat": 31.973,
           "lng": 34.7925,
@@ -251,14 +251,14 @@
           "category": "missile_strikes",
           "description": "Approximate missile impact zones from open-source conflict reporting (5-10 km precision).",
           "source": "Wikipedia: 2026 Iran conflict (casualty tracker) + U.S. Central Command (CENTCOM) update (March 2, 2026, latest official statement) + CBS News conflict update (March 3, 2026) + The Guardian live coverage (March 3, 2026)",
-          "reported_at_utc": "2026-03-04T10:23:19.726Z",
+          "reported_at_utc": "2026-03-04T10:27:22.099Z",
           "coordinate_precision_km": "5-10"
         },
         {
           "name": "Hadera impact cluster",
           "label": "Ballistic missiles (2025 benchmark)",
-          "value": 12,
-          "marker_mass": 12,
+          "value": 11,
+          "marker_mass": 11,
           "total_metric": 520,
           "lat": 32.434,
           "lng": 34.919,
@@ -266,14 +266,14 @@
           "category": "missile_strikes",
           "description": "Approximate missile impact zones from open-source conflict reporting (5-10 km precision).",
           "source": "Wikipedia: 2026 Iran conflict (casualty tracker) + U.S. Central Command (CENTCOM) update (March 2, 2026, latest official statement) + CBS News conflict update (March 3, 2026) + The Guardian live coverage (March 3, 2026)",
-          "reported_at_utc": "2026-03-04T10:23:19.726Z",
+          "reported_at_utc": "2026-03-04T10:27:22.099Z",
           "coordinate_precision_km": "5-10"
         },
         {
           "name": "Eilat impact cluster",
           "label": "Ballistic missiles (2025 benchmark)",
-          "value": 9,
-          "marker_mass": 9,
+          "value": 8,
+          "marker_mass": 8,
           "total_metric": 520,
           "lat": 29.5577,
           "lng": 34.9519,
@@ -281,14 +281,14 @@
           "category": "missile_strikes",
           "description": "Approximate missile impact zones from open-source conflict reporting (5-10 km precision).",
           "source": "Wikipedia: 2026 Iran conflict (casualty tracker) + U.S. Central Command (CENTCOM) update (March 2, 2026, latest official statement) + CBS News conflict update (March 3, 2026) + The Guardian live coverage (March 3, 2026)",
-          "reported_at_utc": "2026-03-04T10:23:19.726Z",
+          "reported_at_utc": "2026-03-04T10:27:22.099Z",
           "coordinate_precision_km": "5-10"
         },
         {
           "name": "Natanz area strike cluster",
           "label": "Ballistic missiles (2025 benchmark)",
-          "value": 18,
-          "marker_mass": 18,
+          "value": 16,
+          "marker_mass": 16,
           "total_metric": 520,
           "lat": 33.7262,
           "lng": 51.7267,
@@ -296,14 +296,14 @@
           "category": "missile_strikes",
           "description": "Approximate missile impact zones from open-source conflict reporting (5-10 km precision).",
           "source": "Wikipedia: 2026 Iran conflict (casualty tracker) + U.S. Central Command (CENTCOM) update (March 2, 2026, latest official statement) + CBS News conflict update (March 3, 2026) + The Guardian live coverage (March 3, 2026)",
-          "reported_at_utc": "2026-03-04T10:23:19.726Z",
+          "reported_at_utc": "2026-03-04T10:27:22.099Z",
           "coordinate_precision_km": "5-10"
         },
         {
           "name": "Tabriz area strike cluster",
           "label": "Ballistic missiles (2025 benchmark)",
-          "value": 13,
-          "marker_mass": 13,
+          "value": 11,
+          "marker_mass": 11,
           "total_metric": 520,
           "lat": 38.0962,
           "lng": 46.2738,
@@ -311,14 +311,14 @@
           "category": "missile_strikes",
           "description": "Approximate missile impact zones from open-source conflict reporting (5-10 km precision).",
           "source": "Wikipedia: 2026 Iran conflict (casualty tracker) + U.S. Central Command (CENTCOM) update (March 2, 2026, latest official statement) + CBS News conflict update (March 3, 2026) + The Guardian live coverage (March 3, 2026)",
-          "reported_at_utc": "2026-03-04T10:23:19.726Z",
+          "reported_at_utc": "2026-03-04T10:27:22.099Z",
           "coordinate_precision_km": "5-10"
         },
         {
           "name": "Kermanshah area strike cluster",
           "label": "Ballistic missiles (2025 benchmark)",
-          "value": 14,
-          "marker_mass": 14,
+          "value": 12,
+          "marker_mass": 12,
           "total_metric": 520,
           "lat": 34.3142,
           "lng": 47.065,
@@ -326,14 +326,14 @@
           "category": "missile_strikes",
           "description": "Approximate missile impact zones from open-source conflict reporting (5-10 km precision).",
           "source": "Wikipedia: 2026 Iran conflict (casualty tracker) + U.S. Central Command (CENTCOM) update (March 2, 2026, latest official statement) + CBS News conflict update (March 3, 2026) + The Guardian live coverage (March 3, 2026)",
-          "reported_at_utc": "2026-03-04T10:23:19.726Z",
+          "reported_at_utc": "2026-03-04T10:27:22.099Z",
           "coordinate_precision_km": "5-10"
         },
         {
           "name": "Arak area strike cluster",
           "label": "Ballistic missiles (2025 benchmark)",
-          "value": 12,
-          "marker_mass": 12,
+          "value": 10,
+          "marker_mass": 10,
           "total_metric": 520,
           "lat": 34.0917,
           "lng": 49.6892,
@@ -341,14 +341,14 @@
           "category": "missile_strikes",
           "description": "Approximate missile impact zones from open-source conflict reporting (5-10 km precision).",
           "source": "Wikipedia: 2026 Iran conflict (casualty tracker) + U.S. Central Command (CENTCOM) update (March 2, 2026, latest official statement) + CBS News conflict update (March 3, 2026) + The Guardian live coverage (March 3, 2026)",
-          "reported_at_utc": "2026-03-04T10:23:19.726Z",
+          "reported_at_utc": "2026-03-04T10:27:22.099Z",
           "coordinate_precision_km": "5-10"
         },
         {
           "name": "Hamedan area strike cluster",
           "label": "Ballistic missiles (2025 benchmark)",
-          "value": 11,
-          "marker_mass": 11,
+          "value": 10,
+          "marker_mass": 10,
           "total_metric": 520,
           "lat": 34.7992,
           "lng": 48.5146,
@@ -356,14 +356,14 @@
           "category": "missile_strikes",
           "description": "Approximate missile impact zones from open-source conflict reporting (5-10 km precision).",
           "source": "Wikipedia: 2026 Iran conflict (casualty tracker) + U.S. Central Command (CENTCOM) update (March 2, 2026, latest official statement) + CBS News conflict update (March 3, 2026) + The Guardian live coverage (March 3, 2026)",
-          "reported_at_utc": "2026-03-04T10:23:19.726Z",
+          "reported_at_utc": "2026-03-04T10:27:22.099Z",
           "coordinate_precision_km": "5-10"
         },
         {
           "name": "Yazd area strike cluster",
           "label": "Ballistic missiles (2025 benchmark)",
-          "value": 10,
-          "marker_mass": 10,
+          "value": 9,
+          "marker_mass": 9,
           "total_metric": 520,
           "lat": 31.8974,
           "lng": 54.3569,
@@ -371,14 +371,14 @@
           "category": "missile_strikes",
           "description": "Approximate missile impact zones from open-source conflict reporting (5-10 km precision).",
           "source": "Wikipedia: 2026 Iran conflict (casualty tracker) + U.S. Central Command (CENTCOM) update (March 2, 2026, latest official statement) + CBS News conflict update (March 3, 2026) + The Guardian live coverage (March 3, 2026)",
-          "reported_at_utc": "2026-03-04T10:23:19.726Z",
+          "reported_at_utc": "2026-03-04T10:27:22.099Z",
           "coordinate_precision_km": "5-10"
         },
         {
           "name": "Bushehr area strike cluster",
           "label": "Ballistic missiles (2025 benchmark)",
-          "value": 10,
-          "marker_mass": 10,
+          "value": 9,
+          "marker_mass": 9,
           "total_metric": 520,
           "lat": 28.9234,
           "lng": 50.8203,
@@ -386,14 +386,74 @@
           "category": "missile_strikes",
           "description": "Approximate missile impact zones from open-source conflict reporting (5-10 km precision).",
           "source": "Wikipedia: 2026 Iran conflict (casualty tracker) + U.S. Central Command (CENTCOM) update (March 2, 2026, latest official statement) + CBS News conflict update (March 3, 2026) + The Guardian live coverage (March 3, 2026)",
-          "reported_at_utc": "2026-03-04T10:23:19.726Z",
+          "reported_at_utc": "2026-03-04T10:27:22.099Z",
+          "coordinate_precision_km": "5-10"
+        },
+        {
+          "name": "Manama strike-alert cluster (Bahrain)",
+          "label": "Ballistic missiles (2025 benchmark)",
+          "value": 7,
+          "marker_mass": 7,
+          "total_metric": 520,
+          "lat": 26.2285,
+          "lng": 50.586,
+          "type": "projectiles",
+          "category": "missile_strikes",
+          "description": "Approximate missile impact zones from open-source conflict reporting (5-10 km precision).",
+          "source": "Wikipedia: 2026 Iran conflict (casualty tracker) + U.S. Central Command (CENTCOM) update (March 2, 2026, latest official statement) + CBS News conflict update (March 3, 2026) + The Guardian live coverage (March 3, 2026)",
+          "reported_at_utc": "2026-03-04T10:27:22.099Z",
+          "coordinate_precision_km": "5-10"
+        },
+        {
+          "name": "Dammam strike-alert cluster (Saudi Arabia)",
+          "label": "Ballistic missiles (2025 benchmark)",
+          "value": 8,
+          "marker_mass": 8,
+          "total_metric": 520,
+          "lat": 26.4207,
+          "lng": 50.0888,
+          "type": "projectiles",
+          "category": "missile_strikes",
+          "description": "Approximate missile impact zones from open-source conflict reporting (5-10 km precision).",
+          "source": "Wikipedia: 2026 Iran conflict (casualty tracker) + U.S. Central Command (CENTCOM) update (March 2, 2026, latest official statement) + CBS News conflict update (March 3, 2026) + The Guardian live coverage (March 3, 2026)",
+          "reported_at_utc": "2026-03-04T10:27:22.099Z",
+          "coordinate_precision_km": "5-10"
+        },
+        {
+          "name": "Riyadh strike-alert cluster (Saudi Arabia)",
+          "label": "Ballistic missiles (2025 benchmark)",
+          "value": 7,
+          "marker_mass": 7,
+          "total_metric": 520,
+          "lat": 24.7136,
+          "lng": 46.6753,
+          "type": "projectiles",
+          "category": "missile_strikes",
+          "description": "Approximate missile impact zones from open-source conflict reporting (5-10 km precision).",
+          "source": "Wikipedia: 2026 Iran conflict (casualty tracker) + U.S. Central Command (CENTCOM) update (March 2, 2026, latest official statement) + CBS News conflict update (March 3, 2026) + The Guardian live coverage (March 3, 2026)",
+          "reported_at_utc": "2026-03-04T10:27:22.099Z",
+          "coordinate_precision_km": "5-10"
+        },
+        {
+          "name": "Basra strike-alert cluster (Iraq)",
+          "label": "Ballistic missiles (2025 benchmark)",
+          "value": 7,
+          "marker_mass": 7,
+          "total_metric": 520,
+          "lat": 30.5085,
+          "lng": 47.7804,
+          "type": "projectiles",
+          "category": "missile_strikes",
+          "description": "Approximate missile impact zones from open-source conflict reporting (5-10 km precision).",
+          "source": "Wikipedia: 2026 Iran conflict (casualty tracker) + U.S. Central Command (CENTCOM) update (March 2, 2026, latest official statement) + CBS News conflict update (March 3, 2026) + The Guardian live coverage (March 3, 2026)",
+          "reported_at_utc": "2026-03-04T10:27:22.099Z",
           "coordinate_precision_km": "5-10"
         },
         {
           "name": "Isfahan drone strike zone",
           "label": "Drones (2025 benchmark)",
-          "value": 27,
-          "marker_mass": 27,
+          "value": 22,
+          "marker_mass": 22,
           "total_metric": 950,
           "lat": 32.6546,
           "lng": 51.668,
@@ -401,14 +461,14 @@
           "category": "drone_strikes",
           "description": "Approximate drone strike zones from open-source conflict reporting (5-10 km precision).",
           "source": "Wikipedia: 2026 Iran conflict (casualty tracker) + U.S. Central Command (CENTCOM) update (March 2, 2026, latest official statement) + CBS News conflict update (March 3, 2026) + The Guardian live coverage (March 3, 2026)",
-          "reported_at_utc": "2026-03-04T10:23:19.726Z",
+          "reported_at_utc": "2026-03-04T10:27:22.099Z",
           "coordinate_precision_km": "5-10"
         },
         {
           "name": "Qom drone strike zone",
           "label": "Drones (2025 benchmark)",
-          "value": 22,
-          "marker_mass": 22,
+          "value": 19,
+          "marker_mass": 19,
           "total_metric": 950,
           "lat": 34.6416,
           "lng": 50.8746,
@@ -416,14 +476,14 @@
           "category": "drone_strikes",
           "description": "Approximate drone strike zones from open-source conflict reporting (5-10 km precision).",
           "source": "Wikipedia: 2026 Iran conflict (casualty tracker) + U.S. Central Command (CENTCOM) update (March 2, 2026, latest official statement) + CBS News conflict update (March 3, 2026) + The Guardian live coverage (March 3, 2026)",
-          "reported_at_utc": "2026-03-04T10:23:19.726Z",
+          "reported_at_utc": "2026-03-04T10:27:22.099Z",
           "coordinate_precision_km": "5-10"
         },
         {
           "name": "Karaj drone strike zone",
           "label": "Drones (2025 benchmark)",
-          "value": 19,
-          "marker_mass": 19,
+          "value": 17,
+          "marker_mass": 17,
           "total_metric": 950,
           "lat": 35.84,
           "lng": 50.9391,
@@ -431,14 +491,14 @@
           "category": "drone_strikes",
           "description": "Approximate drone strike zones from open-source conflict reporting (5-10 km precision).",
           "source": "Wikipedia: 2026 Iran conflict (casualty tracker) + U.S. Central Command (CENTCOM) update (March 2, 2026, latest official statement) + CBS News conflict update (March 3, 2026) + The Guardian live coverage (March 3, 2026)",
-          "reported_at_utc": "2026-03-04T10:23:19.726Z",
+          "reported_at_utc": "2026-03-04T10:27:22.099Z",
           "coordinate_precision_km": "5-10"
         },
         {
           "name": "Tehran west drone strike zone",
           "label": "Drones (2025 benchmark)",
-          "value": 29,
-          "marker_mass": 29,
+          "value": 26,
+          "marker_mass": 26,
           "total_metric": 950,
           "lat": 35.6892,
           "lng": 51.389,
@@ -446,14 +506,14 @@
           "category": "drone_strikes",
           "description": "Approximate drone strike zones from open-source conflict reporting (5-10 km precision).",
           "source": "Wikipedia: 2026 Iran conflict (casualty tracker) + U.S. Central Command (CENTCOM) update (March 2, 2026, latest official statement) + CBS News conflict update (March 3, 2026) + The Guardian live coverage (March 3, 2026)",
-          "reported_at_utc": "2026-03-04T10:23:19.726Z",
+          "reported_at_utc": "2026-03-04T10:27:22.099Z",
           "coordinate_precision_km": "5-10"
         },
         {
           "name": "Tehran north drone strike zone",
           "label": "Drones (2025 benchmark)",
-          "value": 23,
-          "marker_mass": 23,
+          "value": 20,
+          "marker_mass": 20,
           "total_metric": 950,
           "lat": 35.786,
           "lng": 51.427,
@@ -461,14 +521,14 @@
           "category": "drone_strikes",
           "description": "Approximate drone strike zones from open-source conflict reporting (5-10 km precision).",
           "source": "Wikipedia: 2026 Iran conflict (casualty tracker) + U.S. Central Command (CENTCOM) update (March 2, 2026, latest official statement) + CBS News conflict update (March 3, 2026) + The Guardian live coverage (March 3, 2026)",
-          "reported_at_utc": "2026-03-04T10:23:19.726Z",
+          "reported_at_utc": "2026-03-04T10:27:22.099Z",
           "coordinate_precision_km": "5-10"
         },
         {
           "name": "Shiraz drone strike zone",
           "label": "Drones (2025 benchmark)",
-          "value": 16,
-          "marker_mass": 16,
+          "value": 15,
+          "marker_mass": 15,
           "total_metric": 950,
           "lat": 29.5918,
           "lng": 52.5837,
@@ -476,14 +536,14 @@
           "category": "drone_strikes",
           "description": "Approximate drone strike zones from open-source conflict reporting (5-10 km precision).",
           "source": "Wikipedia: 2026 Iran conflict (casualty tracker) + U.S. Central Command (CENTCOM) update (March 2, 2026, latest official statement) + CBS News conflict update (March 3, 2026) + The Guardian live coverage (March 3, 2026)",
-          "reported_at_utc": "2026-03-04T10:23:19.726Z",
+          "reported_at_utc": "2026-03-04T10:27:22.099Z",
           "coordinate_precision_km": "5-10"
         },
         {
           "name": "Ahvaz drone strike zone",
           "label": "Drones (2025 benchmark)",
-          "value": 15,
-          "marker_mass": 15,
+          "value": 14,
+          "marker_mass": 14,
           "total_metric": 950,
           "lat": 31.3183,
           "lng": 48.6706,
@@ -491,14 +551,14 @@
           "category": "drone_strikes",
           "description": "Approximate drone strike zones from open-source conflict reporting (5-10 km precision).",
           "source": "Wikipedia: 2026 Iran conflict (casualty tracker) + U.S. Central Command (CENTCOM) update (March 2, 2026, latest official statement) + CBS News conflict update (March 3, 2026) + The Guardian live coverage (March 3, 2026)",
-          "reported_at_utc": "2026-03-04T10:23:19.726Z",
+          "reported_at_utc": "2026-03-04T10:27:22.099Z",
           "coordinate_precision_km": "5-10"
         },
         {
           "name": "Bandar Abbas drone strike zone",
           "label": "Drones (2025 benchmark)",
-          "value": 17,
-          "marker_mass": 17,
+          "value": 16,
+          "marker_mass": 16,
           "total_metric": 950,
           "lat": 27.1832,
           "lng": 56.2666,
@@ -506,14 +566,14 @@
           "category": "drone_strikes",
           "description": "Approximate drone strike zones from open-source conflict reporting (5-10 km precision).",
           "source": "Wikipedia: 2026 Iran conflict (casualty tracker) + U.S. Central Command (CENTCOM) update (March 2, 2026, latest official statement) + CBS News conflict update (March 3, 2026) + The Guardian live coverage (March 3, 2026)",
-          "reported_at_utc": "2026-03-04T10:23:19.726Z",
+          "reported_at_utc": "2026-03-04T10:27:22.099Z",
           "coordinate_precision_km": "5-10"
         },
         {
           "name": "Minab drone strike zone",
           "label": "Drones (2025 benchmark)",
-          "value": 15,
-          "marker_mass": 15,
+          "value": 14,
+          "marker_mass": 14,
           "total_metric": 950,
           "lat": 27.131,
           "lng": 57.0776,
@@ -521,14 +581,14 @@
           "category": "drone_strikes",
           "description": "Approximate drone strike zones from open-source conflict reporting (5-10 km precision).",
           "source": "Wikipedia: 2026 Iran conflict (casualty tracker) + U.S. Central Command (CENTCOM) update (March 2, 2026, latest official statement) + CBS News conflict update (March 3, 2026) + The Guardian live coverage (March 3, 2026)",
-          "reported_at_utc": "2026-03-04T10:23:19.726Z",
+          "reported_at_utc": "2026-03-04T10:27:22.099Z",
           "coordinate_precision_km": "5-10"
         },
         {
           "name": "Kashan drone strike zone",
           "label": "Drones (2025 benchmark)",
-          "value": 15,
-          "marker_mass": 15,
+          "value": 14,
+          "marker_mass": 14,
           "total_metric": 950,
           "lat": 33.985,
           "lng": 51.409,
@@ -536,14 +596,14 @@
           "category": "drone_strikes",
           "description": "Approximate drone strike zones from open-source conflict reporting (5-10 km precision).",
           "source": "Wikipedia: 2026 Iran conflict (casualty tracker) + U.S. Central Command (CENTCOM) update (March 2, 2026, latest official statement) + CBS News conflict update (March 3, 2026) + The Guardian live coverage (March 3, 2026)",
-          "reported_at_utc": "2026-03-04T10:23:19.726Z",
+          "reported_at_utc": "2026-03-04T10:27:22.099Z",
           "coordinate_precision_km": "5-10"
         },
         {
           "name": "Yazd drone strike zone",
           "label": "Drones (2025 benchmark)",
-          "value": 13,
-          "marker_mass": 13,
+          "value": 12,
+          "marker_mass": 12,
           "total_metric": 950,
           "lat": 31.8974,
           "lng": 54.3569,
@@ -551,14 +611,14 @@
           "category": "drone_strikes",
           "description": "Approximate drone strike zones from open-source conflict reporting (5-10 km precision).",
           "source": "Wikipedia: 2026 Iran conflict (casualty tracker) + U.S. Central Command (CENTCOM) update (March 2, 2026, latest official statement) + CBS News conflict update (March 3, 2026) + The Guardian live coverage (March 3, 2026)",
-          "reported_at_utc": "2026-03-04T10:23:19.726Z",
+          "reported_at_utc": "2026-03-04T10:27:22.099Z",
           "coordinate_precision_km": "5-10"
         },
         {
           "name": "Tabriz drone strike zone",
           "label": "Drones (2025 benchmark)",
-          "value": 13,
-          "marker_mass": 13,
+          "value": 11,
+          "marker_mass": 11,
           "total_metric": 950,
           "lat": 38.08,
           "lng": 46.29,
@@ -566,14 +626,14 @@
           "category": "drone_strikes",
           "description": "Approximate drone strike zones from open-source conflict reporting (5-10 km precision).",
           "source": "Wikipedia: 2026 Iran conflict (casualty tracker) + U.S. Central Command (CENTCOM) update (March 2, 2026, latest official statement) + CBS News conflict update (March 3, 2026) + The Guardian live coverage (March 3, 2026)",
-          "reported_at_utc": "2026-03-04T10:23:19.726Z",
+          "reported_at_utc": "2026-03-04T10:27:22.099Z",
           "coordinate_precision_km": "5-10"
         },
         {
           "name": "Urmia drone strike zone",
           "label": "Drones (2025 benchmark)",
-          "value": 11,
-          "marker_mass": 11,
+          "value": 10,
+          "marker_mass": 10,
           "total_metric": 950,
           "lat": 37.5527,
           "lng": 45.0761,
@@ -581,14 +641,14 @@
           "category": "drone_strikes",
           "description": "Approximate drone strike zones from open-source conflict reporting (5-10 km precision).",
           "source": "Wikipedia: 2026 Iran conflict (casualty tracker) + U.S. Central Command (CENTCOM) update (March 2, 2026, latest official statement) + CBS News conflict update (March 3, 2026) + The Guardian live coverage (March 3, 2026)",
-          "reported_at_utc": "2026-03-04T10:23:19.726Z",
+          "reported_at_utc": "2026-03-04T10:27:22.099Z",
           "coordinate_precision_km": "5-10"
         },
         {
           "name": "Mashhad drone strike zone",
           "label": "Drones (2025 benchmark)",
-          "value": 10,
-          "marker_mass": 10,
+          "value": 9,
+          "marker_mass": 9,
           "total_metric": 950,
           "lat": 36.2605,
           "lng": 59.6168,
@@ -596,14 +656,14 @@
           "category": "drone_strikes",
           "description": "Approximate drone strike zones from open-source conflict reporting (5-10 km precision).",
           "source": "Wikipedia: 2026 Iran conflict (casualty tracker) + U.S. Central Command (CENTCOM) update (March 2, 2026, latest official statement) + CBS News conflict update (March 3, 2026) + The Guardian live coverage (March 3, 2026)",
-          "reported_at_utc": "2026-03-04T10:23:19.726Z",
+          "reported_at_utc": "2026-03-04T10:27:22.099Z",
           "coordinate_precision_km": "5-10"
         },
         {
           "name": "Qazvin drone strike zone",
           "label": "Drones (2025 benchmark)",
-          "value": 11,
-          "marker_mass": 11,
+          "value": 10,
+          "marker_mass": 10,
           "total_metric": 950,
           "lat": 36.2797,
           "lng": 50.0049,
@@ -611,14 +671,14 @@
           "category": "drone_strikes",
           "description": "Approximate drone strike zones from open-source conflict reporting (5-10 km precision).",
           "source": "Wikipedia: 2026 Iran conflict (casualty tracker) + U.S. Central Command (CENTCOM) update (March 2, 2026, latest official statement) + CBS News conflict update (March 3, 2026) + The Guardian live coverage (March 3, 2026)",
-          "reported_at_utc": "2026-03-04T10:23:19.726Z",
+          "reported_at_utc": "2026-03-04T10:27:22.099Z",
           "coordinate_precision_km": "5-10"
         },
         {
           "name": "Kerman drone strike zone",
           "label": "Drones (2025 benchmark)",
-          "value": 10,
-          "marker_mass": 10,
+          "value": 9,
+          "marker_mass": 9,
           "total_metric": 950,
           "lat": 30.2839,
           "lng": 57.0834,
@@ -626,14 +686,14 @@
           "category": "drone_strikes",
           "description": "Approximate drone strike zones from open-source conflict reporting (5-10 km precision).",
           "source": "Wikipedia: 2026 Iran conflict (casualty tracker) + U.S. Central Command (CENTCOM) update (March 2, 2026, latest official statement) + CBS News conflict update (March 3, 2026) + The Guardian live coverage (March 3, 2026)",
-          "reported_at_utc": "2026-03-04T10:23:19.726Z",
+          "reported_at_utc": "2026-03-04T10:27:22.099Z",
           "coordinate_precision_km": "5-10"
         },
         {
           "name": "Rasht drone strike zone",
           "label": "Drones (2025 benchmark)",
-          "value": 10,
-          "marker_mass": 10,
+          "value": 9,
+          "marker_mass": 9,
           "total_metric": 950,
           "lat": 37.2808,
           "lng": 49.5832,
@@ -641,14 +701,14 @@
           "category": "drone_strikes",
           "description": "Approximate drone strike zones from open-source conflict reporting (5-10 km precision).",
           "source": "Wikipedia: 2026 Iran conflict (casualty tracker) + U.S. Central Command (CENTCOM) update (March 2, 2026, latest official statement) + CBS News conflict update (March 3, 2026) + The Guardian live coverage (March 3, 2026)",
-          "reported_at_utc": "2026-03-04T10:23:19.726Z",
+          "reported_at_utc": "2026-03-04T10:27:22.099Z",
           "coordinate_precision_km": "5-10"
         },
         {
           "name": "Semnan drone strike zone",
           "label": "Drones (2025 benchmark)",
-          "value": 9,
-          "marker_mass": 9,
+          "value": 8,
+          "marker_mass": 8,
           "total_metric": 950,
           "lat": 35.5729,
           "lng": 53.3971,
@@ -656,14 +716,74 @@
           "category": "drone_strikes",
           "description": "Approximate drone strike zones from open-source conflict reporting (5-10 km precision).",
           "source": "Wikipedia: 2026 Iran conflict (casualty tracker) + U.S. Central Command (CENTCOM) update (March 2, 2026, latest official statement) + CBS News conflict update (March 3, 2026) + The Guardian live coverage (March 3, 2026)",
-          "reported_at_utc": "2026-03-04T10:23:19.726Z",
+          "reported_at_utc": "2026-03-04T10:27:22.099Z",
+          "coordinate_precision_km": "5-10"
+        },
+        {
+          "name": "Manama drone-alert zone (Bahrain)",
+          "label": "Drones (2025 benchmark)",
+          "value": 8,
+          "marker_mass": 8,
+          "total_metric": 950,
+          "lat": 26.227,
+          "lng": 50.575,
+          "type": "projectiles",
+          "category": "drone_strikes",
+          "description": "Approximate drone strike zones from open-source conflict reporting (5-10 km precision).",
+          "source": "Wikipedia: 2026 Iran conflict (casualty tracker) + U.S. Central Command (CENTCOM) update (March 2, 2026, latest official statement) + CBS News conflict update (March 3, 2026) + The Guardian live coverage (March 3, 2026)",
+          "reported_at_utc": "2026-03-04T10:27:22.099Z",
+          "coordinate_precision_km": "5-10"
+        },
+        {
+          "name": "Dhahran drone-alert zone (Saudi Arabia)",
+          "label": "Drones (2025 benchmark)",
+          "value": 8,
+          "marker_mass": 8,
+          "total_metric": 950,
+          "lat": 26.2361,
+          "lng": 50.0393,
+          "type": "projectiles",
+          "category": "drone_strikes",
+          "description": "Approximate drone strike zones from open-source conflict reporting (5-10 km precision).",
+          "source": "Wikipedia: 2026 Iran conflict (casualty tracker) + U.S. Central Command (CENTCOM) update (March 2, 2026, latest official statement) + CBS News conflict update (March 3, 2026) + The Guardian live coverage (March 3, 2026)",
+          "reported_at_utc": "2026-03-04T10:27:22.099Z",
+          "coordinate_precision_km": "5-10"
+        },
+        {
+          "name": "Doha drone-alert zone (Qatar)",
+          "label": "Drones (2025 benchmark)",
+          "value": 7,
+          "marker_mass": 7,
+          "total_metric": 950,
+          "lat": 25.2854,
+          "lng": 51.531,
+          "type": "projectiles",
+          "category": "drone_strikes",
+          "description": "Approximate drone strike zones from open-source conflict reporting (5-10 km precision).",
+          "source": "Wikipedia: 2026 Iran conflict (casualty tracker) + U.S. Central Command (CENTCOM) update (March 2, 2026, latest official statement) + CBS News conflict update (March 3, 2026) + The Guardian live coverage (March 3, 2026)",
+          "reported_at_utc": "2026-03-04T10:27:22.099Z",
+          "coordinate_precision_km": "5-10"
+        },
+        {
+          "name": "Abu Dhabi drone-alert zone (UAE)",
+          "label": "Drones (2025 benchmark)",
+          "value": 7,
+          "marker_mass": 7,
+          "total_metric": 950,
+          "lat": 24.4539,
+          "lng": 54.3773,
+          "type": "projectiles",
+          "category": "drone_strikes",
+          "description": "Approximate drone strike zones from open-source conflict reporting (5-10 km precision).",
+          "source": "Wikipedia: 2026 Iran conflict (casualty tracker) + U.S. Central Command (CENTCOM) update (March 2, 2026, latest official statement) + CBS News conflict update (March 3, 2026) + The Guardian live coverage (March 3, 2026)",
+          "reported_at_utc": "2026-03-04T10:27:22.099Z",
           "coordinate_precision_km": "5-10"
         },
         {
           "name": "Haifa port infrastructure impact",
           "label": "Critical infrastructure impacts (7d)",
-          "value": 7,
-          "marker_mass": 7,
+          "value": 6,
+          "marker_mass": 6,
           "total_metric": 37,
           "lat": 32.8191,
           "lng": 35.0007,
@@ -671,14 +791,14 @@
           "category": "air_strikes",
           "description": "Approximate air-strike / infrastructure impact locations (5-10 km precision).",
           "source": "Wikipedia: 2026 Iran conflict (casualty tracker) + U.S. Central Command (CENTCOM) update (March 2, 2026, latest official statement) + CBS News conflict update (March 3, 2026) + The Guardian live coverage (March 3, 2026)",
-          "reported_at_utc": "2026-03-04T10:23:19.726Z",
+          "reported_at_utc": "2026-03-04T10:27:22.099Z",
           "coordinate_precision_km": "5-10"
         },
         {
           "name": "Ashkelon energy corridor impact",
           "label": "Critical infrastructure impacts (7d)",
-          "value": 6,
-          "marker_mass": 6,
+          "value": 5,
+          "marker_mass": 5,
           "total_metric": 37,
           "lat": 31.6688,
           "lng": 34.5743,
@@ -686,14 +806,14 @@
           "category": "air_strikes",
           "description": "Approximate air-strike / infrastructure impact locations (5-10 km precision).",
           "source": "Wikipedia: 2026 Iran conflict (casualty tracker) + U.S. Central Command (CENTCOM) update (March 2, 2026, latest official statement) + CBS News conflict update (March 3, 2026) + The Guardian live coverage (March 3, 2026)",
-          "reported_at_utc": "2026-03-04T10:23:19.726Z",
+          "reported_at_utc": "2026-03-04T10:27:22.099Z",
           "coordinate_precision_km": "5-10"
         },
         {
           "name": "Tel Aviv utility corridor impact",
           "label": "Critical infrastructure impacts (7d)",
-          "value": 6,
-          "marker_mass": 6,
+          "value": 5,
+          "marker_mass": 5,
           "total_metric": 37,
           "lat": 32.074,
           "lng": 34.7924,
@@ -701,14 +821,14 @@
           "category": "air_strikes",
           "description": "Approximate air-strike / infrastructure impact locations (5-10 km precision).",
           "source": "Wikipedia: 2026 Iran conflict (casualty tracker) + U.S. Central Command (CENTCOM) update (March 2, 2026, latest official statement) + CBS News conflict update (March 3, 2026) + The Guardian live coverage (March 3, 2026)",
-          "reported_at_utc": "2026-03-04T10:23:19.726Z",
+          "reported_at_utc": "2026-03-04T10:27:22.099Z",
           "coordinate_precision_km": "5-10"
         },
         {
           "name": "Rishon LeZion utility node impact",
           "label": "Critical infrastructure impacts (7d)",
-          "value": 5,
-          "marker_mass": 5,
+          "value": 4,
+          "marker_mass": 4,
           "total_metric": 37,
           "lat": 31.973,
           "lng": 34.7925,
@@ -716,7 +836,7 @@
           "category": "air_strikes",
           "description": "Approximate air-strike / infrastructure impact locations (5-10 km precision).",
           "source": "Wikipedia: 2026 Iran conflict (casualty tracker) + U.S. Central Command (CENTCOM) update (March 2, 2026, latest official statement) + CBS News conflict update (March 3, 2026) + The Guardian live coverage (March 3, 2026)",
-          "reported_at_utc": "2026-03-04T10:23:19.726Z",
+          "reported_at_utc": "2026-03-04T10:27:22.099Z",
           "coordinate_precision_km": "5-10"
         },
         {
@@ -731,7 +851,7 @@
           "category": "air_strikes",
           "description": "Approximate air-strike / infrastructure impact locations (5-10 km precision).",
           "source": "Wikipedia: 2026 Iran conflict (casualty tracker) + U.S. Central Command (CENTCOM) update (March 2, 2026, latest official statement) + CBS News conflict update (March 3, 2026) + The Guardian live coverage (March 3, 2026)",
-          "reported_at_utc": "2026-03-04T10:23:19.726Z",
+          "reported_at_utc": "2026-03-04T10:27:22.099Z",
           "coordinate_precision_km": "5-10"
         },
         {
@@ -746,7 +866,7 @@
           "category": "air_strikes",
           "description": "Approximate air-strike / infrastructure impact locations (5-10 km precision).",
           "source": "Wikipedia: 2026 Iran conflict (casualty tracker) + U.S. Central Command (CENTCOM) update (March 2, 2026, latest official statement) + CBS News conflict update (March 3, 2026) + The Guardian live coverage (March 3, 2026)",
-          "reported_at_utc": "2026-03-04T10:23:19.726Z",
+          "reported_at_utc": "2026-03-04T10:27:22.099Z",
           "coordinate_precision_km": "5-10"
         },
         {
@@ -761,7 +881,7 @@
           "category": "air_strikes",
           "description": "Approximate air-strike / infrastructure impact locations (5-10 km precision).",
           "source": "Wikipedia: 2026 Iran conflict (casualty tracker) + U.S. Central Command (CENTCOM) update (March 2, 2026, latest official statement) + CBS News conflict update (March 3, 2026) + The Guardian live coverage (March 3, 2026)",
-          "reported_at_utc": "2026-03-04T10:23:19.726Z",
+          "reported_at_utc": "2026-03-04T10:27:22.099Z",
           "coordinate_precision_km": "5-10"
         },
         {
@@ -776,14 +896,14 @@
           "category": "air_strikes",
           "description": "Approximate air-strike / infrastructure impact locations (5-10 km precision).",
           "source": "Wikipedia: 2026 Iran conflict (casualty tracker) + U.S. Central Command (CENTCOM) update (March 2, 2026, latest official statement) + CBS News conflict update (March 3, 2026) + The Guardian live coverage (March 3, 2026)",
-          "reported_at_utc": "2026-03-04T10:23:19.726Z",
+          "reported_at_utc": "2026-03-04T10:27:22.099Z",
           "coordinate_precision_km": "5-10"
         },
         {
           "name": "Natanz facility perimeter impact",
           "label": "Critical infrastructure impacts (7d)",
-          "value": 6,
-          "marker_mass": 6,
+          "value": 5,
+          "marker_mass": 5,
           "total_metric": 37,
           "lat": 33.724,
           "lng": 51.722,
@@ -791,14 +911,14 @@
           "category": "air_strikes",
           "description": "Approximate air-strike / infrastructure impact locations (5-10 km precision).",
           "source": "Wikipedia: 2026 Iran conflict (casualty tracker) + U.S. Central Command (CENTCOM) update (March 2, 2026, latest official statement) + CBS News conflict update (March 3, 2026) + The Guardian live coverage (March 3, 2026)",
-          "reported_at_utc": "2026-03-04T10:23:19.726Z",
+          "reported_at_utc": "2026-03-04T10:27:22.099Z",
           "coordinate_precision_km": "5-10"
         },
         {
           "name": "Isfahan industrial corridor impact",
           "label": "Critical infrastructure impacts (7d)",
-          "value": 5,
-          "marker_mass": 5,
+          "value": 4,
+          "marker_mass": 4,
           "total_metric": 37,
           "lat": 32.673,
           "lng": 51.688,
@@ -806,7 +926,7 @@
           "category": "air_strikes",
           "description": "Approximate air-strike / infrastructure impact locations (5-10 km precision).",
           "source": "Wikipedia: 2026 Iran conflict (casualty tracker) + U.S. Central Command (CENTCOM) update (March 2, 2026, latest official statement) + CBS News conflict update (March 3, 2026) + The Guardian live coverage (March 3, 2026)",
-          "reported_at_utc": "2026-03-04T10:23:19.726Z",
+          "reported_at_utc": "2026-03-04T10:27:22.099Z",
           "coordinate_precision_km": "5-10"
         },
         {
@@ -821,14 +941,14 @@
           "category": "air_strikes",
           "description": "Approximate air-strike / infrastructure impact locations (5-10 km precision).",
           "source": "Wikipedia: 2026 Iran conflict (casualty tracker) + U.S. Central Command (CENTCOM) update (March 2, 2026, latest official statement) + CBS News conflict update (March 3, 2026) + The Guardian live coverage (March 3, 2026)",
-          "reported_at_utc": "2026-03-04T10:23:19.726Z",
+          "reported_at_utc": "2026-03-04T10:27:22.099Z",
           "coordinate_precision_km": "5-10"
         },
         {
           "name": "Tabriz industrial corridor impact",
           "label": "Critical infrastructure impacts (7d)",
-          "value": 4,
-          "marker_mass": 4,
+          "value": 3,
+          "marker_mass": 3,
           "total_metric": 37,
           "lat": 38.08,
           "lng": 46.29,
@@ -836,14 +956,14 @@
           "category": "air_strikes",
           "description": "Approximate air-strike / infrastructure impact locations (5-10 km precision).",
           "source": "Wikipedia: 2026 Iran conflict (casualty tracker) + U.S. Central Command (CENTCOM) update (March 2, 2026, latest official statement) + CBS News conflict update (March 3, 2026) + The Guardian live coverage (March 3, 2026)",
-          "reported_at_utc": "2026-03-04T10:23:19.726Z",
+          "reported_at_utc": "2026-03-04T10:27:22.099Z",
           "coordinate_precision_km": "5-10"
         },
         {
           "name": "Arak industrial corridor impact",
           "label": "Critical infrastructure impacts (7d)",
-          "value": 4,
-          "marker_mass": 4,
+          "value": 3,
+          "marker_mass": 3,
           "total_metric": 37,
           "lat": 34.0917,
           "lng": 49.6892,
@@ -851,7 +971,7 @@
           "category": "air_strikes",
           "description": "Approximate air-strike / infrastructure impact locations (5-10 km precision).",
           "source": "Wikipedia: 2026 Iran conflict (casualty tracker) + U.S. Central Command (CENTCOM) update (March 2, 2026, latest official statement) + CBS News conflict update (March 3, 2026) + The Guardian live coverage (March 3, 2026)",
-          "reported_at_utc": "2026-03-04T10:23:19.726Z",
+          "reported_at_utc": "2026-03-04T10:27:22.099Z",
           "coordinate_precision_km": "5-10"
         },
         {
@@ -866,14 +986,74 @@
           "category": "air_strikes",
           "description": "Approximate air-strike / infrastructure impact locations (5-10 km precision).",
           "source": "Wikipedia: 2026 Iran conflict (casualty tracker) + U.S. Central Command (CENTCOM) update (March 2, 2026, latest official statement) + CBS News conflict update (March 3, 2026) + The Guardian live coverage (March 3, 2026)",
-          "reported_at_utc": "2026-03-04T10:23:19.726Z",
+          "reported_at_utc": "2026-03-04T10:27:22.099Z",
+          "coordinate_precision_km": "5-10"
+        },
+        {
+          "name": "Jubail industrial impact cluster (Saudi Arabia)",
+          "label": "Critical infrastructure impacts (7d)",
+          "value": 2,
+          "marker_mass": 2,
+          "total_metric": 37,
+          "lat": 27.0174,
+          "lng": 49.6225,
+          "type": "operations",
+          "category": "air_strikes",
+          "description": "Approximate air-strike / infrastructure impact locations (5-10 km precision).",
+          "source": "Wikipedia: 2026 Iran conflict (casualty tracker) + U.S. Central Command (CENTCOM) update (March 2, 2026, latest official statement) + CBS News conflict update (March 3, 2026) + The Guardian live coverage (March 3, 2026)",
+          "reported_at_utc": "2026-03-04T10:27:22.099Z",
+          "coordinate_precision_km": "5-10"
+        },
+        {
+          "name": "Ras Tanura energy impact cluster (Saudi Arabia)",
+          "label": "Critical infrastructure impacts (7d)",
+          "value": 2,
+          "marker_mass": 2,
+          "total_metric": 37,
+          "lat": 26.6439,
+          "lng": 50.1582,
+          "type": "operations",
+          "category": "air_strikes",
+          "description": "Approximate air-strike / infrastructure impact locations (5-10 km precision).",
+          "source": "Wikipedia: 2026 Iran conflict (casualty tracker) + U.S. Central Command (CENTCOM) update (March 2, 2026, latest official statement) + CBS News conflict update (March 3, 2026) + The Guardian live coverage (March 3, 2026)",
+          "reported_at_utc": "2026-03-04T10:27:22.099Z",
+          "coordinate_precision_km": "5-10"
+        },
+        {
+          "name": "Manama logistics impact cluster (Bahrain)",
+          "label": "Critical infrastructure impacts (7d)",
+          "value": 2,
+          "marker_mass": 2,
+          "total_metric": 37,
+          "lat": 26.2235,
+          "lng": 50.5876,
+          "type": "operations",
+          "category": "air_strikes",
+          "description": "Approximate air-strike / infrastructure impact locations (5-10 km precision).",
+          "source": "Wikipedia: 2026 Iran conflict (casualty tracker) + U.S. Central Command (CENTCOM) update (March 2, 2026, latest official statement) + CBS News conflict update (March 3, 2026) + The Guardian live coverage (March 3, 2026)",
+          "reported_at_utc": "2026-03-04T10:27:22.099Z",
+          "coordinate_precision_km": "5-10"
+        },
+        {
+          "name": "Kuwait City utility impact cluster (Kuwait)",
+          "label": "Critical infrastructure impacts (7d)",
+          "value": 2,
+          "marker_mass": 2,
+          "total_metric": 37,
+          "lat": 29.3759,
+          "lng": 47.9774,
+          "type": "operations",
+          "category": "air_strikes",
+          "description": "Approximate air-strike / infrastructure impact locations (5-10 km precision).",
+          "source": "Wikipedia: 2026 Iran conflict (casualty tracker) + U.S. Central Command (CENTCOM) update (March 2, 2026, latest official statement) + CBS News conflict update (March 3, 2026) + The Guardian live coverage (March 3, 2026)",
+          "reported_at_utc": "2026-03-04T10:27:22.099Z",
           "coordinate_precision_km": "5-10"
         },
         {
           "name": "Tehran casualty concentration",
           "label": "Casualty concentration",
-          "value": 16,
-          "marker_mass": 16,
+          "value": 13,
+          "marker_mass": 13,
           "total_metric": 2302,
           "lat": 35.6892,
           "lng": 51.389,
@@ -881,14 +1061,14 @@
           "category": "casualties",
           "description": "Approximate casualty concentration zones derived from reported killed/injured totals (5-10 km precision).",
           "source": "Wikipedia: 2026 Iran conflict (casualty tracker) + U.S. Central Command (CENTCOM) update (March 2, 2026, latest official statement) + CBS News conflict update (March 3, 2026) + The Guardian live coverage (March 3, 2026)",
-          "reported_at_utc": "2026-03-04T10:23:19.726Z",
+          "reported_at_utc": "2026-03-04T10:27:22.099Z",
           "coordinate_precision_km": "5-10"
         },
         {
           "name": "Tel Aviv casualty concentration",
           "label": "Casualty concentration",
-          "value": 13,
-          "marker_mass": 13,
+          "value": 12,
+          "marker_mass": 12,
           "total_metric": 2302,
           "lat": 32.0853,
           "lng": 34.7818,
@@ -896,14 +1076,14 @@
           "category": "casualties",
           "description": "Approximate casualty concentration zones derived from reported killed/injured totals (5-10 km precision).",
           "source": "Wikipedia: 2026 Iran conflict (casualty tracker) + U.S. Central Command (CENTCOM) update (March 2, 2026, latest official statement) + CBS News conflict update (March 3, 2026) + The Guardian live coverage (March 3, 2026)",
-          "reported_at_utc": "2026-03-04T10:23:19.726Z",
+          "reported_at_utc": "2026-03-04T10:27:22.099Z",
           "coordinate_precision_km": "5-10"
         },
         {
           "name": "Haifa casualty concentration",
           "label": "Casualty concentration",
-          "value": 12,
-          "marker_mass": 12,
+          "value": 11,
+          "marker_mass": 11,
           "total_metric": 2302,
           "lat": 32.794,
           "lng": 34.9896,
@@ -911,14 +1091,14 @@
           "category": "casualties",
           "description": "Approximate casualty concentration zones derived from reported killed/injured totals (5-10 km precision).",
           "source": "Wikipedia: 2026 Iran conflict (casualty tracker) + U.S. Central Command (CENTCOM) update (March 2, 2026, latest official statement) + CBS News conflict update (March 3, 2026) + The Guardian live coverage (March 3, 2026)",
-          "reported_at_utc": "2026-03-04T10:23:19.726Z",
+          "reported_at_utc": "2026-03-04T10:27:22.099Z",
           "coordinate_precision_km": "5-10"
         },
         {
           "name": "Jerusalem casualty concentration",
           "label": "Casualty concentration",
-          "value": 11,
-          "marker_mass": 11,
+          "value": 10,
+          "marker_mass": 10,
           "total_metric": 2302,
           "lat": 31.7683,
           "lng": 35.2137,
@@ -926,14 +1106,14 @@
           "category": "casualties",
           "description": "Approximate casualty concentration zones derived from reported killed/injured totals (5-10 km precision).",
           "source": "Wikipedia: 2026 Iran conflict (casualty tracker) + U.S. Central Command (CENTCOM) update (March 2, 2026, latest official statement) + CBS News conflict update (March 3, 2026) + The Guardian live coverage (March 3, 2026)",
-          "reported_at_utc": "2026-03-04T10:23:19.726Z",
+          "reported_at_utc": "2026-03-04T10:27:22.099Z",
           "coordinate_precision_km": "5-10"
         },
         {
           "name": "Isfahan casualty concentration",
           "label": "Casualty concentration",
-          "value": 10,
-          "marker_mass": 10,
+          "value": 9,
+          "marker_mass": 9,
           "total_metric": 2302,
           "lat": 32.6546,
           "lng": 51.668,
@@ -941,14 +1121,14 @@
           "category": "casualties",
           "description": "Approximate casualty concentration zones derived from reported killed/injured totals (5-10 km precision).",
           "source": "Wikipedia: 2026 Iran conflict (casualty tracker) + U.S. Central Command (CENTCOM) update (March 2, 2026, latest official statement) + CBS News conflict update (March 3, 2026) + The Guardian live coverage (March 3, 2026)",
-          "reported_at_utc": "2026-03-04T10:23:19.726Z",
+          "reported_at_utc": "2026-03-04T10:27:22.099Z",
           "coordinate_precision_km": "5-10"
         },
         {
           "name": "Beersheba casualty concentration",
           "label": "Casualty concentration",
-          "value": 9,
-          "marker_mass": 9,
+          "value": 8,
+          "marker_mass": 8,
           "total_metric": 2302,
           "lat": 31.252,
           "lng": 34.7915,
@@ -956,14 +1136,14 @@
           "category": "casualties",
           "description": "Approximate casualty concentration zones derived from reported killed/injured totals (5-10 km precision).",
           "source": "Wikipedia: 2026 Iran conflict (casualty tracker) + U.S. Central Command (CENTCOM) update (March 2, 2026, latest official statement) + CBS News conflict update (March 3, 2026) + The Guardian live coverage (March 3, 2026)",
-          "reported_at_utc": "2026-03-04T10:23:19.726Z",
+          "reported_at_utc": "2026-03-04T10:27:22.099Z",
           "coordinate_precision_km": "5-10"
         },
         {
           "name": "Ashkelon casualty concentration",
           "label": "Casualty concentration",
-          "value": 9,
-          "marker_mass": 9,
+          "value": 8,
+          "marker_mass": 8,
           "total_metric": 2302,
           "lat": 31.6688,
           "lng": 34.5743,
@@ -971,14 +1151,14 @@
           "category": "casualties",
           "description": "Approximate casualty concentration zones derived from reported killed/injured totals (5-10 km precision).",
           "source": "Wikipedia: 2026 Iran conflict (casualty tracker) + U.S. Central Command (CENTCOM) update (March 2, 2026, latest official statement) + CBS News conflict update (March 3, 2026) + The Guardian live coverage (March 3, 2026)",
-          "reported_at_utc": "2026-03-04T10:23:19.726Z",
+          "reported_at_utc": "2026-03-04T10:27:22.099Z",
           "coordinate_precision_km": "5-10"
         },
         {
           "name": "Tabriz casualty concentration",
           "label": "Casualty concentration",
-          "value": 8,
-          "marker_mass": 8,
+          "value": 7,
+          "marker_mass": 7,
           "total_metric": 2302,
           "lat": 38.0962,
           "lng": 46.2738,
@@ -986,14 +1166,14 @@
           "category": "casualties",
           "description": "Approximate casualty concentration zones derived from reported killed/injured totals (5-10 km precision).",
           "source": "Wikipedia: 2026 Iran conflict (casualty tracker) + U.S. Central Command (CENTCOM) update (March 2, 2026, latest official statement) + CBS News conflict update (March 3, 2026) + The Guardian live coverage (March 3, 2026)",
-          "reported_at_utc": "2026-03-04T10:23:19.726Z",
+          "reported_at_utc": "2026-03-04T10:27:22.099Z",
           "coordinate_precision_km": "5-10"
         },
         {
           "name": "Kermanshah casualty concentration",
           "label": "Casualty concentration",
-          "value": 7,
-          "marker_mass": 7,
+          "value": 6,
+          "marker_mass": 6,
           "total_metric": 2302,
           "lat": 34.3142,
           "lng": 47.065,
@@ -1001,14 +1181,14 @@
           "category": "casualties",
           "description": "Approximate casualty concentration zones derived from reported killed/injured totals (5-10 km precision).",
           "source": "Wikipedia: 2026 Iran conflict (casualty tracker) + U.S. Central Command (CENTCOM) update (March 2, 2026, latest official statement) + CBS News conflict update (March 3, 2026) + The Guardian live coverage (March 3, 2026)",
-          "reported_at_utc": "2026-03-04T10:23:19.726Z",
+          "reported_at_utc": "2026-03-04T10:27:22.099Z",
           "coordinate_precision_km": "5-10"
         },
         {
           "name": "Qom casualty concentration",
           "label": "Casualty concentration",
-          "value": 7,
-          "marker_mass": 7,
+          "value": 6,
+          "marker_mass": 6,
           "total_metric": 2302,
           "lat": 34.6416,
           "lng": 50.8746,
@@ -1016,14 +1196,14 @@
           "category": "casualties",
           "description": "Approximate casualty concentration zones derived from reported killed/injured totals (5-10 km precision).",
           "source": "Wikipedia: 2026 Iran conflict (casualty tracker) + U.S. Central Command (CENTCOM) update (March 2, 2026, latest official statement) + CBS News conflict update (March 3, 2026) + The Guardian live coverage (March 3, 2026)",
-          "reported_at_utc": "2026-03-04T10:23:19.726Z",
+          "reported_at_utc": "2026-03-04T10:27:22.099Z",
           "coordinate_precision_km": "5-10"
         },
         {
           "name": "Shiraz casualty concentration",
           "label": "Casualty concentration",
-          "value": 7,
-          "marker_mass": 7,
+          "value": 6,
+          "marker_mass": 6,
           "total_metric": 2302,
           "lat": 29.5918,
           "lng": 52.5837,
@@ -1031,7 +1211,7 @@
           "category": "casualties",
           "description": "Approximate casualty concentration zones derived from reported killed/injured totals (5-10 km precision).",
           "source": "Wikipedia: 2026 Iran conflict (casualty tracker) + U.S. Central Command (CENTCOM) update (March 2, 2026, latest official statement) + CBS News conflict update (March 3, 2026) + The Guardian live coverage (March 3, 2026)",
-          "reported_at_utc": "2026-03-04T10:23:19.726Z",
+          "reported_at_utc": "2026-03-04T10:27:22.099Z",
           "coordinate_precision_km": "5-10"
         },
         {
@@ -1046,7 +1226,67 @@
           "category": "casualties",
           "description": "Approximate casualty concentration zones derived from reported killed/injured totals (5-10 km precision).",
           "source": "Wikipedia: 2026 Iran conflict (casualty tracker) + U.S. Central Command (CENTCOM) update (March 2, 2026, latest official statement) + CBS News conflict update (March 3, 2026) + The Guardian live coverage (March 3, 2026)",
-          "reported_at_utc": "2026-03-04T10:23:19.726Z",
+          "reported_at_utc": "2026-03-04T10:27:22.099Z",
+          "coordinate_precision_km": "5-10"
+        },
+        {
+          "name": "Manama casualty concentration (Bahrain)",
+          "label": "Casualty concentration",
+          "value": 3,
+          "marker_mass": 3,
+          "total_metric": 2302,
+          "lat": 26.2285,
+          "lng": 50.586,
+          "type": "casualties",
+          "category": "casualties",
+          "description": "Approximate casualty concentration zones derived from reported killed/injured totals (5-10 km precision).",
+          "source": "Wikipedia: 2026 Iran conflict (casualty tracker) + U.S. Central Command (CENTCOM) update (March 2, 2026, latest official statement) + CBS News conflict update (March 3, 2026) + The Guardian live coverage (March 3, 2026)",
+          "reported_at_utc": "2026-03-04T10:27:22.099Z",
+          "coordinate_precision_km": "5-10"
+        },
+        {
+          "name": "Dammam casualty concentration (Saudi Arabia)",
+          "label": "Casualty concentration",
+          "value": 4,
+          "marker_mass": 4,
+          "total_metric": 2302,
+          "lat": 26.4207,
+          "lng": 50.0888,
+          "type": "casualties",
+          "category": "casualties",
+          "description": "Approximate casualty concentration zones derived from reported killed/injured totals (5-10 km precision).",
+          "source": "Wikipedia: 2026 Iran conflict (casualty tracker) + U.S. Central Command (CENTCOM) update (March 2, 2026, latest official statement) + CBS News conflict update (March 3, 2026) + The Guardian live coverage (March 3, 2026)",
+          "reported_at_utc": "2026-03-04T10:27:22.099Z",
+          "coordinate_precision_km": "5-10"
+        },
+        {
+          "name": "Riyadh casualty concentration (Saudi Arabia)",
+          "label": "Casualty concentration",
+          "value": 3,
+          "marker_mass": 3,
+          "total_metric": 2302,
+          "lat": 24.7136,
+          "lng": 46.6753,
+          "type": "casualties",
+          "category": "casualties",
+          "description": "Approximate casualty concentration zones derived from reported killed/injured totals (5-10 km precision).",
+          "source": "Wikipedia: 2026 Iran conflict (casualty tracker) + U.S. Central Command (CENTCOM) update (March 2, 2026, latest official statement) + CBS News conflict update (March 3, 2026) + The Guardian live coverage (March 3, 2026)",
+          "reported_at_utc": "2026-03-04T10:27:22.099Z",
+          "coordinate_precision_km": "5-10"
+        },
+        {
+          "name": "Amman casualty concentration (Jordan)",
+          "label": "Casualty concentration",
+          "value": 3,
+          "marker_mass": 3,
+          "total_metric": 2302,
+          "lat": 31.9539,
+          "lng": 35.9106,
+          "type": "casualties",
+          "category": "casualties",
+          "description": "Approximate casualty concentration zones derived from reported killed/injured totals (5-10 km precision).",
+          "source": "Wikipedia: 2026 Iran conflict (casualty tracker) + U.S. Central Command (CENTCOM) update (March 2, 2026, latest official statement) + CBS News conflict update (March 3, 2026) + The Guardian live coverage (March 3, 2026)",
+          "reported_at_utc": "2026-03-04T10:27:22.099Z",
           "coordinate_precision_km": "5-10"
         }
       ],
@@ -2191,8 +2431,8 @@
       "id": "ukraine_2026",
       "title": "Ukraine Conflict Monitor",
       "subtitle": "Live conflict metrics plus daily composite intensity index (casualties, strike activity, operational impacts), refreshed every hour.",
-      "as_of_utc": "2026-03-04T10:23:19.726Z",
-      "updated_at_utc": "2026-03-04T10:23:19.726Z",
+      "as_of_utc": "2026-03-04T10:27:22.099Z",
+      "updated_at_utc": "2026-03-04T10:27:22.099Z",
       "source_name": "Wikipedia: Russian invasion of Ukraine",
       "source_url": "https://en.wikipedia.org/wiki/Russian_invasion_of_Ukraine",
       "secondary_source_name": "Institute for the Study of War (ISW)",
@@ -2345,7 +2585,7 @@
           "category": "missile_strikes",
           "description": "Approximate strike-incident locations (7-day source-mixed map).",
           "source": "Wikipedia: Russian invasion of Ukraine + Institute for the Study of War (ISW) + OHCHR Ukraine (UN Human Rights) + ACLED (Armed Conflict Location & Event Data)",
-          "reported_at_utc": "2026-03-04T10:23:19.726Z",
+          "reported_at_utc": "2026-03-04T10:27:22.099Z",
           "coordinate_precision_km": "5-10"
         },
         {
@@ -2360,7 +2600,7 @@
           "category": "missile_strikes",
           "description": "Approximate strike-incident locations (7-day source-mixed map).",
           "source": "Wikipedia: Russian invasion of Ukraine + Institute for the Study of War (ISW) + OHCHR Ukraine (UN Human Rights) + ACLED (Armed Conflict Location & Event Data)",
-          "reported_at_utc": "2026-03-04T10:23:19.726Z",
+          "reported_at_utc": "2026-03-04T10:27:22.099Z",
           "coordinate_precision_km": "5-10"
         },
         {
@@ -2375,7 +2615,7 @@
           "category": "missile_strikes",
           "description": "Approximate strike-incident locations (7-day source-mixed map).",
           "source": "Wikipedia: Russian invasion of Ukraine + Institute for the Study of War (ISW) + OHCHR Ukraine (UN Human Rights) + ACLED (Armed Conflict Location & Event Data)",
-          "reported_at_utc": "2026-03-04T10:23:19.726Z",
+          "reported_at_utc": "2026-03-04T10:27:22.099Z",
           "coordinate_precision_km": "5-10"
         },
         {
@@ -2390,7 +2630,7 @@
           "category": "missile_strikes",
           "description": "Approximate strike-incident locations (7-day source-mixed map).",
           "source": "Wikipedia: Russian invasion of Ukraine + Institute for the Study of War (ISW) + OHCHR Ukraine (UN Human Rights) + ACLED (Armed Conflict Location & Event Data)",
-          "reported_at_utc": "2026-03-04T10:23:19.726Z",
+          "reported_at_utc": "2026-03-04T10:27:22.099Z",
           "coordinate_precision_km": "5-10"
         },
         {
@@ -2405,7 +2645,7 @@
           "category": "missile_strikes",
           "description": "Approximate strike-incident locations (7-day source-mixed map).",
           "source": "Wikipedia: Russian invasion of Ukraine + Institute for the Study of War (ISW) + OHCHR Ukraine (UN Human Rights) + ACLED (Armed Conflict Location & Event Data)",
-          "reported_at_utc": "2026-03-04T10:23:19.726Z",
+          "reported_at_utc": "2026-03-04T10:27:22.099Z",
           "coordinate_precision_km": "5-10"
         },
         {
@@ -2420,7 +2660,7 @@
           "category": "missile_strikes",
           "description": "Approximate strike-incident locations (7-day source-mixed map).",
           "source": "Wikipedia: Russian invasion of Ukraine + Institute for the Study of War (ISW) + OHCHR Ukraine (UN Human Rights) + ACLED (Armed Conflict Location & Event Data)",
-          "reported_at_utc": "2026-03-04T10:23:19.726Z",
+          "reported_at_utc": "2026-03-04T10:27:22.099Z",
           "coordinate_precision_km": "5-10"
         },
         {
@@ -2435,7 +2675,7 @@
           "category": "missile_strikes",
           "description": "Approximate strike-incident locations (7-day source-mixed map).",
           "source": "Wikipedia: Russian invasion of Ukraine + Institute for the Study of War (ISW) + OHCHR Ukraine (UN Human Rights) + ACLED (Armed Conflict Location & Event Data)",
-          "reported_at_utc": "2026-03-04T10:23:19.726Z",
+          "reported_at_utc": "2026-03-04T10:27:22.099Z",
           "coordinate_precision_km": "5-10"
         },
         {
@@ -2450,7 +2690,7 @@
           "category": "missile_strikes",
           "description": "Approximate strike-incident locations (7-day source-mixed map).",
           "source": "Wikipedia: Russian invasion of Ukraine + Institute for the Study of War (ISW) + OHCHR Ukraine (UN Human Rights) + ACLED (Armed Conflict Location & Event Data)",
-          "reported_at_utc": "2026-03-04T10:23:19.726Z",
+          "reported_at_utc": "2026-03-04T10:27:22.099Z",
           "coordinate_precision_km": "5-10"
         },
         {
@@ -2465,7 +2705,7 @@
           "category": "missile_strikes",
           "description": "Approximate strike-incident locations (7-day source-mixed map).",
           "source": "Wikipedia: Russian invasion of Ukraine + Institute for the Study of War (ISW) + OHCHR Ukraine (UN Human Rights) + ACLED (Armed Conflict Location & Event Data)",
-          "reported_at_utc": "2026-03-04T10:23:19.726Z",
+          "reported_at_utc": "2026-03-04T10:27:22.099Z",
           "coordinate_precision_km": "5-10"
         },
         {
@@ -2480,7 +2720,7 @@
           "category": "missile_strikes",
           "description": "Approximate strike-incident locations (7-day source-mixed map).",
           "source": "Wikipedia: Russian invasion of Ukraine + Institute for the Study of War (ISW) + OHCHR Ukraine (UN Human Rights) + ACLED (Armed Conflict Location & Event Data)",
-          "reported_at_utc": "2026-03-04T10:23:19.726Z",
+          "reported_at_utc": "2026-03-04T10:27:22.099Z",
           "coordinate_precision_km": "5-10"
         },
         {
@@ -2495,7 +2735,7 @@
           "category": "missile_strikes",
           "description": "Approximate strike-incident locations (7-day source-mixed map).",
           "source": "Wikipedia: Russian invasion of Ukraine + Institute for the Study of War (ISW) + OHCHR Ukraine (UN Human Rights) + ACLED (Armed Conflict Location & Event Data)",
-          "reported_at_utc": "2026-03-04T10:23:19.726Z",
+          "reported_at_utc": "2026-03-04T10:27:22.099Z",
           "coordinate_precision_km": "5-10"
         },
         {
@@ -2510,7 +2750,7 @@
           "category": "missile_strikes",
           "description": "Approximate strike-incident locations (7-day source-mixed map).",
           "source": "Wikipedia: Russian invasion of Ukraine + Institute for the Study of War (ISW) + OHCHR Ukraine (UN Human Rights) + ACLED (Armed Conflict Location & Event Data)",
-          "reported_at_utc": "2026-03-04T10:23:19.726Z",
+          "reported_at_utc": "2026-03-04T10:27:22.099Z",
           "coordinate_precision_km": "5-10"
         },
         {
@@ -2525,7 +2765,7 @@
           "category": "drone_strikes",
           "description": "Approximate drone-wave incident locations (7-day source-mixed map).",
           "source": "Wikipedia: Russian invasion of Ukraine + Institute for the Study of War (ISW) + OHCHR Ukraine (UN Human Rights) + ACLED (Armed Conflict Location & Event Data)",
-          "reported_at_utc": "2026-03-04T10:23:19.726Z",
+          "reported_at_utc": "2026-03-04T10:27:22.099Z",
           "coordinate_precision_km": "5-10"
         },
         {
@@ -2540,7 +2780,7 @@
           "category": "drone_strikes",
           "description": "Approximate drone-wave incident locations (7-day source-mixed map).",
           "source": "Wikipedia: Russian invasion of Ukraine + Institute for the Study of War (ISW) + OHCHR Ukraine (UN Human Rights) + ACLED (Armed Conflict Location & Event Data)",
-          "reported_at_utc": "2026-03-04T10:23:19.726Z",
+          "reported_at_utc": "2026-03-04T10:27:22.099Z",
           "coordinate_precision_km": "5-10"
         },
         {
@@ -2555,7 +2795,7 @@
           "category": "drone_strikes",
           "description": "Approximate drone-wave incident locations (7-day source-mixed map).",
           "source": "Wikipedia: Russian invasion of Ukraine + Institute for the Study of War (ISW) + OHCHR Ukraine (UN Human Rights) + ACLED (Armed Conflict Location & Event Data)",
-          "reported_at_utc": "2026-03-04T10:23:19.726Z",
+          "reported_at_utc": "2026-03-04T10:27:22.099Z",
           "coordinate_precision_km": "5-10"
         },
         {
@@ -2570,7 +2810,7 @@
           "category": "drone_strikes",
           "description": "Approximate drone-wave incident locations (7-day source-mixed map).",
           "source": "Wikipedia: Russian invasion of Ukraine + Institute for the Study of War (ISW) + OHCHR Ukraine (UN Human Rights) + ACLED (Armed Conflict Location & Event Data)",
-          "reported_at_utc": "2026-03-04T10:23:19.726Z",
+          "reported_at_utc": "2026-03-04T10:27:22.099Z",
           "coordinate_precision_km": "5-10"
         },
         {
@@ -2585,7 +2825,7 @@
           "category": "drone_strikes",
           "description": "Approximate drone-wave incident locations (7-day source-mixed map).",
           "source": "Wikipedia: Russian invasion of Ukraine + Institute for the Study of War (ISW) + OHCHR Ukraine (UN Human Rights) + ACLED (Armed Conflict Location & Event Data)",
-          "reported_at_utc": "2026-03-04T10:23:19.726Z",
+          "reported_at_utc": "2026-03-04T10:27:22.099Z",
           "coordinate_precision_km": "5-10"
         },
         {
@@ -2600,7 +2840,7 @@
           "category": "drone_strikes",
           "description": "Approximate drone-wave incident locations (7-day source-mixed map).",
           "source": "Wikipedia: Russian invasion of Ukraine + Institute for the Study of War (ISW) + OHCHR Ukraine (UN Human Rights) + ACLED (Armed Conflict Location & Event Data)",
-          "reported_at_utc": "2026-03-04T10:23:19.726Z",
+          "reported_at_utc": "2026-03-04T10:27:22.099Z",
           "coordinate_precision_km": "5-10"
         },
         {
@@ -2615,7 +2855,7 @@
           "category": "drone_strikes",
           "description": "Approximate drone-wave incident locations (7-day source-mixed map).",
           "source": "Wikipedia: Russian invasion of Ukraine + Institute for the Study of War (ISW) + OHCHR Ukraine (UN Human Rights) + ACLED (Armed Conflict Location & Event Data)",
-          "reported_at_utc": "2026-03-04T10:23:19.726Z",
+          "reported_at_utc": "2026-03-04T10:27:22.099Z",
           "coordinate_precision_km": "5-10"
         },
         {
@@ -2630,7 +2870,7 @@
           "category": "drone_strikes",
           "description": "Approximate drone-wave incident locations (7-day source-mixed map).",
           "source": "Wikipedia: Russian invasion of Ukraine + Institute for the Study of War (ISW) + OHCHR Ukraine (UN Human Rights) + ACLED (Armed Conflict Location & Event Data)",
-          "reported_at_utc": "2026-03-04T10:23:19.726Z",
+          "reported_at_utc": "2026-03-04T10:27:22.099Z",
           "coordinate_precision_km": "5-10"
         },
         {
@@ -2645,7 +2885,7 @@
           "category": "drone_strikes",
           "description": "Approximate drone-wave incident locations (7-day source-mixed map).",
           "source": "Wikipedia: Russian invasion of Ukraine + Institute for the Study of War (ISW) + OHCHR Ukraine (UN Human Rights) + ACLED (Armed Conflict Location & Event Data)",
-          "reported_at_utc": "2026-03-04T10:23:19.726Z",
+          "reported_at_utc": "2026-03-04T10:27:22.099Z",
           "coordinate_precision_km": "5-10"
         },
         {
@@ -2660,7 +2900,7 @@
           "category": "drone_strikes",
           "description": "Approximate drone-wave incident locations (7-day source-mixed map).",
           "source": "Wikipedia: Russian invasion of Ukraine + Institute for the Study of War (ISW) + OHCHR Ukraine (UN Human Rights) + ACLED (Armed Conflict Location & Event Data)",
-          "reported_at_utc": "2026-03-04T10:23:19.726Z",
+          "reported_at_utc": "2026-03-04T10:27:22.099Z",
           "coordinate_precision_km": "5-10"
         },
         {
@@ -2675,7 +2915,7 @@
           "category": "drone_strikes",
           "description": "Approximate drone-wave incident locations (7-day source-mixed map).",
           "source": "Wikipedia: Russian invasion of Ukraine + Institute for the Study of War (ISW) + OHCHR Ukraine (UN Human Rights) + ACLED (Armed Conflict Location & Event Data)",
-          "reported_at_utc": "2026-03-04T10:23:19.726Z",
+          "reported_at_utc": "2026-03-04T10:27:22.099Z",
           "coordinate_precision_km": "5-10"
         },
         {
@@ -2690,7 +2930,7 @@
           "category": "drone_strikes",
           "description": "Approximate drone-wave incident locations (7-day source-mixed map).",
           "source": "Wikipedia: Russian invasion of Ukraine + Institute for the Study of War (ISW) + OHCHR Ukraine (UN Human Rights) + ACLED (Armed Conflict Location & Event Data)",
-          "reported_at_utc": "2026-03-04T10:23:19.726Z",
+          "reported_at_utc": "2026-03-04T10:27:22.099Z",
           "coordinate_precision_km": "5-10"
         },
         {
@@ -2705,7 +2945,7 @@
           "category": "air_strikes",
           "description": "Approximate infrastructure impact locations (7-day source-mixed map).",
           "source": "Wikipedia: Russian invasion of Ukraine + Institute for the Study of War (ISW) + OHCHR Ukraine (UN Human Rights) + ACLED (Armed Conflict Location & Event Data)",
-          "reported_at_utc": "2026-03-04T10:23:19.726Z",
+          "reported_at_utc": "2026-03-04T10:27:22.099Z",
           "coordinate_precision_km": "5-10"
         },
         {
@@ -2720,7 +2960,7 @@
           "category": "air_strikes",
           "description": "Approximate infrastructure impact locations (7-day source-mixed map).",
           "source": "Wikipedia: Russian invasion of Ukraine + Institute for the Study of War (ISW) + OHCHR Ukraine (UN Human Rights) + ACLED (Armed Conflict Location & Event Data)",
-          "reported_at_utc": "2026-03-04T10:23:19.726Z",
+          "reported_at_utc": "2026-03-04T10:27:22.099Z",
           "coordinate_precision_km": "5-10"
         },
         {
@@ -2735,7 +2975,7 @@
           "category": "air_strikes",
           "description": "Approximate infrastructure impact locations (7-day source-mixed map).",
           "source": "Wikipedia: Russian invasion of Ukraine + Institute for the Study of War (ISW) + OHCHR Ukraine (UN Human Rights) + ACLED (Armed Conflict Location & Event Data)",
-          "reported_at_utc": "2026-03-04T10:23:19.726Z",
+          "reported_at_utc": "2026-03-04T10:27:22.099Z",
           "coordinate_precision_km": "5-10"
         },
         {
@@ -2750,7 +2990,7 @@
           "category": "air_strikes",
           "description": "Approximate infrastructure impact locations (7-day source-mixed map).",
           "source": "Wikipedia: Russian invasion of Ukraine + Institute for the Study of War (ISW) + OHCHR Ukraine (UN Human Rights) + ACLED (Armed Conflict Location & Event Data)",
-          "reported_at_utc": "2026-03-04T10:23:19.726Z",
+          "reported_at_utc": "2026-03-04T10:27:22.099Z",
           "coordinate_precision_km": "5-10"
         },
         {
@@ -2765,7 +3005,7 @@
           "category": "air_strikes",
           "description": "Approximate infrastructure impact locations (7-day source-mixed map).",
           "source": "Wikipedia: Russian invasion of Ukraine + Institute for the Study of War (ISW) + OHCHR Ukraine (UN Human Rights) + ACLED (Armed Conflict Location & Event Data)",
-          "reported_at_utc": "2026-03-04T10:23:19.726Z",
+          "reported_at_utc": "2026-03-04T10:27:22.099Z",
           "coordinate_precision_km": "5-10"
         },
         {
@@ -2780,7 +3020,7 @@
           "category": "air_strikes",
           "description": "Approximate infrastructure impact locations (7-day source-mixed map).",
           "source": "Wikipedia: Russian invasion of Ukraine + Institute for the Study of War (ISW) + OHCHR Ukraine (UN Human Rights) + ACLED (Armed Conflict Location & Event Data)",
-          "reported_at_utc": "2026-03-04T10:23:19.726Z",
+          "reported_at_utc": "2026-03-04T10:27:22.099Z",
           "coordinate_precision_km": "5-10"
         },
         {
@@ -2795,7 +3035,7 @@
           "category": "air_strikes",
           "description": "Approximate infrastructure impact locations (7-day source-mixed map).",
           "source": "Wikipedia: Russian invasion of Ukraine + Institute for the Study of War (ISW) + OHCHR Ukraine (UN Human Rights) + ACLED (Armed Conflict Location & Event Data)",
-          "reported_at_utc": "2026-03-04T10:23:19.726Z",
+          "reported_at_utc": "2026-03-04T10:27:22.099Z",
           "coordinate_precision_km": "5-10"
         },
         {
@@ -2810,7 +3050,7 @@
           "category": "air_strikes",
           "description": "Approximate infrastructure impact locations (7-day source-mixed map).",
           "source": "Wikipedia: Russian invasion of Ukraine + Institute for the Study of War (ISW) + OHCHR Ukraine (UN Human Rights) + ACLED (Armed Conflict Location & Event Data)",
-          "reported_at_utc": "2026-03-04T10:23:19.726Z",
+          "reported_at_utc": "2026-03-04T10:27:22.099Z",
           "coordinate_precision_km": "5-10"
         },
         {
@@ -2825,7 +3065,7 @@
           "category": "air_strikes",
           "description": "Approximate infrastructure impact locations (7-day source-mixed map).",
           "source": "Wikipedia: Russian invasion of Ukraine + Institute for the Study of War (ISW) + OHCHR Ukraine (UN Human Rights) + ACLED (Armed Conflict Location & Event Data)",
-          "reported_at_utc": "2026-03-04T10:23:19.726Z",
+          "reported_at_utc": "2026-03-04T10:27:22.099Z",
           "coordinate_precision_km": "5-10"
         },
         {
@@ -2840,7 +3080,7 @@
           "category": "air_strikes",
           "description": "Approximate infrastructure impact locations (7-day source-mixed map).",
           "source": "Wikipedia: Russian invasion of Ukraine + Institute for the Study of War (ISW) + OHCHR Ukraine (UN Human Rights) + ACLED (Armed Conflict Location & Event Data)",
-          "reported_at_utc": "2026-03-04T10:23:19.726Z",
+          "reported_at_utc": "2026-03-04T10:27:22.099Z",
           "coordinate_precision_km": "5-10"
         },
         {
@@ -2855,7 +3095,7 @@
           "category": "frontline_ops",
           "description": "Approximate frontline pressure clusters from source-mixed operational reporting.",
           "source": "Wikipedia: Russian invasion of Ukraine + Institute for the Study of War (ISW) + OHCHR Ukraine (UN Human Rights) + ACLED (Armed Conflict Location & Event Data)",
-          "reported_at_utc": "2026-03-04T10:23:19.726Z",
+          "reported_at_utc": "2026-03-04T10:27:22.099Z",
           "coordinate_precision_km": "5-10"
         },
         {
@@ -2870,7 +3110,7 @@
           "category": "frontline_ops",
           "description": "Approximate frontline pressure clusters from source-mixed operational reporting.",
           "source": "Wikipedia: Russian invasion of Ukraine + Institute for the Study of War (ISW) + OHCHR Ukraine (UN Human Rights) + ACLED (Armed Conflict Location & Event Data)",
-          "reported_at_utc": "2026-03-04T10:23:19.726Z",
+          "reported_at_utc": "2026-03-04T10:27:22.099Z",
           "coordinate_precision_km": "5-10"
         },
         {
@@ -2885,7 +3125,7 @@
           "category": "frontline_ops",
           "description": "Approximate frontline pressure clusters from source-mixed operational reporting.",
           "source": "Wikipedia: Russian invasion of Ukraine + Institute for the Study of War (ISW) + OHCHR Ukraine (UN Human Rights) + ACLED (Armed Conflict Location & Event Data)",
-          "reported_at_utc": "2026-03-04T10:23:19.726Z",
+          "reported_at_utc": "2026-03-04T10:27:22.099Z",
           "coordinate_precision_km": "5-10"
         },
         {
@@ -2900,7 +3140,7 @@
           "category": "frontline_ops",
           "description": "Approximate frontline pressure clusters from source-mixed operational reporting.",
           "source": "Wikipedia: Russian invasion of Ukraine + Institute for the Study of War (ISW) + OHCHR Ukraine (UN Human Rights) + ACLED (Armed Conflict Location & Event Data)",
-          "reported_at_utc": "2026-03-04T10:23:19.726Z",
+          "reported_at_utc": "2026-03-04T10:27:22.099Z",
           "coordinate_precision_km": "5-10"
         },
         {
@@ -2915,7 +3155,7 @@
           "category": "frontline_ops",
           "description": "Approximate frontline pressure clusters from source-mixed operational reporting.",
           "source": "Wikipedia: Russian invasion of Ukraine + Institute for the Study of War (ISW) + OHCHR Ukraine (UN Human Rights) + ACLED (Armed Conflict Location & Event Data)",
-          "reported_at_utc": "2026-03-04T10:23:19.726Z",
+          "reported_at_utc": "2026-03-04T10:27:22.099Z",
           "coordinate_precision_km": "5-10"
         },
         {
@@ -2930,7 +3170,7 @@
           "category": "frontline_ops",
           "description": "Approximate frontline pressure clusters from source-mixed operational reporting.",
           "source": "Wikipedia: Russian invasion of Ukraine + Institute for the Study of War (ISW) + OHCHR Ukraine (UN Human Rights) + ACLED (Armed Conflict Location & Event Data)",
-          "reported_at_utc": "2026-03-04T10:23:19.726Z",
+          "reported_at_utc": "2026-03-04T10:27:22.099Z",
           "coordinate_precision_km": "5-10"
         },
         {
@@ -2945,7 +3185,7 @@
           "category": "frontline_ops",
           "description": "Approximate frontline pressure clusters from source-mixed operational reporting.",
           "source": "Wikipedia: Russian invasion of Ukraine + Institute for the Study of War (ISW) + OHCHR Ukraine (UN Human Rights) + ACLED (Armed Conflict Location & Event Data)",
-          "reported_at_utc": "2026-03-04T10:23:19.726Z",
+          "reported_at_utc": "2026-03-04T10:27:22.099Z",
           "coordinate_precision_km": "5-10"
         },
         {
@@ -2960,7 +3200,7 @@
           "category": "frontline_ops",
           "description": "Approximate frontline pressure clusters from source-mixed operational reporting.",
           "source": "Wikipedia: Russian invasion of Ukraine + Institute for the Study of War (ISW) + OHCHR Ukraine (UN Human Rights) + ACLED (Armed Conflict Location & Event Data)",
-          "reported_at_utc": "2026-03-04T10:23:19.726Z",
+          "reported_at_utc": "2026-03-04T10:27:22.099Z",
           "coordinate_precision_km": "5-10"
         },
         {
@@ -2975,7 +3215,7 @@
           "category": "casualties",
           "description": "Approximate casualty concentration zones derived from reported killed/injured totals (5-10 km precision).",
           "source": "Wikipedia: Russian invasion of Ukraine + Institute for the Study of War (ISW) + OHCHR Ukraine (UN Human Rights) + ACLED (Armed Conflict Location & Event Data)",
-          "reported_at_utc": "2026-03-04T10:23:19.726Z",
+          "reported_at_utc": "2026-03-04T10:27:22.099Z",
           "coordinate_precision_km": "5-10"
         },
         {
@@ -2990,7 +3230,7 @@
           "category": "casualties",
           "description": "Approximate casualty concentration zones derived from reported killed/injured totals (5-10 km precision).",
           "source": "Wikipedia: Russian invasion of Ukraine + Institute for the Study of War (ISW) + OHCHR Ukraine (UN Human Rights) + ACLED (Armed Conflict Location & Event Data)",
-          "reported_at_utc": "2026-03-04T10:23:19.726Z",
+          "reported_at_utc": "2026-03-04T10:27:22.099Z",
           "coordinate_precision_km": "5-10"
         },
         {
@@ -3005,7 +3245,7 @@
           "category": "casualties",
           "description": "Approximate casualty concentration zones derived from reported killed/injured totals (5-10 km precision).",
           "source": "Wikipedia: Russian invasion of Ukraine + Institute for the Study of War (ISW) + OHCHR Ukraine (UN Human Rights) + ACLED (Armed Conflict Location & Event Data)",
-          "reported_at_utc": "2026-03-04T10:23:19.726Z",
+          "reported_at_utc": "2026-03-04T10:27:22.099Z",
           "coordinate_precision_km": "5-10"
         },
         {
@@ -3020,7 +3260,7 @@
           "category": "casualties",
           "description": "Approximate casualty concentration zones derived from reported killed/injured totals (5-10 km precision).",
           "source": "Wikipedia: Russian invasion of Ukraine + Institute for the Study of War (ISW) + OHCHR Ukraine (UN Human Rights) + ACLED (Armed Conflict Location & Event Data)",
-          "reported_at_utc": "2026-03-04T10:23:19.726Z",
+          "reported_at_utc": "2026-03-04T10:27:22.099Z",
           "coordinate_precision_km": "5-10"
         },
         {
@@ -3035,7 +3275,7 @@
           "category": "casualties",
           "description": "Approximate casualty concentration zones derived from reported killed/injured totals (5-10 km precision).",
           "source": "Wikipedia: Russian invasion of Ukraine + Institute for the Study of War (ISW) + OHCHR Ukraine (UN Human Rights) + ACLED (Armed Conflict Location & Event Data)",
-          "reported_at_utc": "2026-03-04T10:23:19.726Z",
+          "reported_at_utc": "2026-03-04T10:27:22.099Z",
           "coordinate_precision_km": "5-10"
         },
         {
@@ -3050,7 +3290,7 @@
           "category": "casualties",
           "description": "Approximate casualty concentration zones derived from reported killed/injured totals (5-10 km precision).",
           "source": "Wikipedia: Russian invasion of Ukraine + Institute for the Study of War (ISW) + OHCHR Ukraine (UN Human Rights) + ACLED (Armed Conflict Location & Event Data)",
-          "reported_at_utc": "2026-03-04T10:23:19.726Z",
+          "reported_at_utc": "2026-03-04T10:27:22.099Z",
           "coordinate_precision_km": "5-10"
         },
         {
@@ -3065,7 +3305,7 @@
           "category": "casualties",
           "description": "Approximate casualty concentration zones derived from reported killed/injured totals (5-10 km precision).",
           "source": "Wikipedia: Russian invasion of Ukraine + Institute for the Study of War (ISW) + OHCHR Ukraine (UN Human Rights) + ACLED (Armed Conflict Location & Event Data)",
-          "reported_at_utc": "2026-03-04T10:23:19.726Z",
+          "reported_at_utc": "2026-03-04T10:27:22.099Z",
           "coordinate_precision_km": "5-10"
         },
         {
@@ -3080,7 +3320,7 @@
           "category": "casualties",
           "description": "Approximate casualty concentration zones derived from reported killed/injured totals (5-10 km precision).",
           "source": "Wikipedia: Russian invasion of Ukraine + Institute for the Study of War (ISW) + OHCHR Ukraine (UN Human Rights) + ACLED (Armed Conflict Location & Event Data)",
-          "reported_at_utc": "2026-03-04T10:23:19.726Z",
+          "reported_at_utc": "2026-03-04T10:27:22.099Z",
           "coordinate_precision_km": "5-10"
         },
         {
@@ -3095,7 +3335,7 @@
           "category": "casualties",
           "description": "Approximate casualty concentration zones derived from reported killed/injured totals (5-10 km precision).",
           "source": "Wikipedia: Russian invasion of Ukraine + Institute for the Study of War (ISW) + OHCHR Ukraine (UN Human Rights) + ACLED (Armed Conflict Location & Event Data)",
-          "reported_at_utc": "2026-03-04T10:23:19.726Z",
+          "reported_at_utc": "2026-03-04T10:27:22.099Z",
           "coordinate_precision_km": "5-10"
         },
         {
@@ -3110,7 +3350,7 @@
           "category": "casualties",
           "description": "Approximate casualty concentration zones derived from reported killed/injured totals (5-10 km precision).",
           "source": "Wikipedia: Russian invasion of Ukraine + Institute for the Study of War (ISW) + OHCHR Ukraine (UN Human Rights) + ACLED (Armed Conflict Location & Event Data)",
-          "reported_at_utc": "2026-03-04T10:23:19.726Z",
+          "reported_at_utc": "2026-03-04T10:27:22.099Z",
           "coordinate_precision_km": "5-10"
         },
         {
@@ -3125,7 +3365,7 @@
           "category": "casualties",
           "description": "Approximate casualty concentration zones derived from reported killed/injured totals (5-10 km precision).",
           "source": "Wikipedia: Russian invasion of Ukraine + Institute for the Study of War (ISW) + OHCHR Ukraine (UN Human Rights) + ACLED (Armed Conflict Location & Event Data)",
-          "reported_at_utc": "2026-03-04T10:23:19.726Z",
+          "reported_at_utc": "2026-03-04T10:27:22.099Z",
           "coordinate_precision_km": "5-10"
         },
         {
@@ -3140,7 +3380,7 @@
           "category": "casualties",
           "description": "Approximate casualty concentration zones derived from reported killed/injured totals (5-10 km precision).",
           "source": "Wikipedia: Russian invasion of Ukraine + Institute for the Study of War (ISW) + OHCHR Ukraine (UN Human Rights) + ACLED (Armed Conflict Location & Event Data)",
-          "reported_at_utc": "2026-03-04T10:23:19.726Z",
+          "reported_at_utc": "2026-03-04T10:27:22.099Z",
           "coordinate_precision_km": "5-10"
         }
       ],

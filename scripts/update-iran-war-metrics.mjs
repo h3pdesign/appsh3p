@@ -236,7 +236,11 @@ function refreshMapPoints(conflict, now) {
       { name: 'Arak area strike cluster', lat: 34.0917, lng: 49.6892, weight: 0.6 },
       { name: 'Hamedan area strike cluster', lat: 34.7992, lng: 48.5146, weight: 0.56 },
       { name: 'Yazd area strike cluster', lat: 31.8974, lng: 54.3569, weight: 0.52 },
-      { name: 'Bushehr area strike cluster', lat: 28.9234, lng: 50.8203, weight: 0.5 }
+      { name: 'Bushehr area strike cluster', lat: 28.9234, lng: 50.8203, weight: 0.5 },
+      { name: 'Manama strike-alert cluster (Bahrain)', lat: 26.2285, lng: 50.586, weight: 0.42 },
+      { name: 'Dammam strike-alert cluster (Saudi Arabia)', lat: 26.4207, lng: 50.0888, weight: 0.44 },
+      { name: 'Riyadh strike-alert cluster (Saudi Arabia)', lat: 24.7136, lng: 46.6753, weight: 0.38 },
+      { name: 'Basra strike-alert cluster (Iraq)', lat: 30.5085, lng: 47.7804, weight: 0.4 }
     ]
 
     const droneSites = [
@@ -257,7 +261,11 @@ function refreshMapPoints(conflict, now) {
       { name: 'Qazvin drone strike zone', lat: 36.2797, lng: 50.0049, weight: 0.52 },
       { name: 'Kerman drone strike zone', lat: 30.2839, lng: 57.0834, weight: 0.48 },
       { name: 'Rasht drone strike zone', lat: 37.2808, lng: 49.5832, weight: 0.45 },
-      { name: 'Semnan drone strike zone', lat: 35.5729, lng: 53.3971, weight: 0.42 }
+      { name: 'Semnan drone strike zone', lat: 35.5729, lng: 53.3971, weight: 0.42 },
+      { name: 'Manama drone-alert zone (Bahrain)', lat: 26.227, lng: 50.575, weight: 0.4 },
+      { name: 'Dhahran drone-alert zone (Saudi Arabia)', lat: 26.2361, lng: 50.0393, weight: 0.42 },
+      { name: 'Doha drone-alert zone (Qatar)', lat: 25.2854, lng: 51.531, weight: 0.38 },
+      { name: 'Abu Dhabi drone-alert zone (UAE)', lat: 24.4539, lng: 54.3773, weight: 0.36 }
     ]
 
     const infraSites = [
@@ -274,7 +282,11 @@ function refreshMapPoints(conflict, now) {
       { name: 'Tehran power node impact', lat: 35.701, lng: 51.403, weight: 0.95 },
       { name: 'Tabriz industrial corridor impact', lat: 38.08, lng: 46.29, weight: 0.7 },
       { name: 'Arak industrial corridor impact', lat: 34.0917, lng: 49.6892, weight: 0.66 },
-      { name: 'Bandar Abbas utility corridor impact', lat: 27.1832, lng: 56.2666, weight: 0.6 }
+      { name: 'Bandar Abbas utility corridor impact', lat: 27.1832, lng: 56.2666, weight: 0.6 },
+      { name: 'Jubail industrial impact cluster (Saudi Arabia)', lat: 27.0174, lng: 49.6225, weight: 0.48 },
+      { name: 'Ras Tanura energy impact cluster (Saudi Arabia)', lat: 26.6439, lng: 50.1582, weight: 0.44 },
+      { name: 'Manama logistics impact cluster (Bahrain)', lat: 26.2235, lng: 50.5876, weight: 0.4 },
+      { name: 'Kuwait City utility impact cluster (Kuwait)', lat: 29.3759, lng: 47.9774, weight: 0.38 }
     ]
 
     const casualtySites = [
@@ -289,7 +301,11 @@ function refreshMapPoints(conflict, now) {
       { name: 'Kermanshah casualty concentration', lat: 34.3142, lng: 47.065, weight: 0.64 },
       { name: 'Qom casualty concentration', lat: 34.6416, lng: 50.8746, weight: 0.62 },
       { name: 'Shiraz casualty concentration', lat: 29.5918, lng: 52.5837, weight: 0.58 },
-      { name: 'Ahvaz casualty concentration', lat: 31.3183, lng: 48.6706, weight: 0.55 }
+      { name: 'Ahvaz casualty concentration', lat: 31.3183, lng: 48.6706, weight: 0.55 },
+      { name: 'Manama casualty concentration (Bahrain)', lat: 26.2285, lng: 50.586, weight: 0.34 },
+      { name: 'Dammam casualty concentration (Saudi Arabia)', lat: 26.4207, lng: 50.0888, weight: 0.36 },
+      { name: 'Riyadh casualty concentration (Saudi Arabia)', lat: 24.7136, lng: 46.6753, weight: 0.32 },
+      { name: 'Amman casualty concentration (Jordan)', lat: 31.9539, lng: 35.9106, weight: 0.3 }
     ]
 
     return [
