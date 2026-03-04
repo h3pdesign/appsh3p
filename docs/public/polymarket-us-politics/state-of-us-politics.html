@@ -327,6 +327,22 @@ nav {
   padding: 0.22rem 0.55rem;
 }
 
+.shortcut-toggle-btn {
+  border: 1px solid var(--border-color);
+  background: rgba(255,255,255,0.04);
+  color: var(--text-secondary);
+  border-radius: 999px;
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  padding: 0.24rem 0.6rem;
+  line-height: 1;
+  cursor: pointer;
+}
+.shortcut-toggle-btn:hover {
+  color: var(--text-primary);
+  border-color: var(--text-accent);
+}
+
 .sr-only {
   position: absolute;
   width: 1px;
@@ -2199,6 +2215,7 @@ footer a:hover { border-bottom-color: var(--accent-gold); }
     <div class="nav-controls">
       <label class="theme-select-wrap theme-select-compact" for="themeModeSelect"><select class="theme-select" id="themeModeSelect" aria-label="Theme mode" title="Theme mode"><option value="system">System</option><option value="light">Light</option><option value="dark">Dark</option></select></label>
       <label class="theme-select-wrap theme-select-compact" for="lightVariantSelect"><select class="theme-select" id="lightVariantSelect" aria-label="Light color style" title="Light color style"><option value="classic">Classic</option><option value="vibrant">Vibrant</option></select></label>
+      <button class="shortcut-toggle-btn" id="shortcutToggleBtn" type="button" aria-label="Show keyboard shortcuts">Shortcuts</button>
       <button class="hamburger" id="hamburgerBtn" aria-label="Menu">
         <span></span><span></span><span></span>
       </button>
@@ -3429,7 +3446,7 @@ footer a:hover { border-bottom-color: var(--accent-gold); }
     <h3 id="shortcutOverlayTitle">Keyboard Shortcuts</h3>
     <ul>
       <li><kbd>Alt</kbd> + <kbd>1..9</kbd> Jump sections</li>
-      <li><kbd>?</kbd> Open/close shortcuts</li>
+      <li><kbd>Button</kbd> Open shortcuts</li>
       <li><kbd>Esc</kbd> Close menus/overlays</li>
     </ul>
   </div>
@@ -6530,6 +6547,7 @@ async function refreshLiveData() {
 // ========================================
 const hamburger = document.getElementById('hamburgerBtn');
 const mobileMenu = document.getElementById('mobileMenu');
+const shortcutToggleBtn = document.getElementById('shortcutToggleBtn');
 const themeModeSelect = document.getElementById('themeModeSelect');
 const lightVariantSelect = document.getElementById('lightVariantSelect');
 const systemThemeMedia = window.matchMedia('(prefers-color-scheme: light)');
@@ -6722,32 +6740,29 @@ function initKeyboardShortcuts() {
   const sections = ['summary', 'iran-war', 'ukraine-war', 'foreign', 'presidential', 'trump', 'fed', 'midterms', 'congress', 'legal', 'social', 'methodology'];
   const overlay = document.getElementById('shortcutOverlay');
   const closeOverlay = () => {
-    if (overlay) overlay.hidden = true;
+    if (!overlay || overlay.hidden) return;
+    overlay.hidden = true;
+    announceLive('Keyboard shortcuts closed');
   };
-  const toggleOverlay = () => {
-    if (!overlay) return;
-    overlay.hidden = !overlay.hidden;
-    if (!overlay.hidden) {
-      const title = overlay.querySelector('h3');
-      if (title) title.setAttribute('tabindex', '-1');
-      title?.focus({ preventScroll: true });
-      announceLive('Keyboard shortcuts opened');
-    } else {
-      announceLive('Keyboard shortcuts closed');
-    }
+  const openOverlay = () => {
+    if (!overlay || !overlay.hidden) return;
+    overlay.hidden = false;
+    const title = overlay.querySelector('h3');
+    if (title) title.setAttribute('tabindex', '-1');
+    title?.focus({ preventScroll: true });
+    announceLive('Keyboard shortcuts opened');
   };
+
+  shortcutToggleBtn?.addEventListener('click', () => {
+    if (overlay?.hidden === false) closeOverlay();
+    else openOverlay();
+  });
 
   overlay?.addEventListener('click', event => {
     if (event.target === overlay) closeOverlay();
   });
 
   window.addEventListener('keydown', event => {
-    if (event.key === '?' && !event.altKey && !event.metaKey && !event.ctrlKey) {
-      event.preventDefault();
-      toggleOverlay();
-      return;
-    }
-
     if (event.key === 'Escape') {
       closeOverlay();
       if (mobileMenu?.classList.contains('open')) {
