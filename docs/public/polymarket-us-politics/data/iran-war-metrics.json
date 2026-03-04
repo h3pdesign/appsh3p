@@ -21,7 +21,7 @@
         {
           "type": "casualties",
           "label": "Casualty concentration",
-          "color": "#ef4444"
+          "color": "#c026ff"
         },
         {
           "type": "projectiles",
@@ -4249,7 +4249,7 @@
         {
           "type": "casualties",
           "label": "Casualty concentration",
-          "color": "#ef4444"
+          "color": "#c026ff"
         },
         {
           "type": "projectiles",
