@@ -547,6 +547,41 @@ nav {
   width: 84px;
 }
 
+.map-select {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.28rem;
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  color: var(--text-muted);
+}
+
+.map-select select {
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  background: var(--bg-card);
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  padding: 0.14rem 0.3rem;
+}
+
+.map-mini-btn {
+  border: 1px solid var(--border-color);
+  background: var(--bg-card);
+  color: var(--text-primary);
+  border-radius: 999px;
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  padding: 0.2rem 0.5rem;
+  cursor: pointer;
+}
+
+.map-mini-btn.active {
+  border-color: var(--accent-blue);
+  color: var(--accent-blue);
+}
+
 .conflict-map-toolbar .conflict-map-status {
   border-top: 0;
   padding: 0;
@@ -1159,6 +1194,23 @@ nav {
   background: color-mix(in oklab, white 70%, var(--marker-color, #f59e0b) 30%);
   opacity: 0.45;
   pointer-events: none;
+}
+
+.map-marker-cluster {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 6px;
+  border-radius: 999px;
+  color: #fff;
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  line-height: 1;
+  background: color-mix(in oklab, var(--marker-color, #f59e0b) 85%, black 15%);
+  border: 1px solid color-mix(in oklab, var(--marker-color, #f59e0b) 75%, white 25%);
+  box-shadow: 0 0 0 1px color-mix(in oklab, var(--bg-card) 80%, transparent), 0 0 18px color-mix(in oklab, var(--marker-color, #f59e0b) 58%, transparent);
 }
 
 .conflict-map.map-theme-dark .map-marker-dot,
@@ -1944,9 +1996,28 @@ footer a:hover { border-bottom-color: var(--accent-gold); }
             <label class="map-filter"><input type="checkbox" id="iranFilterMissiles" checked>Missiles</label>
             <label class="map-filter"><input type="checkbox" id="iranFilterDrones" checked>Drones</label>
             <label class="map-filter"><input type="checkbox" id="iranFilterInfra" checked>Infrastructure</label>
-            <label class="map-density">Density <input id="iranDensity" type="range" min="20" max="100" step="10" value="100" aria-label="Iran map marker density"></label>
+            <label class="map-filter"><input type="checkbox" id="iranClusterToggle" checked>Cluster</label>
+            <label class="map-filter"><input type="checkbox" id="iranHeatToggle">Heatmap</label>
             <label class="map-filter"><input type="checkbox" id="iranTerrainToggle" aria-label="Iran terrain map toggle">Terrain</label>
+            <label class="map-select">Window
+              <select id="iranTimeframe" aria-label="Iran map timeframe">
+                <option value="24h">24h</option>
+                <option value="7d" selected>7d</option>
+                <option value="30d">30d</option>
+                <option value="all">All</option>
+              </select>
+            </label>
+            <label class="map-select">Region
+              <select id="iranPreset" aria-label="Iran map region preset">
+                <option value="auto" selected>Auto</option>
+                <option value="core">Iran/Israel Core</option>
+                <option value="gulf">Gulf</option>
+                <option value="wide">Wide Theater</option>
+              </select>
+            </label>
+            <label class="map-density">Density <input id="iranDensity" type="range" min="20" max="100" step="10" value="100" aria-label="Iran map marker density"></label>
           </div>
+          <button class="map-mini-btn" id="iranReplayBtn" type="button">Replay</button>
           <button class="map-reset-btn" id="conflictMapResetBtn" type="button">Reset view</button>
         </div>
         <div class="conflict-trend" id="conflictTrend">
@@ -2022,9 +2093,28 @@ footer a:hover { border-bottom-color: var(--accent-gold); }
             <label class="map-filter"><input type="checkbox" id="ukraineFilterMissiles" checked>Missiles</label>
             <label class="map-filter"><input type="checkbox" id="ukraineFilterDrones" checked>Drones</label>
             <label class="map-filter"><input type="checkbox" id="ukraineFilterInfra" checked>Infrastructure</label>
-            <label class="map-density">Density <input id="ukraineDensity" type="range" min="20" max="100" step="10" value="100" aria-label="Ukraine map marker density"></label>
+            <label class="map-filter"><input type="checkbox" id="ukraineClusterToggle" checked>Cluster</label>
+            <label class="map-filter"><input type="checkbox" id="ukraineHeatToggle">Heatmap</label>
             <label class="map-filter"><input type="checkbox" id="ukraineTerrainToggle" aria-label="Ukraine terrain map toggle">Terrain</label>
+            <label class="map-select">Window
+              <select id="ukraineTimeframe" aria-label="Ukraine map timeframe">
+                <option value="24h">24h</option>
+                <option value="7d" selected>7d</option>
+                <option value="30d">30d</option>
+                <option value="all">All</option>
+              </select>
+            </label>
+            <label class="map-select">Region
+              <select id="ukrainePreset" aria-label="Ukraine map region preset">
+                <option value="auto" selected>Auto</option>
+                <option value="east">East Front</option>
+                <option value="south">South / Black Sea</option>
+                <option value="wide">Nationwide</option>
+              </select>
+            </label>
+            <label class="map-density">Density <input id="ukraineDensity" type="range" min="20" max="100" step="10" value="100" aria-label="Ukraine map marker density"></label>
           </div>
+          <button class="map-mini-btn" id="ukraineReplayBtn" type="button">Replay</button>
           <button class="map-reset-btn" id="ukraineMapResetBtn" type="button">Reset view</button>
         </div>
         <div class="conflict-trend" id="ukraineTrend">
@@ -3016,6 +3106,7 @@ footer a:hover { border-bottom-color: var(--accent-gold); }
 
 <script src="/polymarket-us-politics/cookie-consent.js?v=20260302c" defer></script>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://unpkg.com/leaflet.heat/dist/leaflet-heat.js"></script>
 <script>
 const CONFLICT_MONITOR_URL = '/polymarket-us-politics/data/iran-war-metrics.json';
 const CONFLICT_NEWS_URL = '/polymarket-us-politics/data/conflict-news.json';
@@ -3045,13 +3136,69 @@ const DELAYED_SYNC_MAX_MS = 8 * ONE_HOUR_MS;
 const marketCache = new Map();
 let conflictMap = null;
 let conflictMarkersLayer = null;
+let conflictHeatLayer = null;
 let ukraineMap = null;
 let ukraineMarkersLayer = null;
+let ukraineHeatLayer = null;
 let conflictBaseLayer = null;
 let ukraineBaseLayer = null;
 let conflictMapLayerMode = 'standard';
 const trendStates = new Map();
-const conflictModuleState = { iran: { mapConfig: null, points: [], legend: [], bounds: null, didInitialFit: false, zoomBound: false, densityPercent: 100, filters: { missiles: true, drones: true, infra: true }, redrawQueued: false }, ukraine: { mapConfig: null, points: [], legend: [], bounds: null, didInitialFit: false, zoomBound: false, densityPercent: 100, filters: { missiles: true, drones: true, infra: true }, redrawQueued: false } };
+const MAP_TIME_WINDOWS_MS = { '24h': 24 * ONE_HOUR_MS, '7d': 7 * 24 * ONE_HOUR_MS, '30d': 30 * 24 * ONE_HOUR_MS, all: Infinity };
+const MAP_REGION_PRESETS = {
+  iran: {
+    auto: null,
+    core: { center: [31.9, 41.8], zoom: 5 },
+    gulf: { center: [26.3, 51.4], zoom: 6 },
+    wide: { center: [30.4, 46.8], zoom: 4 }
+  },
+  ukraine: {
+    auto: null,
+    east: { center: [48.6, 37.8], zoom: 6 },
+    south: { center: [46.9, 33.2], zoom: 6 },
+    wide: { center: [49.0, 31.3], zoom: 5 }
+  }
+};
+const conflictModuleState = {
+  iran: {
+    mapConfig: null,
+    points: [],
+    legend: [],
+    bounds: null,
+    didInitialFit: false,
+    zoomBound: false,
+    densityPercent: 100,
+    filters: { missiles: true, drones: true, infra: true },
+    timeFilter: '7d',
+    clusteringEnabled: true,
+    heatEnabled: false,
+    regionPreset: 'auto',
+    replayTimer: null,
+    replayStep: 0,
+    replayLatestTs: null,
+    replayStartTs: null,
+    redrawQueued: false
+  },
+  ukraine: {
+    mapConfig: null,
+    points: [],
+    legend: [],
+    bounds: null,
+    didInitialFit: false,
+    zoomBound: false,
+    densityPercent: 100,
+    filters: { missiles: true, drones: true, infra: true },
+    timeFilter: '7d',
+    clusteringEnabled: true,
+    heatEnabled: false,
+    regionPreset: 'auto',
+    replayTimer: null,
+    replayStep: 0,
+    replayLatestTs: null,
+    replayStartTs: null,
+    redrawQueued: false
+  }
+};
 const legendFilterState = { iran: new Set(), ukraine: new Set() };
 const changeSummaryState = { iran: null, ukraine: null };
 const metricRenderState = { iran: new Map(), ukraine: new Map() };
@@ -4763,8 +4910,93 @@ function buildDisplayPointsForMap(points, zoom, densityPercent = 100) {
   return separateMapPoints(expanded, minDistance);
 }
 
-function markerIconFor(kind, color) {
+function filterPointsByTimeWindow(points, timeFilter, latestTs, replayTs = null) {
+  const list = Array.isArray(points) ? points : [];
+  if (!Number.isFinite(latestTs)) return list;
+
+  const effectiveLatest = Number.isFinite(replayTs) ? replayTs : latestTs;
+  const windowMs = MAP_TIME_WINDOWS_MS[timeFilter] || MAP_TIME_WINDOWS_MS['7d'];
+  if (!Number.isFinite(windowMs) || windowMs === Infinity) {
+    return list.filter(point => {
+      const ts = mapPointTimestamp(point);
+      return !Number.isFinite(ts) || ts <= effectiveLatest;
+    });
+  }
+
+  const minTs = effectiveLatest - windowMs;
+  return list.filter(point => {
+    const ts = mapPointTimestamp(point);
+    return !Number.isFinite(ts) || (ts >= minTs && ts <= effectiveLatest);
+  });
+}
+
+function clusterPoints(points, zoom, enabled = true) {
+  const list = Array.isArray(points) ? points : [];
+  if (!enabled || zoom >= 7 || list.length < 24) return list;
+
+  const cellDegrees = zoom <= 4 ? 1.2 : zoom === 5 ? 0.75 : 0.42;
+  const buckets = new Map();
+
+  list.forEach(point => {
+    const lat = Number(point.displayLat ?? point.lat);
+    const lng = Number(point.displayLng ?? point.lng);
+    if (!Number.isFinite(lat) || !Number.isFinite(lng)) return;
+    const key = `${Math.round(lat / cellDegrees)}:${Math.round(lng / cellDegrees)}`;
+    if (!buckets.has(key)) buckets.set(key, []);
+    buckets.get(key).push(point);
+  });
+
+  const clustered = [];
+  buckets.forEach(bucket => {
+    if (bucket.length === 1) {
+      clustered.push(bucket[0]);
+      return;
+    }
+
+    const weighted = bucket.reduce((acc, point) => {
+      const weight = Math.max(1, Number(point.marker_mass ?? point.value) || 1);
+      acc.lat += Number(point.displayLat ?? point.lat) * weight;
+      acc.lng += Number(point.displayLng ?? point.lng) * weight;
+      acc.w += weight;
+      return acc;
+    }, { lat: 0, lng: 0, w: 0 });
+
+    const byType = {};
+    bucket.forEach(point => {
+      const k = point?.type || 'other';
+      byType[k] = (byType[k] || 0) + 1;
+    });
+    const dominantType = Object.entries(byType).sort((a, b) => b[1] - a[1])[0]?.[0] || bucket[0]?.type;
+    const head = bucket[0];
+
+    clustered.push({
+      ...head,
+      type: dominantType,
+      displayLat: weighted.lat / Math.max(1, weighted.w),
+      displayLng: weighted.lng / Math.max(1, weighted.w),
+      markerKind: 'cluster',
+      clusterCount: bucket.length,
+      clusterMass: weighted.w,
+      markerCountShown: bucket.length,
+      markerCountRaw: bucket.reduce((acc, point) => acc + (Number(point.markerCountRaw) || 1), 0),
+      isCluster: true
+    });
+  });
+
+  return clustered;
+}
+
+function markerIconFor(kind, color, clusterCount = null) {
   if (typeof L === 'undefined') return null;
+  if (kind === 'cluster') {
+    return L.divIcon({
+      className: 'conflict-map-marker-wrap',
+      html: '<span class="map-marker-cluster" style="--marker-color:' + color + ';">' + formatInteger(clusterCount || 0) + '</span>',
+      iconSize: [24, 24],
+      iconAnchor: [12, 12]
+    });
+  }
+
   const cls = kind === 'triangle' ? 'map-marker-triangle' : 'map-marker-dot';
   return L.divIcon({
     className: 'conflict-map-marker-wrap',
@@ -4772,6 +5004,64 @@ function markerIconFor(kind, color) {
     iconSize: [10, 10],
     iconAnchor: [5, 5]
   });
+}
+
+function buildHeatPoints(points) {
+  const list = Array.isArray(points) ? points : [];
+  const maxMass = list.reduce((m, point) => Math.max(m, Number(point.marker_mass ?? point.value) || 1), 1);
+  return list
+    .map(point => {
+      const lat = Number(point.displayLat ?? point.lat);
+      const lng = Number(point.displayLng ?? point.lng);
+      if (!Number.isFinite(lat) || !Number.isFinite(lng)) return null;
+      const rawWeight = (Number(point.marker_mass ?? point.value) || 1) / Math.max(1, maxMass);
+      const weight = Math.max(0.1, Math.min(1, rawWeight));
+      return [lat, lng, weight];
+    })
+    .filter(Boolean);
+}
+
+function applyHeatLayer(mapRef, moduleName, points, enabled) {
+  if (!mapRef) return;
+
+  const prevLayer = moduleName === 'ukraine' ? ukraineHeatLayer : conflictHeatLayer;
+  if (prevLayer) mapRef.removeLayer(prevLayer);
+
+  if (!enabled || !Array.isArray(points) || points.length === 0) {
+    if (moduleName === 'ukraine') ukraineHeatLayer = null;
+    else conflictHeatLayer = null;
+    return;
+  }
+
+  let nextLayer = null;
+  if (typeof L.heatLayer === 'function') {
+    nextLayer = L.heatLayer(buildHeatPoints(points), {
+      radius: 24,
+      blur: 18,
+      maxZoom: 8,
+      gradient: { 0.2: '#1d4ed8', 0.45: '#06b6d4', 0.65: '#f59e0b', 0.85: '#ef4444', 1.0: '#c026ff' }
+    });
+  } else {
+    const fallback = L.layerGroup();
+    const maxMass = points.reduce((m, point) => Math.max(m, Number(point.marker_mass ?? point.value) || 1), 1);
+    points.forEach(point => {
+      const lat = Number(point.displayLat ?? point.lat);
+      const lng = Number(point.displayLng ?? point.lng);
+      if (!Number.isFinite(lat) || !Number.isFinite(lng)) return;
+      const weight = (Number(point.marker_mass ?? point.value) || 1) / Math.max(1, maxMass);
+      L.circle([lat, lng], {
+        radius: 1300 + weight * 4200,
+        stroke: false,
+        fillColor: '#c026ff',
+        fillOpacity: 0.08 + weight * 0.18
+      }).addTo(fallback);
+    });
+    nextLayer = fallback;
+  }
+
+  nextLayer.addTo(mapRef);
+  if (moduleName === 'ukraine') ukraineHeatLayer = nextLayer;
+  else conflictHeatLayer = nextLayer;
 }
 
 function currentThemeMode() {
@@ -4925,7 +5215,8 @@ function classifyMapPointCategory(point) {
   const probe = normalize(String(point?.category || '') + ' ' + String(point?.label || '') + ' ' + String(point?.description || ''));
   if (probe.includes('missile')) return 'missiles';
   if (probe.includes('drone')) return 'drones';
-  if (probe.includes('infrastructure') || probe.includes('air strike') || probe.includes('impact')) return 'infra';
+  if (probe.includes('casual')) return 'casualties';
+  if (probe.includes('infrastructure') || probe.includes('air strike') || probe.includes('impact') || probe.includes('frontline') || probe.includes('operational')) return 'infra';
   return 'infra';
 }
 
@@ -4939,6 +5230,70 @@ function queueRedrawConflictMap(moduleName) {
   });
 }
 
+function updateReplayButtonState(moduleName) {
+  const prefix = moduleName === 'ukraine' ? 'ukraine' : 'iran';
+  const btn = document.getElementById(prefix + 'ReplayBtn');
+  const state = conflictModuleState[moduleName];
+  if (!btn || !state) return;
+  const active = Boolean(state.replayTimer);
+  btn.classList.toggle('active', active);
+  btn.textContent = active ? 'Stop Replay' : 'Replay';
+}
+
+function stopReplay(moduleName) {
+  const state = conflictModuleState[moduleName];
+  if (!state) return;
+  if (state.replayTimer) clearInterval(state.replayTimer);
+  state.replayTimer = null;
+  state.replayStep = 0;
+  state.replayLatestTs = null;
+  state.replayStartTs = null;
+  updateReplayButtonState(moduleName);
+}
+
+function startReplay(moduleName) {
+  const state = conflictModuleState[moduleName];
+  if (!state) return;
+  const latestTs = latestMapTimestamp(state.points || []);
+  if (!Number.isFinite(latestTs)) return;
+
+  stopReplay(moduleName);
+  state.timeFilter = '24h';
+  const startTs = latestTs - 24 * ONE_HOUR_MS;
+  state.replayLatestTs = latestTs;
+  state.replayStartTs = startTs;
+  state.replayStep = 0;
+
+  state.replayTimer = setInterval(() => {
+    state.replayStep += 1;
+    if (state.replayStep > 24) {
+      stopReplay(moduleName);
+      queueRedrawConflictMap(moduleName);
+      return;
+    }
+    queueRedrawConflictMap(moduleName);
+  }, 850);
+
+  updateReplayButtonState(moduleName);
+  queueRedrawConflictMap(moduleName);
+}
+
+function applyRegionPreset(moduleName, presetKey) {
+  const mapRef = moduleName === 'ukraine' ? ukraineMap : conflictMap;
+  const state = conflictModuleState[moduleName];
+  if (!state) return;
+  state.regionPreset = presetKey || 'auto';
+
+  if (!mapRef) return;
+  const preset = MAP_REGION_PRESETS[moduleName]?.[state.regionPreset] || null;
+  if (!preset) {
+    resetConflictMapView(moduleName);
+    return;
+  }
+
+  mapRef.setView(preset.center, preset.zoom);
+}
+
 function bindMapControls(moduleName) {
   const state = conflictModuleState[moduleName];
   if (!state) return;
@@ -4948,6 +5303,11 @@ function bindMapControls(moduleName) {
   const drones = document.getElementById(prefix + 'FilterDrones');
   const infra = document.getElementById(prefix + 'FilterInfra');
   const density = document.getElementById(prefix + 'Density');
+  const timeframe = document.getElementById(prefix + 'Timeframe');
+  const clusterToggle = document.getElementById(prefix + 'ClusterToggle');
+  const heatToggle = document.getElementById(prefix + 'HeatToggle');
+  const preset = document.getElementById(prefix + 'Preset');
+  const replayBtn = document.getElementById(prefix + 'ReplayBtn');
 
   if (missile && !missile.dataset.bound) {
     missile.dataset.bound = 'true';
@@ -4970,6 +5330,56 @@ function bindMapControls(moduleName) {
     density.addEventListener('input', () => {
       state.densityPercent = Math.max(20, Math.min(100, Number(density.value) || 100));
       queueRedrawConflictMap(moduleName);
+    });
+  }
+
+  if (timeframe && !timeframe.dataset.bound) {
+    timeframe.dataset.bound = 'true';
+    timeframe.value = state.timeFilter;
+    timeframe.addEventListener('change', () => {
+      state.timeFilter = timeframe.value || '7d';
+      stopReplay(moduleName);
+      queueRedrawConflictMap(moduleName);
+    });
+  }
+
+  if (clusterToggle && !clusterToggle.dataset.bound) {
+    clusterToggle.dataset.bound = 'true';
+    clusterToggle.checked = state.clusteringEnabled;
+    clusterToggle.addEventListener('change', () => {
+      state.clusteringEnabled = clusterToggle.checked;
+      queueRedrawConflictMap(moduleName);
+    });
+  }
+
+  if (heatToggle && !heatToggle.dataset.bound) {
+    heatToggle.dataset.bound = 'true';
+    heatToggle.checked = state.heatEnabled;
+    heatToggle.addEventListener('change', () => {
+      state.heatEnabled = heatToggle.checked;
+      queueRedrawConflictMap(moduleName);
+    });
+  }
+
+  if (preset && !preset.dataset.bound) {
+    preset.dataset.bound = 'true';
+    preset.value = state.regionPreset;
+    preset.addEventListener('change', () => {
+      applyRegionPreset(moduleName, preset.value || 'auto');
+      queueRedrawConflictMap(moduleName);
+    });
+  }
+
+  if (replayBtn && !replayBtn.dataset.bound) {
+    replayBtn.dataset.bound = 'true';
+    updateReplayButtonState(moduleName);
+    replayBtn.addEventListener('click', () => {
+      if (state.replayTimer) {
+        stopReplay(moduleName);
+        queueRedrawConflictMap(moduleName);
+      } else {
+        startReplay(moduleName);
+      }
     });
   }
 }
@@ -5027,8 +5437,14 @@ function upsertConflictMap(mapConfig, points, legend, config = {}) {
     return moduleState ? moduleState.filters.infra : true;
   });
 
+  const replayTs = moduleState && Number.isFinite(moduleState.replayLatestTs) && Number.isFinite(moduleState.replayStartTs)
+    ? moduleState.replayStartTs + ((moduleState.replayLatestTs - moduleState.replayStartTs) * (moduleState.replayStep / 24))
+    : null;
+
+  const timeFilteredPoints = filterPointsByTimeWindow(categoryFilteredPoints, moduleState?.timeFilter || '7d', latestTs, replayTs);
+
   const colorByType = conflictColorMap(moduleState ? moduleState.legend : legend);
-  const normalizedFilteredPoints = categoryFilteredPoints.map(point => ({
+  const normalizedFilteredPoints = timeFilteredPoints.map(point => ({
     ...point,
     lat: Number(point?.lat),
     lng: Number(point?.lng)
@@ -5039,17 +5455,22 @@ function upsertConflictMap(mapConfig, points, legend, config = {}) {
         .map(point => ({ ...point, lat: Number(point?.lat), lng: Number(point?.lng) }))
         .filter(point => Number.isFinite(point.lat) && Number.isFinite(point.lng))
     : validPoints;
+
   const zoomNow = Number.isFinite(mapRef.getZoom()) ? mapRef.getZoom() : zoom;
   const densityPercent = moduleState ? moduleState.densityPercent : 100;
-  const separatedPoints = buildDisplayPointsForMap(fallbackPoints, zoomNow, densityPercent);
+  const displayBasePoints = buildDisplayPointsForMap(fallbackPoints, zoomNow, densityPercent);
+  const separatedPoints = clusterPoints(displayBasePoints, zoomNow, moduleState ? moduleState.clusteringEnabled : true);
+
+  applyHeatLayer(mapRef, moduleName, displayBasePoints, moduleState ? moduleState.heatEnabled : false);
 
   separatedPoints.forEach(point => {
     const ts = mapPointTimestamp(point);
     const isTimestampNewest = Number.isFinite(latestTs) && Number.isFinite(ts) && ts === latestTs;
-    const isRepresentativeNewest = !Number.isFinite(point.markerCountRaw) || point.markerCountRaw <= 1 || point.isClusterHead === true;
+    const isRepresentativeNewest = !point.isCluster && (!Number.isFinite(point.markerCountRaw) || point.markerCountRaw <= 1 || point.isClusterHead === true);
     const isNewest = isTimestampNewest && isRepresentativeNewest;
-    const color = isNewest ? '#ef4444' : (colorByType[point.type] || '#f59e0b');
-    const icon = markerIconFor(point.markerKind, color);
+    const baseColor = colorByType[point.type] || '#f59e0b';
+    const color = isNewest ? '#ef4444' : baseColor;
+    const icon = markerIconFor(point.markerKind, color, point.clusterCount);
     const marker = L.marker([point.displayLat ?? point.lat, point.displayLng ?? point.lng], { icon });
 
     const valueLabel = Number.isFinite(point.value) ? formatInteger(point.value) : '--';
@@ -5058,7 +5479,8 @@ function upsertConflictMap(mapConfig, points, legend, config = {}) {
       ? ('<br>Rendered: ' + formatInteger(point.markerCountShown) + ' / ' + formatInteger(point.markerCountRaw) + ' points (zoom-dependent)')
       : '';
     const newestLabel = isNewest ? '<br><span style="color:#ef4444;font-weight:700;">Newest update</span>' : '';
-    const popup = '<strong>' + (point.name || 'Event') + '</strong><br>' + (point.label || 'Metric') + ': ' + valueLabel + '<br>' + (point.description || '') + sourceLabel + newestLabel + cloudLabel;
+    const clusterLabel = point.isCluster ? ('<br><span style="font-weight:700;">Clustered points: ' + formatInteger(point.clusterCount || 0) + '</span>') : '';
+    const popup = '<strong>' + (point.name || 'Event') + '</strong><br>' + (point.label || 'Metric') + ': ' + valueLabel + '<br>' + (point.description || '') + sourceLabel + newestLabel + clusterLabel + cloudLabel;
     marker.bindPopup(popup);
     layerRef.addLayer(marker);
   });
@@ -5077,9 +5499,31 @@ function upsertConflictMap(mapConfig, points, legend, config = {}) {
   if (moduleState && !moduleState.zoomBound) {
     moduleState.zoomBound = true;
     mapRef.on('zoomend', () => redrawConflictMapForModule(moduleName));
+    mapRef.on('moveend', () => redrawConflictMapForModule(moduleName));
   }
 
-  if (statusNode) statusNode.textContent = 'Mapped events: ' + formatInteger(separatedPoints.length) + ' | Density: ' + String(densityPercent) + '%';
+  const boundsNow = typeof mapRef.getBounds === 'function' ? mapRef.getBounds() : null;
+  const inView = boundsNow && typeof boundsNow.contains === 'function'
+    ? displayBasePoints.filter(point => boundsNow.contains([point.displayLat ?? point.lat, point.displayLng ?? point.lng]))
+    : displayBasePoints;
+  const inViewCounts = inView.reduce((acc, point) => {
+    const cat = classifyMapPointCategory(point);
+    acc[cat] = (acc[cat] || 0) + 1;
+    return acc;
+  }, {});
+
+  if (statusNode) {
+    const replayPrefix = moduleState && moduleState.replayTimer ? 'Replay | ' : '';
+    statusNode.textContent = replayPrefix
+      + 'Mapped: ' + formatInteger(separatedPoints.length)
+      + ' (raw ' + formatInteger(displayBasePoints.length) + ')'
+      + ' | In view C:' + formatInteger(inViewCounts.casualties || 0)
+      + ' M:' + formatInteger(inViewCounts.missiles || 0)
+      + ' D:' + formatInteger(inViewCounts.drones || 0)
+      + ' O:' + formatInteger(inViewCounts.infra || 0)
+      + ' | Window: ' + String(moduleState?.timeFilter || '7d').toUpperCase()
+      + ' | Density: ' + String(densityPercent) + '%';
+  }
 
   if (moduleName === 'ukraine') {
     ukraineMap = mapRef;
