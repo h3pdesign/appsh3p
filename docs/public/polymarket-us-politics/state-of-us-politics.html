@@ -444,6 +444,13 @@ nav {
   padding-top: 0.8rem;
 }
 
+@media (max-width: 900px) {
+  .mini-toc {
+    margin-left: 0;
+    margin-bottom: 1rem;
+  }
+}
+
 @media (max-width: 768px) {
   .nav-links { display: none; }
   .hamburger { display: flex; }
@@ -591,12 +598,12 @@ nav {
   flex-direction: column;
   align-items: flex-start;
   gap: 0.32rem;
-  width: fit-content;
-  margin: 0 0 0.85rem 0;
-  padding: 0.5rem;
+  width: max-content;
+  margin: 0 0 2.25rem -0.6rem;
+  padding: 0.5rem 0.6rem;
   border: 1px solid var(--border-color);
   border-radius: 14px;
-  background: color-mix(in oklab, var(--bg-card) 88%, transparent);
+  background: color-mix(in oklab, var(--bg-card) 94%, transparent);
 }
 .mini-toc-current {
   font-family: var(--font-mono);
@@ -622,10 +629,10 @@ nav {
   text-decoration: none;
 }
 .mini-toc a:nth-of-type(1) { margin-left: 0; }
-.mini-toc a:nth-of-type(2) { margin-left: 10px; }
-.mini-toc a:nth-of-type(3) { margin-left: 20px; }
-.mini-toc a:nth-of-type(4) { margin-left: 30px; }
-.mini-toc a:nth-of-type(5) { margin-left: 40px; }
+.mini-toc a:nth-of-type(2) { margin-left: 8px; }
+.mini-toc a:nth-of-type(3) { margin-left: 16px; }
+.mini-toc a:nth-of-type(4) { margin-left: 24px; }
+.mini-toc a:nth-of-type(5) { margin-left: 32px; }
 
 .mini-toc a.active {
   color: var(--text-primary);
