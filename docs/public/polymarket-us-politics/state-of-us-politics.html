@@ -1421,9 +1421,17 @@ nav {
 }
 
 .conflict-globe {
+  position: relative;
   height: 500px;
   width: 100%;
+  overflow: hidden;
   background: radial-gradient(circle at 35% 30%, rgba(96,165,250,0.12), rgba(8,10,16,0.88));
+}
+
+.conflict-globe canvas {
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
 }
 
 .conflict-globe[hidden] {
@@ -3523,6 +3531,7 @@ let ukraineMap = null;
 let ukraineMarkersLayer = null;
 let ukraineHeatLayer = null;
 const conflictGlobeRefs = { iran: null, ukraine: null };
+const globeConflictFeedState = { points: [], colorByType: {}, latestTs: null };
 let conflictBaseLayer = null;
 let ukraineBaseLayer = null;
 let conflictMapLayerMode = 'standard';
@@ -5982,6 +5991,35 @@ function bindLeftMouseWheelZoom(mapRef) {
   container.addEventListener('wheel', onWheel, { passive: false });
 }
 
+function cacheGlobeConflictFeed(feed) {
+  const conflicts = Array.isArray(feed?.conflicts) ? feed.conflicts : [];
+  const points = [];
+  const colorByType = {};
+
+  conflicts.forEach(conflict => {
+    const conflictLabel = conflict?.title || conflict?.id || 'Conflict';
+    const legend = Array.isArray(conflict?.legend) ? conflict.legend : [];
+
+    legend.forEach(item => {
+      if (!item?.type || !item?.color) return;
+      if (!colorByType[item.type]) colorByType[item.type] = item.color;
+    });
+
+    const conflictPoints = Array.isArray(conflict?.map_points) ? conflict.map_points : [];
+    conflictPoints.forEach(point => {
+      points.push({
+        ...point,
+        __conflictLabel: conflictLabel,
+        __legendColor: (point?.type && colorByType[point.type]) ? colorByType[point.type] : null
+      });
+    });
+  });
+
+  globeConflictFeedState.points = points;
+  globeConflictFeedState.colorByType = colorByType;
+  globeConflictFeedState.latestTs = latestMapTimestamp(points);
+}
+
 function globeIdsForModule(moduleName) {
   if (moduleName === 'ukraine') {
     return {
@@ -6000,6 +6038,26 @@ function globeIdsForModule(moduleName) {
     fullscreenBtnId: 'iranMapFullscreenBtn',
     statusId: 'conflictMapStatus'
   };
+}
+
+function fitConflictGlobeToFrame(moduleName) {
+  const globe = conflictGlobeRefs[moduleName];
+  const ids = globeIdsForModule(moduleName);
+  const node = document.getElementById(ids.globeId);
+  if (!globe || !node) return;
+
+  const width = Math.max(320, Math.round(node.clientWidth || 0));
+  const height = Math.max(280, Math.round(node.clientHeight || 0));
+  globe.width(width);
+  globe.height(height);
+
+  const controls = globe.controls?.();
+  if (controls) {
+    controls.minDistance = 230;
+    controls.maxDistance = 780;
+  }
+
+  globe.pointOfView({ lat: 24, lng: 30, altitude: 2.2 }, 0);
 }
 
 function ensureConflictGlobe(moduleName) {
@@ -6027,6 +6085,7 @@ function ensureConflictGlobe(moduleName) {
   globe.controls().autoRotateSpeed = 0.26;
 
   conflictGlobeRefs[moduleName] = globe;
+  fitConflictGlobeToFrame(moduleName);
   return globe;
 }
 
@@ -6058,12 +6117,22 @@ function refreshConflictGlobePoints(moduleName, points, colorByType, latestTs) {
   const globe = ensureConflictGlobe(moduleName);
   if (!globe) return;
 
-  const rows = (state.globeRenderedPoints || [])
+  const useGlobal = Array.isArray(globeConflictFeedState.points) && globeConflictFeedState.points.length > 0;
+  const sourcePoints = useGlobal ? globeConflictFeedState.points : (state.globeRenderedPoints || []);
+  const newestTs = useGlobal ? globeConflictFeedState.latestTs : latestTs;
+
+  const resolveColor = point => {
+    const fallbackMapColor = colorByType?.get ? colorByType.get(point?.type) : null;
+    const globalColor = point?.type ? globeConflictFeedState.colorByType?.[point.type] : null;
+    return point?.__legendColor || globalColor || fallbackMapColor || '#9b9a97';
+  };
+
+  const rows = sourcePoints
     .filter(point => Number.isFinite(point?.lat) && Number.isFinite(point?.lng) && !point?.isCluster)
     .map(point => {
       const ts = mapPointTimestamp(point);
-      const isNewest = Number.isFinite(latestTs) && Number.isFinite(ts) && ts === latestTs;
-      const baseColor = colorByType.get(point.type) || '#9b9a97';
+      const isNewest = Number.isFinite(newestTs) && Number.isFinite(ts) && ts === newestTs;
+      const baseColor = resolveColor(point);
       const mass = Math.max(1, Number(point.marker_mass ?? point.value) || 1);
       return {
         lat: Number(point.lat),
@@ -6071,7 +6140,7 @@ function refreshConflictGlobePoints(moduleName, points, colorByType, latestTs) {
         color: isNewest ? '#ef4444' : baseColor,
         radius: Math.min(0.5, 0.12 + (Math.log10(mass + 1) * 0.1)),
         altitude: Math.min(0.16, 0.03 + (Math.log10(mass + 1) * 0.018)),
-        label: `<strong>${escapeHtml(point.name || 'Event')}</strong><br>${escapeHtml(point.label || point.type || 'metric')}<br>Mass: ${formatInteger(point.marker_mass ?? point.value ?? 1)}${isNewest ? '<br><span style="color:#ef4444">Newest</span>' : ''}`
+        label: `<strong>${escapeHtml(point.name || 'Event')}</strong><br>${escapeHtml(point.__conflictLabel || point.label || point.type || 'metric')}<br>Mass: ${formatInteger(point.marker_mass ?? point.value ?? 1)}${isNewest ? '<br><span style="color:#ef4444">Newest</span>' : ''}`
       };
     });
 
@@ -6085,11 +6154,14 @@ function toggleConflictGlobeMode(moduleName) {
   state.globeEnabled = !state.globeEnabled;
   if (state.globeEnabled) {
     const globe = ensureConflictGlobe(moduleName);
+    fitConflictGlobeToFrame(moduleName);
     const ids = globeIdsForModule(moduleName);
     const status = document.getElementById(ids.statusId);
     if (!globe) {
       state.globeEnabled = false;
       if (status) status.textContent = 'Globe mode unavailable in this browser.';
+    } else if (status) {
+      status.textContent = 'Globe mode: combined Iran + Ukraine + additional conflicts';
     }
   }
 
@@ -6580,6 +6652,7 @@ async function refreshUkraineMetrics() {
     if (!response.ok) throw new Error(`Ukraine metrics fetch failed: ${response.status}`);
 
     const feed = await response.json();
+    cacheGlobeConflictFeed(feed);
     const conflict = pickConflictById(feed, 'ukraine_2026');
     await ensureLeafletReady();
     if (!conflict) {
@@ -6654,6 +6727,7 @@ async function refreshIranWarMetrics() {
     if (!response.ok) throw new Error(`Iran war metrics fetch failed: ${response.status}`);
 
     const feed = await response.json();
+    cacheGlobeConflictFeed(feed);
     const conflict = pickActiveConflict(feed);
     await ensureLeafletReady();
     if (!conflict) throw new Error('Conflict feed missing conflicts');
@@ -7162,6 +7236,16 @@ function refreshConflictMonitors() {
   const shouldRefreshUkraine = !ukraineContent || !ukraineContent.hidden || window.location.hash === '#ukraine-war';
   if (shouldRefreshUkraine) refreshUkraineMetrics();
 }
+
+window.addEventListener('resize', () => {
+  fitConflictGlobeToFrame('iran');
+  fitConflictGlobeToFrame('ukraine');
+});
+
+document.addEventListener('fullscreenchange', () => {
+  fitConflictGlobeToFrame('iran');
+  fitConflictGlobeToFrame('ukraine');
+});
 
 initUkraineCollapse();
 initMapLayerToggles();
