@@ -4278,6 +4278,12 @@ function oldestFiniteTimestamp(values) {
   return Math.min(...valid);
 }
 
+function newestFiniteTimestamp(values) {
+  const valid = values.filter(value => Number.isFinite(value));
+  if (valid.length === 0) return null;
+  return Math.max(...valid);
+}
+
 function formatRelativeAge(ms) {
   if (!Number.isFinite(ms) || ms < 0) return 'just now';
   const minutes = Math.round(ms / 60000);
@@ -4436,13 +4442,16 @@ function setSyncStatus(state, detail, labelOverride) {
 
 function recomputeCompositeSyncHealth() {
   const snapshotTs = Number.isFinite(liveSnapshotTimestamp) ? liveSnapshotTimestamp : null;
-  const conflictStored = oldestFiniteTimestamp([
+  const conflictStoredLatest = newestFiniteTimestamp([
     readStoredDataTime(LAST_IRAN_DATA_KEY),
     readStoredDataTime(LAST_UKRAINE_DATA_KEY)
   ]);
-  const conflictTs = Number.isFinite(lastConflictMetricsTimestamp) ? lastConflictMetricsTimestamp : conflictStored;
+  const conflictTs = newestFiniteTimestamp([
+    Number.isFinite(lastConflictMetricsTimestamp) ? lastConflictMetricsTimestamp : null,
+    conflictStoredLatest
+  ]);
 
-  // Health should reflect live market cards + conflict sections.
+  // Health should reflect live market cards + newest available conflict section refresh.
   const combinedTs = oldestFiniteTimestamp([snapshotTs, conflictTs]);
   if (!Number.isFinite(combinedTs)) return;
 
@@ -6638,7 +6647,8 @@ async function refreshLiveData() {
   if (successful > 0) {
     const iranDataTime = readStoredDataTime(LAST_IRAN_DATA_KEY);
     const ukraineDataTime = readStoredDataTime(LAST_UKRAINE_DATA_KEY);
-    const syncTime = oldestFiniteTimestamp([freshestTimestamp, iranDataTime, ukraineDataTime]) || freshestTimestamp || Date.now();
+    const conflictLatest = newestFiniteTimestamp([iranDataTime, ukraineDataTime]);
+    const syncTime = oldestFiniteTimestamp([freshestTimestamp, conflictLatest]) || freshestTimestamp || Date.now();
 
     localStorage.setItem(LAST_SYNC_KEY, String(syncTime));
     updateTimestamp(syncTime);
