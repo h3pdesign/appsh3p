@@ -1112,7 +1112,7 @@ nav {
 }
 
 .conflict-map {
-  height: 360px;
+  height: 500px;
   width: 100%;
 }
 
@@ -1838,7 +1838,7 @@ footer a:hover { border-bottom-color: var(--accent-gold); }
 
   .executive-summary { padding: 1.5rem; }
 
-  .conflict-map { height: 300px; }
+  .conflict-map { height: 380px; }
 }
 
 @media (max-width: 480px) {
@@ -4775,24 +4775,12 @@ function currentThemeMode() {
 }
 
 function tileConfigForTheme() {
-  const theme = currentThemeMode();
-  if (theme === 'light') {
-    return {
-      url: 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',
-      options: {
-        subdomains: 'abcd',
-        attribution: '&copy; OpenStreetMap contributors &copy; CARTO',
-        maxZoom: 20
-      }
-    };
-  }
-
   return {
-    url: 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',
+    url: 'https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png',
     options: {
-      subdomains: 'abcd',
-      attribution: '&copy; OpenStreetMap contributors &copy; CARTO',
-      maxZoom: 20
+      subdomains: 'abc',
+      attribution: '&copy; OpenStreetMap contributors, SRTM | Map style: &copy; OpenTopoMap (CC-BY-SA)',
+      maxZoom: 17
     }
   };
 }
