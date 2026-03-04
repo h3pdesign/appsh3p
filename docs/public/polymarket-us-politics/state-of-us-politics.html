@@ -583,9 +583,9 @@ nav {
 
 .metric-label-row {
   display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 0.45rem;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.24rem;
 }
 
 .metric-label-left {
@@ -594,15 +594,23 @@ nav {
   gap: 0.34rem;
   min-width: 0;
   flex-wrap: nowrap;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .metric-label-left .iran-stat-label {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  line-height: 1.05;
+  white-space: normal;
+  overflow: visible;
+  text-overflow: clip;
+  line-height: 1.1;
   transform: translateY(-1px);
+}
+
+.metric-right-cluster {
+  display: inline-flex;
+  gap: 0.32rem;
+  align-items: center;
+  align-self: flex-end;
+  margin-top: 0.08rem;
 }
 
 .metric-card-scope-dot {
@@ -4080,9 +4088,7 @@ function renderConflictMetrics(metrics, containerId = 'conflictMetrics', options
       confidenceBadge.textContent = (metric && metric.confidence) ? metric.confidence : 'n/a';
 
       const rightCluster = document.createElement('div');
-      rightCluster.style.display = 'inline-flex';
-      rightCluster.style.gap = '0.32rem';
-      rightCluster.style.alignItems = 'center';
+      rightCluster.className = 'metric-right-cluster';
       rightCluster.appendChild(info);
       rightCluster.appendChild(confidenceBadge);
 
