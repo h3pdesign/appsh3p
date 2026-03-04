@@ -568,13 +568,15 @@ nav {
   position: sticky;
   top: calc(var(--nav-height) + 8px);
   z-index: 10;
-  display: inline-flex;
-  flex-wrap: wrap;
-  gap: 0.35rem;
-  margin-bottom: 0.85rem;
-  padding: 0.35rem 0.45rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.32rem;
+  width: fit-content;
+  margin: 0 0 0.85rem 0;
+  padding: 0.5rem;
   border: 1px solid var(--border-color);
-  border-radius: 999px;
+  border-radius: 14px;
   background: color-mix(in oklab, var(--bg-card) 88%, transparent);
 }
 .mini-toc-current {
@@ -586,6 +588,7 @@ nav {
   border: 1px solid var(--border-subtle);
   border-radius: 999px;
   padding: 0.2rem 0.52rem;
+  margin-left: 0;
 }
 
 .mini-toc a {
@@ -599,6 +602,11 @@ nav {
   padding: 0.2rem 0.52rem;
   text-decoration: none;
 }
+.mini-toc a:nth-of-type(1) { margin-left: 0; }
+.mini-toc a:nth-of-type(2) { margin-left: 10px; }
+.mini-toc a:nth-of-type(3) { margin-left: 20px; }
+.mini-toc a:nth-of-type(4) { margin-left: 30px; }
+.mini-toc a:nth-of-type(5) { margin-left: 40px; }
 
 .mini-toc a.active {
   color: var(--text-primary);
