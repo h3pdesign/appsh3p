@@ -3456,6 +3456,7 @@ footer a:hover { border-bottom-color: var(--accent-gold); }
       <li><kbd>Alt</kbd> + <kbd>1..9</kbd> Jump sections</li>
       <li><kbd>Button</kbd> Open shortcuts</li>
       <li><kbd>Esc</kbd> Close menus/overlays</li>
+      <li><kbd>Hold LMB</kbd> + <kbd>Wheel</kbd> Zoom map</li>
     </ul>
   </div>
 </div>
@@ -5912,6 +5913,43 @@ function applyRegionPreset(moduleName, presetKey) {
   mapRef.setView(preset.center, preset.zoom);
 }
 
+function bindLeftMouseWheelZoom(mapRef) {
+  if (!mapRef || mapRef._pmirLeftWheelBound) return;
+  mapRef._pmirLeftWheelBound = true;
+
+  const container = mapRef.getContainer();
+  if (!container) return;
+
+  let leftDown = false;
+  const onMouseDown = event => {
+    if (event.button === 0) leftDown = true;
+  };
+  const onMouseUp = event => {
+    if (event.button === 0) leftDown = false;
+  };
+  const onMouseLeave = () => { leftDown = false; };
+
+  const onWheel = event => {
+    if (!leftDown) return;
+    event.preventDefault();
+
+    const direction = event.deltaY < 0 ? 1 : -1;
+    const currentZoom = mapRef.getZoom();
+    const minZoom = Number.isFinite(mapRef.getMinZoom()) ? mapRef.getMinZoom() : 0;
+    const maxZoom = Number.isFinite(mapRef.getMaxZoom()) ? mapRef.getMaxZoom() : 18;
+    const nextZoom = Math.max(minZoom, Math.min(maxZoom, currentZoom + direction));
+    if (nextZoom === currentZoom) return;
+
+    const latlng = mapRef.mouseEventToLatLng(event);
+    mapRef.setZoomAround(latlng, nextZoom, { animate: false });
+  };
+
+  container.addEventListener('mousedown', onMouseDown);
+  window.addEventListener('mouseup', onMouseUp);
+  container.addEventListener('mouseleave', onMouseLeave);
+  container.addEventListener('wheel', onWheel, { passive: false });
+}
+
 function bindMapControls(moduleName) {
   const state = conflictModuleState[moduleName];
   if (!state) return;
@@ -6033,6 +6071,7 @@ function upsertConflictMap(mapConfig, points, legend, config = {}) {
   if (!mapRef) {
     mapRef = L.map(mapNode, { scrollWheelZoom: false, zoomControl: true }).setView(center, zoom);
   }
+  bindLeftMouseWheelZoom(mapRef);
   replaceMapBaseLayer(mapRef, moduleName);
 
   if (layerRef) {
