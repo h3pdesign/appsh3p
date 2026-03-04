@@ -175,6 +175,41 @@ function validateConflictNewsFeed() {
   return parsed;
 }
 
+
+function validateSocialTrackerMetrics() {
+  const metricsPath = path.join(baseDir, "data", "social-tracker-metrics.json");
+  assertFileExists(metricsPath);
+  const raw = fs.readFileSync(metricsPath, "utf8");
+
+  let parsed;
+  try {
+    parsed = JSON.parse(raw);
+  } catch (error) {
+    fail(`Invalid JSON in ${metricsPath}: ${error.message}`);
+  }
+
+  if (!parsed || typeof parsed !== "object") {
+    fail(`${metricsPath} must be a JSON object`);
+  }
+  if (!parsed.updated_at_utc) {
+    fail(`${metricsPath} must include updated_at_utc`);
+  }
+  if (!Array.isArray(parsed.metrics) || parsed.metrics.length < 3) {
+    fail(`${metricsPath} must include at least three social metrics`);
+  }
+
+  for (const metric of parsed.metrics) {
+    if (!metric?.id || !metric?.label) {
+      fail(`${metricsPath} metrics entries must include id and label`);
+    }
+    if (!Number.isFinite(Number(metric?.value))) {
+      fail(`${metricsPath} metric ${metric.id} has invalid numeric value`);
+    }
+  }
+
+  return parsed;
+}
+
 function validatePolymarketSnapshot() {
   const snapshotPath = path.join(baseDir, "data", "polymarket-market-snapshot.json");
   assertFileExists(snapshotPath);
@@ -250,6 +285,7 @@ validatePages();
 const conflictFeed = validateConflictFeed();
 const newsFeed = validateConflictNewsFeed();
 const snapshotFeed = validatePolymarketSnapshot();
+validateSocialTrackerMetrics();
 
 if (checkStale) {
   validateFreshness(conflictFeed, newsFeed, snapshotFeed, maxAgeMinutes);

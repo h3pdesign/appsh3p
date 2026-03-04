@@ -1,0 +1,51 @@
+name: Update Social Tracker Metrics
+
+on:
+  schedule:
+    - cron: '24 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-social-metrics:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Update social tracker metrics JSON
+        run: node scripts/update-social-tracker-metrics.mjs
+
+      - name: Validate site
+        run: node scripts/validate-polymarket-site.mjs
+
+      - name: Commit and push if changed
+        run: |
+          TARGET="docs/public/polymarket-us-politics/data/social-tracker-metrics.json"
+          if git diff --quiet -- "$TARGET"; then
+            echo "No social metric change"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add "$TARGET"
+          git commit -m "Update social tracker metrics"
+          for attempt in 1 2 3; do
+            if git push; then
+              echo "Push succeeded on attempt ${attempt}"
+              exit 0
+            fi
+            if [ "${attempt}" -eq 3 ]; then
+              echo "Push failed after ${attempt} attempts"
+              exit 1
+            fi
+            echo "Push rejected (attempt ${attempt}), rebasing and retrying..."
+            git pull --rebase origin main
+          done

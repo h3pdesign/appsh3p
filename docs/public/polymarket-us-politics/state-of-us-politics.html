@@ -2495,8 +2495,8 @@ footer a:hover { border-bottom-color: var(--accent-gold); }
         <span class="tag-badge hot">Key Signal</span>
         <div class="card-header"><h3 class="card-question">Blue wave in 2026?</h3></div>
         <div class="prob-single">
-          <span class="prob-big-value green">72%</span>
-          <div class="prob-big-bar"><div class="prob-big-fill green" data-width="72"></div></div>
+          <span class="prob-big-value amber">--</span>
+          <div class="prob-big-bar"><div class="prob-big-fill amber" data-width="0"></div></div>
         </div>
         <p class="prob-tag">Yes probability</p>
       </article>
@@ -2909,31 +2909,31 @@ footer a:hover { border-bottom-color: var(--accent-gold); }
     </div>
 
     <div class="card-grid three-col">
-      <article class="card reveal">
-        <div class="card-header"><h3 class="card-question">Elon Musk tweets Feb 23–25</h3></div>
+      <article class="card reveal" data-social-metric-id="elon_attention_3d">
+        <div class="card-header"><h3 class="card-question">Elon Musk Attention (3D)</h3></div>
         <div class="prob-single">
-          <span class="prob-big-value green">72%</span>
-          <div class="prob-big-bar"><div class="prob-big-fill green" data-width="72"></div></div>
+          <span class="prob-big-value amber">--</span>
+          <div class="prob-big-bar"><div class="prob-big-fill amber" data-width="0"></div></div>
         </div>
-        <p class="prob-tag">65–89 tweets</p>
+        <p class="prob-tag">Loading external social metrics...</p>
       </article>
 
-      <article class="card reveal">
-        <div class="card-header"><h3 class="card-question">Elon Musk tweets Feb 20–27</h3></div>
+      <article class="card reveal" data-social-metric-id="elon_attention_7d">
+        <div class="card-header"><h3 class="card-question">Elon Musk Attention (7D)</h3></div>
         <div class="prob-single">
-          <span class="prob-big-value red">24%</span>
-          <div class="prob-big-bar"><div class="prob-big-fill red" data-width="24"></div></div>
+          <span class="prob-big-value amber">--</span>
+          <div class="prob-big-bar"><div class="prob-big-fill amber" data-width="0"></div></div>
         </div>
-        <p class="prob-tag">300–319 leading</p>
+        <p class="prob-tag">Loading external social metrics...</p>
       </article>
 
-      <article class="card reveal">
-        <div class="card-header"><h3 class="card-question">Trump Truth Social posts Feb 20–27</h3></div>
+      <article class="card reveal" data-social-metric-id="trump_attention_7d">
+        <div class="card-header"><h3 class="card-question">Donald Trump Attention (7D)</h3></div>
         <div class="prob-single">
-          <span class="prob-big-value amber">50%</span>
-          <div class="prob-big-bar"><div class="prob-big-fill amber" data-width="50"></div></div>
+          <span class="prob-big-value amber">--</span>
+          <div class="prob-big-bar"><div class="prob-big-fill amber" data-width="0"></div></div>
         </div>
-        <p class="prob-tag">120–139 posts</p>
+        <p class="prob-tag">Loading external social metrics...</p>
       </article>
     </div>
   </section>
@@ -2970,6 +2970,7 @@ const CONFLICT_NEWS_URL = '/polymarket-us-politics/data/conflict-news.json';
 const MARKET_ID_MAP_URL = '/polymarket-us-politics/data/market-id-map.json';
 const POLYMARKET_SNAPSHOT_URL = '/polymarket-us-politics/data/polymarket-market-snapshot.json';
 const DAILY_SUMMARY_STATE_URL = '/polymarket-us-politics/data/daily-summary-state.json';
+const SOCIAL_TRACKER_METRICS_URL = '/polymarket-us-politics/data/social-tracker-metrics.json';
 const ONE_HOUR_MS = 60 * 60 * 1000;
 const LIVE_FETCH_TIMEOUT_MS = 8000;
 const LIVE_MARKET_INTERVAL_MS = 15 * 60 * 1000;
@@ -3115,6 +3116,8 @@ let marketSnapshotPromise = null;
 let marketSnapshotFetchedAt = 0;
 let summaryStatePromise = null;
 let summaryStateFetchedAt = 0;
+let socialTrackerMetricsPromise = null;
+let socialTrackerMetricsFetchedAt = 0;
 
 async function fetchWithTimeout(url, options = {}, timeoutMs = LIVE_FETCH_TIMEOUT_MS) {
   const controller = new AbortController();
@@ -3168,6 +3171,17 @@ async function readSnapshotSyncTime() {
 
   const payload = await summaryStatePromise;
   return parseTimestamp(payload?.updated_at_utc || payload?.as_of_utc || null);
+}
+
+async function loadSocialTrackerMetrics() {
+  const now = Date.now();
+  if (!socialTrackerMetricsPromise || (now - socialTrackerMetricsFetchedAt) > SUMMARY_STATE_CACHE_TTL_MS) {
+    socialTrackerMetricsFetchedAt = now;
+    socialTrackerMetricsPromise = fetchWithTimeout(SOCIAL_TRACKER_METRICS_URL + '?t=' + now, { cache: 'no-store' })
+      .then(response => response.ok ? response.json() : { metrics: [] })
+      .catch(() => ({ metrics: [] }));
+  }
+  return socialTrackerMetricsPromise;
 }
 
 function mappedIdForQuestion(mapPayload, question) {
@@ -3368,6 +3382,63 @@ function updateVolume(card, market) {
     ? `$${(volume / 1_000_000).toFixed(1).replace(/\.0$/, '')}M vol`
     : `$${Math.round(volume / 1_000)}K vol`;
   volumeNode.textContent = formatted;
+}
+
+function findSocialMetric(card, payload) {
+  const id = card?.dataset?.socialMetricId;
+  const metrics = Array.isArray(payload?.metrics) ? payload.metrics : [];
+  if (id) {
+    const byId = metrics.find(metric => String(metric?.id || '') === String(id));
+    if (byId) return byId;
+  }
+
+  const question = normalize(card?.dataset?.marketQuestion || card?.querySelector('.card-question')?.textContent || '');
+  if (!question) return null;
+  return metrics.find(metric => question.includes(normalize(metric?.label || '')) || normalize(metric?.label || '').includes(question)) || null;
+}
+
+function socialMetricTone(value, maxValue) {
+  const ratio = maxValue > 0 ? (value / maxValue) : 0;
+  if (ratio >= 0.66) return 'green';
+  if (ratio >= 0.33) return 'amber';
+  return 'red';
+}
+
+async function applySocialFallbackMetric(card) {
+  const payload = await loadSocialTrackerMetrics();
+  const metric = findSocialMetric(card, payload);
+  if (!metric || !Number.isFinite(Number(metric.value))) return null;
+
+  const metrics = Array.isArray(payload?.metrics) ? payload.metrics : [];
+  const maxValue = Math.max(1, ...metrics.map(item => Number(item?.value)).filter(Number.isFinite));
+  const value = Number(metric.value);
+  const tone = socialMetricTone(value, maxValue);
+
+  const valueNode = card.querySelector('.prob-big-value');
+  const fillNode = card.querySelector('.prob-big-fill');
+  const tag = card.querySelector('.prob-tag');
+  const questionNode = card.querySelector('.card-question');
+
+  if (questionNode && metric.label) questionNode.textContent = metric.label;
+  if (valueNode) {
+    valueNode.textContent = formatInteger(value);
+    valueNode.classList.remove('green', 'amber', 'red');
+    valueNode.classList.add(tone);
+  }
+  if (fillNode) {
+    const width = Math.max(8, Math.round((value / maxValue) * 100));
+    fillNode.dataset.width = String(width);
+    fillNode.style.width = `${width}%`;
+    fillNode.classList.remove('green', 'amber', 'red');
+    fillNode.classList.add(tone);
+  }
+  if (tag) {
+    const windowLabel = Number.isFinite(Number(metric.window_days)) ? `${Math.round(Number(metric.window_days))}d` : 'window';
+    tag.textContent = `${windowLabel} ${metric.unit || 'value'} | Source: ${metric.source_name || 'external'}`;
+  }
+
+  card.dataset.marketQuestion = metric.label || card.dataset.marketQuestion || '';
+  return parseTimestamp(metric.as_of_utc || payload.updated_at_utc || null);
 }
 
 function isSocialCard(card) {
@@ -5211,10 +5282,18 @@ async function refreshLiveData() {
   const results = await Promise.all(cards.map(async card => {
     try {
       const market = await fetchBestMarketForCard(card);
-      if (isSocialCard(card) && (!market || market.closed || !market.active)) {
+      const socialCard = isSocialCard(card);
+      const marketIsLive = Boolean(market && market.active && !market.closed);
+
+      if (!marketIsLive && socialCard) {
+        const fallbackTs = await applySocialFallbackMetric(card);
+        if (Number.isFinite(fallbackTs)) {
+          return { ok: true, timestamp: fallbackTs };
+        }
         markCardMarketUnavailable(card, market);
         return { ok: false, timestamp: null };
       }
+
       if (!market) return { ok: false, timestamp: null };
 
       updateVolume(card, market);
