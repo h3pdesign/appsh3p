@@ -1945,7 +1945,7 @@ footer a:hover { border-bottom-color: var(--accent-gold); }
             <label class="map-filter"><input type="checkbox" id="iranFilterDrones" checked>Drones</label>
             <label class="map-filter"><input type="checkbox" id="iranFilterInfra" checked>Infrastructure</label>
             <label class="map-density">Density <input id="iranDensity" type="range" min="20" max="100" step="10" value="100" aria-label="Iran map marker density"></label>
-            <label class="map-filter"><input type="checkbox" id="iranTerrainToggle" checked aria-label="Iran terrain map toggle">Terrain</label>
+            <label class="map-filter"><input type="checkbox" id="iranTerrainToggle" aria-label="Iran terrain map toggle">Terrain</label>
           </div>
           <button class="map-reset-btn" id="conflictMapResetBtn" type="button">Reset view</button>
         </div>
@@ -2023,7 +2023,7 @@ footer a:hover { border-bottom-color: var(--accent-gold); }
             <label class="map-filter"><input type="checkbox" id="ukraineFilterDrones" checked>Drones</label>
             <label class="map-filter"><input type="checkbox" id="ukraineFilterInfra" checked>Infrastructure</label>
             <label class="map-density">Density <input id="ukraineDensity" type="range" min="20" max="100" step="10" value="100" aria-label="Ukraine map marker density"></label>
-            <label class="map-filter"><input type="checkbox" id="ukraineTerrainToggle" checked aria-label="Ukraine terrain map toggle">Terrain</label>
+            <label class="map-filter"><input type="checkbox" id="ukraineTerrainToggle" aria-label="Ukraine terrain map toggle">Terrain</label>
           </div>
           <button class="map-reset-btn" id="ukraineMapResetBtn" type="button">Reset view</button>
         </div>
@@ -3049,7 +3049,7 @@ let ukraineMap = null;
 let ukraineMarkersLayer = null;
 let conflictBaseLayer = null;
 let ukraineBaseLayer = null;
-let conflictMapLayerMode = 'terrain';
+let conflictMapLayerMode = 'standard';
 const trendStates = new Map();
 const conflictModuleState = { iran: { mapConfig: null, points: [], legend: [], bounds: null, didInitialFit: false, zoomBound: false, densityPercent: 100, filters: { missiles: true, drones: true, infra: true }, redrawQueued: false }, ukraine: { mapConfig: null, points: [], legend: [], bounds: null, didInitialFit: false, zoomBound: false, densityPercent: 100, filters: { missiles: true, drones: true, infra: true }, redrawQueued: false } };
 const legendFilterState = { iran: new Set(), ukraine: new Set() };
@@ -4783,7 +4783,7 @@ function readStoredMapLayerMode() {
     const stored = localStorage.getItem(MAP_LAYER_KEY);
     if (stored === 'terrain' || stored === 'standard') return stored;
   } catch (_) {}
-  return 'terrain';
+  return 'standard';
 }
 
 function syncMapLayerToggles() {
