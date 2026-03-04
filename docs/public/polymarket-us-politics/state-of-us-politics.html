@@ -6053,11 +6053,34 @@ function fitConflictGlobeToFrame(moduleName) {
 
   const controls = globe.controls?.();
   if (controls) {
-    controls.minDistance = 230;
-    controls.maxDistance = 780;
+    controls.minDistance = 170;
+    controls.maxDistance = 560;
   }
+}
 
-  globe.pointOfView({ lat: 24, lng: 30, altitude: 2.2 }, 0);
+function conflictGlobeView(points) {
+  const rows = (Array.isArray(points) ? points : []).filter(point => Number.isFinite(point?.lat) && Number.isFinite(point?.lng));
+  if (rows.length === 0) return { lat: 24, lng: 30, altitude: 1.85 };
+
+  let sumLat = 0;
+  let sumLng = 0;
+  rows.forEach(point => {
+    sumLat += Number(point.lat);
+    sumLng += Number(point.lng);
+  });
+
+  const centerLat = sumLat / rows.length;
+  const centerLng = sumLng / rows.length;
+
+  const lats = rows.map(point => Number(point.lat));
+  const lngs = rows.map(point => Number(point.lng));
+  const latSpan = Math.max(...lats) - Math.min(...lats);
+  const lngSpan = Math.max(...lngs) - Math.min(...lngs);
+  const span = Math.max(latSpan, lngSpan);
+
+  // Lower altitude => more zoom-in. Keep bounded so globe stays fully framed.
+  const altitude = Math.max(1.25, Math.min(1.95, 1.25 + (span / 70)));
+  return { lat: centerLat, lng: centerLng, altitude };
 }
 
 function ensureConflictGlobe(moduleName) {
@@ -6144,6 +6167,9 @@ function refreshConflictGlobePoints(moduleName, points, colorByType, latestTs) {
       };
     });
 
+  fitConflictGlobeToFrame(moduleName);
+  const view = conflictGlobeView(rows);
+  globe.pointOfView(view, 700);
   globe.pointsData(rows);
 }
 
