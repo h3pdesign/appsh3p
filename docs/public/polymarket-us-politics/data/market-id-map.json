@@ -1,8 +1,8 @@
 {
-  "updated_at_utc": "2026-03-04T09:35:11.393Z",
-  "total_questions": 65,
-  "mapped_questions": 45,
-  "unmapped_questions": 20,
+  "updated_at_utc": "2026-03-04T10:46:17.592Z",
+  "total_questions": 66,
+  "mapped_questions": 47,
+  "unmapped_questions": 19,
   "entries": [
     {
       "question": "Will LeBron James win the 2028 US Presidential Election?",
@@ -408,6 +408,24 @@
       "score": 1,
       "active": true,
       "closed": false
+    },
+    {
+      "question": "Elon Musk Attention (3D)",
+      "market_id": "1203147",
+      "market_slug": "will-elon-musk-buy-ryanair",
+      "market_question": "Will Elon Musk buy Ryanair?",
+      "score": 0.393,
+      "active": true,
+      "closed": false
+    },
+    {
+      "question": "Elon Musk Attention (7D)",
+      "market_id": "1203147",
+      "market_slug": "will-elon-musk-buy-ryanair",
+      "market_question": "Will Elon Musk buy Ryanair?",
+      "score": 0.393,
+      "active": true,
+      "closed": false
     }
   ],
   "unmapped": [
@@ -428,8 +446,7 @@
     "House passes Iran war powers resolution this week?",
     "Clintons held in contempt of Congress by Feb 28?",
     "Epstein files — names mentioned by Feb 28",
-    "Elon Musk tweets Feb 23–25",
-    "Elon Musk tweets Feb 20–27",
+    "Donald Trump Attention (7D)",
     "Live market spotlight"
   ]
 }
