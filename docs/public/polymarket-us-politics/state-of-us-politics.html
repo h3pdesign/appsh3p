@@ -1945,6 +1945,7 @@ footer a:hover { border-bottom-color: var(--accent-gold); }
             <label class="map-filter"><input type="checkbox" id="iranFilterDrones" checked>Drones</label>
             <label class="map-filter"><input type="checkbox" id="iranFilterInfra" checked>Infrastructure</label>
             <label class="map-density">Density <input id="iranDensity" type="range" min="20" max="100" step="10" value="100" aria-label="Iran map marker density"></label>
+            <label class="map-filter"><input type="checkbox" id="iranTerrainToggle" checked aria-label="Iran terrain map toggle">Terrain</label>
           </div>
           <button class="map-reset-btn" id="conflictMapResetBtn" type="button">Reset view</button>
         </div>
@@ -2022,6 +2023,7 @@ footer a:hover { border-bottom-color: var(--accent-gold); }
             <label class="map-filter"><input type="checkbox" id="ukraineFilterDrones" checked>Drones</label>
             <label class="map-filter"><input type="checkbox" id="ukraineFilterInfra" checked>Infrastructure</label>
             <label class="map-density">Density <input id="ukraineDensity" type="range" min="20" max="100" step="10" value="100" aria-label="Ukraine map marker density"></label>
+            <label class="map-filter"><input type="checkbox" id="ukraineTerrainToggle" checked aria-label="Ukraine terrain map toggle">Terrain</label>
           </div>
           <button class="map-reset-btn" id="ukraineMapResetBtn" type="button">Reset view</button>
         </div>
@@ -3030,6 +3032,7 @@ const SUMMARY_STATE_CACHE_TTL_MS = 15 * 60 * 1000;
 const CONFLICT_NEWS_INTERVAL_MS = 10 * 60 * 1000;
 const CONFLICT_MONITOR_INTERVAL_MS = 10 * 60 * 1000;
 const THEME_KEY = 'pmir-theme';
+const MAP_LAYER_KEY = 'pmir-conflict-map-layer';
 const THEME_MODE_KEY = 'pmir-theme-mode';
 const THEME_MANUAL_SET_AT_KEY = 'pmir-theme-manual-at';
 const THEME_MANUAL_MAX_AGE_MS = 7 * 24 * ONE_HOUR_MS;
@@ -3046,6 +3049,7 @@ let ukraineMap = null;
 let ukraineMarkersLayer = null;
 let conflictBaseLayer = null;
 let ukraineBaseLayer = null;
+let conflictMapLayerMode = 'terrain';
 const trendStates = new Map();
 const conflictModuleState = { iran: { mapConfig: null, points: [], legend: [], bounds: null, didInitialFit: false, zoomBound: false, densityPercent: 100, filters: { missiles: true, drones: true, infra: true }, redrawQueued: false }, ukraine: { mapConfig: null, points: [], legend: [], bounds: null, didInitialFit: false, zoomBound: false, densityPercent: 100, filters: { missiles: true, drones: true, infra: true }, redrawQueued: false } };
 const legendFilterState = { iran: new Set(), ukraine: new Set() };
@@ -4774,13 +4778,80 @@ function currentThemeMode() {
   return document.documentElement.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
 }
 
+function readStoredMapLayerMode() {
+  try {
+    const stored = localStorage.getItem(MAP_LAYER_KEY);
+    if (stored === 'terrain' || stored === 'standard') return stored;
+  } catch (_) {}
+  return 'terrain';
+}
+
+function syncMapLayerToggles() {
+  const terrainEnabled = conflictMapLayerMode === 'terrain';
+  const iranToggle = document.getElementById('iranTerrainToggle');
+  const ukraineToggle = document.getElementById('ukraineTerrainToggle');
+  if (iranToggle) iranToggle.checked = terrainEnabled;
+  if (ukraineToggle) ukraineToggle.checked = terrainEnabled;
+}
+
+function setMapLayerMode(mode) {
+  const nextMode = mode === 'standard' ? 'standard' : 'terrain';
+  conflictMapLayerMode = nextMode;
+  try {
+    localStorage.setItem(MAP_LAYER_KEY, nextMode);
+  } catch (_) {}
+
+  syncMapLayerToggles();
+  replaceMapBaseLayer(conflictMap, 'iran');
+  replaceMapBaseLayer(ukraineMap, 'ukraine');
+}
+
+function initMapLayerToggles() {
+  conflictMapLayerMode = readStoredMapLayerMode();
+  syncMapLayerToggles();
+
+  const bind = toggle => {
+    if (!toggle || toggle.dataset.bound) return;
+    toggle.dataset.bound = 'true';
+    toggle.addEventListener('change', () => {
+      setMapLayerMode(toggle.checked ? 'terrain' : 'standard');
+    });
+  };
+
+  bind(document.getElementById('iranTerrainToggle'));
+  bind(document.getElementById('ukraineTerrainToggle'));
+}
+
 function tileConfigForTheme() {
+  if (conflictMapLayerMode === 'terrain') {
+    return {
+      url: 'https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png',
+      options: {
+        subdomains: 'abc',
+        attribution: '&copy; OpenStreetMap contributors, SRTM | Map style: &copy; OpenTopoMap (CC-BY-SA)',
+        maxZoom: 17
+      }
+    };
+  }
+
+  const theme = currentThemeMode();
+  if (theme === 'light') {
+    return {
+      url: 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',
+      options: {
+        subdomains: 'abcd',
+        attribution: '&copy; OpenStreetMap contributors &copy; CARTO',
+        maxZoom: 20
+      }
+    };
+  }
+
   return {
-    url: 'https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png',
+    url: 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',
     options: {
-      subdomains: 'abc',
-      attribution: '&copy; OpenStreetMap contributors, SRTM | Map style: &copy; OpenTopoMap (CC-BY-SA)',
-      maxZoom: 17
+      subdomains: 'abcd',
+      attribution: '&copy; OpenStreetMap contributors &copy; CARTO',
+      maxZoom: 20
     }
   };
 }
@@ -5653,6 +5724,7 @@ function refreshConflictMonitors() {
 }
 
 initUkraineCollapse();
+initMapLayerToggles();
 initMapResetButtons();
 initKeyboardShortcuts();
 refreshLiveData();
