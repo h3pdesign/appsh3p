@@ -4713,7 +4713,9 @@ function buildDisplayPointsForMap(points, zoom, densityPercent = 100) {
 
   list.forEach(point => {
     const labelProbe = normalize(String(point?.label || ''));
-    const shouldCloud = labelProbe.includes('ballistic missiles')
+    const hasMass = Number(point?.marker_mass ?? point?.value) > 1;
+    const shouldCloud = hasMass
+      || labelProbe.includes('ballistic missiles')
       || labelProbe.includes('drones (2025 benchmark)')
       || labelProbe.includes('critical infrastructure impacts (7d)')
       || labelProbe.includes('air strikes (reported sites)');
