@@ -2376,6 +2376,8 @@ footer a:hover { border-bottom-color: var(--accent-gold); }
         <span class="metric-confidence-guide-text">higher uncertainty / fewer confirmations</span>
         <span class="metric-confidence-badge metric-confidence-medium">MEDIUM</span>
         <span class="metric-confidence-guide-text">partially confirmed / still evolving</span>
+        <span class="metric-confidence-badge metric-confidence-high">HIGH</span>
+        <span class="metric-confidence-guide-text">strongly confirmed across multiple sources</span>
       </div>
       <div class="conflict-metrics-grid" id="conflictMetrics">
         <div class="iran-stat"><div class="iran-stat-label">Loading metrics</div><div class="iran-stat-value">--</div></div>
@@ -2483,6 +2485,8 @@ footer a:hover { border-bottom-color: var(--accent-gold); }
         <span class="metric-confidence-guide-text">higher uncertainty / fewer confirmations</span>
         <span class="metric-confidence-badge metric-confidence-medium">MEDIUM</span>
         <span class="metric-confidence-guide-text">partially confirmed / still evolving</span>
+        <span class="metric-confidence-badge metric-confidence-high">HIGH</span>
+        <span class="metric-confidence-guide-text">strongly confirmed across multiple sources</span>
       </div>
       <div class="conflict-metrics-grid" id="ukraineMetrics">
         <div class="iran-stat"><div class="iran-stat-label">Loading metrics</div><div class="iran-stat-value">--</div></div>
@@ -4305,7 +4309,7 @@ function formatDualTimestamp(sourceTime) {
   const timestamp = Number.isFinite(sourceTime) ? sourceTime : Date.now();
   const date = new Date(timestamp);
 
-  const local = new Intl.DateTimeFormat(undefined, {
+  const local = new Intl.DateTimeFormat('en-US', {
     year: 'numeric',
     month: 'long',
     day: 'numeric',
@@ -4314,7 +4318,7 @@ function formatDualTimestamp(sourceTime) {
     timeZoneName: 'short'
   }).format(date);
 
-  const utc = new Intl.DateTimeFormat(undefined, {
+  const utc = new Intl.DateTimeFormat('en-US', {
     year: 'numeric',
     month: 'short',
     day: '2-digit',
@@ -4381,7 +4385,7 @@ function formatRelativeAge(ms) {
 
 function formatShortLocalTimestamp(timestamp) {
   if (!Number.isFinite(timestamp)) return '--';
-  return new Intl.DateTimeFormat(undefined, {
+  return new Intl.DateTimeFormat('en-US', {
     month: 'short',
     day: '2-digit',
     hour: '2-digit',
@@ -4625,7 +4629,7 @@ function startTickerAutoScroll(trackId) {
 function formatTickerTime(value) {
   const ts = parseTimestamp(value);
   if (!Number.isFinite(ts)) return '--';
-  return new Intl.DateTimeFormat(undefined, {
+  return new Intl.DateTimeFormat('en-US', {
     month: 'short',
     day: '2-digit',
     hour: '2-digit',
@@ -4902,6 +4906,52 @@ function deriveMetricPrimarySource(metric, sourceEntries) {
 
   return sourceEntries[0];
 }
+function deriveMetricSourceMatchCount(metric, sourceEntries) {
+  if (!Array.isArray(sourceEntries) || sourceEntries.length === 0) return 0;
+
+  const explicit = Number(metric && metric.primary_source_index);
+  if (Number.isFinite(explicit) && explicit >= 1 && explicit <= sourceEntries.length) {
+    return 1;
+  }
+
+  const haystack = normalize(String((metric && metric.source) || '') + ' ' + String((metric && metric.note) || ''));
+  if (!haystack) return 0;
+
+  const stop = new Set(['source', 'sources', 'update', 'updates', 'coverage', 'live', 'conflict', 'tracker', 'news', 'reporting', 'report', 'latest', 'official']);
+  let matches = 0;
+
+  sourceEntries.forEach(entry => {
+    const tokens = normalize(entry.name)
+      .split(' ')
+      .map(token => token.trim())
+      .filter(token => token.length >= 4 && !stop.has(token));
+    if (tokens.some(token => haystack.includes(token))) matches += 1;
+  });
+
+  return matches;
+}
+
+function deriveMetricConfidence(metric, sourceEntries) {
+  const confidenceRaw = normalize((metric && metric.confidence) ? metric.confidence : '');
+  const baseScore = confidenceRaw === 'high' ? 3 : (confidenceRaw === 'medium' ? 2 : (confidenceRaw === 'low' ? 1 : 0));
+  const matchedSources = deriveMetricSourceMatchCount(metric, sourceEntries);
+  const sourceScore = matchedSources >= 4 ? 3 : (matchedSources >= 2 ? 2 : (matchedSources >= 1 ? 1 : 0));
+
+  const text = normalize(String((metric && metric.source) || '') + ' ' + String((metric && metric.note) || '') + ' ' + String((metric && metric.scope) || ''));
+  let score = Math.max(baseScore, sourceScore);
+
+  if (/(provisional|evolving|estimated|varies|mixed-source|field reports)/.test(text)) {
+    score = Math.max(1, score - 1);
+  }
+
+  if (/(official statement|confirmed by|independent|corroborated)/.test(text) && matchedSources >= 3) {
+    score = Math.max(score, 3);
+  }
+
+  if (score >= 3) return { label: 'High', key: 'high', matchedSources };
+  if (score >= 2) return { label: 'Medium', key: 'medium', matchedSources };
+  return { label: 'Low', key: 'low', matchedSources };
+}
 
 function renderScopeLegend(scopePalette, legendId) {
   const node = legendId ? document.getElementById(legendId) : null;
@@ -5054,13 +5104,11 @@ function renderConflictMetrics(metrics, containerId = 'conflictMetrics', options
       info.setAttribute('aria-label', info.title);
 
       const confidenceBadge = document.createElement('span');
-      const confidenceLabel = String((metric && metric.confidence) ? metric.confidence : 'n/a').toLowerCase();
-      confidenceBadge.className = 'metric-confidence-badge';
-      if (confidenceLabel === 'low' || confidenceLabel === 'medium' || confidenceLabel === 'high') {
-        confidenceBadge.classList.add('metric-confidence-' + confidenceLabel);
-      }
-      confidenceBadge.textContent = (metric && metric.confidence) ? metric.confidence : 'n/a';
-
+      const confidence = deriveMetricConfidence(metric, sourceEntries);
+      confidenceBadge.className = 'metric-confidence-badge metric-confidence-' + confidence.key;
+      confidenceBadge.textContent = confidence.label;
+      confidenceBadge.title = 'Confidence: ' + confidence.label + ' (' + String(confidence.matchedSources) + ' matched source' + (confidence.matchedSources === 1 ? '' : 's') + ')';
+      confidenceBadge.setAttribute('aria-label', confidenceBadge.title);
       const rightCluster = document.createElement('div');
       rightCluster.className = 'metric-right-cluster';
       rightCluster.appendChild(info);
