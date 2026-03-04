@@ -212,10 +212,13 @@ function refreshMapPoints(conflict, now) {
     const missilesTotal = metricValue(metrics, 'missiles_benchmark')
     const dronesTotal = metricValue(metrics, 'drones_benchmark')
     const infraTotal = metricValue(metrics, 'critical_infrastructure_impacts_7d')
+    const killedTotal = metricValue(metrics, 'iran_killed') + metricValue(metrics, 'israel_killed') + metricValue(metrics, 'us_killed')
+    const injuredTotal = metricValue(metrics, 'iran_injured') + metricValue(metrics, 'israel_injured') + metricValue(metrics, 'us_seriously_injured')
 
     const missileMass = clamp(Math.round(missilesTotal * 0.46), 220, 420)
     const droneMass = clamp(Math.round(dronesTotal * 0.30), 260, 560)
     const infraMass = clamp(Math.round(infraTotal * 1.8), 50, 140)
+    const casualtyMass = clamp(Math.round(killedTotal * 0.09 + injuredTotal * 0.03), 90, 240)
 
     const missileSites = [
       { name: 'Tel Aviv metro impact cluster', lat: 32.0853, lng: 34.7818, weight: 1.45 },
@@ -274,6 +277,21 @@ function refreshMapPoints(conflict, now) {
       { name: 'Bandar Abbas utility corridor impact', lat: 27.1832, lng: 56.2666, weight: 0.6 }
     ]
 
+    const casualtySites = [
+      { name: 'Tehran casualty concentration', lat: 35.6892, lng: 51.389, weight: 1.3 },
+      { name: 'Tel Aviv casualty concentration', lat: 32.0853, lng: 34.7818, weight: 1.15 },
+      { name: 'Haifa casualty concentration', lat: 32.794, lng: 34.9896, weight: 1.05 },
+      { name: 'Jerusalem casualty concentration', lat: 31.7683, lng: 35.2137, weight: 0.95 },
+      { name: 'Isfahan casualty concentration', lat: 32.6546, lng: 51.668, weight: 0.9 },
+      { name: 'Beersheba casualty concentration', lat: 31.252, lng: 34.7915, weight: 0.82 },
+      { name: 'Ashkelon casualty concentration', lat: 31.6688, lng: 34.5743, weight: 0.76 },
+      { name: 'Tabriz casualty concentration', lat: 38.0962, lng: 46.2738, weight: 0.7 },
+      { name: 'Kermanshah casualty concentration', lat: 34.3142, lng: 47.065, weight: 0.64 },
+      { name: 'Qom casualty concentration', lat: 34.6416, lng: 50.8746, weight: 0.62 },
+      { name: 'Shiraz casualty concentration', lat: 29.5918, lng: 52.5837, weight: 0.58 },
+      { name: 'Ahvaz casualty concentration', lat: 31.3183, lng: 48.6706, weight: 0.55 }
+    ]
+
     return [
       ...makePoints({
         label: 'Ballistic missiles (2025 benchmark)',
@@ -301,6 +319,15 @@ function refreshMapPoints(conflict, now) {
         totalMass: infraMass,
         description: 'Approximate air-strike / infrastructure impact locations (5-10 km precision).',
         sites: infraSites
+      }),
+      ...makePoints({
+        label: 'Casualty concentration',
+        type: 'casualties',
+        category: 'casualties',
+        totalMetric: killedTotal + injuredTotal,
+        totalMass: casualtyMass,
+        description: 'Approximate casualty concentration zones derived from reported killed/injured totals (5-10 km precision).',
+        sites: casualtySites
       })
     ]
   }
@@ -310,11 +337,14 @@ function refreshMapPoints(conflict, now) {
     const droneWave7d = metricValue(metrics, 'ukraine_drone_wave_incidents_7d')
     const infra7d = metricValue(metrics, 'critical_infra_impacts_7d_ua')
     const frontline = metricValue(metrics, 'frontline_pressure_index')
+    const killedTotal = metricValue(metrics, 'ukr_civilians_killed_reported') + metricValue(metrics, 'russia_killed_reported')
+    const injuredTotal = metricValue(metrics, 'ukr_civilians_injured_reported') + metricValue(metrics, 'russia_injured_reported')
 
     const missileMass = clamp(Math.round(strikes7d * 0.70 + frontline * 0.40), 120, 320)
     const droneMass = clamp(Math.round(droneWave7d * 0.80 + frontline * 0.35), 110, 300)
     const infraMass = clamp(Math.round(infra7d * 1.10), 45, 180)
     const frontlineMass = clamp(Math.round(frontline * 0.30), 40, 150)
+    const casualtyMass = clamp(Math.round(killedTotal * 0.0007 + injuredTotal * 0.00035), 100, 280)
 
     const missileSites = [
       { name: 'Kyiv oblast strike cluster', lat: 50.4501, lng: 30.5234, weight: 1.2 },
@@ -370,6 +400,21 @@ function refreshMapPoints(conflict, now) {
       { name: 'Robotyne frontline pressure cluster', lat: 47.4437, lng: 35.8282, weight: 0.62 }
     ]
 
+    const casualtySites = [
+      { name: 'Kyiv casualty concentration', lat: 50.4501, lng: 30.5234, weight: 1.25 },
+      { name: 'Kharkiv casualty concentration', lat: 49.9935, lng: 36.2304, weight: 1.15 },
+      { name: 'Donetsk casualty concentration', lat: 48.0159, lng: 37.8028, weight: 1.1 },
+      { name: 'Luhansk casualty concentration', lat: 48.574, lng: 39.3078, weight: 1.0 },
+      { name: 'Zaporizhzhia casualty concentration', lat: 47.8388, lng: 35.1396, weight: 0.9 },
+      { name: 'Kherson casualty concentration', lat: 46.6354, lng: 32.6169, weight: 0.84 },
+      { name: 'Dnipro casualty concentration', lat: 48.4647, lng: 35.0462, weight: 0.8 },
+      { name: 'Odesa casualty concentration', lat: 46.4825, lng: 30.7233, weight: 0.76 },
+      { name: 'Mykolaiv casualty concentration', lat: 46.975, lng: 31.9946, weight: 0.72 },
+      { name: 'Kramatorsk casualty concentration', lat: 48.7231, lng: 37.5563, weight: 0.66 },
+      { name: 'Bakhmut casualty concentration', lat: 48.5956, lng: 37.9999, weight: 0.62 },
+      { name: 'Poltava casualty concentration', lat: 49.5883, lng: 34.5514, weight: 0.58 }
+    ]
+
     return [
       ...makePoints({
         label: 'Strike incidents (7d)',
@@ -406,6 +451,15 @@ function refreshMapPoints(conflict, now) {
         totalMass: frontlineMass,
         description: 'Approximate frontline pressure clusters from source-mixed operational reporting.',
         sites: frontlineSites
+      }),
+      ...makePoints({
+        label: 'Casualty concentration',
+        type: 'casualties',
+        category: 'casualties',
+        totalMetric: killedTotal + injuredTotal,
+        totalMass: casualtyMass,
+        description: 'Approximate casualty concentration zones derived from reported killed/injured totals (5-10 km precision).',
+        sites: casualtySites
       })
     ]
   }
