@@ -1718,9 +1718,10 @@ nav {
 
 .conflict-news-ticker {
   margin-top: 0.75rem;
-  border: 1px solid var(--border-subtle);
-  border-radius: 6px;
-  background: rgba(255,255,255,0.02);
+  border: 1px solid color-mix(in oklab, var(--accent-blue) 42%, var(--border-subtle));
+  border-radius: 8px;
+  background: linear-gradient(90deg, color-mix(in oklab, var(--accent-blue) 10%, var(--bg-card)) 0%, color-mix(in oklab, var(--bg-card) 92%, transparent) 50%, color-mix(in oklab, var(--accent-red) 10%, var(--bg-card)) 100%);
+  box-shadow: 0 0 0 1px color-mix(in oklab, var(--accent-blue) 24%, transparent), 0 10px 30px color-mix(in oklab, black 18%, transparent);
   overflow: hidden;
 }
 
@@ -1729,32 +1730,66 @@ nav {
   align-items: center;
   justify-content: space-between;
   gap: 0.6rem;
-  padding: 0.45rem 0.65rem;
-  border-bottom: 1px solid var(--border-subtle);
+  padding: 0.5rem 0.72rem;
+  border-bottom: 1px solid color-mix(in oklab, var(--accent-blue) 28%, var(--border-subtle));
   font-family: var(--font-mono);
   font-size: 0.67rem;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.07em;
   text-transform: uppercase;
-  color: var(--text-muted);
+  color: var(--text-primary);
 }
 
 .conflict-news-track {
-  display: flex;
-  gap: 1.4rem;
-  padding: 0.58rem 0.65rem;
-  overflow-x: auto;
+  position: relative;
+  display: block;
+  padding: 0.62rem 0.72rem;
+  overflow: hidden;
   white-space: nowrap;
-  scrollbar-width: thin;
+}
+
+.conflict-news-track::before,
+.conflict-news-track::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 22px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.conflict-news-track::before {
+  left: 0;
+  background: linear-gradient(90deg, var(--bg-card), transparent);
+}
+
+.conflict-news-track::after {
+  right: 0;
+  background: linear-gradient(270deg, var(--bg-card), transparent);
+}
+
+.conflict-news-marquee {
+  display: inline-flex;
+  gap: 1.4rem;
+  white-space: nowrap;
+  min-width: max-content;
 }
 
 .conflict-news-item {
   color: var(--text-secondary);
   text-decoration: none;
-  font-size: 0.78rem;
+  font-size: 0.8rem;
+  padding: 0.1rem 0;
 }
 
 .conflict-news-item:hover {
   color: var(--text-primary);
+}
+
+.conflict-news-item[aria-hidden="true"] {
+  pointer-events: none;
+  user-select: none;
+  opacity: 0.9;
 }
 
 .conflict-news-time {
@@ -3605,6 +3640,7 @@ let lastConflictMetricsTimestamp = null;
 let latestSocialFallbackTimestamp = null;
 let lastSocialFeedTimestamp = null;
 let lastConflictNewsTimestamp = null;
+const tickerAutoScrollState = new Map();
 let leafletReadyPromise = null;
 
 function ensureLeafletStylesheet(href) {
@@ -4479,6 +4515,65 @@ function refreshSyncStatusAge() {
   }
 }
 
+function stopTickerAutoScroll(trackId) {
+  const state = tickerAutoScrollState.get(trackId);
+  if (!state) return;
+  if (state.rafId) cancelAnimationFrame(state.rafId);
+  if (state.track && Array.isArray(state.listeners)) {
+    state.listeners.forEach(({ type, handler }) => state.track.removeEventListener(type, handler));
+  }
+  tickerAutoScrollState.delete(trackId);
+}
+
+function startTickerAutoScroll(trackId) {
+  const track = document.getElementById(trackId);
+  if (!track) return;
+
+  stopTickerAutoScroll(trackId);
+  const marquee = track.querySelector('.conflict-news-marquee');
+  if (!marquee) return;
+
+  const oneLoopWidth = marquee.scrollWidth / 2;
+  if (!Number.isFinite(oneLoopWidth) || oneLoopWidth <= track.clientWidth + 24) return;
+
+  const state = {
+    track,
+    paused: false,
+    position: 0,
+    lastTs: performance.now(),
+    speed: 26,
+    rafId: 0,
+    listeners: []
+  };
+
+  const pause = () => { state.paused = true; };
+  const resume = () => {
+    state.paused = false;
+    state.lastTs = performance.now();
+  };
+
+  state.listeners.push({ type: 'mouseenter', handler: pause });
+  state.listeners.push({ type: 'mouseleave', handler: resume });
+  state.listeners.push({ type: 'focusin', handler: pause });
+  state.listeners.push({ type: 'focusout', handler: resume });
+
+  state.listeners.forEach(({ type, handler }) => track.addEventListener(type, handler));
+
+  const frame = ts => {
+    const dt = Math.max(0, ts - state.lastTs);
+    state.lastTs = ts;
+    if (!state.paused) {
+      state.position += (dt / 1000) * state.speed;
+      if (state.position >= oneLoopWidth) state.position -= oneLoopWidth;
+      track.scrollLeft = state.position;
+    }
+    state.rafId = requestAnimationFrame(frame);
+  };
+
+  state.rafId = requestAnimationFrame(frame);
+  tickerAutoScrollState.set(trackId, state);
+}
+
 function formatTickerTime(value) {
   const ts = parseTimestamp(value);
   if (!Number.isFinite(ts)) return '--';
@@ -4501,17 +4596,33 @@ function renderConflictTicker(conflictId, trackId, updatedId, feed) {
   updated.textContent = `Updated: ${formatTickerTime(updatedAt)}`;
 
   if (list.length === 0) {
+    stopTickerAutoScroll(trackId);
     track.innerHTML = '<span class="conflict-news-empty">No live headlines available right now.</span>';
     return;
   }
 
-  track.innerHTML = list.slice(0, 12).map(item => {
+  const primary = list.slice(0, 12).map(item => {
     const title = escapeHtml(item.title || 'Headline');
     const link = item.url || '#';
     const source = escapeHtml(item.source || 'news');
     const published = formatTickerTime(item.published_at_utc);
     return `<a class="conflict-news-item" href="${link}" target="_blank" rel="noopener"><span class="conflict-news-time">${published}</span>${title} <span class="conflict-news-time">(${source})</span></a>`;
   }).join('');
+
+  if (list.length > 1) {
+    const ghost = list.slice(0, 12).map(item => {
+      const title = escapeHtml(item.title || 'Headline');
+      const source = escapeHtml(item.source || 'news');
+      const published = formatTickerTime(item.published_at_utc);
+      return `<a class="conflict-news-item" href="#" tabindex="-1" aria-hidden="true"><span class="conflict-news-time">${published}</span>${title} <span class="conflict-news-time">(${source})</span></a>`;
+    }).join('');
+
+    track.innerHTML = `<div class="conflict-news-marquee">${primary}${ghost}</div>`;
+    startTickerAutoScroll(trackId);
+  } else {
+    stopTickerAutoScroll(trackId);
+    track.innerHTML = `<div class="conflict-news-marquee">${primary}</div>`;
+  }
 }
 
 async function refreshConflictNews() {
@@ -4528,6 +4639,8 @@ async function refreshConflictNews() {
       setFeedFreshness('conflict_news', newsTs, 'Conflict news feed');
     }
   } catch (error) {
+    stopTickerAutoScroll('iranNewsTrack');
+    stopTickerAutoScroll('ukraineNewsTrack');
     const iranTrack = document.getElementById('iranNewsTrack');
     const ukrTrack = document.getElementById('ukraineNewsTrack');
     if (iranTrack) iranTrack.innerHTML = '<span class="conflict-news-empty">Live ticker unavailable.</span>';
