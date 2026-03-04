@@ -2841,6 +2841,8 @@ const CONFLICT_NEWS_INTERVAL_MS = 10 * 60 * 1000;
 const CONFLICT_MONITOR_INTERVAL_MS = 10 * 60 * 1000;
 const THEME_KEY = 'pmir-theme';
 const THEME_MODE_KEY = 'pmir-theme-mode';
+const THEME_MANUAL_SET_AT_KEY = 'pmir-theme-manual-at';
+const THEME_MANUAL_MAX_AGE_MS = 7 * 24 * ONE_HOUR_MS;
 const LAST_SYNC_KEY = 'pmir-last-successful-sync';
 const LAST_IRAN_DATA_KEY = 'pmir-last-iran-data-ts';
 const LAST_UKRAINE_DATA_KEY = 'pmir-last-ukraine-data-ts';
@@ -4924,7 +4926,18 @@ function applyTheme(theme) {
 function themeModeIsManual() {
   const allowPrefs = !window.PMIRCookieConsent || window.PMIRCookieConsent.hasConsent('preferences');
   if (!allowPrefs) return false;
-  return localStorage.getItem(THEME_MODE_KEY) === 'manual';
+  if (localStorage.getItem(THEME_MODE_KEY) !== 'manual') return false;
+
+  const manualAt = Number(localStorage.getItem(THEME_MANUAL_SET_AT_KEY));
+  if (!Number.isFinite(manualAt)) return false;
+
+  if (Date.now() - manualAt > THEME_MANUAL_MAX_AGE_MS) {
+    localStorage.removeItem(THEME_MODE_KEY);
+    localStorage.removeItem(THEME_MANUAL_SET_AT_KEY);
+    return false;
+  }
+
+  return true;
 }
 
 function preferredTheme() {
@@ -5037,13 +5050,31 @@ themeToggle?.addEventListener('click', () => {
   if (allowPrefs) {
     localStorage.setItem(THEME_KEY, next);
     localStorage.setItem(THEME_MODE_KEY, 'manual');
+    localStorage.setItem(THEME_MANUAL_SET_AT_KEY, String(Date.now()));
   }
   applyTheme(next);
 });
 
-systemThemeMedia.addEventListener('change', event => {
+const handleSystemThemeChange = event => {
   if (themeModeIsManual()) return;
   applyTheme(event.matches ? 'light' : 'dark');
+};
+
+if (typeof systemThemeMedia.addEventListener === 'function') {
+  systemThemeMedia.addEventListener('change', handleSystemThemeChange);
+} else if (typeof systemThemeMedia.addListener === 'function') {
+  systemThemeMedia.addListener(handleSystemThemeChange);
+}
+
+document.addEventListener('visibilitychange', () => {
+  if (document.visibilityState !== 'visible') return;
+  if (themeModeIsManual()) return;
+  applyTheme(preferredTheme());
+});
+
+window.addEventListener('pageshow', () => {
+  if (themeModeIsManual()) return;
+  applyTheme(preferredTheme());
 });
 
 hamburger.addEventListener('click', () => {
