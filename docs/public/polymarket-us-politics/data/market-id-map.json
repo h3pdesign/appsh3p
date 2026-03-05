@@ -1,8 +1,8 @@
 {
-  "updated_at_utc": "2026-03-05T00:54:00.079Z",
+  "updated_at_utc": "2026-03-05T02:14:45.763Z",
   "total_questions": 66,
-  "mapped_questions": 46,
-  "unmapped_questions": 20,
+  "mapped_questions": 45,
+  "unmapped_questions": 21,
   "entries": [
     {
       "question": "Will LeBron James win the 2028 US Presidential Election?",
@@ -19,15 +19,6 @@
       "market_slug": "iran-agrees-to-end-enrichment-of-uranium-by-march-31",
       "market_question": " Iran agrees to end enrichment of uranium by March 31?",
       "score": 0.953,
-      "active": true,
-      "closed": false
-    },
-    {
-      "question": "Times US strikes Somalia in February",
-      "market_id": "1280184",
-      "market_slug": "will-there-be-22-or-more-us-strikes-on-somalia-in-february-2026",
-      "market_question": "Will there be 22 or more US strikes on Somalia in February 2026?",
-      "score": 0.435,
       "active": true,
       "closed": false
     },
@@ -424,6 +415,7 @@
     "US-Iran diplomatic meeting location",
     "Iran strike on US military by Feb 28?",
     "US strike on Somalia by Feb 28?",
+    "Times US strikes Somalia in February",
     "Next country US strikes",
     "Trump deportations in 2025",
     "Trump Truth Social posts Feb 20–27",
