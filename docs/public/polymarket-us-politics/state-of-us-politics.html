@@ -2329,14 +2329,6 @@ footer a:hover { border-bottom-color: var(--accent-gold); }
   }
 }
 
-body.page-predictions #iran-war,
-body.page-predictions #ukraine-war {
-  display: none !important;
-}
-
-body.page-predictions .prediction-landing-title {
-  display: none !important;
-}
 </style>
 </head>
 <body class="page-predictions">
@@ -2416,7 +2408,7 @@ body.page-predictions .prediction-landing-title {
   <header class="hero reveal">
     <p class="hero-tag">Polymarket Intelligence Briefing</p>
     <h1>STATE OF<br><span>US & WORLD POLITICS</span></h1>
-    <p class="hero-subtitle">Prediction Market Intelligence Reports & Conflict Monitoring</p>
+    <p class="hero-subtitle">Prediction Market Intelligence Reports</p>
     <div class="hero-meta">
       <span id="asOfDate">&#9670; Last updated: --</span>
       <span>&#9670; Source: Polymarket</span>
@@ -2438,251 +2430,6 @@ body.page-predictions .prediction-landing-title {
     </div>
     <div id="globalLiveAnnouncer" class="sr-only" aria-live="polite" aria-atomic="true"></div>
   </header>
-
-  
-
-  <!-- ====== IRAN WAR MONITOR ====== -->
-  <section class="section" id="iran-war">
-    <div class="section-header reveal">
-      <div class="section-number">Top Priority</div>
-      <h2 class="section-title" id="conflictTitle">Conflict Monitor</h2>
-      <p class="section-subtitle" id="conflictSubtitle">Live conflict metrics and a daily composite intensity graph (casualties, missile activity, operational footprint), refreshed every hour.</p>
-    </div>
-    <div class="iran-monitor reveal">
-      <div class="iran-meta">
-        <span id="iranWarAsOf">&#9670; Last updated: waiting for live metrics</span>
-        <span id="iranWarSync">&#9670; Syncing metrics...</span>
-        <span id="conflictSourceQuality">&#9670; Confidence: --</span>
-        <a id="iranWarSource" href="https://en.wikipedia.org/wiki/2026_Iran_conflict" target="_blank" rel="noopener">Source 1: live conflict data feed</a>
-        <a id="iranWarSource2" href="https://www.understandingwar.org/" target="_blank" rel="noopener">Source 2: additional conflict source</a>
-        <a id="iranWarSource3" href="https://acleddata.com/" target="_blank" rel="noopener">Source 3: additional conflict source</a>
-        <a id="iranWarSource4" href="https://www.unocha.org/" target="_blank" rel="noopener">Source 4: additional conflict source</a>
-      </div>
-      <div class="conflict-news-ticker" id="iranNewsTicker">
-        <div class="conflict-news-head"><span>Live Conflict Newsticker</span><span id="iranNewsUpdated">--</span></div>
-        <div class="conflict-news-track" id="iranNewsTrack"><span class="conflict-news-empty">Loading latest conflict headlines...</span></div>
-      </div>
-      <div class="metric-scope-legend" id="conflictScopeLegend" aria-label="Scope legend"></div>
-      <div class="metric-source-legend" id="conflictSourceLegend" aria-label="Source legend"></div>
-      <div class="metric-confidence-guide" aria-label="Confidence marker legend">
-        <span class="metric-confidence-guide-label">Marker meaning:</span>
-        <span class="metric-confidence-badge metric-confidence-low">LOW</span>
-        <span class="metric-confidence-guide-text">higher uncertainty / fewer confirmations</span>
-        <span class="metric-confidence-badge metric-confidence-medium">MEDIUM</span>
-        <span class="metric-confidence-guide-text">partially confirmed / still evolving</span>
-        <span class="metric-confidence-badge metric-confidence-high">HIGH</span>
-        <span class="metric-confidence-guide-text">strongly confirmed across multiple sources</span>
-      </div>
-      <div class="conflict-metrics-grid" id="conflictMetrics">
-        <div class="iran-stat"><div class="iran-stat-label">Loading metrics</div><div class="iran-stat-value">--</div></div>
-      </div>
-      <div class="changes-block" role="status" aria-live="polite" aria-label="Latest conflict changes">
-        <div class="changes-head">What changed in the last hour</div>
-        <ul class="changes-list" id="changesList">
-          <li>Waiting for live conflict deltas...</li>
-        </ul>
-      </div>
-      <div class="conflict-map-wrap">
-        <div class="conflict-map" id="conflictMap"></div>
-        <div class="conflict-globe" id="conflictGlobe" hidden></div>
-        <div class="conflict-map-toolbar">
-          <div class="conflict-map-status" id="conflictMapStatus">Loading conflict map...</div>
-          <div class="map-controls" id="conflictMapControls">
-            <label class="map-filter"><input type="checkbox" id="iranFilterMissiles" checked>Missiles</label>
-            <label class="map-filter"><input type="checkbox" id="iranFilterDrones" checked>Drones</label>
-            <label class="map-filter"><input type="checkbox" id="iranFilterInfra" checked>Infrastructure</label>
-            <label class="map-filter"><input type="checkbox" id="iranClusterToggle" checked>Cluster</label>
-            <label class="map-filter"><input type="checkbox" id="iranHeatToggle">Heatmap</label>
-            <label class="map-filter"><input type="checkbox" id="iranTerrainToggle" aria-label="Iran terrain map toggle">Terrain</label>
-            <label class="map-select">Window
-              <select id="iranTimeframe" aria-label="Iran map timeframe">
-                <option value="24h">24h</option>
-                <option value="7d" selected>7d</option>
-                <option value="30d">30d</option>
-                <option value="all">All</option>
-              </select>
-            </label>
-            <label class="map-select">Region
-              <select id="iranPreset" aria-label="Iran map region preset">
-                <option value="auto" selected>Auto</option>
-                <option value="core">Iran/Israel Core</option>
-                <option value="gulf">Gulf</option>
-                <option value="wide">Wide Theater</option>
-              </select>
-            </label>
-            <label class="map-density">Density <input id="iranDensity" type="range" min="20" max="100" step="10" value="100" aria-label="Iran map marker density"></label>
-          </div>
-          <button class="map-mini-btn" id="iranReplayBtn" type="button">Replay</button>
-          <button class="map-mini-btn" id="iranGlobeToggleBtn" type="button">Globe</button>
-          <button class="map-mini-btn" id="iranMapFullscreenBtn" type="button">Fullscreen</button>
-          <button class="map-reset-btn" id="conflictMapResetBtn" type="button">Reset view</button>
-        </div>
-        <div class="conflict-trend" id="conflictTrend">
-          <div class="conflict-trend-head">
-            <span>Daily Conflict Intensity</span>
-            <span id="conflictTrendRange">--</span>
-          </div>
-          <div class="conflict-trend-controls">
-            <div class="conflict-trend-nav">
-              <button class="conflict-trend-btn" id="conflictTrendOlder" type="button">Aelter</button>
-              <button class="conflict-trend-btn" id="conflictTrendNewer" type="button">Neuer</button>
-            </div>
-            <label class="conflict-trend-zoom">Zoom
-              <input id="conflictTrendZoom" type="range" min="7" max="365" value="7" step="1" aria-label="Zoom timeline window">
-            </label>
-          </div>
-          <svg class="conflict-trend-chart" id="conflictTrendChart" viewBox="0 0 700 170" role="img" aria-label="Daily conflict intensity trend"></svg>
-          <div class="conflict-trend-tooltip" id="conflictTrendTooltip" aria-hidden="true"></div>
-          <div class="conflict-explainer" id="conflictExplainer">
-            <strong>Graph definition:</strong> each dot is one day and represents a <strong>composite conflict intensity index</strong> (0-100) built from the data feed (casualties, projectile activity, and operational impacts). It is not a direct daily death count. <strong>Delta math:</strong> Delta (1d) = I_t - I_{t-1}; Delta (7d) = I_t - I_{t-7}; Momentum = Delta (7d) / 7.
-          </div>
-        </div>
-      </div>
-      <div class="conflict-legend" id="conflictLegend"></div>
-      <div class="conflict-timeline" id="conflictTimeline">
-        <h3>Timeline</h3>
-        <div class="conflict-timeline-controls" id="conflictTimelineControls" aria-label="Iran timeline controls">
-          <select class="conflict-timeline-sort" id="conflictTimelineSort" aria-label="Sort timeline entries">
-            <option value="newest">Newest first</option>
-            <option value="oldest">Oldest first</option>
-          </select>
-          <button class="conflict-timeline-chip is-active" type="button" data-timeline-filter="all">All</button>
-          <button class="conflict-timeline-chip" type="button" data-timeline-filter="casualties">Casualties</button>
-          <button class="conflict-timeline-chip" type="button" data-timeline-filter="operations">Operations</button>
-          <button class="conflict-timeline-chip" type="button" data-timeline-filter="sources">Sources</button>
-          <button class="conflict-timeline-more" id="conflictTimelineMoreBtn" type="button">Show more</button>
-          <div class="conflict-timeline-meta" id="conflictTimelineMeta">Loading timeline metadata...</div>
-        </div>
-        <div class="conflict-timeline-list" id="conflictTimelineList">
-          <div class="conflict-timeline-item"><div class="conflict-timeline-time">Loading</div><div class="conflict-timeline-text">Waiting for timeline updates...</div></div>
-        </div>
-      </div>
-    </div>
-    <div class="methodology reveal" style="margin-top:1rem;">
-      <h3>Adaptable Conflict Template</h3>
-      <p>
-        This featured module is data-driven and can be reused for future conflicts by updating the conflict feed with a new active conflict ID, map center, metric cards, legend schema, and geotagged events. No structural HTML changes are required.
-      </p>
-    </div>
-  </section>
-
-
-  <!-- ====== UKRAINE WAR MONITOR ====== -->
-  <section class="section" id="ukraine-war">
-    <div class="section-header reveal">
-      <div class="section-number">Priority Monitor</div>
-      <h2 class="section-title" id="ukraineTitle">Ukraine Conflict Monitor</h2>
-      <p class="section-subtitle" id="ukraineSubtitle">Live conflict metrics and a daily composite intensity graph for Ukraine, refreshed every hour.</p>
-      <button class="section-collapse-btn" id="ukraineToggleBtn" type="button" aria-expanded="false" aria-controls="ukraineContent">Monitor anzeigen</button>
-    </div>
-    <div class="iran-monitor reveal" id="ukraineContent" hidden>
-      <div class="iran-meta">
-        <span id="ukraineAsOf">&#9670; Last updated: waiting for live metrics</span>
-        <span id="ukraineSync">&#9670; Syncing metrics...</span>
-        <span id="ukraineSourceQuality">&#9670; Confidence: --</span>
-        <a id="ukraineSource" href="https://en.wikipedia.org/wiki/Russian_invasion_of_Ukraine" target="_blank" rel="noopener">Source 1: live conflict data feed</a>
-        <a id="ukraineSource2" href="https://www.understandingwar.org/" target="_blank" rel="noopener">Source 2: additional conflict source</a>
-        <a id="ukraineSource3" href="https://www.ohchr.org/en/countries/ukraine" target="_blank" rel="noopener">Source 3: additional conflict source</a>
-
-        <a id="ukraineSource4" href="https://acleddata.com/" target="_blank" rel="noopener">Source 4: additional conflict source</a>
-      </div>
-      <div class="conflict-news-ticker" id="ukraineNewsTicker">
-        <div class="conflict-news-head"><span>Live Conflict Newsticker</span><span id="ukraineNewsUpdated">--</span></div>
-        <div class="conflict-news-track" id="ukraineNewsTrack"><span class="conflict-news-empty">Loading latest conflict headlines...</span></div>
-      </div>
-      <div class="metric-scope-legend" id="ukraineScopeLegend" aria-label="Scope legend"></div>
-      <div class="metric-source-legend" id="ukraineSourceLegend" aria-label="Source legend"></div>
-      <div class="metric-confidence-guide" aria-label="Confidence marker legend">
-        <span class="metric-confidence-guide-label">Marker meaning:</span>
-        <span class="metric-confidence-badge metric-confidence-low">LOW</span>
-        <span class="metric-confidence-guide-text">higher uncertainty / fewer confirmations</span>
-        <span class="metric-confidence-badge metric-confidence-medium">MEDIUM</span>
-        <span class="metric-confidence-guide-text">partially confirmed / still evolving</span>
-        <span class="metric-confidence-badge metric-confidence-high">HIGH</span>
-        <span class="metric-confidence-guide-text">strongly confirmed across multiple sources</span>
-      </div>
-      <div class="conflict-metrics-grid" id="ukraineMetrics">
-        <div class="iran-stat"><div class="iran-stat-label">Loading metrics</div><div class="iran-stat-value">--</div></div>
-      </div>
-      <div class="conflict-map-wrap">
-        <div class="conflict-map" id="ukraineMap"></div>
-        <div class="conflict-globe" id="ukraineGlobe" hidden></div>
-        <div class="conflict-map-toolbar">
-          <div class="conflict-map-status" id="ukraineMapStatus">Loading conflict map...</div>
-          <div class="map-controls" id="ukraineMapControls">
-            <label class="map-filter"><input type="checkbox" id="ukraineFilterMissiles" checked>Missiles</label>
-            <label class="map-filter"><input type="checkbox" id="ukraineFilterDrones" checked>Drones</label>
-            <label class="map-filter"><input type="checkbox" id="ukraineFilterInfra" checked>Infrastructure</label>
-            <label class="map-filter"><input type="checkbox" id="ukraineClusterToggle" checked>Cluster</label>
-            <label class="map-filter"><input type="checkbox" id="ukraineHeatToggle">Heatmap</label>
-            <label class="map-filter"><input type="checkbox" id="ukraineTerrainToggle" aria-label="Ukraine terrain map toggle">Terrain</label>
-            <label class="map-select">Window
-              <select id="ukraineTimeframe" aria-label="Ukraine map timeframe">
-                <option value="24h">24h</option>
-                <option value="7d" selected>7d</option>
-                <option value="30d">30d</option>
-                <option value="all">All</option>
-              </select>
-            </label>
-            <label class="map-select">Region
-              <select id="ukrainePreset" aria-label="Ukraine map region preset">
-                <option value="auto" selected>Auto</option>
-                <option value="east">East Front</option>
-                <option value="south">South / Black Sea</option>
-                <option value="wide">Nationwide</option>
-              </select>
-            </label>
-            <label class="map-density">Density <input id="ukraineDensity" type="range" min="20" max="100" step="10" value="100" aria-label="Ukraine map marker density"></label>
-          </div>
-          <button class="map-mini-btn" id="ukraineReplayBtn" type="button">Replay</button>
-          <button class="map-mini-btn" id="ukraineGlobeToggleBtn" type="button">Globe</button>
-          <button class="map-mini-btn" id="ukraineMapFullscreenBtn" type="button">Fullscreen</button>
-          <button class="map-reset-btn" id="ukraineMapResetBtn" type="button">Reset view</button>
-        </div>
-        <div class="conflict-trend" id="ukraineTrend">
-          <div class="conflict-trend-head">
-            <span>Daily Conflict Intensity</span>
-            <span id="ukraineTrendRange">--</span>
-          </div>
-          <div class="conflict-trend-controls">
-            <div class="conflict-trend-nav">
-              <button class="conflict-trend-btn" id="ukraineTrendOlder" type="button">Aelter</button>
-              <button class="conflict-trend-btn" id="ukraineTrendNewer" type="button">Neuer</button>
-            </div>
-            <label class="conflict-trend-zoom">Zoom
-              <input id="ukraineTrendZoom" type="range" min="7" max="365" value="7" step="1" aria-label="Zoom timeline window">
-            </label>
-          </div>
-          <svg class="conflict-trend-chart" id="ukraineTrendChart" viewBox="0 0 700 170" role="img" aria-label="Daily Ukraine conflict intensity trend"></svg>
-          <div class="conflict-trend-tooltip" id="ukraineTrendTooltip" aria-hidden="true"></div>
-          <div class="conflict-explainer" id="ukraineExplainer">
-            <strong>Graph definition:</strong> each dot is one day and represents a <strong>composite conflict intensity index</strong> (0-100) built from casualties, strike activity, and operational impact. It is not a direct daily death count. <strong>Delta math:</strong> Delta (1d) = I_t - I_{t-1}; Delta (7d) = I_t - I_{t-7}; Momentum = Delta (7d) / 7.
-          </div>
-        </div>
-      </div>
-      <div class="conflict-legend" id="ukraineLegend"></div>
-      <div class="conflict-timeline" id="ukraineTimeline">
-        <h3>Timeline</h3>
-        <div class="conflict-timeline-controls" id="ukraineTimelineControls" aria-label="Ukraine timeline controls">
-          <select class="conflict-timeline-sort" id="ukraineTimelineSort" aria-label="Sort timeline entries">
-            <option value="newest">Newest first</option>
-            <option value="oldest">Oldest first</option>
-          </select>
-          <button class="conflict-timeline-chip is-active" type="button" data-timeline-filter="all">All</button>
-          <button class="conflict-timeline-chip" type="button" data-timeline-filter="casualties">Casualties</button>
-          <button class="conflict-timeline-chip" type="button" data-timeline-filter="operations">Operations</button>
-          <button class="conflict-timeline-chip" type="button" data-timeline-filter="sources">Sources</button>
-          <button class="conflict-timeline-more" id="ukraineTimelineMoreBtn" type="button">Show more</button>
-          <div class="conflict-timeline-meta" id="ukraineTimelineMeta">Loading timeline metadata...</div>
-        </div>
-        <div class="conflict-timeline-list" id="ukraineTimelineList">
-          <div class="conflict-timeline-item"><div class="conflict-timeline-time">Loading</div><div class="conflict-timeline-text">Waiting for timeline updates...</div></div>
-        </div>
-      </div>
-      </div>
-  </section>
-
-
 
   <h1 class="section-title reveal prediction-landing-title">Polymarket prediction estimates &amp; invests</h1>
 
@@ -7470,7 +7217,7 @@ allNavLinks.forEach(link => {
   }
 });
 
-const focusMap = { iran: 'iran-war', ukraine: 'ukraine-war', summary: 'summary', foreign: 'foreign', race: 'presidential', trump: 'trump', fed: 'fed', midterms: 'midterms', congress: 'congress', legal: 'legal', social: 'social', methodology: 'methodology' };
+const focusMap = { summary: 'summary', foreign: 'foreign', race: 'presidential', trump: 'trump', fed: 'fed', midterms: 'midterms', congress: 'congress', legal: 'legal', social: 'social', methodology: 'methodology' };
 const focusSection = focusMap[queryFocus] || document.body.dataset.focusSection;
 if (focusSection) {
   const target = document.getElementById(focusSection);

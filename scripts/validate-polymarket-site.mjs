@@ -4,6 +4,7 @@ import path from "node:path";
 const baseDir = path.join("docs", "public", "polymarket-us-politics");
 
 const centralPage = "state-of-us-politics.html";
+const conflictPage = "conflict-monitor.html";
 
 const wrapperPages = [
   "foreign-policy.html",
@@ -16,9 +17,20 @@ const wrapperPages = [
   "social-media.html",
 ];
 
-const pages = [centralPage, ...wrapperPages];
+const pages = [centralPage, conflictPage, ...wrapperPages];
 
-const requiredCentralPageSnippets = [
+const requiredPredictionPageSnippets = [
+  "<meta name=\"description\"",
+  "<link rel=\"canonical\"",
+  "id=\"syncStatus\"",
+  "status-pill",
+  "function setSyncStatus(",
+  "function formatDualTimestamp(",
+  "POLYMARKET_SNAPSHOT_URL",
+  "loadPolymarketSnapshot(",
+];
+
+const requiredConflictPageSnippets = [
   "<meta name=\"description\"",
   "<link rel=\"canonical\"",
   "id=\"syncStatus\"",
@@ -74,8 +86,10 @@ function validatePages() {
     const html = fs.readFileSync(pagePath, "utf8");
 
     const requiredSnippets = page === centralPage
-      ? requiredCentralPageSnippets
-      : requiredWrapperSnippets;
+      ? requiredPredictionPageSnippets
+      : page === conflictPage
+        ? requiredConflictPageSnippets
+        : requiredWrapperSnippets;
 
     for (const snippet of requiredSnippets) {
       if (!html.includes(snippet)) {
