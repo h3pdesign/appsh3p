@@ -1842,6 +1842,66 @@ nav {
   margin-bottom: 0.6rem;
 }
 
+.conflict-timeline-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  align-items: center;
+  margin-bottom: 0.65rem;
+}
+
+.conflict-timeline-sort {
+  border: 1px solid var(--border-color);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--text-secondary);
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.04em;
+  padding: 0.28rem 0.52rem;
+}
+
+.conflict-timeline-chip {
+  border: 1px solid var(--border-color);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--text-secondary);
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.5rem;
+  cursor: pointer;
+}
+
+.conflict-timeline-chip.is-active {
+  border-color: color-mix(in oklab, var(--accent-blue) 65%, var(--border-color));
+  color: var(--text-primary);
+  background: color-mix(in oklab, var(--accent-blue) 13%, transparent);
+}
+
+.conflict-timeline-more {
+  margin-left: auto;
+  border: 1px solid var(--border-color);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--text-secondary);
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.56rem;
+  cursor: pointer;
+}
+
+.conflict-timeline-meta {
+  width: 100%;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.04em;
+}
+
 .conflict-timeline-list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
@@ -1850,9 +1910,15 @@ nav {
 
 .conflict-timeline-item {
   border: 1px solid var(--border-subtle);
-  border-radius: 4px;
+  border-radius: 6px;
   padding: 0.65rem 0.75rem;
   background: rgba(255,255,255,0.02);
+  transition: border-color 0.14s ease, transform 0.14s ease;
+}
+
+.conflict-timeline-item:hover {
+  border-color: color-mix(in oklab, var(--accent-blue) 45%, var(--border-subtle));
+  transform: translateY(-1px);
 }
 
 .conflict-timeline-time {
@@ -1869,6 +1935,25 @@ nav {
   line-height: 1.45;
   color: var(--text-secondary);
 }
+
+.conflict-timeline-badge {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 0.42rem;
+  border: 1px solid var(--border-subtle);
+  border-radius: 999px;
+  padding: 0.06rem 0.36rem;
+  font-family: var(--font-mono);
+  font-size: 0.56rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.conflict-timeline-badge.casualties { border-color: color-mix(in oklab, var(--tone-red) 45%, var(--border-subtle)); color: var(--tone-red); }
+.conflict-timeline-badge.operations { border-color: color-mix(in oklab, var(--tone-amber) 45%, var(--border-subtle)); color: var(--tone-amber); }
+.conflict-timeline-badge.sources { border-color: color-mix(in oklab, var(--accent-blue) 45%, var(--border-subtle)); color: var(--accent-blue); }
+.conflict-timeline-badge.trend { border-color: color-mix(in oklab, var(--tone-green) 45%, var(--border-subtle)); color: var(--tone-green); }
 
 .timeline-lab {
   border: 1px solid var(--border-color);
@@ -2536,6 +2621,12 @@ footer a:hover { border-bottom-color: var(--accent-gold); }
       <div class="conflict-metrics-grid" id="conflictMetrics">
         <div class="iran-stat"><div class="iran-stat-label">Loading metrics</div><div class="iran-stat-value">--</div></div>
       </div>
+      <div class="changes-block" role="status" aria-live="polite" aria-label="Latest conflict changes">
+        <div class="changes-head">What changed in the last hour</div>
+        <ul class="changes-list" id="changesList">
+          <li>Waiting for live conflict deltas...</li>
+        </ul>
+      </div>
       <div class="conflict-map-wrap">
         <div class="conflict-map" id="conflictMap"></div>
         <div class="conflict-globe" id="conflictGlobe" hidden></div>
@@ -2595,6 +2686,18 @@ footer a:hover { border-bottom-color: var(--accent-gold); }
       <div class="conflict-legend" id="conflictLegend"></div>
       <div class="conflict-timeline" id="conflictTimeline">
         <h3>Timeline</h3>
+        <div class="conflict-timeline-controls" id="conflictTimelineControls" aria-label="Iran timeline controls">
+          <select class="conflict-timeline-sort" id="conflictTimelineSort" aria-label="Sort timeline entries">
+            <option value="newest">Newest first</option>
+            <option value="oldest">Oldest first</option>
+          </select>
+          <button class="conflict-timeline-chip is-active" type="button" data-timeline-filter="all">All</button>
+          <button class="conflict-timeline-chip" type="button" data-timeline-filter="casualties">Casualties</button>
+          <button class="conflict-timeline-chip" type="button" data-timeline-filter="operations">Operations</button>
+          <button class="conflict-timeline-chip" type="button" data-timeline-filter="sources">Sources</button>
+          <button class="conflict-timeline-more" id="conflictTimelineMoreBtn" type="button">Show more</button>
+          <div class="conflict-timeline-meta" id="conflictTimelineMeta">Loading timeline metadata...</div>
+        </div>
         <div class="conflict-timeline-list" id="conflictTimelineList">
           <div class="conflict-timeline-item"><div class="conflict-timeline-time">Loading</div><div class="conflict-timeline-text">Waiting for timeline updates...</div></div>
         </div>
@@ -2705,81 +2808,27 @@ footer a:hover { border-bottom-color: var(--accent-gold); }
       <div class="conflict-legend" id="ukraineLegend"></div>
       <div class="conflict-timeline" id="ukraineTimeline">
         <h3>Timeline</h3>
+        <div class="conflict-timeline-controls" id="ukraineTimelineControls" aria-label="Ukraine timeline controls">
+          <select class="conflict-timeline-sort" id="ukraineTimelineSort" aria-label="Sort timeline entries">
+            <option value="newest">Newest first</option>
+            <option value="oldest">Oldest first</option>
+          </select>
+          <button class="conflict-timeline-chip is-active" type="button" data-timeline-filter="all">All</button>
+          <button class="conflict-timeline-chip" type="button" data-timeline-filter="casualties">Casualties</button>
+          <button class="conflict-timeline-chip" type="button" data-timeline-filter="operations">Operations</button>
+          <button class="conflict-timeline-chip" type="button" data-timeline-filter="sources">Sources</button>
+          <button class="conflict-timeline-more" id="ukraineTimelineMoreBtn" type="button">Show more</button>
+          <div class="conflict-timeline-meta" id="ukraineTimelineMeta">Loading timeline metadata...</div>
+        </div>
         <div class="conflict-timeline-list" id="ukraineTimelineList">
           <div class="conflict-timeline-item"><div class="conflict-timeline-time">Loading</div><div class="conflict-timeline-text">Waiting for timeline updates...</div></div>
         </div>
       </div>
       </div>
-      <div class="changes-block" role="status" aria-live="polite" aria-label="Latest conflict changes">
-        <div class="changes-head">What changed in the last hour</div>
-        <ul class="changes-list" id="changesList">
-          <li>Waiting for live conflict deltas...</li>
-        </ul>
-      </div>
   </section>
 
-  <!-- ====== INTERACTIVE TIMELINE LAB ====== -->
-  <section class="section" id="timeline-lab">
-    <div class="section-header reveal">
-      <h2 class="section-title">Interactive Timeline Lab</h2>
-      <p class="section-subtitle">Theme filters, compare mode, range presets, brush zoom, event markers, and share/export controls.</p>
-    </div>
-    <div class="timeline-lab reveal" id="timelineLab">
-      <div class="timeline-lab-controls">
-        <div class="timeline-lab-row" id="timelineThemeChips" aria-label="Timeline theme filters">
-          <button class="timeline-chip active" data-theme="all" type="button">All</button>
-          <button class="timeline-chip" data-theme="conflict" type="button">Conflict</button>
-          <button class="timeline-chip" data-theme="elections" type="button">Elections</button>
-          <button class="timeline-chip" data-theme="economy" type="button">Economy</button>
-          <button class="timeline-chip" data-theme="social" type="button">Social</button>
-        </div>
-        <div class="timeline-lab-row" id="timelineRangeChips" aria-label="Timeline ranges">
-          <button class="timeline-chip" data-range="24h" type="button">24h</button>
-          <button class="timeline-chip active" data-range="7d" type="button">7d</button>
-          <button class="timeline-chip" data-range="30d" type="button">30d</button>
-          <button class="timeline-chip" data-range="90d" type="button">90d</button>
-          <button class="timeline-chip" data-range="all" type="button">All</button>
-        </div>
-        <div class="timeline-lab-row">
-          <label class="map-filter"><input id="timelineCompareToggle" type="checkbox">Compare mode</label>
-          <label class="map-select">Compare
-            <select class="timeline-lab-select" id="timelineCompareTheme" aria-label="Compare theme" disabled>
-              <option value="conflict">Conflict</option>
-              <option value="elections">Elections</option>
-              <option value="economy">Economy</option>
-              <option value="social">Social</option>
-            </select>
-          </label>
-          <label class="map-filter"><input id="timelineSplitToggle" type="checkbox">Split</label>
-          <label class="map-select">Layout
-            <select class="timeline-lab-select" id="timelineLayout" aria-label="Timeline layout">
-              <option value="focus">Focus + Context</option>
-              <option value="stacked">Stacked</option>
-              <option value="small">Small Multiples</option>
-            </select>
-          </label>
-          <button class="map-mini-btn" id="timelineResetZoom" type="button">Reset zoom</button>
-          <button class="map-mini-btn" id="timelineShareView" type="button">Share view</button>
-          <button class="map-mini-btn" id="timelineExportPng" type="button">PNG export</button>
-        </div>
-        <div class="timeline-lab-status" id="timelineLabStatus">Preparing timeline data...</div>
-      </div>
 
-      <div class="timeline-lab-main" id="timelineLabMain">
-        <svg class="timeline-lab-chart" id="timelineLabChart" viewBox="0 0 920 280" role="img" aria-label="Interactive timeline"></svg>
-        <svg class="timeline-lab-brush" id="timelineLabBrush" viewBox="0 0 920 88" role="img" aria-label="Timeline brush selector"></svg>
-        <div class="timeline-lab-tooltip" id="timelineLabTooltip" aria-hidden="true"></div>
-      </div>
 
-      <div class="timeline-lab-legend">
-        <span class="timeline-marker"><span class="timeline-marker-dot" style="background:#f43f5e"></span>Major conflict event marker</span>
-        <span class="timeline-marker"><span class="timeline-marker-dot" style="background:#22c55e"></span>Elections driver</span>
-        <span class="timeline-marker"><span class="timeline-marker-dot" style="background:#3b82f6"></span>Economy driver</span>
-        <span class="timeline-marker"><span class="timeline-marker-dot" style="background:#f59e0b"></span>Social driver</span>
-      </div>
-      <div class="timeline-date-legend" id="timelineDateLegend" aria-label="Timeline date sections"></div>
-    </div>
-  </section>
   <h1 class="section-title reveal">Polymarket prediction estimates &amp; invests</h1>
 
   <!-- ====== EXECUTIVE SUMMARY ====== -->
@@ -3874,6 +3923,10 @@ let latestSocialFallbackTimestamp = null;
 let lastSocialFeedTimestamp = null;
 let lastConflictNewsTimestamp = null;
 const tickerAutoScrollState = new Map();
+const conflictTimelineState = {
+  conflictTimelineList: { filter: 'all', sort: 'newest', expanded: false, rows: [], initialized: false },
+  ukraineTimelineList: { filter: 'all', sort: 'newest', expanded: false, rows: [], initialized: false }
+};
 let leafletReadyPromise = null;
 let globeReadyPromise = null;
 let timelineConflictSeriesIran = [];
@@ -5513,34 +5566,121 @@ function renderConflictLegend(legend, containerId = 'conflictLegend', moduleName
   container.appendChild(note);
 }
 
+function inferTimelineCategory(item) {
+  const explicit = String(item?.category || '').trim().toLowerCase();
+  if (['casualties', 'operations', 'sources', 'trend'].includes(explicit)) return explicit;
+  const probe = normalize(String(item?.text || item?.summary || ''));
+  if (/killed|injured|casualt|deaths|wounded/.test(probe)) return 'casualties';
+  if (/source|wikipedia|centcom|guardian|al jazeera|cbs|feed/.test(probe)) return 'sources';
+  if (/trend|intensity|delta|series/.test(probe)) return 'trend';
+  return 'operations';
+}
+
+function timelineControlIds(containerId) {
+  return containerId === 'ukraineTimelineList'
+    ? { controlsId: 'ukraineTimelineControls', sortId: 'ukraineTimelineSort', moreBtnId: 'ukraineTimelineMoreBtn', metaId: 'ukraineTimelineMeta' }
+    : { controlsId: 'conflictTimelineControls', sortId: 'conflictTimelineSort', moreBtnId: 'conflictTimelineMoreBtn', metaId: 'conflictTimelineMeta' };
+}
+
+function ensureConflictTimelineControls(containerId) {
+  const state = conflictTimelineState[containerId];
+  if (!state || state.initialized) return;
+
+  const ids = timelineControlIds(containerId);
+  const controls = document.getElementById(ids.controlsId);
+  const sortNode = document.getElementById(ids.sortId);
+  const moreBtn = document.getElementById(ids.moreBtnId);
+  if (!controls || !sortNode || !moreBtn) return;
+
+  controls.querySelectorAll('[data-timeline-filter]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const next = btn.getAttribute('data-timeline-filter') || 'all';
+      state.filter = next;
+      controls.querySelectorAll('[data-timeline-filter]').forEach(node => {
+        node.classList.toggle('is-active', node.getAttribute('data-timeline-filter') === next);
+      });
+      renderConflictTimeline(state.rows, containerId);
+    });
+  });
+
+  sortNode.addEventListener('change', () => {
+    state.sort = sortNode.value === 'oldest' ? 'oldest' : 'newest';
+    renderConflictTimeline(state.rows, containerId);
+  });
+
+  moreBtn.addEventListener('click', () => {
+    state.expanded = !state.expanded;
+    renderConflictTimeline(state.rows, containerId);
+  });
+
+  state.initialized = true;
+}
+
 function renderConflictTimeline(events, containerId = 'conflictTimelineList') {
   const container = document.getElementById(containerId);
   if (!container) return;
 
-  const rows = Array.isArray(events) ? events : [];
+  const state = conflictTimelineState[containerId] || { filter: 'all', sort: 'newest', expanded: false, rows: [] };
+  if (conflictTimelineState[containerId]) ensureConflictTimelineControls(containerId);
+
+  const rows = (Array.isArray(events) ? events : []).map(item => {
+    const ts = parseTimestamp(item?.timestamp_utc || item?.time || item?.date || item?.updated_at_utc || null);
+    return { ...item, _ts: Number.isFinite(ts) ? ts : null, _category: inferTimelineCategory(item) };
+  });
+  state.rows = rows;
+
+  let filtered = rows.slice();
+  if (state.filter !== 'all') filtered = filtered.filter(item => item._category === state.filter);
+
+  filtered.sort((a, b) => {
+    const aTs = Number.isFinite(a._ts) ? a._ts : 0;
+    const bTs = Number.isFinite(b._ts) ? b._ts : 0;
+    return state.sort === 'oldest' ? (aTs - bTs) : (bTs - aTs);
+  });
+
+  const visible = filtered.slice(0, state.expanded ? 24 : 4);
   container.innerHTML = '';
 
-  if (rows.length === 0) {
-    container.innerHTML = '<div class="conflict-timeline-item"><div class="conflict-timeline-time">No timeline</div><div class="conflict-timeline-text">No recent timeline entries in feed.</div></div>';
-    return;
+  if (visible.length === 0) {
+    container.innerHTML = '<div class="conflict-timeline-item"><div class="conflict-timeline-time">No timeline</div><div class="conflict-timeline-text">No entries match the current filter.</div></div>';
+  } else {
+    visible.forEach(item => {
+      const card = document.createElement('div');
+      card.className = 'conflict-timeline-item';
+
+      const time = document.createElement('div');
+      time.className = 'conflict-timeline-time';
+      const absolute = item.time || item.date || 'Update';
+      const relative = Number.isFinite(item._ts) ? formatRelativeAge(Math.max(0, Date.now() - item._ts)) : null;
+      time.textContent = relative ? `${absolute} · ${relative}` : absolute;
+
+      const badge = document.createElement('span');
+      badge.className = 'conflict-timeline-badge ' + item._category;
+      badge.textContent = item._category;
+      time.appendChild(badge);
+
+      const text = document.createElement('div');
+      text.className = 'conflict-timeline-text';
+      text.textContent = item.text || item.summary || 'No details available.';
+
+      card.appendChild(time);
+      card.appendChild(text);
+      container.appendChild(card);
+    });
   }
 
-  rows.slice(0, 8).forEach(item => {
-    const card = document.createElement('div');
-    card.className = 'conflict-timeline-item';
-
-    const time = document.createElement('div');
-    time.className = 'conflict-timeline-time';
-    time.textContent = item.time || item.date || 'Update';
-
-    const text = document.createElement('div');
-    text.className = 'conflict-timeline-text';
-    text.textContent = item.text || item.summary || 'No details available.';
-
-    card.appendChild(time);
-    card.appendChild(text);
-    container.appendChild(card);
-  });
+  const ids = timelineControlIds(containerId);
+  const metaNode = document.getElementById(ids.metaId);
+  const moreBtn = document.getElementById(ids.moreBtnId);
+  if (metaNode) {
+    const newestTs = filtered.reduce((acc, row) => {
+      if (!Number.isFinite(row._ts)) return acc;
+      return !Number.isFinite(acc) || row._ts > acc ? row._ts : acc;
+    }, NaN);
+    const freshness = Number.isFinite(newestTs) ? formatRelativeAge(Math.max(0, Date.now() - newestTs)) : 'n/a';
+    metaNode.textContent = `${visible.length}/${filtered.length} shown · latest event ${freshness}`;
+  }
+  if (moreBtn) moreBtn.textContent = state.expanded ? 'Show less' : 'Show more';
 }
 
 function renderConflictTrend(series, config = {}) {
@@ -8456,6 +8596,8 @@ setInterval(() => {
   if (!document.hidden) {
     refreshSyncStatusAge();
     renderFreshnessPanel();
+    renderConflictTimeline(conflictTimelineState.conflictTimelineList.rows, 'conflictTimelineList');
+    renderConflictTimeline(conflictTimelineState.ukraineTimelineList.rows, 'ukraineTimelineList');
   }
 }, 60 * 1000);
 document.addEventListener('visibilitychange', () => {
