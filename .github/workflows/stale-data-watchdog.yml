@@ -8,6 +8,7 @@ on:
 permissions:
   contents: read
   issues: write
+  actions: write
 
 jobs:
   stale-watchdog:
@@ -26,8 +27,43 @@ jobs:
         continue-on-error: true
         run: node scripts/validate-polymarket-site.mjs --check-stale --max-age-minutes=150
 
-      - name: Open issue when stale
+      - name: Trigger refresh workflows when stale
         if: steps.stale_check.outcome == 'failure'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const owner = context.repo.owner;
+            const repo = context.repo.repo;
+            const ref = context.ref?.replace('refs/heads/', '') || 'main';
+            const workflows = [
+              'update-polymarket-snapshot.yml',
+              'update-iran-war-metrics.yml',
+              'update-conflict-news.yml',
+              'update-social-tracker-metrics.yml'
+            ];
+
+            for (const workflow_id of workflows) {
+              await github.rest.actions.createWorkflowDispatch({
+                owner,
+                repo,
+                workflow_id,
+                ref,
+              });
+              core.info(`Triggered ${workflow_id} on ${ref}`);
+            }
+
+      - name: Wait for refresh workflows
+        if: steps.stale_check.outcome == 'failure'
+        run: sleep 120
+
+      - name: Re-check freshness after refresh trigger
+        id: stale_recheck
+        if: steps.stale_check.outcome == 'failure'
+        continue-on-error: true
+        run: node scripts/validate-polymarket-site.mjs --check-stale --max-age-minutes=150
+
+      - name: Open issue when stale after re-check
+        if: steps.stale_check.outcome == 'failure' && steps.stale_recheck.outcome == 'failure'
         uses: actions/github-script@v7
         with:
           script: |
@@ -50,7 +86,7 @@ jobs:
             }
 
             const runUrl = `https://github.com/${owner}/${repo}/actions/runs/${context.runId}`;
-            const body = `${marker}\nThe stale-data watchdog detected outdated feeds.\n\n- Workflow run: ${runUrl}\n- Command: \`node scripts/validate-polymarket-site.mjs --check-stale --max-age-minutes=150\`\n\nPlease refresh source jobs and verify timestamps in:\n- \`docs/public/polymarket-us-politics/data/iran-war-metrics.json\`\n- \`docs/public/polymarket-us-politics/data/conflict-news.json\`\n- \`docs/public/polymarket-us-politics/data/polymarket-market-snapshot.json\``;
+            const body = `${marker}\nThe stale-data watchdog detected outdated feeds even after auto-triggering refresh workflows.\n\n- Workflow run: ${runUrl}\n- Command: \`node scripts/validate-polymarket-site.mjs --check-stale --max-age-minutes=150\`\n\nPlease inspect source jobs and verify timestamps in:\n- \`docs/public/polymarket-us-politics/data/iran-war-metrics.json\`\n- \`docs/public/polymarket-us-politics/data/conflict-news.json\`\n- \`docs/public/polymarket-us-politics/data/polymarket-market-snapshot.json\`\n- \`docs/public/polymarket-us-politics/data/social-tracker-metrics.json\``;
 
             await github.rest.issues.create({
               owner,
@@ -61,7 +97,7 @@ jobs:
             });
 
       - name: Fail on stale data
-        if: steps.stale_check.outcome == 'failure'
+        if: steps.stale_check.outcome == 'failure' && steps.stale_recheck.outcome == 'failure'
         run: |
-          echo "Stale data detected by watchdog"
+          echo "Stale data detected by watchdog after auto-recovery attempt"
           exit 1

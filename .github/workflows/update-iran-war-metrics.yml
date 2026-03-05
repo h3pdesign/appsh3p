@@ -3,6 +3,7 @@ name: Update Iran/Ukraine conflict metrics and hotspots
 on:
   schedule:
     - cron: '17 * * * *'
+    - cron: '47 * * * *'
     - cron: '29 2 * * *'
   workflow_dispatch:
 
