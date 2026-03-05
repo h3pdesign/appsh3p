@@ -7849,6 +7849,99 @@ function timelineHideTooltip() {
   tip.setAttribute('aria-hidden', 'true');
 }
 
+function timelineBuildMarkerLines(markers, minTs, maxTs, xFor, padT, height, padB) {
+  return (Array.isArray(markers) ? markers : [])
+    .filter(marker => marker.ts >= minTs && marker.ts <= maxTs)
+    .map(marker => {
+      const x = xFor(marker.ts);
+      const color = TIMELINE_THEME_META[marker.theme]?.color || '#f43f5e';
+      const title = escapeHtml(marker.label || 'Event');
+      const sec = escapeHtml(marker.sectionId || 'summary');
+      return `<g class="timeline-event" data-section="${sec}" data-ts="${marker.ts}" tabindex="0"><line x1="${x.toFixed(2)}" y1="${padT}" x2="${x.toFixed(2)}" y2="${(height - padB).toFixed(2)}" stroke="${color}" stroke-opacity="0.24" stroke-dasharray="3 3" /><circle cx="${x.toFixed(2)}" cy="${(padT + 6).toFixed(2)}" r="3" fill="${color}"><title>${title}</title></circle></g>`;
+    }).join('');
+}
+
+function timelineBindEventJumpHandlers(svg) {
+  svg.querySelectorAll('.timeline-event').forEach(node => {
+    const sectionId = node.getAttribute('data-section') || 'summary';
+    const onJump = () => {
+      const target = document.getElementById(sectionId);
+      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    };
+    node.addEventListener('click', onJump);
+    node.addEventListener('keydown', event => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        onJump();
+      }
+    });
+  });
+}
+
+function timelineBindPointTooltipHandlers(svg, filtered) {
+  svg.querySelectorAll('.timeline-lab-point').forEach(node => {
+    const theme = node.getAttribute('data-theme');
+    const ts = Number(node.getAttribute('data-ts'));
+    const list = filtered.get(theme) || [];
+    const point = list.find(item => item.ts === ts) || null;
+    const show = event => {
+      const bounds = svg.getBoundingClientRect();
+      timelineRenderTooltip(point, event.clientX - bounds.left, event.clientY - bounds.top);
+    };
+    node.addEventListener('mouseenter', show);
+    node.addEventListener('mousemove', show);
+    node.addEventListener('mouseleave', timelineHideTooltip);
+    node.addEventListener('focus', () => {
+      const rect = node.getBoundingClientRect();
+      const bounds = svg.getBoundingClientRect();
+      timelineRenderTooltip(point, rect.left - bounds.left + (rect.width / 2), rect.top - bounds.top);
+    });
+    node.addEventListener('blur', timelineHideTooltip);
+  });
+}
+
+function timelineUpdateStatusFromPoints(allPoints) {
+  const newest = Math.max(...allPoints.map(point => point.ts));
+  const rangeLabel = timelineLabState.range.toUpperCase();
+  const compareLabel = timelineLabState.compare ? ` | compare: ${(TIMELINE_THEME_META[timelineLabState.compareTheme] || {}).label || timelineLabState.compareTheme}` : '';
+  timelineSetStatus(`Showing ${allPoints.length} points | range ${rangeLabel}${compareLabel} | source ${timelineFormatTs(timelineLabDataState.latestSourceTs || newest)}`);
+}
+
+function timelineResetZoomWindow() {
+  timelineLabState.zoomStartTs = null;
+  timelineLabState.zoomEndTs = null;
+}
+
+function timelineBindChipGroup(groupSelector, dataAttr, onSelect) {
+  document.querySelectorAll(`${groupSelector} .timeline-chip`).forEach(btn => {
+    btn.addEventListener('click', () => {
+      const value = btn.dataset[dataAttr];
+      if (!value) return;
+      if (onSelect(value) === false) return;
+      timelineSyncUrlState();
+      timelineRenderAll();
+    });
+  });
+}
+
+function timelineBindToggle(id, onChange) {
+  const node = document.getElementById(id);
+  node?.addEventListener('change', () => {
+    onChange(node.checked);
+    timelineSyncUrlState();
+    timelineRenderAll();
+  });
+}
+
+function timelineBindSelect(id, onChange) {
+  const node = document.getElementById(id);
+  node?.addEventListener('change', () => {
+    if (onChange(node.value) === false) return;
+    timelineSyncUrlState();
+    timelineRenderAll();
+  });
+}
+
 function timelineRenderMainChart() {
   const svg = document.getElementById('timelineLabChart');
   if (!svg) return;
@@ -7910,15 +8003,7 @@ function timelineRenderMainChart() {
         })
       : [{ top: padT, h: innerH, themes }];
 
-  const markerLines = (timelineLabDataState.markers || [])
-    .filter(marker => marker.ts >= minTs && marker.ts <= maxTs)
-    .map(marker => {
-      const x = xFor(marker.ts);
-      const color = TIMELINE_THEME_META[marker.theme]?.color || '#f43f5e';
-      const title = escapeHtml(marker.label || 'Event');
-      const sec = escapeHtml(marker.sectionId || 'summary');
-      return `<g class="timeline-event" data-section="${sec}" data-ts="${marker.ts}" tabindex="0"><line x1="${x.toFixed(2)}" y1="${padT}" x2="${x.toFixed(2)}" y2="${(height - padB).toFixed(2)}" stroke="${color}" stroke-opacity="0.24" stroke-dasharray="3 3" /><circle cx="${x.toFixed(2)}" cy="${(padT + 6).toFixed(2)}" r="3" fill="${color}"><title>${title}</title></circle></g>`;
-    }).join('');
+  const markerLines = timelineBuildMarkerLines(timelineLabDataState.markers, minTs, maxTs, xFor, padT, height, padB);
 
   const pointNodes = [];
   const pathNodes = [];
@@ -7964,45 +8049,9 @@ function timelineRenderMainChart() {
     <line x1="${padL}" y1="${(height - padB).toFixed(2)}" x2="${(width - padR).toFixed(2)}" y2="${(height - padB).toFixed(2)}" stroke="var(--border-color)" />
   `;
 
-  svg.querySelectorAll('.timeline-event').forEach(node => {
-    const sectionId = node.getAttribute('data-section') || 'summary';
-    const onJump = () => {
-      const target = document.getElementById(sectionId);
-      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    };
-    node.addEventListener('click', onJump);
-    node.addEventListener('keydown', event => {
-      if (event.key === 'Enter' || event.key === ' ') {
-        event.preventDefault();
-        onJump();
-      }
-    });
-  });
-
-  svg.querySelectorAll('.timeline-lab-point').forEach(node => {
-    const theme = node.getAttribute('data-theme');
-    const ts = Number(node.getAttribute('data-ts'));
-    const list = filtered.get(theme) || [];
-    const point = list.find(item => item.ts === ts) || null;
-    const show = event => {
-      const bounds = svg.getBoundingClientRect();
-      timelineRenderTooltip(point, event.clientX - bounds.left, event.clientY - bounds.top);
-    };
-    node.addEventListener('mouseenter', show);
-    node.addEventListener('mousemove', show);
-    node.addEventListener('mouseleave', timelineHideTooltip);
-    node.addEventListener('focus', () => {
-      const rect = node.getBoundingClientRect();
-      const bounds = svg.getBoundingClientRect();
-      timelineRenderTooltip(point, rect.left - bounds.left + (rect.width / 2), rect.top - bounds.top);
-    });
-    node.addEventListener('blur', timelineHideTooltip);
-  });
-
-  const newest = Math.max(...allPoints.map(point => point.ts));
-  const rangeLabel = timelineLabState.range.toUpperCase();
-  const compareLabel = timelineLabState.compare ? ` | compare: ${(TIMELINE_THEME_META[timelineLabState.compareTheme] || {}).label || timelineLabState.compareTheme}` : '';
-  timelineSetStatus(`Showing ${allPoints.length} points | range ${rangeLabel}${compareLabel} | source ${timelineFormatTs(timelineLabDataState.latestSourceTs || newest)}`);
+  timelineBindEventJumpHandlers(svg);
+  timelineBindPointTooltipHandlers(svg, filtered);
+  timelineUpdateStatusFromPoints(allPoints);
 }
 
 function timelineRenderBrush() {
@@ -8177,67 +8226,39 @@ function initTimelineLab() {
   syncTimelineControlState();
   timelineRenderLegendTooltips();
 
-  document.querySelectorAll('#timelineThemeChips .timeline-chip').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const next = btn.dataset.theme;
-      if (!next) return;
-      timelineLabState.theme = next;
-      timelineLabState.zoomStartTs = null;
-      timelineLabState.zoomEndTs = null;
-      syncTimelineControlState();
-      timelineSyncUrlState();
-      timelineRenderAll();
-    });
-  });
-
-  document.querySelectorAll('#timelineRangeChips .timeline-chip').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const next = btn.dataset.range;
-      if (!next || !Object.prototype.hasOwnProperty.call(TIMELINE_RANGE_MS, next)) return;
-      timelineLabState.range = next;
-      timelineLabState.zoomStartTs = null;
-      timelineLabState.zoomEndTs = null;
-      syncTimelineControlState();
-      timelineSyncUrlState();
-      timelineRenderAll();
-    });
-  });
-
-  const compareToggle = document.getElementById('timelineCompareToggle');
-  compareToggle?.addEventListener('change', () => {
-    timelineLabState.compare = compareToggle.checked;
+  timelineBindChipGroup('#timelineThemeChips', 'theme', next => {
+    timelineLabState.theme = next;
+    timelineResetZoomWindow();
     syncTimelineControlState();
-    timelineSyncUrlState();
-    timelineRenderAll();
   });
 
-  const compareTheme = document.getElementById('timelineCompareTheme');
-  compareTheme?.addEventListener('change', () => {
-    const next = compareTheme.value;
-    if (!TIMELINE_THEMES.includes(next)) return;
+  timelineBindChipGroup('#timelineRangeChips', 'range', next => {
+    if (!Object.prototype.hasOwnProperty.call(TIMELINE_RANGE_MS, next)) return false;
+    timelineLabState.range = next;
+    timelineResetZoomWindow();
+    syncTimelineControlState();
+  });
+
+  timelineBindToggle('timelineCompareToggle', checked => {
+    timelineLabState.compare = checked;
+    syncTimelineControlState();
+  });
+
+  timelineBindSelect('timelineCompareTheme', next => {
+    if (!TIMELINE_THEMES.includes(next)) return false;
     timelineLabState.compareTheme = next;
-    timelineSyncUrlState();
-    timelineRenderAll();
   });
 
-  const splitToggle = document.getElementById('timelineSplitToggle');
-  splitToggle?.addEventListener('change', () => {
-    timelineLabState.split = splitToggle.checked;
-    timelineSyncUrlState();
-    timelineRenderAll();
+  timelineBindToggle('timelineSplitToggle', checked => {
+    timelineLabState.split = checked;
   });
 
-  const layoutSelect = document.getElementById('timelineLayout');
-  layoutSelect?.addEventListener('change', () => {
-    const next = layoutSelect.value;
+  timelineBindSelect('timelineLayout', next => {
     timelineLabState.layout = ['focus', 'stacked', 'small'].includes(next) ? next : 'focus';
-    timelineSyncUrlState();
-    timelineRenderAll();
   });
 
   document.getElementById('timelineResetZoom')?.addEventListener('click', () => {
-    timelineLabState.zoomStartTs = null;
-    timelineLabState.zoomEndTs = null;
+    timelineResetZoomWindow();
     timelineSyncUrlState();
     timelineRenderAll();
   });
