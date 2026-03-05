@@ -1,5 +1,5 @@
 {
-  "updated_at_utc": "2026-03-05T05:50:45.945Z",
+  "updated_at_utc": "2026-03-05T06:45:36.465Z",
   "total_questions": 66,
   "mapped_questions": 45,
   "unmapped_questions": 21,
@@ -258,10 +258,10 @@
     },
     {
       "question": "Texas Dem Senate Primary",
-      "market_id": "1420545",
-      "market_slug": "will-a-candidate-win-outright-in-the-texas-dem-senate-primary",
-      "market_question": "Will a candidate win outright in the Texas Dem Senate Primary?",
-      "score": 0.744,
+      "market_id": "1420486",
+      "market_slug": "larger-margin-of-victory-in-dem-or-gop-texas-senate-primary",
+      "market_question": "Larger margin of victory in Dem or GOP Texas Senate Primary?",
+      "score": 0.62,
       "active": true,
       "closed": false
     },
