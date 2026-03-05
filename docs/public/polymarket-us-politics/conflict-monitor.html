@@ -3,17 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>STATE OF US & WORLD POLITICS</title>
-<meta name="description" content="Live Polymarket intelligence dashboard for US and world politics: conflict monitor, election probabilities, economy, congress, legal and social media trends.">
-<link rel="canonical" href="https://apps-h3p.com/polymarket-us-politics/state-of-us-politics.html">
+<title>Conflict Monitoring | STATE OF US & WORLD POLITICS</title>
+<meta name="description" content="Live conflict monitoring dashboard with Iran and Ukraine war metrics, map events, timeline, and conflict news updates.">
+<link rel="canonical" href="https://apps-h3p.com/polymarket-us-politics/conflict-monitor.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="h3p">
-<meta property="og:title" content="STATE OF US & WORLD POLITICS">
-<meta property="og:description" content="Live Polymarket intelligence dashboard for US and world politics: conflict monitor, election probabilities, economy, congress, legal and social media trends.">
-<meta property="og:url" content="https://apps-h3p.com/polymarket-us-politics/state-of-us-politics.html">
+<meta property="og:title" content="Conflict Monitoring | STATE OF US & WORLD POLITICS">
+<meta property="og:description" content="Live conflict monitoring dashboard with Iran and Ukraine war metrics, map events, timeline, and conflict news updates.">
+<meta property="og:url" content="https://apps-h3p.com/polymarket-us-politics/conflict-monitor.html">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="STATE OF US & WORLD POLITICS">
-<meta name="twitter:description" content="Live Polymarket intelligence dashboard for US and world politics: conflict monitor, election probabilities, economy, congress, legal and social media trends.">
+<meta name="twitter:title" content="Conflict Monitoring | STATE OF US & WORLD POLITICS">
+<meta name="twitter:description" content="Live conflict monitoring dashboard with Iran and Ukraine war metrics, map events, timeline, and conflict news updates.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -2329,17 +2329,30 @@ footer a:hover { border-bottom-color: var(--accent-gold); }
   }
 }
 
-body.page-predictions #iran-war,
-body.page-predictions #ukraine-war {
+body.page-conflicts #summary,
+body.page-conflicts #foreign,
+body.page-conflicts #presidential,
+body.page-conflicts #trump,
+body.page-conflicts #fed,
+body.page-conflicts #midterms,
+body.page-conflicts #congress,
+body.page-conflicts #legal,
+body.page-conflicts #social,
+body.page-conflicts #methodology {
   display: none !important;
 }
 
-body.page-predictions .prediction-landing-title {
-  display: none !important;
+.prediction-landing-title {
+  margin: 1.4rem 0 2rem;
+  text-align: center;
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 6.2vw, 3.6rem);
+  line-height: 1.06;
+  letter-spacing: 0.02em;
 }
 </style>
 </head>
-<body class="page-predictions">
+<body class="page-conflicts">
 
 <!-- ====== NAVIGATION ====== -->
 <nav>
@@ -2348,16 +2361,10 @@ body.page-predictions .prediction-landing-title {
     <ul class="nav-links">
       <li><a href="https://apps-h3p.com" target="_blank" rel="noopener">apps-h3p.com</a></li>
       <li><a href="https://medium.com/@h3palpha" target="_blank" rel="noopener">Medium</a></li>
-      <li><a href="/polymarket-us-politics/state-of-us-politics.html">Predictions</a></li>
       <li><a href="/polymarket-us-politics/conflict-monitor.html">Conflict Monitor</a></li>
-      <li><a href="/polymarket-us-politics/state-of-us-politics.html">Summary</a></li>
-      <li><a href="/polymarket-us-politics/state-of-us-politics.html?focus=foreign">Foreign Policy</a></li>
-      <li><a href="/polymarket-us-politics/state-of-us-politics.html?focus=race">2028 Race</a></li>
-      <li><a href="/polymarket-us-politics/state-of-us-politics.html?focus=trump">Trump</a></li>
-      <li><a href="/polymarket-us-politics/state-of-us-politics.html?focus=fed">Fed & Economy</a></li>
-      <li><a href="/polymarket-us-politics/state-of-us-politics.html?focus=midterms">Midterms</a></li>
-      <li><a href="/polymarket-us-politics/state-of-us-politics.html?focus=congress">Congress</a></li>
-      <li><a href="/polymarket-us-politics/state-of-us-politics.html?focus=legal">Legal</a></li>
+      <li><a href="/polymarket-us-politics/state-of-us-politics.html">Predictions</a></li>
+      <li><a href="/polymarket-us-politics/conflict-monitor.html#iran-war">Iran War Monitor</a></li>
+      <li><a href="/polymarket-us-politics/conflict-monitor.html#ukraine-war">Ukraine War Monitor</a></li>
     </ul>
     <div class="nav-controls">
       <label class="theme-select-wrap theme-select-compact" for="themeModeSelect"><select class="theme-select" id="themeModeSelect" aria-label="Theme mode" title="Theme mode"><option value="system">System</option><option value="light">Light</option><option value="dark">Dark</option></select></label>
@@ -2376,31 +2383,15 @@ body.page-predictions .prediction-landing-title {
     <div class="mobile-menu-group">
       <div class="mobile-menu-group-title">Pages</div>
       <div class="mobile-chip-row">
-        <a href="/polymarket-us-politics/state-of-us-politics.html" class="mobile-link mobile-chip">Predictions</a>
         <a href="/polymarket-us-politics/conflict-monitor.html" class="mobile-link mobile-chip">Conflict Monitor</a>
+        <a href="/polymarket-us-politics/state-of-us-politics.html" class="mobile-link mobile-chip">Predictions</a>
       </div>
     </div>
     <div class="mobile-menu-group">
-      <div class="mobile-menu-group-title">Predictions</div>
+      <div class="mobile-menu-group-title">Conflict</div>
       <div class="mobile-chip-row">
-        <a href="/polymarket-us-politics/state-of-us-politics.html?focus=foreign" class="mobile-link mobile-chip">Foreign Policy</a>
-        <a href="/polymarket-us-politics/state-of-us-politics.html?focus=race" class="mobile-link mobile-chip">2028 Race</a>
-        <a href="/polymarket-us-politics/state-of-us-politics.html?focus=midterms" class="mobile-link mobile-chip">Midterms</a>
-        <a href="/polymarket-us-politics/state-of-us-politics.html?focus=trump" class="mobile-link mobile-chip">Trump</a>
-      </div>
-    </div>
-    <div class="mobile-menu-group">
-      <div class="mobile-menu-group-title">Economy</div>
-      <div class="mobile-chip-row">
-        <a href="/polymarket-us-politics/state-of-us-politics.html?focus=fed" class="mobile-link mobile-chip">Fed & Economy</a>
-        <a href="/polymarket-us-politics/state-of-us-politics.html?focus=congress" class="mobile-link mobile-chip">Congress</a>
-      </div>
-    </div>
-    <div class="mobile-menu-group">
-      <div class="mobile-menu-group-title">Social</div>
-      <div class="mobile-chip-row">
-        <a href="/polymarket-us-politics/state-of-us-politics.html?focus=social" class="mobile-link mobile-chip">Social Tracker</a>
-        <a href="/polymarket-us-politics/state-of-us-politics.html?focus=legal" class="mobile-link mobile-chip">Legal</a>
+        <a href="/polymarket-us-politics/conflict-monitor.html#iran-war" class="mobile-link mobile-chip">Iran</a>
+        <a href="/polymarket-us-politics/conflict-monitor.html#ukraine-war" class="mobile-link mobile-chip">Ukraine</a>
       </div>
     </div>
     <div class="mobile-chip-row mobile-chip-row-links">
@@ -2438,6 +2429,8 @@ body.page-predictions .prediction-landing-title {
     </div>
     <div id="globalLiveAnnouncer" class="sr-only" aria-live="polite" aria-atomic="true"></div>
   </header>
+
+  <h1 class="section-title reveal prediction-landing-title">Polymarket prediction estimates &amp; invests</h1>
 
   
 
@@ -2683,8 +2676,6 @@ body.page-predictions .prediction-landing-title {
   </section>
 
 
-
-  <h1 class="section-title reveal prediction-landing-title">Polymarket prediction estimates &amp; invests</h1>
 
   <!-- ====== EXECUTIVE SUMMARY ====== -->
   <section class="section" id="summary">
@@ -3672,7 +3663,7 @@ const MARKET_ID_MAP_CACHE_TTL_MS = 15 * 60 * 1000;
 const SUMMARY_STATE_CACHE_TTL_MS = 15 * 60 * 1000;
 const CONFLICT_NEWS_INTERVAL_MS = 10 * 60 * 1000;
 const CONFLICT_MONITOR_INTERVAL_MS = 10 * 60 * 1000;
-const PAGE_MODE = 'predictions';
+const PAGE_MODE = 'conflict';
 const THEME_KEY = 'pmir-theme';
 const MAP_LAYER_KEY = 'pmir-conflict-map-layer';
 const THEME_MODE_KEY = 'pmir-theme-mode';

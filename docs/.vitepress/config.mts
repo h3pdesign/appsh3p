@@ -54,7 +54,7 @@ export default defineConfig({
       { text: 'Home', link: '/' },
       { text: 'Getting Started', link: '/getting-started/introduction' },
       { text: 'Apps', link: '/apps/index' },
-      { text: 'Polymarket', link: 'https://apps-h3p.com/polymarket-us-politics/state-of-us-politics.html' },
+      { text: 'Politics Monitor', link: 'https://apps-h3p.com/polymarket-us-politics/conflict-monitor.html' },
       { text: 'Changelog', link: '/changelog' },
       { text: 'Policies', link: '/policies/api-stability' },
       { text: 'Art & Blog', link: 'https://h3p.me/home' },
