@@ -7,7 +7,7 @@ const HISTORY_START = {
   ukraine_2026: '2022-02-24'
 }
 
-const WIKI_IRAN_CONFLICT_API = 'https://en.wikipedia.org/w/api.php?action=parse&page=2026_Iran_conflict&prop=wikitext&format=json&formatversion=2'
+const WIKI_IRAN_CONFLICT_API = 'https://en.wikipedia.org/w/api.php?action=parse&page=2026_Iran_war&prop=wikitext&format=json&formatversion=2'
 
 const clamp = (value, min, max) => Math.max(min, Math.min(max, value))
 
@@ -65,59 +65,77 @@ async function fetchWikipediaIranMetrics() {
     if (typeof wikitext !== 'string' || wikitext.length < 100) throw new Error('Wikipedia wikitext missing')
 
     const lines = wikitext.split('\n')
-    let inIsraelUS = false
-    let inIran = false
+    const headerIndex = lines.findIndex(line => line.includes('=== Casualties by country ==='))
+    if (headerIndex < 0) throw new Error('Casualties by country section not found')
+
+    const tableStart = lines.findIndex((line, idx) => idx > headerIndex && line.trim().startsWith('{|'))
+    if (tableStart < 0) throw new Error('Casualties table start not found')
+    const tableEnd = lines.findIndex((line, idx) => idx > tableStart && line.trim() === '|}')
+    if (tableEnd < 0) throw new Error('Casualties table end not found')
+
+    const rows = []
+    let current = []
+    for (let i = tableStart + 1; i < tableEnd; i += 1) {
+      const trimmed = String(lines[i] || '').trim()
+      if (!trimmed) continue
+      if (trimmed === '|-') {
+        if (current.length > 0) rows.push(current)
+        current = []
+        continue
+      }
+      if (trimmed.startsWith('|')) current.push(trimmed)
+    }
+    if (current.length > 0) rows.push(current)
+
+    const stripMarkup = value => {
+      let out = String(value || '')
+      out = out.replace(/<ref[^>]*>[\s\S]*?<\/ref>/gi, ' ')
+      out = out.replace(/<ref[^>]*\/>/gi, ' ')
+      let prev = ''
+      while (prev !== out) {
+        prev = out
+        out = out.replace(/\{\{[^{}]*\}\}/g, ' ')
+      }
+      out = out.replace(/'''+/g, '')
+      out = out.replace(/\[\[[^\]|]+\|([^\]]+)\]\]/g, '$1')
+      out = out.replace(/\[\[([^\]]+)\]\]/g, '$1')
+      return out
+    }
+
+    const extractMaxNumber = raw => {
+      const clean = stripMarkup(raw)
+      const matches = clean.match(/[0-9][0-9,]*/g)
+      if (!matches) return null
+      const values = matches.map(parseCount).filter(Number.isFinite)
+      if (!values.length) return null
+      return Math.max(...values)
+    }
+
+    const rowByCountry = new Map()
+    for (const row of rows) {
+      const cells = row
+        .filter(item => item.startsWith('|') && item !== '|-')
+        .map(item => item.slice(1).trim())
+      if (cells.length < 3) continue
+      const flagCell = cells[0] || ''
+      const flagMatch = flagCell.match(/\{\{Flag\|([^}|]+)[^}]*\}\}/i)
+      const country = flagMatch?.[1]?.trim()
+      if (!country) continue
+      rowByCountry.set(country.toLowerCase(), cells)
+    }
+
+    const iran = rowByCountry.get('iran') || []
+    const israel = rowByCountry.get('israel') || []
+    const us = rowByCountry.get('united states') || []
 
     const parsed = {
-      israelKilled: null,
-      israelInjured: null,
-      usKilled: null,
-      usInjured: null,
-      iranKilled: null
+      iranKilled: extractMaxNumber(iran[1]),
+      iranInjured: extractMaxNumber(iran[2]),
+      israelKilled: extractMaxNumber(israel[1]),
+      israelInjured: extractMaxNumber(israel[2]),
+      usKilled: extractMaxNumber(us[1]),
+      usInjured: extractMaxNumber(us[2])
     }
-
-    for (const line of lines) {
-      const trimmed = line.trim()
-      if (trimmed.includes("*'''Per Israel and US:")) {
-        inIsraelUS = true
-        inIran = false
-        continue
-      }
-      if (trimmed.includes("*'''Per Iran:")) {
-        inIran = true
-        inIsraelUS = false
-        continue
-      }
-      if (trimmed.startsWith('===')) {
-        inIsraelUS = false
-        inIran = false
-      }
-
-      if (inIsraelUS) {
-        if (trimmed.startsWith('* {{flagu|Israel}}:')) continue
-        if (trimmed.startsWith('* {{flagu|United States}}:')) continue
-
-        if (parsed.israelKilled == null) parsed.israelKilled = extractMetric(trimmed, /^\*\*\s*([0-9][0-9,]*)\s+people killed/i)
-        if (parsed.israelInjured == null) parsed.israelInjured = extractMetric(trimmed, /^\*\*\s*([0-9][0-9,]*)\s+injured/i)
-
-        if (trimmed.includes('military personnel killed')) {
-          parsed.usKilled = extractMetric(trimmed, /^\*\*\s*([0-9][0-9,]*)\s+military personnel killed/i)
-        }
-        if (trimmed.includes('injured') && !trimmed.includes('DOD personnel')) {
-          const maybeUsInj = extractMetric(trimmed, /^\*\*\s*([0-9][0-9,]*)\s+injured/i)
-          if (maybeUsInj != null && parsed.usInjured == null && parsed.israelInjured !== maybeUsInj) parsed.usInjured = maybeUsInj
-        }
-      }
-
-      if (inIran) {
-        if (trimmed.startsWith('* {{flagu|Iran}}:')) continue
-        if (parsed.iranKilled == null) {
-          const byLine = extractMetric(trimmed, /^\*\s*([0-9][0-9,]*)\s+civilians killed/i)
-          if (byLine != null) parsed.iranKilled = byLine
-        }
-      }
-    }
-
     return parsed
   } catch (error) {
     console.warn('Wikipedia metrics refresh skipped:', error.message)
@@ -129,35 +147,51 @@ function refreshConflictMetricsFromSources(conflict, sourceMetrics) {
   if (conflict?.id !== 'iran_2026' || !sourceMetrics) return conflict
   const metrics = Array.isArray(conflict.metrics) ? conflict.metrics.map(item => ({ ...item })) : []
   const byId = new Map(metrics.map(item => [item.id, item]))
+  const nowIso = new Date().toISOString()
 
-  const assignIfFinite = (id, value) => {
+  const assignIfFinite = (id, value, sourceName, sourceUrl) => {
     if (!Number.isFinite(value)) return
     const metric = byId.get(id)
     if (!metric) return
     metric.value = value
+    if (sourceName) metric.source_name = sourceName
+    if (sourceUrl) metric.source_url = sourceUrl
+    metric.updated_at_utc = nowIso
   }
 
-  assignIfFinite('iran_killed', sourceMetrics.iranKilled)
-  assignIfFinite('israel_killed', sourceMetrics.israelKilled)
-  assignIfFinite('israel_injured', sourceMetrics.israelInjured)
-  assignIfFinite('us_killed', sourceMetrics.usKilled)
-  assignIfFinite('us_seriously_injured', sourceMetrics.usInjured)
+  assignIfFinite('iran_killed', sourceMetrics.iranKilled, 'Wikipedia: 2026 Iran war (casualties by country)', 'https://en.wikipedia.org/wiki/2026_Iran_war#Casualties_by_country')
+  assignIfFinite('iran_injured', sourceMetrics.iranInjured, 'Wikipedia: 2026 Iran war (casualties by country)', 'https://en.wikipedia.org/wiki/2026_Iran_war#Casualties_by_country')
+  assignIfFinite('israel_killed', sourceMetrics.israelKilled, 'Wikipedia: 2026 Iran war (casualties by country)', 'https://en.wikipedia.org/wiki/2026_Iran_war#Casualties_by_country')
+  assignIfFinite('israel_injured', sourceMetrics.israelInjured, 'Wikipedia: 2026 Iran war (casualties by country)', 'https://en.wikipedia.org/wiki/2026_Iran_war#Casualties_by_country')
+  assignIfFinite('us_killed', sourceMetrics.usKilled, 'U.S. Central Command + Wikipedia casualties table', 'https://www.centcom.mil/MEDIA/STATEMENTS/')
+  assignIfFinite('us_seriously_injured', sourceMetrics.usInjured, 'U.S. Central Command + Wikipedia casualties table', 'https://www.centcom.mil/MEDIA/STATEMENTS/')
 
   const iranKilled = Number(byId.get('iran_killed')?.value)
   const israelKilled = Number(byId.get('israel_killed')?.value)
   const usKilled = Number(byId.get('us_killed')?.value)
   if (Number.isFinite(iranKilled) && Number.isFinite(israelKilled) && Number.isFinite(usKilled)) {
-    assignIfFinite('total_reported_killed', iranKilled + israelKilled + usKilled)
+    assignIfFinite('total_reported_killed', iranKilled + israelKilled + usKilled, 'Computed aggregate (Iran + Israel + US)', 'https://en.wikipedia.org/wiki/2026_Iran_war#Casualties_by_country')
   }
 
   const iranInjured = Number(byId.get('iran_injured')?.value)
   const israelInjured = Number(byId.get('israel_injured')?.value)
   const usInjured = Number(byId.get('us_seriously_injured')?.value)
   if (Number.isFinite(iranInjured) && Number.isFinite(israelInjured) && Number.isFinite(usInjured)) {
-    assignIfFinite('total_reported_injured', iranInjured + israelInjured + usInjured)
+    assignIfFinite('total_reported_injured', iranInjured + israelInjured + usInjured, 'Computed aggregate (Iran + Israel + US)', 'https://en.wikipedia.org/wiki/2026_Iran_war#Casualties_by_country')
   }
 
-  return { ...conflict, metrics }
+  return {
+    ...conflict,
+    source_name: 'Wikipedia: 2026 Iran war (casualty tracker)',
+    source_url: 'https://en.wikipedia.org/wiki/2026_Iran_war#Casualties_by_country',
+    secondary_source_name: 'U.S. Central Command (CENTCOM) statements',
+    secondary_source_url: 'https://www.centcom.mil/MEDIA/STATEMENTS/',
+    tertiary_source_name: 'Al Jazeera casualty tracker',
+    tertiary_source_url: 'https://www.aljazeera.com/news/2026/3/1/us-israel-attacks-on-iran-death-toll-and-injuries-live-tracker',
+    quaternary_source_name: 'The Guardian live coverage',
+    quaternary_source_url: 'https://www.theguardian.com/world/live/2026/mar/05/us-israel-war-iran-live-updates-attacks-strikes-trump-netanyahu-lebanon-middle-east-latest-news',
+    metrics
+  }
 }
 
 function refreshMapPoints(conflict, now) {

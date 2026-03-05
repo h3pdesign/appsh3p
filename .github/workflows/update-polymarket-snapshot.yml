@@ -12,12 +12,12 @@ permissions:
 
 concurrency:
   group: update-polymarket-snapshot
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   update-polymarket-snapshot:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 15
 
     steps:
       - name: Checkout
