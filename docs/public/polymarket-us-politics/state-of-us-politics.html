@@ -2690,10 +2690,74 @@ footer a:hover { border-bottom-color: var(--accent-gold); }
       </div>
   </section>
 
+  <!-- ====== INTERACTIVE TIMELINE LAB ====== -->
+  <section class="section" id="timeline-lab">
+    <div class="section-header reveal">
+      <div class="section-number">Section 03</div>
+      <h2 class="section-title">Interactive Timeline Lab</h2>
+      <p class="section-subtitle">Theme filters, compare mode, range presets, brush zoom, event markers, and share/export controls.</p>
+    </div>
+    <div class="timeline-lab reveal" id="timelineLab">
+      <div class="timeline-lab-controls">
+        <div class="timeline-lab-row" id="timelineThemeChips" aria-label="Timeline theme filters">
+          <button class="timeline-chip active" data-theme="all" type="button">All</button>
+          <button class="timeline-chip" data-theme="conflict" type="button">Conflict</button>
+          <button class="timeline-chip" data-theme="elections" type="button">Elections</button>
+          <button class="timeline-chip" data-theme="economy" type="button">Economy</button>
+          <button class="timeline-chip" data-theme="social" type="button">Social</button>
+        </div>
+        <div class="timeline-lab-row" id="timelineRangeChips" aria-label="Timeline ranges">
+          <button class="timeline-chip" data-range="24h" type="button">24h</button>
+          <button class="timeline-chip active" data-range="7d" type="button">7d</button>
+          <button class="timeline-chip" data-range="30d" type="button">30d</button>
+          <button class="timeline-chip" data-range="90d" type="button">90d</button>
+          <button class="timeline-chip" data-range="all" type="button">All</button>
+        </div>
+        <div class="timeline-lab-row">
+          <label class="map-filter"><input id="timelineCompareToggle" type="checkbox">Compare mode</label>
+          <label class="map-select">Compare
+            <select class="timeline-lab-select" id="timelineCompareTheme" aria-label="Compare theme" disabled>
+              <option value="conflict">Conflict</option>
+              <option value="elections">Elections</option>
+              <option value="economy">Economy</option>
+              <option value="social">Social</option>
+            </select>
+          </label>
+          <label class="map-filter"><input id="timelineSplitToggle" type="checkbox">Split</label>
+          <label class="map-select">Layout
+            <select class="timeline-lab-select" id="timelineLayout" aria-label="Timeline layout">
+              <option value="focus">Focus + Context</option>
+              <option value="stacked">Stacked</option>
+              <option value="small">Small Multiples</option>
+            </select>
+          </label>
+          <button class="map-mini-btn" id="timelineResetZoom" type="button">Reset zoom</button>
+          <button class="map-mini-btn" id="timelineShareView" type="button">Share view</button>
+          <button class="map-mini-btn" id="timelineExportPng" type="button">PNG export</button>
+        </div>
+        <div class="timeline-lab-status" id="timelineLabStatus">Preparing timeline data...</div>
+      </div>
+
+      <div class="timeline-lab-main" id="timelineLabMain">
+        <svg class="timeline-lab-chart" id="timelineLabChart" viewBox="0 0 920 280" role="img" aria-label="Interactive timeline"></svg>
+        <svg class="timeline-lab-brush" id="timelineLabBrush" viewBox="0 0 920 88" role="img" aria-label="Timeline brush selector"></svg>
+        <div class="timeline-lab-tooltip" id="timelineLabTooltip" aria-hidden="true"></div>
+      </div>
+
+      <div class="timeline-lab-legend">
+        <span class="timeline-marker"><span class="timeline-marker-dot" style="background:#f43f5e"></span>Major conflict event marker</span>
+        <span class="timeline-marker"><span class="timeline-marker-dot" style="background:#22c55e"></span>Elections driver</span>
+        <span class="timeline-marker"><span class="timeline-marker-dot" style="background:#3b82f6"></span>Economy driver</span>
+        <span class="timeline-marker"><span class="timeline-marker-dot" style="background:#f59e0b"></span>Social driver</span>
+      </div>
+    </div>
+  </section>
+
   <!-- ====== EXECUTIVE SUMMARY ====== -->
   <section class="section" id="summary">
     <div class="section-header reveal">
       <div class="section-number">Section 02</div>
+      <div class="section-kicker">Polymarket prediction estimates &amp; invests</div>
       <h2 class="section-title">Executive Summary</h2>
     </div>
     <div class="executive-summary reveal">
@@ -2785,68 +2849,7 @@ footer a:hover { border-bottom-color: var(--accent-gold); }
       <!-- Iran strike on US -->
       <article class="card reveal">
         <div class="card-header"><h3 class="card-question">Iran strike on US military by Feb 28?</h3></div>
-  <!-- ====== INTERACTIVE TIMELINE LAB ====== -->
-  <section class="section" id="timeline-lab">
-    <div class="section-header reveal">
-      <div class="section-number">Section 03</div>
-      <h2 class="section-title">Interactive Timeline Lab</h2>
-      <p class="section-subtitle">Theme filters, compare mode, range presets, brush zoom, event markers, and share/export controls.</p>
-    </div>
-    <div class="timeline-lab reveal" id="timelineLab">
-      <div class="timeline-lab-controls">
-        <div class="timeline-lab-row" id="timelineThemeChips" aria-label="Timeline theme filters">
-          <button class="timeline-chip active" data-theme="all" type="button">All</button>
-          <button class="timeline-chip" data-theme="conflict" type="button">Conflict</button>
-          <button class="timeline-chip" data-theme="elections" type="button">Elections</button>
-          <button class="timeline-chip" data-theme="economy" type="button">Economy</button>
-          <button class="timeline-chip" data-theme="social" type="button">Social</button>
-        </div>
-        <div class="timeline-lab-row" id="timelineRangeChips" aria-label="Timeline ranges">
-          <button class="timeline-chip" data-range="24h" type="button">24h</button>
-          <button class="timeline-chip active" data-range="7d" type="button">7d</button>
-          <button class="timeline-chip" data-range="30d" type="button">30d</button>
-          <button class="timeline-chip" data-range="90d" type="button">90d</button>
-          <button class="timeline-chip" data-range="all" type="button">All</button>
-        </div>
-        <div class="timeline-lab-row">
-          <label class="map-filter"><input id="timelineCompareToggle" type="checkbox">Compare mode</label>
-          <label class="map-select">Compare
-            <select class="timeline-lab-select" id="timelineCompareTheme" aria-label="Compare theme" disabled>
-              <option value="conflict">Conflict</option>
-              <option value="elections">Elections</option>
-              <option value="economy">Economy</option>
-              <option value="social">Social</option>
-            </select>
-          </label>
-          <label class="map-filter"><input id="timelineSplitToggle" type="checkbox">Split</label>
-          <label class="map-select">Layout
-            <select class="timeline-lab-select" id="timelineLayout" aria-label="Timeline layout">
-              <option value="focus">Focus + Context</option>
-              <option value="stacked">Stacked</option>
-              <option value="small">Small Multiples</option>
-            </select>
-          </label>
-          <button class="map-mini-btn" id="timelineResetZoom" type="button">Reset zoom</button>
-          <button class="map-mini-btn" id="timelineShareView" type="button">Share view</button>
-          <button class="map-mini-btn" id="timelineExportPng" type="button">PNG export</button>
-        </div>
-        <div class="timeline-lab-status" id="timelineLabStatus">Preparing timeline data...</div>
-      </div>
 
-      <div class="timeline-lab-main" id="timelineLabMain">
-        <svg class="timeline-lab-chart" id="timelineLabChart" viewBox="0 0 920 280" role="img" aria-label="Interactive timeline"></svg>
-        <svg class="timeline-lab-brush" id="timelineLabBrush" viewBox="0 0 920 88" role="img" aria-label="Timeline brush selector"></svg>
-        <div class="timeline-lab-tooltip" id="timelineLabTooltip" aria-hidden="true"></div>
-      </div>
-
-      <div class="timeline-lab-legend">
-        <span class="timeline-marker"><span class="timeline-marker-dot" style="background:#f43f5e"></span>Major conflict event marker</span>
-        <span class="timeline-marker"><span class="timeline-marker-dot" style="background:#22c55e"></span>Elections driver</span>
-        <span class="timeline-marker"><span class="timeline-marker-dot" style="background:#3b82f6"></span>Economy driver</span>
-        <span class="timeline-marker"><span class="timeline-marker-dot" style="background:#f59e0b"></span>Social driver</span>
-      </div>
-    </div>
-  </section>
 
         <div class="prob-single">
           <span class="prob-big-value red">9%</span>
