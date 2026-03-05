@@ -1992,6 +1992,34 @@ nav {
   background: var(--accent-blue);
 }
 
+.timeline-date-legend {
+  margin-top: 0.4rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 0.7rem;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.035em;
+}
+
+.timeline-date-marker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.32rem;
+}
+
+.timeline-date-swatch {
+  width: 0.62rem;
+  height: 0.62rem;
+  border-radius: 2px;
+  border: 1px solid color-mix(in oklab, var(--border-subtle) 68%, transparent);
+}
+
+.timeline-date-range {
+  opacity: 0.88;
+}
+
 @media (max-width: 820px) {
   .timeline-lab-main { padding: 0.45rem; }
   .timeline-lab-tooltip { max-width: 260px; }
@@ -2693,7 +2721,6 @@ footer a:hover { border-bottom-color: var(--accent-gold); }
   <!-- ====== INTERACTIVE TIMELINE LAB ====== -->
   <section class="section" id="timeline-lab">
     <div class="section-header reveal">
-      <div class="section-number">Section 03</div>
       <h2 class="section-title">Interactive Timeline Lab</h2>
       <p class="section-subtitle">Theme filters, compare mode, range presets, brush zoom, event markers, and share/export controls.</p>
     </div>
@@ -2750,14 +2777,15 @@ footer a:hover { border-bottom-color: var(--accent-gold); }
         <span class="timeline-marker"><span class="timeline-marker-dot" style="background:#3b82f6"></span>Economy driver</span>
         <span class="timeline-marker"><span class="timeline-marker-dot" style="background:#f59e0b"></span>Social driver</span>
       </div>
+      <div class="timeline-date-legend" id="timelineDateLegend" aria-label="Timeline date sections"></div>
     </div>
   </section>
+  <h1 class="section-title reveal">Polymarket prediction estimates &amp; invests</h1>
 
   <!-- ====== EXECUTIVE SUMMARY ====== -->
   <section class="section" id="summary">
     <div class="section-header reveal">
-      <div class="section-number">Section 02</div>
-      <div class="section-kicker">Polymarket prediction estimates &amp; invests</div>
+      <div class="section-number">Section 01</div>
       <h2 class="section-title">Executive Summary</h2>
     </div>
     <div class="executive-summary reveal">
@@ -2791,7 +2819,7 @@ footer a:hover { border-bottom-color: var(--accent-gold); }
   <!-- ====== FOREIGN POLICY & MILITARY ====== -->
   <section class="section" id="foreign">
     <div class="section-header reveal">
-      <div class="section-number">Section 01</div>
+      <div class="section-number">Section 02</div>
       <h2 class="section-title">Foreign Policy & Military</h2>
       <p class="section-subtitle">Geopolitical flashpoints with Iran, Somalia, and Mexico dominating the risk landscape.</p>
     </div>
@@ -7659,34 +7687,59 @@ function normalizeSeriesForCompare(series) {
   return series.map(point => ({ ...point, value: ((Number(point.value) - min) / span) * 100 }));
 }
 
+function smoothTimelineSeries(list, alpha = 0.42, maxStep = 12) {
+  const out = [];
+  let prev = null;
+  (Array.isArray(list) ? list : []).forEach(point => {
+    const raw = Number(point?.value);
+    if (!Number.isFinite(raw)) return;
+    let next = raw;
+    if (Number.isFinite(prev)) {
+      const blended = prev + (alpha * (raw - prev));
+      next = timelineClamp(blended, prev - maxStep, prev + maxStep);
+    }
+    next = timelineClamp(next, 0, 100);
+    out.push({ ...point, value: next });
+    prev = next;
+  });
+  return out;
+}
+
 function mergeThemeSeries(baseSeries, theme, sectionSignal, newsBuckets) {
   const list = [];
   const dailyNews = newsBuckets[theme] || new Map();
-  baseSeries.forEach((basePoint, idx) => {
+  baseSeries.forEach(basePoint => {
     const key = timelineDayKey(basePoint.ts);
     const count = Number(dailyNews.get(key) || 0);
-    const wave = Math.sin((idx + 1) / 7) * 5;
-    let value = Number(basePoint.value);
-    if (theme !== 'conflict') {
-      value = (0.5 * sectionSignal) + (0.35 * Number(basePoint.value)) + (count * 8) + wave;
-    } else {
-      value = Number(basePoint.value) + (count * 1.4);
-    }
-    const clamped = timelineClamp(value, 0, 100);
+    const baseValue = Number(basePoint.value);
+    if (!Number.isFinite(baseValue)) return;
+
+    const newsImpact = theme === 'conflict'
+      ? Math.min(8, count * 1.2)
+      : Math.min(14, count * 2.2);
+
+    const value = theme === 'conflict'
+      ? ((0.82 * baseValue) + (0.18 * sectionSignal) + newsImpact)
+      : ((0.62 * sectionSignal) + (0.38 * baseValue) + newsImpact);
+
     list.push({
       ts: basePoint.ts,
-      value: clamped,
+      value: timelineClamp(value, 0, 100),
       theme,
       drivers: {
         marketSignal: sectionSignal,
         newsCount: count,
-        conflictBase: Number(basePoint.value),
+        conflictBase: baseValue,
+        newsImpact,
         sourceTs: timelineLabDataState.latestSourceTs,
         confidence: theme === 'conflict' ? 'high' : (count > 1 ? 'medium' : 'low')
       }
     });
   });
-  return list;
+
+  const smoothAlpha = theme === 'conflict' ? 0.5 : 0.42;
+  const maxStep = theme === 'conflict' ? 10 : 12;
+  return smoothTimelineSeries(list, smoothAlpha, maxStep);
 }
 
 function collectTimelineMarkers() {
@@ -7782,6 +7835,48 @@ function timelineFormatTs(ts) {
     minute: '2-digit',
     timeZoneName: 'short'
   }).format(new Date(ts));
+}
+
+function timelineFormatDateOnly(ts) {
+  if (!Number.isFinite(ts)) return '--';
+  return new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'short', day: '2-digit' }).format(new Date(ts));
+}
+
+function timelineBuildDateSections(minTs, maxTs) {
+  if (!Number.isFinite(minTs) || !Number.isFinite(maxTs) || maxTs <= minTs) return [];
+  const day = 24 * 60 * 60 * 1000;
+  const raw = [
+    { key: 'latest', label: 'Latest 24h', from: maxTs - day, to: maxTs, color: '#f43f5e24', swatch: '#f43f5e' },
+    { key: 'week', label: '2-7d', from: maxTs - (7 * day), to: maxTs - day, color: '#3b82f624', swatch: '#3b82f6' },
+    { key: 'month', label: '8-30d', from: maxTs - (30 * day), to: maxTs - (7 * day), color: '#22c55e22', swatch: '#22c55e' },
+    { key: 'older', label: '31d+', from: minTs, to: maxTs - (30 * day), color: '#f59e0b22', swatch: '#f59e0b' }
+  ];
+
+  return raw.map(item => {
+    const from = Math.max(minTs, item.from);
+    const to = Math.min(maxTs, item.to);
+    if (!(to > from)) return null;
+    return {
+      ...item,
+      from,
+      to,
+      rangeLabel: `${timelineFormatDateOnly(from)} - ${timelineFormatDateOnly(to)}`
+    };
+  }).filter(Boolean);
+}
+
+function renderTimelineDateLegend(sections) {
+  const node = document.getElementById('timelineDateLegend');
+  if (!node) return;
+  const list = Array.isArray(sections) ? sections : [];
+  if (!list.length) {
+    node.innerHTML = '';
+    return;
+  }
+
+  node.innerHTML = list.map(section => (
+    `<span class="timeline-date-marker"><span class="timeline-date-swatch" style="background:${section.swatch}"></span>${escapeHtml(section.label)} <span class="timeline-date-range">${escapeHtml(section.rangeLabel)}</span></span>`
+  )).join('');
 }
 
 function timelineSetStatus(message) {
@@ -7963,6 +8058,7 @@ function timelineRenderMainChart() {
   const allPoints = Array.from(filtered.values()).flat();
   if (!allPoints.length) {
     svg.innerHTML = '';
+    renderTimelineDateLegend([]);
     timelineSetStatus('No timeline points available yet.');
     return;
   }
@@ -7982,6 +8078,13 @@ function timelineRenderMainChart() {
 
   const yFor = (value, top, h) => top + h - (timelineClamp(value, 0, 100) / 100) * h;
   const xFor = ts => padL + (((ts - minTs) / Math.max(1, maxTs - minTs)) * innerW);
+  const dateSections = timelineBuildDateSections(minTs, maxTs);
+  const dateBandNodes = dateSections.map(section => {
+    const x1 = xFor(section.from);
+    const x2 = xFor(section.to);
+    const widthPx = Math.max(1.2, x2 - x1);
+    return `<rect x="${x1.toFixed(2)}" y="${padT}" width="${widthPx.toFixed(2)}" height="${innerH.toFixed(2)}" fill="${section.color}" />`;
+  }).join('');
 
   let layers = '';
   for (let i = 1; i <= 4; i += 1) {
@@ -8038,13 +8141,17 @@ function timelineRenderMainChart() {
         pointNodes.push(`<circle class="timeline-lab-point" data-theme="${theme}" data-ts="${coord.point.ts}" data-value="${coord.point.value}" cx="${coord.x.toFixed(2)}" cy="${coord.y.toFixed(2)}" r="3.4" fill="${color}" stroke="var(--bg-card)" stroke-width="1" tabindex="0" />`);
       });
 
-      const panelLabelY = panel.top + 12;
-      pathNodes.push(`<text x="${padL}" y="${panelLabelY.toFixed(2)}" fill="${color}" font-family="var(--font-mono)" font-size="10" letter-spacing="0.05em">${escapeHtml((TIMELINE_THEME_META[theme] || {}).label || theme).toUpperCase()}</text>`);
+      const shouldDrawPanelLabel = splitMode || smallMode || themes.length <= 2 || timelineLabState.theme !== 'all';
+      if (shouldDrawPanelLabel) {
+        const panelLabelY = panel.top + 12 + (themeIdx * 12);
+        pathNodes.push(`<text x="${padL}" y="${panelLabelY.toFixed(2)}" fill="${color}" font-family="var(--font-mono)" font-size="10" letter-spacing="0.05em">${escapeHtml((TIMELINE_THEME_META[theme] || {}).label || theme).toUpperCase()}</text>`);
+      }
     });
   });
 
   svg.innerHTML = `
     <rect x="0" y="0" width="${width}" height="${height}" fill="transparent"></rect>
+    ${dateBandNodes}
     ${layers}
     ${markerLines}
     ${pathNodes.join('')}
@@ -8054,6 +8161,7 @@ function timelineRenderMainChart() {
 
   timelineBindEventJumpHandlers(svg);
   timelineBindPointTooltipHandlers(svg, filtered);
+  renderTimelineDateLegend(dateSections);
   timelineUpdateStatusFromPoints(allPoints);
 }
 
