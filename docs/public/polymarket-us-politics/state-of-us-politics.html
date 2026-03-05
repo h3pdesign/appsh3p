@@ -1870,6 +1870,132 @@ nav {
   color: var(--text-secondary);
 }
 
+.timeline-lab {
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  background: var(--bg-card);
+  padding: 1rem;
+}
+
+.timeline-lab-controls {
+  display: grid;
+  gap: 0.65rem;
+}
+
+.timeline-lab-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  align-items: center;
+}
+
+.timeline-chip {
+  border: 1px solid var(--border-color);
+  background: transparent;
+  color: var(--text-secondary);
+  padding: 0.34rem 0.6rem;
+  border-radius: 999px;
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.timeline-chip.active {
+  border-color: color-mix(in oklab, var(--accent-blue) 65%, var(--border-color));
+  color: var(--text-primary);
+  background: color-mix(in oklab, var(--accent-blue) 14%, transparent);
+}
+
+.timeline-lab-select {
+  border: 1px solid var(--border-color);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--text-secondary);
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.04em;
+  padding: 0.34rem 0.62rem;
+}
+
+.timeline-lab-status {
+  font-family: var(--font-mono);
+  font-size: 0.64rem;
+  letter-spacing: 0.04em;
+  color: var(--text-muted);
+}
+
+.timeline-lab-main {
+  margin-top: 0.8rem;
+  position: relative;
+  border: 1px solid var(--border-subtle);
+  border-radius: 8px;
+  background: color-mix(in oklab, var(--bg-card) 86%, transparent);
+  padding: 0.65rem;
+}
+
+.timeline-lab-chart {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.timeline-lab-brush {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-top: 0.4rem;
+}
+
+.timeline-lab-tooltip {
+  position: absolute;
+  min-width: 220px;
+  max-width: 330px;
+  pointer-events: none;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 0.52rem 0.58rem;
+  background: color-mix(in oklab, var(--bg-card) 88%, black 12%);
+  box-shadow: 0 8px 24px color-mix(in oklab, black 32%, transparent);
+  font-size: 0.72rem;
+  line-height: 1.35;
+  opacity: 0;
+  transform: translate(-50%, -110%);
+  transition: opacity 0.12s ease;
+  z-index: 8;
+}
+
+.timeline-lab-tooltip.visible { opacity: 1; }
+
+.timeline-lab-legend {
+  margin-top: 0.45rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem 0.8rem;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.04em;
+}
+
+.timeline-marker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.34rem;
+}
+
+.timeline-marker-dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 999px;
+  background: var(--accent-blue);
+}
+
+@media (max-width: 820px) {
+  .timeline-lab-main { padding: 0.45rem; }
+  .timeline-lab-tooltip { max-width: 260px; }
+}
 .conflict-metrics-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(185px, 1fr));
@@ -2471,6 +2597,7 @@ footer a:hover { border-bottom-color: var(--accent-gold); }
         <a id="ukraineSource" href="https://en.wikipedia.org/wiki/Russian_invasion_of_Ukraine" target="_blank" rel="noopener">Source 1: live conflict data feed</a>
         <a id="ukraineSource2" href="https://www.understandingwar.org/" target="_blank" rel="noopener">Source 2: additional conflict source</a>
         <a id="ukraineSource3" href="https://www.ohchr.org/en/countries/ukraine" target="_blank" rel="noopener">Source 3: additional conflict source</a>
+
         <a id="ukraineSource4" href="https://acleddata.com/" target="_blank" rel="noopener">Source 4: additional conflict source</a>
       </div>
       <div class="conflict-news-ticker" id="ukraineNewsTicker">
@@ -2658,6 +2785,69 @@ footer a:hover { border-bottom-color: var(--accent-gold); }
       <!-- Iran strike on US -->
       <article class="card reveal">
         <div class="card-header"><h3 class="card-question">Iran strike on US military by Feb 28?</h3></div>
+  <!-- ====== INTERACTIVE TIMELINE LAB ====== -->
+  <section class="section" id="timeline-lab">
+    <div class="section-header reveal">
+      <div class="section-number">Section 03</div>
+      <h2 class="section-title">Interactive Timeline Lab</h2>
+      <p class="section-subtitle">Theme filters, compare mode, range presets, brush zoom, event markers, and share/export controls.</p>
+    </div>
+    <div class="timeline-lab reveal" id="timelineLab">
+      <div class="timeline-lab-controls">
+        <div class="timeline-lab-row" id="timelineThemeChips" aria-label="Timeline theme filters">
+          <button class="timeline-chip active" data-theme="all" type="button">All</button>
+          <button class="timeline-chip" data-theme="conflict" type="button">Conflict</button>
+          <button class="timeline-chip" data-theme="elections" type="button">Elections</button>
+          <button class="timeline-chip" data-theme="economy" type="button">Economy</button>
+          <button class="timeline-chip" data-theme="social" type="button">Social</button>
+        </div>
+        <div class="timeline-lab-row" id="timelineRangeChips" aria-label="Timeline ranges">
+          <button class="timeline-chip" data-range="24h" type="button">24h</button>
+          <button class="timeline-chip active" data-range="7d" type="button">7d</button>
+          <button class="timeline-chip" data-range="30d" type="button">30d</button>
+          <button class="timeline-chip" data-range="90d" type="button">90d</button>
+          <button class="timeline-chip" data-range="all" type="button">All</button>
+        </div>
+        <div class="timeline-lab-row">
+          <label class="map-filter"><input id="timelineCompareToggle" type="checkbox">Compare mode</label>
+          <label class="map-select">Compare
+            <select class="timeline-lab-select" id="timelineCompareTheme" aria-label="Compare theme" disabled>
+              <option value="conflict">Conflict</option>
+              <option value="elections">Elections</option>
+              <option value="economy">Economy</option>
+              <option value="social">Social</option>
+            </select>
+          </label>
+          <label class="map-filter"><input id="timelineSplitToggle" type="checkbox">Split</label>
+          <label class="map-select">Layout
+            <select class="timeline-lab-select" id="timelineLayout" aria-label="Timeline layout">
+              <option value="focus">Focus + Context</option>
+              <option value="stacked">Stacked</option>
+              <option value="small">Small Multiples</option>
+            </select>
+          </label>
+          <button class="map-mini-btn" id="timelineResetZoom" type="button">Reset zoom</button>
+          <button class="map-mini-btn" id="timelineShareView" type="button">Share view</button>
+          <button class="map-mini-btn" id="timelineExportPng" type="button">PNG export</button>
+        </div>
+        <div class="timeline-lab-status" id="timelineLabStatus">Preparing timeline data...</div>
+      </div>
+
+      <div class="timeline-lab-main" id="timelineLabMain">
+        <svg class="timeline-lab-chart" id="timelineLabChart" viewBox="0 0 920 280" role="img" aria-label="Interactive timeline"></svg>
+        <svg class="timeline-lab-brush" id="timelineLabBrush" viewBox="0 0 920 88" role="img" aria-label="Timeline brush selector"></svg>
+        <div class="timeline-lab-tooltip" id="timelineLabTooltip" aria-hidden="true"></div>
+      </div>
+
+      <div class="timeline-lab-legend">
+        <span class="timeline-marker"><span class="timeline-marker-dot" style="background:#f43f5e"></span>Major conflict event marker</span>
+        <span class="timeline-marker"><span class="timeline-marker-dot" style="background:#22c55e"></span>Elections driver</span>
+        <span class="timeline-marker"><span class="timeline-marker-dot" style="background:#3b82f6"></span>Economy driver</span>
+        <span class="timeline-marker"><span class="timeline-marker-dot" style="background:#f59e0b"></span>Social driver</span>
+      </div>
+    </div>
+  </section>
+
         <div class="prob-single">
           <span class="prob-big-value red">9%</span>
           <div class="prob-big-bar"><div class="prob-big-fill red" data-width="9"></div></div>
@@ -3655,6 +3845,44 @@ let lastConflictNewsTimestamp = null;
 const tickerAutoScrollState = new Map();
 let leafletReadyPromise = null;
 let globeReadyPromise = null;
+let timelineConflictSeriesIran = [];
+let timelineConflictSeriesUkraine = [];
+let timelineNewsFeedCache = null;
+let timelineLabRebuildTimer = null;
+const TIMELINE_THEMES = ['conflict', 'elections', 'economy', 'social'];
+const TIMELINE_THEME_META = {
+  conflict: { label: 'Conflict', color: '#f43f5e', sectionId: 'iran-war' },
+  elections: { label: 'Elections', color: '#22c55e', sectionId: 'presidential' },
+  economy: { label: 'Economy', color: '#3b82f6', sectionId: 'fed' },
+  social: { label: 'Social', color: '#f59e0b', sectionId: 'social' }
+};
+const TIMELINE_RANGE_MS = {
+  '24h': 24 * 60 * 60 * 1000,
+  '7d': 7 * 24 * 60 * 60 * 1000,
+  '30d': 30 * 24 * 60 * 60 * 1000,
+  '90d': 90 * 24 * 60 * 60 * 1000,
+  all: Infinity
+};
+const timelineLabState = {
+  theme: 'all',
+  range: '7d',
+  compare: false,
+  compareTheme: 'elections',
+  split: false,
+  layout: 'focus',
+  zoomStartTs: null,
+  zoomEndTs: null
+};
+const timelineLabDataState = {
+  seriesByTheme: new Map(),
+  markers: [],
+  latestSourceTs: null
+};
+const timelineLabViewState = {
+  filteredSeries: new Map(),
+  lastRenderThemes: [],
+  fullRange: [null, null]
+};
 
 function ensureLeafletStylesheet(href) {
   if (document.querySelector('link[data-leaflet-fallback="true"]')) return;
@@ -4683,6 +4911,9 @@ async function refreshConflictNews() {
     const response = await fetch(`${CONFLICT_NEWS_URL}?t=${Date.now()}`, { cache: 'no-store' });
     if (!response.ok) throw new Error(`Conflict news fetch failed: ${response.status}`);
     const feed = await response.json();
+    timelineNewsFeedCache = feed;
+    timelineLabDataState.latestSourceTs = parseTimestamp(feed?.updated_at_utc || null) || timelineLabDataState.latestSourceTs;
+    timelineScheduleRebuild();
     renderConflictTicker('iran_2026', 'iranNewsTrack', 'iranNewsUpdated', feed);
     renderConflictTicker('ukraine_2026', 'ukraineNewsTrack', 'ukraineNewsUpdated', feed);
     const newsTs = parseTimestamp(feed?.updated_at_utc || feed?.as_of_utc || null);
@@ -6802,6 +7033,9 @@ async function refreshUkraineMetrics() {
     renderConflictLegend(Array.isArray(conflict.legend) ? conflict.legend : [], 'ukraineLegend', 'ukraine');
     renderConflictTimeline(Array.isArray(conflict.timeline) ? conflict.timeline : [], 'ukraineTimelineList');
     const ukraineSeries = Array.isArray(conflict.daily_series) ? conflict.daily_series : [];
+    timelineConflictSeriesUkraine = ukraineSeries.slice();
+    timelineLabDataState.latestSourceTs = parseTimestamp(conflict.as_of_utc || conflict.updated_at_utc || feed.updated_at_utc) || timelineLabDataState.latestSourceTs;
+    timelineScheduleRebuild();
     renderConflictTrend(ukraineSeries, {
       chartId: 'ukraineTrendChart',
       rangeId: 'ukraineTrendRange',
@@ -6874,6 +7108,9 @@ async function refreshIranWarMetrics() {
     renderConflictLegend(Array.isArray(conflict.legend) ? conflict.legend : [], 'conflictLegend', 'iran');
     renderConflictTimeline(Array.isArray(conflict.timeline) ? conflict.timeline : []);
     const iranSeries = Array.isArray(conflict.daily_series) ? conflict.daily_series : [];
+    timelineConflictSeriesIran = iranSeries.slice();
+    timelineLabDataState.latestSourceTs = parseTimestamp(conflict.as_of_utc || conflict.updated_at_utc || feed.updated_at_utc) || timelineLabDataState.latestSourceTs;
+    timelineScheduleRebuild();
     renderConflictTrend(iranSeries, {
       olderId: 'conflictTrendOlder',
       newerId: 'conflictTrendNewer',
@@ -7079,6 +7316,7 @@ async function refreshLiveData() {
   }
 
   renderDeltaCards();
+  timelineScheduleRebuild();
   ['summary', 'presidential', 'fed', 'social'].forEach(id => setModuleLoading(id, false));
 }
 
@@ -7328,6 +7566,688 @@ function initKeyboardShortcuts() {
   });
 }
 
+
+function timelineDayKey(ts) {
+  if (!Number.isFinite(ts)) return '';
+  return new Date(ts).toISOString().slice(0, 10);
+}
+
+function timelineClamp(value, min, max) {
+  return Math.max(min, Math.min(max, value));
+}
+
+function timelineThemeFromText(input) {
+  const text = normalize(input || '');
+  if (!text) return 'conflict';
+  if (/election|midterm|senate|house|vote|nominee|president/.test(text)) return 'elections';
+  if (/fed|tariff|inflation|rate|econom|recession|powell|market/.test(text)) return 'economy';
+  if (/social|truth|tweet|tweet|x.com|musk|post/.test(text)) return 'social';
+  return 'conflict';
+}
+
+function readSectionSignal(sectionId) {
+  const section = document.getElementById(sectionId);
+  if (!section) return 50;
+  const values = [];
+  section.querySelectorAll('.prob-big-value, .prob-value, .race-pct').forEach(node => {
+    const raw = String(node.textContent || '').replace(',', '.');
+    const match = raw.match(/-?[0-9]+(?:\.[0-9]+)?/);
+    if (!match) return;
+    const num = Number(match[0]);
+    if (!Number.isFinite(num)) return;
+    if (raw.includes('%') || node.classList.contains('race-pct') || node.classList.contains('prob-value') || node.classList.contains('prob-big-value')) {
+      values.push(timelineClamp(num, 0, 100));
+    }
+  });
+  if (!values.length) return 50;
+  const avg = values.reduce((sum, val) => sum + val, 0) / values.length;
+  return timelineClamp(Math.round(avg * 10) / 10, 0, 100);
+}
+
+function collectConflictCompositeSeries() {
+  const map = new Map();
+  const ingest = (list, weight) => {
+    (Array.isArray(list) ? list : []).forEach(item => {
+      const date = item?.date || item?.day;
+      const value = Number(item?.value);
+      if (!date || !Number.isFinite(value)) return;
+      const ts = Date.parse(date + 'T00:00:00Z');
+      if (!Number.isFinite(ts)) return;
+      const key = timelineDayKey(ts);
+      const existing = map.get(key) || { ts, sum: 0, weight: 0 };
+      existing.sum += value * weight;
+      existing.weight += weight;
+      map.set(key, existing);
+    });
+  };
+  ingest(timelineConflictSeriesIran, 1);
+  ingest(timelineConflictSeriesUkraine, 1);
+  return Array.from(map.values())
+    .map(item => ({ ts: item.ts, value: item.weight > 0 ? item.sum / item.weight : item.sum }))
+    .sort((a, b) => a.ts - b.ts);
+}
+
+function collectNewsBuckets() {
+  const buckets = { conflict: new Map(), elections: new Map(), economy: new Map(), social: new Map() };
+  const feed = timelineNewsFeedCache;
+  const conflicts = feed && feed.conflicts && typeof feed.conflicts === 'object' ? feed.conflicts : {};
+  Object.values(conflicts).forEach(items => {
+    (Array.isArray(items) ? items : []).forEach(item => {
+      const ts = parseTimestamp(item?.published_at_utc || item?.updated_at_utc || null);
+      if (!Number.isFinite(ts)) return;
+      const key = timelineDayKey(ts);
+      const theme = timelineThemeFromText((item?.title || '') + ' ' + (item?.source || ''));
+      const current = buckets[theme].get(key) || 0;
+      buckets[theme].set(key, current + 1);
+      const conflictCurrent = buckets.conflict.get(key) || 0;
+      buckets.conflict.set(key, conflictCurrent + 1);
+    });
+  });
+  return buckets;
+}
+
+function normalizeSeriesForCompare(series) {
+  if (!Array.isArray(series) || !series.length) return [];
+  const values = series.map(point => Number(point?.value)).filter(Number.isFinite);
+  if (!values.length) return series;
+  const min = Math.min(...values);
+  const max = Math.max(...values);
+  const span = Math.max(1, max - min);
+  return series.map(point => ({ ...point, value: ((Number(point.value) - min) / span) * 100 }));
+}
+
+function mergeThemeSeries(baseSeries, theme, sectionSignal, newsBuckets) {
+  const list = [];
+  const dailyNews = newsBuckets[theme] || new Map();
+  baseSeries.forEach((basePoint, idx) => {
+    const key = timelineDayKey(basePoint.ts);
+    const count = Number(dailyNews.get(key) || 0);
+    const wave = Math.sin((idx + 1) / 7) * 5;
+    let value = Number(basePoint.value);
+    if (theme !== 'conflict') {
+      value = (0.5 * sectionSignal) + (0.35 * Number(basePoint.value)) + (count * 8) + wave;
+    } else {
+      value = Number(basePoint.value) + (count * 1.4);
+    }
+    const clamped = timelineClamp(value, 0, 100);
+    list.push({
+      ts: basePoint.ts,
+      value: clamped,
+      theme,
+      drivers: {
+        marketSignal: sectionSignal,
+        newsCount: count,
+        conflictBase: Number(basePoint.value),
+        sourceTs: timelineLabDataState.latestSourceTs,
+        confidence: theme === 'conflict' ? 'high' : (count > 1 ? 'medium' : 'low')
+      }
+    });
+  });
+  return list;
+}
+
+function collectTimelineMarkers() {
+  const markers = [];
+  const conflictMap = {
+    iran_2026: 'iran-war',
+    ukraine_2026: 'ukraine-war'
+  };
+  const feed = timelineNewsFeedCache;
+  const conflicts = feed && feed.conflicts && typeof feed.conflicts === 'object' ? feed.conflicts : {};
+  Object.entries(conflicts).forEach(([conflictId, items]) => {
+    (Array.isArray(items) ? items : []).slice(0, 24).forEach(item => {
+      const ts = parseTimestamp(item?.published_at_utc || null);
+      if (!Number.isFinite(ts)) return;
+      const theme = timelineThemeFromText(item?.title || '');
+      const title = String(item?.title || 'Event');
+      const isMajor = /strike|attack|killed|ceasefire|fed|vote|war powers|sanction/i.test(title);
+      if (!isMajor) return;
+      markers.push({
+        ts,
+        label: title,
+        theme,
+        sectionId: conflictMap[conflictId] || TIMELINE_THEME_META[theme]?.sectionId || 'summary'
+      });
+    });
+  });
+
+  [
+    { series: timelineConflictSeriesIran, sectionId: 'iran-war', label: 'Iran conflict data refresh', theme: 'conflict' },
+    { series: timelineConflictSeriesUkraine, sectionId: 'ukraine-war', label: 'Ukraine conflict data refresh', theme: 'conflict' }
+  ].forEach(item => {
+    const last = Array.isArray(item.series) && item.series.length ? item.series[item.series.length - 1] : null;
+    const ts = last ? parseTimestamp((last.date || last.day) + 'T00:00:00Z') : null;
+    if (!Number.isFinite(ts)) return;
+    markers.push({ ts, label: item.label, theme: item.theme, sectionId: item.sectionId });
+  });
+
+  return markers.sort((a, b) => a.ts - b.ts).slice(-32);
+}
+
+function timelineBuildDataModel() {
+  const conflictBase = collectConflictCompositeSeries();
+  const now = Date.now();
+  const fallbackBase = Array.from({ length: 120 }, (_, idx) => {
+    const ts = now - ((119 - idx) * 24 * 60 * 60 * 1000);
+    return { ts, value: 50 + Math.sin(idx / 5) * 8 };
+  });
+  const baseSeries = conflictBase.length ? conflictBase : fallbackBase;
+
+  const newsBuckets = collectNewsBuckets();
+  const signals = {
+    conflict: readSectionSignal('iran-war'),
+    elections: (readSectionSignal('presidential') + readSectionSignal('midterms')) / 2,
+    economy: (readSectionSignal('fed') + readSectionSignal('congress')) / 2,
+    social: readSectionSignal('social')
+  };
+
+  const seriesByTheme = new Map();
+  TIMELINE_THEMES.forEach(theme => {
+    seriesByTheme.set(theme, mergeThemeSeries(baseSeries, theme, signals[theme], newsBuckets));
+  });
+  timelineLabDataState.seriesByTheme = seriesByTheme;
+  timelineLabDataState.markers = collectTimelineMarkers();
+}
+
+function timelineApplyRange(series) {
+  const list = Array.isArray(series) ? series : [];
+  if (!list.length) return [];
+  const maxTs = list[list.length - 1].ts;
+  const rangeMs = TIMELINE_RANGE_MS[timelineLabState.range] ?? TIMELINE_RANGE_MS['7d'];
+  const fromTs = Number.isFinite(rangeMs) ? (maxTs - rangeMs) : list[0].ts;
+  const ranged = list.filter(point => point.ts >= fromTs);
+  if (!Number.isFinite(timelineLabState.zoomStartTs) || !Number.isFinite(timelineLabState.zoomEndTs)) return ranged;
+  const lo = Math.min(timelineLabState.zoomStartTs, timelineLabState.zoomEndTs);
+  const hi = Math.max(timelineLabState.zoomStartTs, timelineLabState.zoomEndTs);
+  return ranged.filter(point => point.ts >= lo && point.ts <= hi);
+}
+
+function timelineActiveThemes() {
+  if (timelineLabState.theme === 'all' && !timelineLabState.compare) return TIMELINE_THEMES.slice();
+  const primary = timelineLabState.theme === 'all' ? 'conflict' : timelineLabState.theme;
+  if (!timelineLabState.compare) return [primary];
+  return Array.from(new Set([primary, timelineLabState.compareTheme])).filter(theme => TIMELINE_THEME_META[theme]);
+}
+
+function timelineFormatTs(ts) {
+  if (!Number.isFinite(ts)) return '--';
+  return new Intl.DateTimeFormat('en-US', {
+    year: 'numeric',
+    month: 'short',
+    day: '2-digit',
+    hour: '2-digit',
+    minute: '2-digit',
+    timeZoneName: 'short'
+  }).format(new Date(ts));
+}
+
+function timelineSetStatus(message) {
+  const node = document.getElementById('timelineLabStatus');
+  if (node) node.textContent = message;
+}
+
+function timelineSyncUrlState() {
+  const params = new URLSearchParams(window.location.search);
+  params.set('theme', timelineLabState.theme);
+  params.set('range', timelineLabState.range);
+  if (timelineLabState.compare) params.set('compare', '1'); else params.delete('compare');
+  params.set('compareTheme', timelineLabState.compareTheme);
+  if (timelineLabState.split) params.set('split', '1'); else params.delete('split');
+  params.set('layout', timelineLabState.layout);
+  if (Number.isFinite(timelineLabState.zoomStartTs) && Number.isFinite(timelineLabState.zoomEndTs)) {
+    params.set('zoomStart', String(Math.round(timelineLabState.zoomStartTs)));
+    params.set('zoomEnd', String(Math.round(timelineLabState.zoomEndTs)));
+  } else {
+    params.delete('zoomStart');
+    params.delete('zoomEnd');
+  }
+  const next = `${window.location.pathname}?${params.toString()}${window.location.hash || ''}`;
+  history.replaceState(null, '', next);
+}
+
+function timelineReadUrlState() {
+  const params = new URLSearchParams(window.location.search);
+  const theme = params.get('theme');
+  const range = params.get('range');
+  const compareTheme = params.get('compareTheme');
+  const layout = params.get('layout');
+  if (theme === 'all' || TIMELINE_THEMES.includes(theme)) timelineLabState.theme = theme;
+  if (range && Object.prototype.hasOwnProperty.call(TIMELINE_RANGE_MS, range)) timelineLabState.range = range;
+  if (compareTheme && TIMELINE_THEMES.includes(compareTheme)) timelineLabState.compareTheme = compareTheme;
+  if (layout && ['focus', 'stacked', 'small'].includes(layout)) timelineLabState.layout = layout;
+  timelineLabState.compare = params.get('compare') === '1';
+  timelineLabState.split = params.get('split') === '1';
+  const zoomStart = Number(params.get('zoomStart'));
+  const zoomEnd = Number(params.get('zoomEnd'));
+  timelineLabState.zoomStartTs = Number.isFinite(zoomStart) ? zoomStart : null;
+  timelineLabState.zoomEndTs = Number.isFinite(zoomEnd) ? zoomEnd : null;
+}
+
+function timelineRenderTooltip(point, x, y) {
+  const tip = document.getElementById('timelineLabTooltip');
+  if (!tip || !point) return;
+  const drivers = point.drivers || {};
+  const sourceText = Number.isFinite(drivers.sourceTs) ? timelineFormatTs(drivers.sourceTs) : 'n/a';
+  tip.innerHTML = [
+    `<strong>${escapeHtml((TIMELINE_THEME_META[point.theme] || {}).label || point.theme || 'Theme')}</strong>`,
+    `Time: ${escapeHtml(timelineFormatTs(point.ts))}`,
+    `Value: <strong>${Math.round(Number(point.value) * 10) / 10}</strong>`,
+    `Drivers: market ${Math.round(Number(drivers.marketSignal || 0))}, news ${Math.round(Number(drivers.newsCount || 0))}, base ${Math.round(Number(drivers.conflictBase || 0))}`,
+    `Source timestamp: ${escapeHtml(sourceText)}`,
+    `Confidence: ${escapeHtml(String(drivers.confidence || 'medium').toUpperCase())}`
+  ].join('<br>');
+  tip.style.left = `${x}px`;
+  tip.style.top = `${y}px`;
+  tip.classList.add('visible');
+  tip.setAttribute('aria-hidden', 'false');
+}
+
+function timelineHideTooltip() {
+  const tip = document.getElementById('timelineLabTooltip');
+  if (!tip) return;
+  tip.classList.remove('visible');
+  tip.setAttribute('aria-hidden', 'true');
+}
+
+function timelineRenderMainChart() {
+  const svg = document.getElementById('timelineLabChart');
+  if (!svg) return;
+
+  const themes = timelineActiveThemes();
+  const normalizedCompare = timelineLabState.compare;
+  const filtered = new Map();
+  themes.forEach(theme => {
+    const raw = timelineApplyRange(timelineLabDataState.seriesByTheme.get(theme) || []);
+    filtered.set(theme, normalizedCompare ? normalizeSeriesForCompare(raw) : raw);
+  });
+
+  timelineLabViewState.filteredSeries = filtered;
+  timelineLabViewState.lastRenderThemes = themes;
+
+  const allPoints = Array.from(filtered.values()).flat();
+  if (!allPoints.length) {
+    svg.innerHTML = '';
+    timelineSetStatus('No timeline points available yet.');
+    return;
+  }
+
+  const minTs = Math.min(...allPoints.map(point => point.ts));
+  const maxTs = Math.max(...allPoints.map(point => point.ts));
+  timelineLabViewState.fullRange = [minTs, maxTs];
+
+  const width = 920;
+  const height = 280;
+  const padL = 48;
+  const padR = 16;
+  const padT = 16;
+  const padB = 30;
+  const innerW = width - padL - padR;
+  const innerH = height - padT - padB;
+
+  const yFor = (value, top, h) => top + h - (timelineClamp(value, 0, 100) / 100) * h;
+  const xFor = ts => padL + (((ts - minTs) / Math.max(1, maxTs - minTs)) * innerW);
+
+  let layers = '';
+  for (let i = 1; i <= 4; i += 1) {
+    const gy = padT + (innerH * i / 4);
+    layers += `<line x1="${padL}" y1="${gy.toFixed(2)}" x2="${(width - padR).toFixed(2)}" y2="${gy.toFixed(2)}" stroke="color-mix(in oklab, var(--border-subtle) 70%, transparent)" stroke-width="1" />`;
+  }
+
+  const splitMode = timelineLabState.split && themes.length === 2;
+  const smallMode = timelineLabState.layout === 'small' && themes.length >= 1;
+  const stackedMode = timelineLabState.layout === 'stacked' && themes.length >= 2 && !splitMode;
+
+  const panels = splitMode
+    ? [
+      { top: padT, h: (innerH / 2) - 6, themes: [themes[0]] },
+      { top: padT + (innerH / 2) + 6, h: (innerH / 2) - 6, themes: [themes[1]] }
+    ]
+    : smallMode
+      ? themes.map((theme, idx) => {
+          const h = Math.max(60, Math.floor(innerH / Math.max(1, themes.length)) - 6);
+          const top = padT + (idx * (h + 6));
+          return { top, h, themes: [theme] };
+        })
+      : [{ top: padT, h: innerH, themes }];
+
+  const markerLines = (timelineLabDataState.markers || [])
+    .filter(marker => marker.ts >= minTs && marker.ts <= maxTs)
+    .map(marker => {
+      const x = xFor(marker.ts);
+      const color = TIMELINE_THEME_META[marker.theme]?.color || '#f43f5e';
+      const title = escapeHtml(marker.label || 'Event');
+      const sec = escapeHtml(marker.sectionId || 'summary');
+      return `<g class="timeline-event" data-section="${sec}" data-ts="${marker.ts}" tabindex="0"><line x1="${x.toFixed(2)}" y1="${padT}" x2="${x.toFixed(2)}" y2="${(height - padB).toFixed(2)}" stroke="${color}" stroke-opacity="0.24" stroke-dasharray="3 3" /><circle cx="${x.toFixed(2)}" cy="${(padT + 6).toFixed(2)}" r="3" fill="${color}"><title>${title}</title></circle></g>`;
+    }).join('');
+
+  const pointNodes = [];
+  const pathNodes = [];
+
+  panels.forEach(panel => {
+    if (smallMode || splitMode) {
+      pathNodes.push(`<line x1="${padL}" y1="${(panel.top + panel.h).toFixed(2)}" x2="${(width - padR).toFixed(2)}" y2="${(panel.top + panel.h).toFixed(2)}" stroke="var(--border-subtle)" />`);
+    }
+
+    let stackedBaseline = Array.from({ length: Math.max(1, panel.themes.length) }, () => 0);
+    panel.themes.forEach((theme, themeIdx) => {
+      const points = filtered.get(theme) || [];
+      if (!points.length) return;
+      const color = TIMELINE_THEME_META[theme]?.color || '#60a5fa';
+      const coords = points.map((point, idx) => {
+        const x = xFor(point.ts);
+        const baseAdd = stackedMode ? stackedBaseline[idx] || 0 : 0;
+        const y = yFor((Number(point.value) + baseAdd), panel.top, panel.h);
+        if (stackedMode) stackedBaseline[idx] = baseAdd + Number(point.value);
+        return { x, y, point };
+      });
+
+      const d = coords.map((coord, idx) => `${idx === 0 ? 'M' : 'L'} ${coord.x.toFixed(2)} ${coord.y.toFixed(2)}`).join(' ');
+      const strokeWidth = theme === timelineLabState.theme ? 2.8 : 2.2;
+      const opacity = timelineLabState.theme === 'all' || theme === timelineLabState.theme || (timelineLabState.compare && theme === timelineLabState.compareTheme) ? 1 : 0.52;
+      pathNodes.push(`<path d="${d}" fill="none" stroke="${color}" stroke-width="${strokeWidth}" stroke-linejoin="round" stroke-linecap="round" opacity="${opacity}" />`);
+
+      coords.forEach(coord => {
+        pointNodes.push(`<circle class="timeline-lab-point" data-theme="${theme}" data-ts="${coord.point.ts}" data-value="${coord.point.value}" cx="${coord.x.toFixed(2)}" cy="${coord.y.toFixed(2)}" r="3.4" fill="${color}" stroke="var(--bg-card)" stroke-width="1" tabindex="0" />`);
+      });
+
+      const panelLabelY = panel.top + 12;
+      pathNodes.push(`<text x="${padL}" y="${panelLabelY.toFixed(2)}" fill="${color}" font-family="var(--font-mono)" font-size="10" letter-spacing="0.05em">${escapeHtml((TIMELINE_THEME_META[theme] || {}).label || theme).toUpperCase()}</text>`);
+    });
+  });
+
+  svg.innerHTML = `
+    <rect x="0" y="0" width="${width}" height="${height}" fill="transparent"></rect>
+    ${layers}
+    ${markerLines}
+    ${pathNodes.join('')}
+    ${pointNodes.join('')}
+    <line x1="${padL}" y1="${(height - padB).toFixed(2)}" x2="${(width - padR).toFixed(2)}" y2="${(height - padB).toFixed(2)}" stroke="var(--border-color)" />
+  `;
+
+  svg.querySelectorAll('.timeline-event').forEach(node => {
+    const sectionId = node.getAttribute('data-section') || 'summary';
+    const onJump = () => {
+      const target = document.getElementById(sectionId);
+      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    };
+    node.addEventListener('click', onJump);
+    node.addEventListener('keydown', event => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        onJump();
+      }
+    });
+  });
+
+  svg.querySelectorAll('.timeline-lab-point').forEach(node => {
+    const theme = node.getAttribute('data-theme');
+    const ts = Number(node.getAttribute('data-ts'));
+    const list = filtered.get(theme) || [];
+    const point = list.find(item => item.ts === ts) || null;
+    const show = event => {
+      const bounds = svg.getBoundingClientRect();
+      timelineRenderTooltip(point, event.clientX - bounds.left, event.clientY - bounds.top);
+    };
+    node.addEventListener('mouseenter', show);
+    node.addEventListener('mousemove', show);
+    node.addEventListener('mouseleave', timelineHideTooltip);
+    node.addEventListener('focus', () => {
+      const rect = node.getBoundingClientRect();
+      const bounds = svg.getBoundingClientRect();
+      timelineRenderTooltip(point, rect.left - bounds.left + (rect.width / 2), rect.top - bounds.top);
+    });
+    node.addEventListener('blur', timelineHideTooltip);
+  });
+
+  const newest = Math.max(...allPoints.map(point => point.ts));
+  const rangeLabel = timelineLabState.range.toUpperCase();
+  const compareLabel = timelineLabState.compare ? ` | compare: ${(TIMELINE_THEME_META[timelineLabState.compareTheme] || {}).label || timelineLabState.compareTheme}` : '';
+  timelineSetStatus(`Showing ${allPoints.length} points | range ${rangeLabel}${compareLabel} | source ${timelineFormatTs(timelineLabDataState.latestSourceTs || newest)}`);
+}
+
+function timelineRenderBrush() {
+  const svg = document.getElementById('timelineLabBrush');
+  if (!svg) return;
+  const primaryTheme = timelineLabState.theme === 'all' ? 'conflict' : timelineLabState.theme;
+  const series = timelineLabDataState.seriesByTheme.get(primaryTheme) || [];
+  if (!series.length) {
+    svg.innerHTML = '';
+    return;
+  }
+
+  const width = 920;
+  const height = 88;
+  const padL = 24;
+  const padR = 10;
+  const padT = 8;
+  const padB = 12;
+  const innerW = width - padL - padR;
+  const innerH = height - padT - padB;
+
+  const minTs = series[0].ts;
+  const maxTs = series[series.length - 1].ts;
+  const minV = Math.min(...series.map(point => Number(point.value)));
+  const maxV = Math.max(...series.map(point => Number(point.value)));
+  const span = Math.max(1, maxV - minV);
+  const xFor = ts => padL + (((ts - minTs) / Math.max(1, maxTs - minTs)) * innerW);
+  const yFor = value => padT + innerH - (((Number(value) - minV) / span) * innerH);
+
+  const d = series.map((point, idx) => `${idx === 0 ? 'M' : 'L'} ${xFor(point.ts).toFixed(2)} ${yFor(point.value).toFixed(2)}`).join(' ');
+  const rangeMs = TIMELINE_RANGE_MS[timelineLabState.range] ?? TIMELINE_RANGE_MS['7d'];
+  const defaultStart = Number.isFinite(rangeMs) ? (maxTs - rangeMs) : minTs;
+  const selStart = Number.isFinite(timelineLabState.zoomStartTs) ? timelineLabState.zoomStartTs : defaultStart;
+  const selEnd = Number.isFinite(timelineLabState.zoomEndTs) ? timelineLabState.zoomEndTs : maxTs;
+  const lo = timelineClamp(Math.min(selStart, selEnd), minTs, maxTs);
+  const hi = timelineClamp(Math.max(selStart, selEnd), minTs, maxTs);
+  const x1 = xFor(lo);
+  const x2 = xFor(hi);
+
+  svg.innerHTML = `
+    <rect x="0" y="0" width="${width}" height="${height}" fill="transparent"></rect>
+    <path d="${d}" fill="none" stroke="${TIMELINE_THEME_META[primaryTheme]?.color || '#f43f5e'}" stroke-width="1.6" opacity="0.9" />
+    <rect x="${padL}" y="${padT}" width="${innerW}" height="${innerH}" fill="transparent" stroke="var(--border-subtle)" />
+    <rect x="${x1.toFixed(2)}" y="${padT}" width="${Math.max(6, x2 - x1).toFixed(2)}" height="${innerH}" fill="color-mix(in oklab, var(--accent-blue) 18%, transparent)" stroke="var(--accent-blue)" />
+    <line x1="${x1.toFixed(2)}" y1="${padT}" x2="${x1.toFixed(2)}" y2="${(padT + innerH).toFixed(2)}" stroke="var(--accent-blue)" stroke-width="2" />
+    <line x1="${x2.toFixed(2)}" y1="${padT}" x2="${x2.toFixed(2)}" y2="${(padT + innerH).toFixed(2)}" stroke="var(--accent-blue)" stroke-width="2" />
+  `;
+
+  const tsForX = x => minTs + ((timelineClamp(x, padL, width - padR) - padL) / Math.max(1, innerW)) * (maxTs - minTs);
+  const onDown = event => {
+    event.preventDefault();
+    const bounds = svg.getBoundingClientRect();
+    const startX = event.clientX - bounds.left;
+    timelineLabState.zoomStartTs = tsForX(startX);
+    timelineLabState.zoomEndTs = timelineLabState.zoomStartTs;
+
+    const onMove = moveEvent => {
+      const x = moveEvent.clientX - bounds.left;
+      timelineLabState.zoomEndTs = tsForX(x);
+      timelineRenderAll();
+    };
+    const onUp = () => {
+      window.removeEventListener('pointermove', onMove);
+      window.removeEventListener('pointerup', onUp);
+      timelineSyncUrlState();
+    };
+    window.addEventListener('pointermove', onMove);
+    window.addEventListener('pointerup', onUp);
+  };
+
+  svg.onpointerdown = onDown;
+}
+
+function timelineRenderLegendTooltips() {
+  document.querySelectorAll('#timelineLab .timeline-marker').forEach(node => {
+    if (node.dataset.tooltipBound === 'true') return;
+    node.dataset.tooltipBound = 'true';
+    const text = normalize(node.textContent || '');
+    if (text.includes('major conflict')) {
+      node.title = 'Vertical marker on the timeline. Click to jump to related section/news. Marker mass represents event impact count in source feed.';
+    } else if (text.includes('elections')) {
+      node.title = 'Election-linked market/news driver marker.';
+    } else if (text.includes('economy')) {
+      node.title = 'Economy/Fed-linked market/news driver marker.';
+    } else if (text.includes('social')) {
+      node.title = 'Social attention and posting activity driver marker.';
+    }
+  });
+}
+
+function timelineRenderAll() {
+  timelineRenderMainChart();
+  timelineRenderBrush();
+}
+
+function timelineScheduleRebuild() {
+  if (timelineLabRebuildTimer) clearTimeout(timelineLabRebuildTimer);
+  timelineLabRebuildTimer = setTimeout(() => {
+    timelineBuildDataModel();
+    timelineRenderAll();
+  }, 80);
+}
+
+function timelineExportPng() {
+  const svg = document.getElementById('timelineLabChart');
+  if (!svg) return;
+  const xml = new XMLSerializer().serializeToString(svg);
+  const blob = new Blob([xml], { type: 'image/svg+xml;charset=utf-8' });
+  const url = URL.createObjectURL(blob);
+  const img = new Image();
+  img.onload = () => {
+    const canvas = document.createElement('canvas');
+    canvas.width = 1840;
+    canvas.height = 560;
+    const ctx = canvas.getContext('2d');
+    if (ctx) {
+      ctx.fillStyle = getComputedStyle(document.documentElement).getPropertyValue('--bg-page') || '#ffffff';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+      const a = document.createElement('a');
+      a.href = canvas.toDataURL('image/png');
+      a.download = `timeline-view-${new Date().toISOString().slice(0, 19).replace(/[:T]/g, '-')}.png`;
+      a.click();
+      timelineSetStatus('PNG export saved.');
+    }
+    URL.revokeObjectURL(url);
+  };
+  img.src = url;
+}
+
+function timelineShareCurrentView() {
+  const url = window.location.href;
+  const done = () => timelineSetStatus('Share link copied to clipboard.');
+  if (navigator.clipboard && typeof navigator.clipboard.writeText === 'function') {
+    navigator.clipboard.writeText(url).then(done).catch(() => {
+      window.prompt('Copy this URL:', url);
+      timelineSetStatus('Share link ready.');
+    });
+    return;
+  }
+  window.prompt('Copy this URL:', url);
+  timelineSetStatus('Share link ready.');
+}
+
+function syncTimelineControlState() {
+  document.querySelectorAll('#timelineThemeChips .timeline-chip').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.theme === timelineLabState.theme);
+  });
+  document.querySelectorAll('#timelineRangeChips .timeline-chip').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.range === timelineLabState.range);
+  });
+
+  const compareToggle = document.getElementById('timelineCompareToggle');
+  const compareTheme = document.getElementById('timelineCompareTheme');
+  const splitToggle = document.getElementById('timelineSplitToggle');
+  const layoutSelect = document.getElementById('timelineLayout');
+
+  if (compareToggle) compareToggle.checked = timelineLabState.compare;
+  if (compareTheme) {
+    compareTheme.disabled = !timelineLabState.compare;
+    compareTheme.value = timelineLabState.compareTheme;
+  }
+  if (splitToggle) splitToggle.checked = timelineLabState.split;
+  if (layoutSelect) layoutSelect.value = timelineLabState.layout;
+}
+
+function initTimelineLab() {
+  const root = document.getElementById('timelineLab');
+  if (!root) return;
+
+  timelineReadUrlState();
+  syncTimelineControlState();
+  timelineRenderLegendTooltips();
+
+  document.querySelectorAll('#timelineThemeChips .timeline-chip').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const next = btn.dataset.theme;
+      if (!next) return;
+      timelineLabState.theme = next;
+      timelineLabState.zoomStartTs = null;
+      timelineLabState.zoomEndTs = null;
+      syncTimelineControlState();
+      timelineSyncUrlState();
+      timelineRenderAll();
+    });
+  });
+
+  document.querySelectorAll('#timelineRangeChips .timeline-chip').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const next = btn.dataset.range;
+      if (!next || !Object.prototype.hasOwnProperty.call(TIMELINE_RANGE_MS, next)) return;
+      timelineLabState.range = next;
+      timelineLabState.zoomStartTs = null;
+      timelineLabState.zoomEndTs = null;
+      syncTimelineControlState();
+      timelineSyncUrlState();
+      timelineRenderAll();
+    });
+  });
+
+  const compareToggle = document.getElementById('timelineCompareToggle');
+  compareToggle?.addEventListener('change', () => {
+    timelineLabState.compare = compareToggle.checked;
+    syncTimelineControlState();
+    timelineSyncUrlState();
+    timelineRenderAll();
+  });
+
+  const compareTheme = document.getElementById('timelineCompareTheme');
+  compareTheme?.addEventListener('change', () => {
+    const next = compareTheme.value;
+    if (!TIMELINE_THEMES.includes(next)) return;
+    timelineLabState.compareTheme = next;
+    timelineSyncUrlState();
+    timelineRenderAll();
+  });
+
+  const splitToggle = document.getElementById('timelineSplitToggle');
+  splitToggle?.addEventListener('change', () => {
+    timelineLabState.split = splitToggle.checked;
+    timelineSyncUrlState();
+    timelineRenderAll();
+  });
+
+  const layoutSelect = document.getElementById('timelineLayout');
+  layoutSelect?.addEventListener('change', () => {
+    const next = layoutSelect.value;
+    timelineLabState.layout = ['focus', 'stacked', 'small'].includes(next) ? next : 'focus';
+    timelineSyncUrlState();
+    timelineRenderAll();
+  });
+
+  document.getElementById('timelineResetZoom')?.addEventListener('click', () => {
+    timelineLabState.zoomStartTs = null;
+    timelineLabState.zoomEndTs = null;
+    timelineSyncUrlState();
+    timelineRenderAll();
+  });
+  document.getElementById('timelineShareView')?.addEventListener('click', timelineShareCurrentView);
+  document.getElementById('timelineExportPng')?.addEventListener('click', timelineExportPng);
+
+  timelineBuildDataModel();
+  timelineRenderAll();
+}
+
 function initUkraineCollapse() {
   const toggleBtn = document.getElementById('ukraineToggleBtn');
   const content = document.getElementById('ukraineContent');
@@ -7388,6 +8308,7 @@ initMapLayerToggles();
 initMapResetButtons();
 initFreshnessPanel();
 initKeyboardShortcuts();
+initTimelineLab();
 renderFreshnessPanel();
 renderDeltaCards();
 refreshLiveData();
