@@ -3721,12 +3721,13 @@ let ukraineBaseLayer = null;
 let conflictMapLayerMode = 'standard';
 let countryBordersGeoJsonPromise = null;
 const ATTACKED_COUNTRIES_BY_CONFLICT = {
-  iran_2026: ['Iran', 'Israel', 'Iraq', 'Saudi Arabia', 'Bahrain', 'Qatar', 'Jordan', 'Kuwait'],
+  iran_2026: ['Iran', 'Israel', 'Iraq', 'Saudi Arabia', 'Bahrain', 'Qatar', 'Jordan', 'Kuwait', 'United Arab Emirates'],
   ukraine_2026: ['Ukraine', 'Russia']
 };
 const COUNTRY_NAME_ALIASES = {
   'RUSSIAN FEDERATION': 'RUSSIA',
-  'IRAN, ISLAMIC REPUBLIC OF': 'IRAN'
+  'IRAN, ISLAMIC REPUBLIC OF': 'IRAN',
+  'UAE': 'UNITED ARAB EMIRATES'
 };
 const trendStates = new Map();
 const MAP_TIME_WINDOWS_MS = { '24h': 24 * ONE_HOUR_MS, '7d': 7 * 24 * ONE_HOUR_MS, '30d': 30 * 24 * ONE_HOUR_MS, all: Infinity };
