@@ -1514,6 +1514,14 @@ html:not(.dark) .VPDocAside {
 }
 
 /* Per-app overview header theme sync */
+.app-theme-neon .vp-doc h1,
+.app-theme-metric .vp-doc h1,
+.app-theme-release .vp-doc h1 {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .app-theme-neon .vp-doc h1 { color: #c6a4ff; text-shadow: 0 0 18px rgba(143,77,255,0.25); }
 .app-theme-metric .vp-doc h1 { color: #8ee6b0; text-shadow: 0 0 18px rgba(57,182,107,0.22); }
 .app-theme-release .vp-doc h1 { color: #8adfff; text-shadow: 0 0 18px rgba(45,192,255,0.22); }
@@ -1776,6 +1784,7 @@ html:not(.dark) .VPDocAside {
 
 .h3p-doc-last-updated {
   margin: 0 0 12px;
+  width: 100%;
   font-size: 12px;
   color: var(--vp-c-text-2);
   text-align: center;
