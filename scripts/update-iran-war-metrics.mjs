@@ -215,9 +215,21 @@ function refreshConflictMetricsFromSources(conflict, sourceMetrics) {
   const byId = new Map(metrics.map(item => [item.id, item]))
   const nowIso = new Date().toISOString()
 
+  // Migrate legacy benchmark IDs/labels to 2026 conflict-total semantics.
+  for (const metric of metrics) {
+    if (metric?.id === 'missiles_benchmark') {
+      metric.id = 'missiles_total_2026'
+      metric.label = 'Ballistic Missiles (2026 Conflict Total)'
+    } else if (metric?.id === 'drones_benchmark') {
+      metric.id = 'drones_total_2026'
+      metric.label = 'Drones (2026 Conflict Total)'
+    }
+  }
+  const remappedById = new Map(metrics.map(item => [item.id, item]))
+
   const assignIfFinite = (id, value, sourceName, sourceUrl) => {
     if (!Number.isFinite(value)) return
-    const metric = byId.get(id)
+    const metric = remappedById.get(id)
     if (!metric) return
     metric.value = value
     if (sourceName) metric.source_name = sourceName
@@ -239,16 +251,16 @@ function refreshConflictMetricsFromSources(conflict, sourceMetrics) {
   assignIfFinite('us_killed', sourceMetrics.usKilled, 'U.S. Central Command + Wikipedia casualties table', 'https://www.centcom.mil/MEDIA/STATEMENTS/')
   assignIfFinite('us_seriously_injured', sourceMetrics.usInjured, 'U.S. Central Command + Wikipedia casualties table', 'https://www.centcom.mil/MEDIA/STATEMENTS/')
 
-  const iranKilled = Number(byId.get('iran_killed')?.value)
-  const israelKilled = Number(byId.get('israel_killed')?.value)
-  const usKilled = Number(byId.get('us_killed')?.value)
+  const iranKilled = Number(remappedById.get('iran_killed')?.value)
+  const israelKilled = Number(remappedById.get('israel_killed')?.value)
+  const usKilled = Number(remappedById.get('us_killed')?.value)
   if (Number.isFinite(iranKilled) && Number.isFinite(israelKilled) && Number.isFinite(usKilled)) {
     assignIfFinite('total_reported_killed', iranKilled + israelKilled + usKilled, 'Computed aggregate (Iran + Israel + US)', wikiSourceUrl)
   }
 
-  const iranInjured = Number(byId.get('iran_injured')?.value)
-  const israelInjured = Number(byId.get('israel_injured')?.value)
-  const usInjured = Number(byId.get('us_seriously_injured')?.value)
+  const iranInjured = Number(remappedById.get('iran_injured')?.value)
+  const israelInjured = Number(remappedById.get('israel_injured')?.value)
+  const usInjured = Number(remappedById.get('us_seriously_injured')?.value)
   if (Number.isFinite(iranInjured) && Number.isFinite(israelInjured) && Number.isFinite(usInjured)) {
     assignIfFinite('total_reported_injured', iranInjured + israelInjured + usInjured, 'Computed aggregate (Iran + Israel + US)', wikiSourceUrl)
   }
@@ -430,8 +442,8 @@ function refreshMapPoints(conflict, now) {
   }
 
   if (conflict?.id === 'iran_2026') {
-    const missilesTotal = metricValue(metrics, 'missiles_benchmark')
-    const dronesTotal = metricValue(metrics, 'drones_benchmark')
+    const missilesTotal = metricValue(metrics, 'missiles_total_2026') || metricValue(metrics, 'missiles_benchmark')
+    const dronesTotal = metricValue(metrics, 'drones_total_2026') || metricValue(metrics, 'drones_benchmark')
     const infraTotal = metricValue(metrics, 'critical_infrastructure_impacts_7d')
     const killedTotal = metricValue(metrics, 'iran_killed') + metricValue(metrics, 'israel_killed') + metricValue(metrics, 'us_killed')
     const injuredTotal = metricValue(metrics, 'iran_injured') + metricValue(metrics, 'israel_injured') + metricValue(metrics, 'us_seriously_injured')
@@ -531,7 +543,7 @@ function refreshMapPoints(conflict, now) {
 
     return [
       ...makePoints({
-        label: 'Ballistic missiles (2025 benchmark)',
+        label: 'Ballistic missiles (2026 conflict total)',
         type: 'projectiles',
         category: 'missile_strikes',
         totalMetric: missilesTotal,
@@ -540,7 +552,7 @@ function refreshMapPoints(conflict, now) {
         sites: autoExpandSites(missileSites, { conflictKey: 'iran_2026', channel: 'missiles', totalMass: missileMass, maxExtra: 34, baseRadiusKm: 11 })
       }),
       ...makePoints({
-        label: 'Drones (2025 benchmark)',
+        label: 'Drones (2026 conflict total)',
         type: 'projectiles',
         category: 'drone_strikes',
         totalMetric: dronesTotal,
@@ -710,7 +722,8 @@ function computeTargetIntensity(conflict) {
   if (conflict?.id === 'iran_2026') {
     const killed = metricValue(metrics, 'iran_killed') + metricValue(metrics, 'israel_killed') + metricValue(metrics, 'us_killed')
     const injured = metricValue(metrics, 'iran_injured') + metricValue(metrics, 'israel_injured') + metricValue(metrics, 'us_seriously_injured')
-    const projectile = metricValue(metrics, 'missiles_benchmark') * 0.015 + metricValue(metrics, 'drones_benchmark') * 0.007
+    const projectile = (metricValue(metrics, 'missiles_total_2026') || metricValue(metrics, 'missiles_benchmark')) * 0.015
+      + (metricValue(metrics, 'drones_total_2026') || metricValue(metrics, 'drones_benchmark')) * 0.007
     const operations = metricValue(metrics, 'air_defense_intercepts_7d') * 0.06 + metricValue(metrics, 'critical_infrastructure_impacts_7d') * 0.30
     const raw = killed * 0.025 + injured * 0.006 + projectile + operations
     return clamp(Math.round(raw), 14, 98)

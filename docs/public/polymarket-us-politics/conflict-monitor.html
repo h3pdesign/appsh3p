@@ -2160,6 +2160,34 @@ footer p {
   margin: 0 auto;
 }
 
+.footer-architecture {
+  margin: 1.1rem auto 0.9rem;
+  padding: 0.9rem 1rem;
+  max-width: 880px;
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  background: color-mix(in oklab, var(--bg-card) 86%, transparent);
+  text-align: left;
+}
+
+.footer-architecture h4 {
+  margin: 0 0 0.4rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-primary);
+}
+
+.footer-architecture p {
+  margin: 0;
+  max-width: none;
+  font-size: 0.78rem;
+}
+
+.footer-architecture p + p {
+  margin-top: 0.55rem;
+}
+
 footer a {
   color: var(--accent-gold);
   text-decoration: none;
@@ -3613,6 +3641,11 @@ body.page-conflicts #methodology {
 <footer>
   <div class="container">
     <p id="footerTimestamp">Data sourced from <a href="https://polymarket.com" target="_blank" rel="noopener">Polymarket</a> prediction markets. Probabilities refresh automatically every hour. This is not financial advice.</p>
+    <div class="footer-architecture">
+      <h4>System Architecture &amp; Methodology</h4>
+      <p><strong>STATE OF US &amp; WORLD POLITICS with Conflict Monitoring</strong> is an automated Open Source Intelligence (OSINT) engine running on serverless infrastructure, dedicated to tracking the Middle East conflict without human editorial bias.</p>
+      <p><strong>Methodology:</strong> The backend uses a continuous LLM parsing pipeline to scrape enterprise news feeds. Events are mathematically deduplicated, cross-referenced for confidence intervals, and plotted chronologically. The map clearly differentiates active kinetic participants from passive diplomatic entities.</p>
+    </div>
     <p>Copyright by h3p 2026</p>
   </div>
 </footer>
