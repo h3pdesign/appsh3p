@@ -10,18 +10,21 @@ head:
 
 # Neon Vision Editor Changelog
 
-_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on March 4, 2026._
+_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on March 6, 2026._
 
-## v0.4.34 (published March 4, 2026)
+## v0.5.0 (published March 6, 2026)
 
-Release link: [GitHub Release v0.4.34](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v0.4.34)
+Release link: [GitHub Release v0.5.0](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v0.5.0)
 
-- iPhone editor now shows a floating Liquid Glass status pill with live caret and word metrics.
-- Added a searchable Language picker (`Cmd+Shift+L`) on macOS, iOS, and iPadOS.
-- Language picker behavior is now consistent: compact toolbar labels with full language names in selection lists.
-- iOS/iPad settings cards were visually simplified by removing accent stripe lines across tabs.
-- Wrapped-line numbering on iOS/iPad now uses sticky logical line numbers instead of repeating on every visual wrap row.
-- Floating status pill word counts stay in sync with live editor content while typing.
+- Added updater staging hardening with retry/fallback behavior and staged-bundle integrity checks.
+- Added explicit accessibility labels/hints for key toolbar actions and updater log/progress controls.
+- Added a 0.5.0 quality roadmap milestone with focused issues for updater reliability, accessibility, and release gating.
+- Improved CSV handling by enabling fast syntax profile earlier and for long-line CSV files to reduce freeze risk.
+- Improved settings-window presentation on macOS by enforcing hidden title text in the titlebar.
+- Improved README roadmap clarity with direct 0.5.0 milestone and issue links.
+- Fixed updater staging resilience when `ditto` fails by retrying and falling back safely to copy-based staging.
+- Fixed release preflight to fail on unresolved placeholder entries and stale README download metrics.
+- Fixed inconsistent reappearance of the macOS settings tab title in the upper-left window title area.
 
 ## v0.4.22 (published February 16, 2026)
 
