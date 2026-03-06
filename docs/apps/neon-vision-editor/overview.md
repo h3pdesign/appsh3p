@@ -65,14 +65,13 @@ Primary user outcomes:
 - review and organize content in focused document workflows
 - maintain consistent editing behavior across desktop and mobile devices
 
-## GitHub Snapshot (as of February 17, 2026)
+## GitHub Snapshot (live)
 
-- Repository stars: 116
-- Forks: 5
-- Open issues: 1
-- Primary language: Swift
+Live repository metrics (auto-updated by GitHub):
+
+- ![GitHub stars](https://img.shields.io/github/stars/h3pdesign/Neon-Vision-Editor?style=flat-square) ![GitHub forks](https://img.shields.io/github/forks/h3pdesign/Neon-Vision-Editor?style=flat-square) ![GitHub open issues](https://img.shields.io/github/issues/h3pdesign/Neon-Vision-Editor?style=flat-square)
+- ![GitHub last commit](https://img.shields.io/github/last-commit/h3pdesign/Neon-Vision-Editor?style=flat-square) ![GitHub top language](https://img.shields.io/github/languages/top/h3pdesign/Neon-Vision-Editor?style=flat-square)
 - Default branch: `main`
-- Latest push: February 16, 2026
 
 ## Platform Availability
 
