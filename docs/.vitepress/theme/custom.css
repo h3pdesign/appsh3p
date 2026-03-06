@@ -1840,6 +1840,12 @@ html:not(.dark) .VPDocAside {
   background: rgba(143,77,255,0.14);
 }
 
+.overview-status-release {
+  color: #2d8dff;
+  border-color: rgba(45,141,255,0.5);
+  background: rgba(45,141,255,0.14);
+}
+
 .overview-status-private {
   color: #59d07f;
   border-color: rgba(89,208,127,0.5);

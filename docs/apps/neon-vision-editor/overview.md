@@ -13,7 +13,7 @@ head:
 
 # Neon Vision Editor
 
-<div class="overview-status-pill overview-status-beta">Status: Public beta</div>
+<div class="overview-status-pill overview-status-release">Status: Public release</div>
 
 <p class="overview-last-updated">Last updated: <span data-date="2026-03-04">March 4, 2026</span></p>
 

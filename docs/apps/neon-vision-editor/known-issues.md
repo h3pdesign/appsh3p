@@ -24,7 +24,7 @@ Workaround:
 - use default text size for most consistent parity checks
 - verify behavior on your primary device before final workflows
 
-## Beta and Stable Build Divergence
+## App Store and TestFlight Build Divergence
 
 Behavior in [TestFlight](https://testflight.apple.com/join/YWB2fGAP) can differ from [App Store](https://apps.apple.com/de/app/neon-vision-editor/id6758950965) while fixes are being validated.
 

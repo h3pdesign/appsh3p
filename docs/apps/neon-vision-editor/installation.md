@@ -12,8 +12,8 @@ head:
 
 ## Install Paths
 
-- Stable channel: [App Store](https://apps.apple.com/de/app/neon-vision-editor/id6758950965)
-- Beta channel: [TestFlight](https://testflight.apple.com/join/YWB2fGAP)
+- App Store: [App Store](https://apps.apple.com/de/app/neon-vision-editor/id6758950965)
+- TestFlight preview: [TestFlight](https://testflight.apple.com/join/YWB2fGAP)
 
 ## App Store Install
 
@@ -24,7 +24,7 @@ head:
 ## TestFlight Install
 
 1. Open [TestFlight](https://testflight.apple.com/join/YWB2fGAP).
-2. Join the beta and install the latest build.
+2. Install the latest preview build.
 3. Confirm build details in app settings.
 
 ## Post-Install Validation

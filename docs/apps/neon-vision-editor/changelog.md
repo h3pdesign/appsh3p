@@ -44,7 +44,7 @@ Release link: [GitHub Release v0.4.21](https://github.com/h3pdesign/Neon-Vision-
 
 ## v1.0.0 milestone context
 
-- App is available on [App Store](https://apps.apple.com/de/app/neon-vision-editor/id6758950965) and beta via [TestFlight](https://testflight.apple.com/join/YWB2fGAP).
+- App is available on [App Store](https://apps.apple.com/de/app/neon-vision-editor/id6758950965) with preview builds via [TestFlight](https://testflight.apple.com/join/YWB2fGAP).
 - Core launch scope included macOS, iPadOS, and iOS platform parity with native implementation.
 
 ## Related Pages

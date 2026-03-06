@@ -86,7 +86,7 @@
   <article class="app-card app-card-neon" data-changelog="/apps/neon-vision-editor/changelog" data-status="public" data-platforms="macos,ipados,ios">
     <img src="/icons/neon-vision-editor.png?v=20260302-1" alt="Neon Vision Editor icon" class="app-icon" />
     <div class="app-card-content">
-      <h3 class="app-title-row"><a class="app-title-link" href="/apps/neon-vision-editor/overview">Neon Vision Editor</a><span class="app-status app-status-beta">Public beta</span></h3>
+      <h3 class="app-title-row"><a class="app-title-link" href="/apps/neon-vision-editor/overview">Neon Vision Editor</a><span class="app-status app-status-release">Public release</span></h3>
       <div class="app-card-meta-row">
         <div class="app-platform-pills">
           <span>macOS</span><span>iPadOS</span><span>iOS</span>
@@ -227,7 +227,7 @@
 </div>
 
 <div class="apps-status-legend" aria-label="App status legend">
-  <span><strong>Public beta</strong>: open testing and active docs</span>
+  <span><strong>Public release</strong>: shipping app and active docs</span>
   <span><strong>Private beta</strong>: limited testing and active docs</span>
   <span><strong>Internal alpha</strong>: internal testing and active docs</span>
 </div>
@@ -639,6 +639,12 @@ See [GitHub Repositories](/apps/github-repositories) for repository links and cu
   color: #b78cff;
   border-color: rgba(183,140,255,0.5);
   background: rgba(143,77,255,0.14);
+}
+
+.app-status-release {
+  color: #2d8dff;
+  border-color: rgba(45,141,255,0.5);
+  background: rgba(45,141,255,0.14);
 }
 
 .app-status-private {

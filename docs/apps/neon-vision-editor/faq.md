@@ -12,7 +12,7 @@ head:
 
 <div class="app-empty-state app-empty-neon">
   <img src="/icons/neon-vision-editor.png?v=20260302-1" alt="Neon Vision Editor" />
-  <p>Quick answers for Neon Vision Editor beta and stable usage.</p>
+  <p>Quick answers for Neon Vision Editor App Store and TestFlight usage.</p>
 </div>
 
 ## Is Neon Vision Editor available on all Apple platforms?
@@ -21,8 +21,8 @@ Yes. It is available for macOS, iPadOS, and iOS.
 
 ## Where can I download it?
 
-- Stable: [App Store](https://apps.apple.com/de/app/neon-vision-editor/id6758950965)
-- Beta: [TestFlight](https://testflight.apple.com/join/YWB2fGAP)
+- App Store: [App Store](https://apps.apple.com/de/app/neon-vision-editor/id6758950965)
+- TestFlight preview: [TestFlight](https://testflight.apple.com/join/YWB2fGAP)
 
 ## Is the project open source?
 
