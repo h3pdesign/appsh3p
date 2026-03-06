@@ -1477,7 +1477,7 @@ html:not(.dark) .VPDocAside {
 .h3p-doc-top-navs {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   gap: 10px;
   flex-wrap: wrap;
   margin: 0 auto 10px;
@@ -1778,7 +1778,7 @@ html:not(.dark) .VPDocAside {
   margin: 0 0 12px;
   font-size: 12px;
   color: var(--vp-c-text-2);
-  text-align: left;
+  text-align: center;
 }
 
 /* Related pages cards at bottom of app docs */
