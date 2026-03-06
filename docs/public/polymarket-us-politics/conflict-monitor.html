@@ -1438,13 +1438,13 @@ nav {
 }
 
 .conflict-map {
-  height: 500px;
+  height: 620px;
   width: 100%;
 }
 
 .conflict-globe {
   position: relative;
-  height: 500px;
+  height: 620px;
   width: 100%;
   overflow: hidden;
   background: radial-gradient(circle at 35% 30%, rgba(96,165,250,0.12), rgba(8,10,16,0.88));
@@ -2347,7 +2347,8 @@ footer a:hover { border-bottom-color: var(--accent-gold); }
 
   .executive-summary { padding: 1.5rem; }
 
-  .conflict-map { height: 380px; }
+  .conflict-map { height: 480px; }
+  .conflict-globe { height: 480px; }
 }
 
 @media (max-width: 480px) {
@@ -3673,6 +3674,7 @@ const MARKET_ID_MAP_URL = '/polymarket-us-politics/data/market-id-map.json';
 const POLYMARKET_SNAPSHOT_URL = '/polymarket-us-politics/data/polymarket-market-snapshot.json';
 const DAILY_SUMMARY_STATE_URL = '/polymarket-us-politics/data/daily-summary-state.json';
 const SOCIAL_TRACKER_METRICS_URL = '/polymarket-us-politics/data/social-tracker-metrics.json';
+const COUNTRY_BORDERS_GEOJSON_URL = 'https://raw.githubusercontent.com/johan/world.geo.json/master/countries.geo.json';
 const GLOBE_GL_URL = 'https://unpkg.com/globe.gl';
 const GLOBE_HD_TEXTURE_URL = 'https://unpkg.com/three-globe/example/img/earth-blue-marble.jpg';
 const GLOBE_HD_BUMP_URL = 'https://unpkg.com/three-globe/example/img/earth-topology.png';
@@ -3707,14 +3709,25 @@ const marketCache = new Map();
 let conflictMap = null;
 let conflictMarkersLayer = null;
 let conflictHeatLayer = null;
+let conflictCountryBorderLayer = null;
 let ukraineMap = null;
 let ukraineMarkersLayer = null;
 let ukraineHeatLayer = null;
+let ukraineCountryBorderLayer = null;
 const conflictGlobeRefs = { iran: null, ukraine: null };
 const globeConflictFeedState = { points: [], colorByType: {}, latestTs: null };
 let conflictBaseLayer = null;
 let ukraineBaseLayer = null;
 let conflictMapLayerMode = 'standard';
+let countryBordersGeoJsonPromise = null;
+const ATTACKED_COUNTRIES_BY_CONFLICT = {
+  iran_2026: ['Iran', 'Israel', 'Iraq', 'Saudi Arabia', 'Bahrain', 'Qatar', 'Jordan', 'Kuwait'],
+  ukraine_2026: ['Ukraine', 'Russia']
+};
+const COUNTRY_NAME_ALIASES = {
+  'RUSSIAN FEDERATION': 'RUSSIA',
+  'IRAN, ISLAMIC REPUBLIC OF': 'IRAN'
+};
 const trendStates = new Map();
 const MAP_TIME_WINDOWS_MS = { '24h': 24 * ONE_HOUR_MS, '7d': 7 * 24 * ONE_HOUR_MS, '30d': 30 * 24 * ONE_HOUR_MS, all: Infinity };
 const MAP_REGION_PRESETS = {
@@ -3751,6 +3764,7 @@ const conflictModuleState = {
     replayStartTs: null,
     redrawQueued: false,
     globeEnabled: false,
+    attackedCountryOutlineKey: '',
     globeRenderedPoints: []
   },
   ukraine: {
@@ -3772,6 +3786,7 @@ const conflictModuleState = {
     replayStartTs: null,
     redrawQueued: false,
     globeEnabled: false,
+    attackedCountryOutlineKey: '',
     globeRenderedPoints: []
   }
 };
@@ -6657,6 +6672,84 @@ function bindMapControls(moduleName) {
   }
 }
 
+function normalizeCountryKey(name) {
+  const raw = String(name || '').trim().toUpperCase();
+  if (!raw) return '';
+  return COUNTRY_NAME_ALIASES[raw] || raw;
+}
+
+function attackedCountriesForConflict(conflictId, points) {
+  const manual = ATTACKED_COUNTRIES_BY_CONFLICT[conflictId] || [];
+  const fromPoints = (Array.isArray(points) ? points : [])
+    .map(point => {
+      const fromCountry = String(point?.country || '').trim();
+      if (fromCountry) return fromCountry;
+      const match = String(point?.name || '').match(/\(([^)]+)\)\s*$/);
+      return match ? match[1].trim() : '';
+    })
+    .filter(Boolean);
+  return Array.from(new Set([...manual, ...fromPoints].map(normalizeCountryKey).filter(Boolean)));
+}
+
+async function loadCountryBordersGeoJson() {
+  if (!countryBordersGeoJsonPromise) {
+    countryBordersGeoJsonPromise = fetch(COUNTRY_BORDERS_GEOJSON_URL, { cache: 'force-cache' })
+      .then(response => {
+        if (!response.ok) throw new Error('Country border fetch failed: ' + response.status);
+        return response.json();
+      });
+  }
+  return countryBordersGeoJsonPromise;
+}
+
+function drawAttackedCountryBorders(moduleName, mapRef, conflictId, points) {
+  if (!mapRef || typeof L === 'undefined') return;
+  const state = conflictModuleState[moduleName];
+  if (!state) return;
+
+  const attackedSet = attackedCountriesForConflict(conflictId, points);
+  const outlineKey = attackedSet.slice().sort().join('|');
+  if (state.attackedCountryOutlineKey === outlineKey) return;
+  state.attackedCountryOutlineKey = outlineKey;
+
+  const existingLayer = moduleName === 'ukraine' ? ukraineCountryBorderLayer : conflictCountryBorderLayer;
+  if (existingLayer) {
+    mapRef.removeLayer(existingLayer);
+    if (moduleName === 'ukraine') ukraineCountryBorderLayer = null;
+    else conflictCountryBorderLayer = null;
+  }
+  if (attackedSet.length === 0) return;
+
+  loadCountryBordersGeoJson()
+    .then(geojson => {
+      if (!geojson || !Array.isArray(geojson.features)) return;
+      if (state.attackedCountryOutlineKey !== outlineKey) return;
+
+      const features = geojson.features.filter(feature => {
+        const name = normalizeCountryKey(feature?.properties?.name || '');
+        return attackedSet.includes(name);
+      });
+      if (features.length === 0) return;
+
+      const layer = L.geoJSON({ type: 'FeatureCollection', features }, {
+        pane: 'overlayPane',
+        interactive: false,
+        style: {
+          color: '#facc15',
+          weight: 2.2,
+          opacity: 0.95,
+          fill: false
+        }
+      }).addTo(mapRef);
+
+      if (moduleName === 'ukraine') ukraineCountryBorderLayer = layer;
+      else conflictCountryBorderLayer = layer;
+    })
+    .catch(error => {
+      console.warn('Country border overlay unavailable:', error?.message || error);
+    });
+}
+
 function upsertConflictMap(mapConfig, points, legend, config = {}) {
   const mapId = config.mapId || (config.module === 'ukraine' ? 'ukraineMap' : 'conflictMap');
   const statusId = config.statusId || (config.module === 'ukraine' ? 'ukraineMapStatus' : 'conflictMapStatus');
@@ -6700,6 +6793,8 @@ function upsertConflictMap(mapConfig, points, legend, config = {}) {
   }
 
   const sourcePoints = moduleState ? moduleState.points : (Array.isArray(points) ? points : []);
+  const conflictId = String(config.conflictId || (moduleName === 'ukraine' ? 'ukraine_2026' : 'iran_2026'));
+  drawAttackedCountryBorders(moduleName, mapRef, conflictId, sourcePoints);
   const latestTs = latestMapTimestamp(sourcePoints);
   const activeTypes = legendFilterState[moduleName];
   const typeFilteredPoints = activeTypes && activeTypes.size > 0
@@ -7045,7 +7140,8 @@ async function refreshUkraineMetrics() {
     upsertConflictMap(conflict.map || {}, Array.isArray(conflict.map_points) ? conflict.map_points : [], Array.isArray(conflict.legend) ? conflict.legend : [], {
       mapId: 'ukraineMap',
       statusId: 'ukraineMapStatus',
-      module: 'ukraine'
+      module: 'ukraine',
+      conflictId: conflict.id
     });
 
     const ukraineContent = document.getElementById('ukraineContent');
@@ -7110,7 +7206,7 @@ async function refreshIranWarMetrics() {
       stateKey: 'iran'
     });
     updateTrendStrip('iran', iranSeries);
-    upsertConflictMap(conflict.map || {}, Array.isArray(conflict.map_points) ? conflict.map_points : [], Array.isArray(conflict.legend) ? conflict.legend : [], { module: 'iran' });
+    upsertConflictMap(conflict.map || {}, Array.isArray(conflict.map_points) ? conflict.map_points : [], Array.isArray(conflict.legend) ? conflict.legend : [], { module: 'iran', conflictId: conflict.id });
 
     const iranDataTime = parseTimestamp(conflict.as_of_utc || conflict.updated_at_utc || feed.updated_at_utc);
     if (Number.isFinite(iranDataTime)) {
