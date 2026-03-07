@@ -1,24 +1,48 @@
 {
-  "updated_at_utc": "2026-03-07T19:50:53.855Z",
+  "updated_at_utc": "2026-03-07T20:26:42.440Z",
   "conflicts": {
     "iran_2026": [
-      {
-        "title": "Iran's president apologizes for strikes on neighbors even as missiles and drones target their cities - AP News",
-        "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxOZDJydV90WC1USUt1QnU5ZHdIZzZkdU1EWXdrZUdYamlGbFhHbERWaWZZTVJIc2E2dEhnQS02TlQwalFqOWZDd2VabFhGb3VINmdvM25JWF9GbVcwQnlCSjQ2dFBuQTAyRVlDSHRLV0lUVmNjMWJocWpBTmkzYjlxdjMyWmFNOXV2OElvT1NCTTk?oc=5",
-        "source": "Google News",
-        "published_at_utc": "2026-03-07T19:41:00.000Z"
-      },
       {
         "title": "Analysis Suggests School Was Hit Amid U.S. Strikes on Iranian Naval Base - The New York Times",
         "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQMzJRdTRIblNhYS1XbDZUUlN0VEV2a1NkMTZKeDBIRE9ncllHQ1pZcHFxRmtGdV9NaHJBZExLVE81YVR0Q290RWY3ODJoN1pybDhqM2U5ZTVBWjVXblZyUC1tcUg3c0wzZGFFSVlTWko5cXJHWm9kN192ZWlzR1p3LXgtYllMaWVTUVo3VFU1VmdvRThn?oc=5",
         "source": "Google News",
-        "published_at_utc": "2026-03-07T19:37:39.000Z"
+        "published_at_utc": "2026-03-07T20:23:13.000Z"
       },
       {
-        "title": "US soldier spent last hours reassuring family before being killed in Iran strike - the-sun.com",
-        "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQdlVwRkx4U1ZZM3VyM1gyOUpZQzFmempXV3B4N1ZIZWZ2NnZOcHdVYkRWN1kzNGNpWkZCNlVPRmtHYWJXV3ExRjdGMUNIS3BLdWJhb21NTFpoRHYwZVJZQ2NkN1l6S3Q1X0lTdWlmWFVvZmFVNXdMMzVkWGtRSjAxSTJvY0JmaDA?oc=5",
+        "title": "Trump to honor U.S. troops killed in war, says Iran targets will expand - The Washington Post",
+        "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxORmF0VG9lRS0ybGVDQ09rbjFOQkc1OHhydmJ2d1dNLVlsbDhEbURadjRNdWRSTHZUaXFKSE80anpyTTRERUZrcjg4NE5qYlNWeVdDSlgwd3FfVXJUbFRfZU16Yy11Qk5fNEliN3BqdHpEa0VnR0xIY2FwVGt6M2VtTENsTGR0V0Zr?oc=5",
         "source": "Google News",
-        "published_at_utc": "2026-03-07T19:13:16.000Z"
+        "published_at_utc": "2026-03-07T20:20:38.000Z"
+      },
+      {
+        "title": "A new wave of strikes lights up the night in Tehran as Netanyahu vows ‘many surprises’ - AP News",
+        "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxOZDJydV90WC1USUt1QnU5ZHdIZzZkdU1EWXdrZUdYamlGbFhHbERWaWZZTVJIc2E2dEhnQS02TlQwalFqOWZDd2VabFhGb3VINmdvM25JWF9GbVcwQnlCSjQ2dFBuQTAyRVlDSHRLV0lUVmNjMWJocWpBTmkzYjlxdjMyWmFNOXV2OElvT1NCTTk?oc=5",
+        "source": "Google News",
+        "published_at_utc": "2026-03-07T19:59:00.000Z"
+      },
+      {
+        "title": "What is the end-game in the US-Iran-Israel war? - The Daily Star",
+        "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPZ3JyeHRtNHMxcm9IVkpUSlJzOTlWak5IajEtTm5GY0JiMHpubWViSDZ6LTJXRHA2Y1Z2djVidFJqX0REWFBtVHVqRHQ4eEZNeFR0MG42bFVISVRhRVBSdGRZM1IwTVQta0NaU0VwWk5UYmxIRVBaT0duRE1kLXg3akRrT01QYjdGM3NyYWQwY2JpTl9mY1AyV1pPWGI4c1V5NHRqX19YYWsyb3ljQWlnUHd0bjRrQQ?oc=5",
+        "source": "Google News",
+        "published_at_utc": "2026-03-07T19:57:05.000Z"
+      },
+      {
+        "title": "Offer from Iran’s president to not attack neighbours provokes internal backlash - The Guardian",
+        "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQN1NxZElCOWJXWG9RN1hvYnE4RzNuSldweS0yWHFYd3drdHhHQmR5SzNfZ3BxQmZlT281N2E3Qm1uZG0taDFrS2dRM1U5TjdGMDNPdnZubUtlS2l6MjBIS0xQNzZTU1hENmp4SHhyelNlZnlmaGFHUzRndU55YjF5TkxrWlRSSHFtbE9Xc2JTMzVkUDlhbFlkb091M2E3VmoyNmVNLUpaLUgyWkdySmZCVGdUd2RZTlBoVHc4elkyOUJaZw?oc=5",
+        "source": "Google News",
+        "published_at_utc": "2026-03-07T19:47:00.000Z"
+      },
+      {
+        "title": "Iran's president apologizes to neighbors, defies US demands - dw.com",
+        "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxObDNLLXRyMTJKOU1KVDBxdEkxbHdYakFNajRPaW1qVlZNcVN2QXVBc3p2NUxzZ1J2bmJrb2c0bDA2NUsxTndpNGZvVTF0VnZkR0JyOFQ4MEpLQWhVeVp2WXJFLW5jZldDYV9PQ2hnN1VWa0tCcHJxVFFiTnE4RUZWWjdWZHFrU0ZxZHJZcVpTRDFvUWZJZlJnOQ?oc=5",
+        "source": "Google News",
+        "published_at_utc": "2026-03-07T19:35:58.000Z"
+      },
+      {
+        "title": "How Russia Emerged as an Early Winner of the Iran War - Time Magazine",
+        "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE80TUFKekZBMmlMenRHRTVCNUVabzNKOUZaZG1pd3JWVmxFdVZGUGRhNDFxeXNSclNvTFlQci04WnRDenowR09ZWW9sMnFpOTJpakNWLVdtUDU?oc=5",
+        "source": "Google News",
+        "published_at_utc": "2026-03-07T19:29:22.000Z"
       },
       {
         "title": "Trump will join grieving families for the return of the six soldiers killed in Iran war - PBS",
@@ -27,34 +51,28 @@
         "published_at_utc": "2026-03-07T19:03:03.000Z"
       },
       {
-        "title": "Trump to honor U.S. troops killed in war, says Iran targets will expand - The Washington Post",
-        "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxORmF0VG9lRS0ybGVDQ09rbjFOQkc1OHhydmJ2d1dNLVlsbDhEbURadjRNdWRSTHZUaXFKSE80anpyTTRERUZrcjg4NE5qYlNWeVdDSlgwd3FfVXJUbFRfZU16Yy11Qk5fNEliN3BqdHpEa0VnR0xIY2FwVGt6M2VtTENsTGR0V0Zr?oc=5",
-        "source": "Google News",
-        "published_at_utc": "2026-03-07T18:50:38.000Z"
-      },
-      {
         "title": "Iran-backed militias strike back at US, Israel in solidarity with Iran - Muslim Network TV",
         "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNWnh3dTc4UExoM3NIMkhscVRrZUFOYjVYMmFOMzJIQnJWQUozSGJ1R2FkUm5YcWdwTWRRV1R0RlV0eFJBbE12Z2x0NnFzTlZkOWQ3cGdpZ3pQRHdMM0pmT2Y5SXJKc1Z0UkphS21KajJ5STh5MTNXYXdZNTFKR3F2MmlsTVh0QjlXYWVndnJ2MjlQb2x5b1VSNjhweWtqM2xDWVAw?oc=5",
         "source": "Google News",
         "published_at_utc": "2026-03-07T18:49:18.000Z"
       },
       {
-        "title": "Video | Iran Israel War | Middle East War Day 8: Amid Global Oil Chaos, India Stands Tall - NDTV",
-        "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNQ0hHalFBUVNsZG1hOEFUV21YdlVEUzk5OExpSXg0WFg0WDIxSVZ0ZGhPeVVESlZmT3Rldl96c25pTFZWR1NxRUk0UzhWc0NPQ1JMWm9LWXVWV1M2VTEwcl9sc2U3TEREcVJvMU1fN3UzLWVYbE9KRHVWckJncy1aRVpvUllOcnU2a3lOMkZBb3ZVOFFwcVBOYnNCd2hBc29VdzhPaUFHRlRBc3ZkekdFWnVB?oc=5",
+        "title": "Iran-Israel Tensions: Iran Apologizes to Gulf Neighbors — Then Strikes US Bases; What Does Pezeshkian's Move Mean for Week Two War? - The Sunday Guardian",
+        "url": "https://news.google.com/rss/articles/CBMi_wFBVV95cUxQT3ROcGNhNjVfa2xUM3EwRzdQUUdRa0FLLWVtT09CMDRUdk9kX0RFcVBfVlFSZ1ZkcVo4Y0p3UzlhVVNsTS1QeGVfaFVwWkhLOTBRcXlZUHRBelo3Mmx2RFNLcGJsX2l6T1E5WTZSOEF1TGdxamxaUVVQRnRVVDE2dWVmbHNFZTNjZ09CQWdjVnpQTS1BNDNSbDAxSU9zN0x1cTVkN1FldTNXcUxSU1Z6MU12WFJKUEFESWVNWTRXSmtqeWtpYXJGSy1xcTVOYjU0VkZScXhOQndRSnZOdFJpN0xlVlA3OFBCeW1LbTRBbUg5aWJhZWs0Q0lLTWV4ZTg?oc=5",
         "source": "Google News",
-        "published_at_utc": "2026-03-07T18:47:56.000Z"
-      },
-      {
-        "title": "Offer from Iran’s president to not attack neighbours provokes internal backlash - The Guardian",
-        "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQN1NxZElCOWJXWG9RN1hvYnE4RzNuSldweS0yWHFYd3drdHhHQmR5SzNfZ3BxQmZlT281N2E3Qm1uZG0taDFrS2dRM1U5TjdGMDNPdnZubUtlS2l6MjBIS0xQNzZTU1hENmp4SHhyelNlZnlmaGFHUzRndU55YjF5TkxrWlRSSHFtbE9Xc2JTMzVkUDlhbFlkb091M2E3VmoyNmVNLUpaLUgyWkdySmZCVGdUd2RZTlBoVHc4elkyOUJaZw?oc=5",
-        "source": "Google News",
-        "published_at_utc": "2026-03-07T18:37:00.000Z"
+        "published_at_utc": "2026-03-07T18:32:46.000Z"
       },
       {
         "title": "‘How many American troops should die for this?’: veterans split on war with Iran - The Guardian",
         "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPZWV1bWtMUTY3SUNuaVJhQ3VwYTJCWjNXRXpRWWNaeG5SdEhzZ2NDYndBbmF3NW5MTlNlb3RyeTU5cE1IWGZ1eVdBTXUtZm1HRVhUTGg0UTE5U095ekM2YnVhS0Uxc0pBR0JqZkE5MmlaSkQxQXlfMGdlSGVQNHlEZQ?oc=5",
         "source": "Google News",
         "published_at_utc": "2026-03-07T18:27:00.000Z"
+      },
+      {
+        "title": "Iran Is Hitting the Radars That Underpin U.S. Missile Defenses - WSJ",
+        "url": "https://news.google.com/rss/articles/CBMiogNBVV95cUxQZzVvQk1sUDE4ZmdtX1ZYRDBMclo2VmdFN2tYN3NydEhjczNZbEJtQ3N1TkdwNml0RzZJMElGRkRFc3ExWTVRaHhIRUJmY3o4YWNadmg0ZTd3MUZPT3hTaFBSTEFKSzVrUWgtTkZSZHRsb3dVclpiRkMzcmo5YVdmOEltVFZGeTA2cjhIVGxJNHR5V3ZESUx1LTFWX3g2R0R0cEdkTzlhRUtKd2htRHZOSjRwUGhZazFuZ1JBa3hqRlhYTEVrQ2h2d1psT3o0U19kU1RtRUZQc0JNS3VoSTFDeUEzZklkaFRkWUFaUFZpN3F6T2lVdjNNT3dkbjFMWE1oVnREM21Uck9WSm5oZlIzWFRoeHBYT1U4Q2ozeWVMem5TdHpkVzVfRlhRMzFiYjE3c1kxSWg2TjUzd0tGdlpyNnRhNnNWa1B1V1Fsc21tNDhQdlhoNDFvMXJ2SlQtVkJybndQNEtrLVZ4TUpLVms0a0xFc2dobnotdU1WUGhYc3RBeWUtWUY4M1ZkSDJSekFRa0dJNVlKdEs5eHFzQmhRODd3?oc=5",
+        "source": "Google News",
+        "published_at_utc": "2026-03-07T18:25:00.000Z"
       },
       {
         "title": "Lebanon Toll Rises to Nearly 300 as Israel Claims Strikes on Hundreds of Targets in Iran and Lebanon - Kurdistan24",
@@ -81,16 +99,10 @@
         "published_at_utc": "2026-03-07T18:07:00.000Z"
       },
       {
-        "title": "\"Very Sick People\": Trump On Iran Leaders Killed In US-Israel Strikes - NDTV",
-        "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxOTFNPM2RWM0xSd2hnRjRyR1Zta0hSM05NcWxKV3NHVzI2OWtTWjBPaEU2ckMxQmtQSjlqU3BxeUVHMzlTa0dEU292NkRZSXRyQTBYN3pibnV6Sm92UjZoeW56ekJhRWFETUhOQmN6S0kydnZhM04xNmpGdzc0S25oa2dOVHF0R2I4dkhzXzFRcEUzMFhHWXJPVUJiV21PSk1zRklvb3pTeTJfTlVQYjAtQTZoNWJwT29UdEk5UWphdkYtSTJoZGxUdHg5WU1YanR60gHYAUFVX3lxTE1mYWxRWmhpV1kwUVNLMFRPYUdfTTM3dkY0TUVJWjNIMFlOZzl1dmw0UE4tVkZiZXUybllHdTBMOXdCcF80Z3FFZmNvVllSX2ZxQi1YbEpqSUVjWWx6UlFRTWROWlptSG9oVV9PY2U2U05nWU02LVJoYWxYM2hMaVFPd3RsenFLUjY2MnZKWU9Qb3hvYVRPN3haT1FpQk1ZanFLLWt6VzgxV0ZoR3ozVnU0RWhUR3kydW5jamVRRE1QWE8yV1Y4SFlxVTZFLXNucTVfNm1QTFJyNw?oc=5",
+        "title": "Escalating conflict: Iran and Israel exchange strikes amid rising casualties - MSN",
+        "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxORlJNSl9UNkF6aGh3ZXZEQWJqOGdHOHZCYkFidjBEb2JwVjZQVlFxWDJZUHl3d1VKR2NYR19wVUFfanpMT1g4Y2FyV3ItV3A0VVdURDRZWFNIT0Nac0lOZU10a0hpM3lWY2JXRXRaeEpjWUxhUkhsX0o1NV8wVUo1TFRYYnR3MjlmRENHQU9YOXBPQl9NbVVZOG5OcjhPLTY4cDAwQWFyZ1lTR3E4cTVPTC1XNFItQlh6Y2tSVTFzeGtCZw?oc=5",
         "source": "Google News",
-        "published_at_utc": "2026-03-07T17:59:48.000Z"
-      },
-      {
-        "title": "Israel pounds Iran missile sites, airport as Tehran fires back repeated salvos, threatens Europe - The Times of Israel",
-        "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNZ3hXOFVST0YwWEw1aTlYSHJZclRSeVVqbTc3VmtGYTUzT29DQ1hnTUdEcW1SZzZrRzBaWldqbGdiOUppZDNlUHE0NkpCWVdVeTZoeWgyWGtTS0Etclo5bmpqbUdQbDY0aGwzSWU1X2N4czNScVdSUUI4UmRnSU83RmFkaEsycEx3VmppQTNKUE1VckVSYkFtVk5FV2pReFdRNVHSAacBQVVfeXFMTnpNZHVmLWtrTlkxWldOYUhxbTkwRUVCU2pCTGNNZ3V0elVLd1dlenNfdG4xMGZQYXBfcFFaaUQzNlhCZlE3ZjlPbGdQaXJtN2ViTDJtbnRibllwQlFZTWpnM0E4X3BtNFNSLXNaaXRuRDJvZ0h5S1pzdEFJc0Q5VHV2Nm1nazJuUUhNWU5XbkhXc0ZPMmxMY2hDbW01Z3ZLVUl0MlFqQU0?oc=5",
-        "source": "Google News",
-        "published_at_utc": "2026-03-07T17:55:26.000Z"
+        "published_at_utc": "2026-03-07T17:59:55.000Z"
       },
       {
         "title": "Trump says he’ll hit Iran harder as Iranian president apologizes to neighbors - WCVB",
@@ -99,36 +111,42 @@
         "published_at_utc": "2026-03-07T17:47:00.000Z"
       },
       {
-        "title": "Israel-Iran conflict enters eighth day as strikes spread across Middle East - Dailynewsegypt",
-        "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOekxZSDVtbVZZbWo0RUU3all5RlFvVVBaLWdFQ041VC1EMnFyTDF4TXBrWURzY0pkQVUzTnMxNXVPclBkZjZlbUVNOE4xSWlScTd0U2QxNTZ1RjdTMnljYndaN18wWjJKaDVFdktMU3UxRWVrT2U0T2tSMGRGRC1mOEhHNnMwdWwyR3JKQWc2WExTTUpKMW1TZjRuOGV1dW96bTl5UGZ4Q1lQWldPakZlVm5HNVF4YXdFX1E?oc=5",
+        "title": "US Iran Israel Latest News: Loud Explosions in Dubai as Kuwait Suspends Oil Exports & Trump Warns Iran of ‘Very Hard’ Strikes - The Sunday Guardian",
+        "url": "https://news.google.com/rss/articles/CBMi_gFBVV95cUxQdmtXR0N0cF9ucTlUWE9nS3dHX192cEowNGZ6WVV1c212eFhta1A2akhXWXlqdE03bHZWUDBCUll0amJ4M1l4TU5RWTJMa1hnT0xrejhrdk1HWnQzdk5SNG1qMU1RZUp2T25Sckoybml1T3BUVzhiVmtfcDJ2dFFIOHlOVTFBM1NVblp4ZjNQYmZGQTA1eW5qd0ZJNF9NaVZJMFU0b3FlRldxOUx5OXJnbEFSWWRqbHpUT2dCcVNRVTFaSHJXV2FlVFYyNy13STR4M2lsZTNEMndhQVR1dkJfZi0tOHZ2b2JjbWxuT0hXWHY0M0ViTDYzZ2MtUldtQQ?oc=5",
         "source": "Google News",
-        "published_at_utc": "2026-03-07T17:42:44.000Z"
+        "published_at_utc": "2026-03-07T17:40:27.000Z"
       },
       {
         "title": "Iran’s president apologizes for strikes on neighbours as missiles and drones still pound their cities - CTV News",
         "url": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxOQUozWEZRZ0RkVE1feERYMFhnS1NHTjNRSm9LNllTM254a1hFMkc3QzdDcXI3MHhDbU9mMmtWRVRPa2t5OFdBdVNicUM1cUlUZ2J4blFaVE9QOXZ1Nm5mZWw1aThYZ1ZaQmVuZElRYUZ0M2ZaOUZMYjNpN0duX054ZVpJWktjSXlnd3RFM3dSSVEwY1AtX1JoQXp5XzN3T1VZWFRCQjJXOF9LN09LQmRFaU9yMEhUQnN4LUk3QjlUNXpJSlZTWDE3VlI0aWp2YjVVaENQM2lvTy1aR1RTem41SEpsZG5SQWh2TGsw?oc=5",
         "source": "Google News",
         "published_at_utc": "2026-03-07T17:35:27.000Z"
-      },
-      {
-        "title": "Iran's Warning To Neighbours Hours After President's Apology - NDTV",
-        "url": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxOM2VYMEVzd2t5MzRvLW0zcWwxb2o1SHlXa1E3MnlzVG1uY1k3QUdITGxQanRvSW13dDNYNlZqMDQzNGR6dV8wX1JadTEzNEtaRXF5WWhVXzVJZzdGQmZTczVHV3paT0Z1WmE3NTdHcVZWazNjTXJWeGdVdWkxaHFsZ0RDYVdXWnliTzJtN05qcmM2WG9HUkhEUHRCSU5nZ2ZfUW5rZkhrd1ktMTI0Snhxc3N4dTVhSzhpdDFlT1hrU3lSSzJETkd4d05Ebk10YWl5MUx2YVc4X0dndVdCRG9zeVZqWk44elJwdVBGVtIB9AFBVV95cUxPeUhyQndMenIyRmVPTEI3cXFaLUtlNGZVOHl3bFEzZl82eXVremF2dHBuUmFOc0tRVFZLYWJBS0pDX2E2Y25YMllYZUNkTnBBVk1aemM5b3ZzSTZxU1dwZEF5SkZqeWlSeDlqMlBLSWdRcURkRlN3NTNXTHNiTk1sR2plME5xSFB1YWdaUWx6cGpJMHB3YzdsaHRZRDhBeEluNzZTdnhDYnB5ejRTZGZlWUpHSDFiUGVLeEZLWTRXWlFSQ25yY0tpVXd4RDFFd3JyYVc4eUNybUJMbXNaV0tYQms1aTFJa0MzZF9rdnNDbmZoa2JU?oc=5",
-        "source": "Google News",
-        "published_at_utc": "2026-03-07T17:24:42.000Z"
-      },
-      {
-        "title": "Report: Iran's selection of Khamenei's successor imminent - The Jerusalem Post",
-        "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE5WTGI4alhJRk1qYloxaXREMmlYeWFGazZSZVRSYWNCNXdvdFVueVNXX2pHS3kzVzlFVGI5YllPbTR5d2xnRWo5NDhncUNOVndWWXpSUUV2TlA2blRWVE5rdS1XanpuZXBwTFE?oc=5",
-        "source": "Google News",
-        "published_at_utc": "2026-03-07T17:22:35.000Z"
       }
     ],
     "ukraine_2026": [
+      {
+        "title": "Russia kills 10 in Ukraine strike including children with new missile - Al Jazeera",
+        "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQUHh0YlpTWGRLN3d5MEc5Nl9hbDlLdEVEQzFKdlJreWNZZS1IbGw4UjVwWkZMRkxfdHpmWjAyZE5fLUcySmhqbUtMYnBoNXc2d3k5QUZxbGR6djNTMDZYREZlSk1hYm43VVhTeENMeVhKWHcwdXowZ21RR3FUMEJNQ0U0Wi1WVkhDc2o4ZWhDdmVBd1ZaY2llMllVdlJ1V09uY0VXOEZWNlg0SGJTSmcw0gG0AUFVX3lxTE0wLWhBMnBiTjd4UVJPbzVTc25OaV91Sm9qVjZUS0Q4ZnRueEJsRnVmUmh6VUxwNWFvYmZiQ0FuWk5xX29NbGc0RHdEUW9FblBoNGN3S2ZhTkdDYzJHN1pvcnJFdVVQS1hFNmVBZ2JjcktZNzh2dU5leS1Sa0FqUHJuYUlRb25DeXdoWTZDOURreUFLVVVLNDFsV3lyWjBtNV9BNm0wZzlOci1WWmJmUk44djRkZA?oc=5",
+        "source": "Google News",
+        "published_at_utc": "2026-03-07T20:16:42.000Z"
+      },
+      {
+        "title": "At least 10 people, including two children have been killed and sixteen others wounded in a Russian missile attack on a five-story residential building in Ukraine's Kharkiv city, officials say. Ukrainian President Volodymyr Zelenskyy says Russia struck Ukraine o - facebook.com",
+        "url": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxQaFViaEtxelVwcWtLSWN3VVdYbEY4UDdYU09TenhuR0N6akg1dllvTG5zTXI4UkVrZ0lvZjRqcEVtclRobWpuemlRNWE4b0Q0MkxyNTV0QlltR0xkdUZSRjRxa1V0T3JYOFpQV3VXYlRmVkhTalhQSWFEamhpSEpKYmdrd2tUTkZGbG5jUU83b1BUdDlSMlZ3dUhubl9OM3pwNS1wNXh2YmhGa3FnaHRhWkd4RFEzenNiODZFeElfMFVwRDFtb0ZDWUlKYkRGTmc3dFhkV3ZZMGg5TFlRS19ibQ?oc=5",
+        "source": "Google News",
+        "published_at_utc": "2026-03-07T20:12:00.000Z"
+      },
       {
         "title": "Ukrainian forces halt advance in Zaporizhzhia, Kyiv says - The Washington Post",
         "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQSG1KUWhQaHBMUUVTQ1VyNHZ1a1JLWHRlRGJYN1Q2STY0ODJlcDRKd09xRlVPWEVIamVmWkxFVnBQWHJ6WlgtZFQtY3dTeW8takptSlc2V2djZC1ZTVpTaHl5bE13VXZLVXdOaVFyN1VPbV9Ra21zR3RDSzF3RklHbVQwUklCU1VMMEdrZnhB?oc=5",
         "source": "Google News",
         "published_at_utc": "2026-03-07T19:32:42.000Z"
+      },
+      {
+        "title": "How Russia Emerged as an Early Winner of the Iran War - Time Magazine",
+        "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE80TUFKekZBMmlMenRHRTVCNUVabzNKOUZaZG1pd3JWVmxFdVZGUGRhNDFxeXNSclNvTFlQci04WnRDenowR09ZWW9sMnFpOTJpakNWLVdtUDU?oc=5",
+        "source": "Google News",
+        "published_at_utc": "2026-03-07T19:29:22.000Z"
       },
       {
         "title": "Russian Strikes Kill At Least 12 Across Ukraine - The Moscow Times",
@@ -149,6 +167,12 @@
         "published_at_utc": "2026-03-07T17:55:22.000Z"
       },
       {
+        "title": "Russia Denies Serious Peace Talks as Medinsky Talks Signal War Focus - mezha.net",
+        "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE42ZTFUTzEwaEJoU2ZzaWJlYWZJNGpVY1NEUTY2bUhpWFB4R2tZc0s4R21SbDlmOHEwT0U4QXEzWmliSnplU1NiXzc4NkxTSjJ1SE1NY005aWRqSkJFYVlN?oc=5",
+        "source": "Google News",
+        "published_at_utc": "2026-03-07T17:28:00.000Z"
+      },
+      {
         "title": "🇺🇸🇷🇺 The U.S. just gave India a 30-day pass to buy Russian oil… yes, the same Russia we've been sanctioning for the Ukraine war The reason? The Iran conflict is messing with oil supply and prices are spiking, so they needed a quick fix. Makes sense on pa - x.com",
         "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTFB0WnViU0NhRFB1TER1SjhPOE5ObmFKUEZHYl9CQ1kyQ2YwSFJ6eU1RLWgwT3lhX3pqQjN3bEdRR3lMOU90VzBGUm9sUGtvanpoUVJvMU5fc1lQcTV5bnpuVW9aMnJzN1p4bGNzeQ?oc=5",
         "source": "Google News",
@@ -162,7 +186,7 @@
       },
       {
         "title": "There’s war in the Middle East — will we remember Ukraine? - The Times",
-        "url": "https://news.google.com/rss/articles/CBMirwNBVV95cUxOWGxiMkJlVHhjRTFOREdsdlRQSEJHdGxOTTJiVmoxQzJ6dGJPSXpybHlZT1Z3NHZhUVk5eF9OdG13Z2p6a3E2VjMxRzMweWhfZ1pXbGdjLURDTzBYMFNTYTNicEt0NEE1YXUzRFNGNENJWHBhWUhyQXRyT0QxWjFVeDUzYlV2NktzSzkwUG9fcVNaSjgzSkRnTUtZWEo3Qkl6N0dvX05vSWtLT1NoWGJLS0JoaUNpYmEtb3hfNlV3Q2tTSW1QR1NqYldnZElDdU5fTkU2eVA1NTgtLXB0aWNJb3JmZ09pdlE3blNTbjljZUZGRU1ITGlDR2FTSmRKUHNhOWotb1BuaVBhSFhJOEVzUVptU3RCMzBRRVZJNVJfS3dlczdIRGNrT201X2J5WTBSSmdFUDk1TWd0dmI3alMybmVpTFhMX29Tc0pUNVlJVzdBS2JDQnRyYmR0U2RadGtSMTlWaWpVdER3UGZKdE16dGF2M3JCdmsyS3o2YWxMOVZ0MU9HVnZvZnNWdHVUdUVrRElXUXhkalBZVDl6UmtaT04xMktFT2J3Mi1Zejg5WQ?oc=5",
+        "url": "https://news.google.com/rss/articles/CBMirwNBVV95cUxQQ3E2R29iTDA1NzhMSkV2YmliRXp0b0c5OHB6TTBQUFN6QjlHaGFwYzVSYnk3dHZhb3hpNjZpMWxHSF8wckZ4X3hLbDc4T1U1eW9PdzlGdHdlOVRZS0hBQ1A0eVhVSU5TR0JqbGczbHJXMW9BOS1hR1g5ankxX01LVWNKdVF6Tm5KaUtQTDZrYmd3WnFnUGlveTlIYjFGNUdHdjdzX1VzTWN4TUVNS3NycFZLZkU0OWtpbmtPNXVxdFFHRHVzTmJlbVJQRE1SNGF0d3VCeEhLSWl5a0NYUlNPT3dzdGRna1FadzNEcE5zcHZJazZzMFJSVVphZk4temRaSVBPNngtZEpqdXJSU3BKdWh6eUVfdXFFMW94cDBmT0pIQzFqN0ZZZ1pBeFZyTEV4eENMMnRPa2VGYjkxZV94VEc2eVlaZ0Zjclo1eS1pUkJKdEVrU09Rak9RX0xEQ2Y5M0oyZ3hDYWVCbGNzV2VqVEo2WHZQUUxUbVF6a01JUWFlVV9DTFdvN0NnbEdWNW1EM3JIM0JqTnoyQXFwWDEyYmFGX004R1pHWXEyWm1nQQ?oc=5",
         "source": "Google News",
         "published_at_utc": "2026-03-07T17:00:00.000Z"
       },
@@ -183,6 +207,12 @@
         "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNUi1COTlXY2RuTC10RWRaYmg4aEg5ZHEyczhwS29BNUdJLTZoOEQ5NTBxb2RkMmNJX2oxTWwwV29vdWtKTHo5V1dBa0VVc1lkX0h3V1hGdlBVYnlHUWt0a0h5SHNHNWxZVWlaX3NWMVhqTHYtU2YyM2RPMFVZcThwYzZUMFZHaGpVSndrUGt5d1ZuRXRjS2FpVUlrWWpvR0dBRk55aVpoTGZ1dTBXdk9xMEV1ajRxVGlqY2fSAb8BQVVfeXFMTllxQzBhTnVTTk1KdmlNSldSUEVSMFNIeGFTME9FOWZfS1dCdnRMd042X25PMkdpOUE3aE4xSmgwUGMycGdUTmtzQjdzR1JRSHVFRmJtTklLUkFYSG5uMG44dWJ0Y2Y4YkY1Y3hDZjRGX2dfVVo2QzFCa2g4Ym5lQU92WjBoRlg4QjhoR1o3OXlHR2JRRDQ2SDJZQlJNaUxJMmxEeXozWmNQa3dOQkZNUWxybzdwVlVlUmNWMzBBV2s?oc=5",
         "source": "Google News",
         "published_at_utc": "2026-03-07T16:09:11.000Z"
+      },
+      {
+        "title": "Ukraine - The Guardian",
+        "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE81RXYwSWdhbVNLT0hkbE1CVEQ5TENiemt5WUNBY2hMVE5KMm9IVHdjQ0dhVURPWHRVNGcwUGt3WXRTSXlPMVl1U2FEVEhJQzB3OHpxQTFDWUFWZG5nTlljLU1oakQySl9N?oc=5",
+        "source": "Google News",
+        "published_at_utc": "2026-03-07T16:03:43.000Z"
       },
       {
         "title": "Ukrainian Drone Units Forced Over 100 Russian Soldiers to Surrender This Winter, Video - UNITED24 Media",
@@ -210,39 +240,9 @@
       },
       {
         "title": "U.S. Army Sends Ukraine-Tested Drones to Hit Iran’s Drones - WSJ",
-        "url": "https://news.google.com/rss/articles/CBMimwNBVV95cUxOS1BxMmhsenZ3MGdNbjhHYlYyeHUxSTZVeGZsVjFLQ3I3MWE0VjRydkRqc3phNUhsN2ZxanU1SG5TTzJOTlpXOGVoWDVBeG1SbGhHVUFRUFVtZzFvSnVXbi1yY2ZZMnBQeExwVFBqM29acndScEk0WHVxQlIyNHdGSmZsZ0c1SmZPVWt1UXZDNG1zdzRueDlZUElFbC05aWNRcWtFREQ2eXZaWXNaSmpEc0Q1RW9BSUFJWmMzYkZlRGc1eTRXRzJkdGpCWHdlNjhVcmF0NDhDZjhHUEZGdHlTYlB6MVlFOWQ4aHI2ZXZBNUx2eHd1OWphVGJXaGozN2lKUzZmQUpyaDdfSHg0OURadDctdzhaaHhuaW9ud2pBaGRXXzhSYWZycC04MWMyT2M2N0ZwdTZHaUhMdVFLM0h3Zm94Zk5McUxsS0FPUlFVVW5IUVhlQ3NjbW9JbENCR3hRZ21IamZORXozXzJES0d6V05pby1abVVMQ1NzV3Jlc0ZQQjBOTVpmRnQycS1CbDhXSkc0dFFqV2lpOUk?oc=5",
+        "url": "https://news.google.com/rss/articles/CBMimwNBVV95cUxOZE80dUVzV08zQ1ktLWE5U3JnQ3FHUlE1ZEl0Y2VtOGhmeEVDTDNaTWluWjlDdmJvTGJfT01DVWwyYnJUMUF5Yjg0WGk2WXpkYXFUN05oeFBnUUZSLXdyV1EyMlJDUS1OZm9vZzBkRGw0eEJsenk1OFN2cU1PRUVjcDJTSHBRVDZxaVNpWGZIQkszako1YUpka09ta0NtanpXRXBtc0NUSUFFWGpwN1oyTFJpOU1DZzBJcklPNVRJbnA3MmNlSGpaQ3ZNUVZVTF9CbllwMEtwYVk1ZTdvdGhpUkJMcHZCSHhCd3JyYnNUZFBsejBLWUlVSmwxajFvLTZ2Q3BibWhVZ2E0OS1sQWRrZXBVaDRocTlEaTdraW5CSkFGbzVJNEhZcXlpVXhYaFFLN2o0TkRvaDVUREdVeDREOTBOUlhTZzF2cTVQaUoyaEFuZkhNejBKbHBxdUJrT1ozcTNNcFJQc3pnTWZRdXN4bjI2dUN6c2NNbU0xaDdaczlHeDUxLWpMaFpEWmFoQm9oYUUycmN1Smg2U3M?oc=5",
         "source": "Google News",
         "published_at_utc": "2026-03-07T15:44:00.000Z"
-      },
-      {
-        "title": "Prince Harry releases emotional video statement on Ukraine war anniversary - AOL.com",
-        "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQb1pHUC1LNFJycXJCcWdmSEpKMHRyaFdsOERjRm5Lc2tCV1MzaWczOGVkZmxnZm9IVFlLa2x3YmtqY0JmUGZqUGFzbHg3VzBCRVpTTlBfV21Eckp1TFZaZUFjeUtpajA4QUFvYWgwSTRZZEVrVWdFVVVSNVlqME1BN1pneDNrbWJi?oc=5",
-        "source": "Google News",
-        "published_at_utc": "2026-03-07T15:41:55.000Z"
-      },
-      {
-        "title": "Economic fallout of Iran war could be much higher than Russia-Ukraine conflict: Finland President Alexander Stubb - Tribune India",
-        "url": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxQRFpsT2NScVdLUm9sSWVUcG51VUFuWkszaXpyWEtDNmUzeWR2YS1RTEJia3JkWTlGLTZGZ2hYblZQMUJhbTNlVUhOV2VfWnd4QngxWGRfVkFRWVlMMXktWUR4cGo4aVVYTEttTkJOZU9pS3NBSTFqQ2VITFpMT1YyaTQ1SWhpUF9RQTk3Y2Z2eldOa1NYVEN6N2M0d3R1OG5CdjZxbjUxa1NwejFFYzk5Y0RsaUk0a2RlaFV3UXpMZEdCR0JYUTB5dFd1Tk8tcTJfNllVc2xiS2htYXR0SEFXYnlhcHRTblJu0gHsAUFVX3lxTE93c1JJX0tzWTBKTS04YVBrSEYzUHEtdE1YRWcwY05JTVFuaFRlRm9aWHNrUkZuWlh3LVZfLW8ySk84WVIxbzNPV0hYQVhhYWt1eTV4Q25hZTVUcXByeHVWSVk2LWExaFg0eGljN3EtM2xmRHZyTTczZFVMZUFodkhhNklHeGxrVUVGanVBMHF5T0pkZWVxSzlxdUNNQlE4cDBkckxDVkc1d09fQ0lsRmozM3RtSzBvSlRaa3dPLTZyWHhIUGk2RER2NW1Dem9scjM3SGZxaG00V2N4ZzZueTcySGlBODdLOEpWcEV1?oc=5",
-        "source": "Google News",
-        "published_at_utc": "2026-03-07T15:35:47.000Z"
-      },
-      {
-        "title": "Four years of war: how prices, tariffs, salaries, and exchange rates have changed in Ukraine - Visit Ukraine",
-        "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxObnZ3d2xKelRvd010dndaV2hjU2tNUUVZano5TE9ZYWNDQmtiNUotVldaN3JJYmZuSlRRQUhhREFBa3FGU19oSFJ5ZDNoSjgyZmcwWF9vVWhIajZhdGgwZUFVWmlpZVowdjNVa0VxOGFNNFE4VHJIRG93VXI0MFA5OEtyRkp1LWRHMTQxRE9vNVJnSjl5ZW5seW5XWmE0N2p5UjNHNENYT3E3S0tFdm9GYWY1S0g5SzlLSGMySUlKUlNLTlk?oc=5",
-        "source": "Google News",
-        "published_at_utc": "2026-03-07T15:34:48.000Z"
-      },
-      {
-        "title": "Gustav Gressel Predicts Summer Will Reveal Russia Offensive Momentum - mezha.net",
-        "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE9BQW9Uc2RISGZjYlRJcWNScEJ2RV9QLUdFaEZ5dVozenQxbkljMWJud1BXREJkbXdjRHdYV0gyOEpocV9kZ0pLSkdvWHU1T1FWaGE2VzFPU0hJTHA1RTNZcEhB?oc=5",
-        "source": "Google News",
-        "published_at_utc": "2026-03-07T15:31:25.000Z"
-      },
-      {
-        "title": "Zelenskyy says Ukrainian forces held all key defense lines this winter - RBC-Ukraine",
-        "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQczBRRlNxMjRZM0F3YXdEeXdLZWF5U2ZrSWZYMXgtT2RZN0lDMlFOMlFvRzJyRlZzYi1zVWdPam1laUtCRjh5bEdoZlVVZThmZF94M2hVU2puS21Cem9XR0NNQ19kamZ0UjZOS01wWC0yU1NrTTYtU0Iyd2U2aDFmN3B0NHZHNWNWMG9PdzRscTJFZw?oc=5",
-        "source": "Google News",
-        "published_at_utc": "2026-03-07T15:30:59.000Z"
       }
     ]
   }
