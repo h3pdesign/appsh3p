@@ -2426,7 +2426,7 @@ body.page-conflicts #methodology {
 
   <!-- ====== HERO ====== -->
   <header class="hero reveal">
-    <p class="hero-tag">Polymarket Intelligence Briefing</p>
+    <p class="hero-tag">World Conflicts Intelligence Briefing</p>
     <h1>STATE OF<br><span>US & WORLD POLITICS</span></h1>
     <p class="hero-subtitle">Prediction Market Intelligence Reports & Conflict Monitoring</p>
     <div class="hero-meta">
@@ -3641,7 +3641,7 @@ body.page-conflicts #methodology {
 <!-- ====== FOOTER ====== -->
 <footer>
   <div class="container">
-    <p id="footerTimestamp">Data sourced from <a href="https://polymarket.com" target="_blank" rel="noopener">Polymarket</a> prediction markets. Probabilities refresh automatically every hour. This is not financial advice.</p>
+    <p id="footerTimestamp">Conflict metrics refresh automatically from configured OSINT sources. Displayed timestamps include local time and UTC. <a href="/polymarket-us-politics/cookie-policy.html" target="_blank" rel="noopener">Cookie Policy</a>.</p>
     <div class="footer-architecture">
       <h4>System Architecture &amp; Methodology</h4>
       <p><strong>STATE OF US &amp; WORLD POLITICS with Conflict Monitoring</strong> is an automated Open Source Intelligence (OSINT) engine running on serverless infrastructure, dedicated to tracking the Middle East conflict without human editorial bias.</p>
@@ -4497,7 +4497,7 @@ function updateTimestamp(sourceTime) {
 
   if (headerDate) headerDate.textContent = `◆ Last updated: ${local} (${utc})`;
   if (footerDate) {
-    footerDate.innerHTML = 'Data sourced from <a href="https://polymarket.com" target="_blank" rel="noopener">Polymarket</a> prediction markets. Last refresh: every hour. Displayed timestamps include local time and UTC. <a href="/polymarket-us-politics/cookie-policy.html" target="_blank" rel="noopener">Cookie Policy</a>.';
+    footerDate.innerHTML = 'Conflict metrics refresh automatically from configured OSINT sources. Displayed timestamps include local time and UTC. <a href="/polymarket-us-politics/cookie-policy.html" target="_blank" rel="noopener">Cookie Policy</a>.';
   }
 }
 
