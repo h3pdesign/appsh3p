@@ -53,6 +53,11 @@ const requiredWrapperSnippets = [
   "/polymarket-us-politics/state-of-us-politics.html?focus=",
 ];
 
+const IRAN_PROJECTILE_BASELINE_MIN = {
+  missiles_total_2026: 810,
+  drones_total_2026: 1245,
+};
+
 function fail(message) {
   console.error(`VALIDATION ERROR: ${message}`);
   process.exit(1);
@@ -156,6 +161,27 @@ function validateConflictFeed() {
   }
   if (!Array.isArray(active.timeline) || active.timeline.length === 0) {
     fail(`${feedPath} conflict ${active.id} must contain at least one timeline entry`);
+  }
+
+  if (active.id === "iran_2026") {
+    const metricsById = new Map(
+      (Array.isArray(active.metrics) ? active.metrics : []).map(metric => [String(metric?.id || ""), metric])
+    );
+
+    for (const [metricId, minimum] of Object.entries(IRAN_PROJECTILE_BASELINE_MIN)) {
+      const metric = metricsById.get(metricId);
+      if (!metric) {
+        fail(`${feedPath} conflict iran_2026 missing required projectile metric: ${metricId}`);
+      }
+      const value = Number(metric?.value);
+      if (!Number.isFinite(value) || value < minimum) {
+        fail(`${feedPath} conflict iran_2026 metric ${metricId} is below baseline (${value} < ${minimum})`);
+      }
+      const scope = String(metric?.scope || "").toLowerCase();
+      if (!scope.includes("cumulative")) {
+        fail(`${feedPath} conflict iran_2026 metric ${metricId} scope must declare cumulative semantics`);
+      }
+    }
   }
 
   return parsed;

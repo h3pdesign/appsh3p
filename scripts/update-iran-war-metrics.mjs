@@ -9,6 +9,13 @@ const HISTORY_START = {
 
 const WIKI_IRAN_WAR_API = 'https://en.wikipedia.org/w/api.php?action=parse&page=2026_Iran_war&prop=wikitext&format=json&formatversion=2'
 const WIKI_IRAN_TIMELINE_API = 'https://en.wikipedia.org/w/api.php?action=parse&page=Timeline_of_the_2026_Iran_war&prop=wikitext&format=json&formatversion=2'
+const PROJECTILE_SOURCE_CHAIN_LABEL = 'UAE Ministry of Defence + IDF spokesperson + ISW/CTP + OSINT public reporting'
+const PROJECTILE_SOURCE_CHAIN_URL = 'https://www.understandingwar.org/'
+const PROJECTILE_BASELINE_UTC = '2026-03-07T13:56:45.650Z'
+const PROJECTILE_BASELINE_TOTALS = {
+  missiles: 810,
+  drones: 1245
+}
 
 const clamp = (value, min, max) => Math.max(min, Math.min(max, value))
 
@@ -265,6 +272,34 @@ function refreshConflictMetricsFromSources(conflict, sourceMetrics) {
     assignIfFinite('total_reported_injured', iranInjured + israelInjured + usInjured, 'Computed aggregate (Iran + Israel + US)', wikiSourceUrl)
   }
 
+  const stampProjectileMetric = (id, minimumValue, label, scope) => {
+    const metric = remappedById.get(id)
+    if (!metric) return
+    const existing = Number(metric.value)
+    const nextValue = Number.isFinite(existing) ? Math.max(existing, minimumValue) : minimumValue
+    metric.value = nextValue
+    metric.label = label
+    metric.scope = scope
+    metric.source = PROJECTILE_SOURCE_CHAIN_LABEL
+    metric.source_name = PROJECTILE_SOURCE_CHAIN_LABEL
+    metric.source_url = PROJECTILE_SOURCE_CHAIN_URL
+    metric.updated_at_utc = nowIso
+  }
+
+  // Guardrail: keep projectile totals monotonic and never below latest verified 2026 baseline.
+  stampProjectileMetric(
+    'missiles_total_2026',
+    PROJECTILE_BASELINE_TOTALS.missiles,
+    'Ballistic Missiles (2026 Conflict Total)',
+    'Total reported ballistic missiles launched in the 2026 conflict (cumulative).'
+  )
+  stampProjectileMetric(
+    'drones_total_2026',
+    PROJECTILE_BASELINE_TOTALS.drones,
+    'Drones (2026 Conflict Total)',
+    'Total reported drones launched in the 2026 conflict (cumulative).'
+  )
+
   return {
     ...conflict,
     source_name: sourceMetrics.sourceVariant === 'timeline'
@@ -277,6 +312,9 @@ function refreshConflictMetricsFromSources(conflict, sourceMetrics) {
     tertiary_source_url: 'https://www.aljazeera.com/news/2026/3/1/us-israel-attacks-on-iran-death-toll-and-injuries-live-tracker',
     quaternary_source_name: 'The Guardian live coverage',
     quaternary_source_url: 'https://www.theguardian.com/world/live/2026/mar/05/us-israel-war-iran-live-updates-attacks-strikes-trump-netanyahu-lebanon-middle-east-latest-news',
+    projectile_source_name: PROJECTILE_SOURCE_CHAIN_LABEL,
+    projectile_source_url: PROJECTILE_SOURCE_CHAIN_URL,
+    projectile_baseline_utc: PROJECTILE_BASELINE_UTC,
     metrics
   }
 }
