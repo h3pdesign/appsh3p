@@ -10,21 +10,22 @@ head:
 
 # Neon Vision Editor Changelog
 
-_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on March 6, 2026._
+_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on March 8, 2026._
 
-## v0.5.0 (published March 6, 2026)
+## v0.5.1 (published March 8, 2026)
 
-Release link: [GitHub Release v0.5.0](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v0.5.0)
+Release link: [GitHub Release v0.5.1](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v0.5.1)
 
-- Added updater staging hardening with retry/fallback behavior and staged-bundle integrity checks.
-- Added explicit accessibility labels/hints for key toolbar actions and updater log/progress controls.
-- Added a 0.5.0 quality roadmap milestone with focused issues for updater reliability, accessibility, and release gating.
-- Improved CSV handling by enabling fast syntax profile earlier and for long-line CSV files to reduce freeze risk.
-- Improved settings-window presentation on macOS by enforcing hidden title text in the titlebar.
-- Improved README roadmap clarity with direct 0.5.0 milestone and issue links.
-- Fixed updater staging resilience when `ditto` fails by retrying and falling back safely to copy-based staging.
-- Fixed release preflight to fail on unresolved placeholder entries and stale README download metrics.
-- Fixed inconsistent reappearance of the macOS settings tab title in the upper-left window title area.
+- Added bulk `Close All Tabs` actions to toolbar surfaces (macOS, iOS, iPadOS), including a confirmation step before closing.
+- Added project-structure quick actions to expand all folders or collapse all folders in one step.
+- Added six vivid neon syntax themes with distinct color profiles: `Neon Voltage`, `Laserwave`, `Cyber Lime`, `Plasma Storm`, `Inferno Neon`, and `Ultraviolet Flux`.
+- Added a lock-safe cross-platform build matrix helper script (`scripts/ci/build_platform_matrix.sh`) to run macOS + iOS Simulator + iPad Simulator builds sequentially.
+- Added iPhone Markdown preview as a bottom sheet with toolbar toggle and resizable detents for Apple-guideline-compliant height control.
+- Added unsupported-file safety handling across project sidebar, open/import flows, and user-facing unsupported-file alerts instead of crash paths.
+- Added a project-sidebar switch to show only supported files (enabled by default).
+- Added SVG (`.svg`) editor file support with XML language mapping and syntax-highlighting path reuse.
+- Improved Markdown preview stability by preserving relative scroll position during preview refreshes.
+- Improved Markdown preview behavior for very large files by using a safe plain-text fallback with explicit status messaging instead of full HTML conversion.
 
 ## v0.4.22 (published February 16, 2026)
 
