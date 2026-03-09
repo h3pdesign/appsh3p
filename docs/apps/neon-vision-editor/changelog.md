@@ -10,22 +10,22 @@ head:
 
 # Neon Vision Editor Changelog
 
-_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on March 8, 2026._
+_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on March 9, 2026._
 
-## v0.5.1 (published March 8, 2026)
+## v0.5.2 (published March 9, 2026)
 
-Release link: [GitHub Release v0.5.1](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v0.5.1)
+Release link: [GitHub Release v0.5.2](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v0.5.2)
 
-- Added bulk `Close All Tabs` actions to toolbar surfaces (macOS, iOS, iPadOS), including a confirmation step before closing.
-- Added project-structure quick actions to expand all folders or collapse all folders in one step.
-- Added six vivid neon syntax themes with distinct color profiles: `Neon Voltage`, `Laserwave`, `Cyber Lime`, `Plasma Storm`, `Inferno Neon`, and `Ultraviolet Flux`.
-- Added a lock-safe cross-platform build matrix helper script (`scripts/ci/build_platform_matrix.sh`) to run macOS + iOS Simulator + iPad Simulator builds sequentially.
-- Added iPhone Markdown preview as a bottom sheet with toolbar toggle and resizable detents for Apple-guideline-compliant height control.
-- Added unsupported-file safety handling across project sidebar, open/import flows, and user-facing unsupported-file alerts instead of crash paths.
-- Added a project-sidebar switch to show only supported files (enabled by default).
-- Added SVG (`.svg`) editor file support with XML language mapping and syntax-highlighting path reuse.
-- Improved Markdown preview stability by preserving relative scroll position during preview refreshes.
-- Improved Markdown preview behavior for very large files by using a safe plain-text fallback with explicit status messaging instead of full HTML conversion.
+- Added editor performance presets in Settings (`Balanced`, `Large Files`, `Battery`) with shared runtime mapping.
+- Added configurable project navigator placement (`Left`/`Right`) for project-structure sidebar layout.
+- Added richer updater diagnostics details in Settings: staged update summary, last install-attempt summary, and recent sanitized log snippet.
+- Added CSV/TSV table mode with a `Table`/`Text` switch, lazy row rendering, and background parsing for larger datasets.
+- Added an in-app `Editor Help` sheet that lists core editor actions and keyboard shortcuts.
+- Added a dedicated `Support Neon Vision Editor…` entry to the macOS `Help` menu for direct support-dialog access.
+- Improved iOS/iPadOS large-file responsiveness by lowering automatic large-file thresholds and applying preset-based tuning.
+- Improved project-sidebar open flow by short-circuiting redundant opens when the selected file is already active.
+- Fixed missing diagnostics reset workflow by adding a dedicated `Clear Diagnostics` action that also clears file-open timing snapshots.
+- Fixed macOS editor-window top-bar jumping when toggling the toolbar translucency control by keeping chrome flags stable.
 
 ## v0.4.22 (published February 16, 2026)
 
