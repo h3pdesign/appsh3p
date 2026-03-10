@@ -10,22 +10,21 @@ head:
 
 # Neon Vision Editor Changelog
 
-_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on March 9, 2026._
+_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on March 10, 2026._
 
-## v0.5.2 (published March 9, 2026)
+## v0.5.3 (published March 10, 2026)
 
-Release link: [GitHub Release v0.5.2](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v0.5.2)
+Release link: [GitHub Release v0.5.3](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v0.5.3)
 
-- Added editor performance presets in Settings (`Balanced`, `Large Files`, `Battery`) with shared runtime mapping.
-- Added configurable project navigator placement (`Left`/`Right`) for project-structure sidebar layout.
-- Added richer updater diagnostics details in Settings: staged update summary, last install-attempt summary, and recent sanitized log snippet.
-- Added CSV/TSV table mode with a `Table`/`Text` switch, lazy row rendering, and background parsing for larger datasets.
-- Added an in-app `Editor Help` sheet that lists core editor actions and keyboard shortcuts.
-- Added a dedicated `Support Neon Vision Editor…` entry to the macOS `Help` menu for direct support-dialog access.
-- Improved iOS/iPadOS large-file responsiveness by lowering automatic large-file thresholds and applying preset-based tuning.
-- Improved project-sidebar open flow by short-circuiting redundant opens when the selected file is already active.
-- Fixed missing diagnostics reset workflow by adding a dedicated `Clear Diagnostics` action that also clears file-open timing snapshots.
-- Fixed macOS editor-window top-bar jumping when toggling the toolbar translucency control by keeping chrome flags stable.
+- Added a new high-readability colorful light theme preset: `Prism Daylight` (also selectable while app appearance is set to dark).
+- Added double-click-to-close behavior for tabs on macOS tab strips.
+- Added split editor settings sections (`Basics` / `Behavior`) to reduce scrolling in the Editor tab.
+- Improved custom theme vibrancy by applying the vivid neon syntax profile to `Custom`, so syntax colors remain bright and saturated.
+- Improved Cyber Lime readability in light mode by reducing overly bright green token intensity and switching to a blue cursor accent.
+- Improved toolbar symbol color options on macOS with clearer separation between `Dark Gray` and `Black`, plus near-white rendering in dark mode for both options.
+- Improved translucent macOS toolbar consistency by enforcing `0.8` opacity for toolbar surfaces in translucency mode.
+- Fixed toolbar-symbol contrast edge cases in dark mode where gray/black variants could appear too similar.
+- Notarized release published via `scripts/release_all.sh v0.5.3 notarized`.
 
 ## v0.4.22 (published February 16, 2026)
 
