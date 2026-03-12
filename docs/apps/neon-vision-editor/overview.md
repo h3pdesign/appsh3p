@@ -15,7 +15,7 @@ head:
 
 <div class="overview-status-pill overview-status-release">Status: Public release</div>
 
-<p class="overview-last-updated">Last updated: <span data-date="2026-03-10">March 10, 2026</span></p>
+<p class="overview-last-updated">Last updated: <span data-date="2026-03-12">March 12, 2026</span></p>
 
 <div class="overview-platform-badges overview-reveal" aria-label="supported platforms">
   <span>macOS</span>
