@@ -1,12 +1,60 @@
 {
-  "updated_at_utc": "2026-03-12T20:28:06.797Z",
+  "updated_at_utc": "2026-03-12T20:58:27.478Z",
   "conflicts": {
     "iran_2026": [
       {
-        "title": "Iran-US-Israel War Latest News: Israeli Air Strikes Target Beirut's Southern Suburbs as Netanyahu Warns Hezbollah Will Pay 'Heavy Price' - The Sunday Guardian",
-        "url": "https://news.google.com/rss/articles/CBMiiAJBVV95cUxNa1pYX0dSelFLSmFaOGF0TFdHR2pLcC1EY1RhQlEwaF96cnJmVG9DOWRSMmhkTklzeExiS2JVMjJxZjNOd1ZwemhESXVvbXRCOHV6MU5RTEN6NHVBclhCZktkVVRHUjN5VkdPOF9SU2VLVXMzTGVsbFBlMUVDUDdGM253dkNIOWh6akFrczdpNUdNTlFGVE1TSmpWR3pfaWxUYXFuZm9lVGtVU2JOajRFZjJLbWZrMzVERTY5ei1iU1NwRS1OTVprdndvMkU1eGpvM3lFTXp6QjF4cWVkVk85T3ZwQ0lxNnBhcnBUcDJkT1B0TDJRYmVFRlZIYzh4OXhfaVdUN0RQVnQ?oc=5",
+        "title": "Did the U.S. strike an Iranian elementary school by mistake? Everything we know so far about the deadly missile attack. - Yahoo",
+        "url": "https://news.google.com/rss/articles/CBMigAJBVV95cUxOWWkzcnlqSFh1UmJMYjEtM0lLa285OHZiRWdUSG0wNHM4RTd6Y0Y2VzVMcDFlSTBxMWdVWWVjSm40QnZjMXhwRXRjMm1LcVJ5SHBfb3NZMlJEY2FieF9vQjcxQzFCQy1HOGpISkI0NTk4RmZ3LUJBUlZlYnpUZVZoRTBJMmttektrQ3dIT3NiNlRCbzYycmZYNEpraDlUWnUzbk9zYjI0ZTJVNlFlcGVPVlFianllQV9KUnpqcWRXNEFiTzkybmZQeEs2VzI1NUM1ekhWLTJUc1hYZlo4emV5LW91NUE2YlVyQkRWVkwyYXF5ZjU3bUhtWWtGT2M1NVl2?oc=5",
         "source": "Google News",
-        "published_at_utc": "2026-03-12T20:24:42.000Z"
+        "published_at_utc": "2026-03-12T20:50:00.000Z"
+      },
+      {
+        "title": "Live Updates: US-Israeli war against Iran's regime rages on - The Jerusalem Post",
+        "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTFB0dGJPYTZUZGVnYXgtNWNEQTY3SWQ3SElWWEloXzVBX0R1V3E3eUxDRHBkSmRFM19RU084UnZwM0FtcFBCLUEwTG15X0FLQmhPXzU1dk5XdUhWbWJoYU9aNnhSSkRHTV9hTHRvNjNNdGc0U1Z5cjBHR3BBbHdSbkk?oc=5",
+        "source": "Google News",
+        "published_at_utc": "2026-03-12T20:45:58.000Z"
+      },
+      {
+        "title": "Iran's Shi'ite allies step up strikes despite weakened hand - Reuters",
+        "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPYjBIa0xHc2lhVDNSb0UxNDBEN0ZGM2FvZUdJd1k2c1hWQ2ZOMVo1M09ZQjJ6b1ZVNjRZMS1ld3luc1hmaWw1X0h4eVVJV1VMaGxxRFloNzNXSGdGRk4yNEVOcWxvd2RkSDA5M250UzBNcndyQ0NXWVRaUXpqZXBDcUVqTlR3UlQ4dzlzMnFlSHN6SzNjMzUxcC0xX2xwVUNrRWRXLUxwcVNOdmVPTld5LQ?oc=5",
+        "source": "Google News",
+        "published_at_utc": "2026-03-12T20:35:47.000Z"
+      },
+      {
+        "title": "Iran's secretive top leader vows to keep up attacks in his first statement since being appointed - AP News",
+        "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOT3UyV1FyQ2VRM3VLV2JXaUhzNWpzYUUyYnotbnkybzc2X1Jaakh4ZlRwcE1QaFkwUU94YTN0RVBnVEV1amRPYzd4WFdiczNwTWhtTVZHYXU3NlY3YllCMG9hRkdDUFp0bEdJNnZBX1hXUi1QY1ZoNmNZUGVyTW9rNDQ0ZHNKcHZ0Y2R1OWtheFhkQVVKVWlpU0Z4enFpRVZ1?oc=5",
+        "source": "Google News",
+        "published_at_utc": "2026-03-12T20:30:00.000Z"
+      },
+      {
+        "title": "Scott Kelly rips White House over ‘Undefeated’ Iran war video: ‘Some big f—ing joke’ - The Hill",
+        "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxOZFJfUHlJWVhVNDU1bXh4eTZjbTM4ZHV0ZnNwcUhiemRHRXVUZjdkUjVyRWVhZThPZjZmeDZSdFh0THN1cXl4Mk05eU16MDVRb05jaVc0dlVxUE1MYkNBRi1WMDNTZ2FWeU9pNHNxTnVreV9LUklxSlpuamJTVnAtZmdqelhRcUxzcUliUmNQU05CeGxL0gGaAUFVX3lxTE9nX2YtdGNfSHpJR0R2RzZHaDlrRElFNjhFd21DOW9QWGF4UlFkNWdfX2Z3czJOLThYT3FMdGhxbVJlR1FDQjE4NkNnb3RQMU5McEZ3MlNtUE1Zczc1QTJNOEthemtNdHJNNEFRUWlneDZWbFhJYmNFdzJqd1JXUDV6emZUY2oyVWhSVlcwSEdjQmJlc2prODIwSFE?oc=5",
+        "source": "Google News",
+        "published_at_utc": "2026-03-12T20:26:51.000Z"
+      },
+      {
+        "title": "Live - Israel moots killing Iran's supreme leader hours after Khamenei Jr's speech | Iran International - ایران اینترنشنال",
+        "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTFBxYjM4R20yZmp4UXFMbXdzMWRpLUhtM25wMEt1X0RTZnBYMk9mS3hSMFZHVFpiR0NzaEZob01GemU2SnByZ01aaDZ0SGVFejhYZmFqQmNTdzUzTVZVQXc?oc=5",
+        "source": "Google News",
+        "published_at_utc": "2026-03-12T20:23:57.000Z"
+      },
+      {
+        "title": "The Latest: Crude oil hits $100 a barrel as Iran vows to keep fighting after 6,000 US airstrikes - dailyrecordnews.com",
+        "url": "https://news.google.com/rss/articles/CBMi-wFBVV95cUxOeWdGWEk1OHRKQXhBamdDejlwMXVHc0FkaExKTjdzaTFMYWtzMXdJXy1ZYjYxdGNESGltb1YyQnlaV21DTmlQTHYwZWp2QjdyZm5md19paTR2SjRfUU5scEY0RTc0Nk1YREc4TVVRbVdLZHRaRWI1UzNaZU9LNXc4cXBzaWtid3hiWnBjSlp4VEh5ektSX3JHUm9nYXJWVzZxcGg4MU1ybXE1U0x0WVNuZ2ctUzhCRkxwc0plNnpPdEFNQ0JycjA5aWp6VTZ5QWtkWFA2OFdWZWFRTG05S0RBbTI4cmtJek9wTGhsUHdGckRhU1pXT1lsMEdfONIBgAJBVV95cUxQLUtmT2FMSkFNZVF3cGYyTGp6SUxhcl96RzZxVy01WU1oTUxxcTR5RTdTNDV5cmdZWGFJZ3dtWXd5N3p6c1lVSlJEOUNKNHJaeEIyeG1OdUR0M2dSd3BLVDluRlNILXYybDRhN1FvUzFOYTNBNG15NEZXZnpLREVlYU9HRW10QjEyWHlrRXVRMUVmMHFWZjg0UzdEMF8zTlZsRWF3anFnOHk5WmNMbWJqd1Y0UWtmYlRRMGNKYnJockNrNmo2NG5RRXVvNnFQT09EcVZfOVhzS1RNcVpmNTNuMTd4WVRFTWhzenlyb2xEUUtjTkFFNkJhcjU4bGJXRVpS?oc=5",
+        "source": "Google News",
+        "published_at_utc": "2026-03-12T20:22:55.000Z"
+      },
+      {
+        "title": "UK troops at Iraq base shot down Iranian drones, Healey says - BBC",
+        "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE93NloyWkt4bjJTSFdySl8yXzNNSHRVaFlTXzRILXo5Y21ObnRxSnlCSHpHRkNTQXo2MzFVOTlMWng2RUhFRW9fZHU5VzZqN0hVRWJBdGdtNnQwZw?oc=5",
+        "source": "Google News",
+        "published_at_utc": "2026-03-12T20:12:43.000Z"
+      },
+      {
+        "title": "Iran arrests nearly 200 people over US-Israel war: rights group - The New Arab",
+        "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOVzM0M2dzdk9MN09scWJnWUZLMUtQRk5rX3NQLVFJXzFwRDd5UUVWZFdSdldUSmJ2WkFCMjhWZE44S0JaeFRrWTNaRkNqTERmQy1iQlJmNkNQalBldzdxcXVLWHFxSF9YWDBvYWFLalktZEh6YlNKbldCd1NOTnpCQTliMmRDdVM5MzZwa0YyNkF4RXlURmfSAZsBQVVfeXFMTXhKMDhHUFBGcEx4c2ZDOENyTHBwV1JsaUhTOE5SNUVpU29WUkNxdlVmOUQxMDlNejR4U1gydWI2ZXVtT1JLOHhnTUhpMzZUNk43SkN3d1ZnWWZEN2hsd2lNVmRybHJWYUNXOTBMTi1mTno2UjZsT2pJQWVablhBVUJvYnMyVjZOTUxCOEJVbDNKcko2YVRsc3F1NjA?oc=5",
+        "source": "Google News",
+        "published_at_utc": "2026-03-12T20:09:37.000Z"
       },
       {
         "title": "US Democrats call for 'swift investigation' into strike on Iranian school - France 24",
@@ -21,16 +69,34 @@
         "published_at_utc": "2026-03-12T19:54:16.000Z"
       },
       {
+        "title": "Iran vows to make Trump pay for ‘grave miscalculation’ if US escalates war - Al Jazeera",
+        "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPRTQ1T1p0cGYzTEIxaHgxRk5sTXJCMkp5YkJPcDRYOUFqZlNTWFZMaXVvMzZJNlc2MlpxUHV5UGUtZEdLUlViRk9XcFEtYTdleXkzOV9CY3g1X1BFYVNKWk1XQkY5aUNDYTZMSV9RZGdOMGdudFdmVTlOOFdOeFZ5UkJ1VmhXYzE2NVlKYVZvNy1LTjI0dnJZZjlETUJSQWtjSFhuSU9RNE90aWVWMWZXSGNtNNIBuAFBVV95cUxOd2tMdTF5RlRNV2J0VFhvNTdWTGZoaDRjTjFNWlVFSUJjajJfeDlNdWdwS042WGZPcXBWbGNHT3hEcllfMWJ3RjVuMFlwaFpQa0V5U09CcHRPakdNU01HYldVMW1VX3k3QllMeDFBVEZ3UG9obVRUNW1kd0pnNkdLbkI3Wk84R1NSOEcwckFsdEVxeHlnVDN0WUJneGxxSlZGNGpvdHZfVk8waFhIU3ltcnUyT2FueVNO?oc=5",
+        "source": "Google News",
+        "published_at_utc": "2026-03-12T19:54:14.000Z"
+      },
+      {
+        "title": "Iran War Maps: Tracking the Mideast Conflict - The New York Times",
+        "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE1uUWpBOUw3b05zUlRrZFVqbThvSTc1elBsdzItdm4tR0M0eUYzSWN1Qm45RGp0R0pLbzJLekxiZ3JBODRlSjB5T2hIMThDVG12NG1zcnVKYzJNYnhqdFE0MVUtcU5VUWR1UkJ6dWthdVRvcW5t?oc=5",
+        "source": "Google News",
+        "published_at_utc": "2026-03-12T19:53:16.000Z"
+      },
+      {
         "title": "Does President Trump have an exit strategy for the war with Iran? - Al Jazeera",
         "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQNTBqWmJPajF3b0t1ZVFFR0h0eXN0U1o3THhRbFhyZXdjTWlrcEZQcUZKeHhsSlhsSTZlY1l5LXZKNlF3RUNvejJTWXo1dnFub1V1M21UZXUyRVd4dWVlU0tCWk9taXBlbkFPUnprRVZ5Q1ZrMk9PTm1NZFk4T2R6eGoxVFZoNENrbVhTUlE2UXFHTUpsVlpBRi1BUEplRXRvZTB1bXE2Si16MnZnSDVaM1FyNVVNWnRRQ2NJ0gHAAUFVX3lxTE92b3JvNi1TZUpRU3JJREo3ZnBQUUk2YURvRnVYck9sZzAtcFpGX3hiWUJJRjZfeU1QNFZtenV5RW9aRFRhVW9CcjdRUUN1SUhoSmhzN2NvOTB4OHAtUGdCVFJILUNVd2RqVXdzX1ZrbWxvOUdid3JIWDRmMFdCdmh2MUY3VE9sOWJiQ3g4bDZnZ2JEVjVmYlh2aUlqQjA3M3Ytd09Eb0Y1dlNsdTh2OTZpY3lIRlJpSGNLTXlmYWQ4RA?oc=5",
         "source": "Google News",
         "published_at_utc": "2026-03-12T19:50:59.000Z"
       },
       {
-        "title": "Has public opinion on the US striking Iran shifted since the war started? - AOL.com",
-        "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOSzZkNVhaNnpEV2s0Wkh4a1RfTS1zUkd1V0phUHY4U3pfakNpMHFjZEZjTWUtbFZ4dm0zVzRYREZTQmFSZjVpSzEwWGdSeldjV05KVW5MYlJxQjNuSXItaVloaXhCbFdIVlBMOUhkN3RlYW1HSjViNk1VUmMxX3g4OA?oc=5",
+        "title": "Has public opinion on the US striking Iran shifted since the war started? - abcnews.com",
+        "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNbE5pMnN2ZEpjYWs1My1fQUI3d1BMeDFhajZjQ0dMTXd2TWJ2X3NCSldQeW05LTJUdzJYeHgzTkVObzRGNV9JVk80QWlKckdsaFFPTmZYeVZQOHF4WFhtVjhCemhqQ29iMFk3dkdxT2s1eHBhWWxuMC1kWU9yZ1FDb05iblY3V3FJV0Z3QUZ1NnVuekJWZW9PVmthLUxJUG1X?oc=5",
         "source": "Google News",
-        "published_at_utc": "2026-03-12T19:47:10.000Z"
+        "published_at_utc": "2026-03-12T19:46:56.000Z"
+      },
+      {
+        "title": "Iran names U.S. banks as targets, ratcheting up cyber threat - American Banker",
+        "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPMXJWdlZRNVZobW1DcXJLRWpnQXQxaU02elhITWh0RzZ1UzdNRzF0cWhLdjhRVzZxd3BvY0VhbzMtX3U3OHhIc1lSZTlYeTkxT0xKdFkyVE1JVXkzZE9iS2xYaUJROTFRb3duazBDU2t3UDIwTy1EYXY3SUJ0WWp6RDQwNm9jT2ZOZXlER213S1M3X0NxVHBwZ0l3?oc=5",
+        "source": "Google News",
+        "published_at_utc": "2026-03-12T19:46:00.000Z"
       },
       {
         "title": "Iran-Israel War: Russia Reaping Up to $150 Million Daily Windfall From Oil as Iran War Disrupts Global Supply; Revenue Jumps 14% Following Closure of Strait of Hormuz - The Sunday Guardian",
@@ -39,10 +105,10 @@
         "published_at_utc": "2026-03-12T19:44:34.000Z"
       },
       {
-        "title": "Iran vows to make Trump pay for ‘grave miscalculation’ if US escalates war - Al Jazeera",
-        "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPRTQ1T1p0cGYzTEIxaHgxRk5sTXJCMkp5YkJPcDRYOUFqZlNTWFZMaXVvMzZJNlc2MlpxUHV5UGUtZEdLUlViRk9XcFEtYTdleXkzOV9CY3g1X1BFYVNKWk1XQkY5aUNDYTZMSV9RZGdOMGdudFdmVTlOOFdOeFZ5UkJ1VmhXYzE2NVlKYVZvNy1LTjI0dnJZZjlETUJSQWtjSFhuSU9RNE90aWVWMWZXSGNtNNIBuAFBVV95cUxOd2tMdTF5RlRNV2J0VFhvNTdWTGZoaDRjTjFNWlVFSUJjajJfeDlNdWdwS042WGZPcXBWbGNHT3hEcllfMWJ3RjVuMFlwaFpQa0V5U09CcHRPakdNU01HYldVMW1VX3k3QllMeDFBVEZ3UG9obVRUNW1kd0pnNkdLbkI3Wk84R1NSOEcwckFsdEVxeHlnVDN0WUJneGxxSlZGNGpvdHZfVk8waFhIU3ltcnUyT2FueVNO?oc=5",
+        "title": "We attacked Iran with no clear plan for regime change, Israeli security sources say - The Guardian",
+        "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQcngtWjZjNF9NOW9tWkhMMjV4WkZ5SGd3VjUzZi1UNnBRalFkWWtOa1QyUXFrelY1S29TTlJEYUplTlRqa3BjYVpjUWczQ3M2VnZDSFJiZzVCMVJhcHpBbFM2WlNJc050c0lZc3RZR2FrZmUyajdCenBzRlcwREtZaTFGTHMycXdxTEI1d1dZbDJEd0hsc2R2MW00QVRhbGdoZExsTy1mME90V1ppQ1FF?oc=5",
         "source": "Google News",
-        "published_at_utc": "2026-03-12T19:42:55.000Z"
+        "published_at_utc": "2026-03-12T19:40:00.000Z"
       },
       {
         "title": "The Iran War Underscores the Need for Bipartisan Energy Policy - The Dispatch",
@@ -51,76 +117,10 @@
         "published_at_utc": "2026-03-12T19:38:33.000Z"
       },
       {
-        "title": "Iran's secretive top leader vows to keep up attacks in his first statement since being appointed - AP News",
-        "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOT3UyV1FyQ2VRM3VLV2JXaUhzNWpzYUUyYnotbnkybzc2X1Jaakh4ZlRwcE1QaFkwUU94YTN0RVBnVEV1amRPYzd4WFdiczNwTWhtTVZHYXU3NlY3YllCMG9hRkdDUFp0bEdJNnZBX1hXUi1QY1ZoNmNZUGVyTW9rNDQ0ZHNKcHZ0Y2R1OWtheFhkQVVKVWlpU0Z4enFpRVZ1?oc=5",
+        "title": "What you need to know about Iran today, with Laura Tingle - ABC News",
+        "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQTGVDZjk2UmxyLXg1RUJiS2hnUzl4OWd3UjVpVXZGSE1sS1lRNG9PcnI2S0ZpMTQtZHZnYmpTSlkyUmgwcVNJSjAxRGExNXRKbGEwMkE0YVJLdWQ3c0t1QWtRMkRSSFNtaWlvdXR6XzR0LUliUTlyOS1Ed01wRF9UYU5DUDZEM2h4d2N5U2wzZU1pZlFhUU9teG56cVBNUQ?oc=5",
         "source": "Google News",
-        "published_at_utc": "2026-03-12T19:38:00.000Z"
-      },
-      {
-        "title": "Lebanon appeals to Israel’s allies to stop strikes as death toll rises - The Washington Post",
-        "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxNZXVDM3hyUEo2U0tNVWhmVVRSRHNaNlFOLWx1QjFlYlUwTWRONkgwMXBPcTgxLVAwVlAwVVhDamRUU1dVQ0lKaWVLekoyTFUwdUZtaUlSU3dTci1hOGdFcklaQkx5MEhIU2hkQTBRUUhINVl6MnlKbzlqYXBib3NvREdKZw?oc=5",
-        "source": "Google News",
-        "published_at_utc": "2026-03-12T19:32:20.000Z"
-      },
-      {
-        "title": "WATCH | Will Iran lose the war? Defence expert Pravin Sawhney explains - Frontline Magazine",
-        "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPV2pXVG9RaFBvVnFXdjR0ZnczWVhqY2xfQzZDd19YeHQ2dDR0T014TkVlZW9hSmkxRjJLNF82ZXRZSHdqa1JPejk0NlNEd2VNNER5bENZdTRydE5aV0RFZkFqT3lpT3kzUTJ1UmpIc0NQb09Od1hXVzlsY25QZXFycmE1dFZxLVBUdFBZMG01aFVJVVByNFFZWEZlSlNNbzdBU0FISE44Wi01S3Y3cUN6NU9yVHBzazQxQ1Fralg0Zw?oc=5",
-        "source": "Google News",
-        "published_at_utc": "2026-03-12T19:29:31.000Z"
-      },
-      {
-        "title": "Iran says its new leader made his 1st address, vowing to keep Strait of Hormuz closed - NPR",
-        "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE5rQU4wel9CNHk5alNPamlDcUhSZjdXc2RtOVprQzFaTmdLY2Zsa2hORFlkNldfVXZCOTB6b3ZsQzByaktSTzNiX2hINzJDWGMwdnk5TDFONUpCSmdRemVEMktzU0xWemxudGx4X0ozc1g?oc=5",
-        "source": "Google News",
-        "published_at_utc": "2026-03-12T19:25:43.000Z"
-      },
-      {
-        "title": "Iranian strikes down up to 96% thanks to successful interception by US defense systems - New York Post",
-        "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxPazBseTlrRHVPMWIzSko2NzdpRlFXUzlZamJmX3Vha1NJMXBrM0tzZ1FYQTktR1FiX2Q2OEFiYW5GZmZjMWFmYUQteTNjQ291OWFfS0k5WmtUVEdEN2trYlZycFJLS3ZIY3o5UHNDczBENzVBLXZfNk9TNkVEMmI0cWF5cUs5NTZGSmdfN1VxV3FmVTdudTJRLVgtYVpnX1kzUWd5ZGIwQUhhS3NsLThELWFwejBHRU9YaWc1Sy03andhTzB0Sy1SLXN1bGRmZw?oc=5",
-        "source": "Google News",
-        "published_at_utc": "2026-03-12T19:15:41.000Z"
-      },
-      {
-        "title": "A deadly strike, or Call of Duty clip? How the US government is trying to memeify the war on Iran - The Conversation",
-        "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPX3dwdkJ3c2Mtc0RWVUI5WV9tbjJNV3o0SWdwOF9LVGMtcmVWUWVWblhIaERROW52QnlQZUY5eEFudmVKQ1FBVXVjQm4zSllfM0IxSUZyV0lKRnJ6QlVSS1ZuUVNBSXRMZ0ExUnFXYUk3dnFvQTFjOUtwUm5veFdobF9TOVIyRTJqV2pLeFBHMEotMEFaWWRQUTlaczhXNjRPcnlLaExCNlpQTjM2NzVIWVYweGhzcngzWU1BYXB1T2p1Rklva1ZJNS1R?oc=5",
-        "source": "Google News",
-        "published_at_utc": "2026-03-12T19:11:33.000Z"
-      },
-      {
-        "title": "Iran had a surprise drone attack planned for California: FBI alert - NewsNation",
-        "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNclpDM2otVTRKVWEtcjhuUGVsUjltek1BUlhTOUhwX2Y3LWVrOVpXcXlTOF9fQmVnbS14bVFCZmJYWlJYWjlGSmRMZjEydVVSVmFKeHlDeFAzOEVaVkZmWmw1SVlzVDlDMjRsZEJMQVVkcFo2UDFQSzR3bGlBWnIyenpn0gGHAUFVX3lxTE1RMjM1aExkSTNNMWtDeEZpLTd2ekNFa0NTazNQWkJ5bWlyRGZDRnhqamhyUUoxMUlrX1FUdlpIZ0JHNDBqWkVLb2czb0dLLUlRN2RwcTNkeTMtTEg4ZlNaaG1qdWthdTM1RmhFZk1mRFZjaXIwbzlfMWM3ajUyM3dKLXd5aHBaMA?oc=5",
-        "source": "Google News",
-        "published_at_utc": "2026-03-12T19:11:24.000Z"
-      },
-      {
-        "title": "We attacked Iran with no clear plan for regime change, Israeli security sources say - The Guardian",
-        "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQcngtWjZjNF9NOW9tWkhMMjV4WkZ5SGd3VjUzZi1UNnBRalFkWWtOa1QyUXFrelY1S29TTlJEYUplTlRqa3BjYVpjUWczQ3M2VnZDSFJiZzVCMVJhcHpBbFM2WlNJc050c0lZc3RZR2FrZmUyajdCenBzRlcwREtZaTFGTHMycXdxTEI1d1dZbDJEd0hsc2R2MW00QVRhbGdoZExsTy1mME90V1ppQ1FF?oc=5",
-        "source": "Google News",
-        "published_at_utc": "2026-03-12T19:10:00.000Z"
-      },
-      {
-        "title": "Putin’s ‘Hidden Hand’ Guides Iran’s Strikes in Widening War - Bloomberg",
-        "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxONzZfeHAxM19LVDVfWVl3SGlsdzJaTXpKUkdPTlhWRTc2a0FhaHpVbm5ranBUbzcxUFZsZTlLdUZYSS1iQWhVaXB2eWZhTS1qbVdqZlFyakh2MVNfUzhuX2dVR1lGZmRkOGREQ1hQRk1ZdnhxLWd3eUI3bFpfd3dRSlRCTU1pRHlqUDJ2aGs2OU5DUUY2WnR2QlV1bnIzV0thWThHZFEtSEVNWk1QMWUtUW1EYw?oc=5",
-        "source": "Google News",
-        "published_at_utc": "2026-03-12T18:56:46.000Z"
-      },
-      {
-        "title": "Democrats ask Pentagon about Iran school strike and role of AI - NBC News",
-        "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOOGhPLUhUQWoxYnRNYzdpZDN4LURpek55aWktNVVDRjVsWEg4TWVwR1RtcHB3bVB3X2NpWHU2Z24ydS05R1lJUHlvWnNLVGZIVHpnVTZfLWZPYmppWVJ2TnVGSHdxT2tQZHZfUEFqZHg2V245ZnhxY0lkeGpvbmVLYzdQbnNwc0hpZ0lSMll3OW12dDExcFdmNkhRc3RhUXFFOU1tRUdTbFFjMXhPVG9WeA?oc=5",
-        "source": "Google News",
-        "published_at_utc": "2026-03-12T18:51:23.000Z"
-      },
-      {
-        "title": "Israel bombs central Beirut, U.S. airstrikes top 6,000, Iran escalates attacks. Live updates here. - CTV News",
-        "url": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxPRWU0SUg5ZXRDRHQzUTh3cEJOMGc5Mi16Y09vb0Y3RVo1SWV3aWNlbVRiMS14OEZJcE5yUlVNRzZMZ1k1aXZoNVdqd3Z0d0hoTy1iUmNISzBDbXVIc3NQTzNaMmJmZ1lmRjhPRkhEYXNxaGo3ZW9tZEhFaE1kUUZRY0l5RFZ2UVJIWVpoNzUwejBXS21mWGM1U0pvWVV2Qnp4TEw3UTlJbkFPeDM1RWxPOWQzRG56MWJzbkhDVlQzWEt6TVBtQ050eTVwZjlyVnVtdTQtb3RmZFFPTkVzcDVz?oc=5",
-        "source": "Google News",
-        "published_at_utc": "2026-03-12T18:50:33.000Z"
-      },
-      {
-        "title": "How oil is at the center of the US-Israel war with Iran - Al Jazeera",
-        "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxORmRxcGJ6SXNqTG9ldDlBLVF4OTZNU3RuUEpRTXFzYktOUXpXTG5xMV9GT3RRbTh1WUVVcU5HbTJkd3RNOG9LMUFLajZXWXgtS0d0SThRb3NSbDNldGVmT2lTM2RjWDFYSmZ1RVk3al9GUm0zT01oRDA3MzlUck1SblpicElxbzFFclktV1FaS1pmVXgySWtn0gGcAUFVX3lxTE1DU1pScjRsNTh2Z1ZydTZrbjNoS2s5VWpVVVExYUpZclo4UzBaTG5JLWM1dFlxNTMwM1d1X084MGtKT1VsdmR5bkFWX1RzcjlEanlNaGFOeFVjOE9CQXZXdHBXYVFxMWhSXzFCYU5IQ25sRzF5SGpvUGxMX0lTeC1LUG5uSEhLQ0s3UnA4bnE0MWRNRDJBTnR2X2VKaw?oc=5",
-        "source": "Google News",
-        "published_at_utc": "2026-03-12T18:36:36.000Z"
+        "published_at_utc": "2026-03-12T19:34:10.000Z"
       }
     ],
     "ukraine_2026": [
@@ -191,6 +191,12 @@
         "published_at_utc": "2026-03-12T17:48:58.000Z"
       },
       {
+        "title": "Trump glosses over Ukraine during record-long SOTU speech on 4 year anniversary of brutal - AOL.com",
+        "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQWkV3X3NmUk5UVWNscDRDdEsyU1IxLVQ2WkU3NFhNNExNcVVFV1JJRjNPT0x6Rk01ZGMxUVRBVlZ4YnZHZ3ZrOXhjOExZMlB5ZDFlQ3VaX2R1MzJOR1hCZE9PeU9ELWpiYVdEWHdibklrWkEtVEtaMEhPOHpuU3RaUzVuNA?oc=5",
+        "source": "Google News",
+        "published_at_utc": "2026-03-12T17:38:58.000Z"
+      },
+      {
         "title": "Ukraine war today: Zelensky launches drone attack on Russian oil hub - The Independent",
         "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOb2ZpMkxaTFYxekFlcHBaX3BucFFRMUdoSFk1SzhUZmNXekFLUUNzb21UWEV4OFdHNW9ZQ0xIelliNG1TNUxRNTNCRnI5bmhhejRwNURDLURNNUpTb085M3JUZE54RVpKQjdUT1o5MWFHTm0xUi1Qc2trSjkwNERweWRSS0VRU2ZkRWg4b2ZGdkVwVlR0TFRDMGxqQjU?oc=5",
         "source": "Google News",
@@ -215,22 +221,16 @@
         "published_at_utc": "2026-03-12T17:07:07.000Z"
       },
       {
-        "title": "‘Russia’s deportation of Ukrainian children crime vs humanity’ - Panay News",
-        "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxOX3c3ajNpMW9nVmtjQXp5V01taEdTVzlQMWwyaTNPZHJpVnBqdzFFS1gtR3Z2NEFtM2hTclJPQ2pkRVNQWllITFlVRXZIME43RktkOHJ1bkFIR2UtTjM1MFdHZzNreDl1dDJiREJiVHhWekFUZ3RGVW5IUXZCWEppWHNaM3B5RlFMdFlVOG5MYw?oc=5",
+        "title": "Sky News Journalist Katy Scholes on Covering Ukraine War: “Ukraine Defends All of Europe” - uatv.ua",
+        "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOSEZvSXJtb1FoNGozb1I2QWZseGJ6eHk2T2FUai1meUVwenMzS0pvMFFjQ01NeEpDWTNIVzN1NXFQMW5PZEhoMnFvWDZEUXZ6MXZqOHlucG04NTFSVE5nNEVueEhISHN4OVZRVGpkazdlRzFsSDNYallhRzhqUHd2Qi1Icy1Rd3BnN0o0WE96S0gzYXN0Y3cyREh5TENNQVJXdzBKQ2FxdWw?oc=5",
         "source": "Google News",
-        "published_at_utc": "2026-03-12T17:03:00.000Z"
+        "published_at_utc": "2026-03-12T17:04:00.000Z"
       },
       {
         "title": "Ukraine Latest: Russia–Ukraine Front Lines Hold and Strikes Intensify as Global Conflicts Escalate - Georgia Today",
         "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQTHEzMmVIWDg3RFZnRTZnMU4xRFVRbGFxVERyRFBKdFQ1V1lQMkNaUzNsa1BTRVlhTC1vSWNUQjVKVmd1U191Vy0yZ1lhaFd6YXN0elQ2LXRFQmpaWXB6LWp1V0FvdENoQUFvMzRqcWlMMDVRWG1mbzV3X2czQWlmZFFKRjFIWlJOVllOci1zVWNJUGtscjZyNmZsNFNiQVZib3NjTDZFb0xCdTVaeHliOHRkb1JSZkVFTFlKMGFhRQ?oc=5",
         "source": "Google News",
         "published_at_utc": "2026-03-12T16:46:24.000Z"
-      },
-      {
-        "title": "\"Support continues\": NATO's top general assures senators Iran war won't drain Ukraine pipeline - Euromaidan Press",
-        "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNNXd3QVZFYXl3dG9sMll0VFZ0N0RuaHU3aXFlQk1CMXpOemJ4QVJkVlBZMG9pUk9fNVQxN1ZfSU1sUVdBai1xTGMwQjA3RkhocThlX01aMVVyZWRNUEtDY0dlNnJIOU5CTnF6Nk9sa2xUeXl2amZCZ3V5OHlHR2Y2OE5HUUNzdjhMVWQ0SGF5VzEyd3FDdExFOHJHa2pDcWNYU1lNY3ZvRjdYSkJISmYxc1k1alI4eVlMTVhWQXF2Tm10MW5WOVRESw?oc=5",
-        "source": "Google News",
-        "published_at_utc": "2026-03-12T16:42:47.000Z"
       },
       {
         "title": "NATO Chief Says Ukraine Support Will Not Falter Despite Iran War - UNITED24 Media",
