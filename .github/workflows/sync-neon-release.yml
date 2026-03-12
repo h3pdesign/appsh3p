@@ -20,7 +20,12 @@ on:
       - release_assistant_release_published
 
 permissions:
+  actions: read
   contents: write
+
+concurrency:
+  group: sync-neon-release-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   sync-single:

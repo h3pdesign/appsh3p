@@ -7,7 +7,12 @@ on:
   workflow_dispatch:
 
 permissions:
+  actions: read
   contents: write
+
+concurrency:
+  group: update-social-tracker-metrics-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   update-social-metrics:

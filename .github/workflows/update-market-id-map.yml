@@ -6,7 +6,12 @@ on:
   workflow_dispatch:
 
 permissions:
+  actions: read
   contents: write
+
+concurrency:
+  group: update-market-id-map-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   update-market-map:

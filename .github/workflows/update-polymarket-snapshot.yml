@@ -8,11 +8,12 @@ on:
   workflow_dispatch:
 
 permissions:
+  actions: read
   contents: write
 
 concurrency:
   group: update-polymarket-snapshot
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   update-polymarket-snapshot:

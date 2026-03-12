@@ -7,7 +7,12 @@ on:
   workflow_dispatch:
 
 permissions:
+  actions: read
   contents: write
+
+concurrency:
+  group: update-conflict-news-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   update-news:

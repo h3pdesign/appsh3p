@@ -10,11 +10,12 @@ on:
   workflow_dispatch:
 
 permissions:
+  actions: read
   contents: write
 
 concurrency:
   group: update-iran-war-metrics
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   update-metrics:

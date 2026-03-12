@@ -10,6 +10,10 @@ permissions:
   issues: write
   actions: write
 
+concurrency:
+  group: stale-data-watchdog-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   stale-watchdog:
     runs-on: ubuntu-latest
