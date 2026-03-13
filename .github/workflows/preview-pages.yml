@@ -17,7 +17,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Guard workflow syntax and config
         id: workflow_guard
@@ -36,7 +36,7 @@ jobs:
           exit 1
 
       - name: Setup Node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
           node-version: 20
           cache: npm
@@ -51,7 +51,7 @@ jobs:
         run: npm run docs:build
 
       - name: Upload preview artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: docs-preview-${{ github.run_id }}
           path: docs/.vitepress/dist
