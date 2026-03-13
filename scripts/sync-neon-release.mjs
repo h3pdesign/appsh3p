@@ -140,8 +140,10 @@ function extractReleaseBullets(body) {
   const bullets = lines
     .map((l) => l.trim())
     .filter((l) => l.startsWith('- ') || l.startsWith('* '))
-    .slice(0, 10)
     .map((l) => (l.startsWith('* ') ? `- ${l.slice(2)}` : l))
+    .map((l) => l.replace(/!\[[^\]]*]\([^)]+\)/g, '').replace(/\s{2,}/g, ' ').trim())
+    .filter((l) => l !== '-' && !/^- none\.?$/i.test(l))
+    .slice(0, 10)
   return bullets.length ? bullets : ['- Release notes are available in the linked GitHub release.']
 }
 

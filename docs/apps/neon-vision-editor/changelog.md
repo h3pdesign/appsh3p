@@ -16,14 +16,11 @@ _Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/N
 
 Release link: [GitHub Release v0.5.4](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v0.5.4)
 
-- ![v0.5.4 hero screenshot](docs/images/ipad-editor-light.png)
 - Large files now open through a deferred, chunked install path instead of a single blocking first paint.
 - Large-file sessions can switch between `Standard`, `Deferred`, and `Plain Text` modes directly in the editor UI.
 - Status and large-file chrome are clearer, with line counts, session indicators, and better release-state visibility.
 - Added a dedicated large-file open mode with deferred first paint, chunked text installation, and an optional plain-text session mode for ultra-large documents.
 - Fixed large-file responsiveness regressions across project-sidebar reopen, tab switching, line-number visibility, status metrics, and large-file editor rendering stability.
-- None.
-- None.
 
 ## v0.4.22 (published February 16, 2026)
 
