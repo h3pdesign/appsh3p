@@ -1,5 +1,5 @@
 {
-  "updated_at_utc": "2026-03-13T22:27:16.564Z",
+  "updated_at_utc": "2026-03-13T22:55:27.621Z",
   "conflicts": {
     "iran_2026": [
       {
@@ -7,6 +7,12 @@
         "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOU2JNZ2pOZXRwTHFlTnFJODUzSF9GZlZjdTRac2E1YmdpOXBsNUFnODlLeWE5MTg2RTZLUjVrN1FXdWpOdXQ3cDZuYnpQUl9mNDhIWTJ6UUNDT205ZWF4WWFpdWgxczlDbF9mXzQyMGxnSTAyZXpnTUNzSldZcklaZ2NpUkFYSThVNGhQM09PM0sxTjZkdUx2eExGYmFrbTNFd0RwcA?oc=5",
         "source": "Google News",
         "published_at_utc": "2026-03-13T22:13:43.000Z"
+      },
+      {
+        "title": "Iran's U.S. Strikes Suspected with Russian Intelligence - MSN",
+        "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNV05LY1dyOFE3WWo0cmVaT0syMktNWHBxUDNxb1V0RkNQeEJWdkd5QS0zS0V3VXNQdV9hYTV6Vl9pOWNadGpiaEZGVDNWUUozSzVUSFZpTEI0Y245OU1hVFZ6M2h0ZEdfSVpTRDcwaUZoVWJneGpBOWNWc2E3RGI0a2cteU8tWklPbzlGbVBoUFBLRS1MUTJBanJqRUtXYng4d2tsSmxR?oc=5",
+        "source": "Google News",
+        "published_at_utc": "2026-03-13T22:11:47.000Z"
       },
       {
         "title": "Hegseth vows thorough probe of school strike that Trump blamed on Iran - The Washington Post",
@@ -21,10 +27,28 @@
         "published_at_utc": "2026-03-13T21:55:00.000Z"
       },
       {
+        "title": "US war on Iran enters 14th day as strikes spread across Middle East - Muslim Network TV",
+        "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxNdUFrWlkyQ1ZReGNZYnEyUlYzOUtGV254SGl1OVdKRkloNDVVRldCeTlIMHhGSllQN3JvT01xbThoTW9TeUtsd3hoLUk4MUx5SFRteHdKd0ZVb2lDVnRIMlI1aVRMMk8wREFHbDhuaEtVelVlT0lKTUhfMW5EWjliUExLbk1sdktlZVRwT0RSY0VNdTU1NnE1NF9sYjlBUQ?oc=5",
+        "source": "Google News",
+        "published_at_utc": "2026-03-13T21:45:00.000Z"
+      },
+      {
+        "title": "U.S. is deploying Marines to Middle East as it pounds Iran - MPR News",
+        "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOV09TTXY0cTVIanNiSDFDeHlVMEw0a1BXV0lxUTliR281WmxUV1lZOGpOY0Fuc0ZDek9KSDdrZ3U5a2lFbW1Dc3NBX1VDS2YwM2JlTThJbldjUUh6XzlVbmVBNDJaSVhrRU5tT2xVQjRKVUtlZzlkd0Nqd2tSeUtpX1lld2xQQ0NwQW5NVkpvSTVhYkRlRlFXcmxB?oc=5",
+        "source": "Google News",
+        "published_at_utc": "2026-03-13T21:38:00.000Z"
+      },
+      {
         "title": "Investigating officer assigned to probe on Iran school strike, says U.S. secretary of war - MSN",
         "url": "https://news.google.com/rss/articles/CBMilAJBVV95cUxQaTFVd0Jma1llcGFvSDk3RHdJN0lRNjhUMjZMQ0Z2eFhkLXZ1MFRWU0Vpd1hsVVZMemMyUjBiMnk5ckl2M3VQZWp6aUF0R3l5ZjBoVmlNUTBLYjF0bjg5SWhpeTJ6cHhKTUtVd3gwOUFOWDVtX1dCRUxNTVZ1TEE2djNqdEtycEpRYnU5REhBZGZYeUtwMEtyREFzMlYtWTZRZldXN20wcVQ0QkZXSzBxdXc1TGxVbjNBVjZmRE1MOTk2aFRfX29jazhKeDBtalhGWnBYY1pDU1pJS08xWXR5ME5JTXlqNElJTE5KNDM4ODdPQW9NczdYbi1ncFpOdFMwNG9Rd1dfU0dCaXF0SThKd3VEb2M?oc=5",
         "source": "Google News",
         "published_at_utc": "2026-03-13T21:29:24.000Z"
+      },
+      {
+        "title": "Energy Shockwaves: Travel Sector Reeling as Iran-Israel Conflict Sends Fuel Costs Skyward - FinancialContent",
+        "url": "https://news.google.com/rss/articles/CBMi9gFBVV95cUxPSHRScUlNR0F6cXM4ZmdFZnI4X3c0OHZqcXNKVDVTNW5RS3FEWkRTZ0NNbDZrQ1dmSEJJUm9jeHZRbENNQUQtc0xXSG9HY1ZVWmNGd2VWeXhMaGYxdVNOTGJqZFhETFlQc05Td0FqanpPSjFmRFZUS2VNQlJyeWRaX0drVzZMc0NPeC1pczkzTWVhSEwzTVVJa1BMVm96QTZ2cC1kcEp4MU5ycnJ5U0J4UXl4cXpqOEMySWY5VzdSQ0RSRzR1Y3Y2ZjN4YkxJXzViR0ZRYl9uQXBya0lnMlBwX2xwRnRGUXY5ZzlaV3ZDZ2xndl94a2c?oc=5",
+        "source": "Google News",
+        "published_at_utc": "2026-03-13T21:28:00.000Z"
       },
       {
         "title": "The Latest: US is deploying Marines to Middle East as it pounds Iran - The Daily Reflector",
@@ -39,16 +63,16 @@
         "published_at_utc": "2026-03-13T21:13:00.000Z"
       },
       {
-        "title": "These American Service Members Died in the Iran Conflict - The New York Times",
-        "url": "https://news.google.com/rss/articles/CBMickFVX3lxTFA3ZU40cTJWaEFMR19GRE9vMG5ob0o1Z0JLdmFBZ2luRnFKTnE4QjVKM21yZW5NS0tCUS1DOW1pbnVoNkNPSkVWZllBZFdaRkVpWFZacFFnSWJTYU5FWEpVNUw5WXlIN3BSbEFvbmp4bXJXZw?oc=5",
-        "source": "Google News",
-        "published_at_utc": "2026-03-13T21:07:37.000Z"
-      },
-      {
         "title": "War on civilization: US-Israeli strikes in Iran damage historic landmarks - Muslim Network TV",
         "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNMzcxWnljQ3dMdEtBWVhEbTAzSlRZYXczbDl4V1lxQ2ZWZHRJRzBWcFY4MnVRd05PdGtQc29ZQkJNamJaU3NFajJub2dCQUVCUlR1ZC1iTndZQ1Z4bW5ZTmk3UTMzTDMwTk1ha0k1TjhoUWdhaWJBbmRYQmZTWDgtVjYwNWhIVTVMWEJlWmJScFBrSVpIQXU2RjBHZUtrOG1pWkNTeA?oc=5",
         "source": "Google News",
         "published_at_utc": "2026-03-13T21:00:00.000Z"
+      },
+      {
+        "title": "Iran’s drone assaults ‘down 95%’ as Hegseth declares Operation Epic Fury is still ‘ramping up’ - DefenseScoop",
+        "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNbmhielJmc3lqV1FCUG92TlFnRkN5dWlpNzBUc3lDQzZlUl9HdGtwX1N3elM1eTJUWWZRQm5wenVCbFZFT1dXT04wS0Utdkp1RHl5c2ZrT3BJcS1BMHRLSnFFbFZvamU1cTF3VFQyZENlN0loQlU1ZDRzTXVwdmZXTVM0T01vVWtULURLUUlMRDFQNkxMbEJvWmZFZWM?oc=5",
+        "source": "Google News",
+        "published_at_utc": "2026-03-13T20:54:53.000Z"
       },
       {
         "title": "Marine Expeditionary Unit Deploying To The Middle East: Report (Updated) - The War Zone",
@@ -81,49 +105,31 @@
         "published_at_utc": "2026-03-13T20:25:51.000Z"
       },
       {
+        "title": "Iranian missile strike in central Israel sets building ablaze - Al Jazeera",
+        "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQR0tFRmhpUXh3X1Z1UXNwUG93aEpEREtoUEFpTnlnZEFaTkpDYmdBWF9PU1R0ZjFvaG1RUTZ1cm51c0hhOHpRZC1obzZyV1VNVXMwNDhDbWdhaEFqUGRjS2dYR014d1ZvV2NnX0Q1U3IxUzVnOGdYUTl4dW1VOHBBM1RCcXlGRzJ2UGMxTGRjYkJXMmhaRFoyMzNYc3FlNDl3QWk4N0k2eFNuV251RFFRNzl30gG3AUFVX3lxTFBXejlOTkwzMXJUanVQb2hQbVFUT1FFS3FFNmZrZXB4U0JJa0lwajJtXzctbnhzbHdlX2NKLWtGN09lbHlUQUpidWFFRWRldy1seUZEYk9CY2IzaXBwczZHcW9QYmhhTWh4N1VKY1hjSUQtUGI2X2g5akhPa1ZFcXBjc2liaXJ2M0JkWFhhRFpIaWoyalBlb0oyeTZyWHdyNGZIaUVTNDZQbHliZ3gybERzaTV0X00tOA?oc=5",
+        "source": "Google News",
+        "published_at_utc": "2026-03-13T20:18:39.000Z"
+      },
+      {
         "title": "US Intensifies Strikes, Rhetoric in Iran War as Oil Rises - Bloomberg.com",
         "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPNnlXNmkwYVp0b3ZLQmFvV3FWSjBMaUVTM1hGdFZhWUQ3d2dpcUswNnB5NlVtbjZiWTdlU2FTSlkzVnRCdkNDSkxVMFFjZUZzZ25MY1RvbU9scHlFbEFRdlhVSWgxOUdVY2w4Y0RBWHNCYko2WmsxcHQ5VlpaNjZOeVpwbVBtMVdiQ0Rfd0ZBY3dQREg1Tk1rVW5md2VlVE1tbkxwbXhIM0YxTUE?oc=5",
         "source": "Google News",
         "published_at_utc": "2026-03-13T20:13:48.000Z"
       },
       {
-        "title": "Iran Reports Hundreds of Women and Children Killed or Injured Amid Ongoing Conflict - Kurdistan24",
-        "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQQ0J2ZkdXSUFhcE9WUTZOUU52NjF3TmlvYzNickRDYkN6YjVEb1ZjVEhVMXBlNTRKdnVDazBJckdvV2t2RnFhT2JqVlRoLTRjQ0dRUEs0VUpubWI4MnpPMThaOWJMd3Z1aFRScVhJMWdPY0JmeXJTYW5iQzV4eG5TRWNPdk5JZUV2VmNzX3JoazlJQ1k1RWFZN2pOT05QbUlBZGhGWDVBZVZwZGltMnRYdnN2TWh1WGpDclVOQW00UV91MTRKbkE?oc=5",
-        "source": "Google News",
-        "published_at_utc": "2026-03-13T20:12:00.000Z"
-      },
-      {
         "title": "U.S. to send 2,500 Marines to Middle East as Iran, Israel continue to exchange attacks - CTV News",
         "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxQaUVSOUMwRV8yOVM0R3RLOGU1LTdtam52cGJQaFB4M0VZYWtOZVJJWHBJbGFScGJtclhSZWQ4MG5jRS1CMjI4WjdFNWZJTVJoUGVtZHZ3eTBwXzA1RUY5RTJmUU9fWWVBZUgwc1dMU0lzYnpVZUNJT2U3MHdrUmt4bEhNbmFrbFB2M3lGbHNsRVlnWWJLNU5jS1FJUEFoV0VQOTlYazJScUxIeUd3TU82cWo2Zk9ibnZzN0tsUGgyWXY2WGNTZEpjZGliQ1hmei1Pai0xSg?oc=5",
         "source": "Google News",
         "published_at_utc": "2026-03-13T20:06:08.000Z"
-      },
-      {
-        "title": "Hegseth announces Pentagon probe into deadly strike on Iranian school - Fox News",
-        "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQcF9RYVQ4UjR3bW9WTW1KQmsxc1dCUGRaYTBsUHRHZi1aYjQzVFJKY0lYSkpFZWltaTAtTHBOM3E1N0dwLUxmR243b1JMM3UwcEE3RGpfaTk0YTNqMkhVbUtkVjN2MVBVSVY1SnIzTUswUnd6MGd4a3Rnb2VQaUFnNHJPaTNGU1Fielc0WG9BY281TFhWeDlqZWxn0gGfAUFVX3lxTFBVUzBlaFY1TFFUX24tcV9pOEZTNU9FdHgwN0FCZEdDUEwxUEtxUkVYUG9zZTNoaUJpVXBIQWRlSGJZdUdleFFXSmFHMnlNOTBqUzVzaENJV29KUEZPV0V2d09WZk5SYVNIVWFQa29mX2RKM2plQ3pfWWo0dVBwdTdfOUZYdGRMTTJtTGYxRFdUdTRTTm1RZ2h3V2VCLXVRSQ?oc=5",
-        "source": "Google News",
-        "published_at_utc": "2026-03-13T20:00:31.000Z"
-      },
-      {
-        "title": "Opinion: Amherst for Palestine Condemns the U.S.-Israeli War on Iran, Israel’s Wars on Lebanon and Palestine, and U.S. Militarism at Home and Abroad - Amherst Indy",
-        "url": "https://news.google.com/rss/articles/CBMijwJBVV95cUxNODFpbWdrRlkyTWVTR21iQm5QeVdGelFGeF9rUDk5OHptclNwZ3RXR0ZqRkZfMkFjT25xcWZMbnRCSkk1UENXTURubWlkcXdFelVkdEI1b1AxdW55Wm5BdVExVVhXRklUcTZod2lqTUsxZWFnMEl1NEEyeWVEQm00ejBjN3FLNXlTR2JCQk55bFZkU3hOZWdvVUFxbUZhdkFyZEtDcmZJNXE0bElqcUVXOW9DWGdNNWlPSTZpRWRJNDkzRFhhcXVJSjlZU0g0cEszanc4RlpFcjB6TFVqcjlVTUlaaHIwTUtadEw4RzNVRTg5U3AxSGZqNWlZMDdZRElGc0ZGR3ZTbFhyVkZ0RzRv?oc=5",
-        "source": "Google News",
-        "published_at_utc": "2026-03-13T19:58:06.000Z"
-      },
-      {
-        "title": "U.S.-Made Launcher Fired Missiles From Bahrain Toward Iran, Video Shows - The New York Times",
-        "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNRklrbXdIREhFMmZ2bEdpZnUzcHJONUVXYzFPSkFHVGpoUWR0c0J1d3FfeE1lcFRoYjJvbi1UM21Hel9hWk82NlUyWDlsVzd0Nk5aVGNSVVVRb3UxdzdCSEx0ZmR6SVk4ZERIUUpnb21CMVJLNHllOUlGVnNSY1hmVVotbDd5MWRncjFvUzFLMVo?oc=5",
-        "source": "Google News",
-        "published_at_utc": "2026-03-13T19:48:04.000Z"
-      },
-      {
-        "title": "US-Iran-Israel War: US Places 10 Million Dollar Bounty on Mojtaba Khamenei, Senior IRGC Officials; Accused of Orchestrating Worldwide Terror Campaigns - The Sunday Guardian",
-        "url": "https://news.google.com/rss/articles/CBMinAJBVV95cUxNV2NXRG9CUy1HVnZtSFJmMUZoS1NfaDFfTDE2WUFlbWxmSjBvOUlGMXVYMFFCNGQ3alNNNzZQM1RGYUNPVlRaaEdLWVB0VVdQSDNxbGVPRUpzNHh5Y0cyU3FNUWV2VllaZ1JiX2ZsZW5DaEJBZTkwN1V0b21EMmFIV3RWcF9GdUttNFVZN0dXTnpJWFh4aFU0X0I4eU44MEdLWkNFZU5XRU82NFhrM0VWZXRiQXNYUHdfQ2I3TkY1MTR1b3U0TUZiU0pfVGpXZF9RRXBqc2o2Rk5QMFYxajJqV0pQeXpWX2FxU09HcU41S0Q2WHh3X3FsaDIwOVNaOHBaZmZ6bU9kQ2NFaXpfb1lwSFFld2lHaExZcDY5SQ?oc=5",
-        "source": "Google News",
-        "published_at_utc": "2026-03-13T19:46:16.000Z"
       }
     ],
     "ukraine_2026": [
+      {
+        "title": "Ukraine war latest: 'Murders for the sake of Russian propaganda' — Ukraine identifies 13 collaborators accused of war crimes in Izium - The Kyiv Independent",
+        "url": "https://news.google.com/rss/articles/CBMi7gFBVV95cUxQSmxOY0ZhUVIwc1BoaDEwTng5YjhXZ01ncTRCVlNzRDhpekcwek9vVlp4ekk5RUtGMmVndUZ3VF9xdzVUSU9peTMtc3lJdE5fLVpyUEZYUGM0dnJoWXgyUFk5TTM2WkhhVUtPeFBfcUppMk5wVmk2Z1YwamRJeWo2TEMzM3lqajZxY2RxSzhZWDlHTlBHLUVLZEFMOF9EcGRkTkZXc3pUY1ROYmRoMzNQN0pnUy05dVZiNXBrclktM0ZmNUNTOFJZdnpGdEVyUXllM21sZldRRzR5WG51X3NGelFqV2VuZ1UwOTNHdm53?oc=5",
+        "source": "Google News",
+        "published_at_utc": "2026-03-13T22:46:05.000Z"
+      },
       {
         "title": "Iran Battles Will Spotlight Ukraine’s World-Leading Role In Drone War - Forbes",
         "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxPVmVPcFR1MVoxTlM1Qm5uWlJDYmI5cDVZM0pGNktpcjFsQjcycEdJT1JUblZraFVtNF81ZUlKTGVBeG5kWGZoQ1h1d0NmYzBsUHY2UzNmbU9EQ3o3c2ZSRmN2TjNTYmg2X1RkTXRON2ZxVk1tREhBRUtuUmJXUXJGb0haNW5KdF9oWWdJNVdEVk1EX2VicFUwbjVZdkpPa0I5TENsWVg2VTRYZDlJYjZZQVl2eXhrTDB6MmFtVGxIcUF2R0JZ?oc=5",
@@ -137,10 +143,22 @@
         "published_at_utc": "2026-03-13T21:45:00.000Z"
       },
       {
+        "title": "Estonia’s foreign minister to meet with Penny Wong to discuss foreign policy and Russia-Ukraine war - MSN",
+        "url": "https://news.google.com/rss/articles/CBMi-wFBVV95cUxNWjZPLUZMUEFkMTk5bWU1SFFTdUI3MHd6N1FQTnNTUkFSNlh1c0MyRE9IZ3ZqajJlUmp2eVBYNlY1eEFQMDgyYkZremd2Ykhubi1nZDF5b2s1SUZmenVVVzNzOG5zSTBmcmU3VUY4TVZTXzQ1MWhwQ2tpdlpBMURzdHpvZFltaWVWeHVLT3F3TzUzM3FvUk5EczJ1Z0V0UVVSRTExVjFZV0JoOUpDT000QU9URmFmTDVSTWdSeFU3N1VQMXkxUUNCWFhaMEtlU3kxYVFGQlFGQkg1SEo2amgweWRFeVNWYUFtT1VZeDMyMnZwMGo0bG0yMnNNWQ?oc=5",
+        "source": "Google News",
+        "published_at_utc": "2026-03-13T21:24:00.000Z"
+      },
+      {
         "title": "Ukraine peace talks chaotic with White House officials unable to travel amid US-Iran war, Zelensky says - The Kyiv Independent",
         "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNS3d1QU4zZkdGbTU5Q2RCWTc2U1B5ckxCcjhQbTl5QmZYeHQ5cUpOdWtFYmw4T0I5elBuUzBMNzA3bWpmWi1aUG9rSlYyMDhmaF9uR1FXbWlybHB5Vm1ib1IzMkxRZmprQ0VKOExBdl9uZll1bkNCRTExaWRwMzhzdlJFdmx1R1Ntc294b25BYzl0LUhkM2NpcWJqcWhTSzlHNGgyZ1BWSG9iZ2Q5dVpKQUtBN19WRVVFYUJJT2lFYlV1d2dtNnVraw?oc=5",
         "source": "Google News",
         "published_at_utc": "2026-03-13T21:00:06.000Z"
+      },
+      {
+        "title": "Macron pledges no 'respite' for Russia despite Mideast war - CNA",
+        "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOdkR1WC1qMXRMaDYyOWRCUDk5akU3T3lvandBdHBBLWI2bTkxT2xmeHpWNGhDcDdtekY4Uk93eWhfRF9vb0dpdk9lUTBvUWM2NEFMd3lQOUszQS1fTVRxbXVrQ1lnMmFodnRNbk80dFJ3YTc0bW82cGdQMndwYktwZEpBT29KbFhyeTVELVJoT2pCaGJZREllSWNBbF94T1JNMHc?oc=5",
+        "source": "Google News",
+        "published_at_utc": "2026-03-13T20:55:00.000Z"
       },
       {
         "title": "How many Russian soldiers died in the war with Ukraine - Mediazona",
@@ -155,34 +173,28 @@
         "published_at_utc": "2026-03-13T20:43:15.000Z"
       },
       {
+        "title": "Zelenskiy: US Sought Delay in Ukraine Settlement Talks With Russia - Global Banking & Finance Review®",
+        "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOUzd5aEZfeFl5UzZ0bnNfNlhmUWk5SUFWRXR3NkkwbE5GWFBNb0J5aFFjODdPSWtyQVFjSlVMaG93U1M5MVBnX1lSOV9yZ1lleURVaDdrcjlWZnltdmhBUHk2a3lZTXdpcmRXUE5yallEUHJzd0NsV1VVRXFfX3V0eFd3ajJaalJ0eFBDbFF3Sk91TmNMQ2pDZzItMA?oc=5",
+        "source": "Google News",
+        "published_at_utc": "2026-03-13T20:33:24.000Z"
+      },
+      {
         "title": "War with Iran fuels Russian oil boom — and trouble for Ukraine - AOL.com",
         "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE5XV09yQm9OT2pVdlFjQzhmU0dQWjRpR2NiWGplaTY0WHBWbS1SLU5JeDlhYkt0bDR5ZllnaEU5N3FVUUJ6ODJMUzI2YU1uSzVud1FKN0NITU4wS3k0VTFmRjJoaW16YkptRU8ybzE3Zzl5VDVV?oc=5",
         "source": "Google News",
         "published_at_utc": "2026-03-13T20:24:53.000Z"
       },
       {
+        "title": "Russia and Ukraine wage high-tech war in the 'death zone' - dw.com",
+        "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQNkY1ZlExZGl4Yy02U2hWdTB3TTRCRldzVGVnbDZoX2w1eVRTRDRieWpGb25RMWVZaUtmSGY5STVlQmV4Z2ZuUEM1Vk03Zk00dHhJWVZra3d1TGJKc1ZxQU5hREU0OWNOa1NJYjFsNDY4Y09KZXFZRWQ0THMwWjFjRXhBODktMlNxN0FEZXgzMUdoQdIBkgFBVV95cUxQNkY1ZlExZGl4Yy02U2hWdTB3TTRCRldzVGVnbDZoX2w1eVRTRDRieWpGb25RMWVZaUtmSGY5STVlQmV4Z2ZuUEM1Vk03Zk00dHhJWVZra3d1TGJKc1ZxQU5hREU0OWNOa1NJYjFsNDY4Y09KZXFZRWQ0THMwWjFjRXhBODktMlNxN0FEZXgzMUdoQQ?oc=5",
+        "source": "Google News",
+        "published_at_utc": "2026-03-13T20:14:04.000Z"
+      },
+      {
         "title": "To Fight Iran’s Drones, U.S. Taps Ukraine’s Hard-Earned Knowledge - The New York Times",
         "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNVkkwb3FoMUpwU0E4X0ZnRFFNRUdUOWhpeFhlQjIxX19CQ3NxdnBWamZkWEg3NjhxbkhBSmxnMEEyZmlBSjVSSUNNSWh4V29ickxfcWYyb1Qxdk85UXJOQXMyS3NZdmFqcU9MMExSczF6dlhhUTdRNU81M08wQzFkTkdISHRRXzg?oc=5",
         "source": "Google News",
-        "published_at_utc": "2026-03-13T20:15:13.000Z"
-      },
-      {
-        "title": "Russia and Ukraine wage high-tech war in the 'death zone' - dw.com",
-        "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxOZ1ZrRGlyZm9LaTlsUzBSazJWRWtNOFNya201dEhhR1djTXlYRmZhVUdrOG1HMC1faGFQQjVjUk9COVd2Y3p0NXE0ekV6QW1KQ2JrQ21YWXVOYmJkYmVDOV9KTGF4aHdtUkNOS01vRmt4OGZab3JXc1FNV2o1c2FhWkpvVzZGQ3JFc0Jaa01DRmszUdIBkgFBVV95cUxQNkY1ZlExZGl4Yy02U2hWdTB3TTRCRldzVGVnbDZoX2w1eVRTRDRieWpGb25RMWVZaUtmSGY5STVlQmV4Z2ZuUEM1Vk03Zk00dHhJWVZra3d1TGJKc1ZxQU5hREU0OWNOa1NJYjFsNDY4Y09KZXFZRWQ0THMwWjFjRXhBODktMlNxN0FEZXgzMUdoQQ?oc=5",
-        "source": "Google News",
-        "published_at_utc": "2026-03-13T20:09:11.000Z"
-      },
-      {
-        "title": "Ukraine says it has hit Russian 'missile component' plant - AOL.com",
-        "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNY1BERURHVERwTUQwS2RHOWFrbTRyazAtejd2UndzcEoycHJfTW44eFA3YUNDQjBaUUJxeG5yNWhnRXBicFYwbHYyYWZaS2tPdHhvQUZYcl9oTFlFYXdQbXhETi1UTmZmakZBTTRWYkNycEVDZlFLNXMxejRlWU9xTXRR?oc=5",
-        "source": "Google News",
-        "published_at_utc": "2026-03-13T19:26:30.000Z"
-      },
-      {
-        "title": "US easing of Russia oil sanctions wrong call: Zelenskiy - aapnews.aap.com.au",
-        "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQOEZWUXhkNEp1dTFKd1lRcWtnUHpXbzQzOW41SkVpRXFjMlY4TFIweFJlOE1saTlMNGxXY1JDd3BxNzhTSjF3aHFzNGdsSmhsdmhHbGp5UWJycmI1MGJNQWZPRnJ6bXNCbHhjNE9ycHFnVmtqZ045SDBPWHNxQS1iUE9GdzFwUnJBUlZkVjNxNA?oc=5",
-        "source": "Google News",
-        "published_at_utc": "2026-03-13T19:24:27.000Z"
+        "published_at_utc": "2026-03-13T19:30:16.000Z"
       },
       {
         "title": "Europe braces for years-long Ukraine war - MSN",
@@ -231,18 +243,6 @@
         "url": "https://news.google.com/rss/articles/CBMi-wFBVV95cUxQVE95aEo4cGZpQXpSQThBUS1PV3BFUHg4SFR0UW5jekNwRXJiT3E0blczekYySE5kTkxkSHRlQ1dKOUc1ekd3a3pBVXZsYlpxMzgtUWRsdk1rWHFNM1V0dWRhYlotQ2NfRGo5WkxWQTlOdDE0WnhlQzRRRVdBcWlZZW5UUjktR2E3aHdFa1NDVVYySHpBdXJTRkpjUW1PUlhwaURWYkd5X2pkc0VzbXlNLXFsNXE5UjBkbzJVR05lYWZFR0tIR2JPU29VdkpEdUlMVE15LXhpeG9VX2NWOGJ3emkxb0JvWFBMaFhXeHhmZjg5MkNURjMxaDFlQQ?oc=5",
         "source": "Google News",
         "published_at_utc": "2026-03-13T18:26:12.000Z"
-      },
-      {
-        "title": "'Murders for the sake of Russian propaganda' — Ukraine identifies 13 collaborators accused of war crimes in Izium - The Kyiv Independent",
-        "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxPZC1uNERyT2ZfbE91RkFFS3F4dG5JblpuQlk0WEh3RmRxT0taeFFucG9PRlItSU1NWTR5RnMtUThWbXRXQXJEMXcydTBJZEF0dHBlNlFYbWs4R25EQnppMUVOMS1IbXJVZ29XdjZxYTNUcVhsU25leXNXbEM5Uzh5bXJQNDJvcU4xQ0tWa1pKWFpYXzRuVVFONG1mRWxBZ1RrZzlSektQOXZsY3NZdVRtVENMS3F6dmZqNzZuR0tvNXlXN1JvRzZCeFczWQ?oc=5",
-        "source": "Google News",
-        "published_at_utc": "2026-03-13T18:03:42.000Z"
-      },
-      {
-        "title": "Estonia’s foreign minister to meet with Penny Wong to discuss foreign policy and Russia-Ukraine war - MSN",
-        "url": "https://news.google.com/rss/articles/CBMi9wFBVV95cUxPV0tjcDJpWHQxaWpoemxVcXJvNEUxS1BhZ0dJSjFpejU0OV9VSVBhVklQNFZITWxBdkFTMTE3NUVoOWF6N19pZ3VONHkyNDkybHV0WUVlWlp3Nng5SjVXUE0zZEdlN1UtSnJVT3FfVHJ2dHhBQk5ZeXJzeVNoalA3cEthSWl4OGUtY3g0ZHFPVXY2R2s1aWdScUsteVVicHN5OFhZUXlkbDMzNU9iZXZLWGVBTkpNR0VvM2loMkV3bDJQRVBIV2FRM2lnRkFxNzZBQXVpSjRjOVdVQWdNLTZkTE9wNlVubW96bjVCblpiRzJOZk9IQ0cw?oc=5",
-        "source": "Google News",
-        "published_at_utc": "2026-03-13T18:01:47.000Z"
       }
     ]
   }
