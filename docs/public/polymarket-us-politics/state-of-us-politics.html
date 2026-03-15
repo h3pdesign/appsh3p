@@ -3409,12 +3409,16 @@ footer a:hover { border-bottom-color: var(--accent-gold); }
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script src="https://unpkg.com/leaflet.heat/dist/leaflet-heat.js"></script>
 <script>
-const CONFLICT_MONITOR_URL = '/polymarket-us-politics/data/iran-war-metrics.json';
-const CONFLICT_NEWS_URL = '/polymarket-us-politics/data/conflict-news.json';
-const MARKET_ID_MAP_URL = '/polymarket-us-politics/data/market-id-map.json';
-const POLYMARKET_SNAPSHOT_URL = '/polymarket-us-politics/data/polymarket-market-snapshot.json';
-const DAILY_SUMMARY_STATE_URL = '/polymarket-us-politics/data/daily-summary-state.json';
-const SOCIAL_TRACKER_METRICS_URL = '/polymarket-us-politics/data/social-tracker-metrics.json';
+const USE_REMOTE_DATA = typeof window !== 'undefined' && window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1';
+const DATA_BASE_URL = USE_REMOTE_DATA
+  ? 'https://raw.githubusercontent.com/h3pdesign/appsh3p/main/docs/public/polymarket-us-politics/data'
+  : '/polymarket-us-politics/data';
+const CONFLICT_MONITOR_URL = DATA_BASE_URL + '/iran-war-metrics.json';
+const CONFLICT_NEWS_URL = DATA_BASE_URL + '/conflict-news.json';
+const MARKET_ID_MAP_URL = DATA_BASE_URL + '/market-id-map.json';
+const POLYMARKET_SNAPSHOT_URL = DATA_BASE_URL + '/polymarket-market-snapshot.json';
+const DAILY_SUMMARY_STATE_URL = DATA_BASE_URL + '/daily-summary-state.json';
+const SOCIAL_TRACKER_METRICS_URL = DATA_BASE_URL + '/social-tracker-metrics.json';
 const GLOBE_GL_URL = 'https://unpkg.com/globe.gl';
 const GLOBE_HD_TEXTURE_URL = 'https://unpkg.com/three-globe/example/img/earth-blue-marble.jpg';
 const GLOBE_HD_BUMP_URL = 'https://unpkg.com/three-globe/example/img/earth-topology.png';
