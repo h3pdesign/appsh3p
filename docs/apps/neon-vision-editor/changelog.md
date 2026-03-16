@@ -10,17 +10,21 @@ head:
 
 # Neon Vision Editor Changelog
 
-_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on March 13, 2026._
+_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on March 16, 2026._
 
-## v0.5.4 (published March 13, 2026)
+## v0.5.5 (published March 16, 2026)
 
-Release link: [GitHub Release v0.5.4](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v0.5.4)
+Release link: [GitHub Release v0.5.5](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v0.5.5)
 
-- Large files now open through a deferred, chunked install path instead of a single blocking first paint.
-- Large-file sessions can switch between `Standard`, `Deferred`, and `Plain Text` modes directly in the editor UI.
-- Status and large-file chrome are clearer, with line counts, session indicators, and better release-state visibility.
-- Added a dedicated large-file open mode with deferred first paint, chunked text installation, and an optional plain-text session mode for ultra-large documents.
-- Fixed large-file responsiveness regressions across project-sidebar reopen, tab switching, line-number visibility, status metrics, and large-file editor rendering stability.
+- Stabilized first-open rendering from the project sidebar so file content and syntax highlighting appear on first click without requiring tab switches.
+- Hardened startup/session behavior so `Reopen Last Session` reliably wins over conflicting blank-document startup states.
+- Refined large-file activation and loading placeholders to avoid misclassifying smaller files as large-file sessions.
+- Fixed a session-restore regression where previously open files could appear empty on first sidebar click until changing tabs.
+- Fixed highlight scheduling during document-state transitions (`switch`, `finish load`, external edits) on macOS, iOS, and iPadOS.
+- Fixed startup-default conflicts by aligning defaults and runtime startup gating between `Reopen Last Session` and `Open with Blank Document`.
+- Fixed macOS shutdown persistence timing by saving session/draft snapshots on `willResignActive` and `willTerminate`.
+- Fixed line-number ruler refresh timing to reduce layout churn/flicker and avoid draw-time retile side effects.
+- Fixed horizontal viewport carry-over during document transitions so left-edge content no longer opens clipped.
 
 ## v0.4.22 (published February 16, 2026)
 
