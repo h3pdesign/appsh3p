@@ -10,21 +10,22 @@ head:
 
 # Neon Vision Editor Changelog
 
-_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on March 16, 2026._
+_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on March 17, 2026._
 
-## v0.5.5 (published March 16, 2026)
+## v0.5.6 (published March 17, 2026)
 
-Release link: [GitHub Release v0.5.5](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v0.5.5)
+Release link: [GitHub Release v0.5.6](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v0.5.6)
 
-- Stabilized first-open rendering from the project sidebar so file content and syntax highlighting appear on first click without requiring tab switches.
-- Hardened startup/session behavior so `Reopen Last Session` reliably wins over conflicting blank-document startup states.
-- Refined large-file activation and loading placeholders to avoid misclassifying smaller files as large-file sessions.
-- Fixed a session-restore regression where previously open files could appear empty on first sidebar click until changing tabs.
-- Fixed highlight scheduling during document-state transitions (`switch`, `finish load`, external edits) on macOS, iOS, and iPadOS.
-- Fixed startup-default conflicts by aligning defaults and runtime startup gating between `Reopen Last Session` and `Open with Blank Document`.
-- Fixed macOS shutdown persistence timing by saving session/draft snapshots on `willResignActive` and `willTerminate`.
-- Fixed line-number ruler refresh timing to reduce layout churn/flicker and avoid draw-time retile side effects.
-- Fixed horizontal viewport carry-over during document transitions so left-edge content no longer opens clipped.
+- Safe Mode now recovers from repeated failed launches without getting stuck on every normal restart.
+- Large project folders now get a background file index that feeds `Quick Open` and `Find in Files` instead of relying only on live folder scans.
+- Markdown documents can now be exported directly from preview as PDF in both paginated and one-page formats.
+- Theme formatting and Settings polish now apply immediately, with better localization and an iPad hardware-keyboard Vim MVP.
+- Added Safe Mode startup recovery with repeated-failure detection, blank-document launch fallback, a dedicated startup explanation, and a `Normal Next Launch` recovery action.
+- Added a background project file index for larger folders and wired it into `Quick Open`, `Find in Files`, and project refresh flows.
+- Added Markdown preview PDF export with paginated and one-page output modes.
+- Added an iPad hardware-keyboard Vim MVP with core normal-mode navigation/editing commands and shared mode-state reporting.
+- Added theme formatting controls for bold keywords, italic comments, underlined links, and bold Markdown headings across active themes.
+- Fixed theme-formatting updates so editor styling refreshes immediately without requiring a theme switch.
 
 ## v0.4.22 (published February 16, 2026)
 
