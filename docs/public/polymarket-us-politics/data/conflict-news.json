@@ -1,18 +1,18 @@
 {
-  "updated_at_utc": "2026-03-17T17:10:59.926Z",
+  "updated_at_utc": "2026-03-17T17:38:38.839Z",
   "conflicts": {
     "iran_2026": [
+      {
+        "title": "A look at the top Iranian official and the head of internal security targeted by Israel - The Washington Post",
+        "url": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxOc0NHdVBQV3RsUkJfdFN0SGFQNklmQWtzdGY5V19MaWpQMmJSSmRaUUJuT2RkSW1sbE9Eenc3RDZNVVlWUlo1VXNqcEFQREp1RjEycjJuRllZYlNMQmh5S0tPcWh5TXNleE4tZVJPcGNlempPZ3VGMjNRby1Fc2w4bjZGc2REOVVCWEszMGRPQ0gxWW04WG1YcHpMUExrNTBBOVVJa3owbm9PWEYxMDVBYUpsaEhQYTA3Q3U4OXhSMGpjYnBTeTBHcUwxQVEweV85MW1VZUxDZURmdjgtNXJGRA?oc=5",
+        "source": "Google News",
+        "published_at_utc": "2026-03-17T17:31:36.000Z"
+      },
       {
         "title": "Israel Has ‘Won’ War With Iran, Foreign Minister Says, but Goals Remain Unmet - U.S. News & World Report",
         "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPbm9nTFRaZ2l5V21jUHowQWg0SHdMeXh2TjV1aFE2QnRnblM4YjZzZ3AtN1NkUE9EMXhKNjBTUHRHWkd5MXdXbTFuT09nUDlwYlZaakRsOEFEcWdfSWE0ZFJRMjVGWFNoOXIxa01mckhPak5pbEdFVWxUMUFrMXZYNVR2c2t0VGQ3amw4MkxpOGxKbnR3ZVVIWVRpYXNzeVhmVTFDS2RVbzZSd3NOOUprejNiZ21hM1QzM3hYalhzWXgxR2NHTFE?oc=5",
         "source": "Google News",
         "published_at_utc": "2026-03-17T17:03:07.000Z"
-      },
-      {
-        "title": "'I think it’s a big mistake': Trump 'disappointed' in Starmer and Nato over Iran war support - ITVX",
-        "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNdUFlb0lnYkp6RDREcEkyWUc1bzVNQUJPazBXblh2SDRQOFVBOU5vQkhpbjFHZjUzU1RPNHFKcW8zQ3FwcC11SHRodDlkWHUyQkhZRWFOMHFyRWdXQnN6VUFrbGhDLTBCZkhodWdUeWFZWDB6bXd6NzMzb3RnSGlzTGM4bExtMjJQOE45VHYtOFZjQVVHQkJwMDhwOXRodDVTUDNreXh5Z0MyWFdkSzViUEJB?oc=5",
-        "source": "Google News",
-        "published_at_utc": "2026-03-17T16:54:48.000Z"
       },
       {
         "title": "Israel says it killed 2 top Iranian officials in wartime blow to country’s leadership - AP News",
@@ -22,7 +22,7 @@
       },
       {
         "title": "EU pushes for end of Iran war in a manner where 'everybody saves face' - Fox News",
-        "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNeTVySVFXdGZYeTQ5ZUVFaXhJenpDNXU5eXp2WFlEV3g0UTJyQlJFR2NwX0M2ajR6YUhtQlYyeXVGd0hGcGhCNkNJbnVzZHdNUl8zeWxsUTlvZzhjd2c0dkVBYXBtNVRDWVZkUURqSjFRM0kyVU9Eb3dMQXROR2hlTXltYUI0aW9VV3pqMUVkYS1rQ0MwTG5kRlY0d0hkMDRSZVJZTjg1WG5ua2VoaHEzY9IBtgFBVV95cUxPYWJfUTh4VGZvdERzLThTUlA4aGJXQUZUd1ZwYS15MzUtVk4tT3BWRWctcUxSYmYyNW94Ri11S0NXcGJ0S1FvNFpIS3hqNTJuQnJQMEFiaXpQSmRGbFVCa2R0MWdneEZ4MlpGandWeG5PTFpDb1VJSm81cXByWHdxVC1iY1NSYkNWSEV0SEtXTXFmNDR1NVNVd2hPMERIdnhfb0tObWoyNUY2N3RKODhFUUdBTnF4Zw?oc=5",
+        "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNeTVySVFXdGZYeTQ5ZUVFaXhJenpDNXU5eXp2WFlEV3g0UTJyQlJFR2NwX0M2ajR6YUhtQlYyeXVGd0hGcGhCNkNJbnVzZHdNUl8zeWxsUTlvZzhjd2c0dkVBYXBtNVRDWVZkUURqSjFRM0kyVU9Eb3dMQXROR2hlTXltYUI0aW9VV3pqMUVkYS1rQ0MwTG5kRlY0d0hkMDRSZVJZTjg1WG5ua2VoaHEzYw?oc=5",
         "source": "Google News",
         "published_at_utc": "2026-03-17T16:47:54.000Z"
       },
@@ -31,6 +31,12 @@
         "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOQVN6UGktSDlfNDBTRlpibVRaelRMaDExQ3o0dmo4NXMyNU1Pbk9uTElHV1R6Sjl6VXNpd0ozZTlZUHVCTjdzNE56YVdodk83dTdrdTNleUNGVFN5VndaRXltSzFNcUZYSktIVVd0R2YwWEx6XzRIRXA3aWZjWGpnQmlEdENYUHI0SjhyVDNlS3hMZWdpamNxZk9QQ3l3cHBrRG0xUTJwLUdpZDRiNGhTOU9aLUhmYUHSAbwBQVVfeXFMTUJtUkx2Mm9QbERhSnN4NW96dE1CQ1lsX2txOU5uSWxXaVNGeE5LSl82c2JZQnFxak9nY0lMWUJ6YXdNSi1JTXZJeHFnUlAtVWctMmlXZzhzYVNmQ1VIR3BHLWt1S1k4bXlPLVc5U3hPNnJmVjUyNTlNdGNia2hlVW9YOWxEN3VYNUp2SVR1SDAzODE1NDhFTDdZam1rS18wODRZOWpsY2M1QndxSHJJci1TV00xYzlCanNvd3E?oc=5",
         "source": "Google News",
         "published_at_utc": "2026-03-17T16:44:04.000Z"
+      },
+      {
+        "title": "Iran war: NATO making 'mistake' on Hormuz, Trump says - DW.com",
+        "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNR0NRdjEwcERobXJBdHV0M2RvUVl4akVTaFpxQmhVbFBxZ19qbjhjalN5RXROd0VfS01jdHZRbzcxNGpyUHJLYmY0UnhSN2ZBVE9hYjNCVzRBVmtVWFFpVG1rRUFseTNRTlNPVDdOZFV1VUp2X0VVdEVCTWtrUTh0TXpKOXg5LXNLVTFQYnh3?oc=5",
+        "source": "Google News",
+        "published_at_utc": "2026-03-17T16:37:48.000Z"
       },
       {
         "title": "Rift Widens Among Republicans Over Israel and War in Iran - GV Wire",
@@ -57,16 +63,28 @@
         "published_at_utc": "2026-03-17T16:24:48.000Z"
       },
       {
+        "title": "Trump says US will leave Iran operation in 'very near future' - Reuters",
+        "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNYWdlNVB3cVFydnhiT0xVdEFCbE5rdHh5UjNQNE9hZGxOczRXUF9kSjhWR2lSS3k1R1hXemxyZUR4MmxtZTZNem5ycFFKcF84djNnZWQ3a0R4VlpSb3k4XzlJeldmckIxYzVyNDlEU1lSUElIR1pHaXdiZ3JLOUpGT2hURXFmNXRrUkF2VG5EN3V3d0xjcHgtdHZwVV82MTdaYjk4MXlBVUczMGFoaV9N?oc=5",
+        "source": "Google News",
+        "published_at_utc": "2026-03-17T16:20:17.000Z"
+      },
+      {
         "title": "Top U.S. counterterrorism official Joe Kent resigns over Trump's war on Iran - CBC",
         "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE5Lc1dwSkZsZTVPZDlwcXV6Q1ZYZ2IxS19kX0pmbHQ1Zkxac2VkYlk3NHBBSkM3SXJxY2hSeW9DZF9LSU4wUUo4a2UwNG9SLXgzNzVzQ05wZXpoWVJXbW5LUXVKdkNGdU5OTEpZVmx0SXp3RDhxRUx6ZGptSQ?oc=5",
         "source": "Google News",
         "published_at_utc": "2026-03-17T16:19:51.000Z"
       },
       {
-        "title": "Israel says it’s killed Iran’s security chief Larijani and Basij commander - Al Jazeera",
-        "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxORnpYZ3dvS2NabVRHa19DQUk3d1hCQ0JYdTBkNzdJLVphUjRSeTFFa2F2MHlkTWMwOGduaFdibHdZa3RZZ3ROUlBUZ1RFSjkwSDByS29IVHRBV0pKYVZWT1YtSFZoQ1hkZndhMjZlMVBvSEJiNjRuUGZRc2xXbC16TVdsSlRldVRvWjVjTUozM1BJT3NDM1Z2U0JPb3Z5TThnNG5JcC1XRUJ4bmPSAbABQVVfeXFMTXo4VVZZOHY3c3p4NFdlT3ltTHJEZDFoOTVjQnlkeTVSTjE2eExRSTVqbzFkMW1ZNmxock9vNEFYLXYxSFI5SDRnYlhnd0tiZWt1emdrMDcxUzRqSjV5VkhsenBwTkp0cDdXWkRVM2V3RDE4eFRTcGlZLW01NXhjRjQ5Q0p4MEluZy1sOFpVSjYwNVJ2UlByZHV0cFoyMDh0OE51RENKWWloRXJSc0laUnQ?oc=5",
+        "title": "The Latest: Top US counterterrorism official Joe Kent resigns over Iran war - Newsday",
+        "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNOS1sRTNORkMwM1o3SjN6cF9lR1QycEJZejhuVWc2ZFE0SVMxLW4wQTMwWDVQZGJLMmFkbWhXYV9acUZNYUhDZEdiQjYxazNXSmkyQlN4VTB5RC1PbGdhRmVIWXAyR0poUlhhUExldnBER1pBY1VjWUlsWTZPWWFoNg?oc=5",
         "source": "Google News",
-        "published_at_utc": "2026-03-17T16:08:20.000Z"
+        "published_at_utc": "2026-03-17T16:18:17.000Z"
+      },
+      {
+        "title": "Trump relied on unverified intelligence to blame Iran for deadly school strike - The Guardian",
+        "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPS0MweWZwVHZsdVcxdEg4cnd5VlNEZHljSjBKdkg0VGJpQUJ6UEtBUDEzT2JjWmJFT09TZERtNUNSbGEtYWd5c0xnb21hQlAzUEI5OUY3OUo0QXJsMDlkcXFtMUhpM3l5MEFBZlp4bzV1NWw5eEtLdDR4Qk5Bd0UyRVNkU2xUMW1wN05V?oc=5",
+        "source": "Google News",
+        "published_at_utc": "2026-03-17T16:15:00.000Z"
       },
       {
         "title": "US Strikes Against Suspected Drug Boats Have Killed 157 People, Official Says - GV Wire",
@@ -75,55 +93,49 @@
         "published_at_utc": "2026-03-17T16:06:04.000Z"
       },
       {
-        "title": "A look at the top Iranian official and the head of internal security targeted by Israel - The Washington Post",
-        "url": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxOc0NHdVBQV3RsUkJfdFN0SGFQNklmQWtzdGY5V19MaWpQMmJSSmRaUUJuT2RkSW1sbE9Eenc3RDZNVVlWUlo1VXNqcEFQREp1RjEycjJuRllZYlNMQmh5S0tPcWh5TXNleE4tZVJPcGNlempPZ3VGMjNRby1Fc2w4bjZGc2REOVVCWEszMGRPQ0gxWW04WG1YcHpMUExrNTBBOVVJa3owbm9PWEYxMDVBYUpsaEhQYTA3Q3U4OXhSMGpjYnBTeTBHcUwxQVEweV85MW1VZUxDZURmdjgtNXJGRA?oc=5",
+        "title": "How Saudi Arabia views the Iran conflict and Israel’s destabilizing role - The Jerusalem Post",
+        "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE41aXJzUVA4Ty1ndFlQN255bDZ4blBDZ1pHdFdITE9VLXpoejU5RURCQ2F0bk03MDBJR1R4clhmc1pvdV81YTZZNWZ3Q2ktcG9HMzZ3X3E0UQ?oc=5",
         "source": "Google News",
-        "published_at_utc": "2026-03-17T16:01:36.000Z"
+        "published_at_utc": "2026-03-17T16:00:00.000Z"
       },
       {
-        "title": "US counterterrorism head resigns over Iran war and says Israel deceived Trump - thenationalnews.com",
-        "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNQ24yVzdhemhSY0hIdUM1NzZ1UF85ZUl5cWpRZkw2dTRucEFXajk4Wnk0YVQyWG8tR3NwYk9qMWc3b19maEYySHloOWFXWnVSVEQ4RmFQZWlNS1pJeHIzMWhRVFg4SG5UUGpoMHFUWjIzR3BTWWI3czM5aG40OGxYOC1NaFV1Z0oyektjdi1TSndUempHVnFwV0E1TzZTTVl3T29uc1J6NnB0eVYyak16QlQtSm1zOEwtUFpGRlRrdzZaUGJjYXJPSw?oc=5",
+        "title": "Not so diplomatic: Witkoff, Kushner, and Trump’s march to war in Iran - Responsible Statecraft",
+        "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE1Md05XNlhIczNFcEpTb1VOTGNWV2hFTkpuMG9aYWZESDJHa1o1Wl9vWk82X0d4SDVaUEhaeE53cVdKU2NyU3BxNGZZcHZNZUlRSzJiRTZBVHlfNmt2STgzag?oc=5",
         "source": "Google News",
-        "published_at_utc": "2026-03-17T15:57:21.000Z"
+        "published_at_utc": "2026-03-17T15:53:06.000Z"
       },
       {
-        "title": "Iran war: Israel says Iran security chief, Basij head killed - DW.com",
-        "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPVDlSMEttMTBvWDhYcnJPdkpqX0VINkc2SDNqaFZrQ005SExkSHVJM2JseXZJdWNON29nV1NkXzhGanB1TDFuM0NIMTlKdVRaWXhCcUtYQ0VHT0VILUJOakZVUkpvZGk0TTFWb2FjS3p6SFBYazNVZjZOSm9nRHBIVFVsMFJ3TzB2Mk9MRkd5M2J5WjZlTU5YaTNR?oc=5",
+        "title": "Iran War Maps: Tracking the Mideast Conflict - The New York Times",
+        "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE1uUWpBOUw3b05zUlRrZFVqbThvSTc1elBsdzItdm4tR0M0eUYzSWN1Qm45RGp0R0pLbzJLekxiZ3JBODRlSjB5T2hIMThDVG12NG1zcnVKYzJNYnhqdFE0MVUtcU5VUWR1UkJ6dWthdVRvcW5t?oc=5",
         "source": "Google News",
-        "published_at_utc": "2026-03-17T15:45:00.000Z"
+        "published_at_utc": "2026-03-17T15:40:32.000Z"
+      },
+      {
+        "title": "Joe Kent, top counterterrorism official, says Iran posed no imminent threat as he resigns over Trump's war - PBS",
+        "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxQeFk3NThuRTh0RVZ2M1JHSnVYekJJQzI4QXJJYmpCal9jRzgyWkt4ZDN4cXFfODZheDdESmZvQTFzaF80X2IxZEJaTFZIZjhtR0lyTk9EdGFzUEdVdmFDRDhxM0E4VjVfMGN2di1qa1dyOEY3c2dNRFlIbVNNSlRkY0JWUi1WVl84RThDQ05hQ3UwNVNBUmVzcjlpX0VnbnFXcExNM05PR0xkRmQzVHlMS3FtdGlWeDRfX0J2U2JZeV9IcWxFekQyakZ2SEZzcUdYM3AzMjR4Rl_SAd4BQVVfeXFMTzczbDI1SVE5WmVJbmdsbnY1OWdRRTEyckprZEhuMlpqRk9rNkxQbzNkVFlRdFdiTE9SUHZVZW5pUVJySDk5dkZXTnhDWURTR21RMnNOZVJneEZ5N2l2WVZIbDVrUG5tdmpzSWV5dHk1Yk9ZMFQyd1hGYl9KR2hia3ZXbXNSd1pYMlJRYU1qMnFoaEt6ZWNvSXp2UERNc1N3MEJ5VlpBcHhRMlhvUWVMNUpBYU80bktmRDFVbk81UmJOTkpOTmhlVEhOeFRsaDZQa3NHdjd4T3dwd3lsQzdn?oc=5",
+        "source": "Google News",
+        "published_at_utc": "2026-03-17T15:35:02.000Z"
       },
       {
         "title": "Trump: NATO allies refusing our request for assistance in Iran war, but we don't need their help anyway - The Times of Israel",
         "url": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxPNmJSQmtqWl9yVVl6dVZKcXl2Zng3X3JjYU1DRkxldmhHX3hFbEtSNWY0OXFwMWRfbjN6V28xeHI2cDJ1WjNiYW9kRnN1XzFZbjZvUkFXU1ZYMHVkcW1GNHhIQkV1NG9mVzhzWGpsN2wxYnczb0tjMnhjUW1GbjhKQlFGMWhoeUN4c3Q0UmFKb0Y0cjR1SFc0Z3FiamdMVGlQVG5EeTZvZXVzbGJoaS1xaTZhMnA1Q0dYVTdVcGltRHNDaFhISWJBOFZROUtOVTlfREt5WmllUHhmT3B6OGNn?oc=5",
         "source": "Google News",
         "published_at_utc": "2026-03-17T15:33:18.000Z"
-      },
-      {
-        "title": "Iran-US war to be over ‘in weeks not months’, says White House - The Independent",
-        "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQVm1DOENGN2VLYW00cXMzQS0ydy12X25rZHAycFNiWXVjampPZV92aVVoU1JGSklMb1dyRExkR19ibWxTM05GTnFEZ2RESVFtdENySGZoQjktRGVJZFh5a0Y1X3Y0SEswSzNON1RmbTFKMFJQUTJvYVJFOTNOVC1EcS1xMGtHQ1M4VWFNYmJZMU9WZzQ?oc=5",
-        "source": "Google News",
-        "published_at_utc": "2026-03-17T15:27:00.000Z"
-      },
-      {
-        "title": "Trump counter-terrorism chief quits over Iran war, blaming Israel - The Guardian",
-        "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxON1JjWkJ2UW00T1plYzhnTWFfWHNuU2FoOXRUR2luNnRXYTh5dVpfZ3M2eFNhSmQ2eXdubGw4enNZYzZMV1RuTGkyNzZ4YWlqYl90UWZBNWh4UlNEN2wxeXR6MVE5aXVqVFIwbUlqV054QmdnbXJWbk5PS2h1ZHVYWllQMHFVcm93Tk5ycG9XNXR4ai1RazQ4ck9hSlVKdEZrU0FTOUF5ZVlyQQ?oc=5",
-        "source": "Google News",
-        "published_at_utc": "2026-03-17T15:13:00.000Z"
-      },
-      {
-        "title": "Beyond Israel's Consensus: Is the Iran War Legal? - Haaretz",
-        "url": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxQRnhfT1FpNDZKVGYzdW4zYWxSNGQzd29JZEFmTWlyaXlZMkJzeW5oLTFQM0hkQURNSGJlckg4NlhHUGRwTlV2MXp0WHZvWURPZzRSZUk1QW9ubVYyd0cySVc5TkhBdmdfeWZWSk55UVF3R2FmbGI0RXhiY1dmVTlrRm1LOHQ3ZFBBeXlaWnRzTWI4bUNkTHV2N0U1cVJNSmYwMWlCM0NvOWNXczQ4UUdGd0tFbm9SRkhXMGZPTS1rekhPU2dRY0lfU2xjS3Y1UWhqOFk5NG01b0NvMlpXSnNiN2NRaFB5OWdCaThydW5oMTM?oc=5",
-        "source": "Google News",
-        "published_at_utc": "2026-03-17T15:09:00.000Z"
-      },
-      {
-        "title": "Three costly mistakes Trump has already made in Iran - The Hill",
-        "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQMWZiMmJXQThYeDBta0NJLTItdlR6N2t1VW9tTkYyZERhcE41R0VBTVE1aDRHMWxPTkRiUU05TVpMMHZXMXNDYzk4clRaT28zODVPY1VlRnVtbDMyN2RFeTdkby11S01la1o1d0RxN2pMSXVNQnNCUzBPald5cjZwd3NUYkFWZWFm0gGOAUFVX3lxTFB3bzBnWWlmX1RZWjN6bUNpZFdpbDdMWUFuZ19iQTdadlZOcURkUWI5VFJLZkpydk1rNVd5UzNDaElieG9tYlNnbjVKWlczQ2Z1N2dKVElFQ3EzbWVDN2dDSURNZzBBWk5STlhweHJhc2FNdEV2b2tqTWhmZ3RJa1VNem5zRWREN01Oc2ppeXc?oc=5",
-        "source": "Google News",
-        "published_at_utc": "2026-03-17T15:00:00.000Z"
       }
     ],
     "ukraine_2026": [
+      {
+        "title": "Focus must remain on Ukraine despite Iran war, PM says - BBC",
+        "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1OZjBtbENiWFlFZ3VieVNYdDUyaGV1ZXVBSFZyeWFZZ0dwV0ZPeE82dHg1a25ZTGtUMV9fU1ZjWnVjc0dEc05leFYycmpmdzJzUm5DNVk0cDZaQQ?oc=5",
+        "source": "Google News",
+        "published_at_utc": "2026-03-17T17:17:19.000Z"
+      },
+      {
+        "title": "Starmer says 'We can't lose focus' on Ukraine during Zelenskyy visit - Euronews.com",
+        "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQYnlTeXgtazBLcWNOZUxLYzZNb0NBRTk0TjQ5ZnlSN2k3aDBoM0paMFEwQ1hveVVTYkZkbC1PaDMtSzJYNzdibU5DcVFFbUVkakMxaEU5RjNfMTEtWG5CQ3dGSmdTQV8xSzE5ZTl2T19tT1M5dmt1NU5ZeGFWVVNObTBkT2dHcFJaSE80SGZrSDlHWGl2Q250UkxrZmpkcG94QVVFdjhkajRxLUJGblRUTVZ1SVJoQQ?oc=5",
+        "source": "Google News",
+        "published_at_utc": "2026-03-17T17:17:18.000Z"
+      },
       {
         "title": "Kenya Stops Recruitment Of Its Citizens For Ukraine War After Deal With Russia - Arise News",
         "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNeUZWUEhvT1hSb0VpZmtmZm44WE1hMjEwcUZnZ3NORmR0b1p0TjIzYmF1c0dwa1p0SExaQXNwUDNkbTUzUGw3blBaR0daWXc5eW1iWk9CSkJQVzV1RHlEbV9PbGJLcXAwX1NfT21IdlRIeEF2M09nWjNRbXFfYTM3RkFPQVZRU3RGdmk0Z3MtNGd0endoeEZWNV8yUFpkUGM1Vnc?oc=5",
@@ -132,15 +144,15 @@
       },
       {
         "title": "Ukraine strings nets over cities as killer drones turn streets into war zones - NPR",
-        "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE5uVWRSUjA4c083Vjh2NnQ2NF9kOWVkZVBScDk3RWsxc200UVNkc0JjaHpOemxEb1loNjhvSTVYWWFZRVoxdU51Ym0xb3RDeGVjYkhweGdkMDU?oc=5",
+        "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPWVNrRGkwSDdPZDZrczQtTWprMTctWDM2Q09pWHh0TklHMlppSVRzOWJQcUhIQ19sQlVZeGp3VDZDbVFUZE9xdm44WnNmQnN6cnp3TkRGX0xaUTk5T1RkT29BenpRZ1NCX2pEYVdSVjF0ajJRdDR3cURuWFdaZ2ljUA?oc=5",
         "source": "Google News",
         "published_at_utc": "2026-03-17T17:06:44.000Z"
       },
       {
-        "title": "Ukraine strings nets over cities as killer drones turn streets into war zones - WYSO",
-        "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOdlNSVFN2ZnNseGtiampMSmZ5Z09LcmJMS3pQNFl2dEQwTGxwbTc4OVU2LXVKWGVqY1ZZeDFmdHFvLWJKd2N4SUFxRkJILXFyYkN4YVJqejR3RXZkRzRldHhSRHlHc0pjTWtQRHM1dzJodGVjMV9HRXJMWVVKYkRLVk5KeFdsNXhTcF9hTXVDQURXSzNoXzNWM1MwZkFtWW1pQ09RTldIRGt3cmh6VE9HUWIwTlNNR2s3RUE?oc=5",
+        "title": "Zelenskyy in London to press for peace and Russia sanctions as Iran war steals focus - abcnews.com",
+        "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxObzVlemVXUXpJMkFlRlN2WXhTbWdWeEl0UUFYbURwdkZhWDB0SHVCbkxFMnNvZmJ2M0tGRWRBWmp5ODNMc1k3cVN4aldScl9lNlQtX1djSE5ENEZhSndBaGRxdlVEc3NkakxKNUl1eUM2LVd1aTBnRTVhejNwdjFIWjJNdUVkaWZURWgyYnZDeVhEVWcxc1lMMWkzbGUyZklKbUNOSGN1MWVEUnBHekxZ0gG0AUFVX3lxTE9UOVhLSk5TQm9TeEIwZ2xGZzNnR19rVjZfdjBvdWhNUzJrSzBORmhTeDdzeGxydU04N0tEQnM5R09UcXo0enpxenkycXRRdmxxSVY3dzI5bkdQeVhodUpIMmNDVE1MMUJDMWZRaHFFN1NwMHNVbV9yWUN3d0NNazZzR0IyNmFXcHVfeU9Vc29Fc0dfX0JsVkNxR3d5dnJuazdMR2xfUFZ2aEUwLU56TWxjZFZiXw?oc=5",
         "source": "Google News",
-        "published_at_utc": "2026-03-17T17:06:00.000Z"
+        "published_at_utc": "2026-03-17T17:03:45.000Z"
       },
       {
         "title": "Ukraine says it's grateful for Russia's last attack. Moscow dropped empty drones for state TV — but Kyiv will use them differently - Euromaidan Press",
@@ -161,12 +173,6 @@
         "published_at_utc": "2026-03-17T16:31:25.000Z"
       },
       {
-        "title": "How the Iran war is hurting Ukraine's chances at peace - DW.com",
-        "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxONUlQNlR3UVdYRE1KU3JCcV8zMV9jU3puZmw1bHFucXVvbUVKNF85WnowQ0QxcmVnY0ZJRUo1bmwyZkc4a00yX041bTV3WExXcUJTVC1ERFZ1U2dNTTJhMlZiaHl0cUduSldlTUJsX3hnWGhwZGJwbHJOX1p1M2QtWmotcS1XaGlwTEtaTEZVZUlpOXN6WnBB?oc=5",
-        "source": "Google News",
-        "published_at_utc": "2026-03-17T16:30:00.000Z"
-      },
-      {
         "title": "Ukraine war today: Zelensky meets King Charles as UK doubles down on support - The Independent",
         "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQREZtTVg4VlhmMENpajZpX3JvMlhIU2tvdnlKUWJqb2JqYXpITXEzaDlVX1I1WFZVYlFnczFUZE4tRDRvc3F1cVpLR3VoaFdOOW5aVUhvU2d4SkJZSDN4Y2U1U3hyUGR0NmhycGZQaWI4ZGsyYXZBeVBzMnlNcWxYZ0NpRl8zQ0Y0RFhiRkwwLTZKZmFEbDk5THlYUXZ3QQ?oc=5",
         "source": "Google News",
@@ -185,6 +191,12 @@
         "published_at_utc": "2026-03-17T16:27:00.000Z"
       },
       {
+        "title": "How the Iran war is hurting Ukraine's chances at peace - DW.com",
+        "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOTmV4cUFDWnc0MU9kMU83RXdfSjRFdUtNSklsSzhCT1lwUEFyQy1NQWcxMzFZTms0TWpDclprczdvdDFoSkFHdkY1eXZ2ZVpUM3NqMjU4OF9GNE1pQ25lWk44dGc5MmJjOW0zTW45d2NRTkt2QzZWdVNHa25JU0gtekZnajZ4RGNnNEhuYzlEYjdxMHAzTHBN?oc=5",
+        "source": "Google News",
+        "published_at_utc": "2026-03-17T16:21:52.000Z"
+      },
+      {
         "title": "Russian strategic offensive in the Donbas foiled - Army Technology",
         "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPNndUV0M3OWlUYWc4SGNOeVVzdDI2RFo3QnVaTS1zc3JiSVRNTk94dDNPT1Biemc5SjlKb3pBUEo3NGJtLUk2dnQ3SFJpRVpuaERHeFpLT21aYVd5aENFSVJJcjVFWEhDcE1pRkhoam5LS2tsMll3OVFUczZxQnljaVdJdkdBcmRuSE51WFYzOA?oc=5",
         "source": "Google News",
@@ -195,6 +207,12 @@
         "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxPV091X2lIa2wzMXZlVldCZ05RNTk2eDhzVm1sRTBvLVVXYWoxYTZKOXBZTXpKc2g4UTdsWndBQU5mWVFDTzVXcDZ2X0FaMkM0bmxzTFdzaHFKQTQ3anRwTVFyUUx2eTlfaGluYXVOWGZhRWZvUFFtT3M4allaOVR3NjNpYkcwUTNqMjhiSVNMNW5rZmlCT2hhOFpWSGJ2NUhaNU1ybUxuSDZHVm5lSnJURGpXTGJvUTRSOW8zT0VhMGxlUkRPTGJnLU5JVDY?oc=5",
         "source": "Google News",
         "published_at_utc": "2026-03-17T16:08:07.000Z"
+      },
+      {
+        "title": "Zelenskiy discusses Russia-Ukraine war in London - Inner East Review",
+        "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPdDhXcXhrWmY0aU56NmlDQk5yU1JibmxfRnJ3WFRtWFRTQno1dGpscWNjN18xdkxGVGJUUlN6cDh0WTQ3Vy1IeFJsQ2pkenNiR3g0dDVKMUxHXzA4VlROTTloMlNLRkFqUXp6N2dVUlp3Y2ZLaWRfSFQ1LTBjVnlVb09zQVEwbXNBOTVadkFiVGppTlpLV0VyV3ZEUkdhLTA?oc=5",
+        "source": "Google News",
+        "published_at_utc": "2026-03-17T16:04:18.000Z"
       },
       {
         "title": "Zelenskiy discusses Russia-Ukraine war in London - The Canberra Times",
@@ -209,6 +227,12 @@
         "published_at_utc": "2026-03-17T16:01:03.000Z"
       },
       {
+        "title": "Zelenskyy and Starmer urge continuing support for Ukraine against Russia as Iran war steals focus - oskaloosa.com",
+        "url": "https://news.google.com/rss/articles/CBMinAJBVV95cUxNUGQ2NlZoWmlSbUg4ZjhQQXptbjZIMnJxX1NONjMwMEdxNVhTOHJRMEpXaFNydW92ZFhkcElmbFZZaFlyUWF2ZW9sdnZkQ0pBSF93UGI2aGZnanRGaHZsWGNHbWxuVWRLUVFmaVpwZkJjM3R0dk1rYkJzd2V6bEdWdmZTNm5lQkphc2p2QTRQQzk3WU1hOGptcUZKc3VORUt0RjRlbkVEZDVNVnIwVUJuTDBfNVNMR1BNLVhNWjg0blM0dXpvdTE1V08tWkctQ3pCcGVGR3Nwa3pmZ0QwU0hZT1BsZFpua1VLZm9oTmJvRndyaHlNWTB6dzFzb01kY3R3RzQxSHU0dTVqTS1pQXdWOWJGYTVYVlpKdS1LUg?oc=5",
+        "source": "Google News",
+        "published_at_utc": "2026-03-17T16:01:03.000Z"
+      },
+      {
         "title": "Zelenskyy and Starmer urge continuing support for Ukraine against Russia as Iran war steals focus - AP News",
         "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQdUZpanFtQVFoMUo0RzVkazYxSjBackI3eWhlM21kQ0IzbG03RkxFa2UzUzYxRGJmN3dWSGlTZ0ZucldxaHlKanNaV3MyQ3RRaUhQMjdGT0xOQ0JVdFJuQzM4RS0tM0Y5MDBFUXhDa1VQemt0SWdUR05jOGJPN2RCWnJZcnkyNGFuMmhvc3NUNU42dkxJVDl4aHhmaElyZWRWUW9UbnZYV29OQQ?oc=5",
         "source": "Google News",
@@ -219,30 +243,6 @@
         "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQbFZPcDRHMXZGN18wRndoa3dpLURKVHd2Q2NDeklCS0gwSWNUMnl0Y1A3V2EzWmFsYi1lNEtTRmVhb3pUU05kTlpFM3VpMnRqSmxfdENXV2VGZkpWMnNVRE81NlIwNGRHNTR2WlRJaGR0dk53MXhVYmNwaTdaVFRtSWVGdnhzVDQ?oc=5",
         "source": "Google News",
         "published_at_utc": "2026-03-17T16:00:27.000Z"
-      },
-      {
-        "title": "King Charles hosts Zelensky at Buckingham Palace amid new UK-Ukraine defence deal - AOL.com",
-        "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxOaGN3SkhFcTM5LWZmTmhDeWFsajFGN0JtdHJZeHVqcnlVWm8xNjBzdE9qc3JTVU5kZVVPUXhLMnRwYUN1T1VZODVFWGtvYU9yTUFIU1VkcThZTWExQkJRTzFqSFdKYTFhRDNoV2VES0ljM1JMREJkdmRQTGtZT25OVGVNbTJLdjdBM1E?oc=5",
-        "source": "Google News",
-        "published_at_utc": "2026-03-17T15:53:45.000Z"
-      },
-      {
-        "title": "Russia Prepares Spring–Summer Offensive in Kharkiv Region - empr.media",
-        "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQM0RLWUQ1SlRudk9XWXEtYWJpTmt6aWxPZkNxMllJT21EYktTUTdRWU1zajEydVVseFlCVERZY1VBeXEwTS11Q2RBeWFRR2JNTFV4MFJxUTAwN3I2d2NJalBjUWxrT254T2FPb0c2R3NHR2VXMXBYUHVVMnRXY0tvWEp6RkZOMEMyTzFSeXRRYw?oc=5",
-        "source": "Google News",
-        "published_at_utc": "2026-03-17T15:52:40.000Z"
-      },
-      {
-        "title": "Türkiye warns prolonged Ukraine war threatens region, global order | Daily Sabah - Daily Sabah",
-        "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQdVBpbHhNUWo2YzNkem1jOHJVNkg0OHoxcjM2UWdFWC1CVnM1MXJNYVlEeWJuWklIU3pIOUhTa2s4SWFMd3JhUXgyZk5ZUWV4TUFJdWFwQ0dzS054WEhleXQ4TEdfdWJ0OHQ5WEhEdnhQMU5xcDhmRmlkSV9PbkJodXVtbUNDXzhlS2Y4ZHdLX25PZUgzSG4xSWJBdmItT2MzUy1lNEVDQklmSm9RbDdFMtIBtgFBVV95cUxNRlZ1dVFJVVdtT2ZZbThfZUR2N0VMQWNnVWtBMVFjUm1CSkFwV2dRTndlbklnQVVqd3M0RUJIc3ZBdlRzLThqUXZNX1NVNVhpdFBBc3lQdzBIWUVGMDRaandVOG9sQk9kWWZYNS1EX3hFRE1zaUpoRmJwWEZtN2s4RU1QVUpRUm5LbFJwNkRNc0tlYWxvYlNvUHV2MFQ2ZkNTc2UyQ1E1b0ZDLWV5R1FkeWlOcWFBZw?oc=5",
-        "source": "Google News",
-        "published_at_utc": "2026-03-17T15:39:00.000Z"
-      },
-      {
-        "title": "'We detect and destroy everything': Ukraine's drone battalions hold off three Russian armies west of Pokrovsk - Euromaidan Press",
-        "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPM1NZWHU0SUJMWi1GSGp6MVFvcFJnTnVBX1ZSMWRvNm5CdVZ2dnQtSVl1aWtRb0l3Z3hjSVNiU2ZPeE9Xbm9lNC1iYzZKb09VeVc0cjFvdkF2SFpJbk9MLTJUb213TVVyZFAwM1pVMkxLc1h1Vm0tcWZieEdrLVhTNjVFdjFrNnhvRUZiblBGOEZEdV9kWVdMLXZYbmpMWFBUM0ZpTERNa3ZFbXdZLTBvXzJ3?oc=5",
-        "source": "Google News",
-        "published_at_utc": "2026-03-17T15:36:25.000Z"
       }
     ]
   }
