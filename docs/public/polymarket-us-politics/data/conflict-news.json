@@ -1,18 +1,48 @@
 {
-  "updated_at_utc": "2026-03-17T21:00:14.776Z",
+  "updated_at_utc": "2026-03-17T21:29:16.599Z",
   "conflicts": {
     "iran_2026": [
+      {
+        "title": "Live Updates: Latest from Israel, Iran, and the Middle East - The Jerusalem Post",
+        "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE5xcW1ncWg1ZWxBMk42TFVvRF93QTVFbVJWd29OREw0cDFfMFRVSUlvWFR3OU9SOXBXYzQtZlg1N1FFbWxoNEhjODZtdE96MWhqdnp3SmwxbGd2Zk45YVprSzE2MFA2eTNHZXJtWlBGb1hqM2VfNFZVcVNYMHA2VTA?oc=5",
+        "source": "Google News",
+        "published_at_utc": "2026-03-17T21:26:50.000Z"
+      },
+      {
+        "title": "Israel says it killed Iran’s top security official, along with paramilitary boss - The Washington Post",
+        "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOU1pRdml5eWZ6ZnFSQjM2N2N3QkI4OThKcHpRaGtRMkNQRi1OcDVMeTRqMjh0U3M5Nk5pUHBfSXE2RGl3cEl4STFyczdpX0pMTE9yaVpUdzJ3MjJQV1RYMEZaNmY3UGl4UTVick4yMnIzUkFuYW1QSlBicVdNd1lxRGZmMWlxSlU?oc=5",
+        "source": "Google News",
+        "published_at_utc": "2026-03-17T21:23:38.000Z"
+      },
+      {
+        "title": "Iran keeps up attacks on neighbors after it confirms Israel killed 2 of its top officials - AP News",
+        "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQU2ZPWGVKR0E3bXl3SExWdnRrSW96SktTaGh5U2dmN0ZkYlU4UWhVZGpaRmVIMjZmMy1Zc1huaVJSZ0NpOVZSQ2tuTlNMTU1xZEt6b1g2YVlIVzNmcGZvQUh2TFAtUVF0b2lBdk15eVltSUJuWWh6NVFpVlJzTm9uZWRZRGhod1pPUU5uSFhOOHAzRzlJcWdac1RJaU9xbGM2?oc=5",
+        "source": "Google News",
+        "published_at_utc": "2026-03-17T21:21:00.000Z"
+      },
+      {
+        "title": "Europe seeks to help US and Israel end Iran war to 'save face' - thenationalnews.com",
+        "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNRk5ZRzA2eDdEbWJnLWxrTV9xWW1sREdoanB3cTdaSmwwSG1FbnpJZFFxZmx3R3F0dlNZWTNRMF83SHpQZEJPYUhjdVJlNUJBZWhhbGVZLWJQQXd0TTBIVThveUhOaTJKaGEwZkhxQl9JV0xmSi1jWTc5eXBDdXAtSS1Zd0swTWFpbWxEdEJVV0ROcDVROGRhR1FUX3hfTzQ4VUpZUXpwWmpwalhxR1ZZSC1LbEhVVDQ?oc=5",
+        "source": "Google News",
+        "published_at_utc": "2026-03-17T21:11:15.000Z"
+      },
+      {
+        "title": "Iran Guards confirm death of Basij paramilitary commander in US-Israeli strike - Türkiye Today",
+        "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPcUFWWlBMSTYxWVBDMXdIQmJPR0RVRzM5Uks1cWdnbzRPQVB2QVZxaEhDZUxnOWJ2cjA2VDEtdlVxMm40Sl9od2U5LVJDcGhZZDQ0S1ZpZlBQX0hVenVkVkxzY0NFVVFCbU1SMzM1U3QxLTNwU0ZFMnpRVXBGcmRMVGgta3NXVjZIcXItSklkamk0emRiUnRRaWFGVzVkVVZRTl9TUjVCeXMtSnlCTlYzd2txOHg1RHhKblFYZ2VVVQ?oc=5",
+        "source": "Google News",
+        "published_at_utc": "2026-03-17T21:01:04.000Z"
+      },
+      {
+        "title": "Opinion | A War With, Not for, Israel - The New York Times",
+        "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE42dDc3a0wwZUlDUXY2a0x4cmlBcmpPb3Y3MU14LUdiTE1TdFczYWM4Y3pRdW5XSWFra1pzRU50NTFnOGVTdkM5NWhsZVN0MXg0YjJld3F6dW8tN2tsOVdjQ1V3SzdEd1hTcTg0OURkMHZLVGZ1WHN5Vkl3bUNIZw?oc=5",
+        "source": "Google News",
+        "published_at_utc": "2026-03-17T21:00:06.000Z"
+      },
       {
         "title": "Satellite images begin to show damage wrought by Iran war - The Washington Post",
         "url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxQSkZuOVFmVzVDTzE5R1U5djgwTGxXOEc1alVfRlEwNFlGRHY1RGppcnRoMV9qU08tQ3NFbkxUenZyMEdiWFlrMW9VX0dNYlZ5bXpXR0tIeHhidDdYVGQxVVF1ZGltX0dKdjdjZG9mNFdFeVJ4TzZKVE1uek1lal9YeVQ3Z0FTczVsSVFGeTNkS0w0TkFlTnZ2UUNJLXRJeGU4T196cFAzdUhBVkY4dnhQWDd4NUVPdnZBODZVYk5ibU1qVkNXWDBmLU5nbWlta0h5YW54YVBTbDhVdXM?oc=5",
         "source": "Google News",
         "published_at_utc": "2026-03-17T20:51:30.000Z"
-      },
-      {
-        "title": "Live Updates: Latest from Israel, Iran, and the Middle East - The Jerusalem Post",
-        "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE5xcW1ncWg1ZWxBMk42TFVvRF93QTVFbVJWd29OREw0cDFfMFRVSUlvWFR3OU9SOXBXYzQtZlg1N1FFbWxoNEhjODZtdE96MWhqdnp3SmwxbGd2Zk45YVprSzE2MFA2eTNHZXJtWlBGb1hqM2VfNFZVcVNYMHA2VTA?oc=5",
-        "source": "Google News",
-        "published_at_utc": "2026-03-17T20:45:37.000Z"
       },
       {
         "title": "If the regime survives: Iran war raises the ante for US, Israel - Middle East Institute",
@@ -33,16 +63,16 @@
         "published_at_utc": "2026-03-17T20:31:36.000Z"
       },
       {
+        "title": "The Latest: Trump insists US can break Iran's grip on the Strait of Hormuz without allies' help - Newsday",
+        "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNOS1sRTNORkMwM1o3SjN6cF9lR1QycEJZejhuVWc2ZFE0SVMxLW4wQTMwWDVQZGJLMmFkbWhXYV9acUZNYUhDZEdiQjYxazNXSmkyQlN4VTB5RC1PbGdhRmVIWXAyR0poUlhhUExldnBER1pBY1VjWUlsWTZPWWFoNg?oc=5",
+        "source": "Google News",
+        "published_at_utc": "2026-03-17T20:28:50.000Z"
+      },
+      {
         "title": "Chris Murphy flags $100,000-winning bets on US strike on Iran - CT Insider",
         "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQOGhGNmVIYzJPVmFsQ2Y4dFVEUzVYdS02T1psUkExU3ZpWlVnM0NaSEJmeEJ0ZUlJQXFLbVU2S29YcDlIMWw3NkZMdUVIQm15RnIwOUdqUnlRRERhcGxJbkFuRjl2ZlZnTndCTXROTTNBOF9Ia21rb05aa1lZYjhrMzZKejZzNUp5bGdzTXZjTHNXR09SVUVvazgyVjNRclM3M19pQ3J1blM0M29s?oc=5",
         "source": "Google News",
         "published_at_utc": "2026-03-17T20:27:35.000Z"
-      },
-      {
-        "title": "Iran keeps up attacks on neighbors after Israel says it killed 2 of its top officials - AP News",
-        "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQU2ZPWGVKR0E3bXl3SExWdnRrSW96SktTaGh5U2dmN0ZkYlU4UWhVZGpaRmVIMjZmMy1Zc1huaVJSZ0NpOVZSQ2tuTlNMTU1xZEt6b1g2YVlIVzNmcGZvQUh2TFAtUVF0b2lBdk15eVltSUJuWWh6NVFpVlJzTm9uZWRZRGhod1pPUU5uSFhOOHAzRzlJcWdac1RJaU9xbGM2?oc=5",
-        "source": "Google News",
-        "published_at_utc": "2026-03-17T20:26:00.000Z"
       },
       {
         "title": "UK security adviser attended US-Iran talks and judged deal was within reach - The Guardian",
@@ -69,16 +99,16 @@
         "published_at_utc": "2026-03-17T20:01:37.000Z"
       },
       {
+        "title": "Israel says it killed Iranian militia head, security chief amid 'wide-scale' strikes on Tehran - CBC",
+        "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE13MC1DVG9uR2FYSjBWR2tHWTdCeHF1eGFwdzJRZk1UVWQwNGJxTWZjODVkbml3NXpVY2RxMEtHTk5SLUdqb0hkeUJlb0tZdTJFSjV1d0p3LVVycm5vaGkwb2UyMnBYTmxTcEhkSjB0X0UxZ3Z3UjFtRA?oc=5",
+        "source": "Google News",
+        "published_at_utc": "2026-03-17T19:59:07.000Z"
+      },
+      {
         "title": "Israel Iran War Day 18 News Updates: Iran blackout silences citizens as diaspora voices, satellites and di - The Economic Times",
         "url": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxNY0l3cENENkNVTXVhT0s2eC1kUW12aDROOGFXbE9ucnFBZmd4NDR2VzFkamhLa0JsLUV3ZkRtdDJRdFVMaVJUdVk3RlRrT0NyRElQU0NwNkJ6cXlYcldHMmlSZXJLWlJ2MXB6R1M0UnhYNUxEbUVvM2dtc3hCN2tRUnlCODM4R05TdXVOYnE3VGo1ZFRBQUtuZGtBMEtvV0dmTGJEQ2pLMHFWc3NJODAxeWdsQjBkZmJUTkh3SjdlaFNJZHIwN3lLNU1oZEZtOHRTNEFhbzRHcWJpM3h2SmdHUVdKaWxDQ0tIYTR6RHhZONIB9AFBVV95cUxQYlYxa3BMTlUxRGZCeWZYNVItckd3U3kyTXNFbjhBU2ZEVDRPOHd0QWRnY1VacV9yb0s4THdmYklRVHBqS3NnLW1JOHZhcGNaYVhNSzBYUFJPaUljWHhHSUpvZzRGVXdfYzNGQk5KUXRjVTRRRERXQTFxNDZSSlVvOUh1Q2pLTmhLcUNlZE0wenV1OTlhdGZiTVlFUENNSnNTNGhxNkpoNkV5ZDk4VEFaR0ZKd21hVUVLRHFmSHVwajByaUlwVFl6a3J2cTd1S3J6RmNmaDRLdE5uQmVXOER2Z3I5R1FyZWlVR0p2TVJHbTdsbEU5?oc=5",
         "source": "Google News",
         "published_at_utc": "2026-03-17T19:58:41.000Z"
-      },
-      {
-        "title": "Israel says it killed Iran’s top security official, along with paramilitary boss - The Washington Post",
-        "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOU1pRdml5eWZ6ZnFSQjM2N2N3QkI4OThKcHpRaGtRMkNQRi1OcDVMeTRqMjh0U3M5Nk5pUHBfSXE2RGl3cEl4STFyczdpX0pMTE9yaVpUdzJ3MjJQV1RYMEZaNmY3UGl4UTVick4yMnIzUkFuYW1QSlBicVdNd1lxRGZmMWlxSlU?oc=5",
-        "source": "Google News",
-        "published_at_utc": "2026-03-17T19:53:38.000Z"
       },
       {
         "title": "Iran’s Basij commander Gholamreza Soleimani killed, IRGC confirms - Al Jazeera",
@@ -87,43 +117,19 @@
         "published_at_utc": "2026-03-17T19:52:55.000Z"
       },
       {
-        "title": "IRGC confirms killing of Basij chief Gholam Reza Soleimani in US-Israeli strike - شفق نيوز",
-        "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNY05YYUY0U091M0xfaVRVeUtsMW1TU1ZGSGROcF9RWFhUSUN0Z0hIRkpidkdHNUJUSTMzdHQwVnZ0VnRVVnhZTEdnWEV5ZFdYMTAzdHBBdW9rc1RMUEZFS0FXT3JhZzRrcFBJaDBDbnozb3lsTU1EOWFPcGRYSzVNd0wxRTREYlRiQlV6N3R2TWVzdnlQTl9QZ3o0MFJCZmZGbzRNTDFBU3ZPSTA?oc=5",
+        "title": "US accused over deadly Iran school strike - MSN",
+        "url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxNeC1yeHo0NVp3VkMtVTFveWRSRnJwTU10TjBFN3lGblNVVGtUaFV2TnYyekk0Z2Vzbi1TX3lLQ3ZNdFZ3UU1NeHZBRGZyZ1FLSU14SDhkTEpwcUVRVXhrWFA1SlBpYTR2STQ3anN1VkJEUjk0cHRrWWZuZWFlSUNXQ0EwNDNhNVh6eWpYdEtwWkowMjB6eE1jTklpTENjX2xQOXZHcV9pcG54dWtYX19OcXF0TWFQQTdYd0ZPdUl4ZnBUZmFVVXJjWkJ6UWczN2pXeWU5M2RlUzhzNFU?oc=5",
         "source": "Google News",
-        "published_at_utc": "2026-03-17T19:44:09.000Z"
-      },
-      {
-        "title": "Israel vows to find and 'neutralise' Iran's new supreme leader - News-Graphic.com",
-        "url": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxPdTBTWDlwLXV0V2tPakN0SHRrQ0FPamNENEY5d2tBT2lqbTQ1b1dUdU05cTY0RVNmWGNHZDlKUUZKWlBwdDNYUDl6aWp1c3kteUt6VGtVRXBMbjVXaXZEVlQ1SDVmV3NqVkFrNnFIWXJnbXRDRnZCQzRUcXFaeEk4dEszOG1tUmxJUUdvbEg3QUN6cUFMRlhhV09xMENOcnozMTFZM1FPWWNwVEN2Y0ZnY0tGV29nMEJ4Vzg3WkZpSnhXYXdSV2lEVWpVMk1tNUtRc2FfLTB4dHlDcldwaTNsS2VnSVdTUUE?oc=5",
-        "source": "Google News",
-        "published_at_utc": "2026-03-17T19:38:17.000Z"
-      },
-      {
-        "title": "What you need to know about Iran today, with Matthew Doran - ABC News",
-        "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQLXl1LWtpWjZpQ1UzSTh5eDJYVUZFV3ZnWUdBVXNrLW5ISWl2c2lmcncxOWZqWS1pNm5yaFdDQU5YX0MyYUtNS0dsQjFEa1kwaE9FSnh2TTlJRk4yaEsxVkJEb2kzZ2tHOUx5czFabkREcmxScXlCZXFuY0o0c2pfMGpuUkZiSENIS2hOajJmNWprTnlfbFljVkVqYlJ6UQ?oc=5",
-        "source": "Google News",
-        "published_at_utc": "2026-03-17T19:31:22.000Z"
-      },
-      {
-        "title": "War, and more war. Israelis support defeating Iran, but they are exhausted. - The Christian Science Monitor",
-        "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNRU0tbWVXMXRJV1FzQjVadHEtRmtuWWZ5bXR1RlVpWGhOUHg2TUtabVZwME1lWm5EM1Q4WXlrM2w3WHRoeWExdzhnd1RBWkN5eUtRMFZNb1RUbEF5QjhiaVJzWmF1SlJJX2k1YUVtMzE3cWd3dVE2Mm9VYXFKV0lwSUg3RWh5Q3ZRWlJpYlRFTThacHlRbFItaHA3Rmd5b1BleFdNcGJSa9IBpwFBVV95cUxNRU0tbWVXMXRJV1FzQjVadHEtRmtuWWZ5bXR1RlVpWGhOUHg2TUtabVZwME1lWm5EM1Q4WXlrM2w3WHRoeWExdzhnd1RBWkN5eUtRMFZNb1RUbEF5QjhiaVJzWmF1SlJJX2k1YUVtMzE3cWd3dVE2Mm9VYXFKV0lwSUg3RWh5Q3ZRWlJpYlRFTThacHlRbFItaHA3Rmd5b1BleFdNcGJSaw?oc=5",
-        "source": "Google News",
-        "published_at_utc": "2026-03-17T19:18:36.000Z"
-      },
-      {
-        "title": "Counterterrorism Director Resigns in Protest of Trump's War in Iran - People.com",
-        "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNbjdEclJxVzlKSTBEV2JFUE1KNU40RGE5ajVQemlHaEpvOENKcGxFUDZ0VzFtWl90M0VLRE5EaHk4X2ltTTZTZTYtanQxd05uOXFnb0RNTzZCaWlpdGExMW52ZFRzOERLZnA1NU9Qc3h2NERHLV9NUFBLODI1b0pEa2ltbE10LWVJYzBPOXNwZ0doUQ?oc=5",
-        "source": "Google News",
-        "published_at_utc": "2026-03-17T19:14:12.000Z"
-      },
-      {
-        "title": "Iran keeps up attacks on neighbors after Israel says it killed 2 of its top officials - The Killeen Daily Herald",
-        "url": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxQMktoYTdEZDViTE9LVldhcWJhLW9ZREs2X0lHeERHbF82alZrNGt0ekJVcnFuUmI2c1lOc2M4WGdMMGhWZExqX2RQYlRfVTNpcUtaSWxOcGd2YThOc0JZNm1rUDNGU2ljOHdXWGN2TjRzdUZHYzNRczNtVjN2dVVBV3daN21SV2pQQ2xJeERXcEhPTVdMVGxPYUFORmx1RXN0QVRNNkFWSG85NVVUelVGQ0dCTm5QQTBETUhQTDhETXFzTTRfMWl2UGpURERGTTZRZUt6amE0X0JFUFdpeUhQbi13dUN0QUJvNWc?oc=5",
-        "source": "Google News",
-        "published_at_utc": "2026-03-17T19:09:36.000Z"
+        "published_at_utc": "2026-03-17T19:44:58.000Z"
       }
     ],
     "ukraine_2026": [
+      {
+        "title": "Zelenskyy, Starmer Seek To Keep Focus On Ukraine's Defense Against Russia As Iran War Diverts Attention - Radio Free Europe/Radio Liberty",
+        "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQdjgtcWRCY1NJY3F3Q2ZZdjFJQ1FmaUpKd0pzTDFmOS11NE9SdnhLb2xiMW9OQ3c0WW5xd2lBU3k4UE5fX29iSE1kb1dWUklfZDRNb1pucEt2bjlNYUgzSHNMTE44OE1feFlYU3k3eUJwTi1kbXVOeFhndHpLR1dncUtsSVBtd9IBiAFBVV95cUxPeFpLS0ZQQkE0azdPY0RtbFAzak5sZGlOcDdfVDd3UllrOGNPOF9xczlGT0ZBTGdGZEV1WDBVQ216X3JlUmJtZUxCVk5rYi0wbXhCZ2thTnE3dGZiRHFBeXI0VERJQmhMUmZETHg5RGlSOXhGR05YOXN0Z0poVG1MRGM2N3ppUGl3?oc=5",
+        "source": "Google News",
+        "published_at_utc": "2026-03-17T21:02:37.000Z"
+      },
       {
         "title": "Opinion | It’s time for U.S. boots on the ground in Ukraine - The Washington Post",
         "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNZlZkemVkckNNRmRvSVUyZWItTGZVWFY4Qnpmcm9jLVl1cElTdngxUGt1NzFMcVpwcEVjcEo3eGlJcWJyOWZUcmVOa0VBMlVPSDFsb295aHpKNktMVy1Fb0hOVk1FOWxzRU5ZTDViNXlmVHFTWFdHR0FKYkJrWHNlMjNWNHlScXotWVM1ag?oc=5",
@@ -150,7 +156,7 @@
       },
       {
         "title": "At least 11 killed, 55 injured in Russian strikes on eastern Ukraine - Gephardt Daily",
-        "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQdUd6ZUFKR2dsT3VGUnUtMnFoQURickpkbGh2NjZpVlU5Z3kyc1MwWUFNZTdvS1lkN25LdEV6S0FBY0REQXVZVUczUGpnMzZxb0ttdFVCbHRuZkVPQ2phUThzMVpDSTVkNGVvcUE4eDB4TFp0Wkd2RjJLSmxoSG84dTR1ODYya2hMSGFfQ09aLTFBOGhZcEhZOTMzSW5SeElfQUMtUDJPdEp4dw?oc=5",
+        "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQTzlaSUYySkZqN2lKd1dGeXpoZDlSYllCSmkzWTJoajlLOTEwTGI5Z0JUWTdON2FmSnl0ZldyM1BHR0ExWm5HTHNfSzhiUWJoeGlxeGdtRkt1c21leF9KaDZlTUJVTEhqUUdGeUQ5a3VST0VXX1lWTWRCZVBidllIMzIwMGVOSDh3ZmMzbnpyRlpLaDNZQ2F1akJZSmFWWTl1R2hJMjFZUUswVTlRSllB?oc=5",
         "source": "Google News",
         "published_at_utc": "2026-03-17T19:03:06.000Z"
       },
@@ -177,6 +183,12 @@
         "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTFBwZGdPVXBMX3MtdTlMRGk0R3RDU3lNLVNyS3lIMG9QclppZVlmQjBabmFYbmhGNy1nb0hJMVA0VjEybUpNdFg3MENDSHY1VmxlTmxJRDRBazFPLTlVbjNXaVphZkNuTk1QT3VIZUNjcFVvd3pKOV9LSF9KcFNtbjTSAYQBQVVfeXFMUEpKUWtRTE5IR2JTZnRwMHhRQ1Z2OE4ybl9WTGQtdm13c2dTRmFfeXVyMWplVDA3NDZZQUVQUVY1OVFwV3k2Y2UtX2dHQ2F0RG1BaHpZQzk0Mldrc0x4QVZQTk1MWTNRVXZXY0lVend6UkJPdUlwZmlzWnpNSEpQM19MNW5I?oc=5",
         "source": "Google News",
         "published_at_utc": "2026-03-17T18:43:38.000Z"
+      },
+      {
+        "title": "Starmer tells Zelensky 'focus must remain on Ukraine' amid Iran war - Le Monde.fr",
+        "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxQZFpGdUN6Z2dHUnZjS1k4S3BCLVRHZDlVbXozbXRGRy1rMzBSSGZRT1YxdDBJNHJMOGdPVnFja0RGSTBGeV9GYzZTMmM2eEpJWWxkOVdmdml5Z0NYQjZBYTNZNEZrQ3JveFBjUnZ2UU5UTFlfeFIyYVliX0Z3dnkzZ3lTMW9rNE5vN0pRN1JiX04zOG5rMk9zQmpsbUxNRXlURHdFVWJ6U2hNLVVBX2dkdzNJWEduQkRkTVlLcnJPbEc0S1JmQ0Y0WC14TFQzdUJmU3Q2VDh3?oc=5",
+        "source": "Google News",
+        "published_at_utc": "2026-03-17T18:41:02.000Z"
       },
       {
         "title": "Iran and Russia are 'brothers in hatred', Zelensky tells MPs - BBC",
@@ -231,18 +243,6 @@
         "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxObzVlemVXUXpJMkFlRlN2WXhTbWdWeEl0UUFYbURwdkZhWDB0SHVCbkxFMnNvZmJ2M0tGRWRBWmp5ODNMc1k3cVN4aldScl9lNlQtX1djSE5ENEZhSndBaGRxdlVEc3NkakxKNUl1eUM2LVd1aTBnRTVhejNwdjFIWjJNdUVkaWZURWgyYnZDeVhEVWcxc1lMMWkzbGUyZklKbUNOSGN1MWVEUnBHekxZ0gG0AUFVX3lxTE9UOVhLSk5TQm9TeEIwZ2xGZzNnR19rVjZfdjBvdWhNUzJrSzBORmhTeDdzeGxydU04N0tEQnM5R09UcXo0enpxenkycXRRdmxxSVY3dzI5bkdQeVhodUpIMmNDVE1MMUJDMWZRaHFFN1NwMHNVbV9yWUN3d0NNazZzR0IyNmFXcHVfeU9Vc29Fc0dfX0JsVkNxR3d5dnJuazdMR2xfUFZ2aEUwLU56TWxjZFZiXw?oc=5",
         "source": "Google News",
         "published_at_utc": "2026-03-17T17:13:21.000Z"
-      },
-      {
-        "title": "Kenya Stops Recruitment Of Its Citizens For Ukraine War After Deal With Russia - Arise News",
-        "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNeUZWUEhvT1hSb0VpZmtmZm44WE1hMjEwcUZnZ3NORmR0b1p0TjIzYmF1c0dwa1p0SExaQXNwUDNkbTUzUGw3blBaR0daWXc5eW1iWk9CSkJQVzV1RHlEbV9PbGJLcXAwX1NfT21IdlRIeEF2M09nWjNRbXFfYTM3RkFPQVZRU3RGdmk0Z3MtNGd0endoeEZWNV8yUFpkUGM1Vnc?oc=5",
-        "source": "Google News",
-        "published_at_utc": "2026-03-17T17:08:55.000Z"
-      },
-      {
-        "title": "Ukraine strings nets over cities as killer drones turn streets into war zones - NPR",
-        "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPWVNrRGkwSDdPZDZrczQtTWprMTctWDM2Q09pWHh0TklHMlppSVRzOWJQcUhIQ19sQlVZeGp3VDZDbVFUZE9xdm44WnNmQnN6cnp3TkRGX0xaUTk5T1RkT29BenpRZ1NCX2pEYVdSVjF0ajJRdDR3cURuWFdaZ2ljUA?oc=5",
-        "source": "Google News",
-        "published_at_utc": "2026-03-17T17:06:44.000Z"
       }
     ]
   }
