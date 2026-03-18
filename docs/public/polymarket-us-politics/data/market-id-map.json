@@ -1,8 +1,8 @@
 {
-  "updated_at_utc": "2026-03-18T20:43:49.558Z",
+  "updated_at_utc": "2026-03-18T21:42:52.827Z",
   "total_questions": 66,
-  "mapped_questions": 45,
-  "unmapped_questions": 21,
+  "mapped_questions": 43,
+  "unmapped_questions": 23,
   "entries": [
     {
       "question": "Will LeBron James win the 2028 US Presidential Election?",
@@ -158,15 +158,6 @@
       "closed": false
     },
     {
-      "question": "Fed decision — March",
-      "market_id": "1287863",
-      "market_slug": "will-no-one-dissent-the-march-fed-decision",
-      "market_question": "Will no one dissent the March Fed decision?",
-      "score": 0.489,
-      "active": true,
-      "closed": false
-    },
-    {
       "question": "US tariff rate on China — March 31",
       "market_id": "1403726",
       "market_slug": "will-the-us-tariff-rate-on-china-be-35-or-greater-on-march-31",
@@ -253,15 +244,6 @@
       "market_slug": "republican-trifecta-with-supermajority-in-the-senate",
       "market_question": "Republicans win Trifecta with Senate Supermajority in midterms?",
       "score": 1,
-      "active": true,
-      "closed": false
-    },
-    {
-      "question": "Texas Dem Senate Primary",
-      "market_id": "1420486",
-      "market_slug": "larger-margin-of-victory-in-dem-or-gop-texas-senate-primary",
-      "market_question": "Larger margin of victory in Dem or GOP Texas Senate Primary?",
-      "score": 0.62,
       "active": true,
       "closed": false
     },
@@ -420,10 +402,12 @@
     "Trump deportations in 2025",
     "Trump Truth Social posts Feb 20–27",
     "Kevin Warsh formally nominated by March 31?",
+    "Fed decision — March",
     "Fed decision — April",
     "Revenue from tariffs 2025",
     "House Popular Vote Margin",
     "Government shutdown & House winner",
+    "Texas Dem Senate Primary",
     "DHS Shutdown Duration",
     "DHS full-year funding by Feb 28?",
     "Film/TV Expensing",
