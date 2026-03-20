@@ -1,8 +1,8 @@
 {
-  "updated_at_utc": "2026-03-19T23:40:23.229Z",
+  "updated_at_utc": "2026-03-20T00:53:21.555Z",
   "total_questions": 66,
-  "mapped_questions": 43,
-  "unmapped_questions": 23,
+  "mapped_questions": 44,
+  "unmapped_questions": 22,
   "entries": [
     {
       "question": "Will LeBron James win the 2028 US Presidential Election?",
@@ -154,6 +154,15 @@
       "market_slug": "jerome-powell-out-as-fed-chair-by-may-14-2026",
       "market_question": "Jerome Powell out as Fed Chair by May 14, 2026?",
       "score": 0.691,
+      "active": true,
+      "closed": false
+    },
+    {
+      "question": "Fed decision — April",
+      "market_id": "1655328",
+      "market_slug": "will-no-one-dissent-the-april-fed-decision",
+      "market_question": "Will no one dissent the April Fed decision?",
+      "score": 0.489,
       "active": true,
       "closed": false
     },
@@ -403,7 +412,6 @@
     "Trump Truth Social posts Feb 20–27",
     "Kevin Warsh formally nominated by March 31?",
     "Fed decision — March",
-    "Fed decision — April",
     "Revenue from tariffs 2025",
     "House Popular Vote Margin",
     "Government shutdown & House winner",
