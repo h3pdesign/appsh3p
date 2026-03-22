@@ -1,5 +1,5 @@
 {
-  "updated_at_utc": "2026-03-22T23:27:07.961Z",
+  "updated_at_utc": "2026-03-22T23:54:33.191Z",
   "conflicts": {
     "iran_2026": [
       {
@@ -7,6 +7,12 @@
         "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxNQm5sNXlIUW9KV01vU3ZCTmh5RWtMU2NtSWVtQ1VRT2dZeDN3LXBHdGRrNWQ4OVlhZW5QZlc1YmJZaTRUSWRidEZDeXk3ZHpIZUNPUC1KMGRXOVEwbVRMbjdpbWVkY1hIZW9rNEMyVy1fLU44U1ZHRUs2Z1U3MVBUeUIwa0dIRFlYdnhDQWpPa0tGdzlnTGVyaEk0LVRzSjdCTGxBTjBiN01XRTFRQ1pmczhFVzQweUlYd3BpZGdpZWpqeFBaQjREb3pn?oc=5",
         "source": "Google News",
         "published_at_utc": "2026-03-22T22:53:51.000Z"
+      },
+      {
+        "title": "Iran war live: Iran to close Hormuz entirely if US targets power plants - Middle East Eye",
+        "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE1FeXpPbkl0TndOTmdVREw1ZUF0MTE1MDd3SXFQWHpWbTBBWEtVWVhlZmZZX2pJZ3BDNERQay1pWW1jbElKNUNEVUFfTVdkTXdaZjB2eUlLblpySXdWN2JLOXUwWWlBRjI2azN0V1V0N1ZZRjg?oc=5",
+        "source": "Google News",
+        "published_at_utc": "2026-03-22T22:24:24.000Z"
       },
       {
         "title": "Who’s left running Iran? - Al Jazeera",
@@ -33,16 +39,16 @@
         "published_at_utc": "2026-03-22T22:06:00.000Z"
       },
       {
-        "title": "Live Updates: Lebanon's Aoun claims IDF preparing for ground invasion, Trump threatens Iran's power plant - The Jerusalem Post",
-        "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTFBxQlZJNlZWNXI1Q1ZVMmVMaHFKc25vekYtQmtqZl81cjk2SDRQQmRuTUxyU2RnZ3JfSkhxMzhZYkdiSWJEX2hDbGdxYzdDTEdJZndZakdJSENmQXdmajlDNWY2ekdoajFYQy1LZW5wV3dDQ09nbTIxaG9lZzVjLVk?oc=5",
-        "source": "Google News",
-        "published_at_utc": "2026-03-22T22:00:05.000Z"
-      },
-      {
         "title": "Russia’s Big Reaction To Iran’s Strike On Israel Nuclear Town; ‘SUCH CONSEQUENCES ARE...’ - The Times of India",
         "url": "https://news.google.com/rss/articles/CBMi9gFBVV95cUxQX05iWjY2Wm9VYzJNbmlvODZlbjhtdzNhbXRXdjBvUkJ6OHdNQXQwWUU5V2Y5SnByNENkU2JQeklMcE11N0JXcHh6MGwtOUJFa3VlVmU3YTd6NlBVd2hFOUxEZllRMThDV05Ra3RFUHdDcGFOTmczajlDNUNselZYMUV3bjhmVVpYbGRpZFZIOTkwUjRlNWdrVC0xazBsUHE4Zi1RYjQ4ZExYclhhQnZOUnJPMHcwQkE1TThaUlEtbmFZb0o2cEhfNGlPVUZFS19HbkJUVXR0aHRwTkpaaHVWakVEWTNIcGV1XzFHWkE4eW5QUHlJVGfSAfsBQVVfeXFMTWQ1SFNqQkFHckNxeFVKRWF6MnZGZ3lUXzBmS1htaEdxM0FoTTdRRUxnbmdOb3Q3emc4MG1aODBDSUN1Y3ZvelZWR0E3Z2lpX3VZSVFObjlqQXlNYVRRWnJSUldTQ28zclZHaC1YS2dBcWl6VVp2Zm1qZVNIT3FEaEUwVVFkRXpqai13SHp0dnBjbXFtRGJfQkhHdWZVSFVLelVoaGVKS2lpWm9yU1RaUmtUSDBZZFFvSi0xaVQ4blZSejIzV1RBWmIzUkdkRkJjcE5kMjh1MEM2OGk3NXZvVmhsZzZnRExfVG1wbWNuUFlSQ0ZXdEJ5aS1JeTA?oc=5",
         "source": "Google News",
         "published_at_utc": "2026-03-22T21:58:29.000Z"
+      },
+      {
+        "title": "'WAR WILL END ONLY IF...': Iran Demands 'TRUMP'S SURRENDER'; Vows Fierce Missile Strikes | Watch - The Times of India",
+        "url": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxPZEVPMEtOLUg1Mk9Ma3VmaE54cmlOU004ZTNMZzVZbU9FUXJ2Z2Y3NVJwdnlKWWtfU3Y0QlJRSm5PN29uU0ItblJ6YTBHa19fQ2RiTy1JUkVIb3hWQmNoYTZJaGRtSUJtZEgwSXdNaEJVNFdsRXoyZ180ZFpDNFhtLWp1TlZmV3F2OHZrOVZNeDhrWGpYUVpzUUJnZXBrRjQxMXZfdWI5Sm5PNWwxbkw5RDliWS1DcDdhZGpEWTFOZ3NNYnFjUkxVekVPTlVTTmp3Z2ZkWi1OclhTYjRPeWYzeEpCZUlkYUt6S0lpZEphS0hWSWlia1Y5YdIB_gFBVV95cUxQcVByMUxqTVpoNlBvTUZLa1o3b08zS2NHbHZSRDB3aXpNdkNqSG1uOXE4NEV5ZmtLOVpDOU13NFp2ZVRyY1kwTEkyNFlzRkNlWjFINHBJekJ4NVMtVHlaWkZVc21RazFLRHNBWUkxWC1Va0twanRNVTNxdGd1NnZ3dWN5RHNiY1dwSHpSOGhpd0FjWGpnbk5ueHVJMm1uaFRoaW9pS1FBSHFmeU5VQ19yblZBMktwMWJGYk53MnlKeWlWbmIyekhmMm5oQXY4MnFqa0JQcVBkUWdzb2gxbVdzZmMwZ0tKYmN6dlBiZHFSRFFZWF9oTnY1bmZxd2cxQQ?oc=5",
+        "source": "Google News",
+        "published_at_utc": "2026-03-22T21:54:29.000Z"
       },
       {
         "title": "Iran says will hit region’s energy sites if US, Israel target power plants - Al Jazeera",
@@ -61,6 +67,12 @@
         "url": "https://news.google.com/rss/articles/CBMioAJBVV95cUxPNjBmRHdESXk1NFU2NmU2RFlpbF9FQVQ1a3Frdy1qSFp6bHBabE4wRXU2ZlNnNVlOYTBHYktHSkZZenNQa25vOFUwZFNycVlMUEVqZVJqTDRXal85d1cteG4zRzhOTldIbXNObnJNR1N2aDdVSVU1SVBtcmtyLWs2N3hYd3JqTVFqbThIZkZKbkNzQ09mZ18zWlozNGowaXNfWV9xWmZUNXVaWm5KX1pEUlZwNU9HRk1fNUxWMFZFUTNTZEZ1bU9kV3g3UXZWeDEtcmpNSzN6RXREZTJBa292M2RoUGhNeDRlR2JnRnlYQ0g0TlB2TVRXSGNhTmVMa2w4dGEyWW8wck16N0tUa2wwQS10Qm1lTVVIWlg4TVhuNFY?oc=5",
         "source": "Google News",
         "published_at_utc": "2026-03-22T21:32:00.000Z"
+      },
+      {
+        "title": "US-Iran standoff escalates over Hormuz - MSN",
+        "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxQVlo2WFlPY1JXbjRfXzVzek4tNERvazF0ZkJ1QS1rZ2g0bmgwdHZGM0lpd0dyaFBxRGJucmw2S3hlVzZXMW1uV0JONUhveW9LOVFHUUhEYUM2LW4xZ21XdjJzYk05a0pYdDZZYm5fVF9HRU04T1ItR2lwVjJKdjk3YTlFMkItcjdxSTJvY0xzYnlBSGpjN0hnb3BVeVN2aldXRWthc3BmQUlFakZJM1hLRG9KX0ppOWZFNWh4cHo4X1FuT0lPb0NVa1ZhY0tKTmZRczIyNkFlVQ?oc=5",
+        "source": "Google News",
+        "published_at_utc": "2026-03-22T21:16:03.000Z"
       },
       {
         "title": "Why did US and Israel attack Iran and how long could the war last? - BBC",
@@ -109,21 +121,15 @@
         "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNWHRtejNYMUtJd2RUdldfeVBKckQ5LS1GQWJkYW14QzRpOE5ZZGRBMzJjRU9naHc5azN6ajJ4YlJ5eTY4eXpWV2VCM3VWRjhBal9VR0xJMmR2akwtVnJ2TTBiMmE3OU5LamJkN0ZHa3FNMnRlb0kyX0VQeDQ3aENoTGE0dGJqTFllc3NjZzdXcXYtOUkyNmZlQnFIWUdVVEpQb3VsWmZQWGt0U1N5MUdoSjB2b1prdk5U?oc=5",
         "source": "Google News",
         "published_at_utc": "2026-03-22T19:59:00.000Z"
-      },
-      {
-        "title": "Iran war live: Iran to close Hormuz entirely if US targets power plants - Middle East Eye",
-        "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE1FeXpPbkl0TndOTmdVREw1ZUF0MTE1MDd3SXFQWHpWbTBBWEtVWVhlZmZZX2pJZ3BDNERQay1pWW1jbElKNUNEVUFfTVdkTXdaZjB2eUlLblpySXdWN2JLOXUwWWlBRjI2azN0V1V0N1ZZRjg?oc=5",
-        "source": "Google News",
-        "published_at_utc": "2026-03-22T19:56:34.000Z"
-      },
-      {
-        "title": "Iran's attack on US-UK Diego Garcia base is not a turning point, but a warning - analysis - The Jerusalem Post",
-        "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE5jaF9aRy1iV0ZlNG5lVlFMMmpaWmkwTW5vcldheGtqQkpzdmpHZUp5WnYwWGU5azByaGhlT1dydEpGaXR5bjI0OEVlOHZGUi1lY3RvaW1GQkE2ZWdzbU13?oc=5",
-        "source": "Google News",
-        "published_at_utc": "2026-03-22T19:55:43.000Z"
       }
     ],
     "ukraine_2026": [
+      {
+        "title": "Ukraine, US teams conclude talks, new POW exchange possible, Zelenskiy says - sightmagazine.com.au",
+        "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxONHJCQnE4RTdWQlFMZzlPdlRMYllFLW1WMVpsTDZzaVNSR0QyWmJLWldrVld2MGtvUUFfVUZrQlZKWWM2b2ptZzg3ZnN1SWJuMW1VNDJ1VFcyNjhEb3FlVXRweTY3TXR5NDRJQmVVemR5VVNGb3NWWjhvRDZaT1NCc1QtQW50cU5yLVZHWGlvdFhCRUU2YXBvVmF4QWZjd2hoQ1d3YlFSWWRfLWs?oc=5",
+        "source": "Google News",
+        "published_at_utc": "2026-03-22T23:52:38.000Z"
+      },
       {
         "title": "Ukraine's gains in the south and Russia's advance in Donetsk: shifting frontline - 112.ua",
         "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPci1MdFk0VWNmdVFWdjM5Zk4zZzFUc0VnSkdUa3RFMVhRLXRTbUNkSFlZWVlmM2c1N2dNUFRxdWFZdUpBeGFGZEVHVGlON2hMNkZZVkY1VFVoX3M4aTdRcTVXaUdZOVlHUUp3dm9nMjVZQzE0aVV5UUtoWjl5X0NjREZ0YkMwNnAzNUE3UFBjZ29uaVM0N0E?oc=5",
@@ -137,12 +143,6 @@
         "published_at_utc": "2026-03-22T21:59:16.000Z"
       },
       {
-        "title": "Zelensky hopes US won’t shift focus from Ukraine amid Iran conflict - Free Malaysia Today",
-        "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxQYWxFc0VSWnk1OVFlMTk3aEtSbnJqeHpuNmd5cWN3YlFDZ1BmbXl0WW1ROGJGTkQxeTNrWDM3dlpHVVdEb2NvbnU4SkUyTWlOZGNnOTU1X21TcmNBVlBnLXJjOUpjbllGd284ZktzOGFOSy1ybmdMczNkQ19nYzBlcWQ4aHVGUUUtY2RlOEVFVVVxaElKZjl3MUtaekZIb0QyRFd3TjVYSkVhOENWeWJHeEVwNF9KSGFWeFktcXFRVF8ySkF2X0xHc0dB?oc=5",
-        "source": "Google News",
-        "published_at_utc": "2026-03-22T21:52:20.000Z"
-      },
-      {
         "title": "Russia says Ukraine peace talks in ‘situational pause’ amid Iran war - AOL.com",
         "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNd3A2RjE4SVdRZXRrakxxd2Z0VF9FRDY0SnBDSDMteFFFVW1HejgxYk5IMEQxS3dMX19oMllzejF4MzF5V0dKZ295Z2pRUEZaOFZfZTZEVFVYN2lZOXFVRVNKWlRFeU1zSzByaGhHN0FqZWJNZ3VCdXc3SF92cDJ1Vg?oc=5",
         "source": "Google News",
@@ -150,9 +150,15 @@
       },
       {
         "title": "Ukraine and US teams conclude talks; Zelensky says new prisoner swap possible - South China Morning Post",
-        "url": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxQdWxhTWNBRXQwSjh5bWRHQ2xGVmpKejhUMDJVOUJBTWhDaXdLX05nM0tSWDgxck8wbnFWVE9CZHRGMktGYV9tbko5VXdRUWhaZ1RVMjFSSXVZMkk3NVYyS3NMcTZTeFNOTWVMZlpvRUNkVUljTEJUUi01Y2NqLThUaWw1eXJTUkZpZUtUY2JLcTJEUU5JcG1VT3cxbkxaSUktbS1COTFlVEhwamotV2tJeTJFNWE0Sks5d3JUTEJSX3E2WnA4WlduN1VRRC1VQjRnMk9BZTNUY2pkdVktcVJtejJR0gHiAUFVX3lxTFB3eFBfWmdUNVNTUHZmRWdzXzA5RWw3Z09yTzluUktwS1lvQmR5MU14M1VsMEViRTMxVFAzWmYtVklpZGZBMTBVRDQzLVl0UHhxdzB1cXoyelhKMnNLR0xVeDQ2SEx6UTZBSlIyY25JX1FMd2lTYTM4ZllSaV82THF4LXlaNGxaTW9ZdC1xcEVScG5FVTZEX28zdHlkRlRoNUI5Q2J4RzFSa2k3eE1qRGNGTVRManFJNkNQbVYyaW5HRWxNNkVvQUVvUkF0SUN4SU9FLXJrVFN1QkkwMk5hTzJna1E?oc=5",
+        "url": "https://news.google.com/rss/articles/CBMiigJBVV95cUxQNG1mSFNPLUpUOU0zeUFnOGtlb0pmN3V3ZFZsdnV5cU1RN3BfdXpBN3hZbldZSnF4Vy1KTVhYaWF6WUlETnhmcUZCTDhhVkZMVHFIazlfY3haX2QydHlYUkViUTZ1anVCNExqSlNKQTN4RVUyZEFQTnJPMzhlUTFnWUpfeUkxcEdhbVFiOHZTX085MUFOT29zVWplZzNHZ0ZRTEdYdkZNQmdkWFItRGs5TkNyQ2c1ZUR3Y1dfclIzeGFteFgwOGpmS3BtVW9QQjlDMnZDaE1EUlJLY1Awamo2MWhBMzBDRnhzMHJtRTRuMGpYUVRNU3hEUXgwOUNqeUJsT1Z6SUJwdzlDdw?oc=5",
         "source": "Google News",
         "published_at_utc": "2026-03-22T21:11:33.000Z"
+      },
+      {
+        "title": "Ukraine reports heavy Russian losses, expands role - MSN",
+        "url": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxNQ3QtWHU4eGpRdFFzNmFpMEc4VVJZc0lEa0gzeWVRUWo4WXFqZ0k4NndSQzhPUkdHdVR6eUstSnZpZEtkLTFnU1dWTU15UjFnYUpSVWZtVU10RG9sVVhNT29TU21haHRacFlTWmR4OHJtUG1lZ1g0RGZWUERCZFNQOEJBSGJvN0MzRUtSZGZYM2RvR0F3TjdIMnlVX1NKOF9VWGlKeGdoUjM3VnZPN1VoUlRaT2dOM3RZcnJacTRiYVFHZllZNG5IMHpyWUlKTl9UQWVJaloyRktRcl9Qd0x1VzRIRTZMQQ?oc=5",
+        "source": "Google News",
+        "published_at_utc": "2026-03-22T20:54:17.000Z"
       },
       {
         "title": "Russia sees unprecedented surge in frontline losses - MSN",
@@ -209,6 +215,12 @@
         "published_at_utc": "2026-03-22T17:45:23.000Z"
       },
       {
+        "title": "Ukraine’s Zelenskyy urges allies to pressure Russia ahead of US talks - MSN",
+        "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNQW9VUFh2SU9NT3BMdnFxdjZvWTlncnhnWkFtMXQ3SlZfamJhVm9MTHQ0VlhOcnpwaURBcHRGVXo5SzVLVmdsNE9PRjdHTE4yS0NJQUduQmdYelloTzFpWDFJOGpsdGotSEIyUUZoaFh4ZUZJcE1fM2QtTHZHckx1cEQxdFZ3dm9PaW9qWDdXZEd5TE5nb0xCc0dnYXVET29xa3lyWlJ6SG1DM29sZ3JPZ3RYTGZnTW9TTVE?oc=5",
+        "source": "Google News",
+        "published_at_utc": "2026-03-22T17:42:52.000Z"
+      },
+      {
         "title": "Russian forces begin offensive in Ukraine as Zelensky worries about impact of Iran conflict - RNZ",
         "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxOWGFmbUEwaDU4ek5ZZ3pmUmF1Wlp1OVM2VHhMdDQ2c0M3WXZxV0tTRzNIR2cwX3BPYjdmaEp2bHhtZ1hWNFliOFhVdmo2ZDJxUWFBOHNtY3phNGs1cGc5NEpHZkpVcVplcVBJTk8yR0hjaVVlT2tHNGhRcmdPcWpfVVVUb1VLWkpKeWtxUG5ial9fY29ROENqazd5anpHMkpTMlI2UHFiT05fV3RJR2JiNkpCeWd5aWxOVXpnQUxuVHFZQ2dBc3daVnhzVQ?oc=5",
         "source": "Google News",
@@ -231,18 +243,6 @@
         "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQZnlnWllnTVdMU1FucXEyU0xZeUV1QlFuM3VnTXRnaHp1RE12R2drazluZkpMQlp0WmdSdW1WS1ZkR2JGbmhqQnNlYWxJaE5aM3pvbEtqd283WVA4TFBfSUJuZFBPX3Iwbm1fU0xGcFJuemtHcGs2ajc0X3ZHMklDckNsS282MWJ1eWRJVUJNSUN6OWRyM0FwcWE4elk5NVF2alNETWd1TFlCdw?oc=5",
         "source": "Google News",
         "published_at_utc": "2026-03-22T17:09:06.000Z"
-      },
-      {
-        "title": "Ukraine war latest: Ukraine destroys Russian Buk air defenses in flurry of strikes, military says - The Kyiv Independent",
-        "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPQ0QwekhTc2l6RVo1THJYdFliLV9VT2RGazN5V0VUMGVZengzZVZPWGdXNVZWUnMyT1pQajZhemdqa0ZFSXh6ay1IaFpJck5sVUROZnduR2ZBZ0tZUFNEQy1QakxZZk5DdWFVWGxDN2FCSmUzdEthTmgybElLYWRDSUV3UHRxOFd3aDNpYTJmTUx3a1hPcmNnM2JqUEpYRUJDTHJmMHdDMkk4UlVzY2gwWmZvLW95UW90dmVNdTNYMi0yZw?oc=5",
-        "source": "Google News",
-        "published_at_utc": "2026-03-22T17:08:37.000Z"
-      },
-      {
-        "title": "Ukraine says Russian attacks kill four people, leave thousands without power - Business Day",
-        "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQNFBxVTZEbWlsNVBoZVVSaVlSMTF3VDhKa1lQcFFkWnZxZGlUcG5uTGNkVGpsMS1HMXVobTZqM2RJcDFaRU9RRVRkRThQdU45d2xCZEk4Zk1kdUZiNDNSNWt0OENSYmxOeElaSWR1R1dXVlBHaXhPTlY1Nlo1X1Nld296cXJCZWZDV2ZHQm1KTDRQSUVQcE1sbTJ4RHJ4SUV3c0RISkRMRTNFZUFhcGFJV0t6cE1pYzZod1FBZ0ViN08?oc=5",
-        "source": "Google News",
-        "published_at_utc": "2026-03-22T17:07:28.000Z"
       }
     ]
   }
