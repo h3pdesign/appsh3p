@@ -2,8 +2,7 @@ name: Update Social Tracker Metrics
 
 on:
   schedule:
-    - cron: '24 * * * *'
-    - cron: '54 * * * *'
+    - cron: '24 0,8,16 * * *'
   workflow_dispatch:
 
 permissions:

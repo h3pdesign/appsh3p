@@ -2,7 +2,7 @@ name: Stale Data Watchdog
 
 on:
   schedule:
-    - cron: '52 * * * *'
+    - cron: '52 0,8,16 * * *'
   workflow_dispatch:
 
 permissions:
