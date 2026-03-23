@@ -1,5 +1,5 @@
 {
-  "updated_at_utc": "2026-03-23T07:11:40.475Z",
+  "updated_at_utc": "2026-03-23T07:43:11.845Z",
   "conflicts": {
     "iran_2026": [
       {
@@ -21,6 +21,12 @@
         "published_at_utc": "2026-03-23T07:00:17.000Z"
       },
       {
+        "title": "Live Updates: US-Israeli war against Iran rages on in third week - The Jerusalem Post",
+        "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTFBRcmFpYzN1RnowZ2t5TXFRNlFZNld2YmprZGpxMnFNaGVnM1VTUVc4NF9kREdrQzdrUERUbWIyYm9BR2ZRWjRWbzYyZkptYlZLUVJYaGMzQk5jRDhDdGtUd2Vxd1N2RWRScXhRZ3pGMVRTVThvTTRreDBIRzRZU0E?oc=5",
+        "source": "Google News",
+        "published_at_utc": "2026-03-23T07:00:05.000Z"
+      },
+      {
         "title": "Live Updates: Cluster bomb fragment hits central Israel, seven IDF soldiers injured in northern Israel, Lebanon - The Jerusalem Post",
         "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTFBxQlZJNlZWNXI1Q1ZVMmVMaHFKc25vekYtQmtqZl81cjk2SDRQQmRuTUxyU2RnZ3JfSkhxMzhZYkdiSWJEX2hDbGdxYzdDTEdJZndZakdJSENmQXdmajlDNWY2ekdoajFYQy1LZW5wV3dDQ09nbTIxaG9lZzVjLVk?oc=5",
         "source": "Google News",
@@ -37,12 +43,6 @@
         "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNU0psYW1FMUNGV2I5YXdERWxibmtaSm5rU29xQ0p3UjFUY015M0tyOWI0ZjlFS1hOVFVkdGI2ZS1WYjVfZ2k4U0d3TkZoMTJEaTFkZUNmanJXR0RpcGpXeGxpZm9rakR0aVB4aEF1N0JaUWxYaktid1ZJR2hObDZkRlRxT3drRVJxcEE1YmdJX1E4MDNwWWZVS1JOdDdjdTEzTHlmN19n?oc=5",
         "source": "Google News",
         "published_at_utc": "2026-03-23T06:38:01.000Z"
-      },
-      {
-        "title": "All About Hezbollah's Radwan Force, Unit Trained By Iran And North Korea - NDTV",
-        "url": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxNOURSLUxCNEZ5M0xhWWM3dlprSjdoUnh3eXZ6RkFkVF80c1ZEX2VrUFQ3ZlRuenoyaGhkd0pvWHk2bjlKMEk3X1h4UlRMN1JyU00ycW4wZVBoSXlCbUY5OXZ6TmVxWXV5LUF2U3lrY2NQQ2hfMC1JT09fcTVsU2xueXBnczJqaU10a0FlaURhdzE0djdURlQ1bDNvUGE5WlI3cy1RNzIxQ1hUaDhIdjVVT19YLW5oeXNFdkJhZU9GN0pjYm4tcTRSazhyVUY4VlVZVUN3N2NOUkhuUUxnTnJwV2xDZVjSAewBQVVfeXFMTllDVmlKUXJiREhGOE1jLWVLUUxJUFBSUWUxUWxCY19xV3FUSmlVc3YwZ3pTcE4tVktLRnI5dngzNEhkRUxPcS1ITmZzeGN2ME50VWczT3IwVnQxbVQ3WWpJc2R2cEItRUdjSFlsNzVWQUJqY08yM3BjVmxXVDFzV3k2ZDFibFdtT05vMWlCU2U3QWswX0hzTGVGemZKQm5wUXJaLTB4ZThfclZsczBjYUYxeElIcU1RY2VNc3dJdHh5dFVCZkNCdGRlYTcwZDJxUENPWDNhY3RybWVMY1FsOXRpWmJKQU1NbFE4dVg?oc=5",
-        "source": "Google News",
-        "published_at_utc": "2026-03-23T06:34:47.000Z"
       },
       {
         "title": "Iran-Israel conflict represents a test of whether international environmental law in wartime has any real force - Down To Earth",
@@ -93,10 +93,10 @@
         "published_at_utc": "2026-03-23T05:44:15.000Z"
       },
       {
-        "title": "Is Iran charging $2 million for ships to pass through Strait of Hormuz? - Firstpost",
-        "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxOTGlhWHc0UW9VUDhKN1BBUkN6M3R4T0hnLXMwNnNXOWhnMzZ4NXI1ZmRJSEIyTnRKWFhHVWNISWxLZHZuRHpyUGxNYmQ4YXBnVmtYVkJoWGlabUNZRi1WNWtnbmhfa2ZZT2Z1RFhkVVRReW9CdkhLNU12WFd2bGFzb20wdDFKQTFISldNbGtidUt3RU1OTTVBQjl4MURFdHRtbUhEYWkwWklqdk5qTTRKS1gyTXZpMnBwRlJQZXU5cWPSAcYBQVVfeXFMUEppcUZKNkVmRGluOXdIX1l1TzRPTHlYLTFYWEpBZlg2V0QxZS1Jb0lSZFFWQXBCMUFkSnlDNVdQdHJyRjNnbnQ5blNUWmpYMlBtTG0zWWZlX0tJZmYyRjlDU2JCYjBvdXBtQzJTT0RucFdiMndJMGhKbHdEMmpYbl9tS3g0UGhvSTJiRDhVOWlKTDFucHZlTXRoMFRaOW50Z0wyeUZxd0VRTlFsWjNvZ3huNDdoSXA4TjU3dEU1SjIzN2RUUjBR?oc=5",
+        "title": "Iran war live: Iran to close Hormuz entirely if US targets power plants - Middle East Eye",
+        "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE1FeXpPbkl0TndOTmdVREw1ZUF0MTE1MDd3SXFQWHpWbTBBWEtVWVhlZmZZX2pJZ3BDNERQay1pWW1jbElKNUNEVUFfTVdkTXdaZjB2eUlLblpySXdWN2JLOXUwWWlBRjI2azN0V1V0N1ZZRjg?oc=5",
         "source": "Google News",
-        "published_at_utc": "2026-03-23T05:22:37.000Z"
+        "published_at_utc": "2026-03-23T05:33:11.000Z"
       },
       {
         "title": "Israel launches new wave of attacks on Tehran and Iran threatens to start hitting Gulf power plants - The Independent",
@@ -125,6 +125,48 @@
     ],
     "ukraine_2026": [
       {
+        "title": "Ukraine War, Day 1,489: Russia Launches Offensive in East - EA WorldView",
+        "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPb1FIbldEU1U0bkRiS2JUM3lzYmk0cUJFWFN3aC03MS11X2dObGdoVS1qVFVhc1UwQmFWSHBNb0xqZDZBUjZhQWZjdmJVMGJ0Tnh6VFZITzkxZGlLZHF2YUFLOXhxREljNjVWWFplM1k5cWlVWWhLOUN2cjFQYXBFSlhxNmE?oc=5",
+        "source": "Google News",
+        "published_at_utc": "2026-03-23T07:41:30.000Z"
+      },
+      {
+        "title": "Ukraine reveals new plan to revolutionize the frontline: “We are replacing 30% of soldiers” - Dagens.com",
+        "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQSklMYThha0VxZEFwaXpBQS12STZFZHJkXzNBaXMxU19uZ2dLMjlmUXJjc2tINE1RUnlmemJYd0xYcUJBMC1YdXY5aDVnVGFTeEJGdjBfT0VzNURSNGtDYW5vOW9FajZ3eGJqUzhZbGhsTl82Ql9rQTNMTERGVnBBUGlwcTV3LWNNeGZmalRWRHFsejVYQzk2MUtxVXdMdWtJUW0yTnAyYmhnM2J0TnRkQS1fT1U?oc=5",
+        "source": "Google News",
+        "published_at_utc": "2026-03-23T07:32:28.000Z"
+      },
+      {
+        "title": "Ukraine brings war back to Russia — and Russians begin to feel it - The Kyiv Independent",
+        "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQTDNyaFZjRDJwa1FTbWM3SjN3enNOc0xNZGlfZnVxMHhWWXBxaTEyUExXdnhUdDA5RWZ3TXFtVVp2OTVhQUdOLUIyeWphb3hiSkVYRFFxNEMyUmdGWk9rMzlpR18yNnVqZnJsNGdWR055NlJrRTNtcnU1VzJ3TjA5V3NmaDl3dVkxOWU0LV9zdUVqcEN2cUU4?oc=5",
+        "source": "Google News",
+        "published_at_utc": "2026-03-23T07:30:44.000Z"
+      },
+      {
+        "title": "1489 Days of russia-Ukraine War – russian Casualties in Ukraine - Defense Express",
+        "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOR2FEdnhoU1YyOEdRbjVILURIbHRNT0RPdzZLWTRUZzB1cTMwT1JqdU52X240cm05RzZYcF9SdzdxWUJlVTBHc2ZGVVFYVWM0eEpoVzZMUTVXQlI3ZzItSm95NkNmb2o3dlZqWm9oMzRyZlVoY2N0OWY3R3dqVVptNlNYRDhkM2FrVHVMTS1ibFhkUnljQ1Y3QlRfbEFuRVhhTm1VeU9R?oc=5",
+        "source": "Google News",
+        "published_at_utc": "2026-03-23T07:26:35.000Z"
+      },
+      {
+        "title": "Global Economy Under ‘Major Threat’ From Strait of Hormuz Crisis: IEA Chief - Kyiv Post",
+        "url": "https://news.google.com/rss/articles/CBMiS0FVX3lxTFBmeFU0WnZteGhxLWxENlRYVmxaMUdYY0F2aG5lOHlWcldtMHVqdUdTU1N2UGQ1ZzN3djdHNnRMajF4b0t2UnF6c3ltTQ?oc=5",
+        "source": "Google News",
+        "published_at_utc": "2026-03-23T07:17:05.000Z"
+      },
+      {
+        "title": "Iran war energy crunch worse than 1970s oil crises and Ukraine war combined, says IEA chief as Trump’s deadline closes in - The Indian Express",
+        "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQM2NhXzhJRXA0ZXlVS1prZWwyMHhHTktHYUFDdFJNQXNTRmhKRWs3NFNyazloZUlVRExlLTlJOEMzdjRIRk9fX3V6dUJUWW9tdHpHUXY4X2t4eW00d0JqS293eGR2NG5BMmxGbEhLdG5EejBDUm9JWmlzMTNsNW0waFlMQ0VzYjJXeUhDd3l4WEtJYVNBekdDbFpXS0FtX1daZDhJLUNTeWFFSzNSUlpSTWlFYk56UXZNTDctOVlfNWwwenRS0gHLAUFVX3lxTE55aTBGbzlMOVNJWGZqQnU5VkRPLVNJLWFCUjhYUlh1QUMzQl9kSG9yZEFaeVk5ZU80ei1aOXVFY0d2YkUwU2lrX2RwZVJ1THY2dV81MlZyVElWQXA4NTRrUzU0R2tnUkpDS212akxOX0ZuVGpVVXFiS1hveS0tSDRYbEF0eFVzYzdVQzNVVjY0X0JEM010UlR4dGJSQmxZd0lrRTVDTVhpaldzQ2prSV9EMzUxUGJGU0RHQ3pLZUVPUmttZlotZEJHVUpz?oc=5",
+        "source": "Google News",
+        "published_at_utc": "2026-03-23T07:10:34.000Z"
+      },
+      {
+        "title": "Media: Europe warns Trump’s Iran war could undermine support for Ukraine - Caliber.Az",
+        "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNZjRmSnpuQ1IySW5FMzlhUlQwVzVpeW8yYklpVUtkNzJKa0k1U1JOLTRYZENjejhreXF2X0JxMWNkS3M5SmZKYmR1QjcyWTVNZGg1QTZhRjhUNG8zdkVhUUhLQTBvRFZzbVlnT0s0SFF0Q1VxSkVyYUhWNEZ4b0tNQTUycFJCUEEzNG1SdGpLSjB5Q3lZQUI5MEZUalJJNkk?oc=5",
+        "source": "Google News",
+        "published_at_utc": "2026-03-23T07:04:30.000Z"
+      },
+      {
         "title": "Volunteer US and UK fighters in Ukraine face hidden health crises, new study suggests - Medical Xpress",
         "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQVnFWVGx1NGlPcE5USHdJRklUSmFyczlkZ1NHRlZpTWo2M2FVUVVBZ1RLcGZDdDVCVlBEXzYzV09pcFVNN0ZyRG5vd1pCZ3NGRGlwNjYtS2xHWnB4TTlMTWZ4Q25qeDRJeWhwSHZVTV9LTGFhUl9OOXR3RjNqUkw2MWlVZkVrNHM?oc=5",
         "source": "Google News",
@@ -135,12 +177,6 @@
         "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPZGpoWEk1UVd2cUw2ZzBCOHE4VTNJZm5yeVNGTGlmNXVmV2lERVM2NmZBbmpxaVJreFlJYUFiS09fQkFHX0pCQ2J2NHJTRFFFbHNJc0dWcGtHTTdHeExEMnpMTGhhajR0Q3lfVXM3dzIzWGJjZG1DUWVZTFl6U3hRS252dllGUFJCb0REVWduM1ZFZjRRWHJ0ZEVWX1U?oc=5",
         "source": "Google News",
         "published_at_utc": "2026-03-23T06:38:25.000Z"
-      },
-      {
-        "title": "I drove 1,300 miles to Ukraine's food capital – here's what it's like in 2026 - Metro.co.uk",
-        "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxNVjAtYmlyYml1M3NvVm5QcUhFZ0hwQWwzSU1TWWhKRzlyLVlUYXAxVEpNeUUtZUVMZ1FMQzgySjRNeTRaMnI3NWdMUGxhdzRVQUNrd3E3QmFCRjdrQ0xBamIyTW8zVmVuQnc1N21zY1U5bUtLUUk4WUhoYjBvYnRGSWhVR3laTkk1NDBTSXh6dEExc0oy0gGaAUFVX3lxTE9HRHFiYV9tMllDZklsSE5TemRyMHFvMFp5MHZlNUJjT1hGZnlBWWZMZnlxVFpUMGFteFZnbGExSjlEWkRfMlUtaDlsWDc0U2JOb2NhcncxOUtfbFRmV2tzM3VzNjFqNUdhb0w1S0lYTU40Y0dUekN4UTh1djBvT1A3dWdtRjZtajRPQ3FXSjFZSHJ4eW5aZHJ6blE?oc=5",
-        "source": "Google News",
-        "published_at_utc": "2026-03-23T06:30:00.000Z"
       },
       {
         "title": "IEA Warns Middle East Crisis Exceeds 1970s Oil Shocks, Ukraine Gas Disruption Combined - NDTV Profit",
@@ -179,6 +215,12 @@
         "published_at_utc": "2026-03-23T05:46:27.000Z"
       },
       {
+        "title": "Sean Penn Receives Honorary Oscars Statuette Made of War-Damaged Train Metal from Ukraine - AOL.com",
+        "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE5QZmNvb083T3JiRVVCR1BsQ1VPQkMyb1pFMEFDZ04zWXBhZ1JfVW1na01QYXFOblgwUVVIbVpURkU3MWQzVTdwZjhJUDFOT0RhSVdKNFZrZkRVLUZsV0VFNEpWN3VNUVBSa1pkblA3Nk5TXzAyNnBjNA?oc=5",
+        "source": "Google News",
+        "published_at_utc": "2026-03-23T05:46:26.000Z"
+      },
+      {
         "title": "Ukraine live: Putin’s forces suffer deadliest day of year, says Kyiv - MSN",
         "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOZFIwMHVGNHhtaUlSeVlNMEVLYUJfSThWOGROLTh5VXY3SDllSDNnMHRoN1hhRzJxQ1REaGFiLXh0aGoxdTNHM2NIdlAtaVEyb2ExalhJdGpHN3AwSElhajU1ZFFQLTROZjI0U092eERweXJzRXlmLU14NkVwaEVIUkx2aDFmNm5xTGNGNzJaZ1EyQVJ6Tjh0NG5lWHVnRXhLbDdzSFJBaXU1bGdSanRudXBnSQ?oc=5",
         "source": "Google News",
@@ -191,58 +233,16 @@
         "published_at_utc": "2026-03-23T05:30:00.000Z"
       },
       {
+        "title": "Russia says Ukraine peace talks in ‘situational pause’ amid Iran war - AOL.com",
+        "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNd3A2RjE4SVdRZXRrakxxd2Z0VF9FRDY0SnBDSDMteFFFVW1HejgxYk5IMEQxS3dMX19oMllzejF4MzF5V0dKZ295Z2pRUEZaOFZfZTZEVFVYN2lZOXFVRVNKWlRFeU1zSzByaGhHN0FqZWJNZ3VCdXc3SF92cDJ1Vg?oc=5",
+        "source": "Google News",
+        "published_at_utc": "2026-03-23T05:28:57.000Z"
+      },
+      {
         "title": "Iran war energy crisis equal to 70s twin oil shocks and fallout from Ukraine war, says IEA chief - The Guardian",
         "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPbmVoSlVaMGxfUVVEb0tsN0VxZG5BZmF2c0lWVDF0cThqU1ZHYzBLSlQ4MVhHLTc5bGM1TVVxb3FPY2dLNGE0eWRjX1VWS2R2TWJYRTNudU1jVVJNVXF4ZDZLd1pCVkZPUGZnV2sxNHJ4YWdnWlRVNmFMMkxFZW9ULXhSNnhyOVh5eXZaYnNMRzVoRUhxa0RxRlFKYTFhUzN2UUJJ?oc=5",
         "source": "Google News",
         "published_at_utc": "2026-03-23T05:04:00.000Z"
-      },
-      {
-        "title": "Iran War Plunges World into Energy Chaos Worse Than 1970s and Ukraine Crises - Sri Lanka Guardian",
-        "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPVUtxRmRBZ3FRTUJ3ZUVOb1ZSd1JEVE1fYU5RTHdobXh2azl6MGxCWVhCenVrQnVGVzNmRE9sd01rb2JDQlRZd0J2RmNSanBQZFQtVG4yQWZJcS1wamZmdWVGbGZGTWNTUEd5U2hFUHdYQUllNTVQUlNBNnkyTklxNVRsRXpvd05QLVd3QjFwYnNod05IZHVBeGNIejBGb094Wnc?oc=5",
-        "source": "Google News",
-        "published_at_utc": "2026-03-23T05:00:27.000Z"
-      },
-      {
-        "title": "IEA Discussing Release of More Oil Stocks; Current Iran Crisis Worse Than Oil Shocks of 1970s/ Russia-Ukraine War - AASTOCKS.com",
-        "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQVzJnMGlGeHB6TGFhR1N2RElUb1ktbXVWZnJKSDdIQmNDd19NazFBSEM2QlNQc2xsUXc4WlVYVkpER0VoUHprLXE1ZnJteGNaMlFDZzUwSURrdUNBcXhVN044S2UzeUd3em9ueEFCaVdjVHA3N0NKbG5rQW8tN3FYNExQZU10TlVJeHMyQ3pUMm1kOHQ1RWc?oc=5",
-        "source": "Google News",
-        "published_at_utc": "2026-03-23T04:37:00.000Z"
-      },
-      {
-        "title": "IEA Discussing Release of More Oil Stocks; Current Iran Crisis Worse Than Oil Shocks of 1970s/ Russia-Ukraine War - AASTOCKS.com",
-        "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxPZHJHRHZZcFQ1TWdoOUJIaHc4V1lFWXl6Z1FNRXhtdFVPeTFBcjUtMHJ1TTA4aDF2bGpqYml1M2pHbmtqaFA5MEFpdHlLNFF2Um54QjB4NjdMQjV4cmcyTndQakY2YlQwN1pnN1BQM1ROUGZ2ZkpyRG9aWUtkU0x3TmM5S2ZKY0JTQ0E?oc=5",
-        "source": "Google News",
-        "published_at_utc": "2026-03-23T04:37:00.000Z"
-      },
-      {
-        "title": "Russia Ukraine War - Bluefield Daily Telegraph",
-        "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNd0FPZGZPRkRKWnZ4Wm5DU2QwOWVFdnNFQVkzM3gzTXRrVXdOSGFMNlRfR1EtTlpWMTBMOC0xT2hpVk42WldOd2hSU1NVNjE2MWdBaTdYU0xaY19fVW1UY0VxNENWS0laYW50RFdnQ3Y5LVJTUVV2OXBWcHliVVk2Zm4ydjlKSXBWcEppMjA1Sy1aWk14SkNIRFdhcldDMXZGMGlhdl9hZEZMSDlqU0l3?oc=5",
-        "source": "Google News",
-        "published_at_utc": "2026-03-23T04:36:28.000Z"
-      },
-      {
-        "title": "A Step Toward Justice for Abuses in Ukraine - Human Rights Watch",
-        "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQQ2o5XzlrMlNaamZrcnVlX0VXN1h1dk1wMmhnN1JuYjdRaXVZWUpXdnpRMVg2LWpKRkI1RXJmQmp2czBfZlpibmJGQjRDNjBIYlZBUU1Hano3eWkzN3V3YllQUWxjVjd5eHlfRkQxTVhFMnh0V3Y5VDNTWUxYVC1HTF9BNnZYdw?oc=5",
-        "source": "Google News",
-        "published_at_utc": "2026-03-23T04:00:00.000Z"
-      },
-      {
-        "title": "Putin offers help to US in Iran war against one Intelligence bargain: Links Iran cooperation to US support for Ukraine - MSN",
-        "url": "https://news.google.com/rss/articles/CBMipANBVV95cUxPU09RWFRXVUU4ck8zWmt5TURwUk03MVNiZU9sWjEtU0ZoeDloUThHcF9qUGk4MkVLMkdWYlp3TFlpUThOUy1qMVB5d21zdjdwZ3Ata0ZmMmR5SWpucFdBRVY3NXlBUW9jc3JGMDUxRElRalBGWGJtMEdmUXE5UFE1OGMyREpldEdhSnBwN3NneDgtVFNTenYzNHZwZURuOTJWeVhmYTdHMEc4V0xLNFVlVTlxTFBlTk8weVhjcXMtcFJrcm5KVWJwWlFhTUtabURmN0d5d0JZWmxLYnR4MDJ0eVpCamUyakRuZUk1WmdIc3k1Y2pMZ25wN0xLcnVmWERWX081TGJPdzhaOWhrbDdSRk9PMnMweTBOaThRWUxUN0RsQm9IM2pVZk43ZFRIRldtcmFwcDdpNlNLd0UzR2JNYndaQ0s1ejNSYVloUF9VUmxna0dKSnVFZHd0R0VrSGpGdGZLMUJ2d21wTGdfWUI5Yl8wcmRKMkFSSEtqbFhaZDlCU3BTUURJSnRLalZlUks2cTRod0FjZ01CY0NBUEVCQVJNajM?oc=5",
-        "source": "Google News",
-        "published_at_utc": "2026-03-23T03:53:44.000Z"
-      },
-      {
-        "title": "Ukraine war spillover raises security concerns for Korean Peninsula, warn diplomats - The Korea Herald",
-        "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE5PV2hlcTB0MUJGa1VscWY2ZE1aLWFpa0d0NXRYM0FZb1lzN3JfN1BPVWlTcUZYR0NlWnVfbkFaQzE2RUVhc2VFOUtPaDdSZDRob2dJbk1Ocw?oc=5",
-        "source": "Google News",
-        "published_at_utc": "2026-03-23T03:45:02.000Z"
-      },
-      {
-        "title": "Ukraine had brutal plan to bankrupt Putin with his own war dead – until Trump’s oil U-turn wrecked it - AOL.com",
-        "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxPdmRHbzhYWU1fNkdxUW96T0xXX083dkJsa3VYYzVIX3pwbWhqUFdfUTZXeFNRbGtTTU9waDhTa051a0RtM1pLdWNTX3o4clk2YXFyeWNoR1pJQ21mbU1WODBpSWxsb2VadVYwVVhnamp5TGc4QUd3NUtPNXJ6S1NqalZ3?oc=5",
-        "source": "Google News",
-        "published_at_utc": "2026-03-23T03:30:03.000Z"
       }
     ]
   }
