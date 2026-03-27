@@ -10,22 +10,22 @@ head:
 
 # Neon Vision Editor Changelog
 
-_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on March 17, 2026._
+_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on March 26, 2026._
 
-## v0.5.6 (published March 17, 2026)
+## v0.5.7 (published March 26, 2026)
 
-Release link: [GitHub Release v0.5.6](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v0.5.6)
+Release link: [GitHub Release v0.5.7](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v0.5.7)
 
-- Safe Mode now recovers from repeated failed launches without getting stuck on every normal restart.
-- Large project folders now get a background file index that feeds `Quick Open` and `Find in Files` instead of relying only on live folder scans.
-- Markdown documents can now be exported directly from preview as PDF in both paginated and one-page formats.
-- Theme formatting and Settings polish now apply immediately, with better localization and an iPad hardware-keyboard Vim MVP.
-- Added Safe Mode startup recovery with repeated-failure detection, blank-document launch fallback, a dedicated startup explanation, and a `Normal Next Launch` recovery action.
-- Added a background project file index for larger folders and wired it into `Quick Open`, `Find in Files`, and project refresh flows.
-- Added Markdown preview PDF export with paginated and one-page output modes.
-- Added an iPad hardware-keyboard Vim MVP with core normal-mode navigation/editing commands and shared mode-state reporting.
-- Added theme formatting controls for bold keywords, italic comments, underlined links, and bold Markdown headings across active themes.
-- Fixed theme-formatting updates so editor styling refreshes immediately without requiring a theme switch.
+- Markdown preview on iPhone now uses a cleaner stacked layout and presents PDF export from the active preview flow.
+- Markdown preview controls on macOS and iPad now use a more centered, balanced layout with direct export/share/copy actions.
+- Appearance handling is more consistent when macOS follows the system light/dark setting, including Settings and editor window surfaces.
+- iPad editor surfaces now avoid stray white seams and mismatched panel backgrounds around sidebars, split panes, and markdown preview.
+- App Store support-purchase messaging is safer for review and restricted environments where in-app purchases are unavailable.
+- Project indexing and iPad Vim-mode wiring are more complete for the `Quick Open`, `Find in Files`, and keyboard-first editing flows introduced around the `0.5.6` line.
+- Completed the project-file index snapshot flow so project refreshes can reuse unchanged entries while continuing to feed `Quick Open` and `Find in Files`.
+- Completed iPad Vim-mode integration with a dedicated Settings toggle, shared persistence, and visible mode-state reporting on iPad.
+- Expanded the Code Snapshot composer with a `Custom` layout mode, better cross-platform sizing behavior, and cleaner control grouping.
+- Fixed iPhone Markdown preview layout so title, controls, and export action read cleanly in a centered vertical flow.
 
 ## v0.4.22 (published February 16, 2026)
 
