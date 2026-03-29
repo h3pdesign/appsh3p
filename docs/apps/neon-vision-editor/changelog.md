@@ -10,22 +10,22 @@ head:
 
 # Neon Vision Editor Changelog
 
-_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on March 26, 2026._
+_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on March 29, 2026._
 
-## v0.5.7 (published March 26, 2026)
+## v0.5.8 (published March 29, 2026)
 
-Release link: [GitHub Release v0.5.7](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v0.5.7)
+Release link: [GitHub Release v0.5.8](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v0.5.8)
 
-- Markdown preview on iPhone now uses a cleaner stacked layout and presents PDF export from the active preview flow.
-- Markdown preview controls on macOS and iPad now use a more centered, balanced layout with direct export/share/copy actions.
-- Appearance handling is more consistent when macOS follows the system light/dark setting, including Settings and editor window surfaces.
-- iPad editor surfaces now avoid stray white seams and mismatched panel backgrounds around sidebars, split panes, and markdown preview.
-- App Store support-purchase messaging is safer for review and restricted environments where in-app purchases are unavailable.
-- Project indexing and iPad Vim-mode wiring are more complete for the `Quick Open`, `Find in Files`, and keyboard-first editing flows introduced around the `0.5.6` line.
-- Completed the project-file index snapshot flow so project refreshes can reuse unchanged entries while continuing to feed `Quick Open` and `Find in Files`.
-- Completed iPad Vim-mode integration with a dedicated Settings toggle, shared persistence, and visible mode-state reporting on iPad.
-- Expanded the Code Snapshot composer with a `Custom` layout mode, better cross-platform sizing behavior, and cleaner control grouping.
-- Fixed iPhone Markdown preview layout so title, controls, and export action read cleanly in a centered vertical flow.
+- Huge files now reach first content faster through deferred, chunked installation instead of a single blocking editor handoff.
+- Large-file sessions stay more responsive while the rest of the document is installed in the background.
+- Large-file status is clearer while deferred loading is active, with visible session affordances for the active open mode.
+- Remote workflows can now be started from the Mac, attached from iPhone and iPad, and used to browse, open, edit, and explicitly save supported remote text files through the Mac-hosted broker.
+- Markdown preview export controls and the project sidebar now use a denser, more polished layout across macOS, iPhone, and iPad.
+- Added the `0.5.8` release line for incremental loading of huge files, centered on the deferred/chunked open path tracked in `#28`.
+- Expanded the large-file open flow with a lightweight preparation state before the full editor content is installed.
+- Completed the large-file session controls so `Standard`, `Deferred`, and `Plain Text` modes remain available when performance mode is active.
+- Added a Mac-hosted remote session broker with SSH-key startup, attach codes for iPhone/iPad clients, a remote browser, remote open, explicit remote save, and remote revision-token conflict protection.
+- Added clearer Remote settings guidance for local Mac SSH targets, attach-code usage, and the split between the Mac SSH owner and iPhone/iPad broker clients.
 
 ## v0.4.22 (published February 16, 2026)
 
