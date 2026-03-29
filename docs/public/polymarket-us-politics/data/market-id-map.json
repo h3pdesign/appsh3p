@@ -1,5 +1,5 @@
 {
-  "updated_at_utc": "2026-03-29T01:02:25.585Z",
+  "updated_at_utc": "2026-03-29T08:44:37.115Z",
   "total_questions": 66,
   "mapped_questions": 45,
   "unmapped_questions": 21,
@@ -267,9 +267,9 @@
     },
     {
       "question": "When will DHS shutdown end?",
-      "market_id": "1378925",
-      "market_slug": "will-the-dhs-shutdown-end-after-march-31-2026",
-      "market_question": "Will the DHS shutdown end after March 31, 2026?",
+      "market_id": "1723665",
+      "market_slug": "will-the-dhs-shutdown-end-before-april-1-2026-954",
+      "market_question": "Will the DHS shutdown end before April 1, 2026?",
       "score": 0.564,
       "active": true,
       "closed": false
