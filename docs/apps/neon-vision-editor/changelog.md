@@ -10,22 +10,22 @@ head:
 
 # Neon Vision Editor Changelog
 
-_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on March 29, 2026._
+_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on March 30, 2026._
 
-## v0.5.8 (published March 29, 2026)
+## v0.6.0 (published March 30, 2026)
 
-Release link: [GitHub Release v0.5.8](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v0.5.8)
+Release link: [GitHub Release v0.6.0](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v0.6.0)
 
-- Huge files now reach first content faster through deferred, chunked installation instead of a single blocking editor handoff.
-- Large-file sessions stay more responsive while the rest of the document is installed in the background.
-- Large-file status is clearer while deferred loading is active, with visible session affordances for the active open mode.
-- Remote workflows can now be started from the Mac, attached from iPhone and iPad, and used to browse, open, edit, and explicitly save supported remote text files through the Mac-hosted broker.
-- Markdown preview export controls and the project sidebar now use a denser, more polished layout across macOS, iPhone, and iPad.
-- Added the `0.5.8` release line for incremental loading of huge files, centered on the deferred/chunked open path tracked in `#28`.
-- Expanded the large-file open flow with a lightweight preparation state before the full editor content is installed.
-- Completed the large-file session controls so `Standard`, `Deferred`, and `Plain Text` modes remain available when performance mode is active.
-- Added a Mac-hosted remote session broker with SSH-key startup, attach codes for iPhone/iPad clients, a remote browser, remote open, explicit remote save, and remote revision-token conflict protection.
-- Added clearer Remote settings guidance for local Mac SSH targets, attach-code usage, and the split between the Mac SSH owner and iPhone/iPad broker clients.
+- Remote workflows are clearer on every active surface, with better tab/session state, safer conflict recovery, and more complete iPhone/iPad remote-session support.
+- Search, `Find in Files`, and `Find & Replace` are much more mature across macOS, iPhone, and iPad, with stronger keyboard flow, clearer match visibility, better sizing, and cleaner panel layouts.
+- Markdown Preview is more polished on all platforms with stronger live-preview readability, full-window themed preview rendering, and clearer export/share feedback.
+- iPad editor chrome is more consistent, including tighter toolbar overflow behavior and better default sizing for the project-structure sidebar.
+- German localization is more complete, especially in Settings and the recently polished search/preview surfaces.
+- Completed the `0.6.0` remote-workflow line with clearer remote tab/document/session state, broker failure clarity, explicit compare-before-reload conflict handling, and safer unsupported-file handling in the remote browser.
+- Expanded search and navigation maturity with stronger `Quick Open` ranking, clearer search-source/status messaging, grouped `Find in Files` results, direct toolbar entry points, and improved Return/selection behavior.
+- Added more cross-platform keyboard parity on iPad, including sidebar shortcuts, Settings tab navigation, and result-list arrow-key movement in search panels.
+- Polished Markdown Preview with clearer export affordances, full-window live preview rendering, larger preview typography, and lightweight copy/export status messaging.
+- Continued cross-platform UI refinement for `Find & Replace`, `Find in Files`, project sidebar defaults, toolbar overflow placement, and theme selection visibility.
 
 ## v0.4.22 (published February 16, 2026)
 
