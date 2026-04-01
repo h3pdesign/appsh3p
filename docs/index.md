@@ -186,8 +186,7 @@ neon vision editor across iphone, mac, and ipad.
 
 <div class="home-bottom-image startpage-focal-card startpage-feature-preview" data-preview-active="dark">
   <picture data-preview-pane="dark">
-    <source type="image/webp" srcset="/media/neon-vision-editor-hero-640.webp 640w, /media/neon-vision-editor-hero-960.webp 960w, /media/neon-vision-editor-hero.webp 1400w" sizes="(max-width: 768px) 92vw, (max-width: 1200px) 88vw, 960px" />
-    <img src="/media/neon-vision-editor-hero.png" srcset="/media/neon-vision-editor-hero-640.png 640w, /media/neon-vision-editor-hero-960.png 960w, /media/neon-vision-editor-hero.png 1400w" sizes="(max-width: 768px) 92vw, (max-width: 1200px) 88vw, 960px" alt="Neon Vision Editor dark showcase" width="1400" height="787" loading="lazy" decoding="async" />
+    <img src="/media/neon-vision-editor-presentation.svg" alt="Neon Vision Editor presentation artwork" width="1400" height="787" loading="lazy" decoding="async" />
   </picture>
   <picture data-preview-pane="light">
     <img src="/media/neon/marketing-visioneditor.png" alt="Neon Vision Editor light showcase" width="2048" height="1536" loading="lazy" decoding="async" />
