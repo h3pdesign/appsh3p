@@ -6006,7 +6006,7 @@ function renderConflictTimeline(events, containerId = 'conflictTimelineList') {
 
         const jump = document.createElement('a');
         jump.className = 'conflict-timeline-jump-btn';
-        jump.href = '#conflictMap';
+        jump.href = item.map_module === 'ukraine' ? '#ukraineMap' : '#conflictMap';
         jump.textContent = 'Open on map';
         jump.addEventListener('click', event => {
           event.preventDefault();
