@@ -6361,7 +6361,7 @@ function renderRecentMapPoints(points, bodyId, moduleName) {
   const body = document.getElementById(bodyId);
   if (!body) return;
 
-  const rows = (Array.isArray(points) ? points : [])
+  const sortedRows = (Array.isArray(points) ? points : [])
     .map((point, index) => ({ ...point, __index: index, __ts: mapPointTimestamp(point) }))
     .filter(point => Number.isFinite(Number(point?.lat)) && Number.isFinite(Number(point?.lng)))
     .sort((a, b) => {
@@ -6369,8 +6369,24 @@ function renderRecentMapPoints(points, bodyId, moduleName) {
       const bTs = Number.isFinite(b.__ts) ? b.__ts : 0;
       if (bTs !== aTs) return bTs - aTs;
       return b.__index - a.__index;
-    })
-    .slice(0, 10);
+    });
+
+  const rows = [];
+  const seenCategories = new Set();
+
+  for (const point of sortedRows) {
+    const categoryKey = String(point?.type || point?.category || 'other');
+    if (seenCategories.has(categoryKey)) continue;
+    rows.push(point);
+    seenCategories.add(categoryKey);
+    if (rows.length >= 10) break;
+  }
+
+  for (const point of sortedRows) {
+    if (rows.length >= 10) break;
+    if (rows.includes(point)) continue;
+    rows.push(point);
+  }
 
   if (rows.length === 0) {
     body.innerHTML = '<tr><td colspan="7">No recent map points available.</td></tr>';
