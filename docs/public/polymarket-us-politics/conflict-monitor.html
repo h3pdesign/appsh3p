@@ -2933,6 +2933,17 @@ body.page-conflicts #methodology {
       <div class="conflict-metrics-grid" id="ukraineMetrics">
         <div class="iran-stat"><div class="iran-stat-label">Loading metrics</div><div class="iran-stat-value">--</div></div>
       </div>
+      <div class="metric-series-board" id="ukraineMetricSeriesBoard">
+        <div class="metric-series-head">
+          <h3 class="metric-series-title">Accumulated Metric Graphs</h3>
+          <div class="metric-series-note">All metric-card values graphed as accumulated conflict totals since the conflict start date.</div>
+        </div>
+        <div class="metric-series-grid" id="ukraineMetricSeriesGrid">
+          <div class="metric-series-card">
+            <div class="metric-series-label">Loading accumulated metric graphs...</div>
+          </div>
+        </div>
+      </div>
       <div class="conflict-map-wrap">
         <div class="conflict-map" id="ukraineMap"></div>
         <div class="conflict-globe" id="ukraineGlobe" hidden></div>
@@ -3006,6 +3017,30 @@ body.page-conflicts #methodology {
         </div>
         <div class="conflict-timeline-list" id="ukraineTimelineList">
           <div class="conflict-timeline-item"><div class="conflict-timeline-time">Loading</div><div class="conflict-timeline-text">Waiting for timeline updates...</div></div>
+        </div>
+        <div class="conflict-map-points" id="ukraineRecentPoints">
+          <div class="conflict-map-points-head">
+            <h4>Latest map events</h4>
+            <div class="conflict-map-points-note">Newest ten points with direct jump-back links into the live map.</div>
+          </div>
+          <div class="conflict-map-points-table-wrap">
+            <table class="conflict-map-points-table">
+              <thead>
+                <tr>
+                  <th scope="col">Time</th>
+                  <th scope="col">Event</th>
+                  <th scope="col">Type</th>
+                  <th scope="col">Mass</th>
+                  <th scope="col">Total</th>
+                  <th scope="col">Source</th>
+                  <th scope="col">Map</th>
+                </tr>
+              </thead>
+              <tbody id="ukraineRecentPointsBody">
+                <tr><td colspan="7">Loading latest map events...</td></tr>
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
       </div>
@@ -3967,6 +4002,7 @@ body.page-conflicts #methodology {
       <p><strong>Methodology:</strong> The backend uses a continuous LLM parsing pipeline to scrape enterprise news feeds. Events are mathematically deduplicated, cross-referenced for confidence intervals, and plotted chronologically. The map clearly differentiates active kinetic participants from passive diplomatic entities.</p>
     </div>
     <p>Copyright by h3p 2026</p>
+    <p id="footerCodeTimestamp">Technical page code updated: --</p>
   </div>
 </footer>
 
@@ -4817,10 +4853,21 @@ function updateTimestamp(sourceTime) {
   const { local, utc } = formatDualTimestamp(sourceTime);
   const headerDate = document.getElementById('asOfDate');
   const footerDate = document.getElementById('footerTimestamp');
+  const footerCodeDate = document.getElementById('footerCodeTimestamp');
 
   if (headerDate) headerDate.textContent = `◆ Last updated: ${local} (${utc})`;
   if (footerDate) {
     footerDate.innerHTML = 'Conflict metrics refresh automatically from configured OSINT sources. Displayed timestamps include local time and UTC. <a href="/polymarket-us-politics/cookie-policy.html" target="_blank" rel="noopener">Cookie Policy</a>.';
+  }
+  if (footerCodeDate) {
+    const rawLastModified = typeof document?.lastModified === 'string' ? document.lastModified : '';
+    const parsedLastModified = rawLastModified ? new Date(rawLastModified) : null;
+    if (parsedLastModified && Number.isFinite(parsedLastModified.getTime())) {
+      const codeStamp = formatDualTimestamp(parsedLastModified.toISOString());
+      footerCodeDate.textContent = `Technical page code updated: ${codeStamp.local} (${codeStamp.utc})`;
+    } else {
+      footerCodeDate.textContent = 'Technical page code updated: unavailable';
+    }
   }
 }
 
@@ -7692,8 +7739,10 @@ async function refreshUkraineMetrics() {
     hydrateUkraineHeader(conflict);
     const ukraineSources = buildConflictSourceEntries(conflict);
     renderConflictMetrics(Array.isArray(conflict.metrics) ? conflict.metrics : [], 'ukraineMetrics', { moduleKey: 'ukraine', scopeLegendId: 'ukraineScopeLegend', sourceLegendId: 'ukraineSourceLegend', sourceEntries: ukraineSources, conflictAsOf: conflict.as_of_utc || conflict.updated_at_utc || feed.updated_at_utc });
+    renderMetricSeriesBoard(conflict.metric_series || {}, 'ukraineMetricSeriesGrid');
     renderConflictLegend(Array.isArray(conflict.legend) ? conflict.legend : [], 'ukraineLegend', 'ukraine');
     renderConflictTimeline(Array.isArray(conflict.timeline) ? conflict.timeline : [], 'ukraineTimelineList');
+    renderRecentMapPoints(Array.isArray(conflict.map_points) ? conflict.map_points : [], 'ukraineRecentPointsBody', 'ukraine');
     const ukraineSeries = Array.isArray(conflict.daily_series) ? conflict.daily_series : [];
     renderConflictTrend(ukraineSeries, {
       chartId: 'ukraineTrendChart',
