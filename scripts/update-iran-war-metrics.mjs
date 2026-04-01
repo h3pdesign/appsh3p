@@ -14,6 +14,7 @@ const METRIC_SERIES_START = {
 const WIKI_IRAN_WAR_API = 'https://en.wikipedia.org/w/api.php?action=parse&page=2026_Iran_war&prop=wikitext&format=json&formatversion=2'
 const WIKI_IRAN_TIMELINE_API = 'https://en.wikipedia.org/w/api.php?action=parse&page=Timeline_of_the_2026_Iran_war&prop=wikitext&format=json&formatversion=2'
 const WIKI_IRAN_WAR_URL = 'https://en.wikipedia.org/wiki/2026_Iran_war'
+const WIKI_IRAN_AIRCRAFT_LOSSES_URL = 'https://en.wikipedia.org/wiki/List_of_aviation_shootdowns_and_accidents_during_the_2026_Iran_war'
 const UAE_INTERCEPTS_URL = 'https://www.gulftoday.ae/news/2026/03/27/uae-intercepts-six-ballistic-missiles-nine-drones-from-iran'
 const IRAN_INFRA_DAMAGE_URL = 'https://www.aa.com.tr/en/middle-east/iran-says-over-113-000-civilian-places-damaged-in-us-israeli-attacks/3887118'
 const AIRSTRIKE_FLOOR_URL = 'https://www.britannica.com/event/2026-Iran-Conflict'
@@ -25,6 +26,7 @@ const PROJECTILE_BASELINE_TOTALS = {
   drones: 2328,
   airStrikes: 900
 }
+const UAV_ACTIVITY_OVER_IRAN_FLOOR = 30
 const IRAN_CONFLICT_START_UTC = '2026-02-28T00:00:00Z'
 const VERIFIED_IRAN_CONFLICT_TOTALS = {
   asOfUtc: '2026-04-01T00:00:00Z',
@@ -360,14 +362,14 @@ function refreshConflictMetricsFromSources(conflict, sourceMetrics) {
   stampActivityMetric(
     'missiles_total_2026',
     PROJECTILE_BASELINE_TOTALS.missiles,
-    'Missiles (2026 Conflict Total)',
-    'Total reported missile launches in the 2026 conflict (cumulative lower bound). Excludes U.S./Israeli air strikes.'
+    'Iranian Missiles Launched (Regional Conflict Total)',
+    'Total reported Iranian missile launches across the regional 2026 conflict (cumulative lower bound). Excludes U.S./Israeli air strikes.'
   )
   stampActivityMetric(
     'drones_total_2026',
     PROJECTILE_BASELINE_TOTALS.drones,
-    'Drones (2026 Conflict Total)',
-    'Total reported drones launched in the 2026 conflict (cumulative lower bound). Excludes U.S./Israeli air strikes.'
+    'Iranian Drones Launched (Regional Conflict Total)',
+    'Total reported Iranian drone launches across the regional 2026 conflict (cumulative lower bound). Excludes U.S./Israeli air strikes.'
   )
   stampActivityMetric(
     'air_strikes_total_2026',
@@ -659,18 +661,19 @@ function refreshMapPoints(conflict, now) {
 
   if (conflict?.id === 'iran_2026') {
     const missilesTotal = metricValue(metrics, 'missiles_total_2026') || metricValue(metrics, 'missiles_benchmark')
-    const dronesTotal = metricValue(metrics, 'drones_total_2026') || metricValue(metrics, 'drones_benchmark')
+    const regionalDronesTotal = metricValue(metrics, 'drones_total_2026') || metricValue(metrics, 'drones_benchmark')
+    const localDroneActivityTotal = UAV_ACTIVITY_OVER_IRAN_FLOOR
     const airStrikesTotal = metricValue(metrics, 'air_strikes_total_2026')
     const infraTotal = metricValue(metrics, 'critical_infrastructure_impacts_7d')
     const killedTotal = metricValue(metrics, 'iran_killed') + metricValue(metrics, 'israel_killed') + metricValue(metrics, 'us_killed')
     const injuredTotal = metricValue(metrics, 'iran_injured') + metricValue(metrics, 'israel_injured') + metricValue(metrics, 'us_seriously_injured')
 
     const missileMass = clamp(Math.round(missilesTotal * 0.62), 520, 980)
-    const droneMass = clamp(Math.round(dronesTotal * 0.42), 760, 1600)
+    const droneMass = clamp(Math.round(localDroneActivityTotal * 3.8), 110, 220)
     // Air-strike map density should reflect the sustained air campaign footprint, not only the
     // conservative public strike-count floor shown on the metric card.
     const airStrikeMass = clamp(
-      Math.round(Math.max(airStrikesTotal * 1.35, dronesTotal * 0.92, infraTotal * 0.016)),
+      Math.round(Math.max(airStrikesTotal * 1.35, regionalDronesTotal * 0.92, infraTotal * 0.016)),
       1100,
       2400
     )
@@ -686,13 +689,6 @@ function refreshMapPoints(conflict, now) {
       boundedSite('Rishon LeZion impact cluster', 31.973, 34.7925, 0.68, { minLat: 31.89, maxLat: 32.05, minLng: 34.73, maxLng: 34.86 }),
       boundedSite('Hadera impact cluster', 32.434, 34.919, 0.62, { minLat: 32.36, maxLat: 32.52, minLng: 34.86, maxLng: 35.02 }),
       boundedSite('Eilat impact cluster', 29.5577, 34.9519, 0.48, { minLat: 29.50, maxLat: 29.62, minLng: 34.90, maxLng: 35.02 }),
-      { name: 'Natanz area strike cluster', lat: 33.7262, lng: 51.7267, weight: 0.9 },
-      { name: 'Tabriz area strike cluster', lat: 38.0962, lng: 46.2738, weight: 0.65 },
-      { name: 'Kermanshah area strike cluster', lat: 34.3142, lng: 47.065, weight: 0.7 },
-      { name: 'Arak area strike cluster', lat: 34.0917, lng: 49.6892, weight: 0.6 },
-      { name: 'Hamedan area strike cluster', lat: 34.7992, lng: 48.5146, weight: 0.56 },
-      { name: 'Yazd area strike cluster', lat: 31.8974, lng: 54.3569, weight: 0.52 },
-      { name: 'Bushehr area strike cluster', lat: 28.9234, lng: 50.8203, weight: 0.5 },
       { name: 'Manama strike-alert cluster (Bahrain)', lat: 26.2285, lng: 50.586, weight: 0.42 },
       { name: 'Dammam strike-alert cluster (Saudi Arabia)', lat: 26.4207, lng: 50.0888, weight: 0.44 },
       { name: 'Riyadh strike-alert cluster (Saudi Arabia)', lat: 24.7136, lng: 46.6753, weight: 0.38 },
@@ -717,32 +713,20 @@ function refreshMapPoints(conflict, now) {
       { name: 'Qazvin drone strike zone', lat: 36.2797, lng: 50.0049, weight: 0.52 },
       { name: 'Kerman drone strike zone', lat: 30.2839, lng: 57.0834, weight: 0.48 },
       { name: 'Rasht drone strike zone', lat: 37.2808, lng: 49.5832, weight: 0.45 },
-      { name: 'Semnan drone strike zone', lat: 35.5729, lng: 53.3971, weight: 0.42 },
-      { name: 'Manama drone-alert zone (Bahrain)', lat: 26.227, lng: 50.575, weight: 0.4 },
-      { name: 'Dhahran drone-alert zone (Saudi Arabia)', lat: 26.2361, lng: 50.0393, weight: 0.42 },
-      { name: 'Doha drone-alert zone (Qatar)', lat: 25.2854, lng: 51.531, weight: 0.38 },
-      { name: 'Abu Dhabi drone-alert zone (UAE)', lat: 24.4539, lng: 54.3773, weight: 0.36 }
+      { name: 'Semnan drone strike zone', lat: 35.5729, lng: 53.3971, weight: 0.42 }
     ]
 
-    const infraSites = [
-      boundedSite('Haifa port infrastructure impact', 32.8191, 35.0007, 1.2, { minLat: 32.74, maxLat: 32.88, minLng: 34.95, maxLng: 35.08 }),
-      boundedSite('Ashkelon energy corridor impact', 31.6688, 34.5743, 1.0, { minLat: 31.54, maxLat: 31.75, minLng: 34.56, maxLng: 34.68 }),
-      boundedSite('Tel Aviv utility corridor impact', 32.074, 34.7924, 1.0, { minLat: 31.98, maxLat: 32.15, minLng: 34.73, maxLng: 34.89 }),
-      boundedSite('Rishon LeZion utility node impact', 31.973, 34.7925, 0.85, { minLat: 31.89, maxLat: 32.05, minLng: 34.73, maxLng: 34.86 }),
-      boundedSite('Hadera grid corridor impact', 32.434, 34.919, 0.8, { minLat: 32.36, maxLat: 32.52, minLng: 34.86, maxLng: 35.02 }),
-      boundedSite('Beersheba logistics impact', 31.244, 34.798, 0.8, { minLat: 31.16, maxLat: 31.34, minLng: 34.72, maxLng: 34.88 }),
-      boundedSite('Jerusalem utility node impact', 31.7683, 35.2137, 0.78, { minLat: 31.68, maxLat: 31.88, minLng: 35.10, maxLng: 35.32 }),
-      boundedSite('Ashdod port corridor impact', 31.8014, 34.6435, 0.76, { minLat: 31.73, maxLat: 31.90, minLng: 34.60, maxLng: 34.76 }),
+    const airStrikeSites = [
       { name: 'Natanz facility perimeter impact', lat: 33.724, lng: 51.722, weight: 1.0 },
       { name: 'Isfahan industrial corridor impact', lat: 32.673, lng: 51.688, weight: 0.9 },
       { name: 'Tehran power node impact', lat: 35.701, lng: 51.403, weight: 0.95 },
       { name: 'Tabriz industrial corridor impact', lat: 38.08, lng: 46.29, weight: 0.7 },
       { name: 'Arak industrial corridor impact', lat: 34.0917, lng: 49.6892, weight: 0.66 },
       { name: 'Bandar Abbas utility corridor impact', lat: 27.1832, lng: 56.2666, weight: 0.6 },
-      { name: 'Jubail industrial impact cluster (Saudi Arabia)', lat: 27.0174, lng: 49.6225, weight: 0.48 },
-      { name: 'Ras Tanura energy impact cluster (Saudi Arabia)', lat: 26.6439, lng: 50.1582, weight: 0.44 },
-      { name: 'Manama logistics impact cluster (Bahrain)', lat: 26.2235, lng: 50.5876, weight: 0.4 },
-      { name: 'Kuwait City utility impact cluster (Kuwait)', lat: 29.3759, lng: 47.9774, weight: 0.38 }
+      { name: 'Bushehr utility corridor impact', lat: 28.9234, lng: 50.8203, weight: 0.56 },
+      { name: 'Shiraz logistics impact cluster', lat: 29.5918, lng: 52.5837, weight: 0.52 },
+      { name: 'Kermanshah logistics impact cluster', lat: 34.3142, lng: 47.065, weight: 0.5 },
+      { name: 'Qom utility impact cluster', lat: 34.6416, lng: 50.8746, weight: 0.46 }
     ]
 
     const casualtySites = [
@@ -775,12 +759,12 @@ function refreshMapPoints(conflict, now) {
         sites: autoExpandSites(missileSites, { conflictKey: 'iran_2026', channel: 'missiles', totalMass: missileMass, maxExtra: 110, baseRadiusKm: 11 })
       }),
       ...makePoints({
-        label: 'Drones (2026 conflict total)',
+        label: 'Israeli / U.S. UAV activity over Iran (reported floor)',
         type: 'drones',
         category: 'drone_strikes',
-        totalMetric: dronesTotal,
+        totalMetric: localDroneActivityTotal,
         totalMass: droneMass,
-        description: 'Approximate drone strike zones from open-source conflict reporting (5-10 km precision). Excludes air strikes.',
+        description: 'Approximate Israeli / U.S. UAV loss or strike-activity locations over Iran from visual-evidence and official reporting (5-10 km precision). This is not the regional total of Iranian drone launches.',
         sites: autoExpandSites(droneSites, { conflictKey: 'iran_2026', channel: 'drones', totalMass: droneMass, maxExtra: 150, baseRadiusKm: 10 })
       }),
       ...makePoints({
@@ -790,7 +774,7 @@ function refreshMapPoints(conflict, now) {
         totalMetric: airStrikesTotal,
         totalMass: airStrikeMass,
         description: 'Approximate air-strike locations from open-source conflict reporting (5-10 km precision). Separate from missile and drone launch totals.',
-        sites: autoExpandSites(infraSites, { conflictKey: 'iran_2026', channel: 'airstrikes', totalMass: airStrikeMass, maxExtra: 140, baseRadiusKm: 9 })
+        sites: autoExpandSites(airStrikeSites, { conflictKey: 'iran_2026', channel: 'airstrikes', totalMass: airStrikeMass, maxExtra: 140, baseRadiusKm: 9 })
       }),
       ...makePoints({
         label: 'Casualty concentration',
