@@ -1168,6 +1168,141 @@ nav {
   opacity: 0.9;
 }
 
+.metric-series-board {
+  margin-top: 1.15rem;
+  padding: 1.1rem 1.15rem 1.2rem;
+  border-radius: 24px;
+  border: 1px solid var(--border-subtle);
+  background: linear-gradient(180deg, color-mix(in oklab, var(--bg-card) 95%, transparent) 0%, color-mix(in oklab, var(--bg-card-muted) 95%, transparent) 100%);
+  box-shadow: var(--soft-shadow);
+}
+
+.metric-series-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.9rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.95rem;
+}
+
+.metric-series-title {
+  margin: 0;
+  font-size: 0.95rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-soft);
+}
+
+.metric-series-note {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+}
+
+.metric-series-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 0.9rem;
+}
+
+.metric-series-card {
+  border: 1px solid var(--border-subtle);
+  border-radius: 18px;
+  padding: 0.95rem 0.95rem 0.85rem;
+  background: color-mix(in oklab, var(--bg-card) 92%, transparent);
+}
+
+.metric-series-card-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.8rem;
+}
+
+.metric-series-label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  line-height: 1.35;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--text-main);
+}
+
+.metric-series-current {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  line-height: 1;
+  color: var(--text-main);
+  white-space: nowrap;
+}
+
+.metric-series-meta {
+  margin-top: 0.2rem;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.metric-series-chart {
+  width: 100%;
+  height: 132px;
+  margin-top: 0.75rem;
+  display: block;
+}
+
+.metric-series-axis {
+  stroke: color-mix(in oklab, var(--border-subtle) 90%, transparent);
+  stroke-width: 1;
+}
+
+.metric-series-gridline {
+  stroke: color-mix(in oklab, var(--border-subtle) 58%, transparent);
+  stroke-width: 1;
+  stroke-dasharray: 4 6;
+}
+
+.metric-series-area {
+  opacity: 0.16;
+}
+
+.metric-series-line {
+  fill: none;
+  stroke-width: 2.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.metric-series-end {
+  stroke: color-mix(in oklab, var(--bg-card) 88%, transparent);
+  stroke-width: 2;
+}
+
+.metric-series-range {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-top: 0.4rem;
+  font-size: 0.74rem;
+  color: var(--text-muted);
+}
+
+.metric-series-source {
+  margin-top: 0.48rem;
+  font-size: 0.76rem;
+  line-height: 1.4;
+  color: var(--text-muted);
+}
+
+@media (max-width: 720px) {
+  .metric-series-board {
+    padding: 1rem;
+  }
+
+  .metric-series-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 .metric-info {
   border: 1px solid var(--border-color);
   border-radius: 999px;
@@ -2021,6 +2156,17 @@ nav {
   transform: translateY(-1px);
 }
 
+.conflict-timeline-item.is-map-linked {
+  cursor: pointer;
+}
+
+.conflict-timeline-item.is-map-linked:hover,
+.conflict-timeline-item.is-map-linked:focus-visible {
+  border-color: color-mix(in oklab, var(--accent-blue) 58%, var(--border-subtle));
+  background: color-mix(in oklab, var(--accent-blue) 8%, rgba(255,255,255,0.02));
+  outline: none;
+}
+
 .conflict-timeline-time {
   font-family: var(--font-mono);
   font-size: 0.66rem;
@@ -2037,7 +2183,19 @@ nav {
 }
 
 .conflict-timeline-jump {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.65rem;
   margin-top: 0.65rem;
+}
+
+.conflict-timeline-jump-hint {
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
 }
 
 .conflict-timeline-jump-btn {
@@ -2612,6 +2770,17 @@ body.page-conflicts #methodology {
       <div class="conflict-metrics-grid" id="conflictMetrics">
         <div class="iran-stat"><div class="iran-stat-label">Loading metrics</div><div class="iran-stat-value">--</div></div>
       </div>
+      <div class="metric-series-board" id="conflictMetricSeriesBoard">
+        <div class="metric-series-head">
+          <h3 class="metric-series-title">Accumulated Metric Graphs</h3>
+          <div class="metric-series-note">All metric-card values graphed as accumulated conflict totals since the conflict start date.</div>
+        </div>
+        <div class="metric-series-grid" id="conflictMetricSeriesGrid">
+          <div class="metric-series-card">
+            <div class="metric-series-label">Loading accumulated metric graphs...</div>
+          </div>
+        </div>
+      </div>
       <div class="changes-block" role="status" aria-live="polite" aria-label="Latest conflict changes">
         <div class="changes-head">What changed in the last hour</div>
         <ul class="changes-list" id="changesList">
@@ -2653,6 +2822,7 @@ body.page-conflicts #methodology {
           <button class="map-mini-btn" id="iranMapFullscreenBtn" type="button">Fullscreen</button>
           <button class="map-reset-btn" id="conflictMapResetBtn" type="button">Reset view</button>
         </div>
+        <div class="conflict-legend" id="conflictLegend"></div>
         <div class="conflict-trend" id="conflictTrend">
           <div class="conflict-trend-head">
             <span>Daily Conflict Intensity</span>
@@ -2674,7 +2844,6 @@ body.page-conflicts #methodology {
           </div>
         </div>
       </div>
-      <div class="conflict-legend" id="conflictLegend"></div>
       <div class="conflict-timeline" id="conflictTimeline">
         <h3>Timeline</h3>
         <div class="conflict-timeline-controls" id="conflictTimelineControls" aria-label="Iran timeline controls">
@@ -2799,6 +2968,7 @@ body.page-conflicts #methodology {
           <button class="map-mini-btn" id="ukraineMapFullscreenBtn" type="button">Fullscreen</button>
           <button class="map-reset-btn" id="ukraineMapResetBtn" type="button">Reset view</button>
         </div>
+        <div class="conflict-legend" id="ukraineLegend"></div>
         <div class="conflict-trend" id="ukraineTrend">
           <div class="conflict-trend-head">
             <span>Daily Conflict Intensity</span>
@@ -2820,7 +2990,6 @@ body.page-conflicts #methodology {
           </div>
         </div>
       </div>
-      <div class="conflict-legend" id="ukraineLegend"></div>
       <div class="conflict-timeline" id="ukraineTimeline">
         <h3>Timeline</h3>
         <div class="conflict-timeline-controls" id="ukraineTimelineControls" aria-label="Ukraine timeline controls">
@@ -5496,6 +5665,94 @@ function renderConflictMetrics(metrics, containerId = 'conflictMetrics', options
   saveMetricSnapshot(moduleKey, Array.isArray(metrics) ? metrics : []);
 }
 
+function metricSeriesColor(metric) {
+  const tone = normalize(String(metric?.tone || 'blue'));
+  if (tone.includes('red')) return 'var(--tone-red)';
+  if (tone.includes('green')) return 'var(--tone-green)';
+  if (tone.includes('amber') || tone.includes('yellow') || tone.includes('orange')) return 'var(--tone-amber)';
+  return 'var(--accent-blue)';
+}
+
+function metricSeriesPath(series, width = 320, height = 132, padX = 14, padY = 14) {
+  const rows = Array.isArray(series) ? series.filter(point => Number.isFinite(Number(point?.value))) : [];
+  if (rows.length === 0) return { line: '', area: '', end: null, min: 0, max: 1 };
+  const values = rows.map(point => Number(point.value));
+  const min = Math.min(...values);
+  const max = Math.max(...values);
+  const span = Math.max(1, max - min);
+  const innerW = width - padX * 2;
+  const innerH = height - padY * 2;
+  const coords = rows.map((point, index) => {
+    const x = padX + (innerW * index) / Math.max(1, rows.length - 1);
+    const ratio = (Number(point.value) - min) / span;
+    const y = padY + innerH - ratio * innerH;
+    return { x, y, value: Number(point.value), date: point.date };
+  });
+  const line = coords.map((pt, index) => `${index === 0 ? 'M' : 'L'} ${pt.x.toFixed(2)} ${pt.y.toFixed(2)}`).join(' ');
+  const area = `${line} L ${coords[coords.length - 1].x.toFixed(2)} ${(height - padY).toFixed(2)} L ${coords[0].x.toFixed(2)} ${(height - padY).toFixed(2)} Z`;
+  return { line, area, end: coords[coords.length - 1], min, max };
+}
+
+function renderMetricSeriesBoard(metricSeries, gridId = 'conflictMetricSeriesGrid') {
+  const grid = document.getElementById(gridId);
+  if (!grid) return;
+
+  const entries = Object.values(metricSeries || {})
+    .filter(entry => Array.isArray(entry?.series) && entry.series.length > 0 && Number.isFinite(Number(entry?.current_value)))
+    .sort((left, right) => {
+      const leftGroup = classifyMetricGroup(left);
+      const rightGroup = classifyMetricGroup(right);
+      const order = { totals: 0, operations: 1, infrastructure: 2, casualties: 3, other: 4 };
+      if ((order[leftGroup] ?? 99) !== (order[rightGroup] ?? 99)) return (order[leftGroup] ?? 99) - (order[rightGroup] ?? 99);
+      return Number(right.current_value) - Number(left.current_value);
+    });
+
+  if (entries.length === 0) {
+    grid.innerHTML = '<div class="metric-series-card"><div class="metric-series-label">No accumulated metric graphs available.</div></div>';
+    return;
+  }
+
+  grid.innerHTML = entries.map(entry => {
+    const rows = entry.series;
+    const graph = metricSeriesPath(rows);
+    const color = metricSeriesColor(entry);
+    const start = rows[0]?.date || '--';
+    const end = rows[rows.length - 1]?.date || '--';
+    const current = formatMetricNumber(entry.current_value);
+    const source = escapeHtml(entry.source_name || entry.scope || 'Conflict metric source');
+    const scope = escapeHtml(entry.scope || '');
+    const sourceUrl = entry.source_url ? String(entry.source_url) : '';
+    const rangeTop = formatMetricNumber(graph.max);
+    const rangeBottom = formatMetricNumber(graph.min);
+    return `
+      <article class="metric-series-card">
+        <div class="metric-series-card-head">
+          <div>
+            <div class="metric-series-label">${escapeHtml(entry.label || entry.id)}</div>
+            <div class="metric-series-meta">${scope || 'Accumulated series since conflict start.'}</div>
+          </div>
+          <div class="metric-series-current">${current}</div>
+        </div>
+        <svg class="metric-series-chart" viewBox="0 0 320 132" role="img" aria-label="${escapeHtml(entry.label || entry.id)} accumulated metric graph">
+          <line class="metric-series-axis" x1="14" y1="118" x2="306" y2="118"></line>
+          <line class="metric-series-gridline" x1="14" y1="92" x2="306" y2="92"></line>
+          <line class="metric-series-gridline" x1="14" y1="66" x2="306" y2="66"></line>
+          <line class="metric-series-gridline" x1="14" y1="40" x2="306" y2="40"></line>
+          <path class="metric-series-area" d="${graph.area}" fill="${color}"></path>
+          <path class="metric-series-line" d="${graph.line}" stroke="${color}"></path>
+          ${graph.end ? `<circle class="metric-series-end" cx="${graph.end.x.toFixed(2)}" cy="${graph.end.y.toFixed(2)}" r="5.2" fill="${color}"></circle>` : ''}
+        </svg>
+        <div class="metric-series-range">
+          <span>${escapeHtml(start)}</span>
+          <span>${rangeBottom} -> ${rangeTop}</span>
+          <span>${escapeHtml(end)}</span>
+        </div>
+        <div class="metric-series-source">${sourceUrl ? `<a href="${escapeHtml(sourceUrl)}" target="_blank" rel="noopener">${source}</a>` : source}</div>
+      </article>
+    `;
+  }).join('');
+}
+
 function renderConflictLegend(legend, containerId = 'conflictLegend', moduleName = 'iran') {
   const container = document.getElementById(containerId);
   if (!container) return;
@@ -5651,6 +5908,14 @@ function renderConflictTimeline(events, containerId = 'conflictTimelineList') {
     visible.forEach(item => {
       const card = document.createElement('div');
       card.className = 'conflict-timeline-item';
+      const hasMapPoint = Boolean(item?.map_point_key);
+
+      if (hasMapPoint) {
+        card.classList.add('is-map-linked');
+        card.tabIndex = 0;
+        card.setAttribute('role', 'link');
+        card.setAttribute('aria-label', `Open ${(item.text || item.summary || 'timeline event')} on map`);
+      }
 
       const time = document.createElement('div');
       time.className = 'conflict-timeline-time';
@@ -5670,19 +5935,39 @@ function renderConflictTimeline(events, containerId = 'conflictTimelineList') {
       card.appendChild(time);
       card.appendChild(text);
 
-      if (item?.map_point_key) {
+      if (hasMapPoint) {
+        const openTimelinePoint = () => {
+          focusConflictMapPoint(item.map_module || 'iran', item.map_point_key || '');
+        };
+
+        card.addEventListener('click', event => {
+          if (event.target.closest('.conflict-timeline-jump-btn')) return;
+          openTimelinePoint();
+        });
+        card.addEventListener('keydown', event => {
+          if (event.key !== 'Enter' && event.key !== ' ') return;
+          event.preventDefault();
+          openTimelinePoint();
+        });
+
         const jumpWrap = document.createElement('div');
         jumpWrap.className = 'conflict-timeline-jump';
+
+        const jumpHint = document.createElement('span');
+        jumpHint.className = 'conflict-timeline-jump-hint';
+        jumpHint.textContent = 'Tap card or use button';
 
         const jump = document.createElement('a');
         jump.className = 'conflict-timeline-jump-btn';
         jump.href = '#conflictMap';
-        jump.textContent = 'Show On Map';
+        jump.textContent = 'Open on map';
         jump.addEventListener('click', event => {
           event.preventDefault();
-          focusConflictMapPoint(item.map_module || 'iran', item.map_point_key || '');
+          event.stopPropagation();
+          openTimelinePoint();
         });
 
+        jumpWrap.appendChild(jumpHint);
         jumpWrap.appendChild(jump);
         card.appendChild(jumpWrap);
       }
@@ -6032,6 +6317,10 @@ function focusConflictMapPoint(moduleName, pointKey) {
   if (!Number.isFinite(lat) || !Number.isFinite(lng)) return;
 
   const nextZoom = Math.max(Number.isFinite(mapRef.getZoom?.()) ? mapRef.getZoom() : 0, 6);
+  const mapContainer = mapRef.getContainer?.();
+  if (mapContainer) {
+    mapContainer.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
   mapRef.setView([lat, lng], nextZoom, { animate: true });
 
   const valueLabel = Number.isFinite(Number(point.value)) ? formatInteger(point.value) : '--';
@@ -7476,6 +7765,7 @@ async function refreshIranWarMetrics() {
     hydrateConflictHeader(conflict);
     const iranSources = buildConflictSourceEntries(conflict);
     renderConflictMetrics(Array.isArray(conflict.metrics) ? conflict.metrics : [], 'conflictMetrics', { moduleKey: 'iran', scopeLegendId: 'conflictScopeLegend', sourceLegendId: 'conflictSourceLegend', sourceEntries: iranSources, conflictAsOf: conflict.as_of_utc || conflict.updated_at_utc || feed.updated_at_utc });
+    renderMetricSeriesBoard(conflict.metric_series || {}, 'conflictMetricSeriesGrid');
     renderConflictLegend(Array.isArray(conflict.legend) ? conflict.legend : [], 'conflictLegend', 'iran');
     renderConflictTimeline(Array.isArray(conflict.timeline) ? conflict.timeline : []);
     renderRecentMapPoints(Array.isArray(conflict.map_points) ? conflict.map_points : [], 'conflictRecentPointsBody', 'iran');

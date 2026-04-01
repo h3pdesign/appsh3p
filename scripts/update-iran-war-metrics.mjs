@@ -6,6 +6,10 @@ const HISTORY_START = {
   iran_2026: '2025-06-01',
   ukraine_2026: '2022-02-24'
 }
+const METRIC_SERIES_START = {
+  iran_2026: '2026-02-28',
+  ukraine_2026: '2022-02-24'
+}
 
 const WIKI_IRAN_WAR_API = 'https://en.wikipedia.org/w/api.php?action=parse&page=2026_Iran_war&prop=wikitext&format=json&formatversion=2'
 const WIKI_IRAN_TIMELINE_API = 'https://en.wikipedia.org/w/api.php?action=parse&page=Timeline_of_the_2026_Iran_war&prop=wikitext&format=json&formatversion=2'
@@ -948,6 +952,13 @@ function buildFullSeries(conflict, endISO) {
   const firstExisting = parseDay(firstExistingISO)
   const rebuildTailDays = RECENT_SERIES_REBUILD_DAYS[conflict?.id] || 7
   const rebuildStart = addDays(end, -(rebuildTailDays - 1))
+  const conflictStartISO = conflict?.id === 'iran_2026'
+    ? IRAN_CONFLICT_START_UTC.slice(0, 10)
+    : (METRIC_SERIES_START[conflict?.id] || null)
+  const conflictStart = parseDay(conflictStartISO)
+  const conflictSpanDays = conflictStart && conflictStart <= end
+    ? Math.max(1, Math.round((end - conflictStart) / 86400000))
+    : null
 
   const target = computeTargetIntensity(conflict)
   const totalDays = Math.max(1, Math.round((end - start) / 86400000))
@@ -959,7 +970,11 @@ function buildFullSeries(conflict, endISO) {
     const iso = toDayISO(cursor)
     let value
 
-    if (existingMap.has(iso) && cursor < rebuildStart) {
+    const preserveExistingPoint = existingMap.has(iso)
+      && cursor < rebuildStart
+      && !(conflict?.id === 'iran_2026' && conflictStart && cursor >= conflictStart)
+
+    if (preserveExistingPoint) {
       value = existingMap.get(iso)
     } else if (!firstExisting || cursor < firstExisting) {
       const progress = i / totalDays
@@ -980,6 +995,17 @@ function buildFullSeries(conflict, endISO) {
     }
 
     value = clamp(value, 8, 99)
+
+    if (conflict?.id === 'iran_2026' && conflictStart && cursor >= conflictStart && conflictSpanDays != null) {
+      const conflictDay = Math.max(0, Math.round((cursor - conflictStart) / 86400000))
+      const conflictProgress = clamp(conflictDay / conflictSpanDays, 0, 1)
+      const floorStart = clamp(target - 24, 72, 84)
+      const floorEnd = clamp(target - 16, 78, 90)
+      const floorWave = Math.sin((conflictDay + 1) * 0.42) * 1.6 + Math.cos((conflictDay + 2) * 0.19) * 0.8
+      const conflictFloor = Math.round(floorStart + (floorEnd - floorStart) * conflictProgress + floorWave)
+      value = Math.max(value, conflictFloor)
+    }
+
     if (prev != null) {
       const diff = value - prev
       const maxStep = cursor >= rebuildStart ? 5 : 6
@@ -995,6 +1021,73 @@ function buildFullSeries(conflict, endISO) {
   }
 
   return points
+}
+
+function buildMetricSeries(conflict, dailySeries) {
+  const metrics = Array.isArray(conflict?.metrics) ? conflict.metrics : []
+  const seriesRows = Array.isArray(dailySeries) ? dailySeries : []
+  const startISO = METRIC_SERIES_START[conflict?.id] || HISTORY_START[conflict?.id] || seriesRows[0]?.date || null
+  const start = startISO ? parseDay(startISO) : null
+
+  const filteredRows = start
+    ? seriesRows.filter(point => {
+        const day = parseDay(point?.date)
+        return day && day >= start
+      })
+    : seriesRows.slice()
+
+  const sourceRows = filteredRows.length > 0 ? filteredRows : seriesRows.slice()
+  const normalizedWeights = sourceRows.map((point, index) => {
+    const base = clamp(Number(point?.value) || 0, 0, 100)
+    const recentBias = sourceRows.length <= 1 ? 0 : (index / Math.max(1, sourceRows.length - 1)) * 10
+    return Math.max(1, base + recentBias)
+  })
+  const weightTotal = normalizedWeights.reduce((acc, value) => acc + value, 0) || 1
+
+  const buildCumulativeSeries = (finalValue, mode = 'weighted') => {
+    const safeFinal = Math.max(0, Math.round(Number(finalValue) || 0))
+    if (sourceRows.length === 0) return []
+
+    if (mode === 'duration') {
+      return sourceRows.map((point, index) => ({
+        date: point.date,
+        value: Math.min(safeFinal, index + 1)
+      }))
+    }
+
+    let cumulative = 0
+    let prevValue = 0
+    const rows = sourceRows.map((point, index) => {
+      cumulative += normalizedWeights[index] || 0
+      let value = Math.round((safeFinal * cumulative) / weightTotal)
+      if (value < prevValue) value = prevValue
+      if (index === sourceRows.length - 1) value = safeFinal
+      prevValue = value
+      return {
+        date: point.date,
+        value
+      }
+    })
+    return rows
+  }
+
+  return metrics.reduce((acc, metric) => {
+    if (!metric?.id || !Number.isFinite(Number(metric.value))) return acc
+    const id = String(metric.id)
+    acc[id] = {
+      id,
+      label: metric.label || id,
+      current_value: Math.round(Number(metric.value)),
+      tone: metric.tone || 'blue',
+      scope: metric.scope || '',
+      source_name: metric.source_name || metric.source || '',
+      source_url: metric.source_url || '',
+      start_date: sourceRows[0]?.date || null,
+      end_date: sourceRows[sourceRows.length - 1]?.date || null,
+      series: buildCumulativeSeries(metric.value, id === 'conflict_duration_days' ? 'duration' : 'weighted')
+    }
+    return acc
+  }, {})
 }
 
 async function loadMetrics() {
@@ -1024,6 +1117,7 @@ async function main() {
       },
       map_points: nextMapPoints,
       daily_series: fullSeries,
+      metric_series: buildMetricSeries(refreshedConflict, fullSeries),
       timeline: nextTimeline
     }
   })
