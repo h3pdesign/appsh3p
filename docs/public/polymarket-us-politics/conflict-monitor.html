@@ -6590,6 +6590,56 @@ function latLngOffsetFromKm(lat, dxKm, dyKm) {
   return { dLat, dLng };
 }
 
+function israelCoastalMinLng(lat) {
+  if (lat >= 32.72) return 34.93;
+  if (lat >= 32.36) return 34.86;
+  if (lat >= 31.89) return 34.72;
+  if (lat >= 31.73) return 34.60;
+  if (lat >= 31.54) return 34.56;
+  return 34.50;
+}
+
+function clampMapPointToRegionalCoastline(point, lat, lng) {
+  const baseLat = Number(point?.lat);
+  const baseLng = Number(point?.lng);
+  const probe = normalize(String(point?.name || '') + ' ' + String(point?.label || '') + ' ' + String(point?.description || '') + ' ' + String(point?.type || ''));
+  const isImpactLike = probe.includes('missile') || probe.includes('casualt');
+  const inIsraelWestCorridor = Number.isFinite(baseLat)
+    && Number.isFinite(baseLng)
+    && baseLat >= 31.45
+    && baseLat <= 32.95
+    && baseLng >= 34.50
+    && baseLng <= 35.35;
+
+  if (isImpactLike && inIsraelWestCorridor) {
+    return {
+      lat: Math.max(31.45, Math.min(32.95, lat)),
+      lng: Math.max(israelCoastalMinLng(lat), lng)
+    };
+  }
+
+  return { lat, lng };
+}
+
+function clampMapPointToKnownBounds(point, lat, lng) {
+  const name = String(point?.name || '');
+  const bounded = (nextLat, nextLng, bounds) => ({
+    lat: Math.max(bounds.minLat, Math.min(bounds.maxLat, nextLat)),
+    lng: Math.max(bounds.minLng, Math.min(bounds.maxLng, nextLng))
+  });
+
+  if (/Haifa/i.test(name)) return bounded(lat, lng, { minLat: 32.72, maxLat: 32.88, minLng: 34.93, maxLng: 35.08 });
+  if (/Tel Aviv|Rishon LeZion/i.test(name)) return bounded(lat, lng, { minLat: 31.89, maxLat: 32.16, minLng: 34.72, maxLng: 34.90 });
+  if (/Ashdod/i.test(name)) return bounded(lat, lng, { minLat: 31.73, maxLat: 31.90, minLng: 34.60, maxLng: 34.76 });
+  if (/Ashkelon/i.test(name)) return bounded(lat, lng, { minLat: 31.54, maxLat: 31.75, minLng: 34.56, maxLng: 34.68 });
+  if (/Beersheba/i.test(name)) return bounded(lat, lng, { minLat: 31.16, maxLat: 31.34, minLng: 34.72, maxLng: 34.88 });
+  if (/Jerusalem/i.test(name)) return bounded(lat, lng, { minLat: 31.68, maxLat: 31.88, minLng: 35.10, maxLng: 35.32 });
+  if (/Hadera/i.test(name)) return bounded(lat, lng, { minLat: 32.36, maxLat: 32.52, minLng: 34.86, maxLng: 35.02 });
+  if (/Eilat/i.test(name)) return bounded(lat, lng, { minLat: 29.50, maxLat: 29.62, minLng: 34.90, maxLng: 35.02 });
+
+  return clampMapPointToRegionalCoastline(point, lat, lng);
+}
+
 function expandPointCloud(basePoint, zoom) {
   const lat = Number(basePoint?.lat);
   const lng = Number(basePoint?.lng);
@@ -6609,11 +6659,12 @@ function expandPointCloud(basePoint, zoom) {
     const dxKm = Math.cos(angle) * radiusKm;
     const dyKm = Math.sin(angle) * radiusKm;
     const off = latLngOffsetFromKm(lat, dxKm, dyKm);
+    const clamped = clampMapPointToKnownBounds(basePoint, lat + off.dLat, lng + off.dLng);
 
     cloud.push({
       ...basePoint,
-      displayLat: lat + off.dLat,
-      displayLng: lng + off.dLng,
+      displayLat: clamped.lat,
+      displayLng: clamped.lng,
       markerKind: markerKindForPoint(basePoint),
       markerCountRaw: rawCount,
       markerCountShown: count,
@@ -6648,8 +6699,9 @@ function separateMapPoints(points, minDistance = 0.22) {
       const seed = pointHashSeed(point, index + attempt + 1);
       const angle = ((seed % 360) * Math.PI) / 180;
       const radius = minDistance * (0.5 + attempt * 0.35);
-      lat = baseLat + Math.sin(angle) * radius;
-      lng = baseLng + Math.cos(angle) * radius;
+      const clamped = clampMapPointToKnownBounds(point, baseLat + Math.sin(angle) * radius, baseLng + Math.cos(angle) * radius);
+      lat = clamped.lat;
+      lng = clamped.lng;
     }
 
     placed.push({ lat, lng });
@@ -6742,11 +6794,13 @@ function clusterPoints(points, zoom, enabled = true) {
     const dominantType = Object.entries(byType).sort((a, b) => b[1] - a[1])[0]?.[0] || bucket[0]?.type;
     const head = bucket[0];
 
+    const clampedCluster = clampMapPointToKnownBounds(head, weighted.lat / Math.max(1, weighted.w), weighted.lng / Math.max(1, weighted.w));
+
     clustered.push({
       ...head,
       type: dominantType,
-      displayLat: weighted.lat / Math.max(1, weighted.w),
-      displayLng: weighted.lng / Math.max(1, weighted.w),
+      displayLat: clampedCluster.lat,
+      displayLng: clampedCluster.lng,
       markerKind: 'cluster',
       clusterCount: bucket.length,
       clusterMass: weighted.w,
