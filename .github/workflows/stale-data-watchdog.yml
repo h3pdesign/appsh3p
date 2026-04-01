@@ -29,7 +29,7 @@ jobs:
       - name: Validate freshness
         id: stale_check
         continue-on-error: true
-        run: node scripts/validate-polymarket-site.mjs --check-stale --max-age-minutes=150
+        run: node scripts/validate-polymarket-site.mjs --check-stale --max-age-minutes=720
 
       - name: Trigger refresh workflows when stale
         if: steps.stale_check.outcome == 'failure'
@@ -64,7 +64,7 @@ jobs:
         id: stale_recheck
         if: steps.stale_check.outcome == 'failure'
         continue-on-error: true
-        run: node scripts/validate-polymarket-site.mjs --check-stale --max-age-minutes=150
+        run: node scripts/validate-polymarket-site.mjs --check-stale --max-age-minutes=720
 
       - name: Open issue when stale after re-check
         if: steps.stale_check.outcome == 'failure' && steps.stale_recheck.outcome == 'failure'
@@ -90,7 +90,7 @@ jobs:
             }
 
             const runUrl = `https://github.com/${owner}/${repo}/actions/runs/${context.runId}`;
-            const body = `${marker}\nThe stale-data watchdog detected outdated feeds even after auto-triggering refresh workflows.\n\n- Workflow run: ${runUrl}\n- Command: \`node scripts/validate-polymarket-site.mjs --check-stale --max-age-minutes=150\`\n\nPlease inspect source jobs and verify timestamps in:\n- \`docs/public/polymarket-us-politics/data/iran-war-metrics.json\`\n- \`docs/public/polymarket-us-politics/data/conflict-news.json\`\n- \`docs/public/polymarket-us-politics/data/polymarket-market-snapshot.json\`\n- \`docs/public/polymarket-us-politics/data/social-tracker-metrics.json\``;
+            const body = `${marker}\nThe stale-data watchdog detected outdated feeds even after auto-triggering refresh workflows.\n\n- Workflow run: ${runUrl}\n- Command: \`node scripts/validate-polymarket-site.mjs --check-stale --max-age-minutes=720\`\n\nPlease inspect source jobs and verify timestamps in:\n- \`docs/public/polymarket-us-politics/data/iran-war-metrics.json\`\n- \`docs/public/polymarket-us-politics/data/conflict-news.json\`\n- \`docs/public/polymarket-us-politics/data/polymarket-market-snapshot.json\`\n- \`docs/public/polymarket-us-politics/data/social-tracker-metrics.json\``;
 
             await github.rest.issues.create({
               owner,

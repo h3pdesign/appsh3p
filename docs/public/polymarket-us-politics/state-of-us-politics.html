@@ -3441,13 +3441,13 @@ const FEED_METRIC_SNAPSHOT_KEY_PREFIX = 'pmir-feed-metric-snapshot-';
 const LAST_SYNC_KEY = 'pmir-last-successful-sync';
 const LAST_IRAN_DATA_KEY = 'pmir-last-iran-data-ts';
 const LAST_UKRAINE_DATA_KEY = 'pmir-last-ukraine-data-ts';
-const FRESH_SYNC_MAX_MS = ONE_HOUR_MS;
-const DELAYED_SYNC_MAX_MS = 8 * ONE_HOUR_MS;
+const FRESH_SYNC_MAX_MS = 8 * ONE_HOUR_MS;
+const DELAYED_SYNC_MAX_MS = 12 * ONE_HOUR_MS;
 const FRESHNESS_THRESHOLDS = {
-  snapshot: { fresh: ONE_HOUR_MS, delayed: 3 * ONE_HOUR_MS },
-  conflict_metrics: { fresh: ONE_HOUR_MS, delayed: 3 * ONE_HOUR_MS },
-  conflict_news: { fresh: 2 * ONE_HOUR_MS, delayed: 6 * ONE_HOUR_MS },
-  social: { fresh: 2 * ONE_HOUR_MS, delayed: 6 * ONE_HOUR_MS }
+  snapshot: { fresh: 8 * ONE_HOUR_MS, delayed: 12 * ONE_HOUR_MS },
+  conflict_metrics: { fresh: 8 * ONE_HOUR_MS, delayed: 12 * ONE_HOUR_MS },
+  conflict_news: { fresh: 8 * ONE_HOUR_MS, delayed: 12 * ONE_HOUR_MS },
+  social: { fresh: 8 * ONE_HOUR_MS, delayed: 12 * ONE_HOUR_MS }
 };
 const marketCache = new Map();
 let conflictMap = null;
