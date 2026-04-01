@@ -1652,6 +1652,34 @@ nav {
   pointer-events: none;
 }
 
+.map-marker-diamond,
+.map-marker-square {
+  display: block;
+  width: 12px;
+  height: 12px;
+  background: linear-gradient(
+    180deg,
+    color-mix(in oklab, var(--marker-color, #60a5fa) 72%, white 28%) 0%,
+    var(--marker-color, #60a5fa) 62%,
+    color-mix(in oklab, var(--marker-color, #60a5fa) 88%, black 12%) 100%
+  );
+  color: var(--marker-color, #60a5fa);
+  border: 1.4px solid rgba(8, 10, 16, 0.9);
+  box-shadow:
+    0 0 0 1.5px rgba(255, 255, 255, 0.82),
+    0 2px 8px rgba(0, 0, 0, 0.35),
+    0 0 16px 2px color-mix(in oklab, var(--marker-color, #60a5fa) 78%, transparent);
+}
+
+.map-marker-diamond {
+  transform: rotate(45deg);
+  border-radius: 2px;
+}
+
+.map-marker-square {
+  border-radius: 2px;
+}
+
 .map-marker-cluster {
   display: inline-flex;
   align-items: center;
@@ -1704,6 +1732,7 @@ nav {
 .conflict-trend {
   position: relative;
   border-top: 1px solid var(--border-subtle);
+  margin-top: 1.35rem;
   padding: 0.75rem;
   background: rgba(255,255,255,0.02);
 }
@@ -1940,6 +1969,7 @@ nav {
   flex-wrap: wrap;
   gap: 0.55rem 0.8rem;
   margin-top: 0.85rem;
+  margin-bottom: 1rem;
   font-size: 0.72rem;
   color: var(--text-secondary);
 }
@@ -1948,6 +1978,14 @@ nav {
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
+}
+
+.conflict-legend-help {
+  width: 100%;
+  margin-top: 0.15rem;
+  color: var(--text-muted);
+  font-size: 0.72rem;
+  line-height: 1.55;
 }
 
 .conflict-legend-swatch {
@@ -1972,6 +2010,17 @@ nav {
   border-bottom: 10px solid var(--legend-color);
   border-radius: 1px;
   transform: translateY(-1px);
+}
+
+.conflict-legend-swatch.diamond,
+.conflict-legend-swatch.square {
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+}
+
+.conflict-legend-swatch.diamond {
+  transform: rotate(45deg);
 }
 
 .conflict-timeline {
@@ -2816,8 +2865,8 @@ body.page-conflicts #methodology {
           </div>
           <div class="conflict-trend-controls">
             <div class="conflict-trend-nav">
-              <button class="conflict-trend-btn" id="conflictTrendOlder" type="button">Aelter</button>
-              <button class="conflict-trend-btn" id="conflictTrendNewer" type="button">Neuer</button>
+              <button class="conflict-trend-btn" id="conflictTrendOlder" type="button">Older</button>
+              <button class="conflict-trend-btn" id="conflictTrendNewer" type="button">Newer</button>
             </div>
             <label class="conflict-trend-zoom">Zoom
               <input id="conflictTrendZoom" type="range" min="7" max="365" value="7" step="1" aria-label="Zoom timeline window">
@@ -2973,8 +3022,8 @@ body.page-conflicts #methodology {
           </div>
           <div class="conflict-trend-controls">
             <div class="conflict-trend-nav">
-              <button class="conflict-trend-btn" id="ukraineTrendOlder" type="button">Aelter</button>
-              <button class="conflict-trend-btn" id="ukraineTrendNewer" type="button">Neuer</button>
+              <button class="conflict-trend-btn" id="ukraineTrendOlder" type="button">Older</button>
+              <button class="conflict-trend-btn" id="ukraineTrendNewer" type="button">Newer</button>
             </div>
             <label class="conflict-trend-zoom">Zoom
               <input id="ukraineTrendZoom" type="range" min="7" max="365" value="7" step="1" aria-label="Zoom timeline window">
@@ -5248,7 +5297,7 @@ function conflictMetricTone(metric) {
   if (direct === 'red' || direct === 'amber' || direct === 'green') return direct;
   const probe = `${metric?.id || ''} ${metric?.label || ''}`.toLowerCase();
   if (probe.includes('killed') || probe.includes('injured') || probe.includes('casual')) return 'red';
-  if (probe.includes('missile') || probe.includes('drone') || probe.includes('rocket') || probe.includes('projectile')) return 'amber';
+  if (probe.includes('missile') || probe.includes('drone') || probe.includes('rocket') || probe.includes('projectile') || probe.includes('air strike')) return 'amber';
   return 'green';
 }
 
@@ -5287,7 +5336,7 @@ function classifyMetricGroup(metric) {
   const probe = normalize(String((metric && metric.id) || '') + ' ' + String((metric && metric.label) || ''));
   if (probe.includes('killed') || probe.includes('injured') || probe.includes('casual') || probe.includes('deaths')) return 'casualties';
   if (probe.includes('intercept') || probe.includes('impact') || probe.includes('infrastructure')) return 'infrastructure';
-  if (probe.includes('drone') || probe.includes('missile') || probe.includes('rocket') || probe.includes('projectile')) return 'operations';
+  if (probe.includes('drone') || probe.includes('missile') || probe.includes('rocket') || probe.includes('projectile') || probe.includes('air strike')) return 'operations';
   if (probe.includes('total') || probe.includes('aggregate') || probe.includes('duration') || probe.includes('days')) return 'totals';
   return 'other';
 }
@@ -5819,7 +5868,10 @@ function renderConflictLegend(legend, containerId = 'conflictLegend', moduleName
 
   const shapeForType = type => {
     const probe = normalize(String(type || ''));
-    if (probe.includes('projectile') || probe.includes('missile') || probe.includes('drone')) return 'triangle';
+    if (probe.includes('missile')) return 'triangle';
+    if (probe.includes('drone')) return 'diamond';
+    if (probe.includes('air_strike') || probe.includes('air strike')) return 'square';
+    if (probe.includes('projectile')) return 'triangle';
     return 'dot';
   };
 
@@ -5846,9 +5898,14 @@ function renderConflictLegend(legend, containerId = 'conflictLegend', moduleName
     const text = document.createElement('span');
     text.textContent = item.label || type || 'Event';
 
-    const meaning = shapeForType(type) === 'triangle'
-      ? 'Triangle markers show strike/projectile events.'
-      : 'Dot markers show impact/casualty concentration events.';
+    const markerShape = shapeForType(type);
+    const meaning = markerShape === 'triangle'
+      ? 'Triangle markers show missile events.'
+      : markerShape === 'diamond'
+        ? 'Diamond markers show drone events.'
+        : markerShape === 'square'
+          ? 'Square markers show air-strike events.'
+          : 'Dot markers show impact/casualty concentration events.';
     const tooltip = (item.label || type || 'Event') + ' | Color identifies event family. ' + meaning + ' Mass in map popups is represented event count/weight after density and zoom filtering.';
     button.title = tooltip;
     button.setAttribute('aria-label', tooltip);
@@ -5884,6 +5941,11 @@ function renderConflictLegend(legend, containerId = 'conflictLegend', moduleName
   note.appendChild(swatch);
   note.appendChild(text);
   container.appendChild(note);
+
+  const help = document.createElement('div');
+  help.className = 'conflict-legend-help';
+  help.textContent = 'Legend meaning: casualty concentration marks reported death or injury hotspots; missile indicator marks approximate missile impact zones; drone indicator marks approximate drone strike zones; air-strike indicator marks approximate manned air-strike locations or strike corridors. Newest update (red) highlights the most recent mapped event in the active time window.';
+  container.appendChild(help);
 }
 
 function inferTimelineCategory(item) {
@@ -6479,9 +6541,12 @@ function pseudoRand(seed) {
 }
 
 function markerKindForPoint(point) {
-  const probe = normalize(String(point?.label || '') + ' ' + String(point?.description || '') + ' ' + String(point?.type || ''));
-  if (probe.includes('missile') || probe.includes('drone') || probe.includes('projectile')) return 'triangle';
-  if (probe.includes('air defense') || probe.includes('intercept') || probe.includes('critical infrastructure') || probe.includes('air strike') || probe.includes('operations')) return 'dot';
+  const probe = normalize(String(point?.category || '') + ' ' + String(point?.label || '') + ' ' + String(point?.description || '') + ' ' + String(point?.type || ''));
+  if (probe.includes('missile')) return 'triangle';
+  if (probe.includes('drone')) return 'diamond';
+  if (probe.includes('air_strike') || probe.includes('air strike')) return 'square';
+  if (probe.includes('projectile')) return 'triangle';
+  if (probe.includes('air defense') || probe.includes('intercept') || probe.includes('critical infrastructure') || probe.includes('operations')) return 'dot';
   return 'dot';
 }
 
@@ -6587,7 +6652,7 @@ function buildDisplayPointsForMap(points, zoom, densityPercent = 100) {
       || labelProbe.includes('ballistic missiles')
       || labelProbe.includes('drones (2025 benchmark)')
       || labelProbe.includes('critical infrastructure impacts (7d)')
-      || labelProbe.includes('air strikes (reported sites)');
+      || labelProbe.includes('air strikes (reported floor)');
 
     if (shouldCloud) {
       const cloud = expandPointCloud(point, zoom);
@@ -6689,7 +6754,13 @@ function markerIconFor(kind, color, clusterCount = null) {
     });
   }
 
-  const cls = kind === 'triangle' ? 'map-marker-triangle' : 'map-marker-dot';
+  const cls = kind === 'triangle'
+    ? 'map-marker-triangle'
+    : kind === 'diamond'
+      ? 'map-marker-diamond'
+      : kind === 'square'
+        ? 'map-marker-square'
+        : 'map-marker-dot';
   return L.divIcon({
     className: 'conflict-map-marker-wrap',
     html: '<span class="' + cls + '" style="--marker-color:' + color + ';background:' + color + ';color:' + color + '"></span>',

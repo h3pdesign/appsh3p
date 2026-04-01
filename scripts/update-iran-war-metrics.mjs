@@ -15,12 +15,15 @@ const WIKI_IRAN_WAR_API = 'https://en.wikipedia.org/w/api.php?action=parse&page=
 const WIKI_IRAN_TIMELINE_API = 'https://en.wikipedia.org/w/api.php?action=parse&page=Timeline_of_the_2026_Iran_war&prop=wikitext&format=json&formatversion=2'
 const WIKI_IRAN_WAR_URL = 'https://en.wikipedia.org/wiki/2026_Iran_war'
 const UAE_INTERCEPTS_URL = 'https://www.gulftoday.ae/news/2026/03/27/uae-intercepts-six-ballistic-missiles-nine-drones-from-iran'
-const PROJECTILE_SOURCE_CHAIN_LABEL = 'UAE Ministry of Defence + IDF spokesperson + ISW/CTP + OSINT public reporting'
+const IRAN_INFRA_DAMAGE_URL = 'https://www.aa.com.tr/en/middle-east/iran-says-over-113-000-civilian-places-damaged-in-us-israeli-attacks/3887118'
+const AIRSTRIKE_FLOOR_URL = 'https://www.britannica.com/event/2026-Iran-Conflict'
+const PROJECTILE_SOURCE_CHAIN_LABEL = 'UAE Ministry of Defence + IDF spokesperson + ISW/CTP + OSINT public reporting (launches only)'
 const PROJECTILE_SOURCE_CHAIN_URL = 'https://www.understandingwar.org/'
 const PROJECTILE_BASELINE_UTC = '2026-04-01T00:00:00.000Z'
 const PROJECTILE_BASELINE_TOTALS = {
   missiles: 1252,
-  drones: 2328
+  drones: 2328,
+  airStrikes: 900
 }
 const IRAN_CONFLICT_START_UTC = '2026-02-28T00:00:00Z'
 const VERIFIED_IRAN_CONFLICT_TOTALS = {
@@ -34,7 +37,7 @@ const VERIFIED_IRAN_CONFLICT_TOTALS = {
   totalKilledLowerBound: 4661,
   totalInjuredLowerBound: 34489,
   airDefenseInterceptsLowerBound: 2228,
-  infrastructureImpactsLowerBound: 10000
+  infrastructureImpactsLowerBound: 113000
 }
 const RECENT_SERIES_REBUILD_DAYS = {
   iran_2026: 14,
@@ -306,6 +309,18 @@ function refreshConflictMetricsFromSources(conflict, sourceMetrics) {
     us_seriously_injured: VERIFIED_IRAN_CONFLICT_TOTALS.usInjured
   }
 
+  upsertMetric('air_strikes_total_2026', {
+    label: 'Air Strikes (Reported Floor)',
+    value: PROJECTILE_BASELINE_TOTALS.airStrikes,
+    source: 'Britannica: 2026 Iran conflict',
+    confidence: 'Low',
+    tone: 'amber',
+    scope: 'Conservative floor for reported U.S./Israeli air strikes against Iran. Excludes Iranian missile and drone launches.',
+    source_name: 'Britannica: 2026 Iran conflict',
+    source_url: AIRSTRIKE_FLOOR_URL,
+    updated_at_utc: nowIso
+  })
+
   assignIfFinite('iran_killed', Math.max(Number(sourceMetrics.iranKilled) || 0, conservativeCasualtyFloor.iran_killed), 'Wikipedia: 2026 Iran war (casualties by citizenship, conservative lower bound)', WIKI_IRAN_WAR_URL)
   assignIfFinite('iran_injured', Math.max(Number(sourceMetrics.iranInjured) || 0, conservativeCasualtyFloor.iran_injured), 'Wikipedia: 2026 Iran war (casualties by citizenship, conservative lower bound)', WIKI_IRAN_WAR_URL)
   assignIfFinite('israel_killed', Math.max(Number(sourceMetrics.israelKilled) || 0, conservativeCasualtyFloor.israel_killed), 'Wikipedia: 2026 Iran war (casualties by citizenship, conservative lower bound)', WIKI_IRAN_WAR_URL)
@@ -327,7 +342,7 @@ function refreshConflictMetricsFromSources(conflict, sourceMetrics) {
     assignIfFinite('total_reported_injured', Math.max(iranInjured + israelInjured + usInjured, VERIFIED_IRAN_CONFLICT_TOTALS.totalInjuredLowerBound), 'Wikipedia: 2026 Iran war (all tracked countries, conservative lower bound)', WIKI_IRAN_WAR_URL)
   }
 
-  const stampProjectileMetric = (id, minimumValue, label, scope) => {
+  const stampActivityMetric = (id, minimumValue, label, scope, sourceLabel = PROJECTILE_SOURCE_CHAIN_LABEL, sourceUrl = PROJECTILE_SOURCE_CHAIN_URL) => {
     const metric = remappedById.get(id)
     if (!metric) return
     const existing = Number(metric.value)
@@ -335,24 +350,32 @@ function refreshConflictMetricsFromSources(conflict, sourceMetrics) {
     metric.value = nextValue
     metric.label = label
     metric.scope = scope
-    metric.source = PROJECTILE_SOURCE_CHAIN_LABEL
-    metric.source_name = PROJECTILE_SOURCE_CHAIN_LABEL
-    metric.source_url = PROJECTILE_SOURCE_CHAIN_URL
+    metric.source = sourceLabel
+    metric.source_name = sourceLabel
+    metric.source_url = sourceUrl
     metric.updated_at_utc = nowIso
   }
 
   // Guardrail: keep projectile totals monotonic and never below latest verified 2026 baseline.
-  stampProjectileMetric(
+  stampActivityMetric(
     'missiles_total_2026',
     PROJECTILE_BASELINE_TOTALS.missiles,
-    'Ballistic Missiles (2026 Conflict Total)',
-    'Total reported ballistic missiles launched in the 2026 conflict (cumulative lower bound).'
+    'Missiles (2026 Conflict Total)',
+    'Total reported missile launches in the 2026 conflict (cumulative lower bound). Excludes U.S./Israeli air strikes.'
   )
-  stampProjectileMetric(
+  stampActivityMetric(
     'drones_total_2026',
     PROJECTILE_BASELINE_TOTALS.drones,
     'Drones (2026 Conflict Total)',
-    'Total reported drones launched in the 2026 conflict (cumulative lower bound).'
+    'Total reported drones launched in the 2026 conflict (cumulative lower bound). Excludes U.S./Israeli air strikes.'
+  )
+  stampActivityMetric(
+    'air_strikes_total_2026',
+    PROJECTILE_BASELINE_TOTALS.airStrikes,
+    'Air Strikes (Reported Floor)',
+    'Conservative floor for reported U.S./Israeli air strikes against Iran. Britannica reports nearly 900 strikes in the first 12 hours on February 28, 2026; the campaign continued after that, so this should be read as a minimum rather than an exact total.',
+    'Britannica: 2026 Iran conflict',
+    AIRSTRIKE_FLOOR_URL
   )
 
   assignIfFinite('air_defense_intercepts_7d', VERIFIED_IRAN_CONFLICT_TOTALS.airDefenseInterceptsLowerBound, 'UAE air defences public cumulative tally (lower bound)', UAE_INTERCEPTS_URL)
@@ -366,14 +389,14 @@ function refreshConflictMetricsFromSources(conflict, sourceMetrics) {
     interceptMetric.updated_at_utc = nowIso
   }
 
-  assignIfFinite('critical_infrastructure_impacts_7d', VERIFIED_IRAN_CONFLICT_TOTALS.infrastructureImpactsLowerBound, 'Wikipedia: 2026 Iran war (civilian and infrastructure damage lower bound)', WIKI_IRAN_WAR_URL)
+  assignIfFinite('critical_infrastructure_impacts_7d', VERIFIED_IRAN_CONFLICT_TOTALS.infrastructureImpactsLowerBound, 'Anadolu / Iranian Red Crescent reported damaged civilian places floor', IRAN_INFRA_DAMAGE_URL)
   const infrastructureMetric = remappedById.get('critical_infrastructure_impacts_7d')
   if (infrastructureMetric) {
-    infrastructureMetric.label = 'Critical Infrastructure Impacts (Conflict Lower Bound)'
-    infrastructureMetric.scope = 'Conservative cumulative floor based on reported damaged civilian and infrastructure sites. Includes >10,000 civilian sites damaged plus hospitals, schools, and other critical facilities.'
-    infrastructureMetric.source = 'Wikipedia + Iranian Red Crescent + WHO'
-    infrastructureMetric.source_name = 'Wikipedia: 2026 Iran war (infrastructure damage lower bound)'
-    infrastructureMetric.source_url = WIKI_IRAN_WAR_URL
+    infrastructureMetric.label = 'Critical Infrastructure / Civilian Site Impacts (Reported Floor)'
+    infrastructureMetric.scope = 'Current reported floor from the Iranian Red Crescent: over 113,000 damaged civilian places since February 28, 2026. This is not an exact total for all theater-wide infrastructure damage and should be read as a minimum reported count.'
+    infrastructureMetric.source = 'Iranian Red Crescent via Anadolu'
+    infrastructureMetric.source_name = 'Iran says over 113,000 civilian places damaged in US-Israeli attacks'
+    infrastructureMetric.source_url = IRAN_INFRA_DAMAGE_URL
     infrastructureMetric.updated_at_utc = nowIso
   }
 
@@ -513,6 +536,15 @@ function refreshMapPoints(conflict, now) {
     conflict?.tertiary_source_name,
     conflict?.quaternary_source_name
   ].filter(Boolean).join(' + ')
+  const boundedSite = (name, lat, lng, weight, bounds = null) => ({ name, lat, lng, weight, bounds })
+  const constrainExpandedSite = (seed, lat, lng) => {
+    const bounds = seed && seed.bounds ? seed.bounds : null
+    if (!bounds) return { lat, lng }
+    return {
+      lat: clamp(lat, bounds.minLat, bounds.maxLat),
+      lng: clamp(lng, bounds.minLng, bounds.maxLng)
+    }
+  }
 
   const splitMass = (total, weights) => {
     const safeTotal = Math.max(0, Math.round(Number(total) || 0))
@@ -578,10 +610,12 @@ function refreshMapPoints(conflict, now) {
       const weightSeed = Number(seed.weight) || 1
       const derivedWeight = clamp(weightSeed * (0.30 + dayHash(`${conflictKey}:${channel}:weight:${i}`, cycleISO) * 0.45), 0.18, 1.2)
 
+      const constrained = constrainExpandedSite(seed, lat + dLat, lng + dLng)
+
       extras.push({
         name: `${seed.name} hotspot ${cycleISO.slice(0, 13)} #${i + 1}`,
-        lat: lat + dLat,
-        lng: lng + dLng,
+        lat: constrained.lat,
+        lng: constrained.lng,
         weight: derivedWeight
       })
     }
@@ -626,25 +660,25 @@ function refreshMapPoints(conflict, now) {
   if (conflict?.id === 'iran_2026') {
     const missilesTotal = metricValue(metrics, 'missiles_total_2026') || metricValue(metrics, 'missiles_benchmark')
     const dronesTotal = metricValue(metrics, 'drones_total_2026') || metricValue(metrics, 'drones_benchmark')
-    const infraTotal = metricValue(metrics, 'critical_infrastructure_impacts_7d')
+    const airStrikesTotal = metricValue(metrics, 'air_strikes_total_2026')
     const killedTotal = metricValue(metrics, 'iran_killed') + metricValue(metrics, 'israel_killed') + metricValue(metrics, 'us_killed')
     const injuredTotal = metricValue(metrics, 'iran_injured') + metricValue(metrics, 'israel_injured') + metricValue(metrics, 'us_seriously_injured')
 
     const missileMass = clamp(Math.round(missilesTotal * 0.62), 520, 980)
     const droneMass = clamp(Math.round(dronesTotal * 0.42), 760, 1600)
-    const infraMass = clamp(Math.round(infraTotal * 0.06), 280, 760)
+    const airStrikeMass = clamp(Math.round(airStrikesTotal * 0.32), 260, 720)
     const casualtyMass = clamp(Math.round(killedTotal * 0.06 + injuredTotal * 0.015), 240, 900)
 
     const missileSites = [
-      { name: 'Tel Aviv metro impact cluster', lat: 32.0853, lng: 34.7818, weight: 1.45 },
-      { name: 'Haifa metro impact cluster', lat: 32.794, lng: 34.9896, weight: 1.2 },
-      { name: 'Beersheba impact cluster', lat: 31.252, lng: 34.7915, weight: 1.0 },
-      { name: 'Jerusalem outskirts impact cluster', lat: 31.7683, lng: 35.2137, weight: 0.85 },
-      { name: 'Ashdod coastal impact cluster', lat: 31.8014, lng: 34.6435, weight: 0.75 },
-      { name: 'Ashkelon impact cluster', lat: 31.6688, lng: 34.5743, weight: 0.7 },
-      { name: 'Rishon LeZion impact cluster', lat: 31.973, lng: 34.7925, weight: 0.68 },
-      { name: 'Hadera impact cluster', lat: 32.434, lng: 34.919, weight: 0.62 },
-      { name: 'Eilat impact cluster', lat: 29.5577, lng: 34.9519, weight: 0.48 },
+      boundedSite('Tel Aviv metro impact cluster', 32.0853, 34.7818, 1.45, { minLat: 31.98, maxLat: 32.16, minLng: 34.72, maxLng: 34.90 }),
+      boundedSite('Haifa metro impact cluster', 32.794, 34.9896, 1.2, { minLat: 32.72, maxLat: 32.88, minLng: 34.93, maxLng: 35.08 }),
+      boundedSite('Beersheba impact cluster', 31.252, 34.7915, 1.0, { minLat: 31.16, maxLat: 31.34, minLng: 34.72, maxLng: 34.88 }),
+      boundedSite('Jerusalem outskirts impact cluster', 31.7683, 35.2137, 0.85, { minLat: 31.68, maxLat: 31.88, minLng: 35.10, maxLng: 35.32 }),
+      boundedSite('Ashdod coastal impact cluster', 31.8014, 34.6435, 0.75, { minLat: 31.73, maxLat: 31.90, minLng: 34.60, maxLng: 34.76 }),
+      boundedSite('Ashkelon impact cluster', 31.6688, 34.5743, 0.7, { minLat: 31.54, maxLat: 31.75, minLng: 34.56, maxLng: 34.68 }),
+      boundedSite('Rishon LeZion impact cluster', 31.973, 34.7925, 0.68, { minLat: 31.89, maxLat: 32.05, minLng: 34.73, maxLng: 34.86 }),
+      boundedSite('Hadera impact cluster', 32.434, 34.919, 0.62, { minLat: 32.36, maxLat: 32.52, minLng: 34.86, maxLng: 35.02 }),
+      boundedSite('Eilat impact cluster', 29.5577, 34.9519, 0.48, { minLat: 29.50, maxLat: 29.62, minLng: 34.90, maxLng: 35.02 }),
       { name: 'Natanz area strike cluster', lat: 33.7262, lng: 51.7267, weight: 0.9 },
       { name: 'Tabriz area strike cluster', lat: 38.0962, lng: 46.2738, weight: 0.65 },
       { name: 'Kermanshah area strike cluster', lat: 34.3142, lng: 47.065, weight: 0.7 },
@@ -684,14 +718,14 @@ function refreshMapPoints(conflict, now) {
     ]
 
     const infraSites = [
-      { name: 'Haifa port infrastructure impact', lat: 32.8191, lng: 35.0007, weight: 1.2 },
-      { name: 'Ashkelon energy corridor impact', lat: 31.6688, lng: 34.5743, weight: 1.0 },
-      { name: 'Tel Aviv utility corridor impact', lat: 32.074, lng: 34.7924, weight: 1.0 },
-      { name: 'Rishon LeZion utility node impact', lat: 31.973, lng: 34.7925, weight: 0.85 },
-      { name: 'Hadera grid corridor impact', lat: 32.434, lng: 34.919, weight: 0.8 },
-      { name: 'Beersheba logistics impact', lat: 31.244, lng: 34.798, weight: 0.8 },
-      { name: 'Jerusalem utility node impact', lat: 31.7683, lng: 35.2137, weight: 0.78 },
-      { name: 'Ashdod port corridor impact', lat: 31.8014, lng: 34.6435, weight: 0.76 },
+      boundedSite('Haifa port infrastructure impact', 32.8191, 35.0007, 1.2, { minLat: 32.74, maxLat: 32.88, minLng: 34.95, maxLng: 35.08 }),
+      boundedSite('Ashkelon energy corridor impact', 31.6688, 34.5743, 1.0, { minLat: 31.54, maxLat: 31.75, minLng: 34.56, maxLng: 34.68 }),
+      boundedSite('Tel Aviv utility corridor impact', 32.074, 34.7924, 1.0, { minLat: 31.98, maxLat: 32.15, minLng: 34.73, maxLng: 34.89 }),
+      boundedSite('Rishon LeZion utility node impact', 31.973, 34.7925, 0.85, { minLat: 31.89, maxLat: 32.05, minLng: 34.73, maxLng: 34.86 }),
+      boundedSite('Hadera grid corridor impact', 32.434, 34.919, 0.8, { minLat: 32.36, maxLat: 32.52, minLng: 34.86, maxLng: 35.02 }),
+      boundedSite('Beersheba logistics impact', 31.244, 34.798, 0.8, { minLat: 31.16, maxLat: 31.34, minLng: 34.72, maxLng: 34.88 }),
+      boundedSite('Jerusalem utility node impact', 31.7683, 35.2137, 0.78, { minLat: 31.68, maxLat: 31.88, minLng: 35.10, maxLng: 35.32 }),
+      boundedSite('Ashdod port corridor impact', 31.8014, 34.6435, 0.76, { minLat: 31.73, maxLat: 31.90, minLng: 34.60, maxLng: 34.76 }),
       { name: 'Natanz facility perimeter impact', lat: 33.724, lng: 51.722, weight: 1.0 },
       { name: 'Isfahan industrial corridor impact', lat: 32.673, lng: 51.688, weight: 0.9 },
       { name: 'Tehran power node impact', lat: 35.701, lng: 51.403, weight: 0.95 },
@@ -706,12 +740,12 @@ function refreshMapPoints(conflict, now) {
 
     const casualtySites = [
       { name: 'Tehran casualty concentration', lat: 35.6892, lng: 51.389, weight: 1.3 },
-      { name: 'Tel Aviv casualty concentration', lat: 32.0853, lng: 34.7818, weight: 1.15 },
-      { name: 'Haifa casualty concentration', lat: 32.794, lng: 34.9896, weight: 1.05 },
-      { name: 'Jerusalem casualty concentration', lat: 31.7683, lng: 35.2137, weight: 0.95 },
+      boundedSite('Tel Aviv casualty concentration', 32.0853, 34.7818, 1.15, { minLat: 31.98, maxLat: 32.16, minLng: 34.72, maxLng: 34.90 }),
+      boundedSite('Haifa casualty concentration', 32.794, 34.9896, 1.05, { minLat: 32.72, maxLat: 32.88, minLng: 34.93, maxLng: 35.08 }),
+      boundedSite('Jerusalem casualty concentration', 31.7683, 35.2137, 0.95, { minLat: 31.68, maxLat: 31.88, minLng: 35.10, maxLng: 35.32 }),
       { name: 'Isfahan casualty concentration', lat: 32.6546, lng: 51.668, weight: 0.9 },
-      { name: 'Beersheba casualty concentration', lat: 31.252, lng: 34.7915, weight: 0.82 },
-      { name: 'Ashkelon casualty concentration', lat: 31.6688, lng: 34.5743, weight: 0.76 },
+      boundedSite('Beersheba casualty concentration', 31.252, 34.7915, 0.82, { minLat: 31.16, maxLat: 31.34, minLng: 34.72, maxLng: 34.88 }),
+      boundedSite('Ashkelon casualty concentration', 31.6688, 34.5743, 0.76, { minLat: 31.54, maxLat: 31.75, minLng: 34.56, maxLng: 34.68 }),
       { name: 'Tabriz casualty concentration', lat: 38.0962, lng: 46.2738, weight: 0.7 },
       { name: 'Kermanshah casualty concentration', lat: 34.3142, lng: 47.065, weight: 0.64 },
       { name: 'Qom casualty concentration', lat: 34.6416, lng: 50.8746, weight: 0.62 },
@@ -725,31 +759,31 @@ function refreshMapPoints(conflict, now) {
 
     return [
       ...makePoints({
-        label: 'Ballistic missiles (2026 conflict total)',
-        type: 'projectiles',
+        label: 'Missiles (2026 conflict total)',
+        type: 'missiles',
         category: 'missile_strikes',
         totalMetric: missilesTotal,
         totalMass: missileMass,
-        description: 'Approximate missile impact zones from open-source conflict reporting (5-10 km precision).',
+        description: 'Approximate missile impact zones from open-source conflict reporting (5-10 km precision). Excludes air strikes.',
         sites: autoExpandSites(missileSites, { conflictKey: 'iran_2026', channel: 'missiles', totalMass: missileMass, maxExtra: 110, baseRadiusKm: 11 })
       }),
       ...makePoints({
         label: 'Drones (2026 conflict total)',
-        type: 'projectiles',
+        type: 'drones',
         category: 'drone_strikes',
         totalMetric: dronesTotal,
         totalMass: droneMass,
-        description: 'Approximate drone strike zones from open-source conflict reporting (5-10 km precision).',
+        description: 'Approximate drone strike zones from open-source conflict reporting (5-10 km precision). Excludes air strikes.',
         sites: autoExpandSites(droneSites, { conflictKey: 'iran_2026', channel: 'drones', totalMass: droneMass, maxExtra: 150, baseRadiusKm: 10 })
       }),
       ...makePoints({
-        label: 'Critical infrastructure impacts (conflict lower bound)',
-        type: 'operations',
+        label: 'Air strikes (reported floor)',
+        type: 'air_strikes',
         category: 'air_strikes',
-        totalMetric: infraTotal,
-        totalMass: infraMass,
-        description: 'Approximate air-strike / infrastructure impact locations (5-10 km precision).',
-        sites: autoExpandSites(infraSites, { conflictKey: 'iran_2026', channel: 'operations', totalMass: infraMass, maxExtra: 90, baseRadiusKm: 9 })
+        totalMetric: airStrikesTotal,
+        totalMass: airStrikeMass,
+        description: 'Approximate air-strike locations from open-source conflict reporting (5-10 km precision). Separate from missile and drone launch totals.',
+        sites: autoExpandSites(infraSites, { conflictKey: 'iran_2026', channel: 'airstrikes', totalMass: airStrikeMass, maxExtra: 90, baseRadiusKm: 9 })
       }),
       ...makePoints({
         label: 'Casualty concentration',
@@ -906,7 +940,9 @@ function computeTargetIntensity(conflict) {
     const injured = metricValue(metrics, 'iran_injured') + metricValue(metrics, 'israel_injured') + metricValue(metrics, 'us_seriously_injured')
     const projectile = (metricValue(metrics, 'missiles_total_2026') || metricValue(metrics, 'missiles_benchmark')) * 0.015
       + (metricValue(metrics, 'drones_total_2026') || metricValue(metrics, 'drones_benchmark')) * 0.007
-    const operations = metricValue(metrics, 'air_defense_intercepts_7d') * 0.06 + metricValue(metrics, 'critical_infrastructure_impacts_7d') * 0.30
+    const operations = metricValue(metrics, 'air_defense_intercepts_7d') * 0.06
+      + metricValue(metrics, 'critical_infrastructure_impacts_7d') * 0.30
+      + metricValue(metrics, 'air_strikes_total_2026') * 0.01
     const raw = killed * 0.025 + injured * 0.006 + projectile + operations
     return clamp(Math.round(raw), 14, 98)
   }
@@ -1090,6 +1126,19 @@ function buildMetricSeries(conflict, dailySeries) {
   }, {})
 }
 
+function refreshConflictLegend(conflict) {
+  if (conflict?.id === 'iran_2026') {
+    return [
+      { type: 'casualties', label: 'Casualty concentration', color: '#c026ff' },
+      { type: 'missiles', label: 'Missile indicator', color: '#f59e0b' },
+      { type: 'drones', label: 'Drone indicator', color: '#60a5fa' },
+      { type: 'air_strikes', label: 'Air-strike indicator', color: '#22c55e' }
+    ]
+  }
+
+  return Array.isArray(conflict?.legend) ? conflict.legend : []
+}
+
 async function loadMetrics() {
   const raw = await readFile(OUTPUT_PATH, 'utf8')
   return JSON.parse(raw)
@@ -1111,6 +1160,7 @@ async function main() {
       ...refreshedConflict,
       as_of_utc: now,
       updated_at_utc: now,
+      legend: refreshConflictLegend(refreshedConflict),
       map: {
         ...(refreshedConflict.map || {}),
         points: nextMapPoints
