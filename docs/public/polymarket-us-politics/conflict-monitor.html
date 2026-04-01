@@ -2036,6 +2036,32 @@ nav {
   color: var(--text-secondary);
 }
 
+.conflict-timeline-jump {
+  margin-top: 0.65rem;
+}
+
+.conflict-timeline-jump-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 38px;
+  padding: 0.45rem 0.8rem;
+  border-radius: 999px;
+  border: 1px solid color-mix(in oklab, var(--accent-blue) 42%, var(--border-subtle));
+  background: color-mix(in oklab, var(--bg-card) 92%, transparent);
+  color: var(--accent-blue);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.conflict-timeline-jump-btn:hover,
+.conflict-timeline-jump-btn:focus-visible {
+  background: color-mix(in oklab, var(--accent-blue) 12%, transparent);
+}
+
 .conflict-timeline-badge {
   display: inline-flex;
   align-items: center;
@@ -5643,6 +5669,24 @@ function renderConflictTimeline(events, containerId = 'conflictTimelineList') {
 
       card.appendChild(time);
       card.appendChild(text);
+
+      if (item?.map_point_key) {
+        const jumpWrap = document.createElement('div');
+        jumpWrap.className = 'conflict-timeline-jump';
+
+        const jump = document.createElement('a');
+        jump.className = 'conflict-timeline-jump-btn';
+        jump.href = '#conflictMap';
+        jump.textContent = 'Show On Map';
+        jump.addEventListener('click', event => {
+          event.preventDefault();
+          focusConflictMapPoint(item.map_module || 'iran', item.map_point_key || '');
+        });
+
+        jumpWrap.appendChild(jump);
+        card.appendChild(jumpWrap);
+      }
+
       container.appendChild(card);
     });
   }
@@ -5902,6 +5946,7 @@ function latestMapTimestamp(points) {
 }
 
 function mapPointKey(point) {
+  if (point?.point_key) return String(point.point_key);
   return [
     String(point?.name || ''),
     String(point?.label || ''),
