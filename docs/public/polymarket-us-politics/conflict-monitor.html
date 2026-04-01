@@ -1201,7 +1201,7 @@ nav {
 
 .metric-series-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 0.9rem;
 }
 
@@ -1291,6 +1291,48 @@ nav {
   font-size: 0.76rem;
   line-height: 1.4;
   color: var(--text-muted);
+}
+
+.metric-series-legend {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 0.45rem 0.8rem;
+  margin-top: 0.8rem;
+}
+
+.metric-series-legend-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.65rem;
+  font-size: 0.76rem;
+  color: var(--text-secondary);
+}
+
+.metric-series-legend-key {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  min-width: 0;
+}
+
+.metric-series-legend-swatch {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  flex: 0 0 auto;
+}
+
+.metric-series-legend-label {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.metric-series-legend-value {
+  font-family: var(--font-mono);
+  color: var(--text-main);
+  white-space: nowrap;
 }
 
 @media (max-width: 720px) {
@@ -2183,10 +2225,6 @@ nav {
 }
 
 .conflict-timeline-jump {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.65rem;
   margin-top: 0.65rem;
 }
 
@@ -2196,28 +2234,6 @@ nav {
   font-size: 0.62rem;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-}
-
-.conflict-timeline-jump-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 38px;
-  padding: 0.45rem 0.8rem;
-  border-radius: 999px;
-  border: 1px solid color-mix(in oklab, var(--accent-blue) 42%, var(--border-subtle));
-  background: color-mix(in oklab, var(--bg-card) 92%, transparent);
-  color: var(--accent-blue);
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  text-decoration: none;
-}
-
-.conflict-timeline-jump-btn:hover,
-.conflict-timeline-jump-btn:focus-visible {
-  background: color-mix(in oklab, var(--accent-blue) 12%, transparent);
 }
 
 .conflict-timeline-badge {
@@ -5555,6 +5571,7 @@ function renderConflictMetrics(metrics, containerId = 'conflictMetrics', options
   renderScopeLegend(scopePalette, options.scopeLegendId);
 
   const sourceEntries = Array.isArray(options.sourceEntries) ? options.sourceEntries : [];
+  const metricSeriesMap = options.metricSeries && typeof options.metricSeries === 'object' ? options.metricSeries : {};
   renderSourceLegend(sourceEntries, options.sourceLegendId);
 
   const grouped = new Map();
@@ -5679,10 +5696,15 @@ function renderConflictMetrics(metrics, containerId = 'conflictMetrics', options
       microFill.style.width = String(Math.max(6, Math.round(norm * 100))) + '%';
       microTrack.appendChild(microFill);
 
-      const history = loadMetricHistory(moduleKey, metricId);
-      history.push(Number(metric && metric.value));
-      saveMetricHistory(moduleKey, metricId, history);
-      const sparkValues = history.slice(-12);
+      const seriesRows = Array.isArray(metricSeriesMap?.[metricId]?.series) ? metricSeriesMap[metricId].series : [];
+      const sparkValues = (seriesRows.length > 0
+        ? seriesRows.map(point => Number(point?.value)).filter(Number.isFinite)
+        : (() => {
+            const history = loadMetricHistory(moduleKey, metricId);
+            history.push(Number(metric && metric.value));
+            saveMetricHistory(moduleKey, metricId, history);
+            return history;
+          })()).slice(-12);
       const pathData = sparklinePath(sparkValues);
       const spark = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
       spark.setAttribute('class', 'metric-sparkline');
@@ -5720,6 +5742,64 @@ function metricSeriesColor(metric) {
   return 'var(--accent-blue)';
 }
 
+function normalizedSeriesEntries(metricSeries) {
+  return Object.values(metricSeries || {})
+    .filter(entry => entry?.id !== 'conflict_duration_days')
+    .filter(entry => Array.isArray(entry?.series) && entry.series.length > 1 && Number.isFinite(Number(entry?.current_value)))
+    .sort((left, right) => {
+      const leftGroup = classifyMetricGroup(left);
+      const rightGroup = classifyMetricGroup(right);
+      const order = { casualties: 0, totals: 1, operations: 2, infrastructure: 3, other: 4 };
+      if ((order[leftGroup] ?? 99) !== (order[rightGroup] ?? 99)) return (order[leftGroup] ?? 99) - (order[rightGroup] ?? 99);
+      return Number(right.current_value) - Number(left.current_value);
+    });
+}
+
+function metricSeriesPanelKey(entry) {
+  return classifyMetricGroup(entry) === 'casualties' ? 'casualties' : 'activity';
+}
+
+function metricSeriesPanelTitle(panelKey) {
+  return panelKey === 'casualties' ? 'Accumulated Casualties' : 'Accumulated Operations, Totals & Infrastructure';
+}
+
+function metricSeriesPanelNote(panelKey) {
+  return panelKey === 'casualties'
+    ? 'Reported killed and injured trajectories since conflict start.'
+    : 'Conflict totals, projectile activity, intercepts, and infrastructure impact trajectories since conflict start.';
+}
+
+function metricSeriesMultiPath(entries, width = 320, height = 132, padX = 14, padY = 14) {
+  const allValues = entries.flatMap(entry => (entry.series || []).map(point => Number(point?.value)).filter(Number.isFinite));
+  if (allValues.length === 0) return { series: [], min: 0, max: 1 };
+
+  const min = Math.min(...allValues);
+  const max = Math.max(...allValues);
+  const span = Math.max(1, max - min);
+  const innerW = width - padX * 2;
+  const innerH = height - padY * 2;
+
+  const series = entries.map(entry => {
+    const rows = Array.isArray(entry.series) ? entry.series.filter(point => Number.isFinite(Number(point?.value))) : [];
+    const coords = rows.map((point, index) => {
+      const x = padX + (innerW * index) / Math.max(1, rows.length - 1);
+      const ratio = (Number(point.value) - min) / span;
+      const y = padY + innerH - ratio * innerH;
+      return { x, y };
+    });
+    return {
+      entry,
+      color: metricSeriesColor(entry),
+      path: coords.map((pt, index) => `${index === 0 ? 'M' : 'L'} ${pt.x.toFixed(2)} ${pt.y.toFixed(2)}`).join(' '),
+      end: coords[coords.length - 1] || null,
+      startDate: rows[0]?.date || '--',
+      endDate: rows[rows.length - 1]?.date || '--'
+    };
+  }).filter(row => row.path);
+
+  return { series, min, max };
+}
+
 function metricSeriesPath(series, width = 320, height = 132, padX = 14, padY = 14) {
   const rows = Array.isArray(series) ? series.filter(point => Number.isFinite(Number(point?.value))) : [];
   if (rows.length === 0) return { line: '', area: '', end: null, min: 0, max: 1 };
@@ -5744,57 +5824,62 @@ function renderMetricSeriesBoard(metricSeries, gridId = 'conflictMetricSeriesGri
   const grid = document.getElementById(gridId);
   if (!grid) return;
 
-  const entries = Object.values(metricSeries || {})
-    .filter(entry => Array.isArray(entry?.series) && entry.series.length > 0 && Number.isFinite(Number(entry?.current_value)))
-    .sort((left, right) => {
-      const leftGroup = classifyMetricGroup(left);
-      const rightGroup = classifyMetricGroup(right);
-      const order = { totals: 0, operations: 1, infrastructure: 2, casualties: 3, other: 4 };
-      if ((order[leftGroup] ?? 99) !== (order[rightGroup] ?? 99)) return (order[leftGroup] ?? 99) - (order[rightGroup] ?? 99);
-      return Number(right.current_value) - Number(left.current_value);
-    });
+  const entries = normalizedSeriesEntries(metricSeries);
 
   if (entries.length === 0) {
     grid.innerHTML = '<div class="metric-series-card"><div class="metric-series-label">No accumulated metric graphs available.</div></div>';
     return;
   }
 
-  grid.innerHTML = entries.map(entry => {
-    const rows = entry.series;
-    const graph = metricSeriesPath(rows);
-    const color = metricSeriesColor(entry);
-    const start = rows[0]?.date || '--';
-    const end = rows[rows.length - 1]?.date || '--';
-    const current = formatMetricNumber(entry.current_value);
-    const source = escapeHtml(entry.source_name || entry.scope || 'Conflict metric source');
-    const scope = escapeHtml(entry.scope || '');
-    const sourceUrl = entry.source_url ? String(entry.source_url) : '';
+  const grouped = new Map();
+  entries.forEach(entry => {
+    const key = metricSeriesPanelKey(entry);
+    if (!grouped.has(key)) grouped.set(key, []);
+    grouped.get(key).push(entry);
+  });
+
+  const panelOrder = ['casualties', 'activity'].filter(key => grouped.has(key));
+  grid.innerHTML = panelOrder.map(panelKey => {
+    const panelEntries = grouped.get(panelKey) || [];
+    const graph = metricSeriesMultiPath(panelEntries);
+    const start = panelEntries[0]?.series?.[0]?.date || '--';
+    const end = panelEntries[0]?.series?.[panelEntries[0].series.length - 1]?.date || '--';
     const rangeTop = formatMetricNumber(graph.max);
     const rangeBottom = formatMetricNumber(graph.min);
+    const seriesMarkup = graph.series.map(row => `
+      <path class="metric-series-line" d="${row.path}" stroke="${row.color}"></path>
+      ${row.end ? `<circle class="metric-series-end" cx="${row.end.x.toFixed(2)}" cy="${row.end.y.toFixed(2)}" r="4.4" fill="${row.color}"></circle>` : ''}
+    `).join('');
+    const legendMarkup = panelEntries.map(entry => `
+      <div class="metric-series-legend-item">
+        <span class="metric-series-legend-key">
+          <span class="metric-series-legend-swatch" style="background:${metricSeriesColor(entry)}"></span>
+          <span class="metric-series-legend-label">${escapeHtml(entry.label || entry.id)}</span>
+        </span>
+        <span class="metric-series-legend-value">${formatMetricNumber(entry.current_value)}</span>
+      </div>
+    `).join('');
     return `
       <article class="metric-series-card">
         <div class="metric-series-card-head">
           <div>
-            <div class="metric-series-label">${escapeHtml(entry.label || entry.id)}</div>
-            <div class="metric-series-meta">${scope || 'Accumulated series since conflict start.'}</div>
+            <div class="metric-series-label">${metricSeriesPanelTitle(panelKey)}</div>
+            <div class="metric-series-meta">${metricSeriesPanelNote(panelKey)}</div>
           </div>
-          <div class="metric-series-current">${current}</div>
         </div>
-        <svg class="metric-series-chart" viewBox="0 0 320 132" role="img" aria-label="${escapeHtml(entry.label || entry.id)} accumulated metric graph">
+        <svg class="metric-series-chart" viewBox="0 0 320 132" role="img" aria-label="${metricSeriesPanelTitle(panelKey)} accumulated metric graph">
           <line class="metric-series-axis" x1="14" y1="118" x2="306" y2="118"></line>
           <line class="metric-series-gridline" x1="14" y1="92" x2="306" y2="92"></line>
           <line class="metric-series-gridline" x1="14" y1="66" x2="306" y2="66"></line>
           <line class="metric-series-gridline" x1="14" y1="40" x2="306" y2="40"></line>
-          <path class="metric-series-area" d="${graph.area}" fill="${color}"></path>
-          <path class="metric-series-line" d="${graph.line}" stroke="${color}"></path>
-          ${graph.end ? `<circle class="metric-series-end" cx="${graph.end.x.toFixed(2)}" cy="${graph.end.y.toFixed(2)}" r="5.2" fill="${color}"></circle>` : ''}
+          ${seriesMarkup}
         </svg>
         <div class="metric-series-range">
           <span>${escapeHtml(start)}</span>
           <span>${rangeBottom} -> ${rangeTop}</span>
           <span>${escapeHtml(end)}</span>
         </div>
-        <div class="metric-series-source">${sourceUrl ? `<a href="${escapeHtml(sourceUrl)}" target="_blank" rel="noopener">${source}</a>` : source}</div>
+        <div class="metric-series-legend">${legendMarkup}</div>
       </article>
     `;
   }).join('');
@@ -5988,7 +6073,6 @@ function renderConflictTimeline(events, containerId = 'conflictTimelineList') {
         };
 
         card.addEventListener('click', event => {
-          if (event.target.closest('.conflict-timeline-jump-btn')) return;
           openTimelinePoint();
         });
         card.addEventListener('keydown', event => {
@@ -6002,20 +6086,9 @@ function renderConflictTimeline(events, containerId = 'conflictTimelineList') {
 
         const jumpHint = document.createElement('span');
         jumpHint.className = 'conflict-timeline-jump-hint';
-        jumpHint.textContent = 'Tap card or use button';
-
-        const jump = document.createElement('a');
-        jump.className = 'conflict-timeline-jump-btn';
-        jump.href = item.map_module === 'ukraine' ? '#ukraineMap' : '#conflictMap';
-        jump.textContent = 'Open on map';
-        jump.addEventListener('click', event => {
-          event.preventDefault();
-          event.stopPropagation();
-          openTimelinePoint();
-        });
+        jumpHint.textContent = 'Shown on map above. Click card to jump to point.';
 
         jumpWrap.appendChild(jumpHint);
-        jumpWrap.appendChild(jump);
         card.appendChild(jumpWrap);
       }
 
@@ -6363,22 +6436,32 @@ function focusConflictMapPoint(moduleName, pointKey) {
   const lng = Number(point.lng);
   if (!Number.isFinite(lat) || !Number.isFinite(lng)) return;
 
-  const nextZoom = Math.max(Number.isFinite(mapRef.getZoom?.()) ? mapRef.getZoom() : 0, 6);
   const mapContainer = mapRef.getContainer?.();
-  if (mapContainer) {
-    mapContainer.scrollIntoView({ behavior: 'smooth', block: 'center' });
-  }
-  mapRef.setView([lat, lng], nextZoom, { animate: true });
-
+  const nextZoom = Math.max(Number.isFinite(mapRef.getZoom?.()) ? mapRef.getZoom() : 0, 6);
   const valueLabel = Number.isFinite(Number(point.value)) ? formatInteger(point.value) : '--';
   const popup = '<strong>' + escapeHtml(point.name || 'Event') + '</strong><br>'
     + escapeHtml(point.label || 'Metric') + ': ' + valueLabel
     + '<br>' + escapeHtml(point.description || 'Approximate geolocated event')
     + '<br>Source: ' + escapeHtml(point.source || 'OSINT source chain');
-  L.popup({ offset: [0, -12] })
-    .setLatLng([lat, lng])
-    .setContent(popup)
-    .openOn(mapRef);
+
+  const openPoint = () => {
+    if (typeof mapRef.invalidateSize === 'function') mapRef.invalidateSize();
+    mapRef.setView([lat, lng], nextZoom, { animate: true });
+    window.setTimeout(() => {
+      L.popup({ offset: [0, -12] })
+        .setLatLng([lat, lng])
+        .setContent(popup)
+        .openOn(mapRef);
+    }, 120);
+  };
+
+  if (mapContainer) {
+    mapContainer.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    window.setTimeout(openPoint, 260);
+    return;
+  }
+
+  openPoint();
 }
 
 function conflictColorMap(legend) {
@@ -7738,7 +7821,7 @@ async function refreshUkraineMetrics() {
 
     hydrateUkraineHeader(conflict);
     const ukraineSources = buildConflictSourceEntries(conflict);
-    renderConflictMetrics(Array.isArray(conflict.metrics) ? conflict.metrics : [], 'ukraineMetrics', { moduleKey: 'ukraine', scopeLegendId: 'ukraineScopeLegend', sourceLegendId: 'ukraineSourceLegend', sourceEntries: ukraineSources, conflictAsOf: conflict.as_of_utc || conflict.updated_at_utc || feed.updated_at_utc });
+    renderConflictMetrics(Array.isArray(conflict.metrics) ? conflict.metrics : [], 'ukraineMetrics', { moduleKey: 'ukraine', scopeLegendId: 'ukraineScopeLegend', sourceLegendId: 'ukraineSourceLegend', sourceEntries: ukraineSources, conflictAsOf: conflict.as_of_utc || conflict.updated_at_utc || feed.updated_at_utc, metricSeries: conflict.metric_series || {} });
     renderMetricSeriesBoard(conflict.metric_series || {}, 'ukraineMetricSeriesGrid');
     renderConflictLegend(Array.isArray(conflict.legend) ? conflict.legend : [], 'ukraineLegend', 'ukraine');
     renderConflictTimeline(Array.isArray(conflict.timeline) ? conflict.timeline : [], 'ukraineTimelineList');
@@ -7813,7 +7896,7 @@ async function refreshIranWarMetrics() {
 
     hydrateConflictHeader(conflict);
     const iranSources = buildConflictSourceEntries(conflict);
-    renderConflictMetrics(Array.isArray(conflict.metrics) ? conflict.metrics : [], 'conflictMetrics', { moduleKey: 'iran', scopeLegendId: 'conflictScopeLegend', sourceLegendId: 'conflictSourceLegend', sourceEntries: iranSources, conflictAsOf: conflict.as_of_utc || conflict.updated_at_utc || feed.updated_at_utc });
+    renderConflictMetrics(Array.isArray(conflict.metrics) ? conflict.metrics : [], 'conflictMetrics', { moduleKey: 'iran', scopeLegendId: 'conflictScopeLegend', sourceLegendId: 'conflictSourceLegend', sourceEntries: iranSources, conflictAsOf: conflict.as_of_utc || conflict.updated_at_utc || feed.updated_at_utc, metricSeries: conflict.metric_series || {} });
     renderMetricSeriesBoard(conflict.metric_series || {}, 'conflictMetricSeriesGrid');
     renderConflictLegend(Array.isArray(conflict.legend) ? conflict.legend : [], 'conflictLegend', 'iran');
     renderConflictTimeline(Array.isArray(conflict.timeline) ? conflict.timeline : []);
