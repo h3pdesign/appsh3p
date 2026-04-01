@@ -1,8 +1,8 @@
 {
-  "updated_at_utc": "2026-04-01T01:06:22.746Z",
+  "updated_at_utc": "2026-04-01T08:49:52.384Z",
   "total_questions": 66,
-  "mapped_questions": 44,
-  "unmapped_questions": 22,
+  "mapped_questions": 38,
+  "unmapped_questions": 28,
   "entries": [
     {
       "question": "Will LeBron James win the 2028 US Presidential Election?",
@@ -19,15 +19,6 @@
       "market_slug": "will-the-next-diplomatic-us-iran-meeting-be-in-oman-655",
       "market_question": "Will the next diplomatic US-Iran meeting be in Oman?",
       "score": 0.435,
-      "active": true,
-      "closed": false
-    },
-    {
-      "question": "Iran agrees to end enrichment by March 31?",
-      "market_id": "1285886",
-      "market_slug": "iran-agrees-to-end-enrichment-of-uranium-by-march-31",
-      "market_question": " Iran agrees to end enrichment of uranium by March 31?",
-      "score": 0.953,
       "active": true,
       "closed": false
     },
@@ -95,15 +86,6 @@
       "closed": false
     },
     {
-      "question": "Trump out by March 31?",
-      "market_id": "666860",
-      "market_slug": "trump-out-as-president-by-march-31",
-      "market_question": "Trump out as President by March 31?",
-      "score": 0.81,
-      "active": true,
-      "closed": false
-    },
-    {
       "question": "Will Trump be impeached by June 30?",
       "market_id": "665209",
       "market_slug": "will-trump-be-impeached-by-june-30",
@@ -114,10 +96,10 @@
     },
     {
       "question": "Will Trump visit China by March 31?",
-      "market_id": "604490",
-      "market_slug": "will-trump-visit-china-by-march-31",
-      "market_question": "Will Trump visit China by March 31?",
-      "score": 1,
+      "market_id": "706279",
+      "market_slug": "will-trump-visit-china-by-april-30",
+      "market_question": "Will Trump visit China by April 30?",
+      "score": 0.787,
       "active": true,
       "closed": false
     },
@@ -150,10 +132,10 @@
     },
     {
       "question": "Jerome Powell out by March 31?",
-      "market_id": "1092481",
-      "market_slug": "jerome-powell-out-as-fed-chair-by-march-31-2026",
-      "market_question": "Jerome Powell out as Fed Chair by March 31, 2026?",
-      "score": 0.691,
+      "market_id": "1092482",
+      "market_slug": "jerome-powell-out-as-fed-chair-by-may-14-2026",
+      "market_question": "Jerome Powell out as Fed Chair by May 14, 2026?",
+      "score": 0.435,
       "active": true,
       "closed": false
     },
@@ -172,15 +154,6 @@
       "market_slug": "will-no-one-dissent-the-april-fed-decision",
       "market_question": "Will no one dissent the April Fed decision?",
       "score": 0.489,
-      "active": true,
-      "closed": false
-    },
-    {
-      "question": "Will Congress pass any tariffs by March 31?",
-      "market_id": "1403262",
-      "market_slug": "will-congress-pass-any-tariffs-by-march-31",
-      "market_question": "Will Congress pass any tariffs by March 31?",
-      "score": 1,
       "active": true,
       "closed": false
     },
@@ -231,9 +204,9 @@
     },
     {
       "question": "Mike Johnson out as Speaker by Dec 31, 2026?",
-      "market_id": "623964",
-      "market_slug": "mike-johnson-out-as-speaker-by-march-31",
-      "market_question": "Mike Johnson out as Speaker by March 31?",
+      "market_id": "813506",
+      "market_slug": "mike-johnson-out-as-speaker-by-december-31",
+      "market_question": "Mike Johnson out as Speaker by December 31?",
       "score": 0.691,
       "active": true,
       "closed": false
@@ -258,9 +231,9 @@
     },
     {
       "question": "When will DHS shutdown end?",
-      "market_id": "1723665",
-      "market_slug": "will-the-dhs-shutdown-end-before-april-1-2026-954",
-      "market_question": "Will the DHS shutdown end before April 1, 2026?",
+      "market_id": "1723674",
+      "market_slug": "will-the-dhs-shutdown-end-after-april-30-2026-195",
+      "market_question": "Will the DHS shutdown end after April 30, 2026?",
       "score": 0.564,
       "active": true,
       "closed": false
@@ -338,24 +311,6 @@
       "closed": false
     },
     {
-      "question": "Bill Clinton charged by March 31?",
-      "market_id": "1235970",
-      "market_slug": "bill-clinton-charged-by-march-31",
-      "market_question": "Bill Clinton charged by March 31?",
-      "score": 1,
-      "active": true,
-      "closed": false
-    },
-    {
-      "question": "Hillary Clinton charged by March 31?",
-      "market_id": "1235976",
-      "market_slug": "hillary-clinton-charged-by-march-31",
-      "market_question": "Hillary Clinton charged by March 31?",
-      "score": 1,
-      "active": true,
-      "closed": false
-    },
-    {
       "question": "SBF released from custody in 2026?",
       "market_id": "1422097",
       "market_slug": "sbf-released-from-custody-in-2026",
@@ -370,15 +325,6 @@
       "market_slug": "will-the-us-confirm-that-aliens-exist-before-2027-789",
       "market_question": "Will the US confirm that aliens exist before 2027?",
       "score": 0.564,
-      "active": true,
-      "closed": false
-    },
-    {
-      "question": "Tony Gonzalez out as Rep by March 31?",
-      "market_id": "1429512",
-      "market_slug": "tony-gonzalez-out-as-us-rep-by-march-31",
-      "market_question": "Tony Gonzalez out as US Rep by March 31?",
-      "score": 1,
       "active": true,
       "closed": false
     },
@@ -403,16 +349,19 @@
   ],
   "unmapped": [
     "US/Israel strikes on Iran — Escalation Timeline",
+    "Iran agrees to end enrichment by March 31?",
     "Iran strike on US military by Feb 28?",
     "US strike on Somalia by Feb 28?",
     "Times US strikes Somalia in February",
     "Next country US strikes",
+    "Trump out by March 31?",
     "Trump deportations in 2025",
     "Trump Truth Social posts Feb 20–27",
     "Kevin Warsh formally nominated by March 31?",
     "Fed decision — March",
     "US tariff rate on China — March 31",
     "Revenue from tariffs 2025",
+    "Will Congress pass any tariffs by March 31?",
     "House Popular Vote Margin",
     "Government shutdown & House winner",
     "Texas Dem Senate Primary",
@@ -422,6 +371,9 @@
     "House passes Iran war powers resolution this week?",
     "Clintons held in contempt of Congress by Feb 28?",
     "Epstein files — names mentioned by Feb 28",
+    "Bill Clinton charged by March 31?",
+    "Hillary Clinton charged by March 31?",
+    "Tony Gonzalez out as Rep by March 31?",
     "Donald Trump Attention (7D)",
     "Live market spotlight"
   ]
