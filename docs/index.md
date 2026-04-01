@@ -63,7 +63,7 @@ features:
 <div class="startpage-release-strip" aria-label="App status snapshot">
   <article class="startpage-release-item release-neon">
     <div class="startpage-release-head">
-      <img src="/icons/neon-vision-editor.png?v=20260302-1" alt="" aria-hidden="true" loading="lazy" decoding="async" />
+      <img src="/icons/neon-vision-editor.png?v=20260401-2" alt="" aria-hidden="true" loading="lazy" decoding="async" />
       <strong>Neon</strong>
     </div>
     <span>v0.6.0</span>
@@ -113,7 +113,7 @@ features:
 
 <div class="startpage-app-strip" aria-label="H3P apps quick links">
   <a class="startpage-app-item" href="/apps/neon-vision-editor/overview">
-    <img src="/icons/neon-vision-editor.png?v=20260302-1" alt="Neon Vision Editor icon" width="52" height="52" loading="lazy" decoding="async" />
+    <img src="/icons/neon-vision-editor.png?v=20260401-2" alt="Neon Vision Editor icon" width="52" height="52" loading="lazy" decoding="async" />
     <span>Neon Vision Editor</span>
   </a>
   <a class="startpage-app-item" href="/apps/metric-data/overview">

@@ -42,7 +42,7 @@
     <a class="apps-slide neon" href="/apps/neon-vision-editor/gallery">
       <div class="apps-slide-media">
         <img src="/media/neon/editing-mac-frame.png" alt="Neon Vision Editor screenshot" />
-        <img class="apps-slide-icon" src="/icons/neon-vision-editor.png?v=20260302-1" alt="" aria-hidden="true" />
+        <img class="apps-slide-icon" src="/icons/neon-vision-editor.png?v=20260401-2" alt="" aria-hidden="true" />
         <span class="apps-slide-cta">open gallery</span>
       </div>
       <span class="apps-slide-title">Neon Vision Editor</span>
@@ -84,7 +84,7 @@
 
 <div class="apps-grid">
   <article class="app-card app-card-neon" data-changelog="/apps/neon-vision-editor/changelog" data-status="public" data-platforms="macos,ipados,ios">
-    <img src="/icons/neon-vision-editor.png?v=20260302-1" alt="Neon Vision Editor icon" class="app-icon" />
+    <img src="/icons/neon-vision-editor.png?v=20260401-2" alt="Neon Vision Editor icon" class="app-icon" />
     <div class="app-card-content">
       <h3 class="app-title-row"><a class="app-title-link" href="/apps/neon-vision-editor/overview">Neon Vision Editor</a><span class="app-status app-status-release">Public release</span></h3>
       <div class="app-card-meta-row">

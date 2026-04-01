@@ -11,7 +11,7 @@ head:
 # Neon Vision Editor FAQ
 
 <div class="app-empty-state app-empty-neon">
-  <img src="/icons/neon-vision-editor.png?v=20260302-1" alt="Neon Vision Editor" />
+  <img src="/icons/neon-vision-editor.png?v=20260401-2" alt="Neon Vision Editor" />
   <p>Quick answers for Neon Vision Editor App Store and TestFlight usage.</p>
 </div>
 
