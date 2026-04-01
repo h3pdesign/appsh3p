@@ -4065,6 +4065,7 @@ let conflictBaseLayer = null;
 let ukraineBaseLayer = null;
 let conflictMapLayerMode = 'standard';
 let countryBordersGeoJsonPromise = null;
+const conflictMapJumpHighlight = { iran: null, ukraine: null };
 const ATTACKED_COUNTRIES_BY_CONFLICT = {
   iran_2026: ['Iran', 'Israel', 'Iraq', 'Saudi Arabia', 'Bahrain', 'Qatar', 'Jordan', 'Kuwait', 'United Arab Emirates'],
   ukraine_2026: ['Ukraine', 'Russia']
@@ -6350,7 +6351,7 @@ function renderRecentMapPoints(points, bodyId, moduleName) {
 
 function focusConflictMapPoint(moduleName, pointKey) {
   const module = moduleName === 'ukraine' ? 'ukraine' : 'iran';
-  const state = conflictMapModuleState[module];
+  const state = conflictModuleState[module];
   if (!state) return;
 
   if (module === 'ukraine') {
@@ -6365,6 +6366,27 @@ function focusConflictMapPoint(moduleName, pointKey) {
     state.globeEnabled = false;
     setGlobeVisibility(module);
   }
+
+  state.timeFilter = 'all';
+  state.densityPercent = 100;
+  state.filters.missiles = true;
+  state.filters.drones = true;
+  state.filters.infra = true;
+  stopReplay(module);
+
+  const prefix = module === 'ukraine' ? 'ukraine' : 'iran';
+  const densityControl = document.getElementById(prefix + 'Density');
+  const timeframeControl = document.getElementById(prefix + 'Timeframe');
+  const missileControl = document.getElementById(prefix + 'FilterMissiles');
+  const dronesControl = document.getElementById(prefix + 'FilterDrones');
+  const infraControl = document.getElementById(prefix + 'FilterInfra');
+  if (densityControl) densityControl.value = '100';
+  if (timeframeControl) timeframeControl.value = 'all';
+  if (missileControl) missileControl.checked = true;
+  if (dronesControl) dronesControl.checked = true;
+  if (infraControl) infraControl.checked = true;
+
+  redrawConflictMapForModule(module);
 
   const points = Array.isArray(state?.points) ? state.points : [];
   const point = points.find(entry => mapPointKey(entry) === pointKey);
@@ -6389,17 +6411,37 @@ function focusConflictMapPoint(moduleName, pointKey) {
   const openPoint = () => {
     if (typeof mapRef.invalidateSize === 'function') mapRef.invalidateSize();
     if (typeof mapRef.closePopup === 'function') mapRef.closePopup();
+    if (conflictMapJumpHighlight[module] && mapRef.hasLayer && mapRef.hasLayer(conflictMapJumpHighlight[module])) {
+      mapRef.removeLayer(conflictMapJumpHighlight[module]);
+    }
+    if (typeof L.circleMarker === 'function') {
+      const highlight = L.circleMarker([lat, lng], {
+        radius: 14,
+        color: '#0b7cff',
+        weight: 3,
+        fillColor: '#ffffff',
+        fillOpacity: 0.92,
+        opacity: 0.95
+      }).addTo(mapRef);
+      conflictMapJumpHighlight[module] = highlight;
+      window.setTimeout(() => {
+        if (conflictMapJumpHighlight[module] === highlight && mapRef.hasLayer && mapRef.hasLayer(highlight)) {
+          mapRef.removeLayer(highlight);
+          conflictMapJumpHighlight[module] = null;
+        }
+      }, 5000);
+    }
     if (typeof mapRef.flyTo === 'function') {
-      mapRef.flyTo([lat, lng], nextZoom, { animate: true, duration: 0.7 });
+      mapRef.flyTo([lat, lng], Math.max(nextZoom, 7), { animate: true, duration: 0.7 });
     } else {
-      mapRef.setView([lat, lng], nextZoom, { animate: true });
+      mapRef.setView([lat, lng], Math.max(nextZoom, 7), { animate: true });
     }
     window.setTimeout(() => {
       L.popup({ offset: [0, -12] })
         .setLatLng([lat, lng])
         .setContent(popup)
         .openOn(mapRef);
-    }, 180);
+    }, 260);
   };
 
   if (scrollTarget) {
