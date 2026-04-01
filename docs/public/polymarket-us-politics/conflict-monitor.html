@@ -1250,14 +1250,14 @@ nav {
 
 .metric-series-bar-row {
   display: grid;
-  grid-template-columns: minmax(0, 1.45fr) minmax(160px, 2fr) auto;
+  grid-template-columns: minmax(0, 1.7fr) minmax(150px, 2fr) minmax(96px, auto);
   align-items: center;
   gap: 0.8rem;
 }
 
 .metric-series-bar-label {
   display: inline-flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 0.5rem;
   min-width: 0;
   font-size: 0.8rem;
@@ -1272,9 +1272,10 @@ nav {
 }
 
 .metric-series-bar-label-text {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  overflow: visible;
+  text-overflow: clip;
+  white-space: normal;
+  line-height: 1.35;
 }
 
 .metric-series-bar-track {
@@ -1292,11 +1293,13 @@ nav {
 }
 
 .metric-series-bar-value {
-  min-width: 74px;
+  min-width: 96px;
   text-align: right;
   font-family: var(--font-mono);
   font-size: 0.8rem;
   color: var(--text-main);
+  white-space: nowrap;
+  letter-spacing: 0;
 }
 
 .metric-series-footnote {
@@ -1312,6 +1315,29 @@ nav {
 
   .metric-series-grid {
     grid-template-columns: 1fr;
+  }
+
+  .metric-series-bar-row {
+    grid-template-columns: minmax(0, 1fr) minmax(92px, auto);
+    grid-template-areas:
+      "label label"
+      "bar value";
+    align-items: start;
+    gap: 0.45rem 0.7rem;
+  }
+
+  .metric-series-bar-label {
+    grid-area: label;
+  }
+
+  .metric-series-bar-track {
+    grid-area: bar;
+  }
+
+  .metric-series-bar-value {
+    grid-area: value;
+    min-width: 92px;
+    padding-top: 0.02rem;
   }
 }
 
