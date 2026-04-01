@@ -1242,97 +1242,67 @@ nav {
   color: var(--text-muted);
 }
 
-.metric-series-chart {
-  width: 100%;
-  height: 132px;
-  margin-top: 0.75rem;
-  display: block;
-}
-
-.metric-series-axis {
-  stroke: color-mix(in oklab, var(--border-subtle) 90%, transparent);
-  stroke-width: 1;
-}
-
-.metric-series-gridline {
-  stroke: color-mix(in oklab, var(--border-subtle) 58%, transparent);
-  stroke-width: 1;
-  stroke-dasharray: 4 6;
-}
-
-.metric-series-area {
-  opacity: 0.16;
-}
-
-.metric-series-line {
-  fill: none;
-  stroke-width: 2.6;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
-
-.metric-series-end {
-  stroke: color-mix(in oklab, var(--bg-card) 88%, transparent);
-  stroke-width: 2;
-}
-
-.metric-series-range {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.75rem;
-  margin-top: 0.4rem;
-  font-size: 0.74rem;
-  color: var(--text-muted);
-}
-
-.metric-series-source {
-  margin-top: 0.48rem;
-  font-size: 0.76rem;
-  line-height: 1.4;
-  color: var(--text-muted);
-}
-
-.metric-series-legend {
+.metric-series-bars {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 0.45rem 0.8rem;
-  margin-top: 0.8rem;
+  gap: 0.7rem;
+  margin-top: 0.9rem;
 }
 
-.metric-series-legend-item {
-  display: flex;
+.metric-series-bar-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(160px, 2fr) auto;
   align-items: center;
-  justify-content: space-between;
-  gap: 0.65rem;
-  font-size: 0.76rem;
-  color: var(--text-secondary);
+  gap: 0.8rem;
 }
 
-.metric-series-legend-key {
+.metric-series-bar-label {
   display: inline-flex;
   align-items: center;
-  gap: 0.45rem;
+  gap: 0.5rem;
   min-width: 0;
+  font-size: 0.8rem;
+  color: var(--text-main);
 }
 
-.metric-series-legend-swatch {
+.metric-series-bar-swatch {
   width: 10px;
   height: 10px;
   border-radius: 999px;
   flex: 0 0 auto;
 }
 
-.metric-series-legend-label {
+.metric-series-bar-label-text {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 
-.metric-series-legend-value {
+.metric-series-bar-track {
+  position: relative;
+  height: 12px;
+  border-radius: 999px;
+  overflow: hidden;
+  background: color-mix(in oklab, var(--border-subtle) 72%, transparent);
+}
+
+.metric-series-bar-fill {
+  position: absolute;
+  inset: 0 auto 0 0;
+  border-radius: 999px;
+}
+
+.metric-series-bar-value {
+  min-width: 74px;
+  text-align: right;
   font-family: var(--font-mono);
+  font-size: 0.8rem;
   color: var(--text-main);
-  white-space: nowrap;
+}
+
+.metric-series-footnote {
+  margin-top: 0.75rem;
+  font-size: 0.74rem;
+  color: var(--text-muted);
 }
 
 @media (max-width: 720px) {
@@ -5755,6 +5725,21 @@ function normalizedSeriesEntries(metricSeries) {
     });
 }
 
+function metricSeriesThreshold(entries) {
+  const values = entries.map(entry => Number(entry?.current_value)).filter(Number.isFinite).sort((a, b) => b - a);
+  if (values.length === 0) return Infinity;
+  if (values.length <= 6) return 100;
+  const median = values[Math.floor(values.length / 2)] || 0;
+  return Math.max(100, Math.round(median));
+}
+
+function filteredSeriesEntries(metricSeries) {
+  const entries = normalizedSeriesEntries(metricSeries);
+  const threshold = metricSeriesThreshold(entries);
+  const selected = entries.filter(entry => Number(entry.current_value) >= threshold);
+  return selected.length > 0 ? selected : entries.slice(0, 6);
+}
+
 function metricSeriesPanelKey(entry) {
   return classifyMetricGroup(entry) === 'casualties' ? 'casualties' : 'activity';
 }
@@ -5765,66 +5750,15 @@ function metricSeriesPanelTitle(panelKey) {
 
 function metricSeriesPanelNote(panelKey) {
   return panelKey === 'casualties'
-    ? 'Reported killed and injured trajectories since conflict start.'
+    ? 'Largest reported killed and injured metrics.'
     : 'Conflict totals, projectile activity, intercepts, and infrastructure impact trajectories since conflict start.';
-}
-
-function metricSeriesMultiPath(entries, width = 320, height = 132, padX = 14, padY = 14) {
-  const allValues = entries.flatMap(entry => (entry.series || []).map(point => Number(point?.value)).filter(Number.isFinite));
-  if (allValues.length === 0) return { series: [], min: 0, max: 1 };
-
-  const min = Math.min(...allValues);
-  const max = Math.max(...allValues);
-  const span = Math.max(1, max - min);
-  const innerW = width - padX * 2;
-  const innerH = height - padY * 2;
-
-  const series = entries.map(entry => {
-    const rows = Array.isArray(entry.series) ? entry.series.filter(point => Number.isFinite(Number(point?.value))) : [];
-    const coords = rows.map((point, index) => {
-      const x = padX + (innerW * index) / Math.max(1, rows.length - 1);
-      const ratio = (Number(point.value) - min) / span;
-      const y = padY + innerH - ratio * innerH;
-      return { x, y };
-    });
-    return {
-      entry,
-      color: metricSeriesColor(entry),
-      path: coords.map((pt, index) => `${index === 0 ? 'M' : 'L'} ${pt.x.toFixed(2)} ${pt.y.toFixed(2)}`).join(' '),
-      end: coords[coords.length - 1] || null,
-      startDate: rows[0]?.date || '--',
-      endDate: rows[rows.length - 1]?.date || '--'
-    };
-  }).filter(row => row.path);
-
-  return { series, min, max };
-}
-
-function metricSeriesPath(series, width = 320, height = 132, padX = 14, padY = 14) {
-  const rows = Array.isArray(series) ? series.filter(point => Number.isFinite(Number(point?.value))) : [];
-  if (rows.length === 0) return { line: '', area: '', end: null, min: 0, max: 1 };
-  const values = rows.map(point => Number(point.value));
-  const min = Math.min(...values);
-  const max = Math.max(...values);
-  const span = Math.max(1, max - min);
-  const innerW = width - padX * 2;
-  const innerH = height - padY * 2;
-  const coords = rows.map((point, index) => {
-    const x = padX + (innerW * index) / Math.max(1, rows.length - 1);
-    const ratio = (Number(point.value) - min) / span;
-    const y = padY + innerH - ratio * innerH;
-    return { x, y, value: Number(point.value), date: point.date };
-  });
-  const line = coords.map((pt, index) => `${index === 0 ? 'M' : 'L'} ${pt.x.toFixed(2)} ${pt.y.toFixed(2)}`).join(' ');
-  const area = `${line} L ${coords[coords.length - 1].x.toFixed(2)} ${(height - padY).toFixed(2)} L ${coords[0].x.toFixed(2)} ${(height - padY).toFixed(2)} Z`;
-  return { line, area, end: coords[coords.length - 1], min, max };
 }
 
 function renderMetricSeriesBoard(metricSeries, gridId = 'conflictMetricSeriesGrid') {
   const grid = document.getElementById(gridId);
   if (!grid) return;
 
-  const entries = normalizedSeriesEntries(metricSeries);
+  const entries = filteredSeriesEntries(metricSeries);
 
   if (entries.length === 0) {
     grid.innerHTML = '<div class="metric-series-card"><div class="metric-series-label">No accumulated metric graphs available.</div></div>';
@@ -5841,24 +5775,25 @@ function renderMetricSeriesBoard(metricSeries, gridId = 'conflictMetricSeriesGri
   const panelOrder = ['casualties', 'activity'].filter(key => grouped.has(key));
   grid.innerHTML = panelOrder.map(panelKey => {
     const panelEntries = grouped.get(panelKey) || [];
-    const graph = metricSeriesMultiPath(panelEntries);
+    const maxValue = Math.max(...panelEntries.map(entry => Number(entry.current_value)).filter(Number.isFinite), 1);
     const start = panelEntries[0]?.series?.[0]?.date || '--';
     const end = panelEntries[0]?.series?.[panelEntries[0].series.length - 1]?.date || '--';
-    const rangeTop = formatMetricNumber(graph.max);
-    const rangeBottom = formatMetricNumber(graph.min);
-    const seriesMarkup = graph.series.map(row => `
-      <path class="metric-series-line" d="${row.path}" stroke="${row.color}"></path>
-      ${row.end ? `<circle class="metric-series-end" cx="${row.end.x.toFixed(2)}" cy="${row.end.y.toFixed(2)}" r="4.4" fill="${row.color}"></circle>` : ''}
-    `).join('');
-    const legendMarkup = panelEntries.map(entry => `
-      <div class="metric-series-legend-item">
-        <span class="metric-series-legend-key">
-          <span class="metric-series-legend-swatch" style="background:${metricSeriesColor(entry)}"></span>
-          <span class="metric-series-legend-label">${escapeHtml(entry.label || entry.id)}</span>
-        </span>
-        <span class="metric-series-legend-value">${formatMetricNumber(entry.current_value)}</span>
-      </div>
-    `).join('');
+    const barsMarkup = panelEntries.map(entry => {
+      const value = Number(entry.current_value) || 0;
+      const widthPct = Math.max(6, Math.round((value / maxValue) * 100));
+      return `
+        <div class="metric-series-bar-row">
+          <div class="metric-series-bar-label">
+            <span class="metric-series-bar-swatch" style="background:${metricSeriesColor(entry)}"></span>
+            <span class="metric-series-bar-label-text">${escapeHtml(entry.label || entry.id)}</span>
+          </div>
+          <div class="metric-series-bar-track">
+            <div class="metric-series-bar-fill" style="width:${widthPct}%;background:${metricSeriesColor(entry)}"></div>
+          </div>
+          <div class="metric-series-bar-value">${formatMetricNumber(value)}</div>
+        </div>
+      `;
+    }).join('');
     return `
       <article class="metric-series-card">
         <div class="metric-series-card-head">
@@ -5867,19 +5802,10 @@ function renderMetricSeriesBoard(metricSeries, gridId = 'conflictMetricSeriesGri
             <div class="metric-series-meta">${metricSeriesPanelNote(panelKey)}</div>
           </div>
         </div>
-        <svg class="metric-series-chart" viewBox="0 0 320 132" role="img" aria-label="${metricSeriesPanelTitle(panelKey)} accumulated metric graph">
-          <line class="metric-series-axis" x1="14" y1="118" x2="306" y2="118"></line>
-          <line class="metric-series-gridline" x1="14" y1="92" x2="306" y2="92"></line>
-          <line class="metric-series-gridline" x1="14" y1="66" x2="306" y2="66"></line>
-          <line class="metric-series-gridline" x1="14" y1="40" x2="306" y2="40"></line>
-          ${seriesMarkup}
-        </svg>
-        <div class="metric-series-range">
-          <span>${escapeHtml(start)}</span>
-          <span>${rangeBottom} -> ${rangeTop}</span>
-          <span>${escapeHtml(end)}</span>
+        <div class="metric-series-bars" role="img" aria-label="${metricSeriesPanelTitle(panelKey)} bar chart">
+          ${barsMarkup}
         </div>
-        <div class="metric-series-legend">${legendMarkup}</div>
+        <div class="metric-series-footnote">Window covered: ${escapeHtml(start)} -> ${escapeHtml(end)}. Smaller metrics are intentionally hidden to keep the ranking readable.</div>
       </article>
     `;
   }).join('');
@@ -6425,6 +6351,21 @@ function renderRecentMapPoints(points, bodyId, moduleName) {
 function focusConflictMapPoint(moduleName, pointKey) {
   const module = moduleName === 'ukraine' ? 'ukraine' : 'iran';
   const state = conflictMapModuleState[module];
+  if (!state) return;
+
+  if (module === 'ukraine') {
+    const ukraineContent = document.getElementById('ukraineContent');
+    const ukraineToggleBtn = document.getElementById('ukraineToggleBtn');
+    if (ukraineContent?.hidden && ukraineToggleBtn) {
+      ukraineToggleBtn.click();
+    }
+  }
+
+  if (state.globeEnabled) {
+    state.globeEnabled = false;
+    setGlobeVisibility(module);
+  }
+
   const points = Array.isArray(state?.points) ? state.points : [];
   const point = points.find(entry => mapPointKey(entry) === pointKey);
   if (!point) return;
@@ -6437,6 +6378,7 @@ function focusConflictMapPoint(moduleName, pointKey) {
   if (!Number.isFinite(lat) || !Number.isFinite(lng)) return;
 
   const mapContainer = mapRef.getContainer?.();
+  const scrollTarget = mapContainer?.closest('.conflict-map-wrap') || mapContainer;
   const nextZoom = Math.max(Number.isFinite(mapRef.getZoom?.()) ? mapRef.getZoom() : 0, 6);
   const valueLabel = Number.isFinite(Number(point.value)) ? formatInteger(point.value) : '--';
   const popup = '<strong>' + escapeHtml(point.name || 'Event') + '</strong><br>'
@@ -6446,18 +6388,23 @@ function focusConflictMapPoint(moduleName, pointKey) {
 
   const openPoint = () => {
     if (typeof mapRef.invalidateSize === 'function') mapRef.invalidateSize();
-    mapRef.setView([lat, lng], nextZoom, { animate: true });
+    if (typeof mapRef.closePopup === 'function') mapRef.closePopup();
+    if (typeof mapRef.flyTo === 'function') {
+      mapRef.flyTo([lat, lng], nextZoom, { animate: true, duration: 0.7 });
+    } else {
+      mapRef.setView([lat, lng], nextZoom, { animate: true });
+    }
     window.setTimeout(() => {
       L.popup({ offset: [0, -12] })
         .setLatLng([lat, lng])
         .setContent(popup)
         .openOn(mapRef);
-    }, 120);
+    }, 180);
   };
 
-  if (mapContainer) {
-    mapContainer.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    window.setTimeout(openPoint, 260);
+  if (scrollTarget) {
+    scrollTarget.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    window.setTimeout(openPoint, module === 'ukraine' ? 420 : 260);
     return;
   }
 
