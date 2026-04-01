@@ -2779,15 +2779,40 @@ html.compact-home-cards .startpage-quick-start {
     right: 12px;
     bottom: calc(12px + env(safe-area-inset-bottom));
     z-index: 36;
+    align-items: center;
+    justify-content: center;
+    min-width: 136px;
     text-decoration: none;
-    border: 1px solid color-mix(in srgb, var(--vp-c-brand-1) 60%, var(--vp-c-divider));
+    border: 1px solid color-mix(in srgb, var(--vp-c-brand-1) 82%, white 18%);
     border-radius: 999px;
-    padding: 9px 14px;
-    font-size: 12px;
+    padding: 11px 16px;
+    font-size: 14px;
     font-weight: 800;
+    letter-spacing: 0.01em;
+    line-height: 1;
     color: #fff;
-    background: linear-gradient(180deg, var(--vp-c-brand-1), var(--vp-c-brand-2));
-    box-shadow: 0 10px 24px rgba(11, 124, 255, 0.28);
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0)) padding-box,
+      linear-gradient(180deg, color-mix(in srgb, var(--vp-c-brand-1) 90%, #68d7ff 10%), color-mix(in srgb, var(--vp-c-brand-2) 92%, #0f5de3 8%)) border-box;
+    box-shadow:
+      0 16px 34px rgba(11, 124, 255, 0.26),
+      0 6px 14px rgba(5, 28, 68, 0.16);
+    text-shadow: 0 1px 2px rgba(5, 20, 48, 0.3);
+    transition: opacity 180ms ease, transform 180ms ease, box-shadow 180ms ease;
+  }
+
+  .startpage-mobile-open-apps:hover,
+  .startpage-mobile-open-apps:focus-visible {
+    color: #fff;
+    box-shadow:
+      0 20px 40px rgba(11, 124, 255, 0.32),
+      0 10px 18px rgba(5, 28, 68, 0.18);
+  }
+
+  html.home-mobile-cta-hidden .startpage-mobile-open-apps {
+    opacity: 0;
+    transform: translate3d(0, 22px, 0);
+    pointer-events: none;
   }
 
   /* Mobile rows: horizontal scroll with fade affordance */

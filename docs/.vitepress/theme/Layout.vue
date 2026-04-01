@@ -16,6 +16,7 @@ let carouselTimer: number | null = null
 let carouselPauseHandlers: Array<() => void> = []
 let parallaxCleanup: (() => void) | null = null
 let analyticsCleanup: (() => void) | null = null
+let homeMobileCtaCleanup: (() => void) | null = null
 let mediaHashCache: Record<string, string> | null = null
 
 type QuickLink = {
@@ -248,6 +249,14 @@ function cleanupAnalytics() {
     analyticsCleanup()
     analyticsCleanup = null
   }
+}
+
+function cleanupHomeMobileCta() {
+  if (homeMobileCtaCleanup) {
+    homeMobileCtaCleanup()
+    homeMobileCtaCleanup = null
+  }
+  document.documentElement.classList.remove('home-mobile-cta-hidden')
 }
 
 function updateAsideProgress() {
@@ -913,6 +922,47 @@ function setupHomeFooterTabs() {
   setTab('core')
 }
 
+function setupHomeMobileOpenAppsCta() {
+  cleanupHomeMobileCta()
+  if (!isHomeRoute.value) return
+
+  const cta = document.querySelector<HTMLElement>('.startpage-mobile-open-apps')
+  if (!cta || !window.matchMedia('(max-width: 768px)').matches) return
+
+  let lastY = window.scrollY
+  let ticking = false
+
+  const applyState = () => {
+    const currentY = window.scrollY
+    const isPastThreshold = currentY > 96
+    const isScrollingDown = currentY > lastY + 8
+    const isScrollingUp = currentY < lastY - 8
+
+    if (isPastThreshold && isScrollingDown) {
+      document.documentElement.classList.add('home-mobile-cta-hidden')
+    } else if (!isPastThreshold || isScrollingUp) {
+      document.documentElement.classList.remove('home-mobile-cta-hidden')
+    }
+
+    lastY = currentY
+    ticking = false
+  }
+
+  const onScroll = () => {
+    if (ticking) return
+    ticking = true
+    window.requestAnimationFrame(applyState)
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true })
+  applyState()
+
+  homeMobileCtaCleanup = () => {
+    window.removeEventListener('scroll', onScroll)
+    document.documentElement.classList.remove('home-mobile-cta-hidden')
+  }
+}
+
 function setupAppsIndexFilters() {
   if (!(route.path === '/apps/' || route.path === '/apps/index')) return
   const bar = document.querySelector('.apps-filter-bar')
@@ -1140,6 +1190,7 @@ async function applyPageEnhancements() {
   setupHomeReleaseFreshnessBadges()
   setupHomeFeaturedPreviewToggle()
   setupHomeFooterTabs()
+  setupHomeMobileOpenAppsCta()
   setupAppsIndexFilters()
   setupClickAnalytics()
   await setupMediaCacheKeys()
@@ -1168,6 +1219,7 @@ onBeforeUnmount(() => {
   cleanupCarousel()
   cleanupParallax()
   cleanupAnalytics()
+  cleanupHomeMobileCta()
 })
 </script>
 
