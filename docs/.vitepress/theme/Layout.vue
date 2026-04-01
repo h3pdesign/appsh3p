@@ -1277,7 +1277,6 @@ onBeforeUnmount(() => {
           <a v-for="item in appDocTopLinks" :key="item.link" :href="item.link">{{ item.text }}</a>
         </nav>
       </div>
-      <p v-if="isAppDocPage" class="h3p-doc-last-updated">Last updated: {{ currentAppUpdatedOn }}</p>
     </template>
 
     <template #aside-outline-before>
