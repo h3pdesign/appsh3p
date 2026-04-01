@@ -9,12 +9,28 @@ const HISTORY_START = {
 
 const WIKI_IRAN_WAR_API = 'https://en.wikipedia.org/w/api.php?action=parse&page=2026_Iran_war&prop=wikitext&format=json&formatversion=2'
 const WIKI_IRAN_TIMELINE_API = 'https://en.wikipedia.org/w/api.php?action=parse&page=Timeline_of_the_2026_Iran_war&prop=wikitext&format=json&formatversion=2'
+const WIKI_IRAN_WAR_URL = 'https://en.wikipedia.org/wiki/2026_Iran_war'
+const UAE_INTERCEPTS_URL = 'https://www.gulftoday.ae/news/2026/03/27/uae-intercepts-six-ballistic-missiles-nine-drones-from-iran'
 const PROJECTILE_SOURCE_CHAIN_LABEL = 'UAE Ministry of Defence + IDF spokesperson + ISW/CTP + OSINT public reporting'
 const PROJECTILE_SOURCE_CHAIN_URL = 'https://www.understandingwar.org/'
-const PROJECTILE_BASELINE_UTC = '2026-03-07T13:56:45.650Z'
+const PROJECTILE_BASELINE_UTC = '2026-04-01T00:00:00.000Z'
 const PROJECTILE_BASELINE_TOTALS = {
-  missiles: 810,
-  drones: 1245
+  missiles: 1252,
+  drones: 2328
+}
+const IRAN_CONFLICT_START_UTC = '2026-02-28T00:00:00Z'
+const VERIFIED_IRAN_CONFLICT_TOTALS = {
+  asOfUtc: '2026-04-01T00:00:00Z',
+  iranKilled: 3329,
+  iranInjured: 24800,
+  israelKilled: 29,
+  israelInjured: 5492,
+  usKilled: 15,
+  usInjured: 313,
+  totalKilledLowerBound: 4661,
+  totalInjuredLowerBound: 34489,
+  airDefenseInterceptsLowerBound: 2228,
+  infrastructureImpactsLowerBound: 10000
 }
 
 const clamp = (value, min, max) => Math.max(min, Math.min(max, value))
@@ -217,10 +233,18 @@ async function fetchWikipediaIranMetrics() {
 }
 
 function refreshConflictMetricsFromSources(conflict, sourceMetrics) {
-  if (conflict?.id !== 'iran_2026' || !sourceMetrics) return conflict
+  if (conflict?.id !== 'iran_2026') return conflict
+  sourceMetrics = sourceMetrics || {}
   const metrics = Array.isArray(conflict.metrics) ? conflict.metrics.map(item => ({ ...item })) : []
-  const byId = new Map(metrics.map(item => [item.id, item]))
   const nowIso = new Date().toISOString()
+  const zeroSensitiveMetricIds = new Set([
+    'iran_killed',
+    'iran_injured',
+    'israel_killed',
+    'israel_injured',
+    'us_killed',
+    'us_seriously_injured'
+  ])
 
   // Migrate legacy benchmark IDs/labels to 2026 conflict-total semantics.
   for (const metric of metrics) {
@@ -234,10 +258,24 @@ function refreshConflictMetricsFromSources(conflict, sourceMetrics) {
   }
   const remappedById = new Map(metrics.map(item => [item.id, item]))
 
+  const upsertMetric = (id, defaults) => {
+    let metric = remappedById.get(id)
+    if (!metric) {
+      metric = { id, ...defaults }
+      metrics.push(metric)
+      remappedById.set(id, metric)
+    }
+    return metric
+  }
+
   const assignIfFinite = (id, value, sourceName, sourceUrl) => {
     if (!Number.isFinite(value)) return
     const metric = remappedById.get(id)
     if (!metric) return
+    const currentValue = Number(metric.value)
+    if (value === 0 && zeroSensitiveMetricIds.has(id) && Number.isFinite(currentValue) && currentValue > 0) {
+      return
+    }
     metric.value = value
     if (sourceName) metric.source_name = sourceName
     if (sourceUrl) metric.source_url = sourceUrl
@@ -251,25 +289,34 @@ function refreshConflictMetricsFromSources(conflict, sourceMetrics) {
     ? 'https://en.wikipedia.org/wiki/Timeline_of_the_2026_Iran_war#Casualties_by_country'
     : 'https://en.wikipedia.org/wiki/2026_Iran_war#Casualties_by_country'
 
-  assignIfFinite('iran_killed', sourceMetrics.iranKilled, wikiSourceLabel, wikiSourceUrl)
-  assignIfFinite('iran_injured', sourceMetrics.iranInjured, wikiSourceLabel, wikiSourceUrl)
-  assignIfFinite('israel_killed', sourceMetrics.israelKilled, wikiSourceLabel, wikiSourceUrl)
-  assignIfFinite('israel_injured', sourceMetrics.israelInjured, wikiSourceLabel, wikiSourceUrl)
-  assignIfFinite('us_killed', sourceMetrics.usKilled, 'U.S. Central Command + Wikipedia casualties table', 'https://www.centcom.mil/MEDIA/STATEMENTS/')
-  assignIfFinite('us_seriously_injured', sourceMetrics.usInjured, 'U.S. Central Command + Wikipedia casualties table', 'https://www.centcom.mil/MEDIA/STATEMENTS/')
+  const conservativeCasualtyFloor = {
+    iran_killed: VERIFIED_IRAN_CONFLICT_TOTALS.iranKilled,
+    iran_injured: VERIFIED_IRAN_CONFLICT_TOTALS.iranInjured,
+    israel_killed: VERIFIED_IRAN_CONFLICT_TOTALS.israelKilled,
+    israel_injured: VERIFIED_IRAN_CONFLICT_TOTALS.israelInjured,
+    us_killed: VERIFIED_IRAN_CONFLICT_TOTALS.usKilled,
+    us_seriously_injured: VERIFIED_IRAN_CONFLICT_TOTALS.usInjured
+  }
+
+  assignIfFinite('iran_killed', Math.max(Number(sourceMetrics.iranKilled) || 0, conservativeCasualtyFloor.iran_killed), 'Wikipedia: 2026 Iran war (casualties by citizenship, conservative lower bound)', WIKI_IRAN_WAR_URL)
+  assignIfFinite('iran_injured', Math.max(Number(sourceMetrics.iranInjured) || 0, conservativeCasualtyFloor.iran_injured), 'Wikipedia: 2026 Iran war (casualties by citizenship, conservative lower bound)', WIKI_IRAN_WAR_URL)
+  assignIfFinite('israel_killed', Math.max(Number(sourceMetrics.israelKilled) || 0, conservativeCasualtyFloor.israel_killed), 'Wikipedia: 2026 Iran war (casualties by citizenship, conservative lower bound)', WIKI_IRAN_WAR_URL)
+  assignIfFinite('israel_injured', Math.max(Number(sourceMetrics.israelInjured) || 0, conservativeCasualtyFloor.israel_injured), 'Wikipedia: 2026 Iran war (casualties by citizenship, conservative lower bound)', WIKI_IRAN_WAR_URL)
+  assignIfFinite('us_killed', Math.max(Number(sourceMetrics.usKilled) || 0, conservativeCasualtyFloor.us_killed), 'Wikipedia + U.S. Central Command (conservative lower bound)', WIKI_IRAN_WAR_URL)
+  assignIfFinite('us_seriously_injured', Math.max(Number(sourceMetrics.usInjured) || 0, conservativeCasualtyFloor.us_seriously_injured), 'Wikipedia + U.S. Central Command (conservative lower bound)', WIKI_IRAN_WAR_URL)
 
   const iranKilled = Number(remappedById.get('iran_killed')?.value)
   const israelKilled = Number(remappedById.get('israel_killed')?.value)
   const usKilled = Number(remappedById.get('us_killed')?.value)
   if (Number.isFinite(iranKilled) && Number.isFinite(israelKilled) && Number.isFinite(usKilled)) {
-    assignIfFinite('total_reported_killed', iranKilled + israelKilled + usKilled, 'Computed aggregate (Iran + Israel + US)', wikiSourceUrl)
+    assignIfFinite('total_reported_killed', Math.max(iranKilled + israelKilled + usKilled, VERIFIED_IRAN_CONFLICT_TOTALS.totalKilledLowerBound), 'Wikipedia: 2026 Iran war (all tracked countries, conservative lower bound)', WIKI_IRAN_WAR_URL)
   }
 
   const iranInjured = Number(remappedById.get('iran_injured')?.value)
   const israelInjured = Number(remappedById.get('israel_injured')?.value)
   const usInjured = Number(remappedById.get('us_seriously_injured')?.value)
   if (Number.isFinite(iranInjured) && Number.isFinite(israelInjured) && Number.isFinite(usInjured)) {
-    assignIfFinite('total_reported_injured', iranInjured + israelInjured + usInjured, 'Computed aggregate (Iran + Israel + US)', wikiSourceUrl)
+    assignIfFinite('total_reported_injured', Math.max(iranInjured + israelInjured + usInjured, VERIFIED_IRAN_CONFLICT_TOTALS.totalInjuredLowerBound), 'Wikipedia: 2026 Iran war (all tracked countries, conservative lower bound)', WIKI_IRAN_WAR_URL)
   }
 
   const stampProjectileMetric = (id, minimumValue, label, scope) => {
@@ -291,14 +338,58 @@ function refreshConflictMetricsFromSources(conflict, sourceMetrics) {
     'missiles_total_2026',
     PROJECTILE_BASELINE_TOTALS.missiles,
     'Ballistic Missiles (2026 Conflict Total)',
-    'Total reported ballistic missiles launched in the 2026 conflict (cumulative).'
+    'Total reported ballistic missiles launched in the 2026 conflict (cumulative lower bound).'
   )
   stampProjectileMetric(
     'drones_total_2026',
     PROJECTILE_BASELINE_TOTALS.drones,
     'Drones (2026 Conflict Total)',
-    'Total reported drones launched in the 2026 conflict (cumulative).'
+    'Total reported drones launched in the 2026 conflict (cumulative lower bound).'
   )
+
+  assignIfFinite('air_defense_intercepts_7d', VERIFIED_IRAN_CONFLICT_TOTALS.airDefenseInterceptsLowerBound, 'UAE air defences public cumulative tally (lower bound)', UAE_INTERCEPTS_URL)
+  const interceptMetric = remappedById.get('air_defense_intercepts_7d')
+  if (interceptMetric) {
+    interceptMetric.label = 'Air Defense Intercepts (Conflict Lower Bound)'
+    interceptMetric.scope = 'Publicly documented cumulative intercepts / engagements. Current floor comes from UAE official cumulative tally through March 27, 2026, and undercounts theater-wide interceptions.'
+    interceptMetric.source = 'UAE Ministry of Defence / WAM public cumulative tally'
+    interceptMetric.source_name = 'UAE air defences cumulative tally through March 27, 2026'
+    interceptMetric.source_url = UAE_INTERCEPTS_URL
+    interceptMetric.updated_at_utc = nowIso
+  }
+
+  assignIfFinite('critical_infrastructure_impacts_7d', VERIFIED_IRAN_CONFLICT_TOTALS.infrastructureImpactsLowerBound, 'Wikipedia: 2026 Iran war (civilian and infrastructure damage lower bound)', WIKI_IRAN_WAR_URL)
+  const infrastructureMetric = remappedById.get('critical_infrastructure_impacts_7d')
+  if (infrastructureMetric) {
+    infrastructureMetric.label = 'Critical Infrastructure Impacts (Conflict Lower Bound)'
+    infrastructureMetric.scope = 'Conservative cumulative floor based on reported damaged civilian and infrastructure sites. Includes >10,000 civilian sites damaged plus hospitals, schools, and other critical facilities.'
+    infrastructureMetric.source = 'Wikipedia + Iranian Red Crescent + WHO'
+    infrastructureMetric.source_name = 'Wikipedia: 2026 Iran war (infrastructure damage lower bound)'
+    infrastructureMetric.source_url = WIKI_IRAN_WAR_URL
+    infrastructureMetric.updated_at_utc = nowIso
+  }
+
+  const conflictDurationDays = Math.max(1, Math.floor((new Date(nowIso).getTime() - new Date(IRAN_CONFLICT_START_UTC).getTime()) / 86400000) + 1)
+  const durationMetric = upsertMetric('conflict_duration_days', {
+    label: 'Conflict Duration (days)',
+    value: conflictDurationDays,
+    source: 'Computed from war start date',
+    confidence: 'High',
+    tone: 'blue',
+    scope: 'Elapsed calendar days since February 28, 2026, inclusive.',
+    source_name: 'Wikipedia: 2026 Iran war (war start date)',
+    source_url: WIKI_IRAN_WAR_URL,
+    updated_at_utc: nowIso
+  })
+  durationMetric.label = 'Conflict Duration (days)'
+  durationMetric.value = conflictDurationDays
+  durationMetric.source = 'Computed from war start date'
+  durationMetric.confidence = 'High'
+  durationMetric.tone = 'blue'
+  durationMetric.scope = 'Elapsed calendar days since February 28, 2026, inclusive.'
+  durationMetric.source_name = 'Wikipedia: 2026 Iran war (war start date)'
+  durationMetric.source_url = WIKI_IRAN_WAR_URL
+  durationMetric.updated_at_utc = nowIso
 
   return {
     ...conflict,
@@ -342,6 +433,29 @@ function buildConflictTimeline(conflict, nowIso, mapPoints, dailySeries) {
       category
     }
   }
+  const mapTimelineEntries = (Array.isArray(mapPoints) ? mapPoints : [])
+    .map((point, index) => {
+      const ts = Number.isFinite(Date.parse(point?.reported_at_utc || '')) ? new Date(point.reported_at_utc).toISOString() : nowIso
+      const count = Number(point?.marker_mass ?? point?.value)
+      const label = String(point?.label || point?.type || 'Map event').trim()
+      const place = String(point?.name || 'Approximate map point').trim()
+      const category = String(point?.category || '').toLowerCase() === 'casualties' ? 'casualties' : 'operations'
+      return {
+        time: formatTimelineUtc(ts),
+        timestamp_utc: ts,
+        text: `${label} near ${place} (${Number.isFinite(count) ? Math.round(count) : '--'} reported units).`,
+        category,
+        _index: index
+      }
+    })
+    .sort((a, b) => {
+      const aTs = Number.isFinite(Date.parse(a.timestamp_utc)) ? Date.parse(a.timestamp_utc) : 0
+      const bTs = Number.isFinite(Date.parse(b.timestamp_utc)) ? Date.parse(b.timestamp_utc) : 0
+      if (bTs !== aTs) return bTs - aTs
+      return b._index - a._index
+    })
+    .slice(0, 8)
+    .map(({ _index, ...entry }) => entry)
 
   const metrics = metricMap(conflict)
   const totalKilled = metricValue(metrics, 'total_reported_killed')
@@ -360,6 +474,7 @@ function buildConflictTimeline(conflict, nowIso, mapPoints, dailySeries) {
     return [
       mk(0, `Casualty cards synced: reported totals now ${Math.round(totalKilled)} killed / ${Math.round(totalInjured)} injured (source-mixed).`, 'casualties'),
       mk(1, `Map hotspots regenerated and recentered (${mapCount} active points in current feed window).`, 'operations'),
+      ...mapTimelineEntries,
       mk(2, `Source chain verified: ${primarySource}${secondarySource ? ` + ${secondarySource}` : ''}.`, 'sources'),
       mk(3, `Daily intensity series refreshed; latest day-over-day delta ${deltaLabel}.`, 'trend')
     ]
@@ -368,6 +483,7 @@ function buildConflictTimeline(conflict, nowIso, mapPoints, dailySeries) {
   return [
     mk(0, `Conflict metrics synced: ${Math.round(totalKilled)} killed / ${Math.round(totalInjured)} injured (reported aggregate).`, 'casualties'),
     mk(1, `Map hotspots regenerated and recentered (${mapCount} active points in current feed window).`, 'operations'),
+    ...mapTimelineEntries,
     mk(2, `Source chain verified: ${primarySource}${secondarySource ? ` + ${secondarySource}` : ''}.`, 'sources'),
     mk(3, `Daily intensity series refreshed; latest day-over-day delta ${deltaLabel}.`, 'trend')
   ]
@@ -869,6 +985,10 @@ async function main() {
       ...refreshedConflict,
       as_of_utc: now,
       updated_at_utc: now,
+      map: {
+        ...(refreshedConflict.map || {}),
+        points: nextMapPoints
+      },
       map_points: nextMapPoints,
       daily_series: fullSeries,
       timeline: nextTimeline

@@ -4661,7 +4661,7 @@ function classifyMetricGroup(metric) {
   if (probe.includes('killed') || probe.includes('injured') || probe.includes('casual') || probe.includes('deaths')) return 'casualties';
   if (probe.includes('intercept') || probe.includes('impact') || probe.includes('infrastructure')) return 'infrastructure';
   if (probe.includes('drone') || probe.includes('missile') || probe.includes('rocket') || probe.includes('projectile')) return 'operations';
-  if (probe.includes('total') || probe.includes('aggregate')) return 'totals';
+  if (probe.includes('total') || probe.includes('aggregate') || probe.includes('duration') || probe.includes('days')) return 'totals';
   return 'other';
 }
 
@@ -4924,11 +4924,18 @@ function renderConflictMetrics(metrics, containerId = 'conflictMetrics', options
     grouped.get(groupKey).push(metric);
   });
 
-  const order = ['casualties', 'totals', 'operations', 'infrastructure', 'other'];
+  const order = ['totals', 'operations', 'infrastructure', 'casualties', 'other'];
   container.innerHTML = '';
 
   order.forEach(groupKey => {
-    const groupMetrics = grouped.get(groupKey) || [];
+    const groupMetrics = (grouped.get(groupKey) || []).slice().sort((left, right) => {
+      const leftValue = Number(left?.value);
+      const rightValue = Number(right?.value);
+      const leftZero = Number.isFinite(leftValue) ? leftValue === 0 : true;
+      const rightZero = Number.isFinite(rightValue) ? rightValue === 0 : true;
+      if (leftZero !== rightZero) return leftZero ? 1 : -1;
+      return (Number.isFinite(rightValue) ? rightValue : -Infinity) - (Number.isFinite(leftValue) ? leftValue : -Infinity);
+    });
     if (groupMetrics.length === 0) return;
 
     const values = groupMetrics.map(metric => Number(metric && metric.value)).filter(Number.isFinite);

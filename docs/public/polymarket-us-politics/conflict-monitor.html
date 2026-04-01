@@ -1908,6 +1908,106 @@ nav {
   gap: 0.65rem;
 }
 
+.conflict-map-points {
+  margin-top: 1rem;
+  padding: 1.1rem 1.15rem;
+  border-radius: 22px;
+  border: 1px solid var(--border-subtle);
+  background: linear-gradient(180deg, color-mix(in oklab, var(--bg-card) 92%, transparent) 0%, color-mix(in oklab, var(--bg-card-muted) 94%, transparent) 100%);
+  box-shadow: var(--soft-shadow);
+}
+
+.conflict-map-points-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.9rem;
+}
+
+.conflict-map-points h4 {
+  margin: 0;
+  font-size: 1rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-soft);
+}
+
+.conflict-map-points-note {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+}
+
+.conflict-map-points-table-wrap {
+  overflow-x: auto;
+}
+
+.conflict-map-points-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 880px;
+}
+
+.conflict-map-points-table th,
+.conflict-map-points-table td {
+  padding: 0.8rem 0.75rem;
+  border-top: 1px solid color-mix(in oklab, var(--border-subtle) 88%, transparent);
+  text-align: left;
+  vertical-align: top;
+}
+
+.conflict-map-points-table th {
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.conflict-map-points-table td {
+  font-size: 0.95rem;
+  color: var(--text-main);
+}
+
+.conflict-map-point-main {
+  font-weight: 700;
+}
+
+.conflict-map-point-sub {
+  margin-top: 0.18rem;
+  font-size: 0.83rem;
+  color: var(--text-muted);
+}
+
+.conflict-map-point-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 0.55rem 0.95rem;
+  border-radius: 999px;
+  border: 1px solid color-mix(in oklab, var(--accent-blue) 42%, var(--border-subtle));
+  color: var(--accent-blue);
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.conflict-map-point-link:hover,
+.conflict-map-point-link:focus-visible {
+  background: color-mix(in oklab, var(--accent-blue) 12%, transparent);
+}
+
+@media (max-width: 900px) {
+  .conflict-map-points {
+    padding: 1rem;
+  }
+
+  .conflict-map-points-table {
+    min-width: 720px;
+  }
+}
+
 .conflict-timeline-item {
   border: 1px solid var(--border-subtle);
   border-radius: 6px;
@@ -2565,6 +2665,30 @@ body.page-conflicts #methodology {
         </div>
         <div class="conflict-timeline-list" id="conflictTimelineList">
           <div class="conflict-timeline-item"><div class="conflict-timeline-time">Loading</div><div class="conflict-timeline-text">Waiting for timeline updates...</div></div>
+        </div>
+        <div class="conflict-map-points" id="conflictRecentPoints">
+          <div class="conflict-map-points-head">
+            <h4>Latest map events</h4>
+            <div class="conflict-map-points-note">Newest ten points with direct jump-back links into the live map.</div>
+          </div>
+          <div class="conflict-map-points-table-wrap">
+            <table class="conflict-map-points-table">
+              <thead>
+                <tr>
+                  <th scope="col">Time</th>
+                  <th scope="col">Event</th>
+                  <th scope="col">Type</th>
+                  <th scope="col">Mass</th>
+                  <th scope="col">Total</th>
+                  <th scope="col">Source</th>
+                  <th scope="col">Map</th>
+                </tr>
+              </thead>
+              <tbody id="conflictRecentPointsBody">
+                <tr><td colspan="7">Loading latest map events...</td></tr>
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </div>
@@ -4935,7 +5059,7 @@ function classifyMetricGroup(metric) {
   if (probe.includes('killed') || probe.includes('injured') || probe.includes('casual') || probe.includes('deaths')) return 'casualties';
   if (probe.includes('intercept') || probe.includes('impact') || probe.includes('infrastructure')) return 'infrastructure';
   if (probe.includes('drone') || probe.includes('missile') || probe.includes('rocket') || probe.includes('projectile')) return 'operations';
-  if (probe.includes('total') || probe.includes('aggregate')) return 'totals';
+  if (probe.includes('total') || probe.includes('aggregate') || probe.includes('duration') || probe.includes('days')) return 'totals';
   return 'other';
 }
 
@@ -5198,11 +5322,18 @@ function renderConflictMetrics(metrics, containerId = 'conflictMetrics', options
     grouped.get(groupKey).push(metric);
   });
 
-  const order = ['casualties', 'totals', 'operations', 'infrastructure', 'other'];
+  const order = ['totals', 'operations', 'infrastructure', 'casualties', 'other'];
   container.innerHTML = '';
 
   order.forEach(groupKey => {
-    const groupMetrics = grouped.get(groupKey) || [];
+    const groupMetrics = (grouped.get(groupKey) || []).slice().sort((left, right) => {
+      const leftValue = Number(left?.value);
+      const rightValue = Number(right?.value);
+      const leftZero = Number.isFinite(leftValue) ? leftValue === 0 : true;
+      const rightZero = Number.isFinite(rightValue) ? rightValue === 0 : true;
+      if (leftZero !== rightZero) return leftZero ? 1 : -1;
+      return (Number.isFinite(rightValue) ? rightValue : -Infinity) - (Number.isFinite(leftValue) ? leftValue : -Infinity);
+    });
     if (groupMetrics.length === 0) return;
 
     const values = groupMetrics.map(metric => Number(metric && metric.value)).filter(Number.isFinite);
@@ -5768,6 +5899,105 @@ function latestMapTimestamp(points) {
     if (Number.isFinite(ts) && (!Number.isFinite(latest) || ts > latest)) latest = ts;
   });
   return latest;
+}
+
+function mapPointKey(point) {
+  return [
+    String(point?.name || ''),
+    String(point?.label || ''),
+    String(point?.lat ?? ''),
+    String(point?.lng ?? ''),
+    String(point?.reported_at_utc || point?.updated_at_utc || point?.as_of_utc || '')
+  ].join('|');
+}
+
+function mapPointApproxLocation(point) {
+  const lat = Number(point?.lat);
+  const lng = Number(point?.lng);
+  if (!Number.isFinite(lat) || !Number.isFinite(lng)) return 'Approximate location unavailable';
+  return `${lat.toFixed(2)}, ${lng.toFixed(2)}`;
+}
+
+function renderRecentMapPoints(points, bodyId, moduleName) {
+  const body = document.getElementById(bodyId);
+  if (!body) return;
+
+  const rows = (Array.isArray(points) ? points : [])
+    .map((point, index) => ({ ...point, __index: index, __ts: mapPointTimestamp(point) }))
+    .filter(point => Number.isFinite(Number(point?.lat)) && Number.isFinite(Number(point?.lng)))
+    .sort((a, b) => {
+      const aTs = Number.isFinite(a.__ts) ? a.__ts : 0;
+      const bTs = Number.isFinite(b.__ts) ? b.__ts : 0;
+      if (bTs !== aTs) return bTs - aTs;
+      return b.__index - a.__index;
+    })
+    .slice(0, 10);
+
+  if (rows.length === 0) {
+    body.innerHTML = '<tr><td colspan="7">No recent map points available.</td></tr>';
+    return;
+  }
+
+  body.innerHTML = rows.map(point => {
+    const event = escapeHtml(point.name || 'Approximate map event');
+    const label = escapeHtml(point.label || point.type || 'Conflict event');
+    const type = escapeHtml(classifyMapPointCategory(point));
+    const source = escapeHtml(point.source || 'OSINT source chain');
+    const count = Number.isFinite(Number(point.marker_mass ?? point.value)) ? formatInteger(point.marker_mass ?? point.value) : '--';
+    const total = Number.isFinite(Number(point.total_metric)) ? formatInteger(point.total_metric) : '--';
+    const time = Number.isFinite(point.__ts) ? escapeHtml(formatShortLocalTimestamp(point.__ts)) : 'Unknown';
+    const location = escapeHtml(mapPointApproxLocation(point));
+    const key = escapeHtml(mapPointKey(point));
+    return `
+      <tr>
+        <td>${time}</td>
+        <td>
+          <div class="conflict-map-point-main">${event}</div>
+          <div class="conflict-map-point-sub">${label}<br>${location}</div>
+        </td>
+        <td>${type}</td>
+        <td>${count}</td>
+        <td>${total}</td>
+        <td>${source}</td>
+        <td><a class="conflict-map-point-link" href="#conflictMap" data-map-point-key="${key}" data-map-module="${escapeHtml(moduleName)}">Show on map</a></td>
+      </tr>
+    `;
+  }).join('');
+
+  body.querySelectorAll('[data-map-point-key]').forEach(link => {
+    link.addEventListener('click', event => {
+      event.preventDefault();
+      focusConflictMapPoint(link.getAttribute('data-map-module') || moduleName, link.getAttribute('data-map-point-key') || '');
+    });
+  });
+}
+
+function focusConflictMapPoint(moduleName, pointKey) {
+  const module = moduleName === 'ukraine' ? 'ukraine' : 'iran';
+  const state = conflictMapModuleState[module];
+  const points = Array.isArray(state?.points) ? state.points : [];
+  const point = points.find(entry => mapPointKey(entry) === pointKey);
+  if (!point) return;
+
+  const mapRef = module === 'ukraine' ? ukraineMap : conflictMap;
+  if (!mapRef || typeof L === 'undefined') return;
+
+  const lat = Number(point.lat);
+  const lng = Number(point.lng);
+  if (!Number.isFinite(lat) || !Number.isFinite(lng)) return;
+
+  const nextZoom = Math.max(Number.isFinite(mapRef.getZoom?.()) ? mapRef.getZoom() : 0, 6);
+  mapRef.setView([lat, lng], nextZoom, { animate: true });
+
+  const valueLabel = Number.isFinite(Number(point.value)) ? formatInteger(point.value) : '--';
+  const popup = '<strong>' + escapeHtml(point.name || 'Event') + '</strong><br>'
+    + escapeHtml(point.label || 'Metric') + ': ' + valueLabel
+    + '<br>' + escapeHtml(point.description || 'Approximate geolocated event')
+    + '<br>Source: ' + escapeHtml(point.source || 'OSINT source chain');
+  L.popup({ offset: [0, -12] })
+    .setLatLng([lat, lng])
+    .setContent(popup)
+    .openOn(mapRef);
 }
 
 function conflictColorMap(legend) {
@@ -7203,6 +7433,7 @@ async function refreshIranWarMetrics() {
     renderConflictMetrics(Array.isArray(conflict.metrics) ? conflict.metrics : [], 'conflictMetrics', { moduleKey: 'iran', scopeLegendId: 'conflictScopeLegend', sourceLegendId: 'conflictSourceLegend', sourceEntries: iranSources, conflictAsOf: conflict.as_of_utc || conflict.updated_at_utc || feed.updated_at_utc });
     renderConflictLegend(Array.isArray(conflict.legend) ? conflict.legend : [], 'conflictLegend', 'iran');
     renderConflictTimeline(Array.isArray(conflict.timeline) ? conflict.timeline : []);
+    renderRecentMapPoints(Array.isArray(conflict.map_points) ? conflict.map_points : [], 'conflictRecentPointsBody', 'iran');
     const iranSeries = Array.isArray(conflict.daily_series) ? conflict.daily_series : [];
     renderConflictTrend(iranSeries, {
       olderId: 'conflictTrendOlder',
