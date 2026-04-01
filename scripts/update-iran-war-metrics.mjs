@@ -661,12 +661,19 @@ function refreshMapPoints(conflict, now) {
     const missilesTotal = metricValue(metrics, 'missiles_total_2026') || metricValue(metrics, 'missiles_benchmark')
     const dronesTotal = metricValue(metrics, 'drones_total_2026') || metricValue(metrics, 'drones_benchmark')
     const airStrikesTotal = metricValue(metrics, 'air_strikes_total_2026')
+    const infraTotal = metricValue(metrics, 'critical_infrastructure_impacts_7d')
     const killedTotal = metricValue(metrics, 'iran_killed') + metricValue(metrics, 'israel_killed') + metricValue(metrics, 'us_killed')
     const injuredTotal = metricValue(metrics, 'iran_injured') + metricValue(metrics, 'israel_injured') + metricValue(metrics, 'us_seriously_injured')
 
     const missileMass = clamp(Math.round(missilesTotal * 0.62), 520, 980)
     const droneMass = clamp(Math.round(dronesTotal * 0.42), 760, 1600)
-    const airStrikeMass = clamp(Math.round(airStrikesTotal * 0.32), 260, 720)
+    // Air-strike map density should reflect the sustained air campaign footprint, not only the
+    // conservative public strike-count floor shown on the metric card.
+    const airStrikeMass = clamp(
+      Math.round(Math.max(airStrikesTotal * 1.35, dronesTotal * 0.92, infraTotal * 0.016)),
+      1100,
+      2400
+    )
     const casualtyMass = clamp(Math.round(killedTotal * 0.06 + injuredTotal * 0.015), 240, 900)
 
     const missileSites = [
@@ -783,7 +790,7 @@ function refreshMapPoints(conflict, now) {
         totalMetric: airStrikesTotal,
         totalMass: airStrikeMass,
         description: 'Approximate air-strike locations from open-source conflict reporting (5-10 km precision). Separate from missile and drone launch totals.',
-        sites: autoExpandSites(infraSites, { conflictKey: 'iran_2026', channel: 'airstrikes', totalMass: airStrikeMass, maxExtra: 90, baseRadiusKm: 9 })
+        sites: autoExpandSites(infraSites, { conflictKey: 'iran_2026', channel: 'airstrikes', totalMass: airStrikeMass, maxExtra: 140, baseRadiusKm: 9 })
       }),
       ...makePoints({
         label: 'Casualty concentration',
