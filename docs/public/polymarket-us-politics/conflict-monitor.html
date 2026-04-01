@@ -2645,6 +2645,18 @@ footer a:hover { border-bottom-color: var(--accent-gold); }
     --nav-height: 50px;
   }
 
+  .section {
+    content-visibility: visible;
+    contain-intrinsic-size: auto;
+  }
+
+  .reveal,
+  .reveal.visible {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
   body { font-size: 14px; }
 
   .hero { padding: 3rem 0 2rem; }
