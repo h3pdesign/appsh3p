@@ -1,5 +1,5 @@
 {
-  "updated_at_utc": "2026-04-05T01:03:02.085Z",
+  "updated_at_utc": "2026-04-05T08:45:02.591Z",
   "total_questions": 66,
   "mapped_questions": 38,
   "unmapped_questions": 28,
@@ -42,9 +42,9 @@
     },
     {
       "question": "US forces enter Iran by Dec 31?",
-      "market_id": "1162940",
-      "market_slug": "us-forces-enter-iran-by-march-31-222-191-243-517-878-439-519",
-      "market_question": "US forces enter Iran by March 31?",
+      "market_id": "1394299",
+      "market_slug": "us-forces-enter-iran-by-december-31-573-642-385-371-179-425-262",
+      "market_question": "US forces enter Iran by December 31?",
       "score": 0.66,
       "active": true,
       "closed": false
