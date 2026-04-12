@@ -1,5 +1,5 @@
 {
-  "updated_at_utc": "2026-04-12T08:45:49.002Z",
+  "updated_at_utc": "2026-04-12T16:44:41.543Z",
   "total_questions": 66,
   "mapped_questions": 36,
   "unmapped_questions": 30,
@@ -312,18 +312,18 @@
     },
     {
       "question": "Elon Musk Attention (3D)",
-      "market_id": "1706878",
-      "market_slug": "will-elon-musk-buy-onlyfans",
-      "market_question": "Will Elon Musk buy OnlyFans?",
+      "market_id": "836162",
+      "market_slug": "elon-musk-trillionaire-before-2027",
+      "market_question": "Elon Musk trillionaire before 2027?",
       "score": 0.393,
       "active": true,
       "closed": false
     },
     {
       "question": "Elon Musk Attention (7D)",
-      "market_id": "1706878",
-      "market_slug": "will-elon-musk-buy-onlyfans",
-      "market_question": "Will Elon Musk buy OnlyFans?",
+      "market_id": "836162",
+      "market_slug": "elon-musk-trillionaire-before-2027",
+      "market_question": "Elon Musk trillionaire before 2027?",
       "score": 0.393,
       "active": true,
       "closed": false
