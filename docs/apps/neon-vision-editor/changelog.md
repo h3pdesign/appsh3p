@@ -10,22 +10,22 @@ head:
 
 # Neon Vision Editor Changelog
 
-_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on March 30, 2026._
+_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on April 16, 2026._
 
-## v0.6.0 (published March 30, 2026)
+## v0.6.1 (published April 16, 2026)
 
-Release link: [GitHub Release v0.6.0](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v0.6.0)
+Release link: [GitHub Release v0.6.1](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v0.6.1)
 
-- Remote workflows are clearer on every active surface, with better tab/session state, safer conflict recovery, and more complete iPhone/iPad remote-session support.
-- Search, `Find in Files`, and `Find & Replace` are much more mature across macOS, iPhone, and iPad, with stronger keyboard flow, clearer match visibility, better sizing, and cleaner panel layouts.
-- Markdown Preview is more polished on all platforms with stronger live-preview readability, full-window themed preview rendering, and clearer export/share feedback.
-- iPad editor chrome is more consistent, including tighter toolbar overflow behavior and better default sizing for the project-structure sidebar.
-- German localization is more complete, especially in Settings and the recently polished search/preview surfaces.
-- Completed the `0.6.0` remote-workflow line with clearer remote tab/document/session state, broker failure clarity, explicit compare-before-reload conflict handling, and safer unsupported-file handling in the remote browser.
-- Expanded search and navigation maturity with stronger `Quick Open` ranking, clearer search-source/status messaging, grouped `Find in Files` results, direct toolbar entry points, and improved Return/selection behavior.
-- Added more cross-platform keyboard parity on iPad, including sidebar shortcuts, Settings tab navigation, and result-list arrow-key movement in search panels.
-- Polished Markdown Preview with clearer export affordances, full-window live preview rendering, larger preview typography, and lightweight copy/export status messaging.
-- Continued cross-platform UI refinement for `Find & Replace`, `Find in Files`, project sidebar defaults, toolbar overflow placement, and theme selection visibility.
+- The project sidebar is now more complete for day-to-day file management with better structure controls and direct item actions.
+- Markdown Preview toolbar controls are cleaner and more discoverable with dedicated export/style actions plus localized labels.
+- Added project sidebar item actions for creating files/folders, plus rename, duplicate, and delete flows.
+- Refined project sidebar visual hierarchy and interaction density for clearer navigation in large trees.
+- Added a dedicated Markdown Preview style toolbar button and consolidated export options into toolbar menus that appear only when preview is active.
+- Expanded localization coverage for new Markdown Preview toolbar strings (including Simplified Chinese additions).
+- Fixed missing localization coverage for newly introduced Markdown Preview toolbar labels/help text.
+- Fixed Markdown Preview toolbar/menu availability so controls appear only in Markdown Preview mode.
+- [#77](https://github.com/h3pdesign/Neon-Vision-Editor/issues/77) `[UI]: Refine project sidebar layout and visual hierarchy`
+- [#78](https://github.com/h3pdesign/Neon-Vision-Editor/issues/78) `[Feature]: Add rename, delete, and duplicate actions for project items`
 
 ## v0.4.22 (published February 16, 2026)
 
