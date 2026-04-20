@@ -1,5 +1,5 @@
 {
-  "updated_at_utc": "2026-04-20T09:13:35.364Z",
+  "updated_at_utc": "2026-04-20T16:49:20.018Z",
   "total_questions": 66,
   "mapped_questions": 37,
   "unmapped_questions": 29,
@@ -313,7 +313,7 @@
     {
       "question": "US confirms aliens exist before 2027?",
       "market_id": "703257",
-      "market_slug": "will-the-us-confirm-that-aliens-exist-before-2027-789",
+      "market_slug": "will-the-us-confirm-that-aliens-exist-before-2027-789-924-249",
       "market_question": "Will the US confirm that aliens exist before 2027?",
       "score": 0.564,
       "active": true,
@@ -321,18 +321,18 @@
     },
     {
       "question": "Elon Musk Attention (3D)",
-      "market_id": "1203147",
-      "market_slug": "will-elon-musk-buy-ryanair",
-      "market_question": "Will Elon Musk buy Ryanair?",
+      "market_id": "1706878",
+      "market_slug": "will-elon-musk-buy-onlyfans",
+      "market_question": "Will Elon Musk buy OnlyFans?",
       "score": 0.393,
       "active": true,
       "closed": false
     },
     {
       "question": "Elon Musk Attention (7D)",
-      "market_id": "1203147",
-      "market_slug": "will-elon-musk-buy-ryanair",
-      "market_question": "Will Elon Musk buy Ryanair?",
+      "market_id": "1706878",
+      "market_slug": "will-elon-musk-buy-onlyfans",
+      "market_question": "Will Elon Musk buy OnlyFans?",
       "score": 0.393,
       "active": true,
       "closed": false
