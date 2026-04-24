@@ -1,4 +1,10 @@
 <p align="center">
+  <a href="https://apps-h3p.com"><img alt="Docs on h3p apps" src="https://img.shields.io/badge/Docs-h3p%20apps-111827?style=for-the-badge"></a>
+  <a href="https://www.patreon.com/h3p"><img alt="Support on Patreon" src="https://img.shields.io/badge/Support%20on-Patreon-F96854?style=for-the-badge&amp;logo=patreon&amp;logoColor=white"></a>
+  <a href="https://www.paypal.com/paypalme/HilthartPedersen"><img alt="Support via PayPal" src="https://img.shields.io/badge/Support%20via-PayPal-0070BA?style=for-the-badge&amp;logo=paypal&amp;logoColor=white"></a>
+</p>
+
+<p align="center">
   <a href="https://github.com/h3pdesign/appsh3p/commits/main"><img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/h3pdesign/appsh3p"></a>
   <a href="https://apps-h3p.com"><img alt="GitHub Pages" src="https://img.shields.io/badge/Deploy-GitHub%20Pages-222222?logo=github&amp;logoColor=white"></a>
   <a href="https://apps-h3p.com/polymarket-us-politics/conflict-monitor.html"><img alt="Conflict Monitor" src="https://img.shields.io/badge/Live-Conflict%20Monitor-0b7cff"></a>
@@ -6,11 +12,11 @@
   <a href="https://vitepress.dev/"><img alt="VitePress" src="https://img.shields.io/badge/VitePress-1.6.4-5c73e7?logo=vite&amp;logoColor=white"></a>
 </p>
 
-<h1 align="center">apps-h3p</h1>
+<h1 align="center">apps-h3p and conflict monitor</h1>
 
 <p align="center">
-  <strong>Documentation hub and live operations portal</strong><br>
-  A single VitePress-based repository for H3P app documentation and the public <code>STATE OF US &amp; WORLD POLITICS</code> monitor.
+  <strong>Public documentation, release communication, and live intelligence presentation.</strong><br>
+  A single VitePress repository powering the H3P apps hub and the public <code>STATE OF US &amp; WORLD POLITICS</code> monitor.
 </p>
 
 <p align="center">
@@ -21,40 +27,38 @@
   <a href="https://apps-h3p.com/policies/privacy-policy">Policies</a>
 </p>
 
-<p align="center">
-  <a href="https://apps-h3p.com"><img alt="Docs on h3p apps" src="https://img.shields.io/badge/Docs-h3p%20apps-111827?style=for-the-badge"></a>
-  <a href="https://www.patreon.com/h3p"><img alt="Support on Patreon" src="https://img.shields.io/badge/Support%20on-Patreon-F96854?style=for-the-badge&amp;logo=patreon&amp;logoColor=white"></a>
-  <a href="https://www.paypal.com/paypalme/HilthartPedersen"><img alt="Support via PayPal" src="https://img.shields.io/badge/Support%20via-PayPal-0070BA?style=for-the-badge&amp;logo=paypal&amp;logoColor=white"></a>
-</p>
-
 ---
 
-## What This Repo Contains
+## Overview
 
-This repository powers two public surfaces from one codebase:
+This repository publishes two related public surfaces from one deployable codebase.
 
-### 1. H3P Apps Documentation Hub
+### H3P Apps Documentation Hub
 
-The app-management side of the project lives at [apps-h3p.com](https://apps-h3p.com).
+The apps hub at [apps-h3p.com](https://apps-h3p.com) is the canonical documentation and release-communication layer for current H3P apps.
 
-It includes:
+It provides:
 
-- overview pages for current H3P apps
-- installation, FAQ, features, changelog, and component documentation
-- support, legal, privacy, and cookie-policy pages
-- app-specific media, icons, and release-linked documentation updates
+- app overview pages with platform support and status metadata
+- installation, feature, FAQ, changelog, and component documentation
+- support, legal, privacy, cookie-policy, and trust pages
+- app-specific icons, media, screenshots, and release-linked content
 
-### 2. STATE OF US & WORLD POLITICS
+### STATE OF US & WORLD POLITICS
 
-The monitor lives at [Conflict Monitor](https://apps-h3p.com/polymarket-us-politics/conflict-monitor.html) and [Predictions](https://apps-h3p.com/polymarket-us-politics/state-of-us-politics.html).
+The monitor surface combines conflict-monitoring presentation and prediction-market reporting.
 
-It includes:
+Primary entry points:
 
-- live conflict monitoring pages
-- public prediction-market reporting pages
-- automated metric refreshers
-- map, timeline, and social-attention data pipelines
-- GitHub Actions jobs that keep the public data payloads current
+- [Conflict Monitor](https://apps-h3p.com/polymarket-us-politics/conflict-monitor.html)
+- [Predictions](https://apps-h3p.com/polymarket-us-politics/state-of-us-politics.html)
+
+It provides:
+
+- live conflict metric cards and freshness indicators
+- map, timeline, ticker, and source-summary views
+- prediction-market reporting pages
+- generated public data payloads refreshed by scheduled workflows
 
 ---
 
@@ -89,7 +93,7 @@ npm run docs:dev
 
 Open [http://127.0.0.1:5173](http://127.0.0.1:5173).
 
-Other useful commands:
+Useful commands:
 
 ```bash
 npm run docs:build
@@ -103,7 +107,7 @@ node scripts/update-social-tracker-metrics.mjs
 
 ---
 
-## Repository Structure
+## Repository Layout
 
 ```text
 docs/
@@ -111,34 +115,35 @@ docs/
   policies/                     Privacy, cookie, terms, and trust pages
   public/
     icons/                      Public app icons
-    media/                      Public screenshots and artwork
-    polymarket-us-politics/     Conflict monitor and prediction portal
+    media/                      Public screenshots and app artwork
+    polymarket-us-politics/     Conflict monitor and prediction portal data
 scripts/
-  update-iran-war-metrics.mjs
-  update-conflict-news.mjs
-  update-market-id-map.mjs
+  update-iran-war-metrics.mjs   Conflict metrics, map, and timeline payloads
+  update-conflict-news.mjs      Live ticker and news payloads
+  update-market-id-map.mjs      Prediction-market ID mapping
   update-social-tracker-metrics.mjs
-  validate-polymarket-site.mjs
-.github/workflows/              Scheduled data refresh and deploy automation
+  validate-polymarket-site.mjs  Static validation before publish
+.github/workflows/              Scheduled data refresh and GitHub Pages deploys
 ```
 
 ---
 
 ## Data and Automation
 
-The monitor side of the repo is not static markdown only. It also ships generated public data files under:
+The monitor pages are generated from public payloads stored under:
 
-`docs/public/polymarket-us-politics/data/`
+```text
+docs/public/polymarket-us-politics/data/
+```
 
-These payloads are refreshed by scheduled workflows for:
+Scheduled GitHub Actions refresh the public data for:
 
-- conflict metrics and hotspot maps
-- conflict news ticker data
-- market ID mapping
-- prediction snapshot data
-- social attention metrics
+- conflict metrics, map points, and timeline entries
+- conflict news ticker content
+- prediction-market mapping and snapshots
+- social-attention metrics
 
-The site is validated before publish with:
+Before publishing, validate the generated site payloads:
 
 ```bash
 node scripts/validate-polymarket-site.mjs
@@ -148,19 +153,19 @@ node scripts/validate-polymarket-site.mjs
 
 ## Deployment
 
-The repository is configured for GitHub Pages on the custom domain:
+Production is served by GitHub Pages on the custom domain:
 
 - [https://apps-h3p.com](https://apps-h3p.com)
 
-Relevant settings already exist in this repo:
+Deployment-related files:
 
 - `docs/public/CNAME`
-- VitePress config and sitemap hostname
-- GitHub Actions workflows for scheduled updates and Pages deployment
+- VitePress configuration and sitemap hostname
+- GitHub Actions workflows for scheduled refreshes and Pages deployment
 
 Production build output:
 
-```bash
+```text
 docs/.vitepress/dist
 ```
 
@@ -170,13 +175,14 @@ docs/.vitepress/dist
 
 When adding or updating an app:
 
-1. Create or update the app folder in `docs/apps/<slug>/`
-2. Update app media in `docs/public/icons/` or `docs/public/media/`
-3. Sync release-driven documentation if needed
+1. Create or update `docs/apps/<slug>/`
+2. Add app icons or media under `docs/public/icons/` or `docs/public/media/`
+3. Sync release-driven metadata when applicable
 4. Build locally
-5. Validate and deploy
+5. Validate generated public data
+6. Deploy through the configured GitHub Pages workflow
 
-Typical local workflow:
+Typical local preflight:
 
 ```bash
 npm run docs:build
@@ -185,13 +191,13 @@ node scripts/validate-polymarket-site.mjs
 
 ---
 
-## Why This Repo Exists
+## Project Purpose
 
 This repository is the public-facing operations and documentation layer for:
 
 - H3P app management and release communication
 - conflict-monitoring presentation
 - prediction-market reporting
-- support, policy, and trust pages
+- support, policy, and trust content
 
-The goal is one deployable site that serves product documentation, release communication, and continuously refreshed public intelligence pages from the same codebase.
+The goal is one maintainable site that serves product documentation, release communication, and continuously refreshed public intelligence pages from the same VitePress codebase.
