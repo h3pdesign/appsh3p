@@ -1,14 +1,31 @@
-# apps-h3p
+<p align="center">
+  <a href="https://github.com/h3pdesign/appsh3p/commits/main"><img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/h3pdesign/appsh3p"></a>
+  <a href="https://apps-h3p.com"><img alt="GitHub Pages" src="https://img.shields.io/badge/Deploy-GitHub%20Pages-222222?logo=github&amp;logoColor=white"></a>
+  <a href="https://apps-h3p.com/polymarket-us-politics/conflict-monitor.html"><img alt="Conflict Monitor" src="https://img.shields.io/badge/Live-Conflict%20Monitor-0b7cff"></a>
+  <a href="https://apps-h3p.com"><img alt="Apps Hub" src="https://img.shields.io/badge/Live-Apps%20Hub-2563eb"></a>
+  <a href="https://vitepress.dev/"><img alt="VitePress" src="https://img.shields.io/badge/VitePress-1.6.4-5c73e7?logo=vite&amp;logoColor=white"></a>
+</p>
 
-**Documentation hub and live operations portal** — a single VitePress-based repository for H3P app documentation and the public `STATE OF US & WORLD POLITICS` monitor.
+<h1 align="center">apps-h3p</h1>
 
-[![GitHub last commit](https://img.shields.io/github/last-commit/h3pdesign/appsh3p)](https://github.com/h3pdesign/appsh3p/commits/main)
-[![GitHub Pages](https://img.shields.io/badge/Deploy-GitHub%20Pages-222222?logo=github&logoColor=white)](https://apps-h3p.com)
-[![Conflict Monitor](https://img.shields.io/badge/Live-Conflict%20Monitor-0b7cff)](https://apps-h3p.com/polymarket-us-politics/conflict-monitor.html)
-[![Apps Hub](https://img.shields.io/badge/Live-Apps%20Hub-2563eb)](https://apps-h3p.com)
-[![VitePress](https://img.shields.io/badge/VitePress-1.6.4-5c73e7?logo=vite&logoColor=white)](https://vitepress.dev/)
+<p align="center">
+  <strong>Documentation hub and live operations portal</strong><br>
+  A single VitePress-based repository for H3P app documentation and the public <code>STATE OF US &amp; WORLD POLITICS</code> monitor.
+</p>
 
-[apps-h3p.com](https://apps-h3p.com) · [Conflict Monitor](https://apps-h3p.com/polymarket-us-politics/conflict-monitor.html) · [Predictions](https://apps-h3p.com/polymarket-us-politics/state-of-us-politics.html) · [Support](https://apps-h3p.com/support) · [Policies](https://apps-h3p.com/policies/privacy-policy)
+<p align="center">
+  <a href="https://apps-h3p.com">apps-h3p.com</a> ·
+  <a href="https://apps-h3p.com/polymarket-us-politics/conflict-monitor.html">Conflict Monitor</a> ·
+  <a href="https://apps-h3p.com/polymarket-us-politics/state-of-us-politics.html">Predictions</a> ·
+  <a href="https://apps-h3p.com/support">Support</a> ·
+  <a href="https://apps-h3p.com/policies/privacy-policy">Policies</a>
+</p>
+
+<p align="center">
+  <a href="https://apps-h3p.com"><img alt="Docs on h3p apps" src="https://img.shields.io/badge/Docs-h3p%20apps-111827?style=for-the-badge"></a>
+  <a href="https://www.patreon.com/h3p"><img alt="Support on Patreon" src="https://img.shields.io/badge/Support%20on-Patreon-F96854?style=for-the-badge&amp;logo=patreon&amp;logoColor=white"></a>
+  <a href="https://www.paypal.com/paypalme/HilthartPedersen"><img alt="Support via PayPal" src="https://img.shields.io/badge/Support%20via-PayPal-0070BA?style=for-the-badge&amp;logo=paypal&amp;logoColor=white"></a>
+</p>
 
 ---
 
@@ -47,6 +64,10 @@ It includes:
 
 ![apps-h3p home](.github/readme-assets/apps-h3p.png)
 
+### Conflict Cards and Live Ticker
+
+![conflict cards and ticker](.github/readme-assets/conflict-monitor003.png)
+
 ### Conflict Monitor Overview
 
 ![conflict monitor overview](.github/readme-assets/conflict-monitor005.png)
@@ -54,10 +75,6 @@ It includes:
 ### Conflict Metrics and Map
 
 ![conflict metrics and map](.github/readme-assets/conflict-monitor002.png)
-
-### Conflict Cards and Live Ticker
-
-![conflict cards and ticker](.github/readme-assets/conflict-monitor003.png)
 
 ---
 
@@ -170,13 +187,11 @@ node scripts/validate-polymarket-site.mjs
 
 ## Why This Repo Exists
 
-This project is intentionally not a generic docs starter anymore.
-
-It is the public-facing operations and documentation layer for:
+This repository is the public-facing operations and documentation layer for:
 
 - H3P app management and release communication
 - conflict-monitoring presentation
 - prediction-market reporting
 - support, policy, and trust pages
 
-The goal is a single deployable site that can serve both product documentation and continuously refreshed public intelligence pages.
+The goal is one deployable site that serves product documentation, release communication, and continuously refreshed public intelligence pages from the same codebase.
