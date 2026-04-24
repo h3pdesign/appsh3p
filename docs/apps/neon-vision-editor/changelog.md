@@ -10,22 +10,22 @@ head:
 
 # Neon Vision Editor Changelog
 
-_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on April 16, 2026._
+_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on April 24, 2026._
 
-## v0.6.1 (published April 16, 2026)
+## v0.6.2 (published April 24, 2026)
 
-Release link: [GitHub Release v0.6.1](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v0.6.1)
+Release link: [GitHub Release v0.6.2](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v0.6.2)
 
-- The project sidebar is now more complete for day-to-day file management with better structure controls and direct item actions.
-- Markdown Preview toolbar controls are cleaner and more discoverable with dedicated export/style actions plus localized labels.
-- Added project sidebar item actions for creating files/folders, plus rename, duplicate, and delete flows.
-- Refined project sidebar visual hierarchy and interaction density for clearer navigation in large trees.
-- Added a dedicated Markdown Preview style toolbar button and consolidated export options into toolbar menus that appear only when preview is active.
-- Expanded localization coverage for new Markdown Preview toolbar strings (including Simplified Chinese additions).
-- Fixed missing localization coverage for newly introduced Markdown Preview toolbar labels/help text.
-- Fixed Markdown Preview toolbar/menu availability so controls appear only in Markdown Preview mode.
-- [#77](https://github.com/h3pdesign/Neon-Vision-Editor/issues/77) `[UI]: Refine project sidebar layout and visual hierarchy`
-- [#78](https://github.com/h3pdesign/Neon-Vision-Editor/issues/78) `[Feature]: Add rename, delete, and duplicate actions for project items`
+- Find-in-files now supports selective project-wide replace with explicit preview and cancellation controls.
+- Navigation and edit workflows are faster with direct `Go to Line` and `Go to Symbol` commands.
+- macOS sidebar and tour overlays are more comfortable and consistent for daily keyboard/mouse use.
+- Project sidebar disclosure controls now align better with file rows and are easier to recognize.
+- Added selective project-wide replace from `Find in Files` with match selection controls (`Select All`, `Select None`), apply, and cancel.
+- Added `Go to Line` and `Go to Symbol` entry points for faster in-document navigation.
+- Improved Code Snapshot composer layout on macOS so settings controls track the snapshot composition width more tightly.
+- Added support for opening `.cif` and `.mcif` files as plain-text documents.
+- Added a configurable project-sidebar disclosure symbol style (`Chevron`, `Triangle`, `Caret`, `Plus/Minus`) in sidebar/global settings.
+- Fixed macOS sidebar disclosure spacing so project disclosure controls are no longer pinned too close to the left edge.
 
 ## v0.4.22 (published February 16, 2026)
 

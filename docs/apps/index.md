@@ -25,7 +25,7 @@
 </div>
 
 <div class="apps-release-timeline" aria-label="Release timeline">
-  <div class="apps-release-item neon"><span class="name">Neon Vision Editor</span><span class="tag">v0.6.1</span><span class="date">2026-04-16</span></div>
+  <div class="apps-release-item neon"><span class="name">Neon Vision Editor</span><span class="tag">v0.6.2</span><span class="date">2026-04-24</span></div>
   <div class="apps-release-item metric"><span class="name">Metrics Data</span><span class="tag">docs-sync</span><span class="date">2026-02-16</span></div>
   <div class="apps-release-item newsbook"><span class="name">X-Newsbook</span><span class="tag">docs-init</span><span class="date">2026-02-17</span></div>
   <div class="apps-release-item release"><span class="name">Release Assistant</span><span class="tag">docs-sync</span><span class="date">2026-02-16</span></div>
