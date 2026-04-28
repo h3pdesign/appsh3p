@@ -10,22 +10,22 @@ head:
 
 # Neon Vision Editor Changelog
 
-_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on April 24, 2026._
+_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on April 28, 2026._
 
-## v0.6.2 (published April 24, 2026)
+## v0.6.3 (published April 28, 2026)
 
-Release link: [GitHub Release v0.6.2](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v0.6.2)
+Release link: [GitHub Release v0.6.3](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v0.6.3)
 
-- Find-in-files now supports selective project-wide replace with explicit preview and cancellation controls.
-- Navigation and edit workflows are faster with direct `Go to Line` and `Go to Symbol` commands.
-- macOS sidebar and tour overlays are more comfortable and consistent for daily keyboard/mouse use.
-- Project sidebar disclosure controls now align better with file rows and are easier to recognize.
-- Added selective project-wide replace from `Find in Files` with match selection controls (`Select All`, `Select None`), apply, and cancel.
-- Added `Go to Line` and `Go to Symbol` entry points for faster in-document navigation.
-- Improved Code Snapshot composer layout on macOS so settings controls track the snapshot composition width more tightly.
-- Added support for opening `.cif` and `.mcif` files as plain-text documents.
-- Added a configurable project-sidebar disclosure symbol style (`Chevron`, `Triangle`, `Caret`, `Plus/Minus`) in sidebar/global settings.
-- Fixed macOS sidebar disclosure spacing so project disclosure controls are no longer pinned too close to the left edge.
+- Native diff workflows are now available for comparing the current tab against disk and comparing two open tabs.
+- iPhone and iPad toolbar/help surfaces are more discoverable, with a dedicated Toolbar Help entry and scrollable compact toolbars.
+- Markdown Preview export is more reliable, including complete paginated PDF output and flexible one-page exports with tighter margins.
+- Project sidebar actions on iPhone now open the expected file/folder pickers and keep new-file prompts stable.
+- Markdown, plain-text extension handling, themes, and support-purchase messaging are more accurate across platforms.
+- Added a native side-by-side diff view with change navigation, accessible hunk summaries, Compare with Disk, and Compare Open Tabs entry points.
+- Added a full Toolbar Help section that explains toolbar symbols, groups actions by workflow, adapts to iPhone/iPad/macOS widths, and is reachable from the toolbar, macOS Help menu, and menu-bar extra.
+- Expanded iPhone/iPad toolbar coverage so commonly used and previously overflow-only actions are visible in the scrollable toolbar, with Toolbar Help pinned next to Settings on iPad.
+- Updated the Welcome Tour with the latest major features and a live support-purchase card that avoids premature App Store price-unavailable states.
+- Added `.bak` plain-text support and improved `.zshrc`/dotfile loading behavior.
 
 ## v0.4.22 (published February 16, 2026)
 
