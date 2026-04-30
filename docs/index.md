@@ -23,7 +23,7 @@ features:
 ---
 
 <div class="startpage-stats-row" aria-label="Docs quick stats">
-  <span>7 apps</span>
+  <span>8 apps</span>
   <span>1 docs hub</span>
   <span class="startpage-updated-date">updated Apr 28, 2026</span>
   <span class="startpage-synced-badge">GitHub synced Apr 28, 2026</span>
@@ -55,9 +55,9 @@ features:
 
 <div class="startpage-weekly-strip" aria-label="What's new this week">
   <a href="/apps/neon-vision-editor/changelog"><strong data-date="2026-04-28">Apr 28, 2026</strong>: Neon Vision Editor v0.6.3 release notes and docs refresh</a>
+  <a href="/apps/lingua-latina/overview"><strong data-date="2026-04-30">Apr 30, 2026</strong>: Lingua Latina added with dictionary, grammar, study, and privacy docs</a>
   <a href="/apps/metric-data/overview"><strong data-date="2026-02-16">Feb 16, 2026</strong>: Metrics Data overview now iPad-first with metadata and support docs</a>
   <a href="/apps/release-assistant/features"><strong data-date="2026-02-16">Feb 16, 2026</strong>: Release Assistant workflow, gallery, and FAQ expanded</a>
-  <a href="/apps/x-newsbook/overview"><strong data-date="2026-02-17">Feb 17, 2026</strong>: X-Newsbook added with overview, components, and support docs.</a>
 </div>
 
 <div class="startpage-release-strip" aria-label="App status snapshot">
@@ -108,6 +108,7 @@ features:
   <a href="/apps/neon-vision-editor/overview">Write + Code</a>
   <a href="/apps/metric-data/overview">Track Metrics</a>
   <a href="/apps/x-newsbook/overview">Read News</a>
+  <a href="/apps/lingua-latina/overview">Learn Latin</a>
   <a href="/apps/release-assistant/overview">Ship Releases</a>
 </div>
 
@@ -140,10 +141,14 @@ features:
     <img src="/icons/history-vision.png?v=20260302-1" alt="History Vision icon" width="52" height="52" loading="lazy" decoding="async" />
     <span>History Vision</span>
   </a>
+  <a class="startpage-app-item" href="/apps/lingua-latina/overview">
+    <img src="/icons/lingua-latina.png?v=20260430-1" alt="Lingua Latina icon" width="52" height="52" loading="lazy" decoding="async" />
+    <span>Lingua Latina</span>
+  </a>
 </div>
 
 <div class="startpage-social-proof" aria-label="Trust signals">
-  <span>7 app docs</span>
+  <span>8 app docs</span>
   <span>Published on apps-h3p.com</span>
   <span>Neon release published Apr 28, 2026</span>
   <span>GitHub-backed changelogs</span>
