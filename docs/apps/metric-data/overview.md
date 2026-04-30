@@ -52,7 +52,7 @@ This app is not a public data crawler and does not access data outside the Googl
     <p>Metrics Data is a SwiftUI analytics app for Google AdSense across iOS and macOS.</p>
   </div>
   <div class="overview-hero-media">
-    <img src="/icons/metric-data.png?v=20260302-1" alt="Metrics Data icon" class="overview-app-icon" />
+    <img src="/icons/metric-data.png?v=20260430-1" alt="Metrics Data icon" class="overview-app-icon" />
     <div class="overview-shot-frame">
       <img src="/media/metrics/dashboard-ipad.png" alt="Metrics Data iPad screenshot" class="overview-app-shot" />
     </div>

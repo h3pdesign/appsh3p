@@ -2,10 +2,10 @@
 head:
   - - meta
     - property: og:image
-      content: https://apps-h3p.com/icons/vistral.png?v=20260302-1
+      content: https://apps-h3p.com/icons/vistral.png?v=20260430-1
   - - meta
     - name: twitter:image
-      content: https://apps-h3p.com/icons/vistral.png?v=20260302-1
+      content: https://apps-h3p.com/icons/vistral.png?v=20260430-1
 ---
 
 # Vistral
@@ -45,7 +45,7 @@ Primary user outcomes:
     <p>Calm, chart-led dashboard experience for personal metrics such as spending, sleep, and activity with transparent data sourcing.</p>
   </div>
   <div class="overview-hero-media">
-    <img src="/icons/vistral.png?v=20260302-1" alt="Vistral icon" class="overview-app-icon" />
+    <img src="/icons/vistral.png?v=20260430-1" alt="Vistral icon" class="overview-app-icon" />
   </div>
 </div>
 

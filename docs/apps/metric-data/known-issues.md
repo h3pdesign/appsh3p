@@ -11,7 +11,7 @@ head:
 # Metrics Data Known Issues
 
 <div class="app-empty-state app-empty-metric">
-  <img src="/icons/metric-data.png?v=20260302-1" alt="Metrics Data" />
+  <img src="/icons/metric-data.png?v=20260430-1" alt="Metrics Data" />
   <p>Current integration and distribution caveats are listed below.</p>
 </div>
 

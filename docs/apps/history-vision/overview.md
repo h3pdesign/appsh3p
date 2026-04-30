@@ -2,10 +2,10 @@
 head:
   - - meta
     - property: og:image
-      content: https://apps-h3p.com/icons/history-vision.png?v=20260302-1
+      content: https://apps-h3p.com/icons/history-vision.png?v=20260430-1
   - - meta
     - name: twitter:image
-      content: https://apps-h3p.com/icons/history-vision.png?v=20260302-1
+      content: https://apps-h3p.com/icons/history-vision.png?v=20260430-1
 ---
 
 # History Vision
@@ -42,7 +42,7 @@ Primary user outcomes:
     <p>Typography-first historical reading with source-aware cards, timeline blocks, and visual context for entities, events, and eras.</p>
   </div>
   <div class="overview-hero-media">
-    <img src="/icons/history-vision.png?v=20260302-1" alt="History Vision icon" class="overview-app-icon" />
+    <img src="/icons/history-vision.png?v=20260430-1" alt="History Vision icon" class="overview-app-icon" />
   </div>
 </div>
 

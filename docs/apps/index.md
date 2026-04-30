@@ -52,7 +52,7 @@
     <a class="apps-slide metric" href="/apps/metric-data/gallery">
       <div class="apps-slide-media">
         <img src="/media/metrics/dashboard-ipad-frame.png" alt="Metrics Data screenshot" />
-        <img class="apps-slide-icon" src="/icons/metric-data.png?v=20260302-1" alt="" aria-hidden="true" />
+        <img class="apps-slide-icon" src="/icons/metric-data.png?v=20260430-1" alt="" aria-hidden="true" />
         <span class="apps-slide-cta">open gallery</span>
       </div>
       <span class="apps-slide-title">Metrics Data</span>
@@ -60,7 +60,7 @@
     <a class="apps-slide release" href="/apps/release-assistant/gallery">
       <div class="apps-slide-media">
         <img src="/media/release-assistant/main-window.png" alt="Release Assistant screenshot" />
-        <img class="apps-slide-icon" src="/icons/release-assistant.png?v=20260302-1" alt="" aria-hidden="true" />
+        <img class="apps-slide-icon" src="/icons/release-assistant.png?v=20260430-1" alt="" aria-hidden="true" />
         <span class="apps-slide-cta">open gallery</span>
       </div>
       <span class="apps-slide-title">Release Assistant</span>
@@ -107,7 +107,7 @@
   </article>
 
   <article class="app-card app-card-metric" data-changelog="/apps/metric-data/changelog" data-status="private" data-platforms="macos,ipados,ios">
-    <img src="/icons/metric-data.png?v=20260302-1" alt="Metrics Data icon" class="app-icon" />
+    <img src="/icons/metric-data.png?v=20260430-1" alt="Metrics Data icon" class="app-icon" />
     <div class="app-card-content">
       <h3 class="app-title-row"><a class="app-title-link" href="/apps/metric-data/overview">Metrics Data</a><span class="app-status app-status-private">Private beta</span></h3>
       <div class="app-card-meta-row">
@@ -128,7 +128,7 @@
   </article>
 
   <article class="app-card app-card-release" data-changelog="/apps/release-assistant/changelog" data-status="internal" data-platforms="macos">
-    <img src="/icons/release-assistant.png?v=20260302-1" alt="Release Assistant icon" class="app-icon" />
+    <img src="/icons/release-assistant.png?v=20260430-1" alt="Release Assistant icon" class="app-icon" />
     <div class="app-card-content">
       <h3 class="app-title-row"><a class="app-title-link" href="/apps/release-assistant/overview">Release Assistant</a><span class="app-status app-status-alpha">Internal alpha</span></h3>
       <div class="app-card-meta-row">
@@ -148,7 +148,7 @@
   </article>
 
   <article class="app-card app-card-newsbook" data-changelog="/apps/x-newsbook/changelog" data-status="private" data-platforms="macos,ipados,ios">
-    <img src="/icons/x-newsbook.png?v=20260302-1" alt="X-Newsbook icon" class="app-icon" />
+    <img src="/icons/x-newsbook.png?v=20260430-1" alt="X-Newsbook icon" class="app-icon" />
     <div class="app-card-content">
       <h3 class="app-title-row"><a class="app-title-link" href="/apps/x-newsbook/overview">X-Newsbook</a><span class="app-status app-status-private">Private beta</span></h3>
       <div class="app-card-meta-row">
@@ -188,7 +188,7 @@
   </article>
 
   <article class="app-card app-card-metric" data-changelog="/apps/vistral/changelog" data-status="private" data-platforms="macos,ipados,ios,tvos,watchos,visionos">
-    <img src="/icons/vistral.png?v=20260302-1" alt="Vistral icon" class="app-icon" />
+    <img src="/icons/vistral.png?v=20260430-1" alt="Vistral icon" class="app-icon" />
     <div class="app-card-content">
       <h3 class="app-title-row"><a class="app-title-link" href="/apps/vistral/overview">Vistral</a><span class="app-status app-status-private">Private beta</span></h3>
       <div class="app-card-meta-row">
@@ -208,7 +208,7 @@
   </article>
 
   <article class="app-card app-card-newsbook" data-changelog="/apps/history-vision/changelog" data-status="private" data-platforms="macos,ipados,ios">
-    <img src="/icons/history-vision.png?v=20260302-1" alt="History Vision icon" class="app-icon" />
+    <img src="/icons/history-vision.png?v=20260430-1" alt="History Vision icon" class="app-icon" />
     <div class="app-card-content">
       <h3 class="app-title-row"><a class="app-title-link" href="/apps/history-vision/overview">History Vision</a><span class="app-status app-status-private">Private beta</span></h3>
       <div class="app-card-meta-row">

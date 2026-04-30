@@ -11,7 +11,7 @@ head:
 # Release Assistant Known Issues
 
 <div class="app-empty-state app-empty-release">
-  <img src="/icons/release-assistant.png?v=20260302-1" alt="Release Assistant" />
+  <img src="/icons/release-assistant.png?v=20260430-1" alt="Release Assistant" />
   <p>Known constraints and operational blockers are documented here.</p>
 </div>
 

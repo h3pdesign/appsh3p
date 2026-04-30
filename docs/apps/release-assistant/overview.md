@@ -31,7 +31,7 @@ head:
     <p>Release Assistant is a macOS orchestration app for release pipelines in Xcode-based repositories that use <code>scripts/release_all.sh</code>.</p>
   </div>
   <div class="overview-hero-media">
-    <img src="/icons/release-assistant.png?v=20260302-1" alt="Release Assistant icon" class="overview-app-icon" />
+    <img src="/icons/release-assistant.png?v=20260430-1" alt="Release Assistant icon" class="overview-app-icon" />
     <div class="overview-shot-frame">
       <img src="/media/release-assistant/main-window.png" alt="Release Assistant screenshot" class="overview-app-shot" />
     </div>

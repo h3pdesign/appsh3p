@@ -11,7 +11,7 @@ head:
 # Release Assistant FAQ
 
 <div class="app-empty-state app-empty-release">
-  <img src="/icons/release-assistant.png?v=20260302-1" alt="Release Assistant" />
+  <img src="/icons/release-assistant.png?v=20260430-1" alt="Release Assistant" />
   <p>FAQ for release modes, workflow requirements, and auth setup.</p>
 </div>
 
