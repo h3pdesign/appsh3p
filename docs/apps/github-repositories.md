@@ -15,6 +15,7 @@ This page tracks repository mapping for all documented apps.
 - Image Sorter
 - Vistral
 - History Vision
+- Lingua Latina
 
 ## Publication Checklist
 

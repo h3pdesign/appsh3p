@@ -142,7 +142,17 @@ export default defineConfig({
           { text: 'History Vision: Gallery', link: '/apps/history-vision/gallery' },
           { text: 'History Vision: Changelog', link: '/apps/history-vision/changelog' },
           { text: 'History Vision: Known Issues', link: '/apps/history-vision/known-issues' },
-          { text: 'History Vision: FAQ', link: '/apps/history-vision/faq' }
+          { text: 'History Vision: FAQ', link: '/apps/history-vision/faq' },
+
+          { text: 'Lingua Latina: Overview', link: '/apps/lingua-latina/overview' },
+          { text: 'Lingua Latina: Components Overview', link: '/apps/lingua-latina/components-overview' },
+          { text: 'Lingua Latina: Installation', link: '/apps/lingua-latina/installation' },
+          { text: 'Lingua Latina: Features', link: '/apps/lingua-latina/features' },
+          { text: 'Lingua Latina: Gallery', link: '/apps/lingua-latina/gallery' },
+          { text: 'Lingua Latina: Changelog', link: '/apps/lingua-latina/changelog' },
+          { text: 'Lingua Latina: Known Issues', link: '/apps/lingua-latina/known-issues' },
+          { text: 'Lingua Latina: FAQ', link: '/apps/lingua-latina/faq' },
+          { text: 'Lingua Latina: Privacy Policy', link: '/apps/lingua-latina/privacy-policy' }
         ]
       },
       {

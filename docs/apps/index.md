@@ -21,6 +21,7 @@
     <span>Image Sorter docs added with queue workflow, installation, and support pages.</span>
     <span>Vistral docs added with multi-platform scope and local-first analytics purpose.</span>
     <span>History Vision docs added with reader + data-visualization product overview.</span>
+    <span>Lingua Latina docs added with dictionary, grammar, study, and privacy pages.</span>
   </div>
 </div>
 
@@ -32,6 +33,7 @@
   <div class="apps-release-item release"><span class="name">Image Sorter</span><span class="tag">docs-init</span><span class="date">2026-03-01</span></div>
   <div class="apps-release-item metric"><span class="name">Vistral</span><span class="tag">docs-init</span><span class="date">2026-03-01</span></div>
   <div class="apps-release-item newsbook"><span class="name">History Vision</span><span class="tag">docs-init</span><span class="date">2026-03-01</span></div>
+  <div class="apps-release-item newsbook"><span class="name">Lingua Latina</span><span class="tag">docs-init</span><span class="date">2026-04-30</span></div>
 </div>
 
 <div class="apps-carousel" aria-label="Featured screenshots carousel">
@@ -224,6 +226,27 @@
       </div>
     </div>
   </article>
+
+  <article class="app-card app-card-newsbook" data-changelog="/apps/lingua-latina/changelog" data-status="private" data-platforms="macos,ipados,ios">
+    <img src="/icons/lingua-latina.png?v=20260430-1" alt="Lingua Latina icon" class="app-icon" />
+    <div class="app-card-content">
+      <h3 class="app-title-row"><a class="app-title-link" href="/apps/lingua-latina/overview">Lingua Latina</a><span class="app-status app-status-private">Private beta</span></h3>
+      <div class="app-card-meta-row">
+        <div class="app-platform-pills">
+          <span>macOS</span><span>iPadOS</span><span>iOS</span>
+        </div>
+        <div class="app-meta-right">
+          <span class="app-doc-state app-doc-state-active">Docs: Active</span>
+          <span class="app-updated-badge">updated recently</span>
+        </div>
+      </div>
+      <p>Native Latin learning app with dictionary lookup, morphology analysis, grammar reference, and vocabulary study.</p>
+      <div class="app-actions-row">
+        <span class="chip">GitHub: repository not public yet</span>
+        <a class="chip chip-link" href="/apps/lingua-latina/privacy-policy">Privacy Policy</a>
+      </div>
+    </div>
+  </article>
 </div>
 
 <div class="apps-status-legend" aria-label="App status legend">
@@ -245,6 +268,7 @@ See [Code Examples](/apps/code-examples) for syntax-highlighted snippets from Ne
 - [Image Sorter Components Overview](/apps/image-sorter/components-overview)
 - [Vistral Components Overview](/apps/vistral/components-overview)
 - [History Vision Components Overview](/apps/history-vision/components-overview)
+- [Lingua Latina Components Overview](/apps/lingua-latina/components-overview)
 
 ## Source Code Repositories
 
