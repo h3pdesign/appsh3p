@@ -1,8 +1,8 @@
 {
-  "updated_at_utc": "2026-05-01T09:08:07.839Z",
+  "updated_at_utc": "2026-05-01T16:46:42.529Z",
   "total_questions": 66,
-  "mapped_questions": 34,
-  "unmapped_questions": 32,
+  "mapped_questions": 33,
+  "unmapped_questions": 33,
   "entries": [
     {
       "question": "Will LeBron James win the 2028 US Presidential Election?",
@@ -28,15 +28,6 @@
       "market_slug": "us-strike-on-mexico-by-december-31",
       "market_question": "US strike on Mexico by December 31?",
       "score": 0.56,
-      "active": true,
-      "closed": false
-    },
-    {
-      "question": "US anti-cartel ground operation in Mexico by June 30?",
-      "market_id": "1367007",
-      "market_slug": "us-anti-cartel-ground-operation-in-mexico-by-june-30",
-      "market_question": "U.S. anti-cartel ground operation in Mexico by June 30?",
-      "score": 1,
       "active": true,
       "closed": false
     },
@@ -318,6 +309,7 @@
     "US strike on Somalia by Feb 28?",
     "Times US strikes Somalia in February",
     "Next country US strikes",
+    "US anti-cartel ground operation in Mexico by June 30?",
     "US forces enter Iran by Dec 31?",
     "Trump out by March 31?",
     "Trump deportations in 2025",
