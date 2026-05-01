@@ -1,8 +1,8 @@
 {
-  "updated_at_utc": "2026-05-01T01:18:15.381Z",
+  "updated_at_utc": "2026-05-01T09:08:07.839Z",
   "total_questions": 66,
-  "mapped_questions": 35,
-  "unmapped_questions": 31,
+  "mapped_questions": 34,
+  "unmapped_questions": 32,
   "entries": [
     {
       "question": "Will LeBron James win the 2028 US Presidential Election?",
@@ -87,19 +87,19 @@
     },
     {
       "question": "Will Trump visit China by March 31?",
-      "market_id": "706279",
-      "market_slug": "will-trump-visit-china-by-april-30",
-      "market_question": "Will Trump visit China by April 30?",
+      "market_id": "1611527",
+      "market_slug": "will-trump-visit-china-by-may-31-344",
+      "market_question": "Will Trump visit China by May 31?",
       "score": 0.787,
       "active": true,
       "closed": false
     },
     {
       "question": "Will Trump visit China by April 30?",
-      "market_id": "706279",
-      "market_slug": "will-trump-visit-china-by-april-30",
-      "market_question": "Will Trump visit China by April 30?",
-      "score": 1,
+      "market_id": "1611527",
+      "market_slug": "will-trump-visit-china-by-may-31-344",
+      "market_question": "Will Trump visit China by May 31?",
+      "score": 0.787,
       "active": true,
       "closed": false
     },
@@ -266,15 +266,6 @@
       "closed": false
     },
     {
-      "question": "Congress member out over Epstein files by April 30?",
-      "market_id": "690213",
-      "market_slug": "us-congress-member-out-over-epstein-files-before-april-30",
-      "market_question": "U.S. Congress member out over Epstein files by April 30?",
-      "score": 1,
-      "active": true,
-      "closed": false
-    },
-    {
       "question": "Epstein confirmed alive before 2027?",
       "market_id": "1059772",
       "market_slug": "is-jeffrey-epstein-alive-498",
@@ -346,6 +337,7 @@
     "Film/TV Expensing",
     "House passes Iran war powers resolution this week?",
     "Clintons held in contempt of Congress by Feb 28?",
+    "Congress member out over Epstein files by April 30?",
     "Epstein files — names mentioned by Feb 28",
     "Bill Clinton charged by March 31?",
     "Hillary Clinton charged by March 31?",
