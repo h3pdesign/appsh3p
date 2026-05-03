@@ -10,22 +10,22 @@ head:
 
 # Neon Vision Editor Changelog
 
-_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on April 28, 2026._
+_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on May 2, 2026._
 
-## v0.6.3 (published April 28, 2026)
+## v0.6.4 (published May 2, 2026)
 
-Release link: [GitHub Release v0.6.3](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v0.6.3)
+Release link: [GitHub Release v0.6.4](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v0.6.4)
 
-- Native diff workflows are now available for comparing the current tab against disk and comparing two open tabs.
-- iPhone and iPad toolbar/help surfaces are more discoverable, with a dedicated Toolbar Help entry and scrollable compact toolbars.
-- Markdown Preview export is more reliable, including complete paginated PDF output and flexible one-page exports with tighter margins.
-- Project sidebar actions on iPhone now open the expected file/folder pickers and keep new-file prompts stable.
-- Markdown, plain-text extension handling, themes, and support-purchase messaging are more accurate across platforms.
-- Added a native side-by-side diff view with change navigation, accessible hunk summaries, Compare with Disk, and Compare Open Tabs entry points.
-- Added a full Toolbar Help section that explains toolbar symbols, groups actions by workflow, adapts to iPhone/iPad/macOS widths, and is reachable from the toolbar, macOS Help menu, and menu-bar extra.
-- Expanded iPhone/iPad toolbar coverage so commonly used and previously overflow-only actions are visible in the scrollable toolbar, with Toolbar Help pinned next to Settings on iPad.
-- Updated the Welcome Tour with the latest major features and a live support-purchase card that avoids premature App Store price-unavailable states.
-- Added `.bak` plain-text support and improved `.zshrc`/dotfile loading behavior.
+- iPad and iPhone workflows are more complete, with toolbar customization, native iPad command menus, and direct share/open-in support for Markdown documents.
+- JSON documents now have built-in formatting and one-line combine tools from the app menus.
+- Hardware-keyboard editing on iPad is more reliable for search and selection.
+- The v0.6.4 quality baseline includes Markdown PDF export regression coverage, mobile parity documentation, and compact-layout accessibility checks.
+- Added JSON document actions for `Format JSON` and `Combine JSON Lines`, available from macOS menus and iPadOS/iOS command menus.
+- Added Settings controls for iPhone/iPad toolbar groups so Search, Compare, Editor Tools, and Preview/Appearance actions can be shown or hidden.
+- Added native iPadOS command menus for File, Find, Tools, Help, Settings, Toolbar Help, and Welcome Tour entry points.
+- Added GitHub and Feature Request links to the in-app Support settings section.
+- Added iOS document type metadata for Markdown so `.md` and `.markdown` files are advertised as editable text documents in Files/share/open-in flows.
+- Added v0.6.4 release QA and mobile parity documents covering PDF export, toolbar/sidebar behavior, compact layout, and accessibility expectations.
 
 ## v0.4.22 (published February 16, 2026)
 
