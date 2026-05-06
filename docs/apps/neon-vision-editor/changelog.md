@@ -10,22 +10,22 @@ head:
 
 # Neon Vision Editor Changelog
 
-_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on May 2, 2026._
+_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on May 5, 2026._
 
-## v0.6.4 (published May 2, 2026)
+## v0.6.5 (published May 5, 2026)
 
-Release link: [GitHub Release v0.6.4](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v0.6.4)
+Release link: [GitHub Release v0.6.5](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v0.6.5)
 
-- iPad and iPhone workflows are more complete, with toolbar customization, native iPad command menus, and direct share/open-in support for Markdown documents.
-- JSON documents now have built-in formatting and one-line combine tools from the app menus.
-- Hardware-keyboard editing on iPad is more reliable for search and selection.
-- The v0.6.4 quality baseline includes Markdown PDF export regression coverage, mobile parity documentation, and compact-layout accessibility checks.
-- Added JSON document actions for `Format JSON` and `Combine JSON Lines`, available from macOS menus and iPadOS/iOS command menus.
-- Added Settings controls for iPhone/iPad toolbar groups so Search, Compare, Editor Tools, and Preview/Appearance actions can be shown or hidden.
-- Added native iPadOS command menus for File, Find, Tools, Help, Settings, Toolbar Help, and Welcome Tour entry points.
-- Added GitHub and Feature Request links to the in-app Support settings section.
-- Added iOS document type metadata for Markdown so `.md` and `.markdown` files are advertised as editable text documents in Files/share/open-in flows.
-- Added v0.6.4 release QA and mobile parity documents covering PDF export, toolbar/sidebar behavior, compact layout, and accessibility expectations.
+- iPhone search and TOC navigation now reliably jump to the selected result after file load completes.
+- SSH-based commit signing is now supported for verified GitHub contributions.
+- Codebase security and crash audit passed with zero critical issues.
+- Fixed Find in Files result tapping on iPhone: cursor now jumps to the correct match once the target file finishes loading.
+- Fixed TOC sidebar item tapping on iPhone: sheet now dismisses after jumping to the selected document section.
+- Added SSH commit signing configuration for verified GitHub workflows.
+- Completed full security and stability audit: no `fatalError`, `try!`, or sensitive logging found.
+- Resolved race condition where `.moveCursorToRange` notifications were posted before file content was available on iPhone.
+- Resolved TOC sidebar sheet not dismissing after navigation on compact iOS layouts.
+- Replaced unreliable 80ms delay with state-driven file load completion callback for search jumps.
 
 ## v0.4.22 (published February 16, 2026)
 

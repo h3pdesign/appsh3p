@@ -25,8 +25,8 @@ features:
 <div class="startpage-stats-row" aria-label="Docs quick stats">
   <span>8 apps</span>
   <span>1 docs hub</span>
-  <span class="startpage-updated-date">updated May 2, 2026</span>
-  <span class="startpage-synced-badge">GitHub synced May 2, 2026</span>
+  <span class="startpage-updated-date">updated May 5, 2026</span>
+  <span class="startpage-synced-badge">GitHub synced May 5, 2026</span>
 </div>
 <p class="startpage-hero-secondary-cta">
   Need setup help? <a href="/getting-started/introduction">Read the quick introduction</a>
@@ -54,7 +54,7 @@ features:
 <h2 id="whats-new-week">what's new this week</h2>
 
 <div class="startpage-weekly-strip" aria-label="What's new this week">
-  <a href="/apps/neon-vision-editor/changelog"><strong data-date="2026-05-02">May 2, 2026</strong>: Neon Vision Editor v0.6.4 release notes and docs refresh</a>
+  <a href="/apps/neon-vision-editor/changelog"><strong data-date="2026-05-05">May 5, 2026</strong>: Neon Vision Editor v0.6.5 release notes and docs refresh</a>
   <a href="/apps/lingua-latina/overview"><strong data-date="2026-04-30">Apr 30, 2026</strong>: Lingua Latina added with dictionary, grammar, study, and privacy docs</a>
   <a href="/apps/metric-data/overview"><strong data-date="2026-02-16">Feb 16, 2026</strong>: Metrics Data overview now iPad-first with metadata and support docs</a>
   <a href="/apps/release-assistant/features"><strong data-date="2026-02-16">Feb 16, 2026</strong>: Release Assistant workflow, gallery, and FAQ expanded</a>
@@ -66,11 +66,11 @@ features:
       <img src="/icons/neon-vision-editor.png?v=20260401-2" alt="" aria-hidden="true" loading="lazy" decoding="async" />
       <strong>Neon</strong>
     </div>
-    <span>v0.6.4</span>
-    <span data-date="2026-05-02">May 2, 2026</span>
+    <span>v0.6.5</span>
+    <span data-date="2026-05-05">May 5, 2026</span>
     <span>macOS, iPadOS, iOS</span>
     <a href="/apps/neon-vision-editor/changelog">Source: changelog</a>
-    <a href="https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v0.6.4" target="_blank" rel="noreferrer noopener">Source: GitHub release</a>
+    <a href="https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v0.6.5" target="_blank" rel="noreferrer noopener">Source: GitHub release</a>
   </article>
   <article class="startpage-release-item release-metric">
     <div class="startpage-release-head">
@@ -150,7 +150,7 @@ features:
 <div class="startpage-social-proof" aria-label="Trust signals">
   <span>8 app docs</span>
   <span>Published on apps-h3p.com</span>
-  <span>Neon release published May 2, 2026</span>
+  <span>Neon release published May 5, 2026</span>
   <span>GitHub-backed changelogs</span>
 </div>
 
