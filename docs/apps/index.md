@@ -43,7 +43,7 @@
     <div class="apps-carousel-track">
     <a class="apps-slide neon" href="/apps/neon-vision-editor/gallery">
       <div class="apps-slide-media">
-        <img src="/media/neon/editing-mac-frame.png" alt="Neon Vision Editor screenshot" />
+        <img src="/media/neon/neon-vision-editor.png" alt="Neon Vision Editor screenshot" />
         <img class="apps-slide-icon" src="/icons/neon-vision-editor.png?v=20260401-2" alt="" aria-hidden="true" />
         <span class="apps-slide-cta">open gallery</span>
       </div>

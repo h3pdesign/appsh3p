@@ -473,6 +473,11 @@ body {
   margin: 0 auto;
 }
 
+.overview-app-shot-clean {
+  border: 0;
+  border-radius: 18px;
+}
+
 @media (max-width: 980px) {
   .overview-hero {
     gap: 14px;
@@ -3252,4 +3257,19 @@ html.compact-home-cards .startpage-quick-start {
 
 .VPNavBarTitle.has-sidebar {
   border-right: 0 !important;
+}
+
+.vp-doc a.policy-card,
+.vp-doc a.policy-card:hover,
+.vp-doc a.policy-card:focus-visible {
+  text-decoration: none !important;
+  border-bottom: 0 !important;
+  background-image: none !important;
+}
+
+.vp-doc a.policy-card span,
+.vp-doc a.policy-card strong {
+  text-decoration: none !important;
+  border-bottom: 0 !important;
+  background-image: none !important;
 }

@@ -76,7 +76,7 @@ For privacy, deletion, or access requests, use [Support and Feedback](/support/s
 .policy-card {
   display: grid;
   gap: 8px;
-  text-decoration: none;
+  text-decoration: none !important;
   border: 1px solid var(--vp-c-divider);
   border-radius: 14px;
   padding: 14px 15px;
@@ -92,6 +92,7 @@ For privacy, deletion, or access requests, use [Support and Feedback](/support/s
 
 .policy-card span {
   font-weight: 760;
+  text-decoration: none;
 }
 
 .policy-card strong {
@@ -99,6 +100,7 @@ For privacy, deletion, or access requests, use [Support and Feedback](/support/s
   line-height: 1.45;
   font-weight: 500;
   color: var(--vp-c-text-2);
+  text-decoration: none;
 }
 
 .policy-card-primary {
