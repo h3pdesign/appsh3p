@@ -19,13 +19,6 @@ let analyticsCleanup: (() => void) | null = null
 let homeMobileCtaCleanup: (() => void) | null = null
 let mediaHashCache: Record<string, string> | null = null
 
-type QuickLink = {
-  text: string
-  link: string
-  icon: string
-  tone: 'neon' | 'metric' | 'release' | 'default'
-}
-
 type DocJumpLink = {
   text: string
   link: string
@@ -51,17 +44,6 @@ const isAppDocPage = computed(() => {
   return appSlug.value !== '' && appSlug.value !== 'index' && appSlug.value !== 'github-repositories'
 })
 
-const appQuickLinks = computed<QuickLink[]>(() => {
-  if (!isAppDocPage.value) return []
-  const base = `/apps/${appSlug.value}`
-  return [
-    { text: 'Overview', link: `${base}/overview`, icon: 'O', tone: 'default' },
-    { text: 'Features', link: `${base}/features`, icon: 'F', tone: 'neon' },
-    { text: 'Gallery', link: `${base}/gallery`, icon: 'G', tone: 'metric' },
-    { text: 'Changelog', link: `${base}/changelog`, icon: 'C', tone: 'release' }
-  ]
-})
-
 const topSwitcherLinks = [
   { key: 'neon-vision-editor', text: 'Neon', link: '/apps/neon-vision-editor/overview' },
   { key: 'metric-data', text: 'Metrics', link: '/apps/metric-data/overview' },
@@ -69,7 +51,8 @@ const topSwitcherLinks = [
   { key: 'release-assistant', text: 'Release', link: '/apps/release-assistant/overview' },
   { key: 'image-sorter', text: 'ImageSorter', link: '/apps/image-sorter/overview' },
   { key: 'vistral', text: 'Vistral', link: '/apps/vistral/overview' },
-  { key: 'history-vision', text: 'History', link: '/apps/history-vision/overview' }
+  { key: 'history-vision', text: 'History', link: '/apps/history-vision/overview' },
+  { key: 'lingua-latina', text: 'Lingua', link: '/apps/lingua-latina/overview' }
 ]
 
 const appUpdatedBySlug: Record<string, string> = {
@@ -85,12 +68,23 @@ const appUpdatedBySlug: Record<string, string> = {
 const appDocTopLinks = computed<DocJumpLink[]>(() => {
   if (!isAppDocPage.value) return []
   const base = '/apps/' + appSlug.value
-  return [
+  const links = [
     { text: 'Overview', link: base + '/overview' },
+    { text: 'Components', link: base + '/components-overview' },
     { text: 'Install', link: base + '/installation' },
     { text: 'Features', link: base + '/features' },
+    { text: 'Gallery', link: base + '/gallery' },
+    { text: 'Changelog', link: base + '/changelog' },
+    { text: 'Known Issues', link: base + '/known-issues' },
     { text: 'FAQ', link: base + '/faq' }
   ]
+  if (appSlug.value === 'metric-data' || appSlug.value === 'lingua-latina') {
+    links.push({ text: 'Privacy', link: base + '/privacy-policy' })
+  }
+  if (appSlug.value === 'neon-vision-editor') {
+    links.splice(2, 0, { text: 'Launch Story', link: base + '/launch-story' })
+  }
+  return links
 })
 
 const appDocRelatedLinks = computed<DocJumpLink[]>(() => {
@@ -1277,30 +1271,6 @@ onBeforeUnmount(() => {
           <a v-for="item in appDocTopLinks" :key="item.link" :href="item.link">{{ item.text }}</a>
         </nav>
       </div>
-    </template>
-
-    <template #aside-outline-before>
-      <section v-if="isAppsRoute" class="h3p-aside-doc-stats" aria-label="Document stats">
-        <div class="h3p-aside-doc-stat"><strong>{{ readingMinutes }} min</strong><span>read</span></div>
-        <div class="h3p-aside-doc-stat"><strong>{{ headingCount }}</strong><span>sections</span></div>
-      </section>
-      <section v-if="isAppsRoute" class="h3p-aside-cmd-cta" aria-label="Search shortcut">
-        <p>Search docs fast</p>
-        <div><kbd>/</kbd> open search</div>
-      </section>
-    </template>
-
-    <template #aside-outline-after>
-      <section v-if="appQuickLinks.length > 0" class="h3p-aside-quick-links" aria-label="Quick app links">
-        <div class="h3p-aside-quick-title">Quick links</div>
-        <div class="h3p-aside-quick-grid">
-          <a v-for="item in appQuickLinks" :key="item.link" :href="item.link" :class="['ql-link', `ql-${item.tone}`]">
-            <span class="ql-icon">{{ item.icon }}</span>
-            <span>{{ item.text }}</span>
-          </a>
-        </div>
-      </section>
-      <button v-if="isAppsRoute" class="h3p-aside-back-top" type="button" @click="backToTop">Back to top</button>
     </template>
 
     <template #doc-bottom>

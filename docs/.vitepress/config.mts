@@ -41,6 +41,7 @@ export default defineConfig({
 
   themeConfig: {
     siteTitle: 'h3p apps',
+    aside: false,
     footer: {
       message: 'Clean and modern development',
       copyright: 'Copyright 2026 by h3p Hilthart Pedersen.'
@@ -59,123 +60,6 @@ export default defineConfig({
       { text: 'Policies', link: '/policies/api-stability' },
       { text: 'Art & Blog', link: 'https://h3p.me/home' },
       { text: 'Support', link: '/support/' }
-    ],
-
-    sidebar: [
-      {
-        text: 'Getting Started',
-        items: [
-          { text: 'Introduction', link: '/getting-started/introduction' },
-          { text: 'Who This Is For', link: '/getting-started/who-this-is-for' },
-          { text: 'Documentation Standards', link: '/getting-started/documentation-standards' },
-          { text: 'Platform Support', link: '/getting-started/platform-support' },
-          { text: 'Release Notes Workflow', link: '/getting-started/release-notes-workflow' }
-        ]
-      },
-      {
-        text: 'Apps',
-        items: [
-          { text: 'All Apps', link: '/apps/index' },
-          { text: 'Code Examples', link: '/apps/code-examples' },
-          { text: 'GitHub Repositories', link: '/apps/github-repositories' },
-          { text: 'Docs Changelog', link: '/changelog' },
-
-          { text: 'Neon Vision Editor: Overview', link: '/apps/neon-vision-editor/overview' },
-          { text: 'Neon Vision Editor: Components Overview', link: '/apps/neon-vision-editor/components-overview' },
-          { text: 'Neon Vision Editor: Launch Story', link: '/apps/neon-vision-editor/launch-story' },
-          { text: 'Neon Vision Editor: Installation', link: '/apps/neon-vision-editor/installation' },
-          { text: 'Neon Vision Editor: Features', link: '/apps/neon-vision-editor/features' },
-          { text: 'Neon Vision Editor: Gallery', link: '/apps/neon-vision-editor/gallery' },
-          { text: 'Neon Vision Editor: Changelog', link: '/apps/neon-vision-editor/changelog' },
-          { text: 'Neon Vision Editor: Known Issues', link: '/apps/neon-vision-editor/known-issues' },
-          { text: 'Neon Vision Editor: FAQ', link: '/apps/neon-vision-editor/faq' },
-
-          { text: 'Metrics Data: Overview', link: '/apps/metric-data/overview' },
-          { text: 'Metrics Data: Components Overview', link: '/apps/metric-data/components-overview' },
-          { text: 'Metrics Data: Installation', link: '/apps/metric-data/installation' },
-          { text: 'Metrics Data: Features', link: '/apps/metric-data/features' },
-          { text: 'Metrics Data: Gallery', link: '/apps/metric-data/gallery' },
-          { text: 'Metrics Data: Changelog', link: '/apps/metric-data/changelog' },
-          { text: 'Metrics Data: Known Issues', link: '/apps/metric-data/known-issues' },
-          { text: 'Metrics Data: FAQ', link: '/apps/metric-data/faq' },
-          { text: 'Metrics Data: Privacy Policy', link: '/apps/metric-data/privacy-policy' },
-
-          { text: 'X-Newsbook: Overview', link: '/apps/x-newsbook/overview' },
-          { text: 'X-Newsbook: Components Overview', link: '/apps/x-newsbook/components-overview' },
-          { text: 'X-Newsbook: Installation', link: '/apps/x-newsbook/installation' },
-          { text: 'X-Newsbook: Features', link: '/apps/x-newsbook/features' },
-          { text: 'X-Newsbook: Gallery', link: '/apps/x-newsbook/gallery' },
-          { text: 'X-Newsbook: Changelog', link: '/apps/x-newsbook/changelog' },
-          { text: 'X-Newsbook: Known Issues', link: '/apps/x-newsbook/known-issues' },
-          { text: 'X-Newsbook: FAQ', link: '/apps/x-newsbook/faq' },
-
-          { text: 'Release Assistant: Overview', link: '/apps/release-assistant/overview' },
-          { text: 'Release Assistant: Components Overview', link: '/apps/release-assistant/components-overview' },
-          { text: 'Release Assistant: Installation', link: '/apps/release-assistant/installation' },
-          { text: 'Release Assistant: Features', link: '/apps/release-assistant/features' },
-          { text: 'Release Assistant: Gallery', link: '/apps/release-assistant/gallery' },
-          { text: 'Release Assistant: Changelog', link: '/apps/release-assistant/changelog' },
-          { text: 'Release Assistant: Known Issues', link: '/apps/release-assistant/known-issues' },
-          { text: 'Release Assistant: FAQ', link: '/apps/release-assistant/faq' },
-
-          { text: 'Image Sorter: Overview', link: '/apps/image-sorter/overview' },
-          { text: 'Image Sorter: Components Overview', link: '/apps/image-sorter/components-overview' },
-          { text: 'Image Sorter: Installation', link: '/apps/image-sorter/installation' },
-          { text: 'Image Sorter: Features', link: '/apps/image-sorter/features' },
-          { text: 'Image Sorter: Gallery', link: '/apps/image-sorter/gallery' },
-          { text: 'Image Sorter: Changelog', link: '/apps/image-sorter/changelog' },
-          { text: 'Image Sorter: Known Issues', link: '/apps/image-sorter/known-issues' },
-          { text: 'Image Sorter: FAQ', link: '/apps/image-sorter/faq' },
-
-          { text: 'Vistral: Overview', link: '/apps/vistral/overview' },
-          { text: 'Vistral: Components Overview', link: '/apps/vistral/components-overview' },
-          { text: 'Vistral: Installation', link: '/apps/vistral/installation' },
-          { text: 'Vistral: Features', link: '/apps/vistral/features' },
-          { text: 'Vistral: Gallery', link: '/apps/vistral/gallery' },
-          { text: 'Vistral: Changelog', link: '/apps/vistral/changelog' },
-          { text: 'Vistral: Known Issues', link: '/apps/vistral/known-issues' },
-          { text: 'Vistral: FAQ', link: '/apps/vistral/faq' },
-
-          { text: 'History Vision: Overview', link: '/apps/history-vision/overview' },
-          { text: 'History Vision: Components Overview', link: '/apps/history-vision/components-overview' },
-          { text: 'History Vision: Installation', link: '/apps/history-vision/installation' },
-          { text: 'History Vision: Features', link: '/apps/history-vision/features' },
-          { text: 'History Vision: Gallery', link: '/apps/history-vision/gallery' },
-          { text: 'History Vision: Changelog', link: '/apps/history-vision/changelog' },
-          { text: 'History Vision: Known Issues', link: '/apps/history-vision/known-issues' },
-          { text: 'History Vision: FAQ', link: '/apps/history-vision/faq' },
-
-          { text: 'Lingua Latina: Overview', link: '/apps/lingua-latina/overview' },
-          { text: 'Lingua Latina: Components Overview', link: '/apps/lingua-latina/components-overview' },
-          { text: 'Lingua Latina: Installation', link: '/apps/lingua-latina/installation' },
-          { text: 'Lingua Latina: Features', link: '/apps/lingua-latina/features' },
-          { text: 'Lingua Latina: Gallery', link: '/apps/lingua-latina/gallery' },
-          { text: 'Lingua Latina: Changelog', link: '/apps/lingua-latina/changelog' },
-          { text: 'Lingua Latina: Known Issues', link: '/apps/lingua-latina/known-issues' },
-          { text: 'Lingua Latina: FAQ', link: '/apps/lingua-latina/faq' },
-          { text: 'Lingua Latina: Privacy Policy', link: '/apps/lingua-latina/privacy-policy' }
-        ]
-      },
-      {
-        text: 'Policies',
-        items: [
-          { text: 'API Stability', link: '/policies/api-stability' },
-          { text: 'Roadmap', link: '/policies/roadmap' },
-          { text: 'Contributing', link: '/policies/contributing' },
-          { text: 'License', link: '/policies/license' },
-          { text: 'Security and Trust', link: '/policies/security-and-trust' },
-          { text: 'Terms of Service', link: '/policies/terms-of-service' },
-          { text: 'Privacy Policy', link: '/policies/privacy-policy' },
-          { text: 'EU Cookie Notice', link: '/policies/eu-cookie-notice' }
-        ]
-      },
-      {
-        text: 'Support',
-        items: [
-          { text: 'Support Home', link: '/support/' },
-          { text: 'Support and Feedback', link: '/support/support-and-feedback' }
-        ]
-      }
     ],
 
     socialLinks: [

@@ -1475,13 +1475,14 @@ html:not(.dark) .VPDocAside {
 
 /* Top app-doc nav rows */
 .h3p-doc-top-navs {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: grid;
   gap: 10px;
-  flex-wrap: wrap;
-  margin: 0 auto 10px;
-  width: 100%;
+  margin: 0 auto 16px;
+  width: min(100%, 1040px);
+  padding: 10px;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 16px;
+  background: color-mix(in srgb, var(--vp-c-bg-soft) 86%, transparent);
 }
 
 /* Sticky mini app switcher on app docs */
@@ -1491,14 +1492,21 @@ html:not(.dark) .VPDocAside {
   gap: 8px;
   margin: 0;
   padding: 6px;
-  border: 1px solid var(--vp-c-divider);
+  overflow-x: auto;
+  border: 1px solid color-mix(in srgb, var(--vp-c-divider) 80%, transparent);
   border-radius: 999px;
   background: var(--h3p-feature-bg);
   backdrop-filter: blur(8px);
-  width: fit-content;
+  width: 100%;
+  scrollbar-width: none;
+}
+
+.h3p-app-switcher::-webkit-scrollbar {
+  display: none;
 }
 
 .h3p-app-switcher a {
+  flex: 0 0 auto;
   text-decoration: none;
   color: var(--vp-c-text-2);
   font-size: 12px;
@@ -1657,24 +1665,23 @@ html:not(.dark) .VPDocAside {
 
 @media (max-width: 960px) {
   .h3p-doc-top-navs {
-    flex-wrap: wrap;
     gap: 8px;
+    border-radius: 14px;
+    padding: 8px;
   }
 
   .h3p-app-switcher {
     position: static;
-    margin-bottom: 8px;
   }
 
   .h3p-doc-jump-rail {
-    flex-wrap: wrap;
-    margin-bottom: 8px;
+    margin-bottom: 0;
   }
 }
 
 @media (min-width: 1200px) {
   .h3p-doc-top-navs {
-    flex-wrap: nowrap;
+    grid-template-columns: 1fr;
   }
 }
 
@@ -1763,17 +1770,25 @@ html:not(.dark) .VPDocAside {
   gap: 8px;
   flex-wrap: nowrap;
   margin: 0;
-  width: fit-content;
+  width: 100%;
+  overflow-x: auto;
+  padding-bottom: 2px;
+  scrollbar-width: none;
+}
+
+.h3p-doc-jump-rail::-webkit-scrollbar {
+  display: none;
 }
 
 .h3p-doc-jump-rail a {
+  flex: 0 0 auto;
   text-decoration: none;
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 700;
   color: var(--vp-c-text-2);
   border: 1px solid var(--vp-c-divider);
   border-radius: 999px;
-  padding: 5px 9px;
+  padding: 7px 10px;
   background: var(--h3p-feature-bg);
 }
 
@@ -3116,4 +3131,25 @@ html.compact-home-cards .startpage-quick-start {
     grid-template-columns: 1fr;
     gap: 26px;
   }
+}
+
+/* Final sidebar removal override after legacy responsive rules. */
+.VPSidebar,
+.VPLocalNav.has-sidebar,
+.VPLocalNav.empty {
+  display: none !important;
+}
+
+.VPContent.has-sidebar,
+.VPLocalNav.has-sidebar {
+  padding-left: 0 !important;
+}
+
+.VPNavBarTitle.has-sidebar .title {
+  width: auto !important;
+  max-width: none !important;
+}
+
+.VPNavBarTitle.has-sidebar {
+  border-right: 0 !important;
 }

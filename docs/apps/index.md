@@ -250,6 +250,118 @@
   </article>
 </div>
 
+## Documentation Map
+
+<div class="apps-doc-map" aria-label="App documentation map">
+  <section>
+    <h3>Neon Vision Editor</h3>
+    <div>
+      <a href="/apps/neon-vision-editor/overview">Overview</a>
+      <a href="/apps/neon-vision-editor/components-overview">Components</a>
+      <a href="/apps/neon-vision-editor/launch-story">Launch Story</a>
+      <a href="/apps/neon-vision-editor/installation">Install</a>
+      <a href="/apps/neon-vision-editor/features">Features</a>
+      <a href="/apps/neon-vision-editor/gallery">Gallery</a>
+      <a href="/apps/neon-vision-editor/changelog">Changelog</a>
+      <a href="/apps/neon-vision-editor/known-issues">Known Issues</a>
+      <a href="/apps/neon-vision-editor/faq">FAQ</a>
+    </div>
+  </section>
+  <section>
+    <h3>Metrics Data</h3>
+    <div>
+      <a href="/apps/metric-data/overview">Overview</a>
+      <a href="/apps/metric-data/components-overview">Components</a>
+      <a href="/apps/metric-data/installation">Install</a>
+      <a href="/apps/metric-data/features">Features</a>
+      <a href="/apps/metric-data/gallery">Gallery</a>
+      <a href="/apps/metric-data/changelog">Changelog</a>
+      <a href="/apps/metric-data/known-issues">Known Issues</a>
+      <a href="/apps/metric-data/faq">FAQ</a>
+      <a href="/apps/metric-data/privacy-policy">Privacy</a>
+    </div>
+  </section>
+  <section>
+    <h3>Release Assistant</h3>
+    <div>
+      <a href="/apps/release-assistant/overview">Overview</a>
+      <a href="/apps/release-assistant/components-overview">Components</a>
+      <a href="/apps/release-assistant/installation">Install</a>
+      <a href="/apps/release-assistant/features">Features</a>
+      <a href="/apps/release-assistant/gallery">Gallery</a>
+      <a href="/apps/release-assistant/changelog">Changelog</a>
+      <a href="/apps/release-assistant/known-issues">Known Issues</a>
+      <a href="/apps/release-assistant/faq">FAQ</a>
+    </div>
+  </section>
+  <section>
+    <h3>X-Newsbook</h3>
+    <div>
+      <a href="/apps/x-newsbook/overview">Overview</a>
+      <a href="/apps/x-newsbook/components-overview">Components</a>
+      <a href="/apps/x-newsbook/installation">Install</a>
+      <a href="/apps/x-newsbook/features">Features</a>
+      <a href="/apps/x-newsbook/gallery">Gallery</a>
+      <a href="/apps/x-newsbook/changelog">Changelog</a>
+      <a href="/apps/x-newsbook/known-issues">Known Issues</a>
+      <a href="/apps/x-newsbook/faq">FAQ</a>
+    </div>
+  </section>
+  <section>
+    <h3>Image Sorter</h3>
+    <div>
+      <a href="/apps/image-sorter/overview">Overview</a>
+      <a href="/apps/image-sorter/components-overview">Components</a>
+      <a href="/apps/image-sorter/installation">Install</a>
+      <a href="/apps/image-sorter/features">Features</a>
+      <a href="/apps/image-sorter/gallery">Gallery</a>
+      <a href="/apps/image-sorter/changelog">Changelog</a>
+      <a href="/apps/image-sorter/known-issues">Known Issues</a>
+      <a href="/apps/image-sorter/faq">FAQ</a>
+    </div>
+  </section>
+  <section>
+    <h3>Vistral</h3>
+    <div>
+      <a href="/apps/vistral/overview">Overview</a>
+      <a href="/apps/vistral/components-overview">Components</a>
+      <a href="/apps/vistral/installation">Install</a>
+      <a href="/apps/vistral/features">Features</a>
+      <a href="/apps/vistral/gallery">Gallery</a>
+      <a href="/apps/vistral/changelog">Changelog</a>
+      <a href="/apps/vistral/known-issues">Known Issues</a>
+      <a href="/apps/vistral/faq">FAQ</a>
+    </div>
+  </section>
+  <section>
+    <h3>History Vision</h3>
+    <div>
+      <a href="/apps/history-vision/overview">Overview</a>
+      <a href="/apps/history-vision/components-overview">Components</a>
+      <a href="/apps/history-vision/installation">Install</a>
+      <a href="/apps/history-vision/features">Features</a>
+      <a href="/apps/history-vision/gallery">Gallery</a>
+      <a href="/apps/history-vision/changelog">Changelog</a>
+      <a href="/apps/history-vision/known-issues">Known Issues</a>
+      <a href="/apps/history-vision/faq">FAQ</a>
+    </div>
+  </section>
+  <section>
+    <h3>Lingua Latina</h3>
+    <div>
+      <a href="/apps/lingua-latina/overview">Overview</a>
+      <a href="/apps/lingua-latina/components-overview">Components</a>
+      <a href="/apps/lingua-latina/installation">Install</a>
+      <a href="/apps/lingua-latina/features">Features</a>
+      <a href="/apps/lingua-latina/gallery">Gallery</a>
+      <a href="/apps/lingua-latina/changelog">Changelog</a>
+      <a href="/apps/lingua-latina/known-issues">Known Issues</a>
+      <a href="/apps/lingua-latina/faq">FAQ</a>
+      <a href="/apps/lingua-latina/privacy-policy">Privacy</a>
+    </div>
+  </section>
+</div>
+
 <div class="apps-status-legend" aria-label="App status legend">
   <span><strong>Public release</strong>: shipping app and active docs</span>
   <span><strong>Private beta</strong>: limited testing and active docs</span>
@@ -361,6 +473,47 @@ See [GitHub Repositories](/apps/github-repositories) for repository links and cu
 
 .apps-status-legend strong {
   color: var(--vp-c-text-1);
+}
+
+.apps-doc-map {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 12px;
+  margin: 14px 0 18px;
+}
+
+.apps-doc-map section {
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 14px;
+  padding: 13px 14px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.025), rgba(255,255,255,0.01));
+}
+
+.apps-doc-map h3 {
+  margin: 0 0 10px;
+  font-size: 15px;
+}
+
+.apps-doc-map div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.apps-doc-map a {
+  text-decoration: none;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 999px;
+  padding: 5px 8px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--vp-c-text-2);
+  background: color-mix(in srgb, var(--vp-c-bg-soft) 88%, transparent);
+}
+
+.apps-doc-map a:hover {
+  color: var(--vp-c-brand-1);
+  border-color: var(--vp-c-brand-1);
 }
 
 .apps-carousel {
