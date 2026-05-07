@@ -1292,6 +1292,44 @@ onBeforeUnmount(() => {
           <a href="/support/support-and-feedback">Support</a>
         </div>
       </section>
+      <footer v-if="isAppsRoute" class="h3p-app-site-footer" aria-label="h3p apps footer">
+        <div class="h3p-app-site-footer-inner">
+          <div class="h3p-app-site-footer-brand">
+            <h2>h3p apps</h2>
+            <p>Clean, focused apps and documentation for Apple platforms.</p>
+          </div>
+          <nav class="h3p-app-site-footer-columns" aria-label="Footer navigation">
+            <section class="h3p-app-site-footer-column">
+              <h3>Product</h3>
+              <a href="/apps/index">All Apps</a>
+              <a href="/getting-started/introduction">Getting Started</a>
+              <a href="/getting-started/platform-support">Platform Support</a>
+              <a href="/changelog">Changelog</a>
+            </section>
+            <section class="h3p-app-site-footer-column">
+              <h3>Apps</h3>
+              <a href="/apps/neon-vision-editor/overview">Neon Vision Editor</a>
+              <a href="/apps/metric-data/overview">Metrics Data</a>
+              <a href="/apps/release-assistant/overview">Release Assistant</a>
+              <a href="/apps/x-newsbook/overview">X-Newsbook</a>
+            </section>
+            <section class="h3p-app-site-footer-column">
+              <h3>Resources</h3>
+              <a href="/apps/code-examples">Code Examples</a>
+              <a href="/apps/github-repositories">GitHub Repositories</a>
+              <a href="/getting-started/documentation-standards">Documentation Standards</a>
+              <a href="/support/support-and-feedback">Support</a>
+            </section>
+            <section class="h3p-app-site-footer-column">
+              <h3>Legal</h3>
+              <a href="/policies/privacy-policy">Privacy Policy</a>
+              <a href="/policies/terms-of-service">Terms of Service</a>
+              <a href="/policies/eu-cookie-notice">EU Cookie Notice</a>
+              <a href="/policies/security-and-trust">Security and Trust</a>
+            </section>
+          </nav>
+        </div>
+      </footer>
       <a v-if="isAppDocPage" class="h3p-back-apps-fab" href="/apps/index" aria-label="Back to all apps">Back to apps</a>
     </template>
 

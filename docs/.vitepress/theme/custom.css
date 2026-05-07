@@ -1476,28 +1476,32 @@ html:not(.dark) .VPDocAside {
 /* Top app-doc nav rows */
 .h3p-doc-top-navs {
   display: grid;
-  gap: 10px;
+  justify-items: center;
+  gap: 12px;
   margin: 0 auto 16px;
   width: min(100%, 1040px);
-  padding: 10px;
-  border: 1px solid var(--vp-c-divider);
+  padding: 12px 14px;
+  border: 1px solid color-mix(in srgb, var(--vp-c-divider) 86%, var(--vp-c-text-2) 14%);
   border-radius: 16px;
-  background: color-mix(in srgb, var(--vp-c-bg-soft) 86%, transparent);
+  background: color-mix(in srgb, var(--vp-c-bg-soft) 76%, var(--vp-c-bg) 24%);
+  box-shadow: 0 10px 28px color-mix(in srgb, var(--vp-c-text-1) 7%, transparent);
 }
 
 /* Sticky mini app switcher on app docs */
 .h3p-app-switcher {
   position: static;
   display: flex;
+  justify-content: center;
   gap: 8px;
   margin: 0;
-  padding: 6px;
+  padding: 7px;
   overflow-x: auto;
-  border: 1px solid color-mix(in srgb, var(--vp-c-divider) 80%, transparent);
+  border: 1px solid color-mix(in srgb, var(--vp-c-divider) 82%, var(--vp-c-text-2) 18%);
   border-radius: 999px;
-  background: var(--h3p-feature-bg);
+  background: color-mix(in srgb, var(--vp-c-bg-soft) 82%, var(--vp-c-bg) 18%);
   backdrop-filter: blur(8px);
-  width: 100%;
+  width: fit-content;
+  max-width: 100%;
   scrollbar-width: none;
 }
 
@@ -1512,13 +1516,15 @@ html:not(.dark) .VPDocAside {
   font-size: 12px;
   font-weight: 700;
   border-radius: 999px;
-  padding: 6px 10px;
+  padding: 7px 12px;
+  border: 1px solid transparent;
 }
 
 .h3p-app-switcher a.active,
 .h3p-app-switcher a:hover {
   color: var(--vp-c-text-1);
-  background: rgba(83, 210, 255, 0.12);
+  border-color: color-mix(in srgb, var(--vp-c-divider) 72%, var(--vp-c-brand-1) 28%);
+  background: color-mix(in srgb, var(--vp-c-bg-soft) 68%, var(--vp-c-brand-1) 12%);
 }
 
 /* Per-app overview header theme sync */
@@ -1767,10 +1773,12 @@ html:not(.dark) .VPDocAside {
 .h3p-doc-jump-rail {
   position: static;
   display: flex;
+  justify-content: center;
   gap: 8px;
   flex-wrap: nowrap;
   margin: 0;
-  width: 100%;
+  width: fit-content;
+  max-width: 100%;
   overflow-x: auto;
   padding-bottom: 2px;
   scrollbar-width: none;
@@ -1786,10 +1794,10 @@ html:not(.dark) .VPDocAside {
   font-size: 12px;
   font-weight: 700;
   color: var(--vp-c-text-2);
-  border: 1px solid var(--vp-c-divider);
+  border: 1px solid color-mix(in srgb, var(--vp-c-divider) 82%, var(--vp-c-text-2) 18%);
   border-radius: 999px;
-  padding: 7px 10px;
-  background: var(--h3p-feature-bg);
+  padding: 7px 12px;
+  background: color-mix(in srgb, var(--vp-c-bg-soft) 82%, var(--vp-c-bg) 18%);
 }
 
 .h3p-doc-jump-rail a:hover {
@@ -3105,19 +3113,105 @@ html.compact-home-cards .startpage-quick-start {
   box-shadow: none;
 }
 
+.h3p-app-site-footer {
+  margin: 72px auto 0;
+  padding: 44px 0 8px;
+  border-top: 1px solid var(--vp-c-divider);
+  background: transparent;
+}
+
+.h3p-app-site-footer-inner {
+  display: grid;
+  grid-template-columns: minmax(180px, 1fr) minmax(0, 4fr);
+  gap: clamp(36px, 8vw, 96px);
+  width: min(100%, 1040px);
+  margin: 0 auto;
+}
+
+.h3p-app-site-footer-brand h2 {
+  margin: 0;
+  letter-spacing: 0;
+  font-size: 20px;
+  line-height: 1.25;
+  font-weight: 750;
+  color: var(--vp-c-text-1);
+}
+
+.h3p-app-site-footer-brand p {
+  margin: 14px 0 0;
+  max-width: 220px;
+  text-align: left;
+  font-size: 15px;
+  line-height: 1.45;
+  color: var(--vp-c-text-2);
+}
+
+.h3p-app-site-footer-columns {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(130px, 1fr));
+  gap: clamp(28px, 6vw, 64px);
+}
+
+.h3p-app-site-footer-column {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 13px;
+}
+
+.h3p-app-site-footer-column h3 {
+  margin: 0 0 2px;
+  letter-spacing: 0;
+  font-size: 14px;
+  line-height: 1.3;
+  font-weight: 750;
+  color: var(--vp-c-text-1);
+}
+
+.h3p-app-site-footer-column a {
+  display: inline-flex;
+  min-height: 24px;
+  align-items: center;
+  text-decoration: none;
+  border: 0;
+  border-radius: 0;
+  padding: 0;
+  background: transparent;
+  box-shadow: none;
+  font-size: 15px;
+  line-height: 1.35;
+  font-weight: 450;
+  color: var(--vp-c-text-2);
+  transition: color 160ms ease;
+}
+
+.h3p-app-site-footer-column a:hover,
+.h3p-app-site-footer-column a:focus-visible {
+  color: var(--vp-c-brand-1);
+  transform: none;
+  box-shadow: none;
+}
+
 @media (max-width: 920px) {
   .VPHome .startpage-footer-inner {
     grid-template-columns: 1fr;
     gap: 32px;
   }
 
-  .VPHome .startpage-footer-brand p {
+  .VPHome .startpage-footer-brand p,
+  .h3p-app-site-footer-brand p {
     max-width: 360px;
   }
 
-  .VPHome .startpage-footer-columns {
+  .VPHome .startpage-footer-columns,
+  .h3p-app-site-footer-columns {
     grid-template-columns: repeat(2, minmax(150px, 1fr));
     gap: 30px 42px;
+  }
+
+  .h3p-app-site-footer-inner {
+    grid-template-columns: 1fr;
+    gap: 32px;
   }
 }
 
@@ -3127,9 +3221,15 @@ html.compact-home-cards .startpage-quick-start {
     padding: 36px 24px 34px;
   }
 
-  .VPHome .startpage-footer-columns {
+  .VPHome .startpage-footer-columns,
+  .h3p-app-site-footer-columns {
     grid-template-columns: 1fr;
     gap: 26px;
+  }
+
+  .h3p-app-site-footer {
+    margin-top: 56px;
+    padding-top: 34px;
   }
 }
 
