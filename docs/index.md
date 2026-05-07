@@ -198,40 +198,41 @@ neon vision editor across iphone, mac, and ipad.
   </picture>
 </div>
 
-<footer class="startpage-footer" aria-label="h3p links">
-  <details class="startpage-collapsible startpage-footer-collapsible">
-    <summary>Show all links</summary>
-    <div class="startpage-footer-tabs" role="tablist" aria-label="Footer link groups">
-      <button class="is-active" type="button" data-footer-tab="core">Core</button>
-      <button type="button" data-footer-tab="legal">Legal</button>
+<footer class="startpage-footer" aria-label="h3p apps footer">
+  <div class="startpage-footer-inner">
+    <div class="startpage-footer-brand">
+      <h2>h3p apps</h2>
+      <p>Clean, focused apps and documentation for Apple platforms.</p>
     </div>
-    <div class="startpage-footer-panel is-active" data-footer-panel="core">
-      <div class="startpage-footer-grid">
-        <a href="https://github.com/h3pdesign" target="_blank" rel="noreferrer">GitHub Profile</a>
-        <a href="https://github.com/sponsors/h3pdesign" target="_blank" rel="noreferrer">GitHub Sponsors</a>
-        <a href="https://www.patreon.com/cw/h3p" target="_blank" rel="noreferrer">Patreon</a>
-        <a href="https://h3p.me/home" target="_blank" rel="noreferrer">h3p.me Home</a>
-        <a href="https://h3p.me/apps" target="_blank" rel="noreferrer">Apps</a>
-        <a href="https://h3p.me/blog" target="_blank" rel="noreferrer">Blog</a>
-        <a href="https://twitter.com/h3palpha" target="_blank" rel="noreferrer">X / Twitter</a>
-        <a href="https://www.instagram.com/createurdeimagination/" target="_blank" rel="noreferrer">Instagram</a>
-        <a href="https://www.behance.net/h3p" target="_blank" rel="noreferrer">Behance</a>
-        <a href="https://500px.com/p/h3p" target="_blank" rel="noreferrer">500px</a>
-      </div>
-    </div>
-    <div class="startpage-footer-panel" data-footer-panel="legal">
-      <div class="startpage-footer-grid">
-        <a href="/policies/terms-of-service">Terms of Service</a>
+    <nav class="startpage-footer-columns" aria-label="Footer navigation">
+      <section class="startpage-footer-column">
+        <h3>Product</h3>
+        <a href="/apps/index">All Apps</a>
+        <a href="/getting-started/introduction">Getting Started</a>
+        <a href="/getting-started/platform-support">Platform Support</a>
+        <a href="/changelog">Changelog</a>
+      </section>
+      <section class="startpage-footer-column">
+        <h3>Apps</h3>
+        <a href="/apps/neon-vision-editor/overview">Neon Vision Editor</a>
+        <a href="/apps/metric-data/overview">Metrics Data</a>
+        <a href="/apps/release-assistant/overview">Release Assistant</a>
+        <a href="/apps/x-newsbook/overview">X-Newsbook</a>
+      </section>
+      <section class="startpage-footer-column">
+        <h3>Resources</h3>
+        <a href="/apps/code-examples">Code Examples</a>
+        <a href="/apps/github-repositories">GitHub Repositories</a>
+        <a href="/getting-started/documentation-standards">Documentation Standards</a>
+        <a href="/support/support-and-feedback">Support</a>
+      </section>
+      <section class="startpage-footer-column">
+        <h3>Legal</h3>
         <a href="/policies/privacy-policy">Privacy Policy</a>
+        <a href="/policies/terms-of-service">Terms of Service</a>
         <a href="/policies/eu-cookie-notice">EU Cookie Notice</a>
-      </div>
-    </div>
-  </details>
-  <div class="startpage-trust-row" id="startpage-links">
-    <a href="https://github.com/h3pdesign" target="_blank" rel="noreferrer">Open-source parts on GitHub</a>
-    <a href="/policies/security-and-trust">Security policy</a>
-    <a href="/policies/privacy-policy">Privacy</a>
+        <a href="/policies/security-and-trust">Security and Trust</a>
+      </section>
+    </nav>
   </div>
-  <p class="startpage-shortcut-legend">Shortcuts: <kbd>/</kbd> search, <kbd>⌘</kbd> + <kbd>K</kbd> quick open.</p>
-  <p>Copyright 2026 by h3p Hilthart Pedersen.</p>
 </footer>
