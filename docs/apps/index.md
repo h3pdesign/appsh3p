@@ -123,6 +123,7 @@
       <div class="app-actions-row">
         <span class="chip">GitHub: repository not public yet</span>
         <a class="chip chip-link" href="https://testflight.apple.com/join/mMyMAGjE" target="_blank" rel="noreferrer">TestFlight</a>
+        <a class="chip chip-link" href="/apps/metric-data/privacy-policy">Privacy Policy</a>
       </div>
     </div>
   </article>

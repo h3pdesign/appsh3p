@@ -1,6 +1,6 @@
 # Privacy Policy
 
-_Last updated: March 2, 2026_
+_Last updated: May 7, 2026_
 
 This Privacy Policy explains how data is handled on https://apps-h3p.com.
 
@@ -14,7 +14,26 @@ This documentation site is designed to minimize data collection.
 
 For h3p apps listed on this site (including Metrics Data, Neon Vision Editor, Release Assistant, X-Newsbook, and Lingua Latina), data handling may vary by app features and platform integration. Where app-specific behavior exists, it is documented in the relevant app documentation and in linked third-party provider policies.
 
-Lingua Latina has an app-specific policy at [Privacy Policy for Lingua Latina](/apps/lingua-latina/privacy-policy).
+App-specific privacy details:
+
+- Metrics Data has an app-specific policy at [Metrics Data Privacy Policy](/apps/metric-data/privacy-policy), including Google user data handling for Google Analytics and AdSense API access.
+- Lingua Latina has an app-specific policy at [Privacy Policy for Lingua Latina](/apps/lingua-latina/privacy-policy).
+
+## Metrics Data: Google User Data
+
+If you choose to connect your Google account in Metrics Data, the app requests only the permissions needed to provide read-only analytics dashboards.
+
+Requested Google scopes:
+
+- `https://www.googleapis.com/auth/analytics.readonly`
+- `https://www.googleapis.com/auth/adsense.readonly`
+- `openid`, `profile`, `email` for authentication and account identity
+
+Metrics Data uses this data to display your own GA4 and/or AdSense metrics in the app, such as trends, totals, and dashboard cards, and to authenticate your session.
+
+Metrics Data does not modify your Google Analytics or AdSense configuration/data, does not sell Google user data, and does not use Google user data for advertising purposes.
+
+Metrics Data does not share Google user data with third parties except as required to operate the Google APIs you explicitly authorize. OAuth tokens are stored securely on your device in Keychain. You can disconnect at any time by signing out in the app and/or revoking access in your Google Account security settings.
 
 ## 2. Technical logs
 

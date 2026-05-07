@@ -98,6 +98,7 @@ export default defineConfig({
           { text: 'Metrics Data: Changelog', link: '/apps/metric-data/changelog' },
           { text: 'Metrics Data: Known Issues', link: '/apps/metric-data/known-issues' },
           { text: 'Metrics Data: FAQ', link: '/apps/metric-data/faq' },
+          { text: 'Metrics Data: Privacy Policy', link: '/apps/metric-data/privacy-policy' },
 
           { text: 'X-Newsbook: Overview', link: '/apps/x-newsbook/overview' },
           { text: 'X-Newsbook: Components Overview', link: '/apps/x-newsbook/components-overview' },

@@ -63,7 +63,8 @@ This app is not a public data crawler and does not access data outside the Googl
 
 - [TestFlight](https://testflight.apple.com/join/mMyMAGjE)
 - [Code Examples](/apps/code-examples)
-- [Privacy Policy](/policies/privacy-policy)
+- [Metrics Data Privacy Policy](/apps/metric-data/privacy-policy)
+- [Site Privacy Policy](/policies/privacy-policy)
 
 ## Core Capability Set
 
@@ -87,6 +88,8 @@ This app is not a public data crawler and does not access data outside the Googl
 - widget snapshots stored via app group container
 - HTTPS-only network access to required Google APIs
 
+See [Metrics Data Privacy Policy](/apps/metric-data/privacy-policy) for Google user data handling and OAuth scope details.
+
 ## Project Documentation Sources
 
 The details here align with:
@@ -103,4 +106,5 @@ The details here align with:
 - [Gallery](/apps/metric-data/gallery)
 - [Known Issues](/apps/metric-data/known-issues)
 - [FAQ](/apps/metric-data/faq)
+- [Privacy Policy](/apps/metric-data/privacy-policy)
 - [Code Examples](/apps/code-examples)
