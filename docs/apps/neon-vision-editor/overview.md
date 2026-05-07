@@ -34,9 +34,6 @@ head:
   </div>
   <div class="overview-hero-media">
     <img src="/icons/neon-vision-editor.png?v=20260401-2" alt="Neon Vision Editor icon" class="overview-app-icon" />
-    <div class="overview-shot-frame">
-      <img src="/media/neon/neon-vision-editor.png" alt="Neon Vision Editor screenshot" class="overview-app-shot overview-app-shot-clean" />
-    </div>
   </div>
 </div>
 
