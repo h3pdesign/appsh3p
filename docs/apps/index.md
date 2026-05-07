@@ -13,15 +13,15 @@
 
 <div class="apps-whats-new" aria-label="Latest updates">
   <div class="apps-whats-new-title">What's new</div>
-<div class="apps-whats-new-items">
-    <span>Neon Vision Editor docs expanded with changelog, known issues, and FAQ.</span>
-    <span>Metrics Data overview refreshed with iPad-first screenshots and SEO metadata.</span>
-    <span>Release Assistant now includes structured install, gallery, and changelog docs.</span>
-    <span>X-Newsbook docs added with overview, components, installation, and FAQ.</span>
-    <span>Image Sorter docs added with queue workflow, installation, and support pages.</span>
-    <span>Vistral docs added with multi-platform scope and local-first analytics purpose.</span>
-    <span>History Vision docs added with reader + data-visualization product overview.</span>
-    <span>Lingua Latina docs added with dictionary, grammar, study, and privacy pages.</span>
+  <div class="apps-whats-new-items">
+    <span class="apps-whats-new-item is-neon">Neon Vision Editor docs expanded with changelog, known issues, and FAQ.</span>
+    <span class="apps-whats-new-item is-metric">Metrics Data overview refreshed with iPad-first screenshots and SEO metadata.</span>
+    <span class="apps-whats-new-item is-release">Release Assistant now includes structured install, gallery, and changelog docs.</span>
+    <span class="apps-whats-new-item is-newsbook">X-Newsbook docs added with overview, components, installation, and FAQ.</span>
+    <span class="apps-whats-new-item is-sorter">Image Sorter docs added with queue workflow, installation, and support pages.</span>
+    <span class="apps-whats-new-item is-vistral">Vistral docs added with multi-platform scope and local-first analytics purpose.</span>
+    <span class="apps-whats-new-item is-history">History Vision docs added with reader + data-visualization product overview.</span>
+    <span class="apps-whats-new-item is-lingua">Lingua Latina docs added with dictionary, grammar, study, and privacy pages.</span>
   </div>
 </div>
 
@@ -400,10 +400,11 @@ See [GitHub Repositories](/apps/github-repositories) for repository links and cu
 
 .apps-whats-new {
   margin-top: 14px;
-  padding: 12px 14px;
+  padding: 14px;
   border: 1px solid var(--vp-c-divider);
-  border-radius: 14px;
-  background: linear-gradient(120deg, rgba(64, 160, 255, 0.12), rgba(115, 133, 255, 0.08));
+  border-radius: 16px;
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--vp-c-bg-soft) 88%, transparent), color-mix(in srgb, var(--vp-c-bg) 94%, transparent));
 }
 
 .apps-whats-new-title {
@@ -411,16 +412,46 @@ See [GitHub Repositories](/apps/github-repositories) for repository links and cu
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: var(--vp-c-text-2);
-  margin-bottom: 8px;
+  margin-bottom: 12px;
   font-weight: 700;
 }
 
 .apps-whats-new-items {
   display: grid;
-  gap: 6px;
+  gap: 10px;
   font-size: 13px;
   color: var(--vp-c-text-1);
 }
+
+.apps-whats-new-item {
+  position: relative;
+  display: block;
+  padding: 11px 13px 11px 18px;
+  border: 1px solid color-mix(in srgb, var(--vp-c-divider) 86%, transparent);
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--vp-c-bg) 78%, transparent);
+  box-shadow: 0 8px 22px rgba(18, 35, 63, 0.04);
+}
+
+.apps-whats-new-item::before {
+  content: '';
+  position: absolute;
+  left: 8px;
+  top: 10px;
+  bottom: 10px;
+  width: 3px;
+  border-radius: 999px;
+  background: var(--item-accent, var(--vp-c-brand-1));
+}
+
+.apps-whats-new-item.is-neon { --item-accent: #9f6bff; }
+.apps-whats-new-item.is-metric { --item-accent: #37b86f; }
+.apps-whats-new-item.is-release { --item-accent: #18a7d8; }
+.apps-whats-new-item.is-newsbook { --item-accent: #4f86ff; }
+.apps-whats-new-item.is-sorter { --item-accent: #d18b2f; }
+.apps-whats-new-item.is-vistral { --item-accent: #42b7a7; }
+.apps-whats-new-item.is-history { --item-accent: #7c8f38; }
+.apps-whats-new-item.is-lingua { --item-accent: #b25686; }
 
 
 .apps-release-timeline {

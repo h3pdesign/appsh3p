@@ -4,6 +4,8 @@ _Last updated: May 7, 2026_
 
 This Privacy Policy explains how data is handled on https://apps-h3p.com.
 
+For the complete policy directory, including app-specific privacy policies, see [Policies Overview](/policies/index).
+
 ## 1. Data collection
 
 This documentation site is designed to minimize data collection.
@@ -18,6 +20,8 @@ App-specific privacy details:
 
 - Metrics Data has an app-specific policy at [Metrics Data Privacy Policy](/apps/metric-data/privacy-policy), including Google user data handling for Google Analytics and AdSense API access.
 - Lingua Latina has an app-specific policy at [Privacy Policy for Lingua Latina](/apps/lingua-latina/privacy-policy).
+
+The current app privacy policy status table is maintained at [Policies Overview](/policies/index#app-privacy-status).
 
 ## Metrics Data: Google User Data
 

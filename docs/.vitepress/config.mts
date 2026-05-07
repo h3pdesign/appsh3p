@@ -55,10 +55,10 @@ export default defineConfig({
       { text: 'Home', link: '/' },
       { text: 'Getting Started', link: '/getting-started/introduction' },
       { text: 'Apps', link: '/apps/index' },
-      { text: 'Politics Monitor', link: 'https://apps-h3p.com/polymarket-us-politics/conflict-monitor.html' },
       { text: 'Changelog', link: '/changelog' },
-      { text: 'Policies', link: '/policies/api-stability' },
+      { text: 'Policies', link: '/policies/index' },
       { text: 'Art & Blog', link: 'https://h3p.me/home' },
+      { text: 'Politics Monitor', link: 'https://apps-h3p.com/polymarket-us-politics/conflict-monitor.html' },
       { text: 'Support', link: '/support/' }
     ],
 

@@ -228,10 +228,10 @@ neon vision editor across iphone, mac, and ipad.
       </section>
       <section class="startpage-footer-column">
         <h3>Legal</h3>
+        <a href="/policies/index">Policies Overview</a>
         <a href="/policies/privacy-policy">Privacy Policy</a>
         <a href="/policies/terms-of-service">Terms of Service</a>
         <a href="/policies/eu-cookie-notice">EU Cookie Notice</a>
-        <a href="/policies/security-and-trust">Security and Trust</a>
       </section>
     </nav>
   </div>
