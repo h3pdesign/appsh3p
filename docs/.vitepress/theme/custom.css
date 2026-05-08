@@ -1854,6 +1854,52 @@ html:not(.dark) .VPDocAside {
   }
 }
 
+/* Mobile app docs navigation: keep both rows inside the viewport. */
+@media (max-width: 960px) {
+  .h3p-doc-top-navs {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .h3p-app-switcher,
+  .h3p-doc-jump-rail {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0;
+    flex-wrap: wrap !important;
+    overflow-x: hidden !important;
+    justify-content: center;
+  }
+
+  .h3p-app-switcher a,
+  .h3p-doc-jump-rail a {
+    flex: 1 1 calc(33.333% - 8px) !important;
+    min-width: 0 !important;
+    max-width: 100%;
+    text-align: center;
+    white-space: normal;
+  }
+}
+
+@media (max-width: 560px) {
+  .h3p-doc-top-navs {
+    padding: 10px;
+  }
+
+  .h3p-app-switcher,
+  .h3p-doc-jump-rail {
+    gap: 8px;
+  }
+
+  .h3p-app-switcher a,
+  .h3p-doc-jump-rail a {
+    flex-basis: calc(50% - 8px) !important;
+    padding: 8px 9px;
+    font-size: 12px;
+    line-height: 1.2;
+  }
+}
+
 .h3p-doc-last-updated {
   margin: 0 0 12px;
   width: 100%;
