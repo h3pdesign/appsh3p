@@ -1,5 +1,5 @@
 {
-  "updated_at_utc": "2026-05-13T09:27:29.719Z",
+  "updated_at_utc": "2026-05-13T17:16:32.017Z",
   "total_questions": 66,
   "mapped_questions": 33,
   "unmapped_questions": 33,
@@ -78,18 +78,18 @@
     },
     {
       "question": "Will Trump visit China by March 31?",
-      "market_id": "1611527",
-      "market_slug": "will-trump-visit-china-by-may-31-344-493-718",
-      "market_question": "Will Trump visit China by May 31?",
+      "market_id": "1985666",
+      "market_slug": "will-trump-visit-china-by-may-15-835-774-595",
+      "market_question": "Will Trump visit China by May 15?",
       "score": 0.787,
       "active": true,
       "closed": false
     },
     {
       "question": "Will Trump visit China by April 30?",
-      "market_id": "1611527",
-      "market_slug": "will-trump-visit-china-by-may-31-344-493-718",
-      "market_question": "Will Trump visit China by May 31?",
+      "market_id": "1985666",
+      "market_slug": "will-trump-visit-china-by-may-15-835-774-595",
+      "market_question": "Will Trump visit China by May 15?",
       "score": 0.787,
       "active": true,
       "closed": false
