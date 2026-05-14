@@ -2,10 +2,10 @@
 head:
   - - meta
     - property: og:image
-      content: https://apps-h3p.com/media/neon-vision-editor-hero.png
+      content: https://apps-h3p.com/media/neon/neon-vision-banner.jpg
   - - meta
     - name: twitter:image
-      content: https://apps-h3p.com/media/neon-vision-editor-hero.png
+      content: https://apps-h3p.com/media/neon/neon-vision-banner.jpg
   - - script
     - type: application/ld+json
     - '{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://apps-h3p.com/#organization","name":"H3P","url":"https://apps-h3p.com","sameAs":["https://github.com/h3pdesign"]},{"@type":"SoftwareApplication","@id":"https://apps-h3p.com/apps/neon-vision-editor/overview#app","name":"Neon Vision Editor","applicationCategory":"DeveloperApplication","operatingSystem":"macOS, iPadOS, iOS","url":"https://apps-h3p.com/apps/neon-vision-editor/overview","downloadUrl":"https://apps.apple.com/de/app/neon-vision-editor/id6758950965","softwareVersion":"0.6.7","isAccessibleForFree":true,"publisher":{"@id":"https://apps-h3p.com/#organization"}}]}'
@@ -28,6 +28,9 @@ head:
   <div><span>platforms</span><strong>macOS / iPadOS / iOS</strong></div>
   <div><span>repo status</span><strong>public</strong></div>
 </div>
+<figure class="overview-banner overview-neon-banner overview-reveal">
+  <img src="/media/neon/neon-vision-banner.jpg" alt="Neon Vision Editor banner with app icon and code editor preview" />
+</figure>
 <div class="overview-hero overview-app-neon overview-reveal">
   <div class="overview-hero-copy">
     <p>Neon Vision Editor is a lightweight, modern editor focused on speed, readability, and automatic syntax highlighting.</p>
