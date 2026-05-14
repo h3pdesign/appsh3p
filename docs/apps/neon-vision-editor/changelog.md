@@ -10,22 +10,22 @@ head:
 
 # Neon Vision Editor Changelog
 
-_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on May 9, 2026._
+_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on May 13, 2026._
 
-## v0.6.6 (published May 9, 2026)
+## v0.6.7 (published May 13, 2026)
 
-Release link: [GitHub Release v0.6.6](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v0.6.6)
+Release link: [GitHub Release v0.6.7](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v0.6.7)
 
-- File opening from Finder/system dialogs is now more robust: existing windows are brought back to the foreground instead of staying in the background.
-- Empty startup tabs are now cleanly reused when opening a file, preventing unnecessary extra tabs.
-- Large UI monoliths were further modularized, making follow-up fixes significantly lower risk.
-- iPad hardware shortcuts can now be configured directly in Settings and keyboard editing is fully reliable (text selection, copy/cut/paste, undo/redo, close tab).
-- Toolbar customization on iPhone/iPad is more practical with visibility controls for primary icons and an optional compact custom 5-icon mode.
-- `plist` files can now be shown in a structured, collapsible tree view alongside raw text.
-- Welcome Tour and support prompt flows now share a consistent modern visual style, with improved spacing and button ergonomics on iPhone, iPad, and macOS.
-- Release gating now runs as a single script step that combines the platform matrix build and release preflight checks.
-- Improved external file-open routing on macOS: after opening, the target editor window is brought to foreground and activated.
-- Added clean untitled tab replacement flow in `EditorViewModel.openFile(url:)` when only a single untouched placeholder tab exists.
+- Swift 6 migration work is now substantially safer across macOS, iOS, and iPadOS with stricter actor isolation fixes and cross-platform build coverage.
+- Git workflows are more useful inside the editor with working-tree status, branch history, commit diff viewing, and a visual graph tab.
+- Find in Files now lives in the project sidebar on compact devices, making iPhone search navigation and selection more consistent.
+- Release automation now validates changelog, README, marketing version, and build-number consistency with short actionable fix guidance before release.
+- Migrated project build settings toward Swift 6 language mode and fixed related Sendable/main-actor diagnostics across editor, settings, AI, markdown preview, and remote-session code.
+- Added Git service/view-model infrastructure for sandbox-aware repository status, fetch/pull/push actions, history, branch graph data, and commit diff presentation.
+- Added Git sidebar tabs for Changes, History, and Graph, including per-commit insertion/deletion summaries and a visual graph canvas for branch history.
+- Added structured Git diff presentation using the existing editor diff UI, including translucent styling when enabled.
+- Added Find in Files as a project-sidebar tab on macOS/iOS/iPadOS, with compact iPhone layout tuning, sidebar activation from toolbar search, and result selection that opens files and highlights matches.
+- Added project sidebar polish for Git/search workflows, including wider graph/history presentation, translucent sidebar surfaces, and compact heading adjustments.
 
 ## v0.4.22 (published February 16, 2026)
 
