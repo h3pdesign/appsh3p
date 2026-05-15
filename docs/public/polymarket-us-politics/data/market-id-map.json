@@ -1,5 +1,5 @@
 {
-  "updated_at_utc": "2026-05-15T01:17:19.064Z",
+  "updated_at_utc": "2026-05-15T09:30:04.649Z",
   "total_questions": 66,
   "mapped_questions": 33,
   "unmapped_questions": 33,
@@ -114,18 +114,18 @@
     },
     {
       "question": "Jerome Powell out by March 31?",
-      "market_id": "1092482",
-      "market_slug": "jerome-powell-out-as-fed-chair-by-may-14-2026",
-      "market_question": "Jerome Powell out as Fed Chair by May 14, 2026?",
+      "market_id": "1999844",
+      "market_slug": "jerome-powell-out-as-fed-chair-by-may-31-2026-191",
+      "market_question": "Jerome Powell out as Fed Chair by May 31, 2026?",
       "score": 0.435,
       "active": true,
       "closed": false
     },
     {
       "question": "Jerome Powell out by May 14?",
-      "market_id": "1092482",
-      "market_slug": "jerome-powell-out-as-fed-chair-by-may-14-2026",
-      "market_question": "Jerome Powell out as Fed Chair by May 14, 2026?",
+      "market_id": "1999844",
+      "market_slug": "jerome-powell-out-as-fed-chair-by-may-31-2026-191",
+      "market_question": "Jerome Powell out as Fed Chair by May 31, 2026?",
       "score": 0.691,
       "active": true,
       "closed": false
