@@ -1,5 +1,5 @@
 {
-  "updated_at_utc": "2026-05-15T09:30:04.649Z",
+  "updated_at_utc": "2026-05-15T17:03:57.254Z",
   "total_questions": 66,
   "mapped_questions": 33,
   "unmapped_questions": 33,
@@ -285,18 +285,18 @@
     },
     {
       "question": "Elon Musk Attention (3D)",
-      "market_id": "1203147",
-      "market_slug": "will-elon-musk-buy-ryanair",
-      "market_question": "Will Elon Musk buy Ryanair?",
+      "market_id": "836162",
+      "market_slug": "elon-musk-trillionaire-before-2027",
+      "market_question": "Elon Musk trillionaire before 2027?",
       "score": 0.393,
       "active": true,
       "closed": false
     },
     {
       "question": "Elon Musk Attention (7D)",
-      "market_id": "1203147",
-      "market_slug": "will-elon-musk-buy-ryanair",
-      "market_question": "Will Elon Musk buy Ryanair?",
+      "market_id": "836162",
+      "market_slug": "elon-musk-trillionaire-before-2027",
+      "market_question": "Elon Musk trillionaire before 2027?",
       "score": 0.393,
       "active": true,
       "closed": false
