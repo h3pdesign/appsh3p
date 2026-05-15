@@ -10,22 +10,22 @@ head:
 
 # Neon Vision Editor Changelog
 
-_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on May 13, 2026._
+_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on May 15, 2026._
 
-## v0.6.7 (published May 13, 2026)
+## v0.6.9 (published May 15, 2026)
 
-Release link: [GitHub Release v0.6.7](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v0.6.7)
+Release link: [GitHub Release v0.6.9](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v0.6.9)
 
-- Swift 6 migration work is now substantially safer across macOS, iOS, and iPadOS with stricter actor isolation fixes and cross-platform build coverage.
-- Git workflows are more useful inside the editor with working-tree status, branch history, commit diff viewing, and a visual graph tab.
-- Find in Files now lives in the project sidebar on compact devices, making iPhone search navigation and selection more consistent.
-- Release automation now validates changelog, README, marketing version, and build-number consistency with short actionable fix guidance before release.
-- Migrated project build settings toward Swift 6 language mode and fixed related Sendable/main-actor diagnostics across editor, settings, AI, markdown preview, and remote-session code.
-- Added Git service/view-model infrastructure for sandbox-aware repository status, fetch/pull/push actions, history, branch graph data, and commit diff presentation.
-- Added Git sidebar tabs for Changes, History, and Graph, including per-commit insertion/deletion summaries and a visual graph canvas for branch history.
-- Added structured Git diff presentation using the existing editor diff UI, including translucent styling when enabled.
-- Added Find in Files as a project-sidebar tab on macOS/iOS/iPadOS, with compact iPhone layout tuning, sidebar activation from toolbar search, and result selection that opens files and highlights matches.
-- Added project sidebar polish for Git/search workflows, including wider graph/history presentation, translucent sidebar surfaces, and compact heading adjustments.
+- Invisible-character rendering on iPhone and iPad is more responsive and stays aligned while scrolling.
+- Syntax highlighting, completion, Find in Files, and folder compare now avoid several repeated main-thread or allocation-heavy paths.
+- Sidebar navigation is easier to tap across macOS, iOS, and iPadOS with larger card-style tab targets.
+- Improved project sidebar tab affordance across macOS, iOS, and iPadOS with larger card-style Files/Search/Diff/Git targets and visible grey inactive states.
+- Tightened Swift 6 syntax-highlight data flow by marking highlight value types as `Sendable` where they cross background highlight closures.
+- Updated architecture and release documentation for the current Swift 6, cross-platform editor structure.
+- Fixed iOS invisible-character rendering so space, tab, and newline markers stay aligned while scrolling instead of drifting with reused text content.
+- Reduced iOS invisible-character overhead by drawing markers in a non-interactive viewport overlay and avoiding full TextKit invalidation when the preference is unchanged.
+- Improved syntax-highlighting responsiveness by compiling regexes outside the shared cache lock and bounding fallback bracket-scope searches near the caret.
+- Reduced large JSON fast-highlight allocation churn by comparing JSON literals directly instead of creating temporary substrings.
 
 ## v0.4.22 (published February 16, 2026)
 

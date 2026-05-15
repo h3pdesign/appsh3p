@@ -56,7 +56,7 @@ const topSwitcherLinks = [
 ]
 
 const appUpdatedBySlug: Record<string, string> = {
-  'neon-vision-editor': 'May 13, 2026',
+  'neon-vision-editor': 'May 15, 2026',
   'metric-data': 'February 16, 2026',
   'x-newsbook': 'February 17, 2026',
   'release-assistant': 'February 16, 2026',
@@ -685,7 +685,7 @@ function ensureHomeWidgets() {
           <li>Published on <a href="https://apps-h3p.com" target="_blank" rel="noreferrer noopener">apps-h3p.com</a></li>
           <li><a href="https://github.com/h3pdesign/appsh3p" target="_blank" rel="noreferrer noopener">Docs repo</a></li>
         </ul>
-        <div class="home-deploy-badge"><a href="https://github.com/h3pdesign/appsh3p/commit/ae3e8f2" target="_blank" rel="noreferrer noopener">Last deployment: <span data-date="2026-05-13">May 13, 2026</span></a></div>
+        <div class="home-deploy-badge"><a href="https://github.com/h3pdesign/appsh3p/commit/ae3e8f2" target="_blank" rel="noreferrer noopener">Last deployment: <span data-date="2026-05-15">May 15, 2026</span></a></div>
         <div class="home-hero-mini-apps" aria-label="App icons">
           <a href="/apps/neon-vision-editor/overview"><img class="mini-icon-neon" src="/icons/neon-vision-editor.png" alt="Neon Vision Editor" width="22" height="22" loading="lazy" decoding="async" /></a>
           <a href="/apps/metric-data/overview"><img src="/icons/metric-data.png" alt="Metrics Data" width="22" height="22" loading="lazy" decoding="async" /></a>
@@ -709,8 +709,8 @@ function ensureHomeWidgets() {
 
       <section class="home-hero-widget-card home-hero-ticker">
         <h3>Latest release</h3>
-        <p><strong>Neon Vision Editor v0.6.7</strong> published on May 13, 2026.</p>
-        <a href="https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v0.6.7" target="_blank" rel="noreferrer noopener">View GitHub release</a>
+        <p><strong>Neon Vision Editor v0.6.9</strong> published on May 15, 2026.</p>
+        <a href="https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v0.6.9" target="_blank" rel="noreferrer noopener">View GitHub release</a>
       </section>
     `
 
