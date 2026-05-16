@@ -12,7 +12,7 @@ head:
 
 <div class="overview-status-pill overview-status-private">Status: Private beta</div>
 
-<p class="overview-last-updated">Last updated: <span data-date="2026-03-01">March 1, 2026</span></p>
+<p class="overview-last-updated">Last updated: <span data-date="2026-05-09">May 9, 2026</span></p>
 
 ## Application Purpose
 
@@ -35,7 +35,7 @@ Primary user outcomes:
 </div>
 
 <div class="overview-mini-stats overview-reveal" aria-label="app stats">
-  <div><span>latest version</span><strong>0.1.2</strong></div>
+  <div><span>latest version</span><strong>0.1.6 (build 46)</strong></div>
   <div><span>platforms</span><strong>iOS / iPadOS / macOS / tvOS / watchOS / visionOS</strong></div>
   <div><span>repo status</span><strong>private</strong></div>
 </div>

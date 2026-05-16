@@ -8,14 +8,14 @@ head:
       content: https://apps-h3p.com/icons/x-newsbook.png?v=20260430-1
   - - script
     - type: application/ld+json
-    - '{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://apps-h3p.com/#organization","name":"H3P","url":"https://apps-h3p.com","sameAs":["https://github.com/h3pdesign"]},{"@type":"SoftwareApplication","@id":"https://apps-h3p.com/apps/x-newsbook/overview#app","name":"X-Newsbook","applicationCategory":"NewsApplication","operatingSystem":"macOS, iPadOS, iOS","url":"https://apps-h3p.com/apps/x-newsbook/overview","softwareVersion":"docs-init-2026-02-17","isAccessibleForFree":true,"publisher":{"@id":"https://apps-h3p.com/#organization"}}]}'
+    - '{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://apps-h3p.com/#organization","name":"H3P","url":"https://apps-h3p.com","sameAs":["https://github.com/h3pdesign"]},{"@type":"SoftwareApplication","@id":"https://apps-h3p.com/apps/x-newsbook/overview#app","name":"X-Newsbook","applicationCategory":"NewsApplication","operatingSystem":"macOS, iPadOS, iOS","url":"https://apps-h3p.com/apps/x-newsbook/overview","softwareVersion":"10","isAccessibleForFree":true,"publisher":{"@id":"https://apps-h3p.com/#organization"}}]}'
 ---
 
 # X-Newsbook
 
 <div class="overview-status-pill overview-status-private">Status: Private beta</div>
 
-<p class="overview-last-updated">Last updated: <span data-date="2026-02-17">February 17, 2026</span></p>
+<p class="overview-last-updated">Last updated: <span data-date="2026-02-13">February 13, 2026</span></p>
 
 <div class="overview-platform-badges overview-reveal" aria-label="supported platforms">
   <span>macOS</span>
@@ -24,7 +24,7 @@ head:
 </div>
 
 <div class="overview-mini-stats overview-reveal" aria-label="app stats">
-  <div><span>latest version</span><strong>docs-init-2026-02-17</strong></div>
+  <div><span>latest version</span><strong>10 (build 12)</strong></div>
   <div><span>platforms</span><strong>macOS / iPadOS / iOS</strong></div>
   <div><span>repo status</span><strong>private</strong></div>
 </div>

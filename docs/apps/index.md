@@ -27,13 +27,13 @@
 
 <div class="apps-release-timeline" aria-label="Release timeline">
   <div class="apps-release-item neon"><span class="name">Neon Vision Editor</span><span class="tag">v0.6.9</span><span class="date">2026-05-15</span></div>
-  <div class="apps-release-item metric"><span class="name">Metrics Data</span><span class="tag">docs-sync</span><span class="date">2026-02-16</span></div>
-  <div class="apps-release-item newsbook"><span class="name">X-Newsbook</span><span class="tag">docs-init</span><span class="date">2026-02-17</span></div>
-  <div class="apps-release-item release"><span class="name">Release Assistant</span><span class="tag">docs-sync</span><span class="date">2026-02-16</span></div>
-  <div class="apps-release-item release"><span class="name">Image Sorter</span><span class="tag">docs-init</span><span class="date">2026-03-01</span></div>
-  <div class="apps-release-item metric"><span class="name">Vistral</span><span class="tag">docs-init</span><span class="date">2026-03-01</span></div>
-  <div class="apps-release-item newsbook"><span class="name">History Vision</span><span class="tag">docs-init</span><span class="date">2026-03-01</span></div>
-  <div class="apps-release-item newsbook"><span class="name">Lingua Latina</span><span class="tag">docs-init</span><span class="date">2026-04-30</span></div>
+  <div class="apps-release-item metric"><span class="name">Metrics Data</span><span class="tag">0.2.3</span><span class="date">2026-05-09</span></div>
+  <div class="apps-release-item newsbook"><span class="name">X-Newsbook</span><span class="tag">10</span><span class="date">2026-02-13</span></div>
+  <div class="apps-release-item release"><span class="name">Release Assistant</span><span class="tag">0.2.0</span><span class="date">2026-05-06</span></div>
+  <div class="apps-release-item release"><span class="name">Image Sorter</span><span class="tag">0.1</span><span class="date">2026-04-30</span></div>
+  <div class="apps-release-item metric"><span class="name">Vistral</span><span class="tag">0.1.6</span><span class="date">2026-05-09</span></div>
+  <div class="apps-release-item newsbook"><span class="name">History Vision</span><span class="tag">1.0</span><span class="date">2026-04-30</span></div>
+  <div class="apps-release-item newsbook"><span class="name">Lingua Latina</span><span class="tag">1.0.0</span><span class="date">2026-05-14</span></div>
 </div>
 
 <div class="apps-carousel" aria-label="Featured screenshots carousel">

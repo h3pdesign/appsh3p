@@ -72,8 +72,8 @@ Primary user outcomes:
 
 Live repository metrics (auto-updated by GitHub):
 
-- ![GitHub stars](https://img.shields.io/github/stars/h3pdesign/Neon-Vision-Editor?style=flat-square) ![GitHub forks](https://img.shields.io/github/forks/h3pdesign/Neon-Vision-Editor?style=flat-square) ![GitHub open issues](https://img.shields.io/github/issues/h3pdesign/Neon-Vision-Editor?style=flat-square)
-- ![GitHub last commit](https://img.shields.io/github/last-commit/h3pdesign/Neon-Vision-Editor?style=flat-square) ![GitHub top language](https://img.shields.io/github/languages/top/h3pdesign/Neon-Vision-Editor?style=flat-square)
+- ![GitHub stars](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.github.com%2Frepos%2Fh3pdesign%2FNeon-Vision-Editor&query=%24.stargazers_count&label=stars&style=flat-square) ![GitHub forks](https://img.shields.io/github/forks/h3pdesign/Neon-Vision-Editor?style=flat-square) ![GitHub open issues](https://img.shields.io/github/issues/h3pdesign/Neon-Vision-Editor?style=flat-square)
+- ![GitHub last commit](https://img.shields.io/github/last-commit/h3pdesign/Neon-Vision-Editor?style=flat-square) ![GitHub primary language](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.github.com%2Frepos%2Fh3pdesign%2FNeon-Vision-Editor&query=%24.language&label=language&style=flat-square)
 - Default branch: `main`
 
 ## Platform Availability

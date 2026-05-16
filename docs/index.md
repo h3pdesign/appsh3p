@@ -55,9 +55,9 @@ features:
 
 <div class="startpage-weekly-strip" aria-label="What's new this week">
   <a href="/apps/neon-vision-editor/changelog"><strong data-date="2026-05-15">May 15, 2026</strong>: Neon Vision Editor v0.6.9 release notes and docs refresh</a>
-  <a href="/apps/lingua-latina/overview"><strong data-date="2026-04-30">Apr 30, 2026</strong>: Lingua Latina added with dictionary, grammar, study, and privacy docs</a>
-  <a href="/apps/metric-data/overview"><strong data-date="2026-02-16">Feb 16, 2026</strong>: Metrics Data overview now iPad-first with metadata and support docs</a>
-  <a href="/apps/release-assistant/features"><strong data-date="2026-02-16">Feb 16, 2026</strong>: Release Assistant workflow, gallery, and FAQ expanded</a>
+  <a href="/apps/lingua-latina/overview"><strong data-date="2026-05-14">May 14, 2026</strong>: Lingua Latina 1.0.0 local app data and docs refreshed</a>
+  <a href="/apps/metric-data/overview"><strong data-date="2026-05-09">May 9, 2026</strong>: Metrics Data 0.2.3 dashboard and OAuth scope data synced</a>
+  <a href="/apps/vistral/overview"><strong data-date="2026-05-09">May 9, 2026</strong>: Vistral 0.1.6 multi-platform app data synced</a>
 </div>
 
 <div class="startpage-release-strip" aria-label="App status snapshot">
@@ -77,8 +77,8 @@ features:
       <img src="/icons/metric-data.png?v=20260430-1" alt="" aria-hidden="true" loading="lazy" decoding="async" />
       <strong>Metric</strong>
     </div>
-    <span>Docs refresh</span>
-    <span data-date="2026-02-16">Feb 16, 2026</span>
+    <span>0.2.3</span>
+    <span data-date="2026-05-09">May 9, 2026</span>
     <span>macOS, iPadOS, iOS</span>
     <a href="/apps/metric-data/changelog">Source: changelog</a>
   </article>
@@ -87,8 +87,8 @@ features:
       <img src="/icons/release-assistant.png?v=20260430-1" alt="" aria-hidden="true" loading="lazy" decoding="async" />
       <strong>Release</strong>
     </div>
-    <span>Docs refresh</span>
-    <span data-date="2026-02-16">Feb 16, 2026</span>
+    <span>0.2.0</span>
+    <span data-date="2026-05-06">May 6, 2026</span>
     <span>macOS</span>
     <a href="/apps/release-assistant/changelog">Source: changelog</a>
   </article>
@@ -97,8 +97,8 @@ features:
       <img src="/icons/x-newsbook.png?v=20260430-1" alt="" aria-hidden="true" loading="lazy" decoding="async" />
       <strong>Newsbook</strong>
     </div>
-    <span>Initial docs</span>
-    <span data-date="2026-02-17">Feb 17, 2026</span>
+    <span>10</span>
+    <span data-date="2026-02-13">Feb 13, 2026</span>
     <span>macOS, iPadOS, iOS</span>
     <a href="/apps/x-newsbook/changelog">Source: changelog</a>
   </article>

@@ -1,6 +1,8 @@
 # Vistral Changelog
 
-## March 1, 2026
+## 0.1.6 (published May 9, 2026)
 
+- Synced documentation metadata with the local Vistral project version and build number.
+- Reflected the latest local dashboard, settings, and multi-platform build configuration updates.
 - Initial app documentation published on h3p apps.
 - Overview, install guidance, and architecture snapshot added.

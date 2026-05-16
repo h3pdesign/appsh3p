@@ -8,14 +8,14 @@ head:
       content: https://apps-h3p.com/media/metrics/dashboard-ipad.png
   - - script
     - type: application/ld+json
-    - '{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://apps-h3p.com/#organization","name":"H3P","url":"https://apps-h3p.com","sameAs":["https://github.com/h3pdesign"]},{"@type":"SoftwareApplication","@id":"https://apps-h3p.com/apps/metric-data/overview#app","name":"Metrics Data","applicationCategory":"BusinessApplication","operatingSystem":"macOS, iPadOS, iOS","url":"https://apps-h3p.com/apps/metric-data/overview","softwareVersion":"docs-sync-2026-02-16","isAccessibleForFree":true,"publisher":{"@id":"https://apps-h3p.com/#organization"}}]}'
+    - '{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://apps-h3p.com/#organization","name":"H3P","url":"https://apps-h3p.com","sameAs":["https://github.com/h3pdesign"]},{"@type":"SoftwareApplication","@id":"https://apps-h3p.com/apps/metric-data/overview#app","name":"Metrics Data","applicationCategory":"BusinessApplication","operatingSystem":"macOS, iPadOS, iOS","url":"https://apps-h3p.com/apps/metric-data/overview","softwareVersion":"0.2.3","isAccessibleForFree":true,"publisher":{"@id":"https://apps-h3p.com/#organization"}}]}'
 ---
 
 # Metrics Data
 
 <div class="overview-status-pill overview-status-private">Status: Private beta</div>
 
-<p class="overview-last-updated">Last updated: <span data-date="2026-02-16">February 16, 2026</span></p>
+<p class="overview-last-updated">Last updated: <span data-date="2026-05-09">May 9, 2026</span></p>
 
 ## Application Identity
 
@@ -43,7 +43,7 @@ This app is not a public data crawler and does not access data outside the Googl
 </div>
 
 <div class="overview-mini-stats overview-reveal" aria-label="app stats">
-  <div><span>latest version</span><strong>docs synced 2026-02-16</strong></div>
+  <div><span>latest version</span><strong>0.2.3 (build 85)</strong></div>
   <div><span>platforms</span><strong>macOS / iPadOS / iOS</strong></div>
   <div><span>repo status</span><strong>private</strong></div>
 </div>

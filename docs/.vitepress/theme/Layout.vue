@@ -57,12 +57,13 @@ const topSwitcherLinks = [
 
 const appUpdatedBySlug: Record<string, string> = {
   'neon-vision-editor': 'May 15, 2026',
-  'metric-data': 'February 16, 2026',
-  'x-newsbook': 'February 17, 2026',
-  'release-assistant': 'February 16, 2026',
-  'image-sorter': 'March 1, 2026',
-  'vistral': 'March 1, 2026',
-  'history-vision': 'March 1, 2026'
+  'metric-data': 'May 9, 2026',
+  'x-newsbook': 'February 13, 2026',
+  'release-assistant': 'May 6, 2026',
+  'image-sorter': 'April 30, 2026',
+  'vistral': 'May 9, 2026',
+  'history-vision': 'April 30, 2026',
+  'lingua-latina': 'May 14, 2026'
 }
 
 const appDocTopLinks = computed<DocJumpLink[]>(() => {
@@ -105,7 +106,7 @@ const appDocRelatedLinks = computed<DocJumpLink[]>(() => {
 
 const currentAppUpdatedOn = computed(() => {
   if (!isAppDocPage.value) return ''
-  return appUpdatedBySlug[appSlug.value] || 'February 17, 2026'
+  return appUpdatedBySlug[appSlug.value] || 'May 15, 2026'
 })
 
 const feedbackYesHref = computed(() => {

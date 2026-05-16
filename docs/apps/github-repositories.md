@@ -7,7 +7,7 @@ This page tracks repository mapping for all documented apps.
 - Neon Vision Editor: [GitHub](https://github.com/h3pdesign/Neon-Vision-Editor)
 - Documentation Portal (`apps-h3p.com`): [GitHub](https://github.com/h3pdesign/appsh3p)
 
-## Repositories Not Publicly Listed (as of March 1, 2026)
+## Repositories Not Publicly Listed (as of May 16, 2026)
 
 - Metrics Data
 - X-Newsbook
