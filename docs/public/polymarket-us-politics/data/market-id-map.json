@@ -1,8 +1,8 @@
 {
-  "updated_at_utc": "2026-05-16T01:12:14.651Z",
+  "updated_at_utc": "2026-05-16T09:04:57.755Z",
   "total_questions": 66,
-  "mapped_questions": 33,
-  "unmapped_questions": 33,
+  "mapped_questions": 31,
+  "unmapped_questions": 35,
   "entries": [
     {
       "question": "Will LeBron James win the 2028 US Presidential Election?",
@@ -110,24 +110,6 @@
       "market_question": "Will Trump nominate Rick Rieder as the next Fed chair?",
       "score": 0.62,
       "active": false,
-      "closed": false
-    },
-    {
-      "question": "Jerome Powell out by March 31?",
-      "market_id": "1999844",
-      "market_slug": "jerome-powell-out-as-fed-chair-by-may-31-2026-191",
-      "market_question": "Jerome Powell out as Fed Chair by May 31, 2026?",
-      "score": 0.435,
-      "active": true,
-      "closed": false
-    },
-    {
-      "question": "Jerome Powell out by May 14?",
-      "market_id": "1999844",
-      "market_slug": "jerome-powell-out-as-fed-chair-by-may-31-2026-191",
-      "market_question": "Jerome Powell out as Fed Chair by May 31, 2026?",
-      "score": 0.691,
-      "active": true,
       "closed": false
     },
     {
@@ -315,6 +297,8 @@
     "Trump deportations in 2025",
     "Trump Truth Social posts Feb 20–27",
     "Kevin Warsh formally nominated by March 31?",
+    "Jerome Powell out by March 31?",
+    "Jerome Powell out by May 14?",
     "Fed decision — March",
     "Fed decision — April",
     "US tariff rate on China — March 31",
