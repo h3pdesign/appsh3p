@@ -10,22 +10,22 @@ head:
 
 # Neon Vision Editor Changelog
 
-_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on May 19, 2026._
+_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on May 20, 2026._
 
-## v0.7.0 (published May 19, 2026)
+## v0.7.1 (published May 20, 2026)
 
-Release link: [GitHub Release v0.7.0](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v0.7.0)
+Release link: [GitHub Release v0.7.1](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v0.7.1)
 
-- Adds a lightweight integrated terminal tab in the sidebar while preserving the current terminal session when switching tabs.
-- Improves large-editor navigation with a wider, scroll-synced, color-coded code minimap for supported code files.
-- Tightens editor performance, markdown preview/export behavior, sidebar ergonomics, and project tree refresh behavior across macOS, iOS, and iPadOS.
-- Added optional code minimap support with section, declaration, import, property, control-flow, comment, and code markers.
-- Added an in-app command-line helper section and optional bundled `nve` helper flow that remains user-initiated and sandbox-friendly.
-- Added sidebar terminal integration, markdown preview theme refinements, project tree ignored-folder handling, and more reusable ContentView/sidebar structure.
-- Fixed minimap scroll sync by deriving viewport fractions from the actual editor viewport and shared minimap offset math.
-- Improved minimap readability by widening the strip and avoiding an all-blue accent block.
-- Reduced repeated large-file work in folder compare, diff filtering, markdown export, theme resolution, and project-tree refresh paths.
-- Improved settings dropdown sizing/alignment and sidebar tab hit targets.
+- Delivers a focused UI overhaul for the editor chrome, project sidebar, TOC sidebar, Markdown preview, minimap, and document tab bar.
+- Makes sidebar terminal access more direct: the toolbar and menu now open the Terminal tab in the project sidebar instead of a separate terminal sheet.
+- Tightens Apple Foundation Models completion behavior so Apple AI completion uses the real Foundation Models path and never returns simulated placeholder text.
+- Refined the project/sidebar visual system with more pronounced rounded containers, cleaner tab cards, stronger outlines, clearer project path presentation, and tighter iPhone/iPad row spacing.
+- Improved TOC presentation with more distinct symbols, markers, line badges, language-aware items, rounded sidebar chrome, and cleaner spacing across macOS, iOS, and iPadOS.
+- Polished Markdown preview and document tab transitions with rounded preview chrome, softer split transitions, and tab fades only where the UI actually needs them.
+- Cleaned up minimap/editor/sidebar edges by removing conflicting divider lines, reducing visual noise, and improving translucent pane backgrounds.
+- Fixed the macOS toolbar Terminal button so it selects the existing sidebar Terminal tab and preserves that sidebar terminal session while switching tabs.
+- Removed the old integrated terminal sheet path that opened a separate terminal window.
+- Removed simulated Apple Intelligence completion output and stopped returning unavailable-message text as a completion.
 
 ## v0.4.22 (published February 16, 2026)
 
