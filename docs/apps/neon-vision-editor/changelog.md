@@ -10,22 +10,22 @@ head:
 
 # Neon Vision Editor Changelog
 
-_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on May 15, 2026._
+_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on May 19, 2026._
 
-## v0.6.9 (published May 15, 2026)
+## v0.7.0 (published May 19, 2026)
 
-Release link: [GitHub Release v0.6.9](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v0.6.9)
+Release link: [GitHub Release v0.7.0](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v0.7.0)
 
-- Invisible-character rendering on iPhone and iPad is more responsive and stays aligned while scrolling.
-- Syntax highlighting, completion, Find in Files, and folder compare now avoid several repeated main-thread or allocation-heavy paths.
-- Sidebar navigation is easier to tap across macOS, iOS, and iPadOS with larger card-style tab targets.
-- Improved project sidebar tab affordance across macOS, iOS, and iPadOS with larger card-style Files/Search/Diff/Git targets and visible grey inactive states.
-- Tightened Swift 6 syntax-highlight data flow by marking highlight value types as `Sendable` where they cross background highlight closures.
-- Updated architecture and release documentation for the current Swift 6, cross-platform editor structure.
-- Fixed iOS invisible-character rendering so space, tab, and newline markers stay aligned while scrolling instead of drifting with reused text content.
-- Reduced iOS invisible-character overhead by drawing markers in a non-interactive viewport overlay and avoiding full TextKit invalidation when the preference is unchanged.
-- Improved syntax-highlighting responsiveness by compiling regexes outside the shared cache lock and bounding fallback bracket-scope searches near the caret.
-- Reduced large JSON fast-highlight allocation churn by comparing JSON literals directly instead of creating temporary substrings.
+- Adds a lightweight integrated terminal tab in the sidebar while preserving the current terminal session when switching tabs.
+- Improves large-editor navigation with a wider, scroll-synced, color-coded code minimap for supported code files.
+- Tightens editor performance, markdown preview/export behavior, sidebar ergonomics, and project tree refresh behavior across macOS, iOS, and iPadOS.
+- Added optional code minimap support with section, declaration, import, property, control-flow, comment, and code markers.
+- Added an in-app command-line helper section and optional bundled `nve` helper flow that remains user-initiated and sandbox-friendly.
+- Added sidebar terminal integration, markdown preview theme refinements, project tree ignored-folder handling, and more reusable ContentView/sidebar structure.
+- Fixed minimap scroll sync by deriving viewport fractions from the actual editor viewport and shared minimap offset math.
+- Improved minimap readability by widening the strip and avoiding an all-blue accent block.
+- Reduced repeated large-file work in folder compare, diff filtering, markdown export, theme resolution, and project-tree refresh paths.
+- Improved settings dropdown sizing/alignment and sidebar tab hit targets.
 
 ## v0.4.22 (published February 16, 2026)
 
