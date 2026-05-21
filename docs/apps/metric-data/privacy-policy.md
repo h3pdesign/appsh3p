@@ -1,6 +1,6 @@
 # Metrics Data Privacy Policy
 
-_Last updated: May 16, 2026_
+_Last updated: May 21, 2026_
 
 Metrics Data is an analytics dashboard app for macOS, iPadOS, and iOS. This policy explains how Metrics Data handles app data and Google user data when you choose to connect a Google account.
 
@@ -26,11 +26,22 @@ What we do not do:
 - We do not sell Google user data.
 - We do not use Google user data for advertising purposes.
 
+How we protect Google user data:
+
+- Security procedures are in place to protect the confidentiality and integrity of Google user data accessed through Metrics Data.
+- Google user data is transmitted only over encrypted HTTPS/TLS connections between the app and Google APIs.
+- OAuth tokens and authentication credentials are stored securely on your device using Apple's Keychain services.
+- Metrics Data is designed to process Google Analytics and AdSense data locally on your device for the dashboard features you request.
+- Cached dashboard data, preferences, selected accounts, and widget snapshots are stored locally on your device or in the app group container used by Metrics Data widgets.
+- We do not operate a separate developer-controlled analytics database for your Google Analytics or AdSense report data.
+- Access to Google user data is limited to the app functionality you authorize. Humans do not access your Google user data except when required for security, legal compliance, or with your explicit consent.
+- If support is requested, you should not send OAuth tokens, credentials, or private Analytics or AdSense report exports unless explicitly needed and agreed for troubleshooting.
+
 Data retention and deletion:
 
 - OAuth tokens and authentication credentials are stored securely on your device using Apple's Keychain services.
 - You can disconnect your Google account at any time by signing out in the app or revoking access in your Google Account settings.
-- Upon sign-out, locally stored credentials are removed.
+- Upon sign-out, locally stored credentials are removed, and API access can be granted again only through a new Google OAuth consent flow.
 
 ## Google Sign-In
 
@@ -61,6 +72,7 @@ We implement technical and organizational security measures designed to protect 
 Security measures include:
 
 - Encryption of data in transit using HTTPS/TLS.
+- Secure local credential storage using Apple's Keychain services.
 - Secure OAuth authentication provided by Google.
 - Restricted administrative access to systems and infrastructure.
 - Authentication and access controls for internal services.

@@ -1,6 +1,6 @@
 # Privacy Policy
 
-_Last updated: May 7, 2026_
+_Last updated: May 21, 2026_
 
 This Privacy Policy explains how data is handled on https://apps-h3p.com.
 
@@ -38,6 +38,10 @@ Metrics Data uses this data to display your own GA4 and/or AdSense metrics in th
 Metrics Data does not modify your Google Analytics or AdSense configuration/data, does not sell Google user data, and does not use Google user data for advertising purposes.
 
 Metrics Data does not share Google user data with third parties except as required to operate the Google APIs you explicitly authorize. OAuth tokens are stored securely on your device in Keychain. You can disconnect at any time by signing out in the app and/or revoking access in your Google Account security settings.
+
+Metrics Data uses security procedures designed to protect the confidentiality and integrity of Google user data after you grant access. Google user data is transmitted only over encrypted HTTPS/TLS connections, OAuth tokens and authentication credentials are stored using Apple's Keychain services, and dashboard data is designed to be processed locally on your device for the app features you request. Cached dashboard data, selected accounts, widget snapshots, and preferences may be stored locally on your device or in the Metrics Data app group container. Metrics Data does not operate a separate developer-controlled analytics database for your Google Analytics or AdSense report data.
+
+Access to Google user data is limited to the app functionality you authorize. Humans do not access your Google user data except when required for security, legal compliance, or with your explicit consent. If support is requested, do not send OAuth tokens, credentials, or private Analytics or AdSense report exports unless explicitly needed and agreed for troubleshooting.
 
 ## 2. Technical logs
 
