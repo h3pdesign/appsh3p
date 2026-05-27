@@ -10,22 +10,22 @@ head:
 
 # Neon Vision Editor Changelog
 
-_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on May 20, 2026._
+_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on May 27, 2026._
 
-## v0.7.1 (published May 20, 2026)
+## v0.7.2 (published May 27, 2026)
 
-Release link: [GitHub Release v0.7.1](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v0.7.1)
+Release link: [GitHub Release v0.7.2](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v0.7.2)
 
-- Delivers a focused UI overhaul for the editor chrome, project sidebar, TOC sidebar, Markdown preview, minimap, and document tab bar.
-- Makes sidebar terminal access more direct: the toolbar and menu now open the Terminal tab in the project sidebar instead of a separate terminal sheet.
-- Tightens Apple Foundation Models completion behavior so Apple AI completion uses the real Foundation Models path and never returns simulated placeholder text.
-- Refined the project/sidebar visual system with more pronounced rounded containers, cleaner tab cards, stronger outlines, clearer project path presentation, and tighter iPhone/iPad row spacing.
-- Improved TOC presentation with more distinct symbols, markers, line badges, language-aware items, rounded sidebar chrome, and cleaner spacing across macOS, iOS, and iPadOS.
-- Polished Markdown preview and document tab transitions with rounded preview chrome, softer split transitions, and tab fades only where the UI actually needs them.
-- Cleaned up minimap/editor/sidebar edges by removing conflicting divider lines, reducing visual noise, and improving translucent pane backgrounds.
-- Fixed the macOS toolbar Terminal button so it selects the existing sidebar Terminal tab and preserves that sidebar terminal session while switching tabs.
-- Removed the old integrated terminal sheet path that opened a separate terminal window.
-- Removed simulated Apple Intelligence completion output and stopped returning unavailable-message text as a completion.
+- Keeps editor wrapping and no-wrap scrolling more stable when switching modes across macOS, iOS, and iPadOS.
+- Improves Markdown list editing by continuing the active list marker after pressing Return on populated list items.
+- Adds optional indentation guides as a separate, off-by-default editor visibility feature for users who want clearer nesting cues.
+- Added optional indentation guides with toolbar and settings controls while keeping the default editor appearance unchanged.
+- Improved wrap/no-wrap mode changes so scroll position is preserved and horizontal scrolling is restored where expected.
+- Improved iOS editor inset handling so line numbers, content, and scroll indicators stay aligned after layout changes.
+- Improved Markdown list continuation for unordered and numbered list markers using the configured indentation style.
+- Added off-by-default indentation guide rendering for macOS, iOS, and iPadOS editors.
+- Added an Indentation Guides action to the appearance toolbar menus and editor settings.
+- Fixed wrap mode updates so toggling line wrap no longer leaves stale text container sizing or loses the visible scroll position.
 
 ## v0.4.22 (published February 16, 2026)
 
