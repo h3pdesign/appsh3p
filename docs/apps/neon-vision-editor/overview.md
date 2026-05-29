@@ -46,6 +46,7 @@ head:
 ## Quick Links
 
 - [App Store](https://apps.apple.com/de/app/neon-vision-editor/id6758950965)
+- [App Clip](/apps/neon-vision-editor/app-clip)
 - [TestFlight](https://testflight.apple.com/join/YWB2fGAP)
 - [GitHub](https://github.com/h3pdesign/Neon-Vision-Editor)
 - [Latest GitHub Release (v0.7.2)](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v0.7.2)
