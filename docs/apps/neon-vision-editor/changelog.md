@@ -10,22 +10,22 @@ head:
 
 # Neon Vision Editor Changelog
 
-_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on May 27, 2026._
+_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on May 29, 2026._
 
-## v0.7.2 (published May 27, 2026)
+## v0.7.3 (published May 29, 2026)
 
-Release link: [GitHub Release v0.7.2](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v0.7.2)
+Release link: [GitHub Release v0.7.3](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v0.7.3)
 
-- Keeps editor wrapping and no-wrap scrolling more stable when switching modes across macOS, iOS, and iPadOS.
-- Improves Markdown list editing by continuing the active list marker after pressing Return on populated list items.
-- Adds optional indentation guides as a separate, off-by-default editor visibility feature for users who want clearer nesting cues.
-- Added optional indentation guides with toolbar and settings controls while keeping the default editor appearance unchanged.
-- Improved wrap/no-wrap mode changes so scroll position is preserved and horizontal scrolling is restored where expected.
-- Improved iOS editor inset handling so line numbers, content, and scroll indicators stay aligned after layout changes.
-- Improved Markdown list continuation for unordered and numbered list markers using the configured indentation style.
-- Added off-by-default indentation guide rendering for macOS, iOS, and iPadOS editors.
-- Added an Indentation Guides action to the appearance toolbar menus and editor settings.
-- Fixed wrap mode updates so toggling line wrap no longer leaves stale text container sizing or loses the visible scroll position.
+- Hardens remote editing for shared-network workflows by encrypting broker request and response payloads and moving SSH key bookmarks into Keychain storage.
+- Keeps API tokens in Keychain for both Debug and Release builds while migrating legacy UserDefaults token values out of plain preferences.
+- Improves editor responsiveness across Git history, Markdown preview, line numbers, invisible-character rendering, syntax highlighting, and large-file workflows.
+- Added AES-GCM encryption for Remote Broker transport payloads, with attach-token-derived keys and versioned envelopes.
+- Replaced remote Markdown image loads with clickable placeholders so Preview no longer fetches external image resources automatically.
+- Improved Git history loading by batching commit metadata and shortstat parsing instead of issuing per-commit status work.
+- Reduced Markdown preview churn by keying render cache entries to stable tab revisions and avoiding stale debounced content captures.
+- Added App Clip project scaffolding for lightweight launch surface validation ahead of wider release testing.
+- Fixed iOS Markdown list Return handling so keyboard replacement ranges no longer delete already typed list text.
+- Fixed DEBUG API token persistence so provider keys no longer remain in UserDefaults.
 
 ## v0.4.22 (published February 16, 2026)
 
