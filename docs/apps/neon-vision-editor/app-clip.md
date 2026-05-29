@@ -10,6 +10,9 @@ head:
     - property: og:description
       content: Open a lightweight Neon Vision Editor App Clip experience.
   - - meta
+    - property: og:image
+      content: https://apps-h3p.com/media/neon/neon-vision-editor-app-clip-card.jpg
+  - - meta
     - property: og:url
       content: https://apps-h3p.com/apps/neon-vision-editor/app-clip
   - - link
@@ -20,6 +23,8 @@ head:
 # Neon Vision Editor App Clip
 
 Open a lightweight Neon Vision Editor experience from App Clip links.
+
+![Neon Vision Editor App Clip card](/media/neon/neon-vision-editor-app-clip-card.png)
 
 ## App Clip URL
 
