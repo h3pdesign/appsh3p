@@ -1,5 +1,5 @@
 {
-  "updated_at_utc": "2026-06-02T09:49:55.909Z",
+  "updated_at_utc": "2026-06-02T17:52:39.064Z",
   "source_name": "Wikimedia Pageviews API",
   "source_url": "https://wikitech.wikimedia.org/wiki/Analytics/AQS/Pageviews",
   "metrics": [
@@ -16,7 +16,7 @@
       "source_window_end": "20260601",
       "fallback_days": 0,
       "is_fallback": false,
-      "as_of_utc": "2026-06-02T09:49:55.909Z"
+      "as_of_utc": "2026-06-02T17:52:39.064Z"
     },
     {
       "id": "elon_attention_7d",
@@ -31,7 +31,7 @@
       "source_window_end": "20260601",
       "fallback_days": 0,
       "is_fallback": false,
-      "as_of_utc": "2026-06-02T09:49:55.909Z"
+      "as_of_utc": "2026-06-02T17:52:39.064Z"
     },
     {
       "id": "trump_attention_7d",
@@ -46,7 +46,7 @@
       "source_window_end": "20260601",
       "fallback_days": 0,
       "is_fallback": false,
-      "as_of_utc": "2026-06-02T09:49:55.909Z"
+      "as_of_utc": "2026-06-02T17:52:39.064Z"
     }
   ]
 }
