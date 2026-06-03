@@ -1,12 +1,12 @@
 {
-  "updated_at_utc": "2026-06-03T01:33:00.001Z",
+  "updated_at_utc": "2026-06-03T10:02:30.786Z",
   "source_name": "Wikimedia Pageviews API",
   "source_url": "https://wikitech.wikimedia.org/wiki/Analytics/AQS/Pageviews",
   "metrics": [
     {
       "id": "elon_attention_3d",
       "label": "Elon Musk Attention (3D)",
-      "value": 35366,
+      "value": 53727,
       "unit": "views",
       "window_days": 3,
       "scope": "Latest available 3-day aggregate Wikimedia pageviews for Elon Musk",
@@ -16,12 +16,12 @@
       "source_window_end": "20260602",
       "fallback_days": 0,
       "is_fallback": false,
-      "as_of_utc": "2026-06-03T01:33:00.001Z"
+      "as_of_utc": "2026-06-03T10:02:30.786Z"
     },
     {
       "id": "elon_attention_7d",
       "label": "Elon Musk Attention (7D)",
-      "value": 111199,
+      "value": 129560,
       "unit": "views",
       "window_days": 7,
       "scope": "Latest available 7-day aggregate Wikimedia pageviews for Elon Musk",
@@ -31,12 +31,12 @@
       "source_window_end": "20260602",
       "fallback_days": 0,
       "is_fallback": false,
-      "as_of_utc": "2026-06-03T01:33:00.001Z"
+      "as_of_utc": "2026-06-03T10:02:30.786Z"
     },
     {
       "id": "trump_attention_7d",
       "label": "Donald Trump Attention (7D)",
-      "value": 241291,
+      "value": 277095,
       "unit": "views",
       "window_days": 7,
       "scope": "Latest available 7-day aggregate Wikimedia pageviews for Donald Trump",
@@ -46,7 +46,7 @@
       "source_window_end": "20260602",
       "fallback_days": 0,
       "is_fallback": false,
-      "as_of_utc": "2026-06-03T01:33:00.001Z"
+      "as_of_utc": "2026-06-03T10:02:30.786Z"
     }
   ]
 }
