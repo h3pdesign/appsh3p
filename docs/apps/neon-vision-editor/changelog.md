@@ -10,22 +10,22 @@ head:
 
 # Neon Vision Editor Changelog
 
-_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on May 29, 2026._
+_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on June 3, 2026._
 
-## v0.7.3 (published May 29, 2026)
+## v0.7.4 (published June 3, 2026)
 
-Release link: [GitHub Release v0.7.3](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v0.7.3)
+Release link: [GitHub Release v0.7.4](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v0.7.4)
 
-- Hardens remote editing for shared-network workflows by encrypting broker request and response payloads and moving SSH key bookmarks into Keychain storage.
-- Keeps API tokens in Keychain for both Debug and Release builds while migrating legacy UserDefaults token values out of plain preferences.
-- Improves editor responsiveness across Git history, Markdown preview, line numbers, invisible-character rendering, syntax highlighting, and large-file workflows.
-- Added AES-GCM encryption for Remote Broker transport payloads, with attach-token-derived keys and versioned envelopes.
-- Replaced remote Markdown image loads with clickable placeholders so Preview no longer fetches external image resources automatically.
-- Improved Git history loading by batching commit metadata and shortstat parsing instead of issuing per-commit status work.
-- Reduced Markdown preview churn by keying render cache entries to stable tab revisions and avoiding stale debounced content captures.
-- Added App Clip project scaffolding for lightweight launch surface validation ahead of wider release testing.
-- Fixed iOS Markdown list Return handling so keyboard replacement ranges no longer delete already typed list text.
-- Fixed DEBUG API token persistence so provider keys no longer remain in UserDefaults.
+- Improves launch stability on macOS 26.x beta systems by deferring startup diagnostics and window chrome work until the first editor window has settled.
+- Adds release preflight coverage for App Clip metadata, App Clip card assets, privacy-sensitive logging, and remote Markdown preview guardrails.
+- Refines Settings and Safe Mode behavior across macOS, iOS, and iPadOS while preserving the lightweight editor workflow.
+- Added App Clip release validation for `CFBundleIconName`, associated App Clip domains, parent app entitlements, and 1800 x 1200 RGB card assets.
+- Added automated Markdown preview remote-content checks so HTTP/HTTPS images stay clickable placeholders and the preview WebView remains non-persistent with JavaScript disabled.
+- Added privacy log auditing to release preflight so tab contents, prompts, tokens, and local file paths are not introduced into release logging paths.
+- Improved Safe Mode messaging and behavior by pausing heavier startup features, Markdown preview, and code minimap during recovery launches.
+- Made iPad Settings prefer the largest available sheet size and tuned macOS Settings sizing to avoid scrolling when the screen can fit the full window.
+- Fixed a macOS startup crash risk by moving launch completion marking, AI health checks, updater checks, and window tabbing policy out of the earliest layout phase.
+- Fixed sensitive AI activity log output by redacting bearer tokens, API-key-like strings, user paths, and file URLs.
 
 ## v0.4.22 (published February 16, 2026)
 
