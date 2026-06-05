@@ -10,22 +10,22 @@ head:
 
 # Neon Vision Editor Changelog
 
-_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on June 3, 2026._
+_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on June 5, 2026._
 
-## v0.7.4 (published June 3, 2026)
+## v0.7.5 (published June 5, 2026)
 
-Release link: [GitHub Release v0.7.4](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v0.7.4)
+Release link: [GitHub Release v0.7.5](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v0.7.5)
 
-- Improves launch stability on macOS 26.x beta systems by deferring startup diagnostics and window chrome work until the first editor window has settled.
-- Adds release preflight coverage for App Clip metadata, App Clip card assets, privacy-sensitive logging, and remote Markdown preview guardrails.
-- Refines Settings and Safe Mode behavior across macOS, iOS, and iPadOS while preserving the lightweight editor workflow.
-- Added App Clip release validation for `CFBundleIconName`, associated App Clip domains, parent app entitlements, and 1800 x 1200 RGB card assets.
-- Added automated Markdown preview remote-content checks so HTTP/HTTPS images stay clickable placeholders and the preview WebView remains non-persistent with JavaScript disabled.
-- Added privacy log auditing to release preflight so tab contents, prompts, tokens, and local file paths are not introduced into release logging paths.
-- Improved Safe Mode messaging and behavior by pausing heavier startup features, Markdown preview, and code minimap during recovery launches.
-- Made iPad Settings prefer the largest available sheet size and tuned macOS Settings sizing to avoid scrolling when the screen can fit the full window.
-- Fixed a macOS startup crash risk by moving launch completion marking, AI health checks, updater checks, and window tabbing policy out of the earliest layout phase.
-- Fixed sensitive AI activity log output by redacting bearer tokens, API-key-like strings, user paths, and file URLs.
+- Improves toolbar customization on iPhone and iPad by making custom icon slots match the selected visible toolbar action count.
+- Adds a 7-action toolbar density option for iPhone layouts that have room for more than five actions without forcing the 8-action scroll-heavy layout.
+- Restores iPad toolbar settings behavior so visible actions respond to the configured toolbar count and custom icon selection.
+- Added dynamic custom toolbar icon selection for 4, 5, 6, 7, 8, 10, or all visible actions.
+- Added focused regression coverage for toolbar action limits, custom action ordering, and iPad-style custom filtering.
+- Added release performance smoke measurements for 100k-line and 250k-line large-file sample generation.
+- Added a draggable code minimap viewport marker so dragging the marker scrolls the editor to the matching document position.
+- Improved current-line and matching-bracket visibility on macOS with draw-time overlays that stay synced with caret movement.
+- Fixed custom toolbar icon selection being capped at 5 even when more visible actions were configured.
+- Fixed iPad toolbar customization settings not affecting the visible toolbar action row.
 
 ## v0.4.22 (published February 16, 2026)
 
