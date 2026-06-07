@@ -10,22 +10,22 @@ head:
 
 # Neon Vision Editor Changelog
 
-_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on June 5, 2026._
+_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on June 7, 2026._
 
-## v0.7.5 (published June 5, 2026)
+## v0.7.6 (published June 7, 2026)
 
-Release link: [GitHub Release v0.7.5](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v0.7.5)
+Release link: [GitHub Release v0.7.6](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v0.7.6)
 
-- Improves toolbar customization on iPhone and iPad by making custom icon slots match the selected visible toolbar action count.
-- Adds a 7-action toolbar density option for iPhone layouts that have room for more than five actions without forcing the 8-action scroll-heavy layout.
-- Restores iPad toolbar settings behavior so visible actions respond to the configured toolbar count and custom icon selection.
-- Added dynamic custom toolbar icon selection for 4, 5, 6, 7, 8, 10, or all visible actions.
-- Added focused regression coverage for toolbar action limits, custom action ordering, and iPad-style custom filtering.
-- Added release performance smoke measurements for 100k-line and 250k-line large-file sample generation.
-- Added a draggable code minimap viewport marker so dragging the marker scrolls the editor to the matching document position.
-- Improved current-line and matching-bracket visibility on macOS with draw-time overlays that stay synced with caret movement.
-- Fixed custom toolbar icon selection being capped at 5 even when more visible actions were configured.
-- Fixed iPad toolbar customization settings not affecting the visible toolbar action row.
+- Fixes Markdown preview clipping on iPhone by tightening compact preview controls and adding regression coverage for constrained preview widths.
+- Stabilizes Swift editor scrolling when bold keywords, current-line highlighting, matching-bracket highlighting, and line wrapping settings interact.
+- Improves macOS Settings by making the window user-resizable and reorganizing dense editor/theme controls into cleaner, scroll-safe sections.
+- Added configurable status bar items for cursor position, line count, word count, encoding, line endings, indentation, selection size, file size, Git branch/changes, and Markdown preview theme.
+- Reworked the macOS Themes settings tab into balanced cards with integrated theme preview, theme selection, theme colors, formatting, and Markdown preview controls.
+- Added Markdown preview theme audit coverage and compact clipping fixtures for iPhone-sized layouts.
+- Added localization audit coverage for settings/status bar strings.
+- Added a manual release QA checklist covering Markdown preview themes, editor overlays, Settings resize behavior, status bar density, and project sidebar spacing.
+- Fixed iPhone Markdown preview theme content and control cards being clipped in compact layouts.
+- Fixed macOS editor flicker and disappearing text while scrolling Swift code with bold keywords, current-line highlighting, matching-bracket highlighting, and line wrap combinations.
 
 ## v0.4.22 (published February 16, 2026)
 
