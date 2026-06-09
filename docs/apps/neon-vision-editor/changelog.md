@@ -10,22 +10,22 @@ head:
 
 # Neon Vision Editor Changelog
 
-_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on June 7, 2026._
+_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on June 9, 2026._
 
-## v0.7.6 (published June 7, 2026)
+## v0.7.7 (published June 9, 2026)
 
-Release link: [GitHub Release v0.7.6](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v0.7.6)
+Release link: [GitHub Release v0.7.7](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v0.7.7)
 
-- Fixes Markdown preview clipping on iPhone by tightening compact preview controls and adding regression coverage for constrained preview widths.
-- Stabilizes Swift editor scrolling when bold keywords, current-line highlighting, matching-bracket highlighting, and line wrapping settings interact.
-- Improves macOS Settings by making the window user-resizable and reorganizing dense editor/theme controls into cleaner, scroll-safe sections.
-- Added configurable status bar items for cursor position, line count, word count, encoding, line endings, indentation, selection size, file size, Git branch/changes, and Markdown preview theme.
-- Reworked the macOS Themes settings tab into balanced cards with integrated theme preview, theme selection, theme colors, formatting, and Markdown preview controls.
-- Added Markdown preview theme audit coverage and compact clipping fixtures for iPhone-sized layouts.
-- Added localization audit coverage for settings/status bar strings.
-- Added a manual release QA checklist covering Markdown preview themes, editor overlays, Settings resize behavior, status bar density, and project sidebar spacing.
-- Fixed iPhone Markdown preview theme content and control cards being clipped in compact layouts.
-- Fixed macOS editor flicker and disappearing text while scrolling Swift code with bold keywords, current-line highlighting, matching-bracket highlighting, and line wrap combinations.
+- Improves iPad Welcome Tour spacing so the What's New cards, page dots, and navigation buttons sit closer together in compact form sheets.
+- Makes iPad Find & Replace more compact and visually consistent by removing redundant inner panel surfaces and tightening field, option, and action spacing.
+- Cleans up iPhone sidebar density and translucent sheet presentation for table-of-contents and project navigation.
+- Rebalanced Welcome Tour form-sheet geometry on iPad with smaller footer controls, iPad-specific sheet heights, and a lighter bottom fade.
+- Tightened iPad Find & Replace sheet width, height, internal padding, picker width, and action button typography.
+- Made compact iOS table-of-contents rows narrower with reduced marker, indent, horizontal padding, and row inset values.
+- Switched compact iOS table-of-contents and project sidebar sheets to translucent backgrounds with hidden navigation bar backgrounds.
+- Fixed excessive empty space between Welcome Tour cards and footer buttons on iPad form sheets.
+- Fixed iPad Find & Replace showing stacked inner and outer panel backgrounds instead of a single translucent sheet surface.
+- Fixed iPad Find & Replace wasting space around fields, toggles, scope selection, and action buttons.
 
 ## v0.4.22 (published February 16, 2026)
 
