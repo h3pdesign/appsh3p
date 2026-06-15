@@ -10,22 +10,22 @@ head:
 
 # Neon Vision Editor Changelog
 
-_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on June 9, 2026._
+_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on June 15, 2026._
 
-## v0.7.7 (published June 9, 2026)
+## v0.7.8 (published June 15, 2026)
 
-Release link: [GitHub Release v0.7.7](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v0.7.7)
+Release link: [GitHub Release v0.7.8](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v0.7.8)
 
-- Improves iPad Welcome Tour spacing so the What's New cards, page dots, and navigation buttons sit closer together in compact form sheets.
-- Makes iPad Find & Replace more compact and visually consistent by removing redundant inner panel surfaces and tightening field, option, and action spacing.
-- Cleans up iPhone sidebar density and translucent sheet presentation for table-of-contents and project navigation.
-- Rebalanced Welcome Tour form-sheet geometry on iPad with smaller footer controls, iPad-specific sheet heights, and a lighter bottom fade.
-- Tightened iPad Find & Replace sheet width, height, internal padding, picker width, and action button typography.
-- Made compact iOS table-of-contents rows narrower with reduced marker, indent, horizontal padding, and row inset values.
-- Switched compact iOS table-of-contents and project sidebar sheets to translucent backgrounds with hidden navigation bar backgrounds.
-- Fixed excessive empty space between Welcome Tour cards and footer buttons on iPad form sheets.
-- Fixed iPad Find & Replace showing stacked inner and outer panel backgrounds instead of a single translucent sheet surface.
-- Fixed iPad Find & Replace wasting space around fields, toggles, scope selection, and action buttons.
+- Fixes iPhone and iPad editor behavior when line wrap is disabled so long lines continue horizontally instead of clipping at the right edge.
+- Makes line wrap the default on fresh iPhone installs while preserving existing user preferences and keeping iPad/macOS defaults unchanged.
+- Restores live cursor position updates in the status bar when editing, moving the caret, or jumping between lines.
+- Prevents macOS Settings content from scrolling underneath the native preference toolbar.
+- Makes GitHub release builds more deterministic by preserving the selected Xcode toolchain and preferring stable Xcode installations.
+- Enforced horizontal scrollable content width for the iOS/iPadOS native editor in no-wrap mode.
+- Added iOS/iPadOS caret position publishing for edit, selection, large-file install, and programmatic navigation paths.
+- Aligned macOS cursor column reporting with the existing 1-based status bar display.
+- Hardened local and GitHub release workflows so the selected Xcode installation persists through build and notarization steps.
+- Fixed no-wrap text being cut off on iPhone and iPad instead of allowing horizontal scrolling.
 
 ## v0.4.22 (published February 16, 2026)
 
