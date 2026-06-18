@@ -10,22 +10,22 @@ head:
 
 # Neon Vision Editor Changelog
 
-_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on June 15, 2026._
+_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on June 17, 2026._
 
-## v0.7.8 (published June 15, 2026)
+## v0.7.9 (published June 17, 2026)
 
-Release link: [GitHub Release v0.7.8](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v0.7.8)
+Release link: [GitHub Release v0.7.9](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v0.7.9)
 
-- Fixes iPhone and iPad editor behavior when line wrap is disabled so long lines continue horizontally instead of clipping at the right edge.
-- Makes line wrap the default on fresh iPhone installs while preserving existing user preferences and keeping iPad/macOS defaults unchanged.
-- Restores live cursor position updates in the status bar when editing, moving the caret, or jumping between lines.
-- Prevents macOS Settings content from scrolling underneath the native preference toolbar.
-- Makes GitHub release builds more deterministic by preserving the selected Xcode toolchain and preferring stable Xcode installations.
-- Enforced horizontal scrollable content width for the iOS/iPadOS native editor in no-wrap mode.
-- Added iOS/iPadOS caret position publishing for edit, selection, large-file install, and programmatic navigation paths.
-- Aligned macOS cursor column reporting with the existing 1-based status bar display.
-- Hardened local and GitHub release workflows so the selected Xcode installation persists through build and notarization steps.
-- Fixed no-wrap text being cut off on iPhone and iPad instead of allowing horizontal scrolling.
+- Adds OpenCode Go as an optional AI completion provider with secure Keychain token storage and a configurable model id.
+- Adds a custom OpenAI-compatible provider so compatible hosted or local endpoints can be used for completion.
+- Reduces unnecessary completion work by skipping model-backed suggestions in obvious comment and string contexts.
+- Makes caret status updates cheaper across macOS, iOS, and iPadOS by avoiding temporary prefix-string allocation while preserving UTF-16 editor offsets.
+- Updates Xcode project metadata for current Xcode Cloud and release signing expectations.
+- Added OpenCode Go (OpenCode Zen) using the shared OpenAI-compatible chat completions client and the deepseek-v4-flash default model.
+- Added Settings controls for selecting OpenCode Go, storing its API token, and configuring the OpenCode model id.
+- Added a custom OpenAI-compatible provider with user-configured base URL, model, and optional API key, grouped in its own Settings section.
+- Added AI Activity Log diagnostics for failed or empty provider responses, including HTTP status and finish reason, so silent fallbacks are now visible.
+- Added shared completion heuristics for comment/string detection and regression coverage for local completions and caret position calculations.
 
 ## v0.4.22 (published February 16, 2026)
 
