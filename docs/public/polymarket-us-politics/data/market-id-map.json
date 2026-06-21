@@ -1,8 +1,8 @@
 {
-  "updated_at_utc": "2026-06-21T09:45:45.395Z",
+  "updated_at_utc": "2026-06-21T17:01:10.803Z",
   "total_questions": 66,
-  "mapped_questions": 31,
-  "unmapped_questions": 35,
+  "mapped_questions": 30,
+  "unmapped_questions": 36,
   "entries": [
     {
       "question": "Will LeBron James win the 2028 US Presidential Election?",
@@ -10,15 +10,6 @@
       "market_slug": "will-lebron-james-win-the-2028-us-presidential-election",
       "market_question": "Will LeBron James win the 2028 US Presidential Election?",
       "score": 1,
-      "active": true,
-      "closed": false
-    },
-    {
-      "question": "US-Iran diplomatic meeting location",
-      "market_id": "1961523",
-      "market_slug": "will-the-next-diplomatic-us-iran-meeting-be-in-oman-869",
-      "market_question": "Will the next diplomatic US-Iran meeting be in Oman?",
-      "score": 0.435,
       "active": true,
       "closed": false
     },
@@ -286,6 +277,7 @@
   ],
   "unmapped": [
     "US/Israel strikes on Iran — Escalation Timeline",
+    "US-Iran diplomatic meeting location",
     "Iran agrees to end enrichment by March 31?",
     "Iran strike on US military by Feb 28?",
     "US strike on Somalia by Feb 28?",
