@@ -10,22 +10,22 @@ head:
 
 # Neon Vision Editor Changelog
 
-_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on June 17, 2026._
+_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on June 23, 2026._
 
-## v0.7.9 (published June 17, 2026)
+## v0.8.0 (published June 23, 2026)
 
-Release link: [GitHub Release v0.7.9](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v0.7.9)
+Release link: [GitHub Release v0.8.0](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v0.8.0)
 
-- Adds OpenCode Go as an optional AI completion provider with secure Keychain token storage and a configurable model id.
-- Adds a custom OpenAI-compatible provider so compatible hosted or local endpoints can be used for completion.
-- Reduces unnecessary completion work by skipping model-backed suggestions in obvious comment and string contexts.
-- Makes caret status updates cheaper across macOS, iOS, and iPadOS by avoiding temporary prefix-string allocation while preserving UTF-16 editor offsets.
-- Updates Xcode project metadata for current Xcode Cloud and release signing expectations.
-- Added OpenCode Go (OpenCode Zen) using the shared OpenAI-compatible chat completions client and the deepseek-v4-flash default model.
-- Added Settings controls for selecting OpenCode Go, storing its API token, and configuring the OpenCode model id.
-- Added a custom OpenAI-compatible provider with user-configured base URL, model, and optional API key, grouped in its own Settings section.
-- Added AI Activity Log diagnostics for failed or empty provider responses, including HTTP status and finish reason, so silent fallbacks are now visible.
-- Added shared completion heuristics for comment/string detection and regression coverage for local completions and caret position calculations.
+- Restores macOS 15 tab bar mouse hit-testing so tabs can be selected and closed normally.
+- Fixes macOS translucent editor startup rendering so line numbers no longer appear on a white strip.
+- Improves the Welcome Tour release page layout and reduces lightweight completion-trigger allocation while typing.
+- Added Xcode Cloud/App Store release runbook and preflight checks for the 0.8.0 release path.
+- Kept macOS 26+ tab strip edge fades while skipping the SwiftUI mask on pre-26 macOS where it can intercept tab clicks.
+- Updated the Welcome Tour release summary for current App Store-facing changes.
+- Fixed macOS 15 tab switching and close-button clicks by avoiding the tab strip fade mask on pre-26 macOS.
+- Fixed translucent macOS line-number ruler startup rendering so the ruler stays transparent when the editor background is transparent.
+- Fixed the macOS Welcome Tour "What's New" layout so release cards no longer clip or leave stale content at the left edge.
+- Reduced completion-trigger scan allocation by checking UTF-16 code units instead of creating one-character substrings.
 
 ## v0.4.22 (published February 16, 2026)
 
