@@ -1,5 +1,5 @@
 {
-  "updated_at_utc": "2026-06-24T09:43:48.822Z",
+  "updated_at_utc": "2026-06-24T17:12:09.684Z",
   "total_questions": 66,
   "mapped_questions": 31,
   "unmapped_questions": 35,
@@ -267,18 +267,18 @@
     },
     {
       "question": "Elon Musk Attention (3D)",
-      "market_id": "1706878",
-      "market_slug": "will-elon-musk-buy-onlyfans",
-      "market_question": "Will Elon Musk buy OnlyFans?",
+      "market_id": "1203147",
+      "market_slug": "will-elon-musk-buy-ryanair",
+      "market_question": "Will Elon Musk buy Ryanair?",
       "score": 0.393,
       "active": true,
       "closed": false
     },
     {
       "question": "Elon Musk Attention (7D)",
-      "market_id": "1706878",
-      "market_slug": "will-elon-musk-buy-onlyfans",
-      "market_question": "Will Elon Musk buy OnlyFans?",
+      "market_id": "1203147",
+      "market_slug": "will-elon-musk-buy-ryanair",
+      "market_question": "Will Elon Musk buy Ryanair?",
       "score": 0.393,
       "active": true,
       "closed": false
