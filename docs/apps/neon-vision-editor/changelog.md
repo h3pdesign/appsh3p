@@ -10,22 +10,22 @@ head:
 
 # Neon Vision Editor Changelog
 
-_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on June 23, 2026._
+_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on June 27, 2026._
 
-## v0.8.0 (published June 23, 2026)
+## v0.8.1 (published June 27, 2026)
 
-Release link: [GitHub Release v0.8.0](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v0.8.0)
+Release link: [GitHub Release v0.8.1](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v0.8.1)
 
-- Restores macOS 15 tab bar mouse hit-testing so tabs can be selected and closed normally.
-- Fixes macOS translucent editor startup rendering so line numbers no longer appear on a white strip.
-- Improves the Welcome Tour release page layout and reduces lightweight completion-trigger allocation while typing.
-- Added Xcode Cloud/App Store release runbook and preflight checks for the 0.8.0 release path.
-- Kept macOS 26+ tab strip edge fades while skipping the SwiftUI mask on pre-26 macOS where it can intercept tab clicks.
-- Updated the Welcome Tour release summary for current App Store-facing changes.
-- Fixed macOS 15 tab switching and close-button clicks by avoiding the tab strip fade mask on pre-26 macOS.
-- Fixed translucent macOS line-number ruler startup rendering so the ruler stays transparent when the editor background is transparent.
-- Fixed the macOS Welcome Tour "What's New" layout so release cards no longer clip or leave stale content at the left edge.
-- Reduced completion-trigger scan allocation by checking UTF-16 code units instead of creating one-character substrings.
+- Hardens iPadOS App Store builds by keeping terminal and shell-execution entry points macOS-only, so iPadOS remains a text editor and previewer without code execution.
+- Adds a GitHub-only release workflow that can create and publish the release tag, ZIP, DMG, checksums, and release notes from GitHub without local release commands.
+- Fixes iPad editor layout issues so the toolbar uses the available editor width and no-wrap Markdown editing can scroll horizontally beside the preview.
+- Added a manual GitHub release workflow with dry-run support, secret preflight checks, draft-before-publish release handling, asset verification, SHA256 checksums, and post-release workflow dispatches.
+- Added release metadata gates so release docs, README status, project version metadata, and the Welcome Tour What's New page are checked before GitHub release builds.
+- Added dedicated SVG and HTML preview panes, including passive HTML rendering inside Markdown preview, with preview coordination moved out of the main content view.
+- Split file preview coordination into dedicated preview files and added SVG and HTML web previews beside the source editor.
+- Refined iPad top chrome so the editor toolbar fills the available width dynamically while keeping compact controls usable.
+- Hardened iPadOS App Store builds by keeping terminal and shell-execution entry points macOS-only.
+- Fixed SVG preview rendering so previews fit the pane without adding an extra dark background block.
 
 ## v0.4.22 (published February 16, 2026)
 
