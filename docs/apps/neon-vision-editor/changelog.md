@@ -10,22 +10,21 @@ head:
 
 # Neon Vision Editor Changelog
 
-_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on June 27, 2026._
+_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on June 28, 2026._
 
-## v0.8.1 (published June 27, 2026)
+## v0.8.2 (published June 28, 2026)
 
-Release link: [GitHub Release v0.8.1](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v0.8.1)
+Release link: [GitHub Release v0.8.2](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v0.8.2)
 
-- Hardens iPadOS App Store builds by keeping terminal and shell-execution entry points macOS-only, so iPadOS remains a text editor and previewer without code execution.
-- Adds a GitHub-only release workflow that can create and publish the release tag, ZIP, DMG, checksums, and release notes from GitHub without local release commands.
-- Fixes iPad editor layout issues so the toolbar uses the available editor width and no-wrap Markdown editing can scroll horizontally beside the preview.
-- Added a manual GitHub release workflow with dry-run support, secret preflight checks, draft-before-publish release handling, asset verification, SHA256 checksums, and post-release workflow dispatches.
-- Added release metadata gates so release docs, README status, project version metadata, and the Welcome Tour What's New page are checked before GitHub release builds.
-- Added dedicated SVG and HTML preview panes, including passive HTML rendering inside Markdown preview, with preview coordination moved out of the main content view.
-- Split file preview coordination into dedicated preview files and added SVG and HTML web previews beside the source editor.
-- Refined iPad top chrome so the editor toolbar fills the available width dynamically while keeping compact controls usable.
-- Hardened iPadOS App Store builds by keeping terminal and shell-execution entry points macOS-only.
-- Fixed SVG preview rendering so previews fit the pane without adding an extra dark background block.
+- Improves visionOS settings with a compact two-pane layout, clearer categories, and less wasted space.
+- Fixes visionOS toolbar placement and spacing so actions use the available window width more predictably.
+- Refines macOS translucent sidebars and resize handling so editor chrome feels cleaner while preserving usable resize hit areas.
+- Reworked visionOS Settings into a narrow category rail and detailed form sections for General, Editor, Appearance, Toolbar, AI, Remote, Shortcuts, and Diagnostics.
+- Added compact toolbar settings outside General so long toggle lists no longer create large gaps in the main settings view.
+- Tuned macOS sidebar/tab transitions and translucent backgrounds for a smoother editor/sidebar boundary.
+- Fixed clipped visionOS welcome controls, blank visionOS app icon metadata, toolbar alignment, and settings backgrounds.
+- Fixed macOS sidebar resize cursor behavior by keeping the resize hit zone usable while hiding visible divider rails.
+- Fixed right-sidebar tab bar transition behavior so the fade is only active when a sidebar is visible.
 
 ## v0.4.22 (published February 16, 2026)
 
