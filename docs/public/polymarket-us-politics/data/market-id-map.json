@@ -1,5 +1,5 @@
 {
-  "updated_at_utc": "2026-07-02T09:35:38.422Z",
+  "updated_at_utc": "2026-07-02T17:03:53.859Z",
   "total_questions": 66,
   "mapped_questions": 28,
   "unmapped_questions": 38,
@@ -51,11 +51,11 @@
     },
     {
       "question": "Presidential Election Winner 2028",
-      "market_id": "561308",
-      "market_slug": "will-person-bg-win-the-2028-us-presidential-election",
-      "market_question": "Will Person BG win the 2028 US Presidential Election?",
+      "market_id": "561229",
+      "market_slug": "will-jd-vance-win-the-2028-us-presidential-election",
+      "market_question": "Will JD Vance win the 2028 US Presidential Election?",
       "score": 0.435,
-      "active": false,
+      "active": true,
       "closed": false
     },
     {
@@ -150,9 +150,9 @@
     },
     {
       "question": "Mike Johnson out as Speaker by Dec 31, 2026?",
-      "market_id": "813506",
-      "market_slug": "mike-johnson-out-as-speaker-by-december-31",
-      "market_question": "Mike Johnson out as Speaker by December 31?",
+      "market_id": "2695405",
+      "market_slug": "mike-johnson-out-as-speaker-by-july-31-20260626161802586",
+      "market_question": "Mike Johnson out as Speaker by July 31?",
       "score": 0.691,
       "active": true,
       "closed": false
