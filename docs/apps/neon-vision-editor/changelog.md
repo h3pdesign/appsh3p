@@ -10,21 +10,21 @@ head:
 
 # Neon Vision Editor Changelog
 
-_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on June 28, 2026._
+_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on July 2, 2026._
 
-## v0.8.2 (published June 28, 2026)
+## v0.8.3 (published July 2, 2026)
 
-Release link: [GitHub Release v0.8.2](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v0.8.2)
+Release link: [GitHub Release v0.8.3](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v0.8.3)
 
-- Improves visionOS settings with a compact two-pane layout, clearer categories, and less wasted space.
-- Fixes visionOS toolbar placement and spacing so actions use the available window width more predictably.
-- Refines macOS translucent sidebars and resize handling so editor chrome feels cleaner while preserving usable resize hit areas.
-- Reworked visionOS Settings into a narrow category rail and detailed form sections for General, Editor, Appearance, Toolbar, AI, Remote, Shortcuts, and Diagnostics.
-- Added compact toolbar settings outside General so long toggle lists no longer create large gaps in the main settings view.
-- Tuned macOS sidebar/tab transitions and translucent backgrounds for a smoother editor/sidebar boundary.
-- Fixed clipped visionOS welcome controls, blank visionOS app icon metadata, toolbar alignment, and settings backgrounds.
-- Fixed macOS sidebar resize cursor behavior by keeping the resize hit zone usable while hiding visible divider rails.
-- Fixed right-sidebar tab bar transition behavior so the fade is only active when a sidebar is visible.
+- Expands Markdown preview compatibility with GitHub Flavored Markdown, safer re-rendering, and syntax-colored code blocks.
+- Polishes macOS Settings sizing, translucency, and theme controls while keeping iPad editor and preview text sizes aligned.
+- Added GitHub Flavored Markdown as the default preview mode while keeping CommonMark compatibility available.
+- Added Markdown code-block language controls and syntax highlighting with theme-aware, higher-contrast colors.
+- Enabled line wrap by default for new installs across supported platforms while preserving existing user preferences.
+- Reduced editor/preview update overhead so Markdown edits and preview refreshes stay responsive during active typing.
+- Required HTTPS for custom AI provider endpoints to keep user-configured network integrations on secure transports.
+- Fixed Markdown preview text sizing on iPad so preview text tracks the editor font size instead of rendering noticeably larger.
+- Restored translucent Settings surfaces in translucent mode and kept vibrant syntax colors distinct from code-block backgrounds.
 
 ## v0.4.22 (published February 16, 2026)
 
