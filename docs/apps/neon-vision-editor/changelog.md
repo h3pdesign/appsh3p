@@ -10,21 +10,22 @@ head:
 
 # Neon Vision Editor Changelog
 
-_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on July 2, 2026._
+_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on July 6, 2026._
 
-## v0.8.3 (published July 2, 2026)
+## v0.8.4 (published July 6, 2026)
 
-Release link: [GitHub Release v0.8.3](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v0.8.3)
+Release link: [GitHub Release v0.8.4](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v0.8.4)
 
-- Expands Markdown preview compatibility with GitHub Flavored Markdown, safer re-rendering, and syntax-colored code blocks.
-- Polishes macOS Settings sizing, translucency, and theme controls while keeping iPad editor and preview text sizes aligned.
-- Added GitHub Flavored Markdown as the default preview mode while keeping CommonMark compatibility available.
-- Added Markdown code-block language controls and syntax highlighting with theme-aware, higher-contrast colors.
-- Enabled line wrap by default for new installs across supported platforms while preserving existing user preferences.
-- Reduced editor/preview update overhead so Markdown edits and preview refreshes stay responsive during active typing.
-- Required HTTPS for custom AI provider endpoints to keep user-configured network integrations on secure transports.
-- Fixed Markdown preview text sizing on iPad so preview text tracks the editor font size instead of rendering noticeably larger.
-- Restored translucent Settings surfaces in translucent mode and kept vibrant syntax colors distinct from code-block backgrounds.
+- Improves day-to-day editor interaction with toolbar hover labels, stronger find-panel focus, VIM arrow-key navigation, and a more useful macOS sidebar terminal.
+- Hardens Markdown preview, custom AI endpoint validation, and GitHub Pages deployment so common user workflows are less likely to fail during active editing or release updates.
+- Stabilizes macOS compatibility follow-up for tab hit testing, release metadata, and post-0.8.3 App Store review cleanup.
+- Added hover labels for toolbar buttons, improved find-panel typing focus and contrast, and expanded VIM normal-mode movement to physical arrow keys.
+- Upgraded the macOS sidebar terminal from single-command execution to a persistent sidebar shell session for common git, npm, node, and docker-style commands.
+- Serialized GitHub Pages deployments so fast successive pushes do not cancel or race active Pages publishes.
+- Fixed custom AI provider validation so localhost endpoints can be used intentionally while public remote endpoints still require HTTPS.
+- Coalesced Markdown preview reloads to reduce redundant refreshes during active typing and avoid avoidable WebView churn.
+- Stabilized the sidebar terminal shell startup by avoiding interactive-shell assumptions in the pipe-backed implementation.
+- Restored reliable macOS 15 tab mouse hit testing and kept release/download metadata fresh for the 0.8.4 release line.
 
 ## v0.4.22 (published February 16, 2026)
 
