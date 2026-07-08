@@ -10,22 +10,20 @@ head:
 
 # Neon Vision Editor Changelog
 
-_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on July 6, 2026._
+_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on July 8, 2026._
 
-## v0.8.4 (published July 6, 2026)
+## v0.8.5 (published July 8, 2026)
 
-Release link: [GitHub Release v0.8.4](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v0.8.4)
+Release link: [GitHub Release v0.8.5](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v0.8.5)
 
-- Improves day-to-day editor interaction with toolbar hover labels, stronger find-panel focus, VIM arrow-key navigation, and a more useful macOS sidebar terminal.
-- Hardens Markdown preview, custom AI endpoint validation, and GitHub Pages deployment so common user workflows are less likely to fail during active editing or release updates.
-- Stabilizes macOS compatibility follow-up for tab hit testing, release metadata, and post-0.8.3 App Store review cleanup.
-- Added hover labels for toolbar buttons, improved find-panel typing focus and contrast, and expanded VIM normal-mode movement to physical arrow keys.
-- Upgraded the macOS sidebar terminal from single-command execution to a persistent sidebar shell session for common git, npm, node, and docker-style commands.
-- Serialized GitHub Pages deployments so fast successive pushes do not cancel or race active Pages publishes.
-- Fixed custom AI provider validation so localhost endpoints can be used intentionally while public remote endpoints still require HTTPS.
-- Coalesced Markdown preview reloads to reduce redundant refreshes during active typing and avoid avoidable WebView churn.
-- Stabilized the sidebar terminal shell startup by avoiding interactive-shell assumptions in the pipe-backed implementation.
-- Restored reliable macOS 15 tab mouse hit testing and kept release/download metadata fresh for the 0.8.4 release line.
+- Fixes TestFlight crash reports tied to macOS window restoration callbacks and AppKit delegate forwarding during close/restore flows.
+- Restores reliable macOS editor text rendering after file load, sidebar toggles, window focus changes, and older macOS layout refreshes.
+- Expands TypeScript syntax highlighting so modern TypeScript files keep imports, decorators, utility types, async arrows, and property access readable.
+- Hardened the macOS editor and window lifecycle paths while keeping iOS and iPadOS builds unchanged.
+- Added broader TypeScript highlighting coverage with regression tests for decorators, type utilities, async functions, readonly properties, and property access.
+- Removed unsafe generic `NSWindowDelegate` forwarding from the macOS close-confirmation bridge and explicitly forwards restoration callbacks instead.
+- Coalesced macOS text-view display refreshes onto the next main-runloop turn so layout invalidation does not run inside AppKit layout observation.
+- Refreshed visible editor glyph display after geometry and app/window activation changes to avoid blank text after sidebar or focus transitions.
 
 ## v0.4.22 (published February 16, 2026)
 
