@@ -10,20 +10,19 @@ head:
 
 # Neon Vision Editor Changelog
 
-_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on July 8, 2026._
+_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on July 10, 2026._
 
-## v0.8.5 (published July 8, 2026)
+## v0.8.6 (published July 10, 2026)
 
-Release link: [GitHub Release v0.8.5](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v0.8.5)
+Release link: [GitHub Release v0.8.6](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v0.8.6)
 
-- Fixes TestFlight crash reports tied to macOS window restoration callbacks and AppKit delegate forwarding during close/restore flows.
-- Restores reliable macOS editor text rendering after file load, sidebar toggles, window focus changes, and older macOS layout refreshes.
-- Expands TypeScript syntax highlighting so modern TypeScript files keep imports, decorators, utility types, async arrows, and property access readable.
-- Hardened the macOS editor and window lifecycle paths while keeping iOS and iPadOS builds unchanged.
-- Added broader TypeScript highlighting coverage with regression tests for decorators, type utilities, async functions, readonly properties, and property access.
-- Removed unsafe generic `NSWindowDelegate` forwarding from the macOS close-confirmation bridge and explicitly forwards restoration callbacks instead.
-- Coalesced macOS text-view display refreshes onto the next main-runloop turn so layout invalidation does not run inside AppKit layout observation.
-- Refreshed visible editor glyph display after geometry and app/window activation changes to avoid blank text after sidebar or focus transitions.
+- Keeps AI completions available when Grok streaming falls back to a standard response.
+- Restores focused macOS editing after app and window activation changes.
+- Makes Markdown preview controls practical on iPhone without hiding export options.
+- Added selectable recovery for unsaved drafts, document-scoped Markdown templates, and stronger release regression coverage.
+- Fixed Brain Dump layout distortion by suppressing split panes and bracket helpers in its focused writing column.
+- Fixed Swift 6 activity notification handling in the macOS text view.
+- Fixed iPhone Markdown preview options so template, PDF mode, and copy/export actions remain reachable.
 
 ## v0.4.22 (published February 16, 2026)
 
