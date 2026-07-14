@@ -1,8 +1,8 @@
 {
-  "updated_at_utc": "2026-07-13T17:14:36.754Z",
+  "updated_at_utc": "2026-07-14T00:56:59.523Z",
   "total_questions": 66,
-  "mapped_questions": 28,
-  "unmapped_questions": 38,
+  "mapped_questions": 27,
+  "unmapped_questions": 39,
   "entries": [
     {
       "question": "Will LeBron James win the 2028 US Presidential Election?",
@@ -158,15 +158,6 @@
       "closed": false
     },
     {
-      "question": "Mitch McConnell step down?",
-      "market_id": "637910",
-      "market_slug": "will-mitch-mcconnell-resign-from-the-senate-before-his-term-ends",
-      "market_question": "Will Mitch McConnell step down from the Senate before his term ends?",
-      "score": 0.633,
-      "active": true,
-      "closed": false
-    },
-    {
       "question": "Republicans win Trifecta with Senate Supermajority?",
       "market_id": "1060867",
       "market_slug": "republican-trifecta-with-supermajority-in-the-senate",
@@ -280,6 +271,7 @@
     "Will Congress pass any tariffs by March 31?",
     "House Popular Vote Margin",
     "Government shutdown & House winner",
+    "Mitch McConnell step down?",
     "Texas Dem Senate Primary",
     "DHS Shutdown Duration",
     "When will DHS shutdown end?",
