@@ -10,19 +10,22 @@ head:
 
 # Neon Vision Editor Changelog
 
-_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on July 10, 2026._
+_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on July 15, 2026._
 
-## v0.8.6 (published July 10, 2026)
+## v0.8.7 (published July 15, 2026)
 
-Release link: [GitHub Release v0.8.6](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v0.8.6)
+Release link: [GitHub Release v0.8.7](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v0.8.7)
 
-- Keeps AI completions available when Grok streaming falls back to a standard response.
-- Restores focused macOS editing after app and window activation changes.
-- Makes Markdown preview controls practical on iPhone without hiding export options.
-- Added selectable recovery for unsaved drafts, document-scoped Markdown templates, and stronger release regression coverage.
-- Fixed Brain Dump layout distortion by suppressing split panes and bracket helpers in its focused writing column.
-- Fixed Swift 6 activity notification handling in the macOS text view.
-- Fixed iPhone Markdown preview options so template, PDF mode, and copy/export actions remain reachable.
+- Restores reliable macOS editor rendering, mouse placement, and selection after loading a document or changing sidebar and window geometry.
+- Adds drag-to-reorder tabs on macOS, including clear before/after placement feedback.
+- Upgrades the macOS sidebar terminal to a real PTY-backed shell for interactive command-line workflows.
+- Makes tab switching and reordering more responsive, with a persistent blue marker for the active tab and a yellow marker for the previously selected tab.
+- Added native macOS PTY sessions with terminal resize, Ctrl-C, Ctrl-D, restart, bounded scrollback, and project-directory support. ANSI/VT rendering remains tracked separately.
+- Added Copy Diagnostics details for OS version and safe editor performance settings, without exposing document content or paths.
+- Added a macOS preference to show or hide the Welcome Tour menu-bar shortcut.
+- Kept normal documents on contiguous TextKit layout and refreshes their display after document transitions, preventing blank editor content and failed mouse hit testing.
+- Limits full TextKit invalidation to small documents; larger files refresh only the visible range to protect editor responsiveness.
+- Added before/after tab drop handling with an insertion marker, and regression coverage for tab ordering and selection preservation.
 
 ## v0.4.22 (published February 16, 2026)
 
