@@ -10,22 +10,18 @@ head:
 
 # Neon Vision Editor Changelog
 
-_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on July 15, 2026._
+_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on July 17, 2026._
 
-## v0.8.7 (published July 15, 2026)
+## v0.8.8 (published July 17, 2026)
 
-Release link: [GitHub Release v0.8.7](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v0.8.7)
+Release link: [GitHub Release v0.8.8](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v0.8.8)
 
-- Restores reliable macOS editor rendering, mouse placement, and selection after loading a document or changing sidebar and window geometry.
-- Adds drag-to-reorder tabs on macOS, including clear before/after placement feedback.
-- Upgrades the macOS sidebar terminal to a real PTY-backed shell for interactive command-line workflows.
-- Makes tab switching and reordering more responsive, with a persistent blue marker for the active tab and a yellow marker for the previously selected tab.
-- Added native macOS PTY sessions with terminal resize, Ctrl-C, Ctrl-D, restart, bounded scrollback, and project-directory support. ANSI/VT rendering remains tracked separately.
-- Added Copy Diagnostics details for OS version and safe editor performance settings, without exposing document content or paths.
-- Added a macOS preference to show or hide the Welcome Tour menu-bar shortcut.
-- Kept normal documents on contiguous TextKit layout and refreshes their display after document transitions, preventing blank editor content and failed mouse hit testing.
-- Limits full TextKit invalidation to small documents; larger files refresh only the visible range to protect editor responsiveness.
-- Added before/after tab drop handling with an insertion marker, and regression coverage for tab ordering and selection preservation.
+- Makes the code minimap populate reliably after switching tabs and shows a draggable viewport marker without waiting for a scroll.
+- Reduces unnecessary session and draft writes while editing, helping larger workspaces stay responsive.
+- Adds a focused editor setup step and clear release-session guidance in the Welcome Tour.
+- Added aligned, commonly used editor controls to the Welcome Tour: line wrap, line numbers, current-line highlighting, and matching-bracket highlighting.
+- Prevented empty loading snapshots from being reused by the minimap, and publishes an initial estimated viewport before full TextKit layout completes on macOS.
+- Uses descriptive headings for individual What’s New items instead of generic numbered update labels.
 
 ## v0.4.22 (published February 16, 2026)
 
