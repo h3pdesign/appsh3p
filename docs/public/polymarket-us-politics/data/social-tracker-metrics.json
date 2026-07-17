@@ -1,37 +1,37 @@
 {
-  "updated_at_utc": "2026-07-16T16:49:56.491Z",
+  "updated_at_utc": "2026-07-17T00:56:11.804Z",
   "source_name": "Wikimedia Pageviews API",
   "source_url": "https://wikitech.wikimedia.org/wiki/Analytics/AQS/Pageviews",
   "metrics": [
     {
       "id": "elon_attention_3d",
       "label": "Elon Musk Attention (3D)",
-      "value": 52134,
+      "value": 34405,
       "unit": "views",
       "window_days": 3,
       "scope": "Latest available 3-day aggregate Wikimedia pageviews for Elon Musk",
       "source_name": "Wikimedia Pageviews API",
       "source_url": "https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article/en.wikipedia.org/all-access/user/Elon_Musk/daily",
-      "source_window_start": "20260713",
-      "source_window_end": "20260715",
+      "source_window_start": "20260714",
+      "source_window_end": "20260716",
       "fallback_days": 0,
       "is_fallback": false,
-      "as_of_utc": "2026-07-16T16:49:56.491Z"
+      "as_of_utc": "2026-07-17T00:56:11.804Z"
     },
     {
       "id": "elon_attention_7d",
       "label": "Elon Musk Attention (7D)",
-      "value": 123622,
+      "value": 106177,
       "unit": "views",
       "window_days": 7,
       "scope": "Latest available 7-day aggregate Wikimedia pageviews for Elon Musk",
       "source_name": "Wikimedia Pageviews API",
       "source_url": "https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article/en.wikipedia.org/all-access/user/Elon_Musk/daily",
-      "source_window_start": "20260709",
-      "source_window_end": "20260715",
+      "source_window_start": "20260710",
+      "source_window_end": "20260716",
       "fallback_days": 0,
       "is_fallback": false,
-      "as_of_utc": "2026-07-16T16:49:56.491Z"
+      "as_of_utc": "2026-07-17T00:56:11.804Z"
     },
     {
       "id": "trump_attention_7d",
@@ -44,9 +44,9 @@
       "source_url": "https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article/en.wikipedia.org/all-access/user/Donald_Trump/daily",
       "source_window_start": "20260709",
       "source_window_end": "20260715",
-      "fallback_days": 0,
-      "is_fallback": false,
-      "as_of_utc": "2026-07-16T16:49:56.491Z"
+      "fallback_days": 1,
+      "is_fallback": true,
+      "as_of_utc": "2026-07-17T00:56:11.804Z"
     }
   ]
 }
