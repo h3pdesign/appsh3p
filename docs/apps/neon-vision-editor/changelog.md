@@ -10,18 +10,22 @@ head:
 
 # Neon Vision Editor Changelog
 
-_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on July 17, 2026._
+_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on July 18, 2026._
 
-## v0.8.8 (published July 17, 2026)
+## v0.8.9 (published July 18, 2026)
 
-Release link: [GitHub Release v0.8.8](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v0.8.8)
+Release link: [GitHub Release v0.8.9](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v0.8.9)
 
-- Makes the code minimap populate reliably after switching tabs and shows a draggable viewport marker without waiting for a scroll.
-- Reduces unnecessary session and draft writes while editing, helping larger workspaces stay responsive.
-- Adds a focused editor setup step and clear release-session guidance in the Welcome Tour.
-- Added aligned, commonly used editor controls to the Welcome Tour: line wrap, line numbers, current-line highlighting, and matching-bracket highlighting.
-- Prevented empty loading snapshots from being reused by the minimap, and publishes an initial estimated viewport before full TextKit layout completes on macOS.
-- Uses descriptive headings for individual What’s New items instead of generic numbered update labels.
+- Delivers a major Project Sidebar redesign with a clearer Files/Search/Git/Terminal rail, a visible Git change count, and compact, scannable change rows.
+- Reworks Markdown presentation across macOS, iPhone, iPad, and visionOS with a contextual formatting toolbar, compact phone control, improved preview controls, and more reliable rendered content.
+- Makes unusually large documents predictable: responsive loading begins early, while files at or above 100 MB open as a safe, read-only partial preview instead of exhausting editor memory.
+- Redesigned the Project Sidebar navigation as a single glass rail and upgraded Git changes with status icons, state chips, path context, and focused per-file actions.
+- Added a Markdown formatting surface with direct inline controls, heading selection, lists, quote/code tools, structural actions, and platform-appropriate compact presentation.
+- Improved Markdown, HTML, and SVG preview workflows, including explicit preview visibility controls, more resilient local image handling, richer Markdown styling, and compact iPhone preview settings.
+- Added pinch-to-zoom font sizing for touch devices and the macOS trackpad, while retaining the existing editor font-size controls.
+- Keeps the Markdown formatting control below tabs while overlaying the actual editor surface rather than creating a separate opaque host row.
+- Improves minimap activation, viewport synchronization, and draggable marker behavior after tab switches and on large documents.
+- Avoids full-file allocation for 100 MB or larger documents; partial previews are clearly labeled and cannot overwrite their original source.
 
 ## v0.4.22 (published February 16, 2026)
 
