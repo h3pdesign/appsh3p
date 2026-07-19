@@ -10,9 +10,9 @@ head:
 
 # Neon Vision Editor Changelog
 
-_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on July 18, 2026._
+_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on July 19, 2026._
 
-## v0.8.9 (published July 18, 2026)
+## v0.8.9 (published July 19, 2026)
 
 Release link: [GitHub Release v0.8.9](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v0.8.9)
 
