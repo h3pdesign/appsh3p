@@ -25,8 +25,8 @@ features:
 <div class="startpage-stats-row" aria-label="Docs quick stats">
   <span>8 apps</span>
   <span>1 docs hub</span>
-  <span class="startpage-updated-date">updated Jul 19, 2026</span>
-  <span class="startpage-synced-badge">GitHub synced Jul 19, 2026</span>
+  <span class="startpage-updated-date">updated Jul 20, 2026</span>
+  <span class="startpage-synced-badge">GitHub synced Jul 20, 2026</span>
 </div>
 <p class="startpage-hero-secondary-cta">
   Need setup help? <a href="/getting-started/introduction">Read the quick introduction</a>
@@ -54,7 +54,7 @@ features:
 <h2 id="whats-new-week">what's new this week</h2>
 
 <div class="startpage-weekly-strip" aria-label="What's new this week">
-  <a href="/apps/neon-vision-editor/changelog"><strong data-date="2026-07-19">Jul 19, 2026</strong>: Neon Vision Editor v0.8.9 release notes and docs refresh</a>
+  <a href="/apps/neon-vision-editor/changelog"><strong data-date="2026-07-20">Jul 20, 2026</strong>: Neon Vision Editor v0.9.0 release notes and docs refresh</a>
   <a href="/apps/lingua-latina/overview"><strong data-date="2026-05-14">May 14, 2026</strong>: Lingua Latina 1.0.0 local app data and docs refreshed</a>
   <a href="/apps/metric-data/overview"><strong data-date="2026-05-09">May 9, 2026</strong>: Metrics Data 0.2.3 dashboard and OAuth scope data synced</a>
   <a href="/apps/vistral/overview"><strong data-date="2026-05-09">May 9, 2026</strong>: Vistral 0.1.6 multi-platform app data synced</a>
@@ -66,11 +66,11 @@ features:
       <img src="/icons/neon-vision-editor.png?v=20260401-2" alt="" aria-hidden="true" loading="lazy" decoding="async" />
       <strong>Neon</strong>
     </div>
-    <span>v0.8.9</span>
-    <span data-date="2026-07-19">Jul 19, 2026</span>
+    <span>v0.9.0</span>
+    <span data-date="2026-07-20">Jul 20, 2026</span>
     <span>macOS, iPadOS, iOS</span>
     <a href="/apps/neon-vision-editor/changelog">Source: changelog</a>
-    <a href="https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v0.8.9" target="_blank" rel="noreferrer noopener">Source: GitHub release</a>
+    <a href="https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v0.9.0" target="_blank" rel="noreferrer noopener">Source: GitHub release</a>
   </article>
   <article class="startpage-release-item release-metric">
     <div class="startpage-release-head">
@@ -150,7 +150,7 @@ features:
 <div class="startpage-social-proof" aria-label="Trust signals">
   <span>8 app docs</span>
   <span>Published on apps-h3p.com</span>
-  <span>Neon release published Jul 19, 2026</span>
+  <span>Neon release published Jul 20, 2026</span>
   <span>GitHub-backed changelogs</span>
 </div>
 

@@ -10,22 +10,21 @@ head:
 
 # Neon Vision Editor Changelog
 
-_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on July 19, 2026._
+_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on July 20, 2026._
 
-## v0.8.9 (published July 19, 2026)
+## v0.9.0 (published July 20, 2026)
 
-Release link: [GitHub Release v0.8.9](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v0.8.9)
+Release link: [GitHub Release v0.9.0](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v0.9.0)
 
-- Delivers a major Project Sidebar redesign with a clearer Files/Search/Git/Terminal rail, a visible Git change count, and compact, scannable change rows.
-- Reworks Markdown presentation across macOS, iPhone, iPad, and visionOS with a contextual formatting toolbar, compact phone control, improved preview controls, and more reliable rendered content.
-- Makes unusually large documents predictable: responsive loading begins early, while files at or above 100 MB open as a safe, read-only partial preview instead of exhausting editor memory.
-- Redesigned the Project Sidebar navigation as a single glass rail and upgraded Git changes with status icons, state chips, path context, and focused per-file actions.
-- Added a Markdown formatting surface with direct inline controls, heading selection, lists, quote/code tools, structural actions, and platform-appropriate compact presentation.
-- Improved Markdown, HTML, and SVG preview workflows, including explicit preview visibility controls, more resilient local image handling, richer Markdown styling, and compact iPhone preview settings.
-- Added pinch-to-zoom font sizing for touch devices and the macOS trackpad, while retaining the existing editor font-size controls.
-- Keeps the Markdown formatting control below tabs while overlaying the actual editor surface rather than creating a separate opaque host row.
-- Improves minimap activation, viewport synchronization, and draggable marker behavior after tab switches and on large documents.
-- Avoids full-file allocation for 100 MB or larger documents; partial previews are clearly labeled and cannot overwrite their original source.
+- Restores reliable raw HTML syntax highlighting on macOS Sequoia and adds focused Sequoia regression coverage for HTML and representative editor languages.
+- Adds recognition and structured inspection for Apple crash reports and common plain-text crash and log files, making causes, exceptions, and termination details easier to identify.
+- Improves preview and editor reliability across current Apple platforms, including dark HTML previews and iOS builds with newer Xcode toolchains.
+- Added a structured crash-report summary with emphasized exception, termination, signal, and faulting-thread details while preserving the original report text.
+- Detects common crash and log content in `.txt` files as well as dedicated crash-report extensions, with dedicated syntax highlighting and parsing support.
+- HTML preview now keeps author-provided CSS, colors, backgrounds, and local assets while supplying readable defaults when a document does not define them.
+- Fixed raw HTML source highlighting initialization on macOS Sequoia and guarded syntax attribute ranges during live edits.
+- Extracted complex SwiftUI status and file-drop overlays so iOS Simulator builds do not exceed the compiler type-checking limit on current Xcode runners.
+- Added portable build-matrix failure reporting and expanded lightweight Sequoia syntax checks for Swift, HTML, JSON, Markdown, TypeScript, Python, YAML, CSS, XML, and crash logs.
 
 ## v0.4.22 (published February 16, 2026)
 
