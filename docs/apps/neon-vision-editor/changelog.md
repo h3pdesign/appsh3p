@@ -12,19 +12,17 @@ head:
 
 _Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on July 20, 2026._
 
-## v0.9.0 (published July 20, 2026)
+## v0.9.1 (published July 20, 2026)
 
-Release link: [GitHub Release v0.9.0](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v0.9.0)
+Release link: [GitHub Release v0.9.1](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v0.9.1)
 
-- Restores reliable raw HTML syntax highlighting on macOS Sequoia and adds focused Sequoia regression coverage for HTML and representative editor languages.
-- Adds recognition and structured inspection for Apple crash reports and common plain-text crash and log files, making causes, exceptions, and termination details easier to identify.
-- Improves preview and editor reliability across current Apple platforms, including dark HTML previews and iOS builds with newer Xcode toolchains.
-- Added a structured crash-report summary with emphasized exception, termination, signal, and faulting-thread details while preserving the original report text.
-- Detects common crash and log content in `.txt` files as well as dedicated crash-report extensions, with dedicated syntax highlighting and parsing support.
-- HTML preview now keeps author-provided CSS, colors, backgrounds, and local assets while supplying readable defaults when a document does not define them.
-- Fixed raw HTML source highlighting initialization on macOS Sequoia and guarded syntax attribute ranges during live edits.
-- Extracted complex SwiftUI status and file-drop overlays so iOS Simulator builds do not exceed the compiler type-checking limit on current Xcode runners.
-- Added portable build-matrix failure reporting and expanded lightweight Sequoia syntax checks for Swift, HTML, JSON, Markdown, TypeScript, Python, YAML, CSS, XML, and crash logs.
+- Makes file opening and tab switching on macOS stable again: text, line numbers, cursor, and minimap no longer jump to an incorrect position.
+- Restores each document at its own saved cursor location without carrying selection or viewport state into another file.
+- Keeps iPad tab changes passive, so the keyboard appears only after deliberately entering the editor.
+- The editor now distinguishes a tab from the document resource it currently represents, including when an empty tab is reused for a project-sidebar file.
+- Preserves AppKit's ruler-aware horizontal origin instead of resetting it to zero, preventing content from rendering beneath line numbers after a transition.
+- Cancels stale large-file installation work when a tab is repurposed, and removes delayed selection restoration that could race with the active document.
+- Removes Swift concurrency diagnostics from the lock and deferred UI callbacks used by session restoration and the macOS editor.
 
 ## v0.4.22 (published February 16, 2026)
 
