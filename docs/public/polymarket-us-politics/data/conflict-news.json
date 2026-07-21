@@ -1,249 +1,80 @@
 {
-  "updated_at_utc": "2026-07-20T16:46:24.243Z",
+  "updated_at_utc": "2026-07-21T00:54:35.659Z",
   "conflicts": {
     "iran_2026": [
       {
-        "title": "U.S. teeters on all-out war with Iran after more troops are killed - The Washington Post",
-        "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQV0dwdFhtR3dBNU1kQ1RnR1lBaV9mck9PdlpWb3hLSzlJWFRMellfc05nN3FXRGZlcmNQa1hIb052WU9UOFNWSlB6RWpzNHgtZjVRTmxPWFpoQTV0NlRGQjhsRXdFUjZoQ19abWZIM25PUF9SdjlNQzNaUkhtaEJlc0lXdzUxYVhuYmk2ckxzUV9NUTZ1NTdmak1sV0xEQ0VMbkg1Yng5MTVjUVpkLXJYeUF6QTlzclR5TE9LUGVpRC03OE0?oc=5",
-        "source": "Google News",
-        "published_at_utc": "2026-07-20T16:45:05.000Z"
+        "title": "US-Iran war news LIVE: Saudi Arabia condemns maritime blockade threat by Houthis; rebel group warns of escalation",
+        "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a5ec3387a95459f95a1efe6c8fca535&url=https%3a%2f%2fwww.livemint.com%2fnews%2fworld%2fus-iran-war-news-latest-live-updates-donald-trump-strait-of-hormuz-ceasefire-deal-jordan-bahrain-kuwait-qatar-uae-11784590779184.html&c=12068159105613569022&mkt=en-us",
+        "source": "Bing News",
+        "published_at_utc": "2026-07-20T17:00:00.000Z"
       },
       {
-        "title": "Expansion of US strikes on Iran leads to more retaliation across the Gulf - AP News",
-        "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQajNHTE9aUmxpa2RIMy1jNjZ4RmgzZlk2OXE3ZXBtRzdxaUpnQldzeUtxaHh6Z3VTQzZMUGNtZ1oxNE5lQzZwLVhnX3BTZWk1OVBVT1ZiNFFtMnoyRDhHbFBnV0pFdTdNcnBKdWVuT0RidVJoWXFCYkdlNDE2V1hmZ1VhUlZhLXExZTZjOHo1YmRYMm5ra1U4RE9DU29CMVU?oc=5",
-        "source": "Google News",
-        "published_at_utc": "2026-07-20T16:32:00.000Z"
+        "title": "Houthis announce Saudi naval blockade, threatening new front in US-Iran war",
+        "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a5ec3387a95459f95a1efe6c8fca535&url=https%3a%2f%2fwww.msn.com%2fen-us%2fnews%2fworld%2fhouthis-announce-saudi-naval-blockade-threatening-new-front-in-us-iran-war%2far-AA28kq9o&c=416640534114652167&mkt=en-us",
+        "source": "Bing News",
+        "published_at_utc": "2026-07-20T15:22:34.000Z"
       },
       {
-        "title": "Update: Iran and US Widen Attacks, Raising Fears for Gulf Shipping and Water Supplies - Insurance Journal",
-        "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE5fNmtnVEc5X05TR1dnOE5DLU11My1SQXhXWTdYcTA3alF0ZnhrdGk5NDZIRDQ3WEplS0JLX21JUjJlT0syUVQyWHhtd2dScDhSMFdLTjN5aGF2VTZtLXBxOGZUbl9xX3cxazZPaWdYLXB5VzVDYmxkdWFXQTJjdw?oc=5",
-        "source": "Google News",
-        "published_at_utc": "2026-07-20T16:30:00.000Z"
+        "title": "Tucker Carlson Accuses ‘Weak’ Trump of Letting Israel Push Him Into Iran War: ‘Not the Most Powerful Man in the World’",
+        "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a5ec3387a95459f95a1efe6c8fca535&url=https%3a%2f%2fwww.msn.com%2fen-us%2fnews%2fpolitics%2ftucker-carlson-accuses-weak-trump-of-letting-israel-push-him-into-iran-war-not-the-most-powerful-man-in-the-world%2far-AA28kuKt&c=13978967457190133134&mkt=en-us",
+        "source": "Bing News",
+        "published_at_utc": "2026-07-20T13:56:45.000Z"
       },
       {
-        "title": "Iran says diplomatic efforts ongoing via mediators amid fighting with US - Al Jazeera",
-        "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQVU9nQmJzX3FkYmpzNGh4d0Y5MUZ5eXZGbHU3OXhqTmpFZDNRS2pRQ3RwNlhIWGVIVVN4LVU4SzhOOVN6OGtYQ3lxSm5jY1A2dTVYVlF1R2c4ZE9LNERxYng2MHBpQURidkpTa0x5NjlSRnlPeW9YdTRXa1B5RlUzdHY2Q09Kd20xRGhsOG1rbFpGVVJ3Zy1La3F2ZGF2RjJhLTlfMTVUTVNTeGwwcjEwM2JHQdIBuAFBVV95cUxOZmVFM0piNlJoaGxybzhyVmdiMnVWWVpoQ1lyal93RTFQUlpUMEFaT0Z2T2hmX3RsdVpYRzBPNno0NWtxM0RrMUtzXzhFV3hjd0F1YWlMU2I4Nno4NVJkdEVUTjFLZzhFeWotcVdieWU4WjY4WU1ORWd6VzNCaHlHVURvYjBGS0JaUklXUW5kVkd3bkNPRzBNQ21FSEd2a0pweGJLSW9ERENyTHlTd1RMbE9TY01tOXgx?oc=5",
-        "source": "Google News",
-        "published_at_utc": "2026-07-20T16:22:06.000Z"
+        "title": "Report: Israeli defense officials assess Tehran could draw Jerusalem into conflict, as US-Iran fighting continues",
+        "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a5ec3387a95459f95a1efe6c8fca535&url=https%3a%2f%2fwww.msn.com%2fen-us%2fnews%2fworld%2freport-israeli-defense-officials-assess-tehran-could-draw-jerusalem-into-conflict-as-us-iran-fighting-continues%2far-AA28jpSI&c=8236714023268214601&mkt=en-us",
+        "source": "Bing News",
+        "published_at_utc": "2026-07-20T10:46:59.000Z"
       },
       {
-        "title": "U.S. war with Iran risks spiraling past point of no return for negotiations - NBC News",
-        "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQaGUyTWlZNDNoV0RlWnNZMkRrLWMzc3JSWWVoN3FIWENCUnJ3amtjRlVwRVRnR3Ezc003N2FYc0hBMld5aWpUbFhnVWQ2anRWdzRJR3paTGVyWlVaeTdfSks1Q0s2NEZ3Q0dCU01VSUtVZnhod1NHUHdfY3ZUYm85UzlsR1lES2JXb1JiUm9wV1NicXJIZ3E2bUtMMXpiZTNHYkIzekJqdXpDQW1lNk9iaEl1Yw?oc=5",
-        "source": "Google News",
-        "published_at_utc": "2026-07-20T16:13:59.000Z"
+        "title": "US teeters on all-out war with Iran after more troops are killed",
+        "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a5ec3387a95459f95a1efe6c8fca535&url=https%3a%2f%2fwww.msn.com%2fen-us%2fnews%2fworld%2fus-teeters-on-all-out-war-with-iran-after-more-troops-are-killed%2far-AA28eOIf&c=7749923700930745409&mkt=en-us",
+        "source": "Bing News",
+        "published_at_utc": "2026-07-20T07:50:15.000Z"
       },
       {
-        "title": "U.S. and Iran trade strikes for 9th day; Ansarallah announces Saudi blockade; House to vote on fusing elements of U.S., Israeli militaries - Drop Site News",
-        "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxNb3JDaU8xbk42NkI1ZFlodXRyYmlJZkM3Y1NLdFBjNGFLR2JibG03V3YxRmI4bW5GWHNYUDZMN2FQWFlrejNsX2xkeWtEcnV0aVd6VFNrWERNMXMwVG83WG1URC1rZ1JiV2RuVERMTG1DNDRIaWdINzFLWDdXN0dyUE1fa1o5cGY3R1NxRmwxWFZ3cW1EU0llUWln?oc=5",
-        "source": "Google News",
-        "published_at_utc": "2026-07-20T15:52:05.000Z"
+        "title": "Why is Iran bombing Gulf states while avoiding US naval assets and Israel?",
+        "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a5ec3387a95459f95a1efe6c8fca535&url=https%3a%2f%2fwww.msn.com%2fen-us%2fpolitics%2fgovernment%2fwhy-is-iran-bombing-gulf-states-while-avoiding-us-naval-assets-and-israel%2far-AA28hSiF&c=11222021234245197838&mkt=en-us",
+        "source": "Bing News",
+        "published_at_utc": "2026-07-20T04:35:02.000Z"
       },
       {
-        "title": "Pentagon ID's 2 U.S. soldiers killed in Iran strike on base in Jordan; 1 still missing - CBS News",
-        "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE14TjVrN1ZtOW1JOUExS0dfN2xxaHZneW1lN3g0dGp4Ql9MRUx3dVBzTlVkbVNvOVFnb19GR1hXNTFDSG5PbHBZdmJFdnd5NHpKTHpnV0JyUXBWeHVlOWNSel85LW9GdWt0eXFHM2doT2FfXzQ?oc=5",
-        "source": "Google News",
-        "published_at_utc": "2026-07-20T15:47:00.000Z"
+        "title": "The renewed US-Iran conflict is escalating and threatening to spin out of control",
+        "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a5ec3387a95459f95a1efe6c8fca535&url=https%3a%2f%2fwww.msn.com%2fen-us%2fnews%2fother%2fthe-renewed-us-iran-conflict-is-escalating-and-threatening-to-spin-out-of-control%2far-AA28g4RZ&c=14809991506538873993&mkt=en-us",
+        "source": "Bing News",
+        "published_at_utc": "2026-07-19T21:01:25.000Z"
       },
       {
-        "title": "US attacks deepen hardship, not dissent, in Iran's south - Dawn",
-        "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNcWlUMFE3MnpTV2R5NGVmVnQwY19DUDEtQU9Wc1ZKZUg3T21uS0NMYkNubDJYSTFabVItRFh1M094dzdmM2lUWmpreDNmRGN3aDB4R3laMkljMXJ4Z2pXOGV6anFMYTlsQVRLV0R0U1JqMXNBaFA1WmdMUTU2YndpMzRXeHVaZ0VRRlNrVElDSy0?oc=5",
-        "source": "Google News",
-        "published_at_utc": "2026-07-20T15:42:22.000Z"
+        "title": "Iran’s currency tumbles on renewed conflict",
+        "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a5ec3387a95459f95a1efe6c8fca535&url=https%3a%2f%2fwww.ft.com%2fcontent%2f3b659fcd-77ce-4e63-aa46-8cb648735f13%3fsyn-25a6b1a6%3d1&c=16445057275807803747&mkt=en-us",
+        "source": "Bing News",
+        "published_at_utc": "2026-07-19T21:00:00.000Z"
       },
       {
-        "title": "Expansion of U.S. strikes on Iran leads to more retaliation across Gulf - The Tribune-Democrat",
-        "url": "https://news.google.com/rss/articles/CBMi8wFBVV95cUxPRy1mQ012ZGtfX3RuRGxwVVNIbEJjd28zUjY4bXBURHFsd2JZdUdpWEZsVjdsb2t2MlNFaXViN0M5WWxFY21fNF9JYXRYMk9WMWZwX3pPZGRYYUgxV1RVU1U3Mmd2VzZqS2tXNFE4OUpCYmUtSy1tTTZzU3Y2dkJLY2VPQWlhMzNOeUs2cENYRThQckk5TXp3dzFFZXdMaHVMc0I3T2pzM0Z1S0dRMk03ZDVJeHdqNlI1WlFVOW0xZlZFNFBna2ZRVFpDRy1XdGRTcjdFd2lxaDRjQlplR3NlRk9mMXRZcGlESW5QcmxZUl9mc0k?oc=5",
-        "source": "Google News",
-        "published_at_utc": "2026-07-20T15:37:00.000Z"
+        "title": "Another U.S. Service Member Is Killed as Iran War Expands",
+        "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a5ec3387a95459f95a1efe6c8fca535&url=https%3a%2f%2fwww.nytimes.com%2flive%2f2026%2f07%2f19%2fworld%2firan-war-strikes-trump-hormuz&c=6646935477994720159&mkt=en-us",
+        "source": "Bing News",
+        "published_at_utc": "2026-07-19T14:37:00.000Z"
       },
       {
-        "title": "Iranian official reports US attack on Shiraz - Middle East Eye",
-        "url": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxQMDRyZ05tNnM2ck1kc2thOC1CaWlFbjM0QWZCb3hUaC1UWXlmMC15X3hVU0JTM01KMDZRME5CZGxOWVREWDJpQk5ZWkQwYXYtYkFGSHhON0ZfTmZFZ2lYM2xNNHN0YzNUVjNCSjRjN3dHWFJIS0N1cENPRy1ZN3QwMVRUQWtXQjF0NlpPQ2wtMDQ4X3p3ZHJCSVkwMnNITmlhdlRiWHBfSkxnbkVvaUlVdEVlYUtKdkJjaURkVU0xbnBidUJudWUxTzV1Q3hDY21mU1AxQkIwczdwWUtZVnpz?oc=5",
-        "source": "Google News",
-        "published_at_utc": "2026-07-20T15:34:00.000Z"
+        "title": "US-Iran War Live Updates: Tanker Struck in Strait of Hormuz as US and Iran Continue Trading Strikes",
+        "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a5ec3387a95459f95a1efe6c8fca535&url=https%3a%2f%2fwww.timesnownews.com%2fworld%2fmiddle-east%2fus-military-launches-new-strikes-on-strait-of-hormuz-iran-as-middle-east-tensions-escalate-liveblog-155136313&c=14832798359370735465&mkt=en-us",
+        "source": "Bing News",
+        "published_at_utc": "2026-07-19T14:16:00.000Z"
       },
       {
-        "title": "U.S. soldiers killed by Iran were from Texas, Hawaii, military says - The Tribune-Democrat",
-        "url": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxQZkxnZVpQVEUyMnh4Qkd3ajd2dXNzczdmRlJwZjJsbDV1MjZaM0d4ODBmODBPekNqRlhCcHBfMHo5NXBhN0Iyc2ZxaDk0eG80Ul9jeGZLbk1YYkFNOTJLZW8wcVVVemJsN0tRMXVTanQybHpHTGxPRHdmTlNKS0RhQm5OVk1pOWVkX2p5RjZ3ZzZ5NXd1UTVmR3lMRUNqQkE1VjJwV3FRRG5ZODVZWmZuUFpvVG5jbWF2MUFuSHVJM1NQTTlLWlV3S1lnN0FHeDE1WGtQWXRkc0tNN2xtdUlWb0VwSlhDcmpsYUo0?oc=5",
-        "source": "Google News",
-        "published_at_utc": "2026-07-20T15:31:00.000Z"
+        "title": "Iran US Israel War Highlights: Iran Hit Very Hard Tonight In Honour of American Soldiers Killed, Says Trump",
+        "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a5ec3387a95459f95a1efe6c8fca535&url=https%3a%2f%2fwww.timesnownews.com%2fworld%2fmiddle-east%2firan-us-israel-war-live-updates-trump-netanyahu-pezeshkian-middle-east-conflict-launch-strikes-latest-news-liveblog-155114805&c=16158979306012224421&mkt=en-us",
+        "source": "Bing News",
+        "published_at_utc": "2026-07-16T22:36:00.000Z"
       },
       {
-        "title": "Iran war: US conducts strikes for 9th night in a row - DW.com",
-        "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxOQi0zUlByVmtyRkFtTHBDM1BhNUt0eGNPVG5ocG5nOHRPUFpWcmZzVGxEeFN5XzdkZTNRSkVvclBnam1LdjZkSTF1VG93Zl9XdDIwRDdlcmpzRC0yQk9KTk5zYVg2VFNlSUlxMUh6elZCU0twZnV3ZUFLMU1sUTdxeHJmMjdGREd0RHIzLVR4WnY?oc=5",
-        "source": "Google News",
-        "published_at_utc": "2026-07-20T15:21:09.000Z"
-      },
-      {
-        "title": "Airstrike targets Iran Electronics Industries in Shiraz amid Israel-Iran conflict - Crypto Briefing",
-        "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPb3NzX3VsSUJDVWN4ejVWYWg5VG1tbG9LMmlXSGN3OTF2M1dPWWo1QVJyYm1sZVhtX3RsMDM5TGdwWTNmc0VzdGF4UmprV0tqM0RqcnpqVm5fY1M5anVJODlCNS1xOXNTd3JrNU95QUxFMTlFbmRDNFRYbjM3V3RlUXZjQmhuYUVVS2pVSThhTXh4dDBHT2gwQjB1cF9lUEQ3TXc?oc=5",
-        "source": "Google News",
-        "published_at_utc": "2026-07-20T15:17:21.000Z"
-      },
-      {
-        "title": "US-Israel-Iran War Latest News: Is It Safe to Travel to Jordan? UK Issues Fresh Travel Advice After Missiles Intercepted Near Aqaba - The Sunday Guardian",
-        "url": "https://news.google.com/rss/articles/CBMihAJBVV95cUxNT0JJRDhwM0E1NDg5ckdBM0Nzb3pydldjdTlOUXFoc2JZQmpvOHljaVJEWUpkOHBmYVlyT2lVWDk1a1NLVnRUdTNPNzdVbVo1ak5WeEFpMlRaempZOURkbUNtWkptaDNYdG15M2ZvalotYWJkRV9GMTBwUUF3UW5INzA3Yk9hMEx0ZEpZRGxjcUF2SlMtTmtVMG9VelRwdDNmS0owdk1TTUNPeUVGUzBFN1dwZE5sY1RUa2VtcXlPdFV0Wk5rRlhUMmQ5UElvZ1ZXekFLdmhGZDZyN2Q0MjFQZkNSbHBEa29wTy02YTZYYk1RVHZwT080RXJ1Q0h2YXE5ZW84VtIBigJBVV95cUxPZFhiTHNocU1rTGp6VFJrbmVzQVVEMGhVa0tyY3lBYk1vd1ZNQ1FVWG4xTFNiWm9HZXR3Z1ZQTGMzTng3TE5zT2N0MXlDYWZCOW5WVF9oNHRPMTRBSklkaEpYc3kwazl6Y1dhSFBzVmFJamx0NHBDMXBmejJEQnZScE1SbUhiRU9ncGxzbm1uYUprazd4MVRjR3dZYXFNbkxjdGx4anVseWY3VndLZ3hkdFFrSW9CT0o4bkpHMllhQVRsRjNsUmRxWDdyZXA0d3BHdlg5aU04WlVCcFZfNXhGRkIzRDBFOXZpYkdiMmFxWVByRFdnVXRMRlhNTDl1dHEwQTdoSVQyN01FUQ?oc=5",
-        "source": "Google News",
-        "published_at_utc": "2026-07-20T15:06:37.000Z"
-      },
-      {
-        "title": "Live Updates: Latest from Israel, Iran, and Middle East - The Jerusalem Post",
-        "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE1IeVlKQ0VCTXpWY1A2dGQ1NTBEM25mSzdFVlh5WlVMWDMzcTJPVVRXOXRqU0dLMWRVbHowNVY5aVBLUS1RWDdUUFBQbGlSdVpCZW5HV2lsOER3M1ZBUE5rSDZGM1Z0NnF1ZENQamZFMFRQQTNSakRxSl9qMGpUTkE?oc=5",
-        "source": "Google News",
-        "published_at_utc": "2026-07-20T15:00:05.000Z"
-      },
-      {
-        "title": "What are ‘civilian’ sites in international law and where have US, Iran hit? - Al Jazeera",
-        "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNaDd3cGpLc0JGVHNQSURkTTF2TTBfbDI3dXhQRDZNa1JPb0NzNUxtUkNsaUFuN1VPd1JWSkpSdU5QVXJqTThIaV9yX2pVZDByakE5bEtPa3RkQWFWdnI0QWhEX2dpUXEtZHR1c1loUGhnR2M2NTdaMURNOVpPOUFlZDBYakEzRzNhek1URzZYWlUwaHRRVTYwLTNmMHRuT0kyVUwwVENPQVVPaUQ0SkgzVjNB0gG3AUFVX3lxTFBHSmpQWEktVFk2NFExejVyTXZCNlRVOWtnZ08wWHluZVNRb0gxengxeXBMNDZzOFVYaEtZRm1MUWRLOUJZdXRnMm44RkNSZDNfUUFRU1h3eEVnSXhJdVlhR1ZON2tpWXBYUGx0ZmlDMWxDSXp6RW9xUzhNZUtsdlBfSDdZcDgteFJueWVZZlQwQVY2b1RxR3dIdFlsVjBnc2ZYcjZVS2RoVDUzLTVRd3htZk5XWjBXWQ?oc=5",
-        "source": "Google News",
-        "published_at_utc": "2026-07-20T14:40:05.000Z"
-      },
-      {
-        "title": "US, Iran widen attacks as Iran receives proposals from mediators - news.cgtn.com",
-        "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNN1h6Z1lrNjhqaGY1X3U5QW1JZEhGekEtc0lJeDN1S3ZrN2FYemQ5X29LQldpNm1ZazFuWGlJdDNCT3FxTzlPMlJWNkR1X3JlYzlKNWJITURxelFpbEhHcnRkVlZ4QmpIdm5ub29LZHotMm5GdUpaOVd3WXR3c0haUWVKRm9NMzNoQ3RpNm0teEpXb2ZJSWM3aHVTOFhEbDYtRDlJcE1DT2RNcWt1M3NOQktHdmYtejBQa0t6cA?oc=5",
-        "source": "Google News",
-        "published_at_utc": "2026-07-20T14:39:11.000Z"
-      },
-      {
-        "title": "Live Updates: War returns to Iran with Israel, US strikes - Dawn",
-        "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE4wWU1XcTJjVkhydDJ6REhTa1RGZHp5eHJhYXVpQlRoNndhUjBOamFNWlRERkdMYk53LWc4LVhDbktnSXZ3RkJyWmtEMEgycjRFNmJN?oc=5",
-        "source": "Google News",
-        "published_at_utc": "2026-07-20T14:37:56.000Z"
-      },
-      {
-        "title": "Expansion of US strikes on Iran leads to more retaliation across the Gulf - Ottumwa Courier",
-        "url": "https://news.google.com/rss/articles/CBMi_AFBVV95cUxNQ3c2anFZQkhoSWx5YmdyUFhQcUYyR1g3bWhKckFLWUwtOGpCVy1JNXcwMDJsUkZMMndrMk5RM2hET2VTSjViTDRMaFpDRTBHZzVtMlE5cTFuREZCVnJPUnR3Z24wa2M4c0pKUVZOdzZ5OVZzeUdrSmtBMDV3emRvcFdPZ3kwb3hFUTVaSmxlQlpkaHloLTRFSkMtLU9vT0x6RG53blR3TEVkZl93dVVVbXF1dTFIaEl2a3JiN3BBVXpja1gyRU96eGFuVC04WTBGbGhHX2Q4RjN4NUFlNTA4NHNxTVE0VXRUR3NsYUJhY1hyczQzUldSOGVBUDg?oc=5",
-        "source": "Google News",
-        "published_at_utc": "2026-07-20T14:37:21.000Z"
-      },
-      {
-        "title": "Pentagon identifies 2 US soldiers killed in weekend attack by Iran - New York Post",
-        "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOclJlRVZaR3BmZUJ3ZUg2bUgyZlN3ek9SMXJFbjl3cjRlLVpEOU9iMnVKV1pUSXRmay1jNDd1d1AtS1ZrYlljdGd4NnNtSTI3NWNfOGtVU3lLVUdjTzZmRTNzVGxHMHoyV0owdW5GeUdBaENWeEVEc0MxMmZ6UTdMQ1NvM0QzWGN1ZWhYOFpwcEZFcUx3THVzeDBlblJwS2RXcUY3N2lQWUNGRTdj?oc=5",
-        "source": "Google News",
-        "published_at_utc": "2026-07-20T14:36:20.000Z"
+        "title": "Iran says the initial deal to end the war with the US requires Israel to withdraw from Lebanon",
+        "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a5ec3387a95459f95a1efe6c8fca535&url=https%3a%2f%2fapnews.com%2farticle%2firan-us-war-israel-lebanon-oil-june-16-2026-d79458506c46e3f4a78aef0f9d8b9250&c=18335517222444576841&mkt=en-us",
+        "source": "Bing News",
+        "published_at_utc": "2026-06-16T00:43:00.000Z"
       }
     ],
-    "ukraine_2026": [
-      {
-        "title": "Four Indians killed in attack on ship leaving Ukraine’s Odesa, New Delhi says - CTV News",
-        "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxNU0R2YXF6ZGx2NEkwb3dqbWNaSUdjRXRFQnBhMHA4Skc2SUZsWVJCRHFMQ2lJaFYwUVpNd3R6M2ZnWEY0bE44OG5vbl9NeHpheVdJV0lWMXk5SlZBSHRCWE8wQ1dnc21fcmdnQVFNd1h5aVFKOVo1U0RNOWFiRTNpYkthSzhrcjVEaWZRc3RpOF9maGFVRmxMTzgwaEwtcHJvUlhYdm5faWdqc1M0V2xkTmNzc2lBcTFfajJIMVdqYXF2UDNTOEpiQkkxa2E?oc=5",
-        "source": "Google News",
-        "published_at_utc": "2026-07-20T16:42:24.000Z"
-      },
-      {
-        "title": "Ukraine Is Stockpiling Home-Built Interceptors to Down Russian Ballistic Missiles — a Task Experts Call 'the Champions League' - 19FortyFive",
-        "url": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxNeWM1Z2lYTi1SZFU5b1lJd3ZJNktCSUxGcEFhLU85enBYZE4yWGN3MUR4dkwyX0dZQVZCdWhWOTZxalcwd3JrWlZuMGVsUVMwaEpCNDhGRTZOZ3V2WFFlSFFkV185TnM2RzljbE02SUUydWlaN2VCOE1TX3QybWN5MkdmTFBQbEpXN3ZZaWZxSDNYT2NOeTNxTERheHhCNkJwX2NKak5rX2t4aFNBOEJteUROT2xXS3lDNkxFWlJRSkNydTZMeVZoZGdNdXBNLWhNallqX2lJaktUYUpZNzRUVEVBSjF6c3QyUTJQTmhnbUU?oc=5",
-        "source": "Google News",
-        "published_at_utc": "2026-07-20T16:33:31.000Z"
-      },
-      {
-        "title": "A peace settlement is needed for Ukraine, not endless war - Morning Star | The People’s Daily",
-        "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPbmJISHEtaUx1dE9CQ0x4OHpPV083QU5NMDN6OFk0c3Y4LVNUUHdBdmM1ZW1SYjMxNlpmZkE1YnVSc2pRcXYxWm1jaVNBOVNmTUxqTHFhYklra29GZ1pnaUVjd0M1M1h2SU5PUTBQNDc1T01VTE0wampWejB4eUp4b2plc2Z4NXFwcVBEb015bno?oc=5",
-        "source": "Google News",
-        "published_at_utc": "2026-07-20T16:26:44.000Z"
-      },
-      {
-        "title": "Game of drones: or has Ukraine really turned the tide? - Stop the War",
-        "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNaklDcDV6LVI0VDZ6ejlVVzR4RVhhWXNjMGg4YVlCWXA4VFIzZ2JOeFNzOVFyeXlsU09xZW5IV1A3VzZILW9YdWZ6RloyQ0MxcEZwVjJSNTlPMEpMX0FpV3NGdTBRa3dxZjRKT3Vrb1VRVVhPZl95aVZzOVZpTlpZdi1idGxiakdQTUh4ZG1xT3lYUQ?oc=5",
-        "source": "Google News",
-        "published_at_utc": "2026-07-20T16:18:05.000Z"
-      },
-      {
-        "title": "Ukraine Destroys Tor-M2 System, Hits Buk-M1 Units, and Five russian Radars in Coordinated Drone Strikes (Video) - Defense Express",
-        "url": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxNWk1UWXNJQl9LMmEzQURpUmxRckkyc3VCYk1QZnJyVHJ2TVJGM2JDZ0lyX1NNYndhbXJwZ3dDNzRSM1lhNEE0UkZ4XzRvNDBpWWduM0Rfc3hMYVd4RGVnS2xiTm9QZndtWDZVSFdrS0xubUYtQ3c3NHNnWl9OM1pZa0pjbFJPbmVMRWZRWWdCOERnZ1ZacjlKVlRjVWNlUW9zOE56djRIRUtMaDdURDRRb285U3F0LXhqUThqd1VfSWhreFg3UmZtbTZfOTYtM1Z0VWZKTE5mZzQwQVV2Ym5BQmZfQQ?oc=5",
-        "source": "Google News",
-        "published_at_utc": "2026-07-20T16:17:05.000Z"
-      },
-      {
-        "title": "Ukraine War, Day 1,608: Kyiv Strikes Near Moscow - EA WorldView",
-        "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE11V0cyWXpzejd6V3Q3aFY0S1dYZGozYmh3OUNFV0JqeVJkZVZka25GanlhUi1FdjZPLUxSQmFJVE5ndW5ZYm1DWHY1LU94STZvU3IwQ0x3NTBjYnVZRUE0YlVPclFxVVY0SVdNVy1sZjI1QQ?oc=5",
-        "source": "Google News",
-        "published_at_utc": "2026-07-20T15:15:25.000Z"
-      },
-      {
-        "title": "Russian missile strike kills 10 in Black Sea near Ukraine - CBC",
-        "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE1GTEdQa0gtWmp5MDQtWU5ycXhGUENiQTY0R3NBRnhMWGIyTXpHTjQyU3VGTndQNU80X3kyYXp2RXdidmR5QzN4VE84aDBXSm5BTW03czNPdGJpanFMOWdfbzlqcGtwUG94ckhpT08yM293N0J3UlE?oc=5",
-        "source": "Google News",
-        "published_at_utc": "2026-07-20T15:12:39.000Z"
-      },
-      {
-        "title": "ISW: Russia launched more ballistic missiles at Ukraine in July than it produces in month - Gwara Media",
-        "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOa0lwZ0prMTlUaW02US1ST1IyNEhzTVpIZkVUU3V3c0lxUkk1Y05EQWR2ZVdTQmNMdVJDMnFWZ1RHTVpNSE9EUU1hczk5dDlBRUx1RVM0NUxiWjA1alBaVF9XQ3Z1MUl2Z3BVdXBEWmI3WFFRZ0lEbGhxYnI1bThfLVdHbzdfdElaNmdaNUUzNE9PYTZxYjVteWtjbkVLUlU5aGpFZXlFWm1YeEtwOVNDS0VCaVpiZw?oc=5",
-        "source": "Google News",
-        "published_at_utc": "2026-07-20T14:46:04.000Z"
-      },
-      {
-        "title": "Ukraine Is Taking the War to Russia’s Logistics Network - UNITED24 Media",
-        "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOcFFHZlZZdXZTSWk3eWVPR2ZTMGQtSkJiYzFOdzBiT1dwUnpRemd4YTRRRkN5dFkwZTFWRWZ6UG1kbmRRVnFfbEo4VHZGbWRYUmMzMGlUeThIdWJhMEJPTkhpOVZ6UGc4Q1d1Q3NqZDZzLVVpbmlfRVFPQXRKLTcya2E1N09KLUlHc2VPQkVQR3gtSDdBUnVsTEdTWmcwaERMcDVn?oc=5",
-        "source": "Google News",
-        "published_at_utc": "2026-07-20T14:36:21.000Z"
-      },
-      {
-        "title": "ARTE Reportage - Ukraine: Civilians in Drone Hell - Watch the full documentary | ARTE in English - Arte.tv",
-        "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE9DQzZ6TVVCY3g5MnFXeXA3QzJSelBFRFR1V1RuNmFUaklNTld3LWNGXzJNbzVoQWdoQXBDZXpuSkFsN3VEZngzX3psZExQYnZTeWpHQ3lVV1NMM1ozZmg1dHU5aC1naDR1SkE?oc=5",
-        "source": "Google News",
-        "published_at_utc": "2026-07-20T14:31:45.000Z"
-      },
-      {
-        "title": "Ukraine Develops Firefly Guided Munition Ready for Serial Production - Odessa Journal",
-        "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOcHZtcHRZd2pCTmVBS2tiTW5lVnB5UE1EUFBHU3ZuTTAtWnBzVk1GbUlsZEd4RDBNQ3VhRG04djU5UkxESV9HZEJjSndvaWl2TFdNV21BY3A1VjVQTlpOZ2RCSFZ4eVE3aG42V1lIOWtiSWJCcGh3dWVscGM2T214allqU3FyTXBpbERjZ0w1V1ZCM09uTXRBS0NENFZRYVR3OU9oRVNVVkdwUQ?oc=5",
-        "source": "Google News",
-        "published_at_utc": "2026-07-20T14:26:23.000Z"
-      },
-      {
-        "title": "Russia spreads new fake to fuel tensions between Ukrainians and Poles - RBC-Ukraine",
-        "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxONTNiOTFSdUNNNUZpbFBpd3U0Vlk0N1M4N3VRSmc4VkFncjhRNFVET2U4N0Nxd0pieVdXT3hNSV9yM3NfUlNTRjdpZ1hOR0tVSGtRLXptWUlHRTFudVktZS11dzBPWF9kOUR5OHdXeVBVYUdocGM4Nm80QWRfMzhQNXNuT191QlJMX1J4R1V1OHdXQQ?oc=5",
-        "source": "Google News",
-        "published_at_utc": "2026-07-20T14:16:08.000Z"
-      },
-      {
-        "title": "Russian strike on grain ship could be deadliest of Ukraine war - TradeWinds News",
-        "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQMFpfajJ1d3FkUHJDN3BzXzJXbkN5Tkc0VlZRQVBMRzR3ZVRRa0FwMFBCVDFhODhTNWV3c2RFMGFTbjFzeWVUM29JRzBwNWI3T2VxajI2Rm15aVQ1OGdmV2VGallSd2xjQlVtZ1duWXMwNEw2SlpzTWN5U0t6M0M0aVNTN0UzaXVBRnh4OWlqQlVfMy1McHBjSHp0WktoT1J2dWU0T25HcHBLV0VYZTJycGhEMC1FdHM?oc=5",
-        "source": "Google News",
-        "published_at_utc": "2026-07-20T14:11:05.000Z"
-      },
-      {
-        "title": "Russia-Ukraine War: Ukraine blames Russia for deadly strike on Turkish cargo ship - WION",
-        "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPWFhrRERQLU1sZkVIaGhOdEVybkhZdnpfcXJsbWR4bkJ5b1kxV0l1TDBGQjNBYzRwNHVIZ1V5OERSYk1ndWUwQUt0TFluUWNWOWxKZjUzOXQ2QkRycG15UXh2dXNXb0ZXQ1lPRk5iUFludXBmTnJpdzZTR21taERVZHQ2cmRzWHZWVFlUX3lYVkxzSTVVekN6MnNNXzVYZmllY2V3Q21RLVd3Z0ZvOXpWdWJuRURZZlphWEFuXzBIamd2VVXSAcgBQVVfeXFMT2hkSDBRSWJyM3l4QjhjeDR6d3VZcGEtYXlHaVZuNFVzd2tyWnVhTjJrZFdFdmtJT0RKVHFMQXFLREVFZ2JLd0VOZUJhRDlMTURHbE9DbDVObGpQVmNzc1hQU0sydktIYmY0ZDUxTkdzWmRWNWJJaHJVT01sTTRIQkYzaFJsWUpRM3hJdzZrTHBGMWtLS2IwQlhrNkd1NTB2S1pkeWNvTUl4MzVyMjZDMXZWNFgtSDJmUlB1RXpvTi1ValA5aW53Rzg?oc=5",
-        "source": "Google News",
-        "published_at_utc": "2026-07-20T13:57:00.000Z"
-      },
-      {
-        "title": "Ukraine's weapons makers fear a costly slowdown after their tech champion was pushed out of the defense ministry - Business Insider",
-        "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQaVBIUkxYeG9KQzk3bFF0eHB1dDJiYk56U0dlV2FLejRXN1h4eEZsUGN4SWdRLU1BbERuR0dCYXptaF9fMENVSzkycFBZdHlsSkhYcVB1OXJOVVB6R3UxOEJLekFFa3dpV0RPY2tHcHJxNXJsbVRoVkRiRVUyemRHQXdrM0p6R1pfSGVpYjlSSENUb0t4ejBuRzVNM09JY0toQ2M2NGNTUDJaNjZSUnhV?oc=5",
-        "source": "Google News",
-        "published_at_utc": "2026-07-20T13:54:57.000Z"
-      },
-      {
-        "title": "Ukraine fires 400 drones toward Moscow as Zelenskyy grapples with protests - McAlester News-Capital",
-        "url": "https://news.google.com/rss/articles/CBMi8wFBVV95cUxPdm9TWXhQUmxLaHJtR3JibjJnYU5GanpaMDdPRmlVcTk0N0VCT2Q0OGxXb3pjS0owTlhScFkxNm9aQjgtcDVweFVKQzVKZVMzMUlzaW5pNktWeWNGbVlXeTdBVzRjMXdZUUU5LXk1dXFNd3NuZ2g5QVZKUmhmVWNjcXFwWGdLVGp5UmpsaTFpX0NnTTNXSHgtUUJIdHNtVjJrQVpWSng5ZmYtelZyWTJ5S1MwOGNqbHdVUnFDSFM3XzBzMTNuUWZoUW1YRkc0YXBVX2h5TkRHOG0zeUE3ZkxRR1JoQmoxRjR5RGUtSXVFV1pIRms?oc=5",
-        "source": "Google News",
-        "published_at_utc": "2026-07-20T13:44:58.000Z"
-      },
-      {
-        "title": "5 killed, 23 injured as alleged Ukrainian strike targets passenger bus in Russia's Belgorod region - Anadolu Ajansı",
-        "url": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxQTXplcW1yZmhRd2NDYVA1SWExb2NlSGh0ZzdFWDBsbXZkbnBCU2dOOHl2UE9BeW05b3B6bFpTN0dWTWRTNlc3RjZEMi1WZzVRLXpHeTdScUFjN1JXbzFya0hUR0xPcHl1TWVsRmN0ZFhiN29GZzRScmpVWVpKRXQyQVNXQkpfQlNkLUN2UHlObzRZcjc5WW94Uk4xbUZpNlhONmVPb2lkVFU1YWZDaDBnZHRqVlhzRmJMTVRJbFRseWNTVGdLdmF6NTdud2Y3cDY3SXVCNWEyNjBVOVE4RThwYmlR?oc=5",
-        "source": "Google News",
-        "published_at_utc": "2026-07-20T13:44:45.000Z"
-      },
-      {
-        "title": "Ukraine’s command debate intensifies as Zelenskyy consults top battlefield leaders - The New Voice of Ukraine",
-        "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOLUx4MlVXYnV2ZGhZT0dvaGJtRlE2SlNkbUd5VEFCUWJ5SWdnRkhuSGZSZjFNTU5uZDlsNTJIUzJRYTE0ZDgxRjQ0QXR5TG40T3QwNDk3NHktUThRME9hYW5qSUpuSlMwYzlsZ1E0d3lOWFNNd2ttSEVXY0tzRFpGSzA1MGMzajdKcFBKOTNmWEVnQkN3NEV3ci1pWFdoNnVDNExDT0FjdVBzbEs1STZB?oc=5",
-        "source": "Google News",
-        "published_at_utc": "2026-07-20T13:42:00.000Z"
-      },
-      {
-        "title": "Ukraine War Momentum Helps Spur Interest in Postwar Investment - The New York Times",
-        "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPMm82SkViLVk1bzJtY1NZM1dxeUV6ZV9BMmV1Nl9tQl9vMS1HNWI0T3JhQ0VYQXNrOVpuYmZHMVRFeU9Jb0FjblJCbkV2TGVTLUF6VHRFQl9fTVk4d1VMUkt0NmRNZ3hvbjFLaHpGU1BwYWFNcHl6Z3o4NS05QS1tSnZHRmFncFlLdVJhdg?oc=5",
-        "source": "Google News",
-        "published_at_utc": "2026-07-20T13:37:51.000Z"
-      },
-      {
-        "title": "Ukraine fires 400 drones toward Moscow as Zelenskyy grapples with protests - The Hindu",
-        "url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxOd0pSQmxSWHB3R00zaWNYNTJxaHJhYnNySVAtSWY0cTFOa1pvRXBNTHlaaGtxelhkRXBRSWFRSkxqTU96MUNlWUlQRjFUQ0FRaTFuQW0zMWVqbTc5bzYwSjVrOEpWRGlRMDdCZkV3RGNMWjBVbzRIS0JRemJrRVFQNG92a29SSmU1Q1lfaWJjby0tRmhHa1BCTER2bHlJb2N6TFNfYXc3LVN4RGdYdFFmTzIxY3kycWtNUVh6QlBtbWl4Q0VTUGlmTHFDcmJIdVFFd21jSkxyMmwzaDjSAdsBQVVfeXFMTndKUkJsUlhwd0dNM2ljWDUycWhyYWJzcklQLUlmNHExTmtab0VwTUx5WmhrcXpYZEVwUUlhUUpMak1PejFDZVlJUEYxVENBUWkxbkFtMzFlam03OW82MEo1azhKVkRpUTA3QmZFd0RjTFowVW80SEtCUXpia0VRUDRvdmtvUkplNUNZX2liY28tLUZoR2tQQkxEdmx5SW9jekxTX2F3Ny1TeERnWHRRZk8yMWN5MnFrTVFYekJQbW1peENFU1BpZkxxQ3JiSHVRRXdtY0pMcjJsM2g4?oc=5",
-        "source": "Google News",
-        "published_at_utc": "2026-07-20T13:24:07.000Z"
-      }
-    ]
+    "ukraine_2026": []
   }
 }
