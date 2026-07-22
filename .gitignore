@@ -1,6 +1,8 @@
 node_modules/
 .DS_Store
 AGENTS.md*
+.agents-profile
+.agents-type
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
