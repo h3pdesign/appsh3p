@@ -54,7 +54,7 @@ features:
 <h2 id="whats-new-week">what's new this week</h2>
 
 <div class="startpage-weekly-strip" aria-label="What's new this week">
-  <a href="/apps/neon-vision-editor/changelog"><strong data-date="2026-07-21">Jul 21, 2026</strong>: Neon Vision Editor v0.9.2 release notes and docs refresh</a>
+  <a href="/apps/neon-vision-editor/changelog"><strong data-date="2026-07-21">Jul 21, 2026</strong>: Neon Vision Editor v0.9.3 release notes and docs refresh</a>
   <a href="/apps/lingua-latina/overview"><strong data-date="2026-05-14">May 14, 2026</strong>: Lingua Latina 1.0.0 local app data and docs refreshed</a>
   <a href="/apps/metric-data/overview"><strong data-date="2026-05-09">May 9, 2026</strong>: Metrics Data 0.2.3 dashboard and OAuth scope data synced</a>
   <a href="/apps/vistral/overview"><strong data-date="2026-05-09">May 9, 2026</strong>: Vistral 0.1.6 multi-platform app data synced</a>
@@ -66,11 +66,11 @@ features:
       <img src="/icons/neon-vision-editor.png?v=20260401-2" alt="" aria-hidden="true" loading="lazy" decoding="async" />
       <strong>Neon</strong>
     </div>
-    <span>v0.9.2</span>
+    <span>v0.9.3</span>
     <span data-date="2026-07-21">Jul 21, 2026</span>
     <span>macOS, iPadOS, iOS</span>
     <a href="/apps/neon-vision-editor/changelog">Source: changelog</a>
-    <a href="https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v0.9.2" target="_blank" rel="noreferrer noopener">Source: GitHub release</a>
+    <a href="https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v0.9.3" target="_blank" rel="noreferrer noopener">Source: GitHub release</a>
   </article>
   <article class="startpage-release-item release-metric">
     <div class="startpage-release-head">

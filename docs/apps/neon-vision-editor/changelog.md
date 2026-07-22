@@ -12,15 +12,17 @@ head:
 
 _Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on July 21, 2026._
 
-## v0.9.2 (published July 21, 2026)
+## v0.9.3 (published July 21, 2026)
 
-Release link: [GitHub Release v0.9.2](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v0.9.2)
+Release link: [GitHub Release v0.9.3](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v0.9.3)
 
-- Makes macOS editor scrolling responsive again by removing unnecessary TextKit layout and display work from ordinary scroll updates.
-- Keeps editor display refreshes focused on actual geometry changes, preserving reliable text rendering after tab and Markdown preview changes.
-- Retains the existing per-tab cursor, viewport, minimap, and iPad keyboard-restoration behavior from v0.9.1.
-- Avoids forcing full TextKit layout while publishing minimap viewport updates during macOS scrolling.
-- Avoids invalidating the editor display on every scroll-position change while continuing to refresh after size changes and document installation.
+- Fixes macOS wrapped source text being clipped at the preview boundary after tab, sidebar, or preview changes.
+- Restores native AppKit source-pane reflow without horizontal movement while Line Wrap is enabled.
+- Removes updater code paths that produced unreachable-code diagnostics in current Xcode builds.
+- Wrapped macOS editors now let TextKit follow the width allocated by the SwiftUI split layout.
+- Removes transition-time text-view width and frame overrides that could retain a stale source-pane width.
+- Keeps Sparkle isolated to macOS while preserving the non-macOS updater branch.
+- Updates the macOS wrap regression test to verify native viewport width tracking instead of forced document geometry.
 
 ## v0.4.22 (published February 16, 2026)
 
