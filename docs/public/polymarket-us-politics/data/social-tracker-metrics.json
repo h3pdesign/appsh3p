@@ -1,5 +1,5 @@
 {
-  "updated_at_utc": "2026-07-22T09:14:12.185Z",
+  "updated_at_utc": "2026-07-22T16:53:27.510Z",
   "source_name": "Wikimedia Pageviews API",
   "source_url": "https://wikitech.wikimedia.org/wiki/Analytics/AQS/Pageviews",
   "metrics": [
@@ -16,7 +16,7 @@
       "source_window_end": "20260721",
       "fallback_days": 0,
       "is_fallback": false,
-      "as_of_utc": "2026-07-22T09:14:12.185Z"
+      "as_of_utc": "2026-07-22T16:53:27.510Z"
     },
     {
       "id": "elon_attention_7d",
@@ -31,22 +31,22 @@
       "source_window_end": "20260721",
       "fallback_days": 0,
       "is_fallback": false,
-      "as_of_utc": "2026-07-22T09:14:12.185Z"
+      "as_of_utc": "2026-07-22T16:53:27.510Z"
     },
     {
       "id": "trump_attention_7d",
       "label": "Donald Trump Attention (7D)",
-      "value": 260308,
+      "value": 257073,
       "unit": "views",
       "window_days": 7,
       "scope": "Latest available 7-day aggregate Wikimedia pageviews for Donald Trump",
       "source_name": "Wikimedia Pageviews API",
       "source_url": "https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article/en.wikipedia.org/all-access/user/Donald_Trump/daily",
-      "source_window_start": "20260714",
-      "source_window_end": "20260720",
-      "fallback_days": 1,
-      "is_fallback": true,
-      "as_of_utc": "2026-07-22T09:14:12.185Z"
+      "source_window_start": "20260715",
+      "source_window_end": "20260721",
+      "fallback_days": 0,
+      "is_fallback": false,
+      "as_of_utc": "2026-07-22T16:53:27.510Z"
     }
   ]
 }
