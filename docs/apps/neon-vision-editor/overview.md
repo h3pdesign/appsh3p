@@ -8,7 +8,7 @@ head:
       content: https://apps-h3p.com/media/neon/neon-vision-banner.jpg
   - - script
     - type: application/ld+json
-    - '{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://apps-h3p.com/#organization","name":"H3P","url":"https://apps-h3p.com","sameAs":["https://github.com/h3pdesign"]},{"@type":"SoftwareApplication","@id":"https://apps-h3p.com/apps/neon-vision-editor/overview#app","name":"Neon Vision Editor","applicationCategory":"DeveloperApplication","operatingSystem":"macOS, iPadOS, iOS","url":"https://apps-h3p.com/apps/neon-vision-editor/overview","downloadUrl":"https://apps.apple.com/de/app/neon-vision-editor/id6758950965","softwareVersion":"0.9.4","isAccessibleForFree":true,"publisher":{"@id":"https://apps-h3p.com/#organization"}}]}'
+    - '{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://apps-h3p.com/#organization","name":"H3P","url":"https://apps-h3p.com","sameAs":["https://github.com/h3pdesign"]},{"@type":"SoftwareApplication","@id":"https://apps-h3p.com/apps/neon-vision-editor/overview#app","name":"Neon Vision Editor","applicationCategory":"DeveloperApplication","operatingSystem":"macOS, iPadOS, iOS, visionOS","url":"https://apps-h3p.com/apps/neon-vision-editor/overview","downloadUrl":"https://apps.apple.com/de/app/neon-vision-editor/id6758950965","softwareVersion":"0.9.4","isAccessibleForFree":true,"publisher":{"@id":"https://apps-h3p.com/#organization"}}]}'
 ---
 
 # Neon Vision Editor
@@ -21,11 +21,12 @@ head:
   <span>macOS</span>
   <span>iPadOS</span>
   <span>iOS</span>
+  <span>visionOS</span>
 </div>
 
 <div class="overview-mini-stats overview-reveal" aria-label="app stats">
   <div><span>latest version</span><strong>v0.9.4</strong></div>
-  <div><span>platforms</span><strong>macOS / iPadOS / iOS</strong></div>
+  <div><span>platforms</span><strong>macOS / iPadOS / iOS / visionOS</strong></div>
   <div><span>repo status</span><strong>public</strong></div>
 </div>
 <figure class="overview-banner overview-neon-banner overview-reveal">
@@ -33,7 +34,7 @@ head:
 </figure>
 <div class="overview-hero overview-app-neon overview-reveal">
   <div class="overview-hero-copy">
-    <p>Neon Vision Editor is a lightweight, modern editor focused on speed, readability, and automatic syntax highlighting.</p>
+    <p>Neon Vision Editor is a native editor for markdown, notes, and code across Apple platforms, focused on fast file access, readable text, syntax highlighting, and a minimal editing surface.</p>
   </div>
   <div class="overview-hero-media">
     <img src="/icons/neon-vision-editor.png?v=20260401-2" alt="Neon Vision Editor icon" class="overview-app-icon" />
@@ -50,6 +51,7 @@ head:
 - [TestFlight](https://testflight.apple.com/join/YWB2fGAP)
 - [GitHub](https://github.com/h3pdesign/Neon-Vision-Editor)
 - [Latest GitHub Release (v0.9.4)](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v0.9.4)
+- [Homebrew Cask](https://github.com/Homebrew/homebrew-cask/blob/HEAD/Casks/n/neon-vision-editor.rb)
 - [Code Examples](/apps/code-examples)
 
 <a href="https://www.producthunt.com/products/neon-vision-editor?embed=true&utm_source=badge-featured&utm_medium=badge&utm_campaign=badge-neon-vision-editor" target="_blank" rel="noopener noreferrer" aria-label="Neon Vision Editor on Product Hunt">
@@ -61,13 +63,14 @@ head:
 
 ## Application Purpose
 
-Neon Vision Editor is a native writing and coding editor for Apple platforms. Its purpose is to provide a fast, distraction-light editing environment with syntax highlighting, optional AI assistance, and consistent behavior across macOS, iPadOS, and iOS.
+Neon Vision Editor is a native writing and coding editor for Apple platforms. Its purpose is to provide a fast, distraction-light editing environment with syntax highlighting, optional AI assistance, shared-file refresh for open tabs, and consistent behavior across macOS, iPadOS, iOS, and visionOS.
 
 Primary user outcomes:
 
 - create and edit plain text, markdown, and code with low-latency input handling
 - review and organize content in focused document workflows
-- maintain consistent editing behavior across desktop and mobile devices
+- maintain consistent editing behavior across desktop, mobile, and spatial devices
+- keep clean open tabs current when iCloud Drive, network folders, or another app delivers external file changes
 
 ## GitHub Snapshot (live)
 
@@ -82,6 +85,9 @@ Live repository metrics (auto-updated by GitHub):
 - macOS
 - iPadOS
 - iOS
+- visionOS
+
+Direct GitHub releases currently track v0.9.4. App Store and TestFlight availability can vary by platform and review state.
 
 ## Why It Exists
 
@@ -99,9 +105,9 @@ This started as a personal project to build a writing tool that feels:
 Neon Vision Editor keeps the interface out of your way so writing stays central.
 
 - AI is optional and on-demand.
-- No forced accounts.
-- No tracking circus.
-- No subscription maze.
+- Shared storage remains the transport for file sync; Neon observes open files and protects dirty buffers instead of uploading document contents to its own service.
+- Git, terminal, and SSH-hosted Remote Sessions are macOS-owned workflows; iPhone, iPad, and visionOS attach as clients where supported.
+- No forced accounts, telemetry, or subscription maze.
 
 ## Development Approach
 

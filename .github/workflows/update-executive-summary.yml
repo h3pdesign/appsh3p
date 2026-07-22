@@ -1,9 +1,9 @@
-name: Update Executive Summary Daily
+name: Update Executive Summary Monthly
 
 on:
   schedule:
-    # Run at 04:00 and 05:00 UTC; script applies only at 06:00 Europe/Berlin.
-    - cron: '0 4,5 * * *'
+    # Run monthly at 04:00 UTC.
+    - cron: '0 4 1 * *'
   workflow_dispatch:
 
 permissions:

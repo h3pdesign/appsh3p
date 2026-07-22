@@ -16,7 +16,7 @@ After building, breaking, refactoring, redesigning, and fixing edge cases late a
 
 ## What Shipped
 
-- Neon Vision Editor for macOS, iPadOS, and iOS
+- Neon Vision Editor for macOS, iPadOS, iOS, and visionOS
 - Unified design language and behavior across all devices
 - Native performance and interface quality
 
@@ -27,6 +27,7 @@ Context switching is real.
 - Start on Mac.
 - Continue on iPad.
 - Edit on iPhone.
+- Review on Apple Vision Pro.
 
 The goal was one coherent product feel, not three disconnected UX systems.
 

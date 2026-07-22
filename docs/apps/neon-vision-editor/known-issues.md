@@ -28,6 +28,8 @@ Workaround:
 
 Behavior in [TestFlight](https://testflight.apple.com/join/YWB2fGAP) can differ from [App Store](https://apps.apple.com/de/app/neon-vision-editor/id6758950965) while fixes are being validated.
 
+The direct GitHub macOS release can also be ahead of App Store listings. As of the current README, GitHub Releases track v0.9.4 while public App Store listings vary by platform.
+
 Workaround:
 
 - confirm issue on latest stable build before reporting
@@ -35,12 +37,26 @@ Workaround:
 
 ## Very Large File Workloads
 
-Extremely large files may require additional processing time during syntax classification.
+Large files use bounded editor modes. Files below 100 MB remain editable, while files at 100 MB or more open as a clearly marked, read-only partial preview of the first 4 MB.
 
 Workaround:
 
 - split very large files into smaller modules where practical
-- reopen app after long editing sessions if memory pressure appears
+- use the partial preview for inspection instead of saving over the original source
+- use Plain Text mode for unusually large editable documents when styling is not needed
+
+## External File Refresh Conflicts
+
+When iCloud Drive, a network folder, or another app changes an open file, clean tabs can refresh automatically. Dirty tabs are not replaced automatically.
+
+Workaround:
+
+- choose Keep Local, Reload from Disk, or Compare when a dirty tab needs review
+- save or discard local edits before expecting external changes to refresh in place
+
+## Desktop-Only Workflows
+
+Git, the PTY terminal, and SSH-hosted Remote Sessions are macOS-owned workflows. iPhone, iPad, and visionOS can remain editor, preview, and supported Remote Session client surfaces.
 
 ## Related Pages
 

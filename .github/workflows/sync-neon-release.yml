@@ -12,7 +12,7 @@ on:
         required: false
         default: ""
   schedule:
-    - cron: "17 0,8,16 * * *"
+    - cron: "17 0 * * *"
   repository_dispatch:
     types:
       - neon_release_published
