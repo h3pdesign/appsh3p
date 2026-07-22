@@ -41,6 +41,16 @@ head:
     <div class="overview-shot-frame">
       <img src="/media/neon/neon-vision-editor.png" alt="Neon Vision Editor screenshot" class="overview-app-shot overview-app-shot-clean" />
     </div>
+    <div class="overview-download-badges overview-download-badges-hero" aria-label="Download Neon Vision Editor">
+      <a class="overview-download-badge overview-download-appstore" href="https://apps.apple.com/de/app/neon-vision-editor/id6758950965" target="_blank" rel="noreferrer noopener">
+        <span>Download: </span>
+        <strong>App Store</strong>
+      </a>
+      <a class="overview-download-badge overview-download-github" href="https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v0.9.4" target="_blank" rel="noreferrer noopener">
+        <span>Download: </span>
+        <strong>GitHub v0.9.4</strong>
+      </a>
+    </div>
   </div>
 </div>
 
@@ -53,17 +63,6 @@ head:
 - [Latest GitHub Release (v0.9.4)](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v0.9.4)
 - [Homebrew Cask](https://github.com/Homebrew/homebrew-cask/blob/HEAD/Casks/n/neon-vision-editor.rb)
 - [Code Examples](/apps/code-examples)
-
-<div class="overview-download-badges" aria-label="Download Neon Vision Editor">
-  <a class="overview-download-badge overview-download-appstore" href="https://apps.apple.com/de/app/neon-vision-editor/id6758950965" target="_blank" rel="noreferrer noopener">
-    <span>Download: </span>
-    <strong>App Store</strong>
-  </a>
-  <a class="overview-download-badge overview-download-github" href="https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v0.9.4" target="_blank" rel="noreferrer noopener">
-    <span>Download: </span>
-    <strong>GitHub v0.9.4</strong>
-  </a>
-</div>
 
 <a href="https://www.producthunt.com/products/neon-vision-editor?embed=true&utm_source=badge-featured&utm_medium=badge&utm_campaign=badge-neon-vision-editor" target="_blank" rel="noopener noreferrer" aria-label="Neon Vision Editor on Product Hunt">
   <picture>

@@ -693,6 +693,12 @@ body {
   margin: 14px 0 20px;
 }
 
+.overview-download-badges-hero {
+  justify-content: center;
+  width: 100%;
+  margin: 16px auto 0;
+}
+
 .overview-download-badge,
 .overview-live-metric {
   display: inline-flex;
@@ -706,6 +712,13 @@ body {
   color: var(--vp-c-text-1);
   text-decoration: none;
   line-height: 1.1;
+}
+
+.overview-download-badges-hero .overview-download-badge {
+  min-height: 42px;
+  padding: 10px 14px;
+  border-width: 1.5px;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.1);
 }
 
 .overview-download-badge:hover,
@@ -728,6 +741,10 @@ body {
 .overview-live-metric strong {
   font-size: 13px;
   font-weight: 800;
+}
+
+.overview-download-badges-hero .overview-download-badge strong {
+  font-size: 14px;
 }
 
 .overview-download-appstore {
