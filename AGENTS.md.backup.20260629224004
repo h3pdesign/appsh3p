@@ -1,0 +1,85 @@
+# AGENTS.md
+
+Project instructions for Codex.
+
+Goal: ship small, safe, verifiable web changes without wasting tokens or damaging working code.
+
+## Default response style
+
+- Be concise.
+- Do not repeat the request.
+- Do not explain obvious framework concepts.
+- Do not describe unchanged files.
+- Avoid long plans for trivial fixes.
+- Prefer edits over explanations.
+
+## Think before coding
+
+Inspect only relevant files and identify the actual problem. Do not guess framework, routing, state management, deployment, or API behavior.
+
+Before opening more files, ask:
+
+```text
+Do I already have enough information to implement this safely?
+```
+
+## Minimal change rule
+
+Change only what is required. Do not refactor unrelated code, rewrite components cosmetically, add speculative abstractions, move files, or create new files unless clearly required.
+
+Prefer existing components, utilities, and styles.
+
+## Web safety
+
+Do not expose secrets to client code. Do not weaken auth, CSP, validation, privacy, or permissions. Validate input at boundaries. Avoid telemetry unless explicitly requested.
+
+## Verification levels
+
+Run one verification pass after all requested changes are complete.
+
+- Level 0: docs/comments/markdown/text-only, no build.
+- Level 1: targeted component, route, or utility check.
+- Level 2: project check for shared components, routing, dependencies, config, types, build behavior, or deployment behavior.
+- Level 3: deployment/release check.
+
+Examples:
+
+```bash
+npm run typecheck
+npm run lint
+npm run build
+npm test
+```
+
+## Verification output
+
+Include Verification Level, what was verified, result or skipped reason, and risk.
+
+Do not say "should work".
+
+## Performance
+
+Avoid unnecessary client bundle growth, repeated network calls, expensive client-side work, and avoidable re-renders.
+
+## Dependencies
+
+Do not add packages unless clearly necessary.
+
+## Response modes
+
+BUGFIX: Root cause, Patch summary, Verification, Risk.
+
+FEATURE: Problem, Solution, Patch summary, Verification, Impact.
+
+<!-- PROJECT-SPECIFIC START -->
+# appsh3p Profile
+
+Project-specific additions:
+
+- Central web project and project documentation hub.
+- Treat project documentation here as source-of-truth for public descriptions.
+- Prefer static generation where practical.
+- Keep client-side JavaScript minimal.
+- Do not expose secrets to client code.
+- Preserve existing routes, metadata, privacy policy, analytics, and deployment behavior.
+<!-- PROJECT-SPECIFIC END -->
