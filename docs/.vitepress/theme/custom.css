@@ -696,7 +696,8 @@ body {
 .overview-download-badges-hero {
   justify-content: center;
   width: 100%;
-  margin: 16px auto 0;
+  gap: 12px;
+  margin: 20px auto 4px;
 }
 
 .overview-download-badge,
@@ -715,10 +716,10 @@ body {
 }
 
 .overview-download-badges-hero .overview-download-badge {
-  min-height: 42px;
-  padding: 10px 14px;
+  min-height: 48px;
+  padding: 12px 18px;
   border-width: 1.5px;
-  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.1);
+  box-shadow: 0 14px 30px rgba(15, 23, 42, 0.14);
 }
 
 .overview-download-badge:hover,
@@ -744,7 +745,7 @@ body {
 }
 
 .overview-download-badges-hero .overview-download-badge strong {
-  font-size: 14px;
+  font-size: 15px;
 }
 
 .overview-download-appstore {
@@ -753,6 +754,21 @@ body {
 
 .overview-download-github {
   border-color: rgba(143, 77, 255, 0.42);
+}
+
+.overview-download-badges-hero .overview-download-appstore {
+  border-color: #111827;
+  background: #111827;
+  color: #fff;
+}
+
+.overview-download-badges-hero .overview-download-appstore span {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.overview-download-badges-hero .overview-download-github {
+  border-color: rgba(143, 77, 255, 0.58);
+  background: color-mix(in srgb, #8f4dff 14%, var(--vp-c-bg) 86%);
 }
 
 /* Per-app gradient frames behind overview screenshots */
