@@ -1153,6 +1153,48 @@ function setupOverviewReveal() {
   targets.forEach((el) => revealObserver?.observe(el))
 }
 
+function formatGitHubCount(value: unknown) {
+  if (typeof value !== 'number' || !Number.isFinite(value)) return 'GitHub'
+  return new Intl.NumberFormat('en', { notation: value >= 1000 ? 'compact' : 'standard' }).format(value)
+}
+
+function formatGitHubDate(value: unknown) {
+  if (typeof value !== 'string') return 'GitHub'
+  const date = new Date(value)
+  if (Number.isNaN(date.getTime())) return 'GitHub'
+  return new Intl.DateTimeFormat('en', { month: 'short', day: 'numeric' }).format(date)
+}
+
+async function setupGitHubSnapshotMetrics() {
+  const container = document.querySelector<HTMLElement>('.overview-live-metrics[data-github-repo]')
+  const repo = container?.dataset.githubRepo
+  if (!container || !repo) return
+  if (typeof window.fetch !== 'function') return
+
+  try {
+    const res = await window.fetch(`https://api.github.com/repos/${repo}`, {
+      headers: { Accept: 'application/vnd.github+json' }
+    })
+    if (!res.ok) return
+    const data = await res.json()
+    const values: Record<string, string> = {
+      stars: formatGitHubCount(data.stargazers_count),
+      forks: formatGitHubCount(data.forks_count),
+      issues: formatGitHubCount(data.open_issues_count),
+      pushed: formatGitHubDate(data.pushed_at),
+      language: typeof data.language === 'string' ? data.language : 'GitHub',
+      branch: typeof data.default_branch === 'string' ? data.default_branch : 'main'
+    }
+
+    Object.entries(values).forEach(([key, value]) => {
+      const target = container.querySelector<HTMLElement>(`[data-github-metric="${key}"] strong`)
+      if (target) target.textContent = value
+    })
+  } catch {
+    // keep readable fallback labels
+  }
+}
+
 function backToTop() {
   window.scrollTo({ top: 0, behavior: 'smooth' })
 }
@@ -1173,6 +1215,7 @@ async function applyPageEnhancements() {
   linkHomeHeroBadge()
   ensureHomeWidgets()
   setupOverviewReveal()
+  await setupGitHubSnapshotMetrics()
   setupAsideProgress()
   setupDocStats()
   setupHeadingTools()

@@ -54,6 +54,17 @@ head:
 - [Homebrew Cask](https://github.com/Homebrew/homebrew-cask/blob/HEAD/Casks/n/neon-vision-editor.rb)
 - [Code Examples](/apps/code-examples)
 
+<div class="overview-download-badges" aria-label="Download Neon Vision Editor">
+  <a class="overview-download-badge overview-download-appstore" href="https://apps.apple.com/de/app/neon-vision-editor/id6758950965" target="_blank" rel="noreferrer noopener">
+    <span>Download: </span>
+    <strong>App Store</strong>
+  </a>
+  <a class="overview-download-badge overview-download-github" href="https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v0.9.4" target="_blank" rel="noreferrer noopener">
+    <span>Download: </span>
+    <strong>GitHub v0.9.4</strong>
+  </a>
+</div>
+
 <a href="https://www.producthunt.com/products/neon-vision-editor?embed=true&utm_source=badge-featured&utm_medium=badge&utm_campaign=badge-neon-vision-editor" target="_blank" rel="noopener noreferrer" aria-label="Neon Vision Editor on Product Hunt">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1079678&theme=dark&t=1772536380711" />
@@ -76,9 +87,32 @@ Primary user outcomes:
 
 Live repository metrics (auto-updated by GitHub):
 
-- ![GitHub stars](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.github.com%2Frepos%2Fh3pdesign%2FNeon-Vision-Editor&query=%24.stargazers_count&label=stars&style=flat-square) ![GitHub forks](https://img.shields.io/github/forks/h3pdesign/Neon-Vision-Editor?style=flat-square) ![GitHub open issues](https://img.shields.io/github/issues/h3pdesign/Neon-Vision-Editor?style=flat-square)
-- ![GitHub last commit](https://img.shields.io/github/last-commit/h3pdesign/Neon-Vision-Editor?style=flat-square) ![GitHub primary language](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.github.com%2Frepos%2Fh3pdesign%2FNeon-Vision-Editor&query=%24.language&label=language&style=flat-square)
-- Default branch: `main`
+<div class="overview-live-metrics" data-github-repo="h3pdesign/Neon-Vision-Editor" aria-label="Live GitHub repository metrics">
+  <a class="overview-live-metric" href="https://github.com/h3pdesign/Neon-Vision-Editor/stargazers" target="_blank" rel="noreferrer noopener" data-github-metric="stars">
+    <span>Stars: </span>
+    <strong>GitHub</strong>
+  </a>
+  <a class="overview-live-metric" href="https://github.com/h3pdesign/Neon-Vision-Editor/forks" target="_blank" rel="noreferrer noopener" data-github-metric="forks">
+    <span>Forks: </span>
+    <strong>GitHub</strong>
+  </a>
+  <a class="overview-live-metric" href="https://github.com/h3pdesign/Neon-Vision-Editor/issues" target="_blank" rel="noreferrer noopener" data-github-metric="issues">
+    <span>Open issues: </span>
+    <strong>GitHub</strong>
+  </a>
+  <a class="overview-live-metric" href="https://github.com/h3pdesign/Neon-Vision-Editor/commits/main" target="_blank" rel="noreferrer noopener" data-github-metric="pushed">
+    <span>Last commit: </span>
+    <strong>GitHub</strong>
+  </a>
+  <a class="overview-live-metric" href="https://github.com/h3pdesign/Neon-Vision-Editor/search?l=swift" target="_blank" rel="noreferrer noopener" data-github-metric="language">
+    <span>Language: </span>
+    <strong>Swift</strong>
+  </a>
+  <a class="overview-live-metric" href="https://github.com/h3pdesign/Neon-Vision-Editor/tree/main" target="_blank" rel="noreferrer noopener" data-github-metric="branch">
+    <span>Default branch: </span>
+    <strong>main</strong>
+  </a>
+</div>
 
 ## Platform Availability
 

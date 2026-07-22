@@ -685,6 +685,59 @@ body {
   letter-spacing: 0.02em;
 }
 
+.overview-download-badges,
+.overview-live-metrics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 14px 0 20px;
+}
+
+.overview-download-badge,
+.overview-live-metric {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  min-height: 34px;
+  padding: 7px 11px;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 8px;
+  background: var(--h3p-feature-bg);
+  color: var(--vp-c-text-1);
+  text-decoration: none;
+  line-height: 1.1;
+}
+
+.overview-download-badge:hover,
+.overview-live-metric:hover {
+  border-color: var(--vp-c-brand-1);
+  color: var(--vp-c-brand-1);
+  text-decoration: none;
+}
+
+.overview-download-badge span,
+.overview-live-metric span {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--vp-c-text-2);
+}
+
+.overview-download-badge strong,
+.overview-live-metric strong {
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.overview-download-appstore {
+  border-color: rgba(10, 132, 255, 0.42);
+}
+
+.overview-download-github {
+  border-color: rgba(143, 77, 255, 0.42);
+}
+
 /* Per-app gradient frames behind overview screenshots */
 .overview-hero {
   --overview-grad-a: #4a78ff;
