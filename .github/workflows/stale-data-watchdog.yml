@@ -60,6 +60,12 @@ jobs:
         if: steps.stale_check.outcome == 'failure'
         run: sleep 120
 
+      - name: Refresh checkout before re-check
+        if: steps.stale_check.outcome == 'failure'
+        run: |
+          REF_NAME="${GITHUB_REF_NAME:-main}"
+          git pull --ff-only origin "$REF_NAME"
+
       - name: Re-check freshness after refresh trigger
         id: stale_recheck
         if: steps.stale_check.outcome == 'failure'
