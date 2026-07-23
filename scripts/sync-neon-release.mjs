@@ -22,6 +22,11 @@ const APPS = {
       out = out.replace(/(<p class="overview-last-updated">Last updated: )[^<]+(<\/p>)/, `$1${rel.publishedLong}$2`)
       out = out.replace(/(<div><span>latest version<\/span><strong>)v\d+\.\d+\.\d+(<\/strong><\/div>)/, `$1${rel.tag}$2`)
       out = out.replace(/\[Latest GitHub Release \(v\d+\.\d+\.\d+\)\]\(https:\/\/github.com\/h3pdesign\/Neon-Vision-Editor\/releases\/tag\/v\d+\.\d+\.\d+\)/, `[Latest GitHub Release (${rel.tag})](${rel.url})`)
+      out = out.replace(
+        /(<a class="overview-download-badge overview-download-github" href=")https:\/\/github.com\/h3pdesign\/Neon-Vision-Editor\/releases\/tag\/v\d+\.\d+\.\d+("[^>]*>[\s\S]*?<strong>)GitHub v\d+\.\d+\.\d+(<\/strong>)/,
+        `$1${rel.url}$2GitHub ${rel.tag}$3`
+      )
+      out = out.replace(/Direct GitHub releases currently track v\d+\.\d+\.\d+\./, `Direct GitHub releases currently track ${rel.tag}.`)
       out = out.replace(/("softwareVersion":")\d+\.\d+\.\d+(")/, `$1${rel.tag.replace(/^v/, '')}$2`)
       return out
     },

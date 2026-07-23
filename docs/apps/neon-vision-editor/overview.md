@@ -46,9 +46,9 @@ head:
         <span>Download: </span>
         <strong>App Store</strong>
       </a>
-      <a class="overview-download-badge overview-download-github" href="https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v0.9.4" target="_blank" rel="noreferrer noopener">
+      <a class="overview-download-badge overview-download-github" href="https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v0.9.6" target="_blank" rel="noreferrer noopener">
         <span>Download: </span>
-        <strong>GitHub v0.9.4</strong>
+        <strong>GitHub v0.9.6</strong>
       </a>
     </div>
   </div>
@@ -120,7 +120,7 @@ Live repository metrics (auto-updated by GitHub):
 - iOS
 - visionOS
 
-Direct GitHub releases currently track v0.9.4. App Store and TestFlight availability can vary by platform and review state.
+Direct GitHub releases currently track v0.9.6. App Store and TestFlight availability can vary by platform and review state.
 
 ## Why It Exists
 
