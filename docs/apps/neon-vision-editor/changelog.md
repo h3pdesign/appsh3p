@@ -10,21 +10,17 @@ head:
 
 # Neon Vision Editor Changelog
 
-_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on July 22, 2026._
+_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on July 23, 2026._
 
-## v0.9.5 (published July 22, 2026)
+## v0.9.6 (published July 23, 2026)
 
-Release link: [GitHub Release v0.9.5](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v0.9.5)
+Release link: [GitHub Release v0.9.6](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v0.9.6)
 
-- Converts plain text to a reviewable, source-preserving Markdown proposal using Apple Intelligence or an explicitly configured AI provider, with cancellation and a 30-second safety limit.
-- Makes text encoding a deliberate document setting: detect, reopen, and save UTF-8/BOM, UTF-16, common Windows, ISO, and Mac encodings without silently changing the file format.
-- Polishes the editor across windows and devices with independent window state, natural-language completion for Markdown and text, and clearer Markdown and snapshot workflows.
-- Adds the focused Welcome Tour and professional What’s New page, including shared-file sync guidance, essential editor setup, and expandable advanced settings.
-- Adds a compact Code Snapshot workspace with adaptive, full-image previews on iPhone and iPad, translucent surfaces, and explicit `.png` export names.
-- Makes Markdown formatting controls stay below document tabs and within the editor pane, while preserving preview and sidebar boundaries.
-- Keeps separate editor windows independent so cursor, selection, tabs, and document state do not follow activity in another window.
-- Completes a window close after choosing Don’t Save, preserves restored macOS window sizes, and keeps text selection usable after switching tabs.
-- Improves HTML highlighting on supported macOS versions and hardens Markdown conversion feedback when Apple Intelligence or a configured provider is unavailable, slow, or returns an invalid response.
+- Restores each macOS editor window at its own last-used size and position without briefly showing the smaller fallback window first.
+- Makes the larger first-launch window size a fallback only; once you resize a window, that exact visible frame is retained for the next launch.
+- When several editor windows were open, macOS now restores their individual frames after you choose whether to reopen all windows or only the first.
+- Saves editor-window frames directly from AppKit move and resize notifications instead of relying on a replaceable SwiftUI window delegate.
+- Ignores frames that no longer intersect an attached display, so a disconnected monitor cannot reopen the editor off-screen.
 
 ## v0.4.22 (published February 16, 2026)
 
