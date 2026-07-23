@@ -38,8 +38,16 @@ head:
   </div>
   <div class="overview-hero-media">
     <img src="/icons/neon-vision-editor.png?v=20260401-2" alt="Neon Vision Editor icon" class="overview-app-icon" />
-    <div class="overview-shot-frame">
-      <img src="/media/neon/neon-vision-editor.png" alt="Neon Vision Editor screenshot" class="overview-app-shot overview-app-shot-clean" />
+    <div class="overview-screenshot-gallery" aria-label="Neon Vision Editor screenshots">
+      <div class="overview-shot-frame overview-shot-frame-compact">
+        <img src="/media/neon/neon-vision-editor-light.png" alt="Neon Vision Editor in the light theme" class="overview-app-shot overview-app-shot-clean overview-app-shot-compact" />
+      </div>
+      <div class="overview-shot-frame">
+        <img src="/media/neon/neon-vision-editor.png" alt="Neon Vision Editor with syntax highlighting, minimap, and project sidebar" class="overview-app-shot overview-app-shot-clean" />
+      </div>
+      <div class="overview-shot-frame">
+        <img src="/media/neon/neon-vision-editor-markdown-preview.png" alt="Neon Vision Editor with Markdown preview and project sidebar" class="overview-app-shot overview-app-shot-clean" />
+      </div>
     </div>
     <div class="overview-download-badges overview-download-badges-hero" aria-label="Download Neon Vision Editor">
       <a class="overview-download-badge overview-download-appstore" href="https://apps.apple.com/de/app/neon-vision-editor/id6758950965" target="_blank" rel="noreferrer noopener">
