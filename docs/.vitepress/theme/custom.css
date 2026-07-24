@@ -806,7 +806,7 @@ body {
   width: 100%;
   border: 0;
   border-radius: 18px;
-  background: var(--vp-c-bg);
+  background: transparent;
   box-shadow: 0 16px 38px color-mix(in srgb, var(--vp-c-text-1) 12%, transparent);
 }
 
@@ -3695,11 +3695,16 @@ html.h3p-app-doc-route .h3p-doc-top-navs {
   transform: translateY(-1px);
 }
 
-html.h3p-app-doc-route .h3p-app-switcher,
-html.h3p-app-doc-route .h3p-doc-jump-rail {
+html.h3p-app-doc-route .h3p-app-switcher {
   border-color: color-mix(in srgb, var(--app-accent) 18%, var(--vp-c-divider));
   background: color-mix(in srgb, var(--vp-c-bg-soft) 82%, transparent);
   box-shadow: 0 10px 30px color-mix(in srgb, var(--vp-c-text-1) 5%, transparent);
+}
+
+html.h3p-app-doc-route .h3p-doc-jump-rail {
+  border: 0;
+  background: transparent;
+  box-shadow: none;
 }
 
 html.h3p-app-doc-route .h3p-app-switcher a.active {
@@ -3851,17 +3856,33 @@ html.h3p-app-doc-route .overview-shot-frame .overview-app-shot {
   border-radius: 22px;
 }
 
-html.h3p-app-doc-route .overview-download-badge,
+html.h3p-app-doc-route .vp-doc img[alt*="screenshot"],
+html.h3p-app-doc-route .overview-shot-frame .overview-app-shot {
+  background: transparent;
+}
+
+html.h3p-app-doc-route .vp-doc a.overview-download-badge {
+  text-decoration: none;
+}
+
+html.h3p-app-doc-route .overview-download-badge:not(.overview-download-appstore),
 html.h3p-app-doc-route .overview-live-metric {
   border-radius: 14px;
   border-color: color-mix(in srgb, var(--app-accent) 22%, var(--vp-c-divider));
   background: color-mix(in srgb, var(--vp-c-bg-soft) 88%, transparent);
 }
 
-html.h3p-app-doc-route .overview-download-badge:hover,
+html.h3p-app-doc-route .overview-download-badge:not(.overview-download-appstore):hover,
 html.h3p-app-doc-route .overview-live-metric:hover {
   border-color: var(--app-accent);
   box-shadow: 0 12px 28px color-mix(in srgb, var(--app-accent) 16%, transparent);
+}
+
+html.h3p-app-doc-route .overview-download-badges-hero .overview-download-appstore,
+html.h3p-app-doc-route .overview-download-badges-hero .overview-download-appstore:hover {
+  border-color: #111827;
+  background: #111827;
+  color: #fff;
 }
 
 /* Apps hub hero and app catalogue. */
