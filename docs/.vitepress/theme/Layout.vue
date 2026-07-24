@@ -24,6 +24,64 @@ type DocJumpLink = {
   link: string
 }
 
+type AppIdentity = {
+  name: string
+  category: string
+  description: string
+  icon: string
+}
+
+const appIdentityBySlug: Record<string, AppIdentity> = {
+  'neon-vision-editor': {
+    name: 'Neon Vision Editor',
+    category: 'Native text, Markdown, and code editor',
+    description: 'A focused editor for real files across Apple platforms.',
+    icon: '/icons/neon-vision-editor.png?v=20260401-2'
+  },
+  'metric-data': {
+    name: 'Metrics Data',
+    category: 'Private analytics workspace',
+    description: 'Focused AdSense reporting with secure, account-owned access.',
+    icon: '/icons/metric-data.png?v=20260430-1'
+  },
+  'x-newsbook': {
+    name: 'X-Newsbook',
+    category: 'Reading and news library',
+    description: 'A calm, reading-first home for feeds, saved stories, and context.',
+    icon: '/icons/x-newsbook.png?v=20260430-1'
+  },
+  'release-assistant': {
+    name: 'Release Assistant',
+    category: 'Release operations',
+    description: 'Guarded release workflows with clear checks and audit-ready output.',
+    icon: '/icons/release-assistant.png?v=20260430-1'
+  },
+  'image-sorter': {
+    name: 'Image Sorter',
+    category: 'Visual asset workflow',
+    description: 'A deliberate queue for organizing, naming, and processing images.',
+    icon: '/icons/image-sorter.png?v=20260302-1'
+  },
+  'vistral': {
+    name: 'Vistral',
+    category: 'Personal data visualization',
+    description: 'Private, explainable dashboards for the data you choose to explore.',
+    icon: '/icons/vistral.png?v=20260430-1'
+  },
+  'history-vision': {
+    name: 'History Vision',
+    category: 'History and timelines',
+    description: 'Source-aware stories, timelines, and visual comparisons.',
+    icon: '/icons/history-vision.png?v=20260430-1'
+  },
+  'lingua-latina': {
+    name: 'Lingua Latina',
+    category: 'Latin language study',
+    description: 'Dictionary, morphology, grammar, and vocabulary in one native study space.',
+    icon: '/icons/lingua-latina.png?v=20260430-1'
+  }
+}
+
 const headingCount = ref(0)
 const readingMinutes = ref(1)
 const heroFxEnabled = ref(true)
@@ -33,6 +91,25 @@ const readingModeEnabled = ref(false)
 const appSlug = computed(() => {
   const match = route.path.match(/^\/apps\/([^/]+)/)
   return match ? match[1] : ''
+})
+
+const currentAppIdentity = computed(() => appIdentityBySlug[appSlug.value] || null)
+
+const currentAppSection = computed(() => {
+  const section = route.path.split('/').filter(Boolean).at(-1) || 'overview'
+  const sectionNames: Record<string, string> = {
+    overview: 'Overview',
+    'components-overview': 'Components',
+    'launch-story': 'Launch Story',
+    installation: 'Installation',
+    features: 'Features',
+    gallery: 'Gallery',
+    changelog: 'Changelog',
+    'known-issues': 'Known Issues',
+    faq: 'FAQ',
+    'privacy-policy': 'Privacy'
+  }
+  return sectionNames[section] || 'Documentation'
 })
 
 const isAppsRoute = computed(() => route.path.startsWith('/apps/'))
@@ -294,14 +371,19 @@ function setupDocStats() {
 
 function applyAppThemeClass() {
   const root = document.documentElement
-  root.classList.remove('app-theme-neon', 'app-theme-metric', 'app-theme-release')
-  if (appSlug.value === 'neon-vision-editor') root.classList.add('app-theme-neon')
-  if (appSlug.value === 'metric-data') root.classList.add('app-theme-metric')
-  if (appSlug.value === 'x-newsbook') root.classList.add('app-theme-release')
-  if (appSlug.value === 'release-assistant') root.classList.add('app-theme-release')
-  if (appSlug.value === 'image-sorter') root.classList.add('app-theme-release')
-  if (appSlug.value === 'vistral') root.classList.add('app-theme-metric')
-  if (appSlug.value === 'history-vision') root.classList.add('app-theme-neon')
+  const appThemeClasses = Object.keys(appIdentityBySlug).map((slug) => `app-theme-${slug}`)
+  root.classList.remove(
+    'h3p-apps-index-route',
+    'h3p-app-doc-route',
+    'app-theme-neon',
+    'app-theme-metric',
+    'app-theme-release',
+    ...appThemeClasses
+  )
+  if (isAppsIndexRoute.value) root.classList.add('h3p-apps-index-route')
+  if (isAppDocPage.value && currentAppIdentity.value) {
+    root.classList.add('h3p-app-doc-route', `app-theme-${appSlug.value}`)
+  }
 }
 
 function parseDateFromChangelog(text: string): Date | null {
@@ -1308,6 +1390,27 @@ onBeforeUnmount(() => {
 
     <template #doc-top>
       <div v-if="isAppDocPage || appDocTopLinks.length > 0" class="h3p-doc-top-navs">
+        <section
+          v-if="isAppDocPage && currentAppIdentity"
+          class="h3p-app-identity"
+          :aria-label="`${currentAppIdentity.name} documentation`"
+        >
+          <a class="h3p-app-identity-icon" :href="`/apps/${appSlug}/overview`" aria-label="Open app overview">
+            <img :src="currentAppIdentity.icon" alt="" />
+          </a>
+          <div class="h3p-app-identity-copy">
+            <div class="h3p-app-identity-kicker">
+              <span>{{ currentAppIdentity.category }}</span>
+              <span aria-hidden="true">·</span>
+              <strong>{{ currentAppSection }}</strong>
+            </div>
+            <p class="h3p-app-identity-name">{{ currentAppIdentity.name }}</p>
+            <p class="h3p-app-identity-description">{{ currentAppIdentity.description }}</p>
+          </div>
+          <a class="h3p-app-identity-link" :href="`/apps/${appSlug}/overview`">
+            App overview <span aria-hidden="true">→</span>
+          </a>
+        </section>
         <nav v-if="isAppDocPage" class="h3p-app-switcher" aria-label="App switcher">
           <a v-for="item in topSwitcherLinks" :key="item.key" :href="item.link" :class="{ active: activeSwitcher(item.key) }">{{ item.text }}</a>
         </nav>

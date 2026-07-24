@@ -1,7 +1,11 @@
 # All Apps
 
 <div class="apps-top-row">
-  <p class="apps-intro">This is the central documentation hub for all H3P apps.</p>
+  <div class="apps-index-intro-copy">
+    <p class="apps-index-eyebrow">App library</p>
+    <p class="apps-intro">Explore eight focused apps, each with a clear purpose, platform story, and complete documentation path.</p>
+    <p class="apps-intro-note">Choose an app to see its overview, features, installation guidance, gallery, release history, and support resources.</p>
+  </div>
   <div class="apps-avatar-card">
     <img src="/brand/avatar.png" alt="H3P avatar" class="apps-avatar" />
     <div class="apps-avatar-meta">
@@ -30,10 +34,10 @@
   <div class="apps-release-item metric"><span class="name">Metrics Data</span><span class="tag">0.2.3</span><span class="date">2026-05-09</span></div>
   <div class="apps-release-item newsbook"><span class="name">X-Newsbook</span><span class="tag">10</span><span class="date">2026-02-13</span></div>
   <div class="apps-release-item release"><span class="name">Release Assistant</span><span class="tag">0.2.0</span><span class="date">2026-05-06</span></div>
-  <div class="apps-release-item release"><span class="name">Image Sorter</span><span class="tag">0.1</span><span class="date">2026-04-30</span></div>
-  <div class="apps-release-item metric"><span class="name">Vistral</span><span class="tag">0.1.6</span><span class="date">2026-05-09</span></div>
-  <div class="apps-release-item newsbook"><span class="name">History Vision</span><span class="tag">1.0</span><span class="date">2026-04-30</span></div>
-  <div class="apps-release-item newsbook"><span class="name">Lingua Latina</span><span class="tag">1.0.0</span><span class="date">2026-05-14</span></div>
+  <div class="apps-release-item sorter"><span class="name">Image Sorter</span><span class="tag">0.1</span><span class="date">2026-04-30</span></div>
+  <div class="apps-release-item vistral"><span class="name">Vistral</span><span class="tag">0.1.6</span><span class="date">2026-05-09</span></div>
+  <div class="apps-release-item history"><span class="name">History Vision</span><span class="tag">1.0</span><span class="date">2026-04-30</span></div>
+  <div class="apps-release-item lingua"><span class="name">Lingua Latina</span><span class="tag">1.0.0</span><span class="date">2026-05-14</span></div>
 </div>
 
 <div class="apps-carousel" aria-label="Featured screenshots carousel">
@@ -168,7 +172,7 @@
     </div>
   </article>
 
-  <article class="app-card app-card-release" data-changelog="/apps/image-sorter/changelog" data-status="private" data-platforms="macos">
+  <article class="app-card app-card-sorter" data-changelog="/apps/image-sorter/changelog" data-status="private" data-platforms="macos">
     <img src="/icons/image-sorter.png?v=20260302-1" alt="Image Sorter icon" class="app-icon" />
     <div class="app-card-content">
       <h3 class="app-title-row"><a class="app-title-link" href="/apps/image-sorter/overview">Image Sorter</a><span class="app-status app-status-private">Private beta</span></h3>
@@ -188,7 +192,7 @@
     </div>
   </article>
 
-  <article class="app-card app-card-metric" data-changelog="/apps/vistral/changelog" data-status="private" data-platforms="macos,ipados,ios,tvos,watchos,visionos">
+  <article class="app-card app-card-vistral" data-changelog="/apps/vistral/changelog" data-status="private" data-platforms="macos,ipados,ios,tvos,watchos,visionos">
     <img src="/icons/vistral.png?v=20260430-1" alt="Vistral icon" class="app-icon" />
     <div class="app-card-content">
       <h3 class="app-title-row"><a class="app-title-link" href="/apps/vistral/overview">Vistral</a><span class="app-status app-status-private">Private beta</span></h3>
@@ -208,7 +212,7 @@
     </div>
   </article>
 
-  <article class="app-card app-card-newsbook" data-changelog="/apps/history-vision/changelog" data-status="private" data-platforms="macos,ipados,ios">
+  <article class="app-card app-card-history" data-changelog="/apps/history-vision/changelog" data-status="private" data-platforms="macos,ipados,ios">
     <img src="/icons/history-vision.png?v=20260430-1" alt="History Vision icon" class="app-icon" />
     <div class="app-card-content">
       <h3 class="app-title-row"><a class="app-title-link" href="/apps/history-vision/overview">History Vision</a><span class="app-status app-status-private">Private beta</span></h3>
@@ -228,7 +232,7 @@
     </div>
   </article>
 
-  <article class="app-card app-card-newsbook" data-changelog="/apps/lingua-latina/changelog" data-status="private" data-platforms="macos,ipados,ios">
+  <article class="app-card app-card-lingua" data-changelog="/apps/lingua-latina/changelog" data-status="private" data-platforms="macos,ipados,ios">
     <img src="/icons/lingua-latina.png?v=20260430-1" alt="Lingua Latina icon" class="app-icon" />
     <div class="app-card-content">
       <h3 class="app-title-row"><a class="app-title-link" href="/apps/lingua-latina/overview">Lingua Latina</a><span class="app-status app-status-private">Private beta</span></h3>
