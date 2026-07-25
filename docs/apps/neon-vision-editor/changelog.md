@@ -10,17 +10,18 @@ head:
 
 # Neon Vision Editor Changelog
 
-_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on July 23, 2026._
+_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on July 24, 2026._
 
-## v0.9.6 (published July 23, 2026)
+## v0.9.7 (published July 24, 2026)
 
-Release link: [GitHub Release v0.9.6](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v0.9.6)
+Release link: [GitHub Release v0.9.7](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v0.9.7)
 
-- Restores each macOS editor window at its own last-used size and position without briefly showing the smaller fallback window first.
-- Makes the larger first-launch window size a fallback only; once you resize a window, that exact visible frame is retained for the next launch.
-- When several editor windows were open, macOS now restores their individual frames after you choose whether to reopen all windows or only the first.
-- Saves editor-window frames directly from AppKit move and resize notifications instead of relying on a replaceable SwiftUI window delegate.
-- Ignores frames that no longer intersect an attached display, so a disconnected monitor cannot reopen the editor off-screen.
+- Makes macOS document opening, session restoration, preview changes, and external refreshes safer on current macOS releases by avoiding synchronous TextKit and AppKit layout work during a document transition.
+- Preserves the editor context after a document transition—line numbers, minimap, caret position, scroll position, and visible source—without asking AppKit to lay out the editor while it is already tracking a layout pass.
+- Coalesces the final editor refresh into one post-layout operation, keeping document changes responsive while the source pane, preview, sidebar, line numbers, and minimap settle together.
+- Prevents the macOS AppKit layout-observation crash reported during document installation and restoration on macOS 27 beta.
+- Cancels stale display refresh work from an earlier document transition so it cannot update the active editor after a newer document has taken its place.
+- Aligns the macOS Settings content translucency with the editor's chrome-and-pane surface composition, keeping controls readable in every translucency mode.
 
 ## v0.4.22 (published February 16, 2026)
 
