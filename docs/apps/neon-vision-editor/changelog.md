@@ -10,18 +10,22 @@ head:
 
 # Neon Vision Editor Changelog
 
-_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on July 24, 2026._
+_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on July 25, 2026._
 
-## v0.9.7 (published July 24, 2026)
+## v0.9.8 (published July 25, 2026)
 
-Release link: [GitHub Release v0.9.7](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v0.9.7)
+Release link: [GitHub Release v0.9.8](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v0.9.8)
 
-- Makes macOS document opening, session restoration, preview changes, and external refreshes safer on current macOS releases by avoiding synchronous TextKit and AppKit layout work during a document transition.
-- Preserves the editor context after a document transition—line numbers, minimap, caret position, scroll position, and visible source—without asking AppKit to lay out the editor while it is already tracking a layout pass.
-- Coalesces the final editor refresh into one post-layout operation, keeping document changes responsive while the source pane, preview, sidebar, line numbers, and minimap settle together.
-- Prevents the macOS AppKit layout-observation crash reported during document installation and restoration on macOS 27 beta.
-- Cancels stale display refresh work from an earlier document transition so it cannot update the active editor after a newer document has taken its place.
-- Aligns the macOS Settings content translucency with the editor's chrome-and-pane surface composition, keeping controls readable in every translucency mode.
+- Makes advanced editing workflows dependable again across document sizes: syntax highlighting, previews, the minimap, the table of contents, and project navigation now remain available together without persistent oversized scrollbars.
+- Turns external-change and text-encoding status into actionable controls, with recent sync activity, timestamps, encoding, byte-order-mark, and line-ending choices available directly from the status bar.
+- Replaces placeholder starter snippets with a shared catalog of practical, language-specific templates that can be customized once and used consistently from the editor and Settings.
+- Adds stronger code-editing assistance with completion controls, built-in snippets, automatic bracket, quote, tag, and Markdown-list continuation, expanded theme customization, and clearer keyboard-driven actions.
+- Expands Markdown conversion into a source-preserving review flow for selections or complete documents, including emphasis, links, autolinks, tables, cancellation, malformed-output handling, and multilingual or large input.
+- Makes encoding changes explicit and recoverable with immediate Save Using transcoding, BOM-aware session persistence, and Save, Compare, or Cancel choices when an externally changed document still has local edits.
+- Shows Markdown table-of-contents hierarchy through indentation and typographic weight instead of source-level `#` prefixes.
+- Restores timely HTML syntax highlighting on macOS Sequoia and keeps viewport-based highlighting responsive for large HTML documents.
+- Restores Markdown, HTML, and SVG preview availability together with reliable minimap and table-of-contents updates after document, tab, toolbar, and sidebar transitions.
+- Uses the same thin, automatically fading overlay scrollbars in the editor, previews, table of contents, and project sidebar on macOS.
 
 ## v0.4.22 (published February 16, 2026)
 

@@ -8,14 +8,14 @@ head:
       content: https://apps-h3p.com/media/neon/neon-vision-banner.jpg
   - - script
     - type: application/ld+json
-    - '{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://apps-h3p.com/#organization","name":"H3P","url":"https://apps-h3p.com","sameAs":["https://github.com/h3pdesign"]},{"@type":"SoftwareApplication","@id":"https://apps-h3p.com/apps/neon-vision-editor/overview#app","name":"Neon Vision Editor","applicationCategory":"DeveloperApplication","operatingSystem":"macOS, iPadOS, iOS, visionOS","url":"https://apps-h3p.com/apps/neon-vision-editor/overview","downloadUrl":"https://apps.apple.com/de/app/neon-vision-editor/id6758950965","softwareVersion":"0.9.7","isAccessibleForFree":true,"publisher":{"@id":"https://apps-h3p.com/#organization"}}]}'
+    - '{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://apps-h3p.com/#organization","name":"H3P","url":"https://apps-h3p.com","sameAs":["https://github.com/h3pdesign"]},{"@type":"SoftwareApplication","@id":"https://apps-h3p.com/apps/neon-vision-editor/overview#app","name":"Neon Vision Editor","applicationCategory":"DeveloperApplication","operatingSystem":"macOS, iPadOS, iOS, visionOS","url":"https://apps-h3p.com/apps/neon-vision-editor/overview","downloadUrl":"https://apps.apple.com/de/app/neon-vision-editor/id6758950965","softwareVersion":"0.9.8","isAccessibleForFree":true,"publisher":{"@id":"https://apps-h3p.com/#organization"}}]}'
 ---
 
 # Neon Vision Editor
 
 <div class="overview-status-pill overview-status-release">Status: Public release</div>
 
-<p class="overview-last-updated">Last updated: <span data-date="2026-07-24">July 24, 2026</span></p>
+<p class="overview-last-updated">Last updated: <span data-date="2026-07-25">July 25, 2026</span></p>
 
 <div class="overview-platform-badges overview-reveal" aria-label="supported platforms">
   <span>macOS</span>
@@ -25,7 +25,7 @@ head:
 </div>
 
 <div class="overview-mini-stats overview-reveal" aria-label="app stats">
-  <div><span>latest version</span><strong>v0.9.7</strong></div>
+  <div><span>latest version</span><strong>v0.9.8</strong></div>
   <div><span>platforms</span><strong>macOS / iPadOS / iOS / visionOS</strong></div>
   <div><span>repo status</span><strong>public</strong></div>
 </div>
@@ -54,9 +54,9 @@ head:
         <span>Download: </span>
         <strong>App Store</strong>
       </a>
-      <a class="overview-download-badge overview-download-github" href="https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v0.9.7" target="_blank" rel="noreferrer noopener">
+      <a class="overview-download-badge overview-download-github" href="https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v0.9.8" target="_blank" rel="noreferrer noopener">
         <span>Download: </span>
-        <strong>GitHub v0.9.7</strong>
+        <strong>GitHub v0.9.8</strong>
       </a>
     </div>
   </div>
@@ -68,7 +68,7 @@ head:
 - [App Clip](/apps/neon-vision-editor/app-clip)
 - [TestFlight](https://testflight.apple.com/join/YWB2fGAP)
 - [GitHub](https://github.com/h3pdesign/Neon-Vision-Editor)
-- [Latest GitHub Release (v0.9.7)](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v0.9.7)
+- [Latest GitHub Release (v0.9.8)](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v0.9.8)
 - [Homebrew Cask](https://github.com/Homebrew/homebrew-cask/blob/HEAD/Casks/n/neon-vision-editor.rb)
 - [Code Examples](/apps/code-examples)
 
@@ -128,7 +128,7 @@ Live repository metrics (auto-updated by GitHub):
 - iOS
 - visionOS
 
-Direct GitHub releases currently track v0.9.7. App Store and TestFlight availability can vary by platform and review state.
+Direct GitHub releases currently track v0.9.8. App Store and TestFlight availability can vary by platform and review state.
 
 ## Why It Exists
 
