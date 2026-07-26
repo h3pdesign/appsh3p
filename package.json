@@ -9,7 +9,8 @@
     "docs:preview": "vitepress preview docs",
     "docs:sync-neon-release": "node scripts/sync-neon-release.mjs",
     "docs:sync-release": "node scripts/sync-neon-release.mjs",
-    "docs:perf-budget": "node scripts/check-performance-budget.mjs"
+    "docs:perf-budget": "node scripts/check-performance-budget.mjs",
+    "docs:validate-catalog": "node scripts/validate-app-catalog.mjs"
   },
   "devDependencies": {
     "vitepress": "^1.6.4"

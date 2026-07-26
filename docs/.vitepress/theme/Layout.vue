@@ -2,6 +2,7 @@
 import { computed, nextTick, onBeforeUnmount, onMounted, ref, watch } from 'vue'
 import { useRoute } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
+import { appCatalogBySlug } from '../data/apps'
 
 const { Layout } = DefaultTheme
 const route = useRoute()
@@ -24,64 +25,6 @@ type DocJumpLink = {
   link: string
 }
 
-type AppIdentity = {
-  name: string
-  category: string
-  description: string
-  icon: string
-}
-
-const appIdentityBySlug: Record<string, AppIdentity> = {
-  'neon-vision-editor': {
-    name: 'Neon Vision Editor',
-    category: 'Native text, Markdown, and code editor',
-    description: 'A focused editor for real files across Apple platforms.',
-    icon: '/icons/neon-vision-editor.png?v=20260401-2'
-  },
-  'metric-data': {
-    name: 'Metrics Data',
-    category: 'Private analytics workspace',
-    description: 'Focused AdSense reporting with secure, account-owned access.',
-    icon: '/icons/metric-data.png?v=20260430-1'
-  },
-  'x-newsbook': {
-    name: 'X-Newsbook',
-    category: 'Reading and news library',
-    description: 'A calm, reading-first home for feeds, saved stories, and context.',
-    icon: '/icons/x-newsbook.png?v=20260430-1'
-  },
-  'release-assistant': {
-    name: 'Release Assistant',
-    category: 'Release operations',
-    description: 'Guarded release workflows with clear checks and audit-ready output.',
-    icon: '/icons/release-assistant.png?v=20260430-1'
-  },
-  'image-sorter': {
-    name: 'Image Sorter',
-    category: 'Visual asset workflow',
-    description: 'A deliberate queue for organizing, naming, and processing images.',
-    icon: '/icons/image-sorter.png?v=20260302-1'
-  },
-  'vistral': {
-    name: 'Vistral',
-    category: 'Personal data visualization',
-    description: 'Private, explainable dashboards for the data you choose to explore.',
-    icon: '/icons/vistral.png?v=20260430-1'
-  },
-  'history-vision': {
-    name: 'History Vision',
-    category: 'History and timelines',
-    description: 'Source-aware stories, timelines, and visual comparisons.',
-    icon: '/icons/history-vision.png?v=20260430-1'
-  },
-  'lingua-latina': {
-    name: 'Lingua Latina',
-    category: 'Latin language study',
-    description: 'Dictionary, morphology, grammar, and vocabulary in one native study space.',
-    icon: '/icons/lingua-latina.png?v=20260430-1'
-  }
-}
-
 const headingCount = ref(0)
 const readingMinutes = ref(1)
 const heroFxEnabled = ref(true)
@@ -93,7 +36,7 @@ const appSlug = computed(() => {
   return match ? match[1] : ''
 })
 
-const currentAppIdentity = computed(() => appIdentityBySlug[appSlug.value] || null)
+const currentAppIdentity = computed(() => appCatalogBySlug[appSlug.value] || null)
 
 const currentAppSection = computed(() => {
   const section = route.path.split('/').filter(Boolean).at(-1) || 'overview'
@@ -183,6 +126,8 @@ const appDocRelatedLinks = computed<DocJumpLink[]>(() => {
 
 const currentAppUpdatedOn = computed(() => {
   if (!isAppDocPage.value) return ''
+  const catalogDate = appCatalogBySlug[appSlug.value]?.releaseDate
+  if (catalogDate) return new Date(`${catalogDate}T00:00:00Z`).toLocaleDateString('en', { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UTC' })
   return appUpdatedBySlug[appSlug.value] || 'May 15, 2026'
 })
 
@@ -371,7 +316,7 @@ function setupDocStats() {
 
 function applyAppThemeClass() {
   const root = document.documentElement
-  const appThemeClasses = Object.keys(appIdentityBySlug).map((slug) => `app-theme-${slug}`)
+  const appThemeClasses = Object.keys(appCatalogBySlug).map((slug) => `app-theme-${slug}`)
   root.classList.remove(
     'h3p-apps-index-route',
     'h3p-app-doc-route',
@@ -1045,6 +990,9 @@ function setupAppsIndexFilters() {
   const bar = document.querySelector('.apps-filter-bar')
   const buttons = Array.from(document.querySelectorAll<HTMLButtonElement>('.apps-filter-bar button[data-app-filter]'))
   const cards = Array.from(document.querySelectorAll<HTMLElement>('.apps-grid .app-card'))
+  const search = document.querySelector<HTMLInputElement>('[data-app-search]')
+  const count = document.querySelector<HTMLElement>('[data-app-count]')
+  const empty = document.querySelector<HTMLElement>('[data-app-empty]')
   if (!bar || buttons.length === 0 || cards.length === 0) return
 
   const matchesFilter = (card: HTMLElement, filter: string) => {
@@ -1058,19 +1006,30 @@ function setupAppsIndexFilters() {
       const platforms = (card.dataset.platforms || '').toLowerCase().split(',').map((v) => v.trim())
       return platforms.includes(value)
     }
+    if (kind === 'usecase') {
+      return (card.dataset.useCases || '').toLowerCase().split(',').map((v) => v.trim()).includes(value)
+    }
     return true
   }
 
   const applyFilter = (filter: string) => {
     buttons.forEach((btn) => btn.classList.toggle('is-active', (btn.dataset.appFilter || 'all') === filter))
+    const query = (search?.value || '').trim().toLowerCase()
+    let visible = 0
     cards.forEach((card) => {
-      card.classList.toggle('is-filter-hidden', !matchesFilter(card, filter))
+      const searchable = `${card.textContent || ''} ${card.dataset.platforms || ''} ${card.dataset.useCases || ''}`.toLowerCase()
+      const matches = matchesFilter(card, filter) && (!query || searchable.includes(query))
+      card.classList.toggle('is-filter-hidden', !matches)
+      if (matches) visible += 1
     })
+    if (count) count.textContent = `${visible} app${visible === 1 ? '' : 's'} shown`
+    if (empty) empty.hidden = visible !== 0
   }
 
   buttons.forEach((btn) => {
     btn.onclick = () => applyFilter(btn.dataset.appFilter || 'all')
   })
+  search?.addEventListener('input', () => applyFilter(document.querySelector<HTMLButtonElement>('.apps-filter-bar button.is-active')?.dataset.appFilter || 'all'))
   applyFilter('all')
 }
 
@@ -1411,6 +1370,17 @@ onBeforeUnmount(() => {
             App overview <span aria-hidden="true">→</span>
           </a>
         </section>
+        <section v-if="isAppDocPage && currentAppIdentity" class="h3p-app-action-bar" aria-label="App actions">
+          <div class="h3p-app-action-summary">
+            <strong>{{ currentAppIdentity.statusLabel }}</strong>
+            <span>v{{ currentAppIdentity.version }} · {{ currentAppIdentity.platforms.join(' · ') }}</span>
+          </div>
+          <div class="h3p-app-action-links">
+            <a class="h3p-app-action-primary" :href="currentAppIdentity.installUrl" :target="currentAppIdentity.installUrl.startsWith('http') ? '_blank' : undefined" :rel="currentAppIdentity.installUrl.startsWith('http') ? 'noreferrer noopener' : undefined">{{ currentAppIdentity.installLabel }}</a>
+            <a :href="currentAppIdentity.changelog">Release notes</a>
+            <a :href="currentAppIdentity.privacy">Privacy</a>
+          </div>
+        </section>
         <nav v-if="isAppDocPage" class="h3p-app-switcher" aria-label="App switcher">
           <a v-for="item in topSwitcherLinks" :key="item.key" :href="item.link" :class="{ active: activeSwitcher(item.key) }">{{ item.text }}</a>
         </nav>
@@ -1449,6 +1419,7 @@ onBeforeUnmount(() => {
             <section class="h3p-app-site-footer-column">
               <h3>Product</h3>
               <a href="/apps/index">All Apps</a>
+              <a href="/apps/compare">Compare Apps</a>
               <a href="/getting-started/introduction">Getting Started</a>
               <a href="/getting-started/platform-support">Platform Support</a>
               <a href="/changelog">Changelog</a>
@@ -1466,6 +1437,7 @@ onBeforeUnmount(() => {
               <a href="/apps/github-repositories">GitHub Repositories</a>
               <a href="/getting-started/documentation-standards">Documentation Standards</a>
               <a href="/support/support-and-feedback">Support</a>
+              <a href="/support/docs-assistant">Docs assistant</a>
             </section>
             <section class="h3p-app-site-footer-column">
               <h3>Legal</h3>

@@ -15,6 +15,7 @@ Use this section for support channels, issue reporting, legal/security reference
 ## Support Channels
 
 - Support and issue guidance: [Support and Feedback](/support/support-and-feedback)
+- Source-limited docs helper: [Docs assistant](/support/docs-assistant)
 - Documentation issues: [appsh3p issues](https://github.com/h3pdesign/appsh3p/issues)
 - Security policy and contact: [Security and Trust](/policies/security-and-trust)
 - Privacy and terms:

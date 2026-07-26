@@ -31,6 +31,10 @@ This page is the central policy index for apps-h3p.com. It separates general web
     <span>License</span>
     <strong>Content and source licensing information.</strong>
   </a>
+  <a class="policy-card" href="/policies/ai-and-data">
+    <span>AI and Data</span>
+    <strong>Source boundaries, consent, and safe handling for AI-assisted features.</strong>
+  </a>
 </div>
 
 ## App Privacy Policies

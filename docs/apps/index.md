@@ -80,16 +80,22 @@
 </div>
 
 <div class="apps-filter-bar" aria-label="Filter apps">
+  <label class="apps-filter-search"> <span class="sr-only">Search apps</span><input data-app-search type="search" placeholder="Search apps or use cases" autocomplete="off" /></label>
   <button class="is-active" type="button" data-app-filter="all">All</button>
   <button type="button" data-app-filter="status:public">Public</button>
   <button type="button" data-app-filter="status:private">Private</button>
   <button type="button" data-app-filter="platform:macOS">macOS</button>
   <button type="button" data-app-filter="platform:iPadOS">iPadOS</button>
   <button type="button" data-app-filter="platform:iOS">iOS</button>
+  <button type="button" data-app-filter="usecase:coding">Coding</button>
+  <button type="button" data-app-filter="usecase:analytics">Analytics</button>
+  <button type="button" data-app-filter="usecase:reading">Reading</button>
+  <button type="button" data-app-filter="usecase:language">Language</button>
 </div>
+<div class="apps-filter-status" aria-live="polite"><span data-app-count>8 apps shown</span><span data-app-empty hidden>No apps match. Try another search or filter.</span><a href="/apps/compare">Compare all apps →</a></div>
 
 <div class="apps-grid">
-  <article class="app-card app-card-neon" data-changelog="/apps/neon-vision-editor/changelog" data-status="public" data-platforms="macos,ipados,ios">
+  <article class="app-card app-card-neon" data-changelog="/apps/neon-vision-editor/changelog" data-status="public" data-platforms="macos,ipados,ios" data-use-cases="coding,markdown,ai">
     <img src="/icons/neon-vision-editor.png?v=20260401-2" alt="Neon Vision Editor icon" class="app-icon" />
     <div class="app-card-content">
       <h3 class="app-title-row"><a class="app-title-link" href="/apps/neon-vision-editor/overview">Neon Vision Editor</a><span class="app-status app-status-release">Public release</span></h3>
@@ -110,7 +116,7 @@
     </div>
   </article>
 
-  <article class="app-card app-card-metric" data-changelog="/apps/metric-data/changelog" data-status="private" data-platforms="macos,ipados,ios">
+  <article class="app-card app-card-metric" data-changelog="/apps/metric-data/changelog" data-status="private" data-platforms="macos,ipados,ios" data-use-cases="analytics,reporting">
     <img src="/icons/metric-data.png?v=20260430-1" alt="Metrics Data icon" class="app-icon" />
     <div class="app-card-content">
       <h3 class="app-title-row"><a class="app-title-link" href="/apps/metric-data/overview">Metrics Data</a><span class="app-status app-status-private">Private beta</span></h3>
@@ -132,7 +138,7 @@
     </div>
   </article>
 
-  <article class="app-card app-card-release" data-changelog="/apps/release-assistant/changelog" data-status="internal" data-platforms="macos">
+  <article class="app-card app-card-release" data-changelog="/apps/release-assistant/changelog" data-status="internal" data-platforms="macos" data-use-cases="release,automation">
     <img src="/icons/release-assistant.png?v=20260430-1" alt="Release Assistant icon" class="app-icon" />
     <div class="app-card-content">
       <h3 class="app-title-row"><a class="app-title-link" href="/apps/release-assistant/overview">Release Assistant</a><span class="app-status app-status-alpha">Internal alpha</span></h3>
@@ -152,7 +158,7 @@
     </div>
   </article>
 
-  <article class="app-card app-card-newsbook" data-changelog="/apps/x-newsbook/changelog" data-status="private" data-platforms="macos,ipados,ios">
+  <article class="app-card app-card-newsbook" data-changelog="/apps/x-newsbook/changelog" data-status="private" data-platforms="macos,ipados,ios" data-use-cases="reading,research">
     <img src="/icons/x-newsbook.png?v=20260430-1" alt="X-Newsbook icon" class="app-icon" />
     <div class="app-card-content">
       <h3 class="app-title-row"><a class="app-title-link" href="/apps/x-newsbook/overview">X-Newsbook</a><span class="app-status app-status-private">Private beta</span></h3>
@@ -172,7 +178,7 @@
     </div>
   </article>
 
-  <article class="app-card app-card-sorter" data-changelog="/apps/image-sorter/changelog" data-status="private" data-platforms="macos">
+  <article class="app-card app-card-sorter" data-changelog="/apps/image-sorter/changelog" data-status="private" data-platforms="macos" data-use-cases="visual,workflow">
     <img src="/icons/image-sorter.png?v=20260302-1" alt="Image Sorter icon" class="app-icon" />
     <div class="app-card-content">
       <h3 class="app-title-row"><a class="app-title-link" href="/apps/image-sorter/overview">Image Sorter</a><span class="app-status app-status-private">Private beta</span></h3>
@@ -192,7 +198,7 @@
     </div>
   </article>
 
-  <article class="app-card app-card-vistral" data-changelog="/apps/vistral/changelog" data-status="private" data-platforms="macos,ipados,ios,tvos,watchos,visionos">
+  <article class="app-card app-card-vistral" data-changelog="/apps/vistral/changelog" data-status="private" data-platforms="macos,ipados,ios,tvos,watchos,visionos" data-use-cases="analytics,visual,insights">
     <img src="/icons/vistral.png?v=20260430-1" alt="Vistral icon" class="app-icon" />
     <div class="app-card-content">
       <h3 class="app-title-row"><a class="app-title-link" href="/apps/vistral/overview">Vistral</a><span class="app-status app-status-private">Private beta</span></h3>
@@ -212,7 +218,7 @@
     </div>
   </article>
 
-  <article class="app-card app-card-history" data-changelog="/apps/history-vision/changelog" data-status="private" data-platforms="macos,ipados,ios">
+  <article class="app-card app-card-history" data-changelog="/apps/history-vision/changelog" data-status="private" data-platforms="macos,ipados,ios" data-use-cases="history,research,reading">
     <img src="/icons/history-vision.png?v=20260430-1" alt="History Vision icon" class="app-icon" />
     <div class="app-card-content">
       <h3 class="app-title-row"><a class="app-title-link" href="/apps/history-vision/overview">History Vision</a><span class="app-status app-status-private">Private beta</span></h3>
@@ -232,7 +238,7 @@
     </div>
   </article>
 
-  <article class="app-card app-card-lingua" data-changelog="/apps/lingua-latina/changelog" data-status="private" data-platforms="macos,ipados,ios">
+  <article class="app-card app-card-lingua" data-changelog="/apps/lingua-latina/changelog" data-status="private" data-platforms="macos,ipados,ios" data-use-cases="language,study">
     <img src="/icons/lingua-latina.png?v=20260430-1" alt="Lingua Latina icon" class="app-icon" />
     <div class="app-card-content">
       <h3 class="app-title-row"><a class="app-title-link" href="/apps/lingua-latina/overview">Lingua Latina</a><span class="app-status app-status-private">Private beta</span></h3>

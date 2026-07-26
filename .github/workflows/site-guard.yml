@@ -30,3 +30,6 @@ jobs:
 
       - name: Check performance budget
         run: node scripts/check-performance-budget.mjs
+
+      - name: Validate app catalog
+        run: node scripts/validate-app-catalog.mjs
