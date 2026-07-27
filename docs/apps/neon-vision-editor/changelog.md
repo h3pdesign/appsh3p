@@ -10,22 +10,17 @@ head:
 
 # Neon Vision Editor Changelog
 
-_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on July 25, 2026._
+_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on July 26, 2026._
 
-## v0.9.8 (published July 25, 2026)
+## v0.9.9 (published July 26, 2026)
 
-Release link: [GitHub Release v0.9.8](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v0.9.8)
+Release link: [GitHub Release v0.9.9](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v0.9.9)
 
-- Makes advanced editing workflows dependable again across document sizes: syntax highlighting, previews, the minimap, the table of contents, and project navigation now remain available together without persistent oversized scrollbars.
-- Turns external-change and text-encoding status into actionable controls, with recent sync activity, timestamps, encoding, byte-order-mark, and line-ending choices available directly from the status bar.
-- Replaces placeholder starter snippets with a shared catalog of practical, language-specific templates that can be customized once and used consistently from the editor and Settings.
-- Adds stronger code-editing assistance with completion controls, built-in snippets, automatic bracket, quote, tag, and Markdown-list continuation, expanded theme customization, and clearer keyboard-driven actions.
-- Expands Markdown conversion into a source-preserving review flow for selections or complete documents, including emphasis, links, autolinks, tables, cancellation, malformed-output handling, and multilingual or large input.
-- Makes encoding changes explicit and recoverable with immediate Save Using transcoding, BOM-aware session persistence, and Save, Compare, or Cancel choices when an externally changed document still has local edits.
-- Shows Markdown table-of-contents hierarchy through indentation and typographic weight instead of source-level `#` prefixes.
-- Restores timely HTML syntax highlighting on macOS Sequoia and keeps viewport-based highlighting responsive for large HTML documents.
-- Restores Markdown, HTML, and SVG preview availability together with reliable minimap and table-of-contents updates after document, tab, toolbar, and sidebar transitions.
-- Uses the same thin, automatically fading overlay scrollbars in the editor, previews, table of contents, and project sidebar on macOS.
+- Keeps the Neon Pulse watchOS bundle compatible with current Xcode and watchOS simulator validation.
+- Makes the GitHub-hosted macOS archive select the installed Developer ID provisioning profile deterministically.
+- Keeps release metadata and the signed release path aligned for repeatable notarized distribution.
+- Removes an obsolete duplicate watch app icon asset that could be reported as an unassigned child during watchOS builds and device installation.
+- Cleans the watch app asset catalog so the paired iPhone and Apple Watch release products use a valid icon payload.
 
 ## v0.4.22 (published February 16, 2026)
 
