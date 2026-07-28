@@ -10,17 +10,18 @@ head:
 
 # Neon Vision Editor Changelog
 
-_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on July 26, 2026._
+_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on July 27, 2026._
 
-## v0.9.9 (published July 26, 2026)
+## v1.0.1 (published July 27, 2026)
 
-Release link: [GitHub Release v0.9.9](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v0.9.9)
+Release link: [GitHub Release v1.0.1](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v1.0.1)
 
-- Keeps the Neon Pulse watchOS bundle compatible with current Xcode and watchOS simulator validation.
-- Makes the GitHub-hosted macOS archive select the installed Developer ID provisioning profile deterministically.
-- Keeps release metadata and the signed release path aligned for repeatable notarized distribution.
-- Removes an obsolete duplicate watch app icon asset that could be reported as an unassigned child during watchOS builds and device installation.
-- Cleans the watch app asset catalog so the paired iPhone and Apple Watch release products use a valid icon payload.
+- Improves the AI assistant, saved chat workflow, and cross-platform status surfaces for a more dependable 1.0 experience.
+- Adds persistent saved AI chat sessions with restore, delete, and new-chat controls while keeping credentials and editor content private.
+- Adds German and Simplified Chinese localization for the current editor, AI, updater, menu-bar, and Apple Watch surfaces.
+- Adds localized Neon Pulse Watch status and delivery feedback, including retry and inbox states.
+- Prevents stale asynchronous AI and Watch state updates from replacing newer UI state during transitions.
+- Keeps release metadata, localized resources, and the GitHub-hosted distribution path aligned for patch releases.
 
 ## v0.4.22 (published February 16, 2026)
 
