@@ -1,12 +1,12 @@
 {
-  "updated_at_utc": "2026-07-29T01:20:26.574Z",
+  "updated_at_utc": "2026-07-29T17:17:43.312Z",
   "source_name": "Wikimedia Pageviews API",
   "source_url": "https://wikitech.wikimedia.org/wiki/Analytics/AQS/Pageviews",
   "metrics": [
     {
       "id": "elon_attention_3d",
       "label": "Elon Musk Attention (3D)",
-      "value": 44009,
+      "value": 66492,
       "unit": "views",
       "window_days": 3,
       "scope": "Latest available 3-day aggregate Wikimedia pageviews for Elon Musk",
@@ -16,12 +16,12 @@
       "source_window_end": "20260728",
       "fallback_days": 0,
       "is_fallback": false,
-      "as_of_utc": "2026-07-29T01:20:26.574Z"
+      "as_of_utc": "2026-07-29T17:17:43.312Z"
     },
     {
       "id": "elon_attention_7d",
       "label": "Elon Musk Attention (7D)",
-      "value": 138654,
+      "value": 161137,
       "unit": "views",
       "window_days": 7,
       "scope": "Latest available 7-day aggregate Wikimedia pageviews for Elon Musk",
@@ -31,22 +31,22 @@
       "source_window_end": "20260728",
       "fallback_days": 0,
       "is_fallback": false,
-      "as_of_utc": "2026-07-29T01:20:26.574Z"
+      "as_of_utc": "2026-07-29T17:17:43.312Z"
     },
     {
       "id": "trump_attention_7d",
       "label": "Donald Trump Attention (7D)",
-      "value": 203749,
+      "value": 236409,
       "unit": "views",
       "window_days": 7,
       "scope": "Latest available 7-day aggregate Wikimedia pageviews for Donald Trump",
       "source_name": "Wikimedia Pageviews API",
       "source_url": "https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article/en.wikipedia.org/all-access/user/Donald_Trump/daily",
-      "source_window_start": "20260722",
-      "source_window_end": "20260728",
-      "fallback_days": 0,
-      "is_fallback": false,
-      "as_of_utc": "2026-07-29T01:20:26.574Z"
+      "source_window_start": "20260721",
+      "source_window_end": "20260727",
+      "fallback_days": 1,
+      "is_fallback": true,
+      "as_of_utc": "2026-07-29T17:17:43.312Z"
     }
   ]
 }
