@@ -10,18 +10,18 @@ head:
 
 # Neon Vision Editor Changelog
 
-_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on July 27, 2026._
+_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on July 28, 2026._
 
-## v1.0.1 (published July 27, 2026)
+## v1.0.2 (published July 28, 2026)
 
-Release link: [GitHub Release v1.0.1](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v1.0.1)
+Release link: [GitHub Release v1.0.2](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v1.0.2)
 
-- Improves the AI assistant, saved chat workflow, and cross-platform status surfaces for a more dependable 1.0 experience.
-- Adds persistent saved AI chat sessions with restore, delete, and new-chat controls while keeping credentials and editor content private.
-- Adds German and Simplified Chinese localization for the current editor, AI, updater, menu-bar, and Apple Watch surfaces.
-- Adds localized Neon Pulse Watch status and delivery feedback, including retry and inbox states.
-- Prevents stale asynchronous AI and Watch state updates from replacing newer UI state during transitions.
-- Keeps release metadata, localized resources, and the GitHub-hosted distribution path aligned for patch releases.
+- Makes pane resizing easier to discover and control across the editor, previews, table of contents, and project sidebar.
+- Keeps Markdown previews readable as their window width changes, including long lines and code blocks.
+- Delivers a more consistent translucent editing surface across split panes and resize affordances.
+- Adds a consistent 11-point resize hit target with cursor feedback and accessible adjustment actions across macOS panes.
+- Removes persistent resize overlays and divider artifacts after a drag ends, and aligns translucent resize surfaces with the editor background.
+- Prevents Markdown preview content from overflowing its pane by wrapping long lines and fenced code without changing the source document.
 
 ## v0.4.22 (published February 16, 2026)
 
