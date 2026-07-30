@@ -76,7 +76,7 @@ const topSwitcherLinks = [
 ]
 
 const appUpdatedBySlug: Record<string, string> = {
-  'neon-vision-editor': 'July 28, 2026',
+  'neon-vision-editor': 'July 29, 2026',
   'metric-data': 'May 9, 2026',
   'x-newsbook': 'February 13, 2026',
   'release-assistant': 'May 6, 2026',
@@ -713,7 +713,7 @@ function ensureHomeWidgets() {
           <li>Published on <a href="https://apps-h3p.com" target="_blank" rel="noreferrer noopener">apps-h3p.com</a></li>
           <li><a href="https://github.com/h3pdesign/appsh3p" target="_blank" rel="noreferrer noopener">Docs repo</a></li>
         </ul>
-        <div class="home-deploy-badge"><a href="https://github.com/h3pdesign/appsh3p/commit/ae3e8f2" target="_blank" rel="noreferrer noopener">Last deployment: <span data-date="2026-07-28">July 28, 2026</span></a></div>
+        <div class="home-deploy-badge"><a href="https://github.com/h3pdesign/appsh3p/commit/ae3e8f2" target="_blank" rel="noreferrer noopener">Last deployment: <span data-date="2026-07-29">July 29, 2026</span></a></div>
         <div class="home-hero-mini-apps" aria-label="App icons">
           <a href="/apps/neon-vision-editor/overview"><img class="mini-icon-neon" src="/icons/neon-vision-editor.png" alt="Neon Vision Editor" width="22" height="22" loading="lazy" decoding="async" /></a>
           <a href="/apps/metric-data/overview"><img src="/icons/metric-data.png" alt="Metrics Data" width="22" height="22" loading="lazy" decoding="async" /></a>
@@ -737,8 +737,8 @@ function ensureHomeWidgets() {
 
       <section class="home-hero-widget-card home-hero-ticker">
         <h3>Latest release</h3>
-        <p><strong>Neon Vision Editor v1.0.2</strong> published on July 28, 2026.</p>
-        <a href="https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v1.0.2" target="_blank" rel="noreferrer noopener">View GitHub release</a>
+        <p><strong>Neon Vision Editor v1.1.0</strong> published on July 29, 2026.</p>
+        <a href="https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v1.1.0" target="_blank" rel="noreferrer noopener">View GitHub release</a>
       </section>
     `
 

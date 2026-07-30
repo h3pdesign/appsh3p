@@ -10,18 +10,21 @@ head:
 
 # Neon Vision Editor Changelog
 
-_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on July 28, 2026._
+_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on July 29, 2026._
 
-## v1.0.2 (published July 28, 2026)
+## v1.1.0 (published July 29, 2026)
 
-Release link: [GitHub Release v1.0.2](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v1.0.2)
+Release link: [GitHub Release v1.1.0](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v1.1.0)
 
-- Makes pane resizing easier to discover and control across the editor, previews, table of contents, and project sidebar.
-- Keeps Markdown previews readable as their window width changes, including long lines and code blocks.
-- Delivers a more consistent translucent editing surface across split panes and resize affordances.
-- Adds a consistent 11-point resize hit target with cursor feedback and accessible adjustment actions across macOS panes.
-- Removes persistent resize overlays and divider artifacts after a drag ends, and aligns translucent resize surfaces with the editor background.
-- Prevents Markdown preview content from overflowing its pane by wrapping long lines and fenced code without changing the source document.
+- Makes tab switching and first syntax feedback responsive in large workspaces.
+- Adds a project-wide Markdown overview for finding documents without opening each file.
+- Polishes preview, layout, AI, and cross-platform editor workflows for the 1.1 release.
+- Adds Markdown card grid/stack previews with excerpts, headings, images, file status, sorting, and the active-document indicator.
+- Adds reusable Writing, Code, Markdown, and Review editor presets with preview controls and separate-window support.
+- Adds saved AI chat improvements, structured Markdown responses, and clearer context and activity states.
+- Keeps tab selection persistence lightweight by avoiding security-scoped bookmark generation on the interaction path.
+- Prioritizes visible-range programming-language highlighting while coalescing expensive full-document passes.
+- Invalidates formatting changes synchronously so bold/italic and Markdown heading emphasis remain stable while editing.
 
 ## v0.4.22 (published February 16, 2026)
 
