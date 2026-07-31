@@ -10,21 +10,14 @@ head:
 
 # Neon Vision Editor Changelog
 
-_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on July 29, 2026._
+_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on July 30, 2026._
 
-## v1.1.0 (published July 29, 2026)
+## v1.1.1 (published July 30, 2026)
 
-Release link: [GitHub Release v1.1.0](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v1.1.0)
+Release link: [GitHub Release v1.1.1](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v1.1.1)
 
-- Makes tab switching and first syntax feedback responsive in large workspaces.
-- Adds a project-wide Markdown overview for finding documents without opening each file.
-- Polishes preview, layout, AI, and cross-platform editor workflows for the 1.1 release.
-- Adds Markdown card grid/stack previews with excerpts, headings, images, file status, sorting, and the active-document indicator.
-- Adds reusable Writing, Code, Markdown, and Review editor presets with preview controls and separate-window support.
-- Adds saved AI chat improvements, structured Markdown responses, and clearer context and activity states.
-- Keeps tab selection persistence lightweight by avoiding security-scoped bookmark generation on the interaction path.
-- Prioritizes visible-range programming-language highlighting while coalescing expensive full-document passes.
-- Invalidates formatting changes synchronously so bold/italic and Markdown heading emphasis remain stable while editing.
+- Keeps the Markdown project card overview stable until a Markdown file is actually saved or changed on disk.
+- Stops unrelated project-folder events from rebuilding every Markdown preview card.
 
 ## v0.4.22 (published February 16, 2026)
 
