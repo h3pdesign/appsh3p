@@ -10,14 +10,21 @@ head:
 
 # Neon Vision Editor Changelog
 
-_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on July 30, 2026._
+_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on August 1, 2026._
 
-## v1.1.1 (published July 30, 2026)
+## v1.2.0 (published August 1, 2026)
 
-Release link: [GitHub Release v1.1.1](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v1.1.1)
+Release link: [GitHub Release v1.2.0](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v1.2.0)
 
-- Keeps the Markdown project card overview stable until a Markdown file is actually saved or changed on disk.
-- Stops unrelated project-folder events from rebuilding every Markdown preview card.
+- Keeps the editor responsive while projects with large PDF and PNG collections are indexed.
+- Makes PDF project cards appear quickly and loads expensive thumbnails only for visible cards.
+- Reduces unnecessary project-preview and sidebar work when those surfaces are not shown.
+- Adds automatic PDF and PNG preview workflows with persistent PDF highlights and attached Markdown notes.
+- Adds Markdown and PDF project card previews with lazy PDF artwork and responsive iPhone/iPad controls.
+- Adds iPhone/iPad double-tap tab closing while preserving unsaved-change confirmation.
+- Moves PDF card metadata and artwork work off the main actor with bounded background concurrency.
+- Prevents hidden card previews from rebuilding when the project index changes.
+- Avoids repeated large project-tree and preview-signature allocations during sidebar updates.
 
 ## v0.4.22 (published February 16, 2026)
 
