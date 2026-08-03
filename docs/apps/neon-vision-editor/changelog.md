@@ -10,21 +10,19 @@ head:
 
 # Neon Vision Editor Changelog
 
-_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on August 1, 2026._
+_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on August 2, 2026._
 
-## v1.2.0 (published August 1, 2026)
+## v1.2.1 (published August 2, 2026)
 
-Release link: [GitHub Release v1.2.0](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v1.2.0)
+Release link: [GitHub Release v1.2.1](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v1.2.1)
 
-- Keeps the editor responsive while projects with large PDF and PNG collections are indexed.
-- Makes PDF project cards appear quickly and loads expensive thumbnails only for visible cards.
-- Reduces unnecessary project-preview and sidebar work when those surfaces are not shown.
-- Adds automatic PDF and PNG preview workflows with persistent PDF highlights and attached Markdown notes.
-- Adds Markdown and PDF project card previews with lazy PDF artwork and responsive iPhone/iPad controls.
-- Adds iPhone/iPad double-tap tab closing while preserving unsaved-change confirmation.
-- Moves PDF card metadata and artwork work off the main actor with bounded background concurrency.
-- Prevents hidden card previews from rebuilding when the project index changes.
-- Avoids repeated large project-tree and preview-signature allocations during sidebar updates.
+- Adds platform-optimized toolbar presets with compact symbols and consistent controls across macOS, iPadOS, and iOS.
+- Makes toolbar and project workflows easier to configure from settings, including standard, focused, developer, review, and complete presets.
+- Restores the transparent iOS status-bar composition while preserving the existing editor and preview layout.
+- Adds compact preset labels on macOS and iPadOS while keeping iPhone toolbar space icon-first.
+- Adds clearer toolbar customization and project-sidebar actions for everyday editing workflows.
+- Removes the verbose “Toolbar Preset” label from the compact toolbar surface without removing its accessibility label or help text.
+- Repairs the iOS status-bar/navigation-surface regression introduced after v1.1.1.
 
 ## v0.4.22 (published February 16, 2026)
 
