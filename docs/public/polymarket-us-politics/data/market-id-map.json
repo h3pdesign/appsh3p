@@ -1,5 +1,5 @@
 {
-  "updated_at_utc": "2026-07-27T01:03:08.175Z",
+  "updated_at_utc": "2026-08-03T01:02:07.428Z",
   "total_questions": 66,
   "mapped_questions": 27,
   "unmapped_questions": 39,
@@ -150,9 +150,9 @@
     },
     {
       "question": "Mike Johnson out as Speaker by Dec 31, 2026?",
-      "market_id": "2695405",
-      "market_slug": "mike-johnson-out-as-speaker-by-july-31-20260626161802586",
-      "market_question": "Mike Johnson out as Speaker by July 31?",
+      "market_id": "3229462",
+      "market_slug": "mike-johnson-out-as-speaker-by-september-30-20260730191157194",
+      "market_question": "Mike Johnson out as Speaker by September 30?",
       "score": 0.691,
       "active": true,
       "closed": false
@@ -179,8 +179,8 @@
       "question": "Clarity Act signed 2026?",
       "market_id": "1163699",
       "market_slug": "clarity-act-signed-into-law-in-2026",
-      "market_question": "Clarity Act signed into law in 2026?",
-      "score": 0.787,
+      "market_question": "Clarity Act (H.R.3633) signed into law in 2026?",
+      "score": 0.691,
       "active": true,
       "closed": false
     },
