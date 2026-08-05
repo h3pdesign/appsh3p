@@ -10,19 +10,18 @@ head:
 
 # Neon Vision Editor Changelog
 
-_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on August 2, 2026._
+_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on August 4, 2026._
 
-## v1.2.1 (published August 2, 2026)
+## v1.2.2 (published August 4, 2026)
 
-Release link: [GitHub Release v1.2.1](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v1.2.1)
+Release link: [GitHub Release v1.2.2](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v1.2.2)
 
-- Adds platform-optimized toolbar presets with compact symbols and consistent controls across macOS, iPadOS, and iOS.
-- Makes toolbar and project workflows easier to configure from settings, including standard, focused, developer, review, and complete presets.
-- Restores the transparent iOS status-bar composition while preserving the existing editor and preview layout.
-- Adds compact preset labels on macOS and iPadOS while keeping iPhone toolbar space icon-first.
-- Adds clearer toolbar customization and project-sidebar actions for everyday editing workflows.
-- Removes the verbose “Toolbar Preset” label from the compact toolbar surface without removing its accessibility label or help text.
-- Repairs the iOS status-bar/navigation-surface regression introduced after v1.1.1.
+- Keeps project previews and syntax styling stable while working in the editor.
+- Makes the active toolbar preset easier to identify without adding fragmented controls.
+- Shows the selected toolbar preset with its icon, compact name, and a matching visual tint on macOS and iPadOS.
+- Groups related toolbar actions more consistently and removes redundant automatic-toolbar copies.
+- Stops Markdown project cards from rebuilding when toolbar preset or layout changes reattach the card view.
+- Prevents italic comments from alternating between regular and italic while typing on macOS.
 
 ## v0.4.22 (published February 16, 2026)
 
