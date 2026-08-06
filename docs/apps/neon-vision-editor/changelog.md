@@ -10,18 +10,22 @@ head:
 
 # Neon Vision Editor Changelog
 
-_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on August 4, 2026._
+_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on August 5, 2026._
 
-## v1.2.2 (published August 4, 2026)
+## v1.2.3 (published August 5, 2026)
 
-Release link: [GitHub Release v1.2.2](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v1.2.2)
+Release link: [GitHub Release v1.2.3](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v1.2.3)
 
-- Keeps project previews and syntax styling stable while working in the editor.
-- Makes the active toolbar preset easier to identify without adding fragmented controls.
-- Shows the selected toolbar preset with its icon, compact name, and a matching visual tint on macOS and iPadOS.
-- Groups related toolbar actions more consistently and removes redundant automatic-toolbar copies.
-- Stops Markdown project cards from rebuilding when toolbar preset or layout changes reattach the card view.
-- Prevents italic comments from alternating between regular and italic while typing on macOS.
+- Restores Markdown document previews for saved files after the preview-navigation hardening.
+- Keeps Replace All reversible without discarding the preceding edit.
+- Keeps HTML editing responsive for documents around 5 MB.
+- Uses the available iPhone and iPad landscape width more effectively and keeps toolbar presets aligned.
+- Adds release performance-budget checks to catch regressions before shipping.
+- Adds repeatable performance-profile capture and baseline validation to release preparation.
+- Adds consequential-change previews for Replace All, AI replacements, project-wide replacements, editor clearing, and Git commits.
+- Keeps the complete mobile toolbar action set reachable through presets and overflow actions.
+- Allows the preview WebView to load its saved-document base directory while keeping navigation restricted to local preview content.
+- Routes macOS Replace All through AppKit's undo-aware text-view replacement path.
 
 ## v0.4.22 (published February 16, 2026)
 
