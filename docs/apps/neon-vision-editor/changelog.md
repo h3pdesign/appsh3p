@@ -10,22 +10,17 @@ head:
 
 # Neon Vision Editor Changelog
 
-_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on August 5, 2026._
+_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on August 6, 2026._
 
-## v1.2.3 (published August 5, 2026)
+## v1.2.4 (published August 6, 2026)
 
-Release link: [GitHub Release v1.2.3](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v1.2.3)
+Release link: [GitHub Release v1.2.4](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v1.2.4)
 
-- Restores Markdown document previews for saved files after the preview-navigation hardening.
-- Keeps Replace All reversible without discarding the preceding edit.
-- Keeps HTML editing responsive for documents around 5 MB.
-- Uses the available iPhone and iPad landscape width more effectively and keeps toolbar presets aligned.
-- Adds release performance-budget checks to catch regressions before shipping.
-- Adds repeatable performance-profile capture and baseline validation to release preparation.
-- Adds consequential-change previews for Replace All, AI replacements, project-wide replacements, editor clearing, and Git commits.
-- Keeps the complete mobile toolbar action set reachable through presets and overflow actions.
-- Allows the preview WebView to load its saved-document base directory while keeping navigation restricted to local preview content.
-- Routes macOS Replace All through AppKit's undo-aware text-view replacement path.
+- Publishes an immutable v1.2.4 build so Sparkle and Homebrew can verify one stable release asset.
+- Carries the completed macOS, iPhone Simulator, and iPad Simulator Xcode 27 build verification into the release record.
+- Keeps the large-file, Markdown preview, undo, and mobile-toolbar guardrails covered by the release test suite.
+- Adds a release-only stabilization pass with the performance budget contract and cross-platform build matrix recorded as release gates.
+- Corrects the distribution path after the v1.2.3 asset/checksum replacement, using a new immutable release asset for updater and Homebrew validation.
 
 ## v0.4.22 (published February 16, 2026)
 
