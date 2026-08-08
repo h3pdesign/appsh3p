@@ -154,7 +154,7 @@ features:
   <span>GitHub-backed changelogs</span>
 </div>
 
-<p class="startpage-external-note">Explore photography, art, and writing on <a href="https://h3p.me/home" target="_blank" rel="noreferrer">h3p.me/home</a>.</p>
+<p class="startpage-external-note">Explore the main page for all H3P work on <a href="https://h3pdesign.github.io/" target="_blank" rel="noreferrer">h3pdesign.github.io</a>.</p>
 
 <blockquote class="startpage-testimonial">
   <span class="startpage-testimonial-kicker">from the maker</span>
