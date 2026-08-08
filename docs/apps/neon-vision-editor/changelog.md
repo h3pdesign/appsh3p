@@ -10,17 +10,21 @@ head:
 
 # Neon Vision Editor Changelog
 
-_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on August 6, 2026._
+_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on August 7, 2026._
 
-## v1.2.4 (published August 6, 2026)
+## v1.2.5 (published August 7, 2026)
 
-Release link: [GitHub Release v1.2.4](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v1.2.4)
+Release link: [GitHub Release v1.2.5](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v1.2.5)
 
-- Publishes an immutable v1.2.4 build so Sparkle and Homebrew can verify one stable release asset.
-- Carries the completed macOS, iPhone Simulator, and iPad Simulator Xcode 27 build verification into the release record.
-- Keeps the large-file, Markdown preview, undo, and mobile-toolbar guardrails covered by the release test suite.
-- Adds a release-only stabilization pass with the performance budget contract and cross-platform build matrix recorded as release gates.
-- Corrects the distribution path after the v1.2.3 asset/checksum replacement, using a new immutable release asset for updater and Homebrew validation.
+- Keeps generated and minified source files responsive by avoiding unnecessary full-document regex highlighting.
+- Preserves fast, viewport-scoped syntax coloring for large JSON, HTML, and CSV documents.
+- Makes large-file behavior easier to control with clear generated-file highlighting options.
+- Adds Automatic, Full, and Off generated-file syntax highlighting modes.
+- Detects common generated-source markers and very long minified lines with a bounded prefix scan.
+- Extends the large-file benchmark and performance contract with HTML and minified JavaScript fixtures.
+- Updates the app icon for the iOS, iPadOS, and macOS 27 Liquid Glass appearance, including the revised iOS 26 shared presentation. Thanks to [@LegalizeNukes](https://github.com/LegalizeNukes) for the new icon design.
+- Stops stale or expensive syntax passes from being scheduled for likely generated JavaScript and similar source files.
+- Keeps macOS and iOS syntax-highlight caches stable when generated-file highlighting is intentionally suppressed.
 
 ## v0.4.22 (published February 16, 2026)
 
