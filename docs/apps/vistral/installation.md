@@ -1,5 +1,9 @@
 # Vistral Installation
 
+## TestFlight
+
+Vistral is currently distributed through TestFlight. Use [Support and Feedback](/support/support-and-feedback) to request beta access.
+
 ## Requirements
 
 - Xcode with multi-platform SDK support

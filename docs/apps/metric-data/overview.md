@@ -8,14 +8,14 @@ head:
       content: https://apps-h3p.com/media/metrics/dashboard-ipad.png
   - - script
     - type: application/ld+json
-    - '{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://apps-h3p.com/#organization","name":"H3P","url":"https://apps-h3p.com","sameAs":["https://github.com/h3pdesign"]},{"@type":"SoftwareApplication","@id":"https://apps-h3p.com/apps/metric-data/overview#app","name":"Metrics Data","applicationCategory":"BusinessApplication","operatingSystem":"macOS, iPadOS, iOS","url":"https://apps-h3p.com/apps/metric-data/overview","softwareVersion":"0.2.3","isAccessibleForFree":true,"publisher":{"@id":"https://apps-h3p.com/#organization"}}]}'
+    - '{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://apps-h3p.com/#organization","name":"H3P","url":"https://apps-h3p.com","sameAs":["https://github.com/h3pdesign"]},{"@type":"SoftwareApplication","@id":"https://apps-h3p.com/apps/metric-data/overview#app","name":"Metrics Data","applicationCategory":"BusinessApplication","operatingSystem":"macOS, iPadOS, iOS, visionOS, watchOS","url":"https://apps-h3p.com/apps/metric-data/overview","downloadUrl":"https://apps.apple.com/us/app/metrics-data/id6758959570","softwareVersion":"0.2.6","isAccessibleForFree":true,"publisher":{"@id":"https://apps-h3p.com/#organization"}}]}'
 ---
 
 # Metrics Data
 
-<div class="overview-status-pill overview-status-private">Status: Private beta</div>
+<div class="overview-status-pill overview-status-release">Status: App Store release</div>
 
-<p class="overview-last-updated">Last updated: <span data-date="2026-05-09">May 9, 2026</span></p>
+<p class="overview-last-updated">Last updated: <span data-date="2026-06-11">June 11, 2026</span></p>
 
 ## Application Identity
 
@@ -25,7 +25,7 @@ head:
 
 ## Application Purpose
 
-Metrics Data is an analytics app that lets users securely connect their own Google AdSense account and view performance metrics in a focused dashboard.
+Metrics Data is an analytics app that lets users securely connect their own Google AdSense and GA4 accounts and view performance metrics in a focused dashboard.
 
 Primary use:
 
@@ -37,19 +37,21 @@ Primary use:
 This app is not a public data crawler and does not access data outside the Google accounts explicitly authorized by the signed-in user.
 
 <div class="overview-platform-badges overview-reveal" aria-label="supported platforms">
-  <span>macOS</span>
-  <span>iPadOS</span>
   <span>iOS</span>
+  <span>iPadOS</span>
+  <span>macOS</span>
+  <span>visionOS</span>
+  <span>watchOS</span>
 </div>
 
 <div class="overview-mini-stats overview-reveal" aria-label="app stats">
-  <div><span>latest version</span><strong>0.2.3 (build 85)</strong></div>
-  <div><span>platforms</span><strong>macOS / iPadOS / iOS</strong></div>
-  <div><span>repo status</span><strong>private</strong></div>
+  <div><span>latest version</span><strong>0.2.6</strong></div>
+  <div><span>platforms</span><strong>iOS / iPadOS / macOS / visionOS / watchOS</strong></div>
+  <div><span>distribution</span><strong>App Store</strong></div>
 </div>
 <div class="overview-hero overview-app-metric overview-reveal">
   <div class="overview-hero-copy">
-    <p>Metrics Data is a SwiftUI analytics app for Google AdSense across iOS and macOS.</p>
+    <p>Metrics Data is a SwiftUI analytics app for Google AdSense and GA4 across Apple platforms.</p>
   </div>
   <div class="overview-hero-media">
     <img src="/icons/metric-data.png?v=20260430-1" alt="Metrics Data icon" class="overview-app-icon" />
@@ -61,7 +63,7 @@ This app is not a public data crawler and does not access data outside the Googl
 
 ## Quick Links
 
-- [TestFlight](https://testflight.apple.com/join/mMyMAGjE)
+- [App Store](https://apps.apple.com/us/app/metrics-data/id6758959570)
 - [Code Examples](/apps/code-examples)
 - [Metrics Data Privacy Policy](/apps/metric-data/privacy-policy)
 - [Site Privacy Policy](/policies/privacy-policy)
@@ -78,6 +80,7 @@ This app is not a public data crawler and does not access data outside the Googl
 ## Platform and Build Targets
 
 - iOS app target: `Metrics`
+- public App Store listing: [Metrics Data](https://apps.apple.com/us/app/metrics-data/id6758959570)
 - macOS App Store target: `Metrics-macOS-AppStore`
 - macOS direct distribution target: `Metrics-macOS-Direct`
 

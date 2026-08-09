@@ -27,12 +27,15 @@ Use this section for support channels, issue reporting, legal/security reference
 Support guidance applies to:
 
 - Neon Vision Editor
+- GitBird
+- Liquid Record
 - Metrics Data
 - Release Assistant
 - X-Newsbook
 - Image Sorter
 - Vistral
 - History Vision
+- Lingua Latina
 
 ## Community and Funding
 

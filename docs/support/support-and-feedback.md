@@ -11,7 +11,7 @@
 
 - Docs/site issues: [appsh3p issues](https://github.com/h3pdesign/appsh3p/issues)
 - Neon Vision Editor app issues: [Neon-Vision-Editor issues](https://github.com/h3pdesign/Neon-Vision-Editor/issues)
-- Private/internal app support (Metrics Data, Release Assistant, X-Newsbook, Image Sorter, Vistral, History Vision):
+- Private/internal app support and TestFlight requests (Release Assistant, X-Newsbook, Image Sorter, Vistral, Liquid Record, History Vision):
   - open an issue in `appsh3p` and include app name in title
   - or use direct support channels listed above
 

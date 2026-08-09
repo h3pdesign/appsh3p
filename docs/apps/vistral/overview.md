@@ -10,7 +10,7 @@ head:
 
 # Vistral
 
-<div class="overview-status-pill overview-status-private">Status: Private beta</div>
+<div class="overview-status-pill overview-status-private">Status: TestFlight beta</div>
 
 <p class="overview-last-updated">Last updated: <span data-date="2026-05-09">May 9, 2026</span></p>
 
@@ -37,7 +37,7 @@ Primary user outcomes:
 <div class="overview-mini-stats overview-reveal" aria-label="app stats">
   <div><span>latest version</span><strong>0.1.6 (build 46)</strong></div>
   <div><span>platforms</span><strong>iOS / iPadOS / macOS / tvOS / watchOS / visionOS</strong></div>
-  <div><span>repo status</span><strong>private</strong></div>
+  <div><span>distribution</span><strong>TestFlight</strong></div>
 </div>
 
 <div class="overview-hero overview-app-release overview-reveal">
@@ -52,6 +52,7 @@ Primary user outcomes:
 ## Quick Links
 
 - [Components Overview](/apps/vistral/components-overview)
+- [Request TestFlight access](/support/support-and-feedback)
 - [Installation](/apps/vistral/installation)
 - [Features](/apps/vistral/features)
 

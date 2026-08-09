@@ -81,13 +81,13 @@ const appUpdatedBySlug: Record<string, string> = {
   'neon-vision-editor': 'August 9, 2026',
   'gitbird': 'August 5, 2026',
   'liquid-record': 'August 9, 2026',
-  'metric-data': 'May 9, 2026',
+  'metric-data': 'June 11, 2026',
   'x-newsbook': 'February 13, 2026',
   'release-assistant': 'May 6, 2026',
   'image-sorter': 'April 30, 2026',
   'vistral': 'May 9, 2026',
   'history-vision': 'April 30, 2026',
-  'lingua-latina': 'May 14, 2026'
+  'lingua-latina': 'August 8, 2026'
 }
 
 const appDocTopLinks = computed<DocJumpLink[]>(() => {

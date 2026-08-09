@@ -43,11 +43,11 @@ export const appCatalog: AppCatalogEntry[] = [
     installLabel: 'Request access', installUrl: '/support/support-and-feedback', privacySummary: 'Offline-first local WAV recording with microphone permission requested only from the record action.'
   },
   {
-    slug: 'metric-data', name: 'Metrics Data', category: 'Private analytics workspace',
-    description: 'Focused AdSense reporting with secure, account-owned access.', icon: '/icons/metric-data.png?v=20260430-1',
-    status: 'private', statusLabel: 'Private beta', version: '0.2.3', releaseDate: '2026-05-09', platforms: ['macOS', 'iPadOS', 'iOS'],
+    slug: 'metric-data', name: 'Metrics Data', category: 'AdSense and GA4 analytics workspace',
+    description: 'Focused AdSense and GA4 reporting with secure, account-owned access.', icon: '/icons/metric-data.png?v=20260430-1',
+    status: 'public', statusLabel: 'App Store release', version: '0.2.6', releaseDate: '2026-06-11', platforms: ['iOS', 'iPadOS', 'macOS', 'visionOS', 'watchOS'],
     useCases: ['analytics', 'reporting'], overview: '/apps/metric-data/overview', installation: '/apps/metric-data/installation', changelog: '/apps/metric-data/changelog', privacy: '/apps/metric-data/privacy-policy',
-    installLabel: 'Join TestFlight', installUrl: 'https://testflight.apple.com/join/mMyMAGjE', privacySummary: 'Read-only Google scopes, local app data, and explicit deletion controls.'
+    installLabel: 'App Store', installUrl: 'https://apps.apple.com/us/app/metrics-data/id6758959570', privacySummary: 'Google account data is user-authorized; App Store privacy lists Data Not Collected.'
   },
   {
     slug: 'x-newsbook', name: 'X-Newsbook', category: 'Reading and news library',
@@ -73,9 +73,9 @@ export const appCatalog: AppCatalogEntry[] = [
   {
     slug: 'vistral', name: 'Vistral', category: 'Personal data visualization',
     description: 'Private, explainable dashboards for the data you choose to explore.', icon: '/icons/vistral.png?v=20260430-1',
-    status: 'private', statusLabel: 'Private beta', version: '0.1.6', releaseDate: '2026-05-09', platforms: ['macOS', 'iPadOS', 'iOS', 'tvOS', 'watchOS', 'visionOS'],
+    status: 'private', statusLabel: 'TestFlight beta', version: '0.1.6', releaseDate: '2026-05-09', platforms: ['macOS', 'iPadOS', 'iOS', 'tvOS', 'watchOS', 'visionOS'],
     useCases: ['analytics', 'visual', 'insights'], overview: '/apps/vistral/overview', installation: '/apps/vistral/installation', changelog: '/apps/vistral/changelog', privacy: '/policies/privacy-policy',
-    installLabel: 'Request access', installUrl: '/support/support-and-feedback', privacySummary: 'Local-first analytics for data the user chooses to explore.'
+    installLabel: 'TestFlight', installUrl: '/support/support-and-feedback', privacySummary: 'Local-first analytics for data the user chooses to explore; beta access is handled through TestFlight.'
   },
   {
     slug: 'history-vision', name: 'History Vision', category: 'History and timelines',
@@ -87,9 +87,9 @@ export const appCatalog: AppCatalogEntry[] = [
   {
     slug: 'lingua-latina', name: 'Lingua Latina', category: 'Latin language study',
     description: 'Dictionary, morphology, grammar, and vocabulary in one native study space.', icon: '/icons/lingua-latina.png?v=20260430-1',
-    status: 'private', statusLabel: 'Private beta', version: '1.0.0', releaseDate: '2026-05-14', platforms: ['macOS', 'iPadOS', 'iOS'],
+    status: 'public', statusLabel: 'App Store release', version: '1.1.0', releaseDate: '2026-08-08', platforms: ['iOS', 'iPadOS', 'macOS', 'visionOS'],
     useCases: ['language', 'study'], overview: '/apps/lingua-latina/overview', installation: '/apps/lingua-latina/installation', changelog: '/apps/lingua-latina/changelog', privacy: '/apps/lingua-latina/privacy-policy',
-    installLabel: 'Request access', installUrl: '/support/support-and-feedback', privacySummary: 'Local-first study data with a dedicated privacy policy.'
+    installLabel: 'App Store', installUrl: 'https://apps.apple.com/us/app/lingua-latina/id6767503541', privacySummary: 'App Store privacy lists Data Not Collected; optional external AI providers are user-enabled.'
   }
 ]
 

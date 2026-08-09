@@ -1,5 +1,9 @@
 # Lingua Latina Installation
 
+## App Store
+
+Install Lingua Latina from the [App Store](https://apps.apple.com/us/app/lingua-latina/id6767503541).
+
 ## Requirements
 
 - Xcode

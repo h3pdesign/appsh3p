@@ -1,8 +1,8 @@
 # Metrics Data Privacy Policy
 
-_Last updated: May 21, 2026_
+_Last updated: June 11, 2026_
 
-Metrics Data is an analytics dashboard app for macOS, iPadOS, and iOS. This policy explains how Metrics Data handles app data and Google user data when you choose to connect a Google account.
+Metrics Data is an analytics dashboard app for iOS, iPadOS, macOS, visionOS, and watchOS. This policy explains how Metrics Data handles app data and Google user data when you choose to connect a Google account.
 
 ## Google User Data
 
@@ -111,5 +111,6 @@ If you have questions about Google data handling, use [Support and Feedback](/su
 
 ## Related Policies
 
+- [Metrics Data on the App Store](https://apps.apple.com/us/app/metrics-data/id6758959570)
 - [Site Privacy Policy](/policies/privacy-policy)
 - [EU Cookie Notice](/policies/eu-cookie-notice)

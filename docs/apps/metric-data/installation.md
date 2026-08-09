@@ -10,6 +10,10 @@ head:
 
 # Metrics Data Installation
 
+## App Store
+
+Install Metrics Data from the [App Store](https://apps.apple.com/us/app/metrics-data/id6758959570).
+
 ## Open in Xcode
 
 Open project:

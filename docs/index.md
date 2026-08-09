@@ -57,9 +57,9 @@ features:
   <a href="/apps/neon-vision-editor/changelog"><strong data-date="2026-08-09">Aug 9, 2026</strong>: Neon Vision Editor v1.2.6 release notes and docs refresh</a>
   <a href="/apps/liquid-record/overview"><strong data-date="2026-08-09">Aug 9, 2026</strong>: Liquid Record app documentation added from the authoritative requirements</a>
   <a href="/apps/gitbird/changelog"><strong data-date="2026-08-05">Aug 5, 2026</strong>: GitBird 2.1.4 security, provider, and accessibility docs added</a>
-  <a href="/apps/lingua-latina/overview"><strong data-date="2026-05-14">May 14, 2026</strong>: Lingua Latina 1.0.0 local app data and docs refreshed</a>
-  <a href="/apps/metric-data/overview"><strong data-date="2026-05-09">May 9, 2026</strong>: Metrics Data 0.2.3 dashboard and OAuth scope data synced</a>
-  <a href="/apps/vistral/overview"><strong data-date="2026-05-09">May 9, 2026</strong>: Vistral 0.1.6 multi-platform app data synced</a>
+  <a href="/apps/lingua-latina/overview"><strong data-date="2026-08-08">Aug 8, 2026</strong>: Lingua Latina 1.1.0 App Store release docs synced</a>
+  <a href="/apps/metric-data/overview"><strong data-date="2026-06-11">Jun 11, 2026</strong>: Metrics Data 0.2.6 App Store release docs synced</a>
+  <a href="/apps/vistral/overview"><strong data-date="2026-08-09">Aug 9, 2026</strong>: Vistral marked as TestFlight beta</a>
 </div>
 
 <div class="startpage-release-strip" aria-label="App status snapshot">
@@ -99,10 +99,11 @@ features:
       <img src="/icons/metric-data.png?v=20260430-1" alt="" aria-hidden="true" loading="lazy" decoding="async" />
       <strong>Metric</strong>
     </div>
-    <span>0.2.3</span>
-    <span data-date="2026-05-09">May 9, 2026</span>
-    <span>macOS, iPadOS, iOS</span>
+    <span>0.2.6</span>
+    <span data-date="2026-06-11">Jun 11, 2026</span>
+    <span>macOS, iPadOS, iOS, visionOS, watchOS</span>
     <a href="/apps/metric-data/changelog">Source: changelog</a>
+    <a href="https://apps.apple.com/us/app/metrics-data/id6758959570" target="_blank" rel="noreferrer noopener">Source: App Store</a>
   </article>
   <article class="startpage-release-item release-release">
     <div class="startpage-release-head">

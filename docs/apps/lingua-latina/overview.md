@@ -10,9 +10,9 @@ head:
 
 # Lingua Latina
 
-<div class="overview-status-pill overview-status-private">Status: Private beta</div>
+<div class="overview-status-pill overview-status-release">Status: App Store release</div>
 
-<p class="overview-last-updated">Last updated: <span data-date="2026-05-14">May 14, 2026</span></p>
+<p class="overview-last-updated">Last updated: <span data-date="2026-08-08">August 8, 2026</span></p>
 
 ## Application Purpose
 
@@ -30,12 +30,13 @@ Primary user outcomes:
   <span>iOS</span>
   <span>iPadOS</span>
   <span>macOS</span>
+  <span>visionOS</span>
 </div>
 
 <div class="overview-mini-stats overview-reveal" aria-label="app stats">
-  <div><span>latest version</span><strong>1.0.0 (build 234)</strong></div>
-  <div><span>platforms</span><strong>iOS / iPadOS / macOS</strong></div>
-  <div><span>repo status</span><strong>private</strong></div>
+  <div><span>latest version</span><strong>1.1.0</strong></div>
+  <div><span>platforms</span><strong>iOS / iPadOS / macOS / visionOS</strong></div>
+  <div><span>distribution</span><strong>App Store</strong></div>
 </div>
 
 <div class="overview-hero overview-app-release overview-reveal">
@@ -50,6 +51,7 @@ Primary user outcomes:
 ## Quick Links
 
 - [Components Overview](/apps/lingua-latina/components-overview)
+- [App Store](https://apps.apple.com/us/app/lingua-latina/id6767503541)
 - [Installation](/apps/lingua-latina/installation)
 - [Features](/apps/lingua-latina/features)
 - [Privacy Policy](/apps/lingua-latina/privacy-policy)
@@ -74,6 +76,7 @@ Optional external AI providers are user-selected in Settings. API keys are store
 - iOS
 - iPadOS
 - macOS
+- visionOS
 
 ## Related Pages
 

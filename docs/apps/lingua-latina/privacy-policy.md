@@ -32,6 +32,8 @@ The app does not use tracking technologies and does not share data with third pa
 
 For the current App Store privacy posture:
 
+- App Store: [Lingua Latina](https://apps.apple.com/us/app/lingua-latina/id6767503541)
+
 - Data is not collected.
 - No data is used for tracking.
 - No data is linked to the user's identity.

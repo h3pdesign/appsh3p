@@ -21,13 +21,13 @@
     <span class="apps-whats-new-item is-neon">Neon Vision Editor docs expanded with changelog, known issues, and FAQ.</span>
     <span class="apps-whats-new-item is-gitbird">GitBird docs added with GitHub/GitLab notification, Keychain, and release guidance.</span>
     <span class="apps-whats-new-item is-liquid">Liquid Record docs added from the current iPhone recorder requirements.</span>
-    <span class="apps-whats-new-item is-metric">Metrics Data overview refreshed with iPad-first screenshots and SEO metadata.</span>
+    <span class="apps-whats-new-item is-metric">Metrics Data is now listed as an App Store release.</span>
     <span class="apps-whats-new-item is-release">Release Assistant now includes structured install, gallery, and changelog docs.</span>
     <span class="apps-whats-new-item is-newsbook">X-Newsbook docs added with overview, components, installation, and FAQ.</span>
     <span class="apps-whats-new-item is-sorter">Image Sorter docs added with queue workflow, installation, and support pages.</span>
-    <span class="apps-whats-new-item is-vistral">Vistral docs added with multi-platform scope and local-first analytics purpose.</span>
+    <span class="apps-whats-new-item is-vistral">Vistral is documented as a TestFlight beta.</span>
     <span class="apps-whats-new-item is-history">History Vision docs added with reader + data-visualization product overview.</span>
-    <span class="apps-whats-new-item is-lingua">Lingua Latina docs added with dictionary, grammar, study, and privacy pages.</span>
+    <span class="apps-whats-new-item is-lingua">Lingua Latina is now listed as an App Store release.</span>
   </div>
 </div>
 
@@ -35,13 +35,13 @@
   <div class="apps-release-item neon"><span class="name">Neon Vision Editor</span><span class="tag">v1.2.6</span><span class="date">2026-08-09</span></div>
   <div class="apps-release-item gitbird"><span class="name">GitBird</span><span class="tag">2.1.4</span><span class="date">2026-08-05</span></div>
   <div class="apps-release-item liquid"><span class="name">Liquid Record</span><span class="tag">1.0.1</span><span class="date">2026-08-09</span></div>
-  <div class="apps-release-item metric"><span class="name">Metrics Data</span><span class="tag">0.2.3</span><span class="date">2026-05-09</span></div>
+  <div class="apps-release-item metric"><span class="name">Metrics Data</span><span class="tag">0.2.6</span><span class="date">2026-06-11</span></div>
   <div class="apps-release-item newsbook"><span class="name">X-Newsbook</span><span class="tag">10</span><span class="date">2026-02-13</span></div>
   <div class="apps-release-item release"><span class="name">Release Assistant</span><span class="tag">0.2.0</span><span class="date">2026-05-06</span></div>
   <div class="apps-release-item sorter"><span class="name">Image Sorter</span><span class="tag">0.1</span><span class="date">2026-04-30</span></div>
   <div class="apps-release-item vistral"><span class="name">Vistral</span><span class="tag">0.1.6</span><span class="date">2026-05-09</span></div>
   <div class="apps-release-item history"><span class="name">History Vision</span><span class="tag">1.0</span><span class="date">2026-04-30</span></div>
-  <div class="apps-release-item lingua"><span class="name">Lingua Latina</span><span class="tag">1.0.0</span><span class="date">2026-05-14</span></div>
+  <div class="apps-release-item lingua"><span class="name">Lingua Latina</span><span class="tag">1.1.0</span><span class="date">2026-08-08</span></div>
 </div>
 
 <div class="apps-carousel" aria-label="Featured screenshots carousel">
@@ -164,23 +164,23 @@
     </div>
   </article>
 
-  <article class="app-card app-card-metric" data-changelog="/apps/metric-data/changelog" data-status="private" data-platforms="macos,ipados,ios" data-use-cases="analytics,reporting">
+  <article class="app-card app-card-metric" data-changelog="/apps/metric-data/changelog" data-status="public" data-platforms="macos,ipados,ios,visionos,watchos" data-use-cases="analytics,reporting">
     <img src="/icons/metric-data.png?v=20260430-1" alt="Metrics Data icon" class="app-icon" />
     <div class="app-card-content">
-      <h3 class="app-title-row"><a class="app-title-link" href="/apps/metric-data/overview">Metrics Data</a><span class="app-status app-status-private">Private beta</span></h3>
+      <h3 class="app-title-row"><a class="app-title-link" href="/apps/metric-data/overview">Metrics Data</a><span class="app-status app-status-release">App Store release</span></h3>
       <div class="app-card-meta-row">
         <div class="app-platform-pills">
-          <span>macOS</span><span>iPadOS</span><span>iOS</span>
+          <span>macOS</span><span>iPadOS</span><span>iOS</span><span>visionOS</span><span>watchOS</span>
         </div>
         <div class="app-meta-right">
           <span class="app-doc-state app-doc-state-active">Docs: Active</span>
           <span class="app-updated-badge">updated recently</span>
         </div>
       </div>
-      <p>Google AdSense analytics app with OAuth, multi-account switching, filters, and Swift Charts dashboards.</p>
+      <p>App Store analytics app for Google AdSense and GA4 with OAuth, multi-account switching, filters, and Swift Charts dashboards.</p>
       <div class="app-actions-row">
-        <span class="chip">GitHub: repository not public yet</span>
-        <a class="chip chip-link" href="https://testflight.apple.com/join/mMyMAGjE" target="_blank" rel="noreferrer">TestFlight</a>
+        <span class="chip chip-live">App Store: public listing</span>
+        <a class="chip chip-link" href="https://apps.apple.com/us/app/metrics-data/id6758959570" target="_blank" rel="noreferrer">App Store</a>
         <a class="chip chip-link" href="/apps/metric-data/privacy-policy">Privacy Policy</a>
       </div>
     </div>
@@ -249,7 +249,7 @@
   <article class="app-card app-card-vistral" data-changelog="/apps/vistral/changelog" data-status="private" data-platforms="macos,ipados,ios,tvos,watchos,visionos" data-use-cases="analytics,visual,insights">
     <img src="/icons/vistral.png?v=20260430-1" alt="Vistral icon" class="app-icon" />
     <div class="app-card-content">
-      <h3 class="app-title-row"><a class="app-title-link" href="/apps/vistral/overview">Vistral</a><span class="app-status app-status-private">Private beta</span></h3>
+      <h3 class="app-title-row"><a class="app-title-link" href="/apps/vistral/overview">Vistral</a><span class="app-status app-status-private">TestFlight beta</span></h3>
       <div class="app-card-meta-row">
         <div class="app-platform-pills">
           <span>macOS</span><span>iPadOS</span><span>iOS</span><span>tvOS</span><span>watchOS</span><span>visionOS</span>
@@ -261,7 +261,8 @@
       </div>
       <p>Personal data visualization app with local-first analytics dashboards and explainable insight blocks.</p>
       <div class="app-actions-row">
-        <span class="chip">GitHub: repository not public yet</span>
+        <span class="chip">TestFlight: beta access</span>
+        <a class="chip chip-link" href="/support/support-and-feedback">Request TestFlight access</a>
       </div>
     </div>
   </article>
@@ -286,13 +287,13 @@
     </div>
   </article>
 
-  <article class="app-card app-card-lingua" data-changelog="/apps/lingua-latina/changelog" data-status="private" data-platforms="macos,ipados,ios" data-use-cases="language,study">
+  <article class="app-card app-card-lingua" data-changelog="/apps/lingua-latina/changelog" data-status="public" data-platforms="macos,ipados,ios,visionos" data-use-cases="language,study">
     <img src="/icons/lingua-latina.png?v=20260430-1" alt="Lingua Latina icon" class="app-icon" />
     <div class="app-card-content">
-      <h3 class="app-title-row"><a class="app-title-link" href="/apps/lingua-latina/overview">Lingua Latina</a><span class="app-status app-status-private">Private beta</span></h3>
+      <h3 class="app-title-row"><a class="app-title-link" href="/apps/lingua-latina/overview">Lingua Latina</a><span class="app-status app-status-release">App Store release</span></h3>
       <div class="app-card-meta-row">
         <div class="app-platform-pills">
-          <span>macOS</span><span>iPadOS</span><span>iOS</span>
+          <span>macOS</span><span>iPadOS</span><span>iOS</span><span>visionOS</span>
         </div>
         <div class="app-meta-right">
           <span class="app-doc-state app-doc-state-active">Docs: Active</span>
@@ -301,7 +302,8 @@
       </div>
       <p>Native Latin learning app with dictionary lookup, morphology analysis, grammar reference, and vocabulary study.</p>
       <div class="app-actions-row">
-        <span class="chip">GitHub: repository not public yet</span>
+        <span class="chip chip-live">App Store: public listing</span>
+        <a class="chip chip-link" href="https://apps.apple.com/us/app/lingua-latina/id6767503541" target="_blank" rel="noreferrer">App Store</a>
         <a class="chip chip-link" href="/apps/lingua-latina/privacy-policy">Privacy Policy</a>
       </div>
     </div>
@@ -450,6 +452,8 @@
 
 <div class="apps-status-legend" aria-label="App status legend">
   <span><strong>Public release</strong>: shipping app and active docs</span>
+  <span><strong>App Store release</strong>: public App Store listing and active docs</span>
+  <span><strong>TestFlight beta</strong>: limited TestFlight testing and active docs</span>
   <span><strong>Private beta</strong>: limited testing and active docs</span>
   <span><strong>Internal alpha</strong>: internal testing and active docs</span>
 </div>

@@ -46,7 +46,7 @@ Related implementation references:
 ## Distribution Paths
 
 - iOS build target
-- macOS App Store distribution target
+- public App Store distribution
 - macOS direct/notarized distribution target
 
 ## Related Pages

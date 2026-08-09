@@ -8,6 +8,11 @@ This page tracks repository mapping for all documented apps.
 - GitBird: [GitHub](https://github.com/h3pdesign/GitBird)
 - Documentation Portal (`apps-h3p.com`): [GitHub](https://github.com/h3pdesign/appsh3p)
 
+## Public App Store Listings
+
+- Metrics Data: [App Store](https://apps.apple.com/us/app/metrics-data/id6758959570)
+- Lingua Latina: [App Store](https://apps.apple.com/us/app/lingua-latina/id6767503541)
+
 ## Repositories Not Publicly Listed (as of August 9, 2026)
 
 - Liquid Record
