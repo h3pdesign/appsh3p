@@ -24,9 +24,23 @@ export const appCatalog: AppCatalogEntry[] = [
   {
     slug: 'neon-vision-editor', name: 'Neon Vision Editor', category: 'Native text, Markdown, and code editor',
     description: 'A focused editor for real files across Apple platforms.', icon: '/icons/neon-vision-editor.png?v=20260401-2',
-    status: 'public', statusLabel: 'Public release', version: '0.9.6', releaseDate: '2026-07-23', platforms: ['macOS', 'iPadOS', 'iOS'],
+    status: 'public', statusLabel: 'Public release', version: '1.2.6', releaseDate: '2026-08-09', platforms: ['macOS', 'iPadOS', 'iOS', 'visionOS'],
     useCases: ['coding', 'markdown', 'ai'], overview: '/apps/neon-vision-editor/overview', installation: '/apps/neon-vision-editor/installation', changelog: '/apps/neon-vision-editor/changelog', privacy: '/policies/ai-and-data',
-    installLabel: 'Join TestFlight', installUrl: 'https://testflight.apple.com/join/YWB2fGAP', privacySummary: 'Local-first editing; AI data handling is documented and user-controlled.'
+    installLabel: 'GitHub Releases', installUrl: 'https://github.com/h3pdesign/Neon-Vision-Editor/releases', privacySummary: 'Local-first editing; AI data handling is documented and user-controlled.'
+  },
+  {
+    slug: 'gitbird', name: 'GitBird', category: 'Git notification menu bar app',
+    description: 'A native macOS menu bar app for GitHub and GitLab notifications.', icon: '/icons/gitbird.png?v=20260809-1',
+    status: 'public', statusLabel: 'Public release', version: '2.1.4', releaseDate: '2026-08-05', platforms: ['macOS'],
+    useCases: ['git', 'notifications', 'developer'], overview: '/apps/gitbird/overview', installation: '/apps/gitbird/installation', changelog: '/apps/gitbird/changelog', privacy: '/apps/gitbird/privacy-policy',
+    installLabel: 'GitHub Releases', installUrl: 'https://github.com/h3pdesign/GitBird/releases', privacySummary: 'Provider tokens are stored in Keychain and used only for configured GitHub or GitLab HTTPS hosts.'
+  },
+  {
+    slug: 'liquid-record', name: 'Liquid Record', category: 'Field recorder and audio capture',
+    description: 'An iPhone field-recorder console for WAV capture, markers, playback, and export.', icon: '/icons/liquid-record.png?v=20260809-1',
+    status: 'private', statusLabel: 'Private alpha', version: '1.0.1', releaseDate: '2026-08-09', platforms: ['iOS'],
+    useCases: ['audio', 'recording', 'workflow'], overview: '/apps/liquid-record/overview', installation: '/apps/liquid-record/installation', changelog: '/apps/liquid-record/changelog', privacy: '/apps/liquid-record/privacy-policy',
+    installLabel: 'Request access', installUrl: '/support/support-and-feedback', privacySummary: 'Offline-first local WAV recording with microphone permission requested only from the record action.'
   },
   {
     slug: 'metric-data', name: 'Metrics Data', category: 'Private analytics workspace',

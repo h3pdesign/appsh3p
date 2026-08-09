@@ -66,6 +66,8 @@ const isAppDocPage = computed(() => {
 
 const topSwitcherLinks = [
   { key: 'neon-vision-editor', text: 'Neon', link: '/apps/neon-vision-editor/overview' },
+  { key: 'gitbird', text: 'GitBird', link: '/apps/gitbird/overview' },
+  { key: 'liquid-record', text: 'Liquid', link: '/apps/liquid-record/overview' },
   { key: 'metric-data', text: 'Metrics', link: '/apps/metric-data/overview' },
   { key: 'x-newsbook', text: 'Newsbook', link: '/apps/x-newsbook/overview' },
   { key: 'release-assistant', text: 'Release', link: '/apps/release-assistant/overview' },
@@ -76,7 +78,9 @@ const topSwitcherLinks = [
 ]
 
 const appUpdatedBySlug: Record<string, string> = {
-  'neon-vision-editor': 'August 7, 2026',
+  'neon-vision-editor': 'August 9, 2026',
+  'gitbird': 'August 5, 2026',
+  'liquid-record': 'August 9, 2026',
   'metric-data': 'May 9, 2026',
   'x-newsbook': 'February 13, 2026',
   'release-assistant': 'May 6, 2026',
@@ -99,7 +103,7 @@ const appDocTopLinks = computed<DocJumpLink[]>(() => {
     { text: 'Known Issues', link: base + '/known-issues' },
     { text: 'FAQ', link: base + '/faq' }
   ]
-  if (appSlug.value === 'metric-data' || appSlug.value === 'lingua-latina') {
+  if (appSlug.value === 'metric-data' || appSlug.value === 'lingua-latina' || appSlug.value === 'gitbird' || appSlug.value === 'liquid-record') {
     links.push({ text: 'Privacy', link: base + '/privacy-policy' })
   }
   if (appSlug.value === 'neon-vision-editor') {
@@ -709,13 +713,15 @@ function ensureHomeWidgets() {
       <section class="home-hero-widget-card">
         <h3>Status</h3>
         <ul>
-          <li><strong>7</strong> apps documented</li>
+          <li><strong>10</strong> apps documented</li>
           <li>Published on <a href="https://apps-h3p.com" target="_blank" rel="noreferrer noopener">apps-h3p.com</a></li>
           <li><a href="https://github.com/h3pdesign/appsh3p" target="_blank" rel="noreferrer noopener">Docs repo</a></li>
         </ul>
-        <div class="home-deploy-badge"><a href="https://github.com/h3pdesign/appsh3p/commit/ae3e8f2" target="_blank" rel="noreferrer noopener">Last deployment: <span data-date="2026-08-07">August 7, 2026</span></a></div>
+        <div class="home-deploy-badge"><a href="https://github.com/h3pdesign/appsh3p/commits/main" target="_blank" rel="noreferrer noopener">Last docs sync: <span data-date="2026-08-09">August 9, 2026</span></a></div>
         <div class="home-hero-mini-apps" aria-label="App icons">
           <a href="/apps/neon-vision-editor/overview"><img class="mini-icon-neon" src="/icons/neon-vision-editor.png" alt="Neon Vision Editor" width="22" height="22" loading="lazy" decoding="async" /></a>
+          <a href="/apps/gitbird/overview"><img src="/icons/gitbird.png" alt="GitBird" width="22" height="22" loading="lazy" decoding="async" /></a>
+          <a href="/apps/liquid-record/overview"><img src="/icons/liquid-record.png" alt="Liquid Record" width="22" height="22" loading="lazy" decoding="async" /></a>
           <a href="/apps/metric-data/overview"><img src="/icons/metric-data.png" alt="Metrics Data" width="22" height="22" loading="lazy" decoding="async" /></a>
           <a href="/apps/x-newsbook/overview"><img src="/icons/x-newsbook.png" alt="X-Newsbook" width="22" height="22" loading="lazy" decoding="async" /></a>
           <a href="/apps/release-assistant/overview"><img src="/icons/release-assistant.png" alt="Release Assistant" width="22" height="22" loading="lazy" decoding="async" /></a>
@@ -728,7 +734,9 @@ function ensureHomeWidgets() {
       <section class="home-hero-widget-card home-platform-matrix-card">
         <h3>Platform matrix</h3>
         <div class="home-platform-matrix">
-          <div class="home-platform-row"><span class="app">Neon</span><span class="plat">macOS</span><span class="plat">iPadOS</span><span class="plat">iOS</span></div>
+          <div class="home-platform-row"><span class="app">Neon</span><span class="plat">macOS</span><span class="plat">iPadOS</span><span class="plat">iOS</span><span class="plat">visionOS</span></div>
+          <div class="home-platform-row"><span class="app">GitBird</span><span class="plat">macOS</span></div>
+          <div class="home-platform-row"><span class="app">Liquid</span><span class="plat">iOS</span></div>
           <div class="home-platform-row"><span class="app">Metrics</span><span class="plat">macOS</span><span class="plat">iPadOS</span><span class="plat">iOS</span></div>
           <div class="home-platform-row"><span class="app">Newsbook</span><span class="plat">macOS</span><span class="plat">iPadOS</span><span class="plat">iOS</span></div>
           <div class="home-platform-row"><span class="app">Release</span><span class="plat">macOS</span></div>
@@ -737,8 +745,8 @@ function ensureHomeWidgets() {
 
       <section class="home-hero-widget-card home-hero-ticker">
         <h3>Latest release</h3>
-        <p><strong>Neon Vision Editor v1.2.5</strong> published on August 7, 2026.</p>
-        <a href="https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v1.2.5" target="_blank" rel="noreferrer noopener">View GitHub release</a>
+        <p><strong>Neon Vision Editor v1.2.6</strong> published on August 9, 2026.</p>
+        <a href="https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v1.2.6" target="_blank" rel="noreferrer noopener">View GitHub release</a>
       </section>
     `
 

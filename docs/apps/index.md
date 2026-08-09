@@ -3,7 +3,7 @@
 <div class="apps-top-row">
   <div class="apps-index-intro-copy">
     <p class="apps-index-eyebrow">App library</p>
-    <p class="apps-intro">Explore eight focused apps, each with a clear purpose, platform story, and complete documentation path.</p>
+    <p class="apps-intro">Explore ten focused apps, each with a clear purpose, platform story, and complete documentation path.</p>
     <p class="apps-intro-note">Choose an app to see its overview, features, installation guidance, gallery, release history, and support resources.</p>
   </div>
   <div class="apps-avatar-card">
@@ -19,6 +19,8 @@
   <div class="apps-whats-new-title">What's new</div>
   <div class="apps-whats-new-items">
     <span class="apps-whats-new-item is-neon">Neon Vision Editor docs expanded with changelog, known issues, and FAQ.</span>
+    <span class="apps-whats-new-item is-gitbird">GitBird docs added with GitHub/GitLab notification, Keychain, and release guidance.</span>
+    <span class="apps-whats-new-item is-liquid">Liquid Record docs added from the current iPhone recorder requirements.</span>
     <span class="apps-whats-new-item is-metric">Metrics Data overview refreshed with iPad-first screenshots and SEO metadata.</span>
     <span class="apps-whats-new-item is-release">Release Assistant now includes structured install, gallery, and changelog docs.</span>
     <span class="apps-whats-new-item is-newsbook">X-Newsbook docs added with overview, components, installation, and FAQ.</span>
@@ -30,7 +32,9 @@
 </div>
 
 <div class="apps-release-timeline" aria-label="Release timeline">
-  <div class="apps-release-item neon"><span class="name">Neon Vision Editor</span><span class="tag">v1.2.5</span><span class="date">2026-08-07</span></div>
+  <div class="apps-release-item neon"><span class="name">Neon Vision Editor</span><span class="tag">v1.2.6</span><span class="date">2026-08-09</span></div>
+  <div class="apps-release-item gitbird"><span class="name">GitBird</span><span class="tag">2.1.4</span><span class="date">2026-08-05</span></div>
+  <div class="apps-release-item liquid"><span class="name">Liquid Record</span><span class="tag">1.0.1</span><span class="date">2026-08-09</span></div>
   <div class="apps-release-item metric"><span class="name">Metrics Data</span><span class="tag">0.2.3</span><span class="date">2026-05-09</span></div>
   <div class="apps-release-item newsbook"><span class="name">X-Newsbook</span><span class="tag">10</span><span class="date">2026-02-13</span></div>
   <div class="apps-release-item release"><span class="name">Release Assistant</span><span class="tag">0.2.0</span><span class="date">2026-05-06</span></div>
@@ -92,26 +96,70 @@
   <button type="button" data-app-filter="usecase:reading">Reading</button>
   <button type="button" data-app-filter="usecase:language">Language</button>
 </div>
-<div class="apps-filter-status" aria-live="polite"><span data-app-count>8 apps shown</span><span data-app-empty hidden>No apps match. Try another search or filter.</span><a href="/apps/compare">Compare all apps →</a></div>
+<div class="apps-filter-status" aria-live="polite"><span data-app-count>10 apps shown</span><span data-app-empty hidden>No apps match. Try another search or filter.</span><a href="/apps/compare">Compare all apps →</a></div>
 
 <div class="apps-grid">
-  <article class="app-card app-card-neon" data-changelog="/apps/neon-vision-editor/changelog" data-status="public" data-platforms="macos,ipados,ios" data-use-cases="coding,markdown,ai">
+  <article class="app-card app-card-neon" data-changelog="/apps/neon-vision-editor/changelog" data-status="public" data-platforms="macos,ipados,ios,visionos" data-use-cases="coding,markdown,ai">
     <img src="/icons/neon-vision-editor.png?v=20260401-2" alt="Neon Vision Editor icon" class="app-icon" />
     <div class="app-card-content">
       <h3 class="app-title-row"><a class="app-title-link" href="/apps/neon-vision-editor/overview">Neon Vision Editor</a><span class="app-status app-status-release">Public release</span></h3>
       <div class="app-card-meta-row">
         <div class="app-platform-pills">
-          <span>macOS</span><span>iPadOS</span><span>iOS</span>
+          <span>macOS</span><span>iPadOS</span><span>iOS</span><span>visionOS</span>
         </div>
         <div class="app-meta-right">
           <span class="app-doc-state app-doc-state-active">Docs: Active</span>
           <span class="app-updated-badge">updated recently</span>
         </div>
       </div>
-      <p>Native editor for macOS, iPadOS, and iOS with optional AI assistance and syntax highlighting.</p>
+      <p>Native editor for macOS, iPadOS, iOS, and visionOS with optional AI assistance, syntax highlighting, and large-file performance controls.</p>
       <div class="app-actions-row">
         <span class="chip chip-live">GitHub: public repository</span>
+        <a class="chip chip-link" href="https://github.com/h3pdesign/Neon-Vision-Editor/releases" target="_blank" rel="noreferrer">GitHub Releases</a>
         <a class="chip chip-link" href="https://testflight.apple.com/join/YWB2fGAP" target="_blank" rel="noreferrer">TestFlight</a>
+      </div>
+    </div>
+  </article>
+
+  <article class="app-card app-card-gitbird" data-changelog="/apps/gitbird/changelog" data-status="public" data-platforms="macos" data-use-cases="git,notifications,developer">
+    <img src="/icons/gitbird.png?v=20260809-1" alt="GitBird icon" class="app-icon" />
+    <div class="app-card-content">
+      <h3 class="app-title-row"><a class="app-title-link" href="/apps/gitbird/overview">GitBird</a><span class="app-status app-status-release">Public release</span></h3>
+      <div class="app-card-meta-row">
+        <div class="app-platform-pills">
+          <span>macOS</span>
+        </div>
+        <div class="app-meta-right">
+          <span class="app-doc-state app-doc-state-active">Docs: Active</span>
+          <span class="app-updated-badge">updated recently</span>
+        </div>
+      </div>
+      <p>Native menu bar app for GitHub and GitLab notifications with provider-aware actions and Keychain token storage.</p>
+      <div class="app-actions-row">
+        <span class="chip chip-live">GitHub: public repository</span>
+        <a class="chip chip-link" href="https://github.com/h3pdesign/GitBird/releases" target="_blank" rel="noreferrer">GitHub Releases</a>
+        <a class="chip chip-link" href="/apps/gitbird/privacy-policy">Privacy Policy</a>
+      </div>
+    </div>
+  </article>
+
+  <article class="app-card app-card-liquid" data-changelog="/apps/liquid-record/changelog" data-status="private" data-platforms="ios" data-use-cases="audio,recording,workflow">
+    <img src="/icons/liquid-record.png?v=20260809-1" alt="Liquid Record icon" class="app-icon" />
+    <div class="app-card-content">
+      <h3 class="app-title-row"><a class="app-title-link" href="/apps/liquid-record/overview">Liquid Record</a><span class="app-status app-status-private">Private alpha</span></h3>
+      <div class="app-card-meta-row">
+        <div class="app-platform-pills">
+          <span>iOS</span>
+        </div>
+        <div class="app-meta-right">
+          <span class="app-doc-state app-doc-state-active">Docs: Active</span>
+          <span class="app-updated-badge">updated recently</span>
+        </div>
+      </div>
+      <p>iPhone field-recorder console for WAV recording, live meters, markers, notes, playback, scrubbing, and export.</p>
+      <div class="app-actions-row">
+        <span class="chip">GitHub: repository not public yet</span>
+        <a class="chip chip-link" href="/apps/liquid-record/privacy-policy">Privacy Policy</a>
       </div>
     </div>
   </article>
@@ -278,6 +326,34 @@
     </div>
   </section>
   <section>
+    <h3>GitBird</h3>
+    <div>
+      <a href="/apps/gitbird/overview">Overview</a>
+      <a href="/apps/gitbird/components-overview">Components</a>
+      <a href="/apps/gitbird/installation">Install</a>
+      <a href="/apps/gitbird/features">Features</a>
+      <a href="/apps/gitbird/gallery">Gallery</a>
+      <a href="/apps/gitbird/changelog">Changelog</a>
+      <a href="/apps/gitbird/known-issues">Known Issues</a>
+      <a href="/apps/gitbird/faq">FAQ</a>
+      <a href="/apps/gitbird/privacy-policy">Privacy</a>
+    </div>
+  </section>
+  <section>
+    <h3>Liquid Record</h3>
+    <div>
+      <a href="/apps/liquid-record/overview">Overview</a>
+      <a href="/apps/liquid-record/components-overview">Components</a>
+      <a href="/apps/liquid-record/installation">Install</a>
+      <a href="/apps/liquid-record/features">Features</a>
+      <a href="/apps/liquid-record/gallery">Gallery</a>
+      <a href="/apps/liquid-record/changelog">Changelog</a>
+      <a href="/apps/liquid-record/known-issues">Known Issues</a>
+      <a href="/apps/liquid-record/faq">FAQ</a>
+      <a href="/apps/liquid-record/privacy-policy">Privacy</a>
+    </div>
+  </section>
+  <section>
     <h3>Metrics Data</h3>
     <div>
       <a href="/apps/metric-data/overview">Overview</a>
@@ -385,6 +461,8 @@ See [Code Examples](/apps/code-examples) for syntax-highlighted snippets from Ne
 ## Components Overview
 
 - [Neon Vision Editor Components Overview](/apps/neon-vision-editor/components-overview)
+- [GitBird Components Overview](/apps/gitbird/components-overview)
+- [Liquid Record Components Overview](/apps/liquid-record/components-overview)
 - [Metrics Data Components Overview](/apps/metric-data/components-overview)
 - [Release Assistant Components Overview](/apps/release-assistant/components-overview)
 - [X-Newsbook Components Overview](/apps/x-newsbook/components-overview)
@@ -455,6 +533,8 @@ See [GitHub Repositories](/apps/github-repositories) for repository links and cu
 }
 
 .apps-whats-new-item.is-neon { --item-accent: #9f6bff; }
+.apps-whats-new-item.is-gitbird { --item-accent: #2563eb; }
+.apps-whats-new-item.is-liquid { --item-accent: #ef4444; }
 .apps-whats-new-item.is-metric { --item-accent: #37b86f; }
 .apps-whats-new-item.is-release { --item-accent: #18a7d8; }
 .apps-whats-new-item.is-newsbook { --item-accent: #4f86ff; }
@@ -496,6 +576,8 @@ See [GitHub Repositories](/apps/github-repositories) for repository links and cu
 .apps-release-item .date { color: var(--vp-c-text-2); font-size: 11px; }
 
 .apps-release-item.neon .tag { color: #b88bff; border-color: rgba(184,139,255,0.45); }
+.apps-release-item.gitbird .tag { color: #7ca8ff; border-color: rgba(124,168,255,0.45); }
+.apps-release-item.liquid .tag { color: #ff7a7a; border-color: rgba(255,122,122,0.45); }
 .apps-release-item.metric .tag { color: #5bd485; border-color: rgba(91,212,133,0.45); }
 .apps-release-item.newsbook .tag { color: #7ca8ff; border-color: rgba(124,168,255,0.45); }
 .apps-release-item.release .tag { color: #69d7ff; border-color: rgba(105,215,255,0.45); }

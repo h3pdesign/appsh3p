@@ -5,10 +5,12 @@ This page tracks repository mapping for all documented apps.
 ## Public Repositories
 
 - Neon Vision Editor: [GitHub](https://github.com/h3pdesign/Neon-Vision-Editor)
+- GitBird: [GitHub](https://github.com/h3pdesign/GitBird)
 - Documentation Portal (`apps-h3p.com`): [GitHub](https://github.com/h3pdesign/appsh3p)
 
-## Repositories Not Publicly Listed (as of May 16, 2026)
+## Repositories Not Publicly Listed (as of August 9, 2026)
 
+- Liquid Record
 - Metrics Data
 - X-Newsbook
 - Release Assistant

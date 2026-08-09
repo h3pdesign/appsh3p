@@ -11,7 +11,9 @@ Use this view when you know the job you want to do but not which app is the best
 
 | App | Best for | Platforms | Status / latest release | Access | Privacy |
 | --- | --- | --- | --- | --- | --- |
-| [Neon Vision Editor](/apps/neon-vision-editor/overview) | Code, Markdown, and real-file editing | macOS · iPadOS · iOS | Public · v0.9.6 (2026-07-23) | [TestFlight](https://testflight.apple.com/join/YWB2fGAP) | [AI and data](/policies/ai-and-data) |
+| [Neon Vision Editor](/apps/neon-vision-editor/overview) | Code, Markdown, and real-file editing | macOS · iPadOS · iOS · visionOS | Public · v1.2.6 (2026-08-09) | [GitHub Releases](https://github.com/h3pdesign/Neon-Vision-Editor/releases) | [AI and data](/policies/ai-and-data) |
+| [GitBird](/apps/gitbird/overview) | GitHub and GitLab notification triage | macOS | Public · 2.1.4 (2026-08-05) | [GitHub Releases](https://github.com/h3pdesign/GitBird/releases) | [App policy](/apps/gitbird/privacy-policy) |
+| [Liquid Record](/apps/liquid-record/overview) | iPhone WAV recording, markers, and playback | iOS | Private alpha · 1.0.1 (2026-08-09) | [Request access](/support/support-and-feedback) | [App policy](/apps/liquid-record/privacy-policy) |
 | [Metrics Data](/apps/metric-data/overview) | Private AdSense reporting | macOS · iPadOS · iOS | Private beta · 0.2.3 (2026-05-09) | [TestFlight](https://testflight.apple.com/join/mMyMAGjE) | [App policy](/apps/metric-data/privacy-policy) |
 | [X-Newsbook](/apps/x-newsbook/overview) | Reading, feeds, and saved context | macOS · iPadOS · iOS | Private beta · 10 (2026-02-13) | [Request access](/support/support-and-feedback) | [Website policy](/policies/privacy-policy) |
 | [Release Assistant](/apps/release-assistant/overview) | Guarded release operations | macOS | Internal alpha · 0.2.0 (2026-05-06) | [Request access](/support/support-and-feedback) | [Website policy](/policies/privacy-policy) |
@@ -23,6 +25,8 @@ Use this view when you know the job you want to do but not which app is the best
 ## Choose by use case
 
 - **Writing and coding:** [Neon Vision Editor](/apps/neon-vision-editor/overview)
+- **Git notifications:** [GitBird](/apps/gitbird/overview)
+- **Audio recording:** [Liquid Record](/apps/liquid-record/overview)
 - **Analytics:** [Metrics Data](/apps/metric-data/overview) or [Vistral](/apps/vistral/overview)
 - **Reading and research:** [X-Newsbook](/apps/x-newsbook/overview) or [History Vision](/apps/history-vision/overview)
 - **Release work:** [Release Assistant](/apps/release-assistant/overview)

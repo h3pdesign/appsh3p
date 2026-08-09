@@ -23,10 +23,10 @@ features:
 ---
 
 <div class="startpage-stats-row" aria-label="Docs quick stats">
-  <span>8 apps</span>
+  <span>10 apps</span>
   <span>1 docs hub</span>
-  <span class="startpage-updated-date">updated Aug 7, 2026</span>
-  <span class="startpage-synced-badge">GitHub synced Aug 7, 2026</span>
+  <span class="startpage-updated-date">updated Aug 9, 2026</span>
+  <span class="startpage-synced-badge">GitHub synced Aug 9, 2026</span>
 </div>
 <p class="startpage-hero-secondary-cta">
   Need setup help? <a href="/getting-started/introduction">Read the quick introduction</a>
@@ -54,7 +54,9 @@ features:
 <h2 id="whats-new-week">what's new this week</h2>
 
 <div class="startpage-weekly-strip" aria-label="What's new this week">
-  <a href="/apps/neon-vision-editor/changelog"><strong data-date="2026-08-07">Aug 7, 2026</strong>: Neon Vision Editor v1.2.5 release notes and docs refresh</a>
+  <a href="/apps/neon-vision-editor/changelog"><strong data-date="2026-08-09">Aug 9, 2026</strong>: Neon Vision Editor v1.2.6 release notes and docs refresh</a>
+  <a href="/apps/liquid-record/overview"><strong data-date="2026-08-09">Aug 9, 2026</strong>: Liquid Record app documentation added from the authoritative requirements</a>
+  <a href="/apps/gitbird/changelog"><strong data-date="2026-08-05">Aug 5, 2026</strong>: GitBird 2.1.4 security, provider, and accessibility docs added</a>
   <a href="/apps/lingua-latina/overview"><strong data-date="2026-05-14">May 14, 2026</strong>: Lingua Latina 1.0.0 local app data and docs refreshed</a>
   <a href="/apps/metric-data/overview"><strong data-date="2026-05-09">May 9, 2026</strong>: Metrics Data 0.2.3 dashboard and OAuth scope data synced</a>
   <a href="/apps/vistral/overview"><strong data-date="2026-05-09">May 9, 2026</strong>: Vistral 0.1.6 multi-platform app data synced</a>
@@ -66,11 +68,31 @@ features:
       <img src="/icons/neon-vision-editor.png?v=20260401-2" alt="" aria-hidden="true" loading="lazy" decoding="async" />
       <strong>Neon</strong>
     </div>
-    <span>v1.2.5</span>
-    <span data-date="2026-08-07">Aug 7, 2026</span>
-    <span>macOS, iPadOS, iOS</span>
+    <span>v1.2.6</span>
+    <span data-date="2026-08-09">Aug 9, 2026</span>
+    <span>macOS, iPadOS, iOS, visionOS</span>
     <a href="/apps/neon-vision-editor/changelog">Source: changelog</a>
-    <a href="https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v1.2.5" target="_blank" rel="noreferrer noopener">Source: GitHub release</a>
+    <a href="https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v1.2.6" target="_blank" rel="noreferrer noopener">Source: GitHub release</a>
+  </article>
+  <article class="startpage-release-item release-gitbird">
+    <div class="startpage-release-head">
+      <img src="/icons/gitbird.png?v=20260809-1" alt="" aria-hidden="true" loading="lazy" decoding="async" />
+      <strong>GitBird</strong>
+    </div>
+    <span>2.1.4</span>
+    <span data-date="2026-08-05">Aug 5, 2026</span>
+    <span>macOS</span>
+    <a href="/apps/gitbird/changelog">Source: changelog</a>
+  </article>
+  <article class="startpage-release-item release-liquid">
+    <div class="startpage-release-head">
+      <img src="/icons/liquid-record.png?v=20260809-1" alt="" aria-hidden="true" loading="lazy" decoding="async" />
+      <strong>Liquid</strong>
+    </div>
+    <span>1.0.1</span>
+    <span data-date="2026-08-09">Aug 9, 2026</span>
+    <span>iOS</span>
+    <a href="/apps/liquid-record/changelog">Source: requirements</a>
   </article>
   <article class="startpage-release-item release-metric">
     <div class="startpage-release-head">
@@ -110,12 +132,22 @@ features:
   <a href="/apps/x-newsbook/overview">Read News</a>
   <a href="/apps/lingua-latina/overview">Learn Latin</a>
   <a href="/apps/release-assistant/overview">Ship Releases</a>
+  <a href="/apps/gitbird/overview">Track Git</a>
+  <a href="/apps/liquid-record/overview">Record Audio</a>
 </div>
 
 <div class="startpage-app-strip" aria-label="H3P apps quick links">
   <a class="startpage-app-item" href="/apps/neon-vision-editor/overview">
     <img src="/icons/neon-vision-editor.png?v=20260401-2" alt="Neon Vision Editor icon" width="52" height="52" loading="lazy" decoding="async" />
     <span>Neon Vision Editor</span>
+  </a>
+  <a class="startpage-app-item" href="/apps/gitbird/overview">
+    <img src="/icons/gitbird.png?v=20260809-1" alt="GitBird icon" width="52" height="52" loading="lazy" decoding="async" />
+    <span>GitBird</span>
+  </a>
+  <a class="startpage-app-item" href="/apps/liquid-record/overview">
+    <img src="/icons/liquid-record.png?v=20260809-1" alt="Liquid Record icon" width="52" height="52" loading="lazy" decoding="async" />
+    <span>Liquid Record</span>
   </a>
   <a class="startpage-app-item" href="/apps/metric-data/overview">
     <img src="/icons/metric-data.png?v=20260430-1" alt="Metrics Data icon" width="52" height="52" loading="lazy" decoding="async" />
@@ -148,9 +180,9 @@ features:
 </div>
 
 <div class="startpage-social-proof" aria-label="Trust signals">
-  <span>8 app docs</span>
+  <span>10 app docs</span>
   <span>Published on apps-h3p.com</span>
-  <span>Neon release published Aug 7, 2026</span>
+  <span>Neon release published Aug 9, 2026</span>
   <span>GitHub-backed changelogs</span>
 </div>
 
