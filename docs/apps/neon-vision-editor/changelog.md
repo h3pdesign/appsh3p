@@ -16,14 +16,16 @@ _Source: local Neon Vision Editor changelog and README. Last synced on August 9,
 
 Release link: [GitHub Release v1.2.6](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v1.2.6)
 
+- Makes everyday editor navigation faster and clearer on iPhone and iPad.
+- Reduces unnecessary work while editing and saving larger documents.
+- Gives assistive technologies clearer state information for toolbar controls.
 - Adds configurable timeout controls for custom AI providers.
 - Dismisses the iPhone table of contents after selecting an entry and jumps directly to its line.
 - Adds viewport-scoped syntax highlighting for large programming documents.
 - Caches Markdown list detection instead of recompiling its regular expression on every Return key press.
 - Limits glyph-artifact inspection to the edited range during normal text changes.
 - Applies the trailing-whitespace setting during local and remote saves.
-- Exposes clearer accessibility state and contextual hints for performance, completion, wrapping, minimap, indentation, and toolbar controls.
-- Refines the Liquid Glass app icon gradient.
+- Exposes on/off state and contextual hints for performance, completion, wrapping, minimap, indentation, and toolbar controls.
 
 ## v1.2.5 (published August 7, 2026)
 
