@@ -12,20 +12,17 @@ head:
 
 _Source: local Neon Vision Editor changelog and README. Last synced on August 9, 2026._
 
-## v1.2.6 (published August 9, 2026)
+## v1.3.5 (published August 11, 2026)
 
-Release link: [GitHub Release v1.2.6](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v1.2.6)
+Release link: [GitHub Release v1.3.5](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v1.3.5)
 
-- Makes everyday editor navigation faster and clearer on iPhone and iPad.
-- Reduces unnecessary work while editing and saving larger documents.
-- Gives assistive technologies clearer state information for toolbar controls.
-- Adds configurable timeout controls for custom AI providers.
-- Dismisses the iPhone table of contents after selecting an entry and jumps directly to its line.
-- Adds viewport-scoped syntax highlighting for large programming documents.
-- Caches Markdown list detection instead of recompiling its regular expression on every Return key press.
-- Limits glyph-artifact inspection to the edited range during normal text changes.
-- Applies the trailing-whitespace setting during local and remote saves.
-- Exposes on/off state and contextual hints for performance, completion, wrapping, minimap, indentation, and toolbar controls.
+- Refines Quick Look behavior and macOS Settings sizing after the v1.3.4 appearance correction.
+- Keeps release metadata, download documentation, and platform version references synchronized for the next direct-download release.
+- Includes the latest post-release polish without changing the supported workflow or migration path.
+- Improves Quick Look and Settings-window sizing behavior on macOS.
+- Refreshes release documentation, download metrics, Sparkle metadata, and App Store version references.
+- Reduces layout movement and sizing friction when working with Quick Look previews and macOS Settings.
+- Keeps the release-facing documentation and published-version references aligned with v1.3.5.
 
 ## v1.2.5 (published August 7, 2026)
 
