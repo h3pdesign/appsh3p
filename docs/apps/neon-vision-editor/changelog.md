@@ -10,16 +10,31 @@ head:
 
 # Neon Vision Editor Changelog
 
-_Source: local Neon Vision Editor changelog and README. Last synced on August 9, 2026._
+_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on August 14, 2026._
+
+## v1.4.1 (published August 14, 2026)
+
+Release link: [GitHub Release v1.4.1](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v1.4.1)
+
+- Keeps the macOS editor responsive while navigating and editing file-backed documents.
+- Makes compact iPhone editor controls and document outlines easier to scan.
+- Improves project navigation, structured-text workflows, and Quick Look reliability.
+- Uses a bounded macOS virtual editor with viewport-aware editing, selection, and scrolling for file-backed documents.
+- Adds project-sidebar expansion persistence, lazy directory loading, adjustable text size, and improved overlay scrollers.
+- Adds Typst templates and a safe plain-text-to-JSON structuring workflow.
+- Keeps every named iPhone and iPad toolbar-preset action directly reachable in the horizontal toolbar.
+- Adds pinch-to-zoom sizing for project-sidebar file items.
+- Shows concise language labels such as `MD`, `JS`, and `TS` in the iPhone toolbar while preserving full picker and VoiceOver names.
+- Adds subtle spacing between compact table-of-contents entries without loosening their indentation or content layout.
 
 ## v1.4.0 (published August 12, 2026)
 
 Release link: [GitHub Release v1.4.0](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v1.4.0)
 
-- Keeps large documents editable with a file-backed document model and bounded live editor virtualization.
+- Reworks macOS large-document editing around a file-backed document model and bounded live-editor virtualization.
 - Removes full-document compatibility work from the per-edit path for responsive large-file editing.
 - Restores reliable content installation when opening ordinary files such as the changelog.
-- Adds bounded viewport loading, scrolling, editing, generation checks, and caret/selection preservation for large files.
+- Adds a bounded virtual viewport that keeps the active editing region, scrolling, selection, and caret state responsive for large files.
 - Applies UTF-16 editor mutations directly through the active document viewport instead of copying the whole document for each edit.
 - Preserves encoding, line-ending, external-change, and atomic-save behavior across file-backed edits.
 - Fixes ordinary documents opening with an empty macOS editor while the outline still showed their content.

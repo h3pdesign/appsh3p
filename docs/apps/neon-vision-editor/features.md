@@ -23,6 +23,15 @@ Neon Vision Editor is built for focused writing and coding with a native, low-la
 
 ![Editing flow on Mac](/media/neon/editing-mac-frame.png)
 
+## Large-Document Architecture and Performance
+
+On macOS, version 1.4 uses a file-backed document model with a bounded virtual viewport for large editable files. The editor keeps the active region around the scroll position live instead of rebuilding a complete document buffer for each edit.
+
+- bounded viewport replacement preserves the active caret and selection while you scroll through a large file
+- line layout and syntax work stay focused on the visible range
+- UTF-16 edits apply through the active viewport while encoding, line endings, and atomic saves are preserved
+- files below 100 MB remain editable; files at or above 100 MB open as a read-only partial preview of the first 4 MB for safe inspection
+
 ## Shared Files and Conflict Protection
 
 Open documents can refresh after external changes from iCloud Drive, a network folder, or another app.

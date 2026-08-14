@@ -61,10 +61,13 @@ const APPS = {
     },
     updateChangelog(content, rel) {
       let out = content
-      out = out.replace(/(_Source: GitHub Releases for \[Neon Vision Editor\]\(https:\/\/github.com\/h3pdesign\/Neon-Vision-Editor\)\. Last synced on )[^.]+(\._)/, `$1${rel.publishedLong}$2`)
+      out = out.replace(
+        /_Source: (?:GitHub Releases for \[Neon Vision Editor\]\(https:\/\/github.com\/h3pdesign\/Neon-Vision-Editor\)|local Neon Vision Editor changelog and README)\. Last synced on [^.]+\._/,
+        `_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on ${rel.publishedLong}._`
+      )
       out = out.replace(/## v\d+\.\d+\.\d+ \(published [^)]+\)/, `## ${rel.tag} (published ${rel.publishedLong})`)
       out = out.replace(/Release link: \[GitHub Release v\d+\.\d+\.\d+\]\(https:\/\/github.com\/h3pdesign\/Neon-Vision-Editor\/releases\/tag\/v\d+\.\d+\.\d+\)/, `Release link: [GitHub Release ${rel.tag}](${rel.url})`)
-      const blockRegex = /(Release link: \[GitHub Release [^\n]+\]\([^\n]+\)\n\n)([\s\S]*?)(\n## v\d+\.\d+\.\d+ \(published)/
+      const blockRegex = /(Release link: \[GitHub Release [^\r\n]+\]\([^\r\n]+\)\r?\n\r?\n)([\s\S]*?)(\r?\n## v\d+\.\d+\.\d+ \(published)/
       if (blockRegex.test(out)) {
         out = out.replace(blockRegex, (_, head, __, next) => `${head}${rel.bullets.join('\n')}\n${next}`)
       }
