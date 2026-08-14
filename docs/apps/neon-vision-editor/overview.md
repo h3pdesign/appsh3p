@@ -2,10 +2,10 @@
 head:
   - - meta
     - property: og:image
-      content: https://apps-h3p.com/media/neon/neon-vision-banner.jpg
+      content: https://apps-h3p.com/media/neon/neon-v1.4-hero.webp
   - - meta
     - name: twitter:image
-      content: https://apps-h3p.com/media/neon/neon-vision-banner.jpg
+      content: https://apps-h3p.com/media/neon/neon-v1.4-hero.webp
   - - script
     - type: application/ld+json
     - '{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://apps-h3p.com/#organization","name":"H3P","url":"https://apps-h3p.com","sameAs":["https://github.com/h3pdesign"]},{"@type":"SoftwareApplication","@id":"https://apps-h3p.com/apps/neon-vision-editor/overview#app","name":"Neon Vision Editor","applicationCategory":"DeveloperApplication","operatingSystem":"macOS, iPadOS, iOS, visionOS","url":"https://apps-h3p.com/apps/neon-vision-editor/overview","downloadUrl":"https://github.com/h3pdesign/Neon-Vision-Editor/releases","softwareVersion":"1.4.1","isAccessibleForFree":true,"publisher":{"@id":"https://apps-h3p.com/#organization"}}]}'
@@ -30,7 +30,7 @@ head:
   <div><span>repo status</span><strong>public</strong></div>
 </div>
 <figure class="overview-banner overview-neon-banner overview-reveal">
-  <img src="/media/neon/neon-vision-banner.jpg" alt="Neon Vision Editor banner with app icon and code editor preview" />
+  <img src="/media/neon/neon-v1.4-hero.webp" alt="Neon Vision Editor running on a MacBook" />
 </figure>
 <div class="overview-hero overview-app-neon overview-reveal">
   <div class="overview-hero-copy">
@@ -40,13 +40,13 @@ head:
     <img src="/icons/neon-vision-editor.png?v=20260401-2" alt="Neon Vision Editor icon" class="overview-app-icon" />
     <div class="overview-screenshot-gallery" aria-label="Neon Vision Editor screenshots">
       <div class="overview-shot-frame overview-shot-frame-compact">
-        <img src="/media/neon/neon-vision-editor-light.png" alt="Neon Vision Editor in the light theme" class="overview-app-shot overview-app-shot-clean overview-app-shot-compact" />
+        <img src="/media/neon/neon-v1.4-editor.webp" alt="Neon Vision Editor editing Swift in the light theme" class="overview-app-shot overview-app-shot-clean overview-app-shot-compact" />
       </div>
       <div class="overview-shot-frame">
-        <img src="/media/neon/neon-vision-editor.png" alt="Neon Vision Editor with syntax highlighting, minimap, and project sidebar" class="overview-app-shot overview-app-shot-clean" />
+        <img src="/media/neon/neon-v1.4-workspace.webp" alt="Neon Vision Editor workspace with project sidebar and code minimap" class="overview-app-shot overview-app-shot-clean" />
       </div>
       <div class="overview-shot-frame">
-        <img src="/media/neon/neon-vision-editor-markdown-preview.png" alt="Neon Vision Editor with Markdown preview and project sidebar" class="overview-app-shot overview-app-shot-clean" />
+        <img src="/media/neon/neon-v1.4-preview.webp" alt="Neon Vision Editor with Markdown preview and project sidebar" class="overview-app-shot overview-app-shot-clean" />
       </div>
     </div>
     <div class="overview-download-badges overview-download-badges-hero" aria-label="Download Neon Vision Editor">

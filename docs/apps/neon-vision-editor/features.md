@@ -2,10 +2,10 @@
 head:
   - - meta
     - property: og:image
-      content: https://apps-h3p.com/media/neon-vision-editor-hero.png
+      content: https://apps-h3p.com/media/neon/neon-v1.4-hero.webp
   - - meta
     - name: twitter:image
-      content: https://apps-h3p.com/media/neon-vision-editor-hero.png
+      content: https://apps-h3p.com/media/neon/neon-v1.4-hero.webp
 ---
 
 # Neon Vision Editor Features
@@ -21,7 +21,7 @@ Neon Vision Editor is built for focused writing and coding with a native, low-la
 - tabbed editing, Quick Open, regex Find/Replace, and optional Code Minimap navigation
 - large-file safeguards: files below 100 MB remain editable, while files at 100 MB or more open as a read-only partial preview of the first 4 MB
 
-![Editing flow on Mac](/media/neon/editing-mac-frame.png)
+![Editing flow on Mac](/media/neon/neon-v1.4-editor.webp)
 
 ## Large-Document Architecture and Performance
 
@@ -51,7 +51,7 @@ AI assistance is available when explicitly requested.
 - no forced AI overlays
 - no interruptive auto-generation loops
 
-![AI assist workflow on Mac](/media/neon/ai-assist-mac.png)
+![AI assist workflow on Mac](/media/neon/neon-v1.4-ai-assistant-macos.png)
 
 ## Cross-Device Continuity
 
@@ -63,8 +63,8 @@ The app experience is intentionally aligned across macOS, iPadOS, iOS, and visio
 - touch and trackpad pinch gestures adjust editor font size across supported platforms
 - Remote Sessions are opt-in: macOS owns SSH and broker hosting, while iPhone, iPad, and Apple Vision Pro can attach as clients
 
-![Cross-device editing on iPad](/media/neon/cross-device-ipad.png)
-![Cross-device editing on iPhone](/media/neon/cross-device-iphone.png)
+![Cross-device editing on iPad](/media/neon/neon-v1.4-ipad.png)
+![Cross-device editing on iPhone](/media/neon/neon-v1.4-iphone.png)
 
 ## Preview and Export
 
@@ -83,7 +83,7 @@ Neon Vision Editor uses controlled neon accents with restrained contrast.
 - modern native look-and-feel
 - subtle brand highlights without visual noise
 
-![Neon Vision marketing visual](/media/neon/marketing-visioneditor.png)
+![Neon Vision marketing visual](/media/neon/neon-v1.4-hero.webp)
 
 ## Distribution Channels
 

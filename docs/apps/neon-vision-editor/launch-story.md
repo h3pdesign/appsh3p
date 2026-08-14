@@ -2,10 +2,10 @@
 head:
   - - meta
     - property: og:image
-      content: https://apps-h3p.com/media/neon-vision-editor-hero.png
+      content: https://apps-h3p.com/media/neon/neon-v1.4-hero.webp
   - - meta
     - name: twitter:image
-      content: https://apps-h3p.com/media/neon-vision-editor-hero.png
+      content: https://apps-h3p.com/media/neon/neon-v1.4-hero.webp
 ---
 
 # Neon Vision Editor Launch Story
