@@ -10,22 +10,20 @@ head:
 
 # Neon Vision Editor Changelog
 
-_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on August 14, 2026._
+_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on August 15, 2026._
 
-## v1.4.1 (published August 14, 2026)
+## v1.4.4 (published August 15, 2026)
 
-Release link: [GitHub Release v1.4.1](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v1.4.1)
+Release link: [GitHub Release v1.4.4](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v1.4.4)
 
-- Keeps the macOS editor responsive while navigating and editing file-backed documents.
-- Makes compact iPhone editor controls and document outlines easier to scan.
-- Improves project navigation, structured-text workflows, and Quick Look reliability.
-- Uses a bounded macOS virtual editor with viewport-aware editing, selection, and scrolling for file-backed documents.
-- Adds project-sidebar expansion persistence, lazy directory loading, adjustable text size, and improved overlay scrollers.
-- Adds Typst templates and a safe plain-text-to-JSON structuring workflow.
-- Keeps every named iPhone and iPad toolbar-preset action directly reachable in the horizontal toolbar.
-- Adds pinch-to-zoom sizing for project-sidebar file items.
-- Shows concise language labels such as `MD`, `JS`, and `TS` in the iPhone toolbar while preserving full picker and VoiceOver names.
-- Adds subtle spacing between compact table-of-contents entries without loosening their indentation or content layout.
+- Makes the on-screen keyboard accessory reliable for touch editing on iPhone and iPad.
+- Adds small editor commands that make sharing locations and cleaning lists faster.
+- Preserves line wrapping through preview and sidebar layout transitions.
+- Adds configurable Save, Find, Undo, and Redo actions before bracket tokens above the on-screen keyboard.
+- Adds Copy Current Editor Reference and Sort & Deduplicate Lines commands.
+- Restores the keyboard accessory when the software keyboard is visible, including Simulator sessions where a keyboard controller is also present.
+- Prevents macOS virtual-editor width measurements from disabling line wrapping after preview or sidebar transitions.
+- Keeps the table-of-contents sidebar layout transition from leaving the editor at a stale width.
 
 ## v1.4.0 (published August 12, 2026)
 
