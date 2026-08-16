@@ -1,5 +1,5 @@
 {
-  "updated_at_utc": "2026-08-16T01:56:28.788Z",
+  "updated_at_utc": "2026-08-16T02:11:47.858Z",
   "conflicts": {
     "iran_2026": [
       {
@@ -99,12 +99,6 @@
         "published_at_utc": "2026-08-15T18:44:35.000Z"
       },
       {
-        "title": "Iran war: Qatar denies holding missing Iranian fighter pilots",
-        "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a8118cb8e8649888006ec2da570663b&url=https%3a%2f%2fwww.msn.com%2fen-au%2fnews%2fother%2firan-war-qatar-denies-holding-missing-iranian-fighter-pilots%2far-AA2acAhP&c=115656607794024696&mkt=en-us",
-        "source": "Bing News",
-        "published_at_utc": "2026-08-15T18:38:00.000Z"
-      },
-      {
         "title": "US-Israel-Iran War Latest Live News: Israel Seeks ‘More Serious’ Lebanon Talks After Hezbollah Strikes, Netanyahu Spokesman Says - The Sunday Guardian",
         "url": "https://news.google.com/rss/articles/CBMi_gFBVV95cUxNVXRlRFVtRS1YU1pFd085YVVaeXZibzczbVVXRmgzTW5MemxvbzcweTVvZkw1S1JpQ1I3bkdMbTIyNldYWHdwUVN5QUgtWVNIRDZNdGtNcmJkMm12VlVwcHhuMXBjdDBlMngyd2k2cUNaejVGdWhrMkpDdklEeHJSRjNwalhaMVdIRlgweW5XQ1E0REExLXRpTVozeFpteE9qRlBMVV9LY1FJUDR3cjZpeHZvMTMtRVpraXZ0WHlwQkdfZ09DU0NybWhSZlphSWdZMDVXYVdsSUt1Z3ZIeHZSRk1FNmVjT2xuN1k2bVVJSWtYWUNiNmFwMmRjVVoyUdIBgwJBVV95cUxQUGMxck9kdkp6anpjQVZ2V2Y2dDFSWGlDYTU3dHpYV3d1M2hia0ZjbEVxUnJKakdrbDhrWnhFWWszbUJMbGRxSzl6T2RZNzFFUUJSX1FfTnlYc3d6V2xCbl9HQmw5ek8yaUowN0d0Y2c3T29PZUl3VEVnUXl5X2xRaWpaYXY5a2ZJNzdfaW5lOWhwS2tZVXQxRTJZcnJ0ME5yNjd4clk3WFRSWDBLMTEzYXJXNWtzLWlqc0pDU1FFYV9KSmsyTExZWmdIY1hBUWtmTDlWVXNqMnAwSFZ1anpiX2VlWHBET3BfRXh4eGFLRXVtT0xlYzNnREhISmdkWHVONkRR?oc=5",
         "source": "Google News",
@@ -121,9 +115,27 @@
         "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNTjVHMDFuTW83MlF0OEp1MXBINjdJeXg0bXU2NFBETEFuRnBrWUlRRjJ0Rkpibmw2MXZQc0M0QXNiRDNJbFVZWVVvd0piOERNdmhkYzNnRUluR3lWdVhnTjY3Q0hDaktrTTVFRDUxWDA4QzZvZzBWbTJJMllaZTFrYnNrUFZEaU5ZVkpERlBXMEpWTXE0QzQzcDJ1UFpzVF9QbjUtcVVPSExWV1E0aEpxb1pWelFJbTlkdjdr?oc=5",
         "source": "Google News",
         "published_at_utc": "2026-08-15T17:55:16.000Z"
+      },
+      {
+        "title": "Iran calls on Qatar to free three pilots it says were downed, captured in war - The Times of Israel",
+        "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOWDJ1SVdETHdWZm5DbTVLZlAzZlZ4SWhOeUN1RklYMGNKbmdQVVBkQUg2b0lhaU5kUzN2a0tvX1g5dWgweEt2Y3dlQ1V3LVlZZzc3NXBLYkVnS2xuUHhuUU8zWnhPYTR2RkhXUVpOLUFsSHJYWFVxbUFMYWdBQ0NnX2dQb0o3N3JNQU1uc3Vxdjg2cXhqWGRDNzFPOTlCaHVjTTMzWkJkYnlESS1UZ1RSQ9IBtgFBVV95cUxPTkhmclppWmhfWkVYU2RTN0pDZmVzdlpGYXZxX1JPNGpRd01QNG4zbVJzOUJnSFpyUmZNMENya2hXelM0cUgyNzI3dE4xQS1OZXUwOGxIT29GZ2VXWmRab0NadGN1S2R1NERkcnlwWUtLOXp4WVF4X1NKZ05tYnFFSXJSTldmSXVLaDRVTFhpQU5ZaWhXNkJmcG4xdXdwQ3VIcWc4c0RmTy1NV2dkMnNRVEg2WmpBUQ?oc=5",
+        "source": "Google News",
+        "published_at_utc": "2026-08-15T17:55:00.000Z"
       }
     ],
     "ukraine_2026": [
+      {
+        "title": "Russia Ukraine War - The Herald Journal",
+        "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQSzh3T0EwcU9jRFFtVnFPOGY0N1N5MUZiTXh1eTRNUXowOVNQTmJ3NC1VV1ozR1ZQWHFfcVVOcnBWSEswRGV1VHR4WHhrZzFuemo3bFJnLVBxZ2tic19ENC1YQTVfUUJPMHRBMW5ZcVFrMGx1b3p1UzU0OVlqNGJYZG9HWVV6T2dyaEhJMGx5eEVMdFZWRTE4NWhlTQ?oc=5",
+        "source": "Google News",
+        "published_at_utc": "2026-08-16T01:47:11.000Z"
+      },
+      {
+        "title": "Russia Ukraine War - GazetteXtra",
+        "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNWkNJNjcwSlpLU2h3OFNGOVJyaW1MS1AxTHVjVmFzR0w4ODZza1ZEWTY3X3ZOay13WVlpakNRbG1idHhBNFNRVFBwV25TbW5wMVdfQXV0RlVRaENFXzl2czdiMThmbkhvZ3dieFY3cU5GNE5SN1V6M2xPMW9IajdWLWppbGcydnFnSjlWQ3d0cnFxMENSV19hbWpuUkUyeVlqdkR2cjVoUHRJMENOMldVa2xR?oc=5",
+        "source": "Google News",
+        "published_at_utc": "2026-08-16T01:43:34.000Z"
+      },
       {
         "title": "Russian ballistic missiles strike Kyiv, escalating Ukraine conflict - Crypto Briefing",
         "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQMm1SZ3hGV2RqU3VZSkxZQ0tOcWt2bmgtT0lJSkZtQzlhaDNIWlgwQjgwTFloeGpRUk9BclB0MGZ4ZWlvWVhTNWN5Nk0xT3FFVWhPX0U3U18wVi1BcFR5M0xVMFU4MFVvMXhMOUZBajFycHlXZzREOUJHZnBPOWdDY0xyNVBQOGZWVTdHN21waEhTUnJWUFFfY2FB?oc=5",
@@ -147,6 +159,12 @@
         "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxOQkptMGhjSVJYaWtRcHltUzFiZ2l4ODkyOHFPZGhseDhGbEYzLThpZTdoTFhURE9JN0xUSmotcnJsYlhCN0hHWW85c1FiNjJzeWxMMXpfS0YzaGNRSjZkMmFEX0t2T3d1Wkk5cmNYbVBmZVk1NzBxckpOMkZRUXlCUUFkTmtOam1Ca2F5ZWdJcGprUQ?oc=5",
         "source": "Google News",
         "published_at_utc": "2026-08-15T22:20:33.000Z"
+      },
+      {
+        "title": "Russian Offensive Campaign Assessment, August 15, 2026 - Institute for the Study of War",
+        "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNZWhXZnlVZXBtVTlWMkF3OEZ2Q0Fsck9idFpnd0dLRVJMSVd0clpCdk4tMFZ4R0dYaFQ3NVRFbFRPTnpGb1BGLVhzcHNYWFhCR3c3M1FMdEZLSEFrMzdZV3VZcy1iWTVZeDF0UXZDU2U3cTBpWVJzVTVwb1NsVmwtQkwtNlAxZHJwdm9HWXFWVWV0UFVabk8zd1NkQ0FwQUlnRmtvTzcxdENhUQ?oc=5",
+        "source": "Google News",
+        "published_at_utc": "2026-08-15T22:00:53.000Z"
       },
       {
         "title": "Russia 'upgrades' kamikaze drone to wreak more havoc on Ukraine - Daily Express",
@@ -173,10 +191,16 @@
         "published_at_utc": "2026-08-15T19:20:36.000Z"
       },
       {
-        "title": "Ukraine Strikes Savasleyka Airbase and Roscosmos Plant in Samara With Flamingo Missiles - The Eastern Herald",
-        "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxNU2E4bXU0WmR3UVAyVWZuZmNfcl9ZYmQyZk56LUxIOXRoZXhLRlFQYkdFRWFjU0w0THU1bmU4MjBOUXduajJlYllJX3pCVjFmOGx3NGF2Tk14cWNDZFZ3Z3N1X2V6SG40MDg4bWI0dTNxMkhPdEdvaUF5bW1LTERoWm9MZUo2Y2VEaUhXUWJ2V1p0MkZ0OGNyaTE5Ym9RZw?oc=5",
+        "title": "Trump told Ukraine it had no cards. Then it took the war to Russia - 1News",
+        "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOdE40YjNDcTNRdFZTWUVRMEowMXpBM3FGMmNoeTNUZkxmekoxMldoRWdIb0JxOVdLM19mVmhJdHE3R1BVVG1vbF9kVHQ3SjFBNGMwaDY4WG9GQWFyYTRsYlY5ZnJ2bklzTEhtV09qMnQ0UmptRWdjTEZjQk13QmxVMlNlTXpxNzdjLXpKQUpKTXBTdEZnQlFiSElMZzBEMXpmelJv?oc=5",
         "source": "Google News",
-        "published_at_utc": "2026-08-15T18:52:10.000Z"
+        "published_at_utc": "2026-08-15T19:02:37.000Z"
+      },
+      {
+        "title": "APTOPIX Russia Ukraine War - Bluefield Daily Telegraph",
+        "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOSnlVV1VvLUlfR2ppc0VjLTBDQm1CaWxvbVltdThENFZUTFN1RnlPWFZHREJzMUdETG1IanZHTTN1YnBwa19TMkJVQkExelM1b21PRmpsT1Y2eGFBallMbGs0X2FQUzd2YUpXcDI5ck9EVnBNS00wZEZHYXRXWGhTNVRMV2ZBQTJSajhCNGhxbkdtTUFoVWhxekZmbExWZFpXOFNnM0lvVXBYNzlQMUNWekJTU21oQmJvNEE?oc=5",
+        "source": "Google News",
+        "published_at_utc": "2026-08-15T18:59:28.000Z"
       },
       {
         "title": "APTOPIX Russia Ukraine War - Idaho State Journal",
@@ -191,7 +215,7 @@
         "published_at_utc": "2026-08-15T17:47:11.000Z"
       },
       {
-        "title": "Digging Below the Death Zone: The Underground War in Ukraine - mwi.westpoint.edu",
+        "title": "Digging Below the Death Zone: The Underground War in Ukraine - Modern War Institute -",
         "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNOHdoX0pKSjJXam5GcFlFcG1jYmtHbFdXdGNZY01JbGxZMVVVX09DZUZDWkszcmV1X1ZEVFVvaXpjTXJTVG9YMHI5QzVEaERhOHc4RFhLSzFscHpDeVczMGxraVBfUWpnZ01vVWRqdnk4NnV3dTdSNDBMMllhSGtvR2JlUmt6eV9YejRDVGk1cw?oc=5",
         "source": "Google News",
         "published_at_utc": "2026-08-15T17:43:21.000Z"
@@ -215,34 +239,10 @@
         "published_at_utc": "2026-08-15T17:00:41.000Z"
       },
       {
-        "title": "Ukraine to donate captured Russian tanks, military hardware to European museums - TVP World",
+        "title": "Ukraine to donate captured Russian tanks, military hardware to European museums - tvpworld.com",
         "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxPTVphR1N3d3RFOE5OSnU4bHUzVUxOazhaS09xVkR1NVRzT21ZVzE1VVNOMVVqWml4Mk9mR0FSMGpvTGVkSDM4eUhxVS1NRWFJSmRQd1Y5WTBoSEVXSmhjVnBSSW1SMXQ1U2U5TVgzanUwVmprNy00V3F3UlYtQmt1Nm5nZl9wV3BfVFE?oc=5",
         "source": "Google News",
         "published_at_utc": "2026-08-15T16:28:00.000Z"
-      },
-      {
-        "title": "Ukraine Strikes Russian Rocket Facility, Airbase in Fresh Long-Range Attacks - Dainik Jagran MP CG",
-        "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxOX0lydktyRVVlR1QxOVEwMzNvWUJiODBKNG9MYUZ5Q0d6NUpLaE1uWVJ6RW1RRWlNN3hFTl81NnE1U2Vvd3pDc29mb3lrM041YlNQa0NPdndrakpwX2YzblBIRExXU3hUYXJlZlJvZnUxX3NiSkVsMHRfWmhhSGNpcnpWM3g3VkpzNk1kclJTNWNiU1lCbHI3cWQxZ2NyQ19KeEZzVTRoZDNHaFpnVjVSdFMwTTRKVEdZTHMzRHk4dWlWcFBkdElzTUZaY0psOE0?oc=5",
-        "source": "Google News",
-        "published_at_utc": "2026-08-15T16:26:52.000Z"
-      },
-      {
-        "title": "Ukraine is dismantling Putin’s digital lifeline – and he can’t stop it - The i Paper",
-        "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPTktPTmU0cjNyQmoydUczUXI2b3hxY1lfeTVILUg0ZVNhOTZyQi1uV1Zhbm5YUFdsU1NJT1pwR3FjMGFwaXNnUkxjX3BzWmQyQ3JlVEJULThMWWdsOGpyQlZtWFlWaThhRlhybjlGcFBJdzd3aHhEazNQOUFad2VxRUpLYWd1QVk2RDV2cGZVYV9CWmM?oc=5",
-        "source": "Google News",
-        "published_at_utc": "2026-08-15T16:01:35.000Z"
-      },
-      {
-        "title": "Germany, France and UK prepare their own format for talks on Ukraine – NYT - Українська правда",
-        "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE9mdFNaZVNKdW9IY1VyVjNqNDY5ZUdtU0ctRnJTQmlPRkQ0X25PMTM3OGNoTkgyWXF2VWJKMWlqRktpRTJvRkIybERCSGhYLTE2YndaeGQ2dDM3V3RDSGtzeUZaNUvSAXBBVV95cUxONFpQR0hNdjZTT2stSVFuNWFDT3Z4SkRZVnFvaDlqeUlFdjdlajlyOW41NjNKZXdCM1VEblFtSWYyWkxQbjlUS3Q2MG1hY25NbVFfOC1tYkZKem5RdUEwNW5KdkhKUlJLSEF3bFBWdVlX?oc=5",
-        "source": "Google News",
-        "published_at_utc": "2026-08-15T15:57:00.000Z"
-      },
-      {
-        "title": "Ukraine hits Russian Starlink-style network, Moscow tracks arms package - Al Jazeera",
-        "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOeHU3dFpoMnZLaG8xekdTbDhNdzVGcVozZ084YlVvLUZENFgzZUVkdmJtNnh2WE5SRkJpdUJWcFJ5MGdFQkc3dDdsVEFYcFM1R2dYS3lTVDBCdllNZjA5MkN3Y291c05wM0MwYzNrV0hkYVpLS0I0SEZFT0Y0NzJVN0c4aWpWRTZ3ZEh1dDYtdHdoRXFJbjgwdDJiUjF1dFlCREhoS2NlWHdWSC1HbTl0QtIBtgFBVV95cUxNWE5FLXV4THFkWjlmS2gyUlZvQkNRZklta2JSU0FVcVdwejZTMk1BM284alRmTU9rS3RfMmZPeHhUR3NZaXU2ZzBDMmIwWHo2UktreWkzcnJqTDYwR3AxSGJJT29aZ2ZMaWpFZEtOTTJzZXBtbHEwUW5SZGZTeThhMWs0elRMZkhVbUMxQ1loWXliWkRhS1FFR25zS2dWZXhtcjBCNTFMX3M2dlFKNzVYM1hnVXMwQQ?oc=5",
-        "source": "Google News",
-        "published_at_utc": "2026-08-15T15:52:12.000Z"
       }
     ]
   }
