@@ -59,19 +59,31 @@ const APPS = {
       out = out.replace(/(<span data-date=")\d{4}-\d{2}-\d{2}(">)\w+ \d{1,2}, \d{4}(<\/span><\/a><\/div>)/, `$1${rel.publishedDate}$2${rel.publishedLong}$3`)
       return out
     },
-    updateChangelog(content, rel) {
+    updateChangelog(content, rel, history = [rel]) {
       let out = content
       out = out.replace(
         /_Source: (?:GitHub Releases for \[Neon Vision Editor\]\(https:\/\/github.com\/h3pdesign\/Neon-Vision-Editor\)|local Neon Vision Editor changelog and README)\. Last synced on [^.]+\._/,
         `_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on ${rel.publishedLong}._`
       )
-      out = out.replace(/## v\d+\.\d+\.\d+ \(published [^)]+\)/, `## ${rel.tag} (published ${rel.publishedLong})`)
-      out = out.replace(/Release link: \[GitHub Release v\d+\.\d+\.\d+\]\(https:\/\/github.com\/h3pdesign\/Neon-Vision-Editor\/releases\/tag\/v\d+\.\d+\.\d+\)/, `Release link: [GitHub Release ${rel.tag}](${rel.url})`)
-      const blockRegex = /(Release link: \[GitHub Release [^\r\n]+\]\([^\r\n]+\)\r?\n\r?\n)([\s\S]*?)(\r?\n## v\d+\.\d+\.\d+ \(published)/
-      if (blockRegex.test(out)) {
-        out = out.replace(blockRegex, (_, head, __, next) => `${head}${rel.bullets.join('\n')}\n${next}`)
-      }
-      return out
+      const versionHeading = /^## (v\d+\.\d+\.\d+) \(published [^)]+\)/gm
+      const firstVersion = versionHeading.exec(out)
+      if (!firstVersion) return out
+
+      const historyTags = new Set(history.map((entry) => entry.tag))
+      const nextUnmanaged = [...out.matchAll(versionHeading)]
+        .find((match) => !historyTags.has(match[1]))
+      const suffix = nextUnmanaged
+        ? out.slice(nextUnmanaged.index)
+        : '\n## v1.0.0 milestone context\n\n'
+      const blocks = history.map((entry) => [
+        `## ${entry.tag} (published ${entry.publishedLong})`,
+        '',
+        `Release link: [GitHub Release ${entry.tag}](${entry.url})`,
+        '',
+        entry.bullets.join('\n'),
+        ''
+      ].join('\n'))
+      return `${out.slice(0, firstVersion.index)}${blocks.join('\n')}${suffix}`
     }
   },
   metric: {
@@ -184,6 +196,33 @@ async function fetchLatestRelease() {
   }
 }
 
+async function fetchReleaseHistory(limit = 7) {
+  const historyApi = `https://api.github.com/repos/${repo}/releases?per_page=20`
+  const headers = {
+    Accept: 'application/vnd.github+json',
+    'User-Agent': 'appsh3p-version-sync'
+  }
+  if (process.env.GITHUB_TOKEN) headers.Authorization = `Bearer ${process.env.GITHUB_TOKEN}`
+
+  const res = await fetch(historyApi, { headers })
+  if (!res.ok) {
+    const text = await res.text()
+    throw new Error(`Failed to fetch release history for ${repo}: ${res.status} ${text}`)
+  }
+  const releases = await res.json()
+  return releases
+    .filter((release) => release.published_at && !release.draft && !release.prerelease)
+    .slice(0, limit)
+    .map((release) => ({
+      tag: release.tag_name,
+      url: release.html_url,
+      publishedLong: formatLongDate(release.published_at),
+      publishedShort: formatShortDate(release.published_at),
+      publishedDate: formatIsoDate(release.published_at),
+      bullets: extractReleaseBullets(release.body || '')
+    }))
+}
+
 async function read(relPath) {
   return fs.readFile(path.join(ROOT, relPath), 'utf8')
 }
@@ -201,12 +240,15 @@ async function writeIfChanged(relPath, content) {
 async function main() {
   const rel = await fetchLatestRelease()
   if (!rel) return
+  const history = APP_KEY === 'neon' ? await fetchReleaseHistory() : [rel]
   console.log(`[${APP_KEY}] Latest release: ${rel.tag} (${rel.publishedLong}) from ${repo}`)
 
   const changed = []
 
   const indexPath = 'docs/index.md'
   const appsIndexPath = 'docs/apps/index.md'
+  const comparePath = 'docs/apps/compare.md'
+  const catalogPath = 'docs/.vitepress/data/apps.ts'
   const layoutPath = 'docs/.vitepress/theme/Layout.vue'
 
   const index = app.updateHome(await read(indexPath), rel)
@@ -219,13 +261,27 @@ async function main() {
   )
   if (await writeIfChanged(appsIndexPath, appsIndex)) changed.push(appsIndexPath)
 
+  let compare = await read(comparePath)
+  compare = compare.replace(
+    /(\| \[Neon Vision Editor\][^|]+\|[^|]+\|[^|]+\| Public · )v\d+\.\d+\.\d+ \(\d{4}-\d{2}-\d{2}\)( \|)/,
+    `$1${rel.tag} (${rel.publishedDate})$2`
+  )
+  if (await writeIfChanged(comparePath, compare)) changed.push(comparePath)
+
+  let catalog = await read(catalogPath)
+  catalog = catalog.replace(
+    /(slug: 'neon-vision-editor'[\s\S]*?version: ')[^']+(', releaseDate: ')[^']+(')/,
+    `$1${rel.tag.replace(/^v/, '')}$2${rel.publishedDate}$3`
+  )
+  if (await writeIfChanged(catalogPath, catalog)) changed.push(catalogPath)
+
   const overview = app.updateOverview(await read(app.overviewPath), rel)
   if (await writeIfChanged(app.overviewPath, overview)) changed.push(app.overviewPath)
 
   const layout = app.updateLayout(await read(layoutPath), rel)
   if (await writeIfChanged(layoutPath, layout)) changed.push(layoutPath)
 
-  const changelog = app.updateChangelog(await read(app.changelogPath), rel)
+  const changelog = app.updateChangelog(await read(app.changelogPath), rel, history)
   if (await writeIfChanged(app.changelogPath, changelog)) changed.push(app.changelogPath)
 
   if (changed.length === 0) {

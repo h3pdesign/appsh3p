@@ -11,7 +11,7 @@ Use this view when you know the job you want to do but not which app is the best
 
 | App | Best for | Platforms | Status / latest release | Access | Privacy |
 | --- | --- | --- | --- | --- | --- |
-| [Neon Vision Editor](/apps/neon-vision-editor/overview) | Code, Markdown, and real-file editing | macOS · iPadOS · iOS · visionOS | Public · v1.2.6 (2026-08-09) | [GitHub Releases](https://github.com/h3pdesign/Neon-Vision-Editor/releases) | [AI and data](/policies/ai-and-data) |
+| [Neon Vision Editor](/apps/neon-vision-editor/overview) | Code, Markdown, and real-file editing | macOS · iPadOS · iOS · visionOS | Public · v1.4.6 (2026-08-16) | [GitHub Releases](https://github.com/h3pdesign/Neon-Vision-Editor/releases) | [AI and data](/policies/ai-and-data) |
 | [GitBird](/apps/gitbird/overview) | GitHub and GitLab notification triage | macOS | Public · 2.1.4 (2026-08-05) | [GitHub Releases](https://github.com/h3pdesign/GitBird/releases) | [App policy](/apps/gitbird/privacy-policy) |
 | [Liquid Record](/apps/liquid-record/overview) | iPhone WAV recording, markers, and playback | iOS | Private alpha · 1.0.1 (2026-08-09) | [Request access](/support/support-and-feedback) | [App policy](/apps/liquid-record/privacy-policy) |
 | [Metrics Data](/apps/metric-data/overview) | AdSense and GA4 reporting | macOS · iPadOS · iOS · visionOS · watchOS | App Store release · 0.2.6 (2026-06-11) | [App Store](https://apps.apple.com/us/app/metrics-data/id6758959570) | [App policy](/apps/metric-data/privacy-policy) |
