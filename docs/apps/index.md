@@ -32,7 +32,7 @@
 </div>
 
 <div class="apps-release-timeline" aria-label="Release timeline">
-  <div class="apps-release-item neon"><span class="name">Neon Vision Editor</span><span class="tag">v1.4.6</span><span class="date">2026-08-16</span></div>
+  <div class="apps-release-item neon"><span class="name">Neon Vision Editor</span><span class="tag">v1.5.0</span><span class="date">2026-08-20</span></div>
   <div class="apps-release-item gitbird"><span class="name">GitBird</span><span class="tag">2.1.4</span><span class="date">2026-08-05</span></div>
   <div class="apps-release-item liquid"><span class="name">Liquid Record</span><span class="tag">1.0.1</span><span class="date">2026-08-09</span></div>
   <div class="apps-release-item metric"><span class="name">Metrics Data</span><span class="tag">0.2.6</span><span class="date">2026-06-11</span></div>

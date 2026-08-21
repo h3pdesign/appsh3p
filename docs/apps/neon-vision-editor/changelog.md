@@ -10,7 +10,22 @@ head:
 
 # Neon Vision Editor Changelog
 
-_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on August 16, 2026._
+_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on August 20, 2026._
+
+## v1.5.0 (published August 20, 2026)
+
+Release link: [GitHub Release v1.5.0](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v1.5.0)
+
+- Makes the macOS virtual editor more dependable for selection, keyboard navigation, and tab closing.
+- Restores complete editor theme customization, including canvas, text, cursor, selection, and gutter colors.
+- Adds a polished code-snapshot workflow with more themes and export sizes for sharing source excerpts.
+- Adds ten code-snapshot themes, gradient and transparent backgrounds, configurable window details, typography, padding, corners, and responsive export sizes.
+- Adds an opaque editor canvas option for true theme backgrounds while retaining translucent sidebars and window chrome.
+- Keeps the Markdown formatting toolbar available as a compact translucent control directly below the macOS tab bar.
+- Aligns line numbers to the first visual row of wrapped content at every supported editor font size and line height.
+- Makes Up and Down arrow navigation move the caret between visual rows, including wrapped text and viewport transitions.
+- Routes Command-W from the editor to the selected tab and preserves the unsaved-changes confirmation instead of closing the window.
+- Applies selected theme colors consistently to editor text, canvas, line numbers, caret, selection, marked text, and input-method text.
 
 ## v1.4.6 (published August 16, 2026)
 
@@ -93,7 +108,6 @@ Release link: [GitHub Release v1.4.1](https://github.com/h3pdesign/Neon-Vision-E
 - Adds pinch-to-zoom sizing for project-sidebar file items.
 - Shows concise language labels such as `MD`, `JS`, and `TS` in the iPhone toolbar while preserving full picker and VoiceOver names.
 - Adds subtle spacing between compact table-of-contents entries without loosening their indentation or content layout.
-
 ## v1.4.0 (published August 12, 2026)
 
 Release link: [GitHub Release v1.4.0](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v1.4.0)
