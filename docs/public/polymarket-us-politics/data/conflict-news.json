@@ -1,5 +1,5 @@
 {
-  "updated_at_utc": "2026-08-21T01:56:20.024Z",
+  "updated_at_utc": "2026-08-21T02:13:44.063Z",
   "conflicts": {
     "iran_2026": [
       {
@@ -93,10 +93,22 @@
         "published_at_utc": "2026-08-20T18:58:00.000Z"
       },
       {
+        "title": "Trump sounds alarm on ‘crazy’ Iran, says regime would use nuclear weapon ‘without question’",
+        "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a87b45749bf4c8084a02a7c4c93ca85&url=https%3a%2f%2fwww.foxnews.com%2flive-news%2firan-war-trump-economic-warfare-strait-hormuz-08-20-26&c=14768755785457820476&mkt=en-us",
+        "source": "Bing News",
+        "published_at_utc": "2026-08-20T18:45:00.000Z"
+      },
+      {
         "title": "Iran dismisses US economic threats, Doctors Without Borders condemns Israeli military and other developments in the Middle East",
-        "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a87b04272914b819299dc96615cc60c&url=https%3a%2f%2fwww.chicagotribune.com%2f2026%2f08%2f20%2firan-us-economic-threats%2f&c=16213393531070423709&mkt=en-us",
+        "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a87b45749bf4c8084a02a7c4c93ca85&url=https%3a%2f%2fwww.chicagotribune.com%2f2026%2f08%2f20%2firan-us-economic-threats%2f&c=16213393531070423709&mkt=en-us",
         "source": "Bing News",
         "published_at_utc": "2026-08-20T18:39:00.000Z"
+      },
+      {
+        "title": "US Iran War News Live Updates: US vows ‘toughest sanctions in history’ on Iran, urges China to cooperate",
+        "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a87b45749bf4c8084a02a7c4c93ca85&url=https%3a%2f%2ftimesofindia.indiatimes.com%2fworld%2fmiddle-east%2fus-iran-war-news-live-updates-donald-trump-threat-dismissed-strait-of-hormuz-middle-east-conflict-tehran-gaza-latest-news%2fliveblog%2f133387250.cms&c=12915774701888670652&mkt=en-us",
+        "source": "Bing News",
+        "published_at_utc": "2026-08-20T18:32:00.000Z"
       },
       {
         "title": "Iran Reportedly Weighs Strikes on US Bases in Europe - Newser",
@@ -109,18 +121,6 @@
         "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxNaTBkRFJMMmRQcUtXVlRSS01DTjdnZnVCZkZ2d0k5VkJ1QVQtOHRrOXR2RnNuZWRiMFBsMEMwT0JqV3VkUTJ6QlRnaUJrQXZRRXZUSlZvcy1ONWlqb3E4ZUxzcUZwV29BSU9qYUhwR1NSQmwyR1l3eGRseGJKSEhaYmE4RUxkbkNlOWs2U2tiZ2tTaUJYa0JoWmRTcnBidTZWNHYzeklGblFwcE5WSE9HdFNpTTBNQldaZG12N3NVNTRzMDBYcEVTMUhR?oc=5",
         "source": "Google News",
         "published_at_utc": "2026-08-20T18:20:15.000Z"
-      },
-      {
-        "title": "Even amid war, US officials coordinated deportations with Iran",
-        "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a87b04272914b819299dc96615cc60c&url=https%3a%2f%2fenglish.mathrubhumi.com%2fnews%2fworld%2fus-iran-coordinated-deportations-emails-2025-2026-kp1ck3cz&c=15171161572585349557&mkt=en-us",
-        "source": "Bing News",
-        "published_at_utc": "2026-08-20T18:14:00.000Z"
-      },
-      {
-        "title": "Live Updates: Iran dismisses Trump's \"economic D-Day\" threat, says it \"will only bring further defeat\"",
-        "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a87b04272914b819299dc96615cc60c&url=https%3a%2f%2fwww.cbsnews.com%2flive-updates%2firan-war-donald-trump-us-economic-threat-defeat%2f&c=17083454506058454484&mkt=en-us",
-        "source": "Bing News",
-        "published_at_utc": "2026-08-20T17:40:00.000Z"
       }
     ],
     "ukraine_2026": [
@@ -185,10 +185,10 @@
         "published_at_utc": "2026-08-20T21:28:21.000Z"
       },
       {
-        "title": "Russia Ukraine War - TelegraphHerald.com",
-        "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQakNaUVBvSnpvN21KNEpNdHFBa0hZYktjY3BjYXZ1ZEJJRVJxN0pXOHJzYmlPcV9RamhnOXcxcFZNOHFWRHFrai1wR0U1RWdPbzFIdnhrVkxxbG5EMEhFYVROWjRiNDNtLUJha3pSS21vbm9ISDBOSDhBMWxHZWM5a2IyVzhzTldOMi16eXpNODVJbjZPQU55cA?oc=5",
+        "title": "APTOPIX Russia Ukraine War - TelegraphHerald.com",
+        "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPNVphMWVNdHBEX1dUZHROaUVaQmZQMDJYT0k5U055NzE2Q3dWNUs2NTAxckMta2dPSDB6U1hGSlNkLVZBNG1ITExUY0hrOVJoZS1FVUZuckxFNzl4Z25ZTTdUR0tacEdJcWJKWlBkT19adXVYVmNCd0Q5alZCZ25wOElsVnBWaEdObmhXS0dOZmMzRUVXU2VUNA?oc=5",
         "source": "Google News",
-        "published_at_utc": "2026-08-20T21:15:10.000Z"
+        "published_at_utc": "2026-08-20T21:10:05.000Z"
       },
       {
         "title": "Ag in Motion 2026 video: Russia-Ukraine war escalation brings wheat logistics into focus - The Western Producer",
@@ -207,6 +207,12 @@
         "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxQRjdHTGRMLVpJSThyVkFITHBUQ2ZnRVBJZXBJdkVGUkZTU0FvRXdpbmNUek03R0xiLWxyd3dTUUMzTDVia2F1WkpIMWZkMUFVSEZlZlp0dDZJQksxc2FwTUxtcEVDellCQ2VQUFBZYi03eTJSYzdYMlZ6RFBwUlhNVU1mdktRQUlIbjJzQ0pZWlpGRXNLSUU3amNHRnNaMDQ0NEFybTR6YXJYaTFLc2Q5N2pGQktPOFZlVXdrNTF5Z1Y3akIxYmlCYkNsQjhScUFIbUs5MTRhcFJBMUJsSHc?oc=5",
         "source": "Google News",
         "published_at_utc": "2026-08-20T20:39:08.000Z"
+      },
+      {
+        "title": "As pressure mounts on Putin, Russia is escalating against Ukraine’s allies - Atlantic Council",
+        "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQTzY4MktuSmpabjRvZnpaZU5WN1lRZi1kZ2oyWTNUUFhMenlFM0pfWXdkaHdSSU56cWUxV0p2b25kZHpJSnU4b1hoNnV2WmxJOFAybW0xRzVZbF9yUURDWUtCb3phcU83UXBKc1dLalV1YUcyRXhUd3pOT3IyN1Y1c2NKX09tanNlclIxQ3U4Sk5JRUxGNDRUMjZja2VSTl9mMEtZVmMwQ1JiU01kX0stTUZfczJaQ2JYNElPQk90eUd4Zw?oc=5",
+        "source": "Google News",
+        "published_at_utc": "2026-08-20T20:38:57.000Z"
       },
       {
         "title": "At least 18 people killed in Ukraine as Russia carries out more attacks - Al Jazeera",
@@ -237,12 +243,6 @@
         "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxNeWlwTUxVbWNubHM4LTJXb1ZhYU81SnloWU1CMF9fRjFKUE9UeUl0UFBUS01oMHYxNTJFMWpnLXdpZk9QUEpya1RzeFF6czJTSGdHMkdVTGF1YkxhamU0OTlvLTUwYm5HbGRJYXBTMVdmd3Rvekl0S21fdkxQbklTdExlRmdValdtcFVQVkJfX19CbEdzWlZzTEt4by1WU1BQVHFxWUE0b0Y2RWYzOFNqalRLRDVmclVmY2RoNVJubXM0MzFQaWhHZnpXYU1jQTRKWmc?oc=5",
         "source": "Google News",
         "published_at_utc": "2026-08-20T18:51:41.000Z"
-      },
-      {
-        "title": "What awaits Archbishop Gallagher in Russia? - The Pillar",
-        "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE10ZHNfMnBQbDFzSDE1MHNTRnpVVkp3Mks4blRLNTY0U05kVUpwcGo4bFFiLUs2TnhXWWpzbXhlcG1ET2IyMUVGVWJ5YjUxUnd2a0FOeGtVN0RpY2NXdVk2dWN5UVdCRFZ5TWRXb3N0VXhYZHM?oc=5",
-        "source": "Google News",
-        "published_at_utc": "2026-08-20T18:33:41.000Z"
       }
     ]
   }
