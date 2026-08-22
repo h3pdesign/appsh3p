@@ -78,7 +78,7 @@ const topSwitcherLinks = [
 ]
 
 const appUpdatedBySlug: Record<string, string> = {
-  'neon-vision-editor': 'August 20, 2026',
+  'neon-vision-editor': 'August 21, 2026',
   'gitbird': 'August 5, 2026',
   'liquid-record': 'August 9, 2026',
   'metric-data': 'June 11, 2026',
@@ -717,7 +717,7 @@ function ensureHomeWidgets() {
           <li>Published on <a href="https://apps-h3p.com" target="_blank" rel="noreferrer noopener">apps-h3p.com</a></li>
           <li><a href="https://github.com/h3pdesign/appsh3p" target="_blank" rel="noreferrer noopener">Docs repo</a></li>
         </ul>
-        <div class="home-deploy-badge"><a href="https://github.com/h3pdesign/appsh3p/commits/main" target="_blank" rel="noreferrer noopener">Last docs sync: <span data-date="2026-08-20">August 20, 2026</span></a></div>
+        <div class="home-deploy-badge"><a href="https://github.com/h3pdesign/appsh3p/commits/main" target="_blank" rel="noreferrer noopener">Last docs sync: <span data-date="2026-08-21">August 21, 2026</span></a></div>
         <div class="home-hero-mini-apps" aria-label="App icons">
           <a href="/apps/neon-vision-editor/overview"><img class="mini-icon-neon" src="/icons/neon-vision-editor.png" alt="Neon Vision Editor" width="22" height="22" loading="lazy" decoding="async" /></a>
           <a href="/apps/gitbird/overview"><img src="/icons/gitbird.png" alt="GitBird" width="22" height="22" loading="lazy" decoding="async" /></a>
@@ -745,8 +745,8 @@ function ensureHomeWidgets() {
 
       <section class="home-hero-widget-card home-hero-ticker">
         <h3>Latest release</h3>
-        <p><strong>Neon Vision Editor v1.5.0</strong> published on August 20, 2026.</p>
-        <a href="https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v1.5.0" target="_blank" rel="noreferrer noopener">View GitHub release</a>
+        <p><strong>Neon Vision Editor v1.5.1</strong> published on August 21, 2026.</p>
+        <a href="https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v1.5.1" target="_blank" rel="noreferrer noopener">View GitHub release</a>
       </section>
     `
 

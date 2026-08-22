@@ -10,7 +10,22 @@ head:
 
 # Neon Vision Editor Changelog
 
-_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on August 20, 2026._
+_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on August 21, 2026._
+
+## v1.5.1 (published August 21, 2026)
+
+Release link: [GitHub Release v1.5.1](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v1.5.1)
+
+- Makes Markdown preview themes more vivid, differentiated, and reliable in both light and dark mode.
+- Improves project-folder opening and stabilizes the Sparkle update dependency.
+- Keeps live preview and exported Markdown styling aligned across supported appearances.
+- Adds distinct Plasma and Deep Ocean palettes and strengthens High Contrast, Warm Sepia, Nordic Light, Article, Notebook, Terminal Notes, and Developer Slate.
+- Adds Ember Glow, Forest Canopy, Ultraviolet, Cobalt, and Mint Paper for a broader set of vivid, differentiated preview styles.
+- Adds theme-specific heading accents, semantic color tokens, richer Markdown component styling, and live-preview/export CSS parity.
+- Keeps legacy theme identifiers compatible while preventing visible theme palette collisions.
+- Separates Neon Editorial and Nordic Light from default palette fallbacks in the affected appearance modes.
+- Adds regression coverage for theme uniqueness, vivid component styling, image captions, and export parity.
+- Pins Sparkle to a reproducible `2.9.5` package version to avoid missing package-product resolution.
 
 ## v1.5.0 (published August 20, 2026)
 
@@ -93,7 +108,6 @@ Release link: [GitHub Release v1.4.2](https://github.com/h3pdesign/Neon-Vision-E
 - Prevents the editor canvas from reverting to a white background when translucency is disabled.
 - Prevents vertical seams between editor panes in translucent mode and restores reliable line wrapping after tab or preview changes.
 - Keeps app, extension, widget, App Clip, and Watch targets on one build number.
-
 ## v1.4.1 (published August 14, 2026)
 
 Release link: [GitHub Release v1.4.1](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v1.4.1)
