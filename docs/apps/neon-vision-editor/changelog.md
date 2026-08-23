@@ -10,7 +10,20 @@ head:
 
 # Neon Vision Editor Changelog
 
-_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on August 21, 2026._
+_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on August 22, 2026._
+
+## v1.5.2 (published August 22, 2026)
+
+Release link: [GitHub Release v1.5.2](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v1.5.2)
+
+- Keeps Markdown preview body text at the same effective base size as the editor while font zoom changes.
+- Adds measurable large-document performance coverage before further virtual-renderer changes.
+- Improves editor rendering efficiency by caching resolved syntax colors for each configured theme.
+- Adds 100,000-line benchmarks for typing, scrolling, selection, and viewport reload latency.
+- Adds Time Profiler and Animation Hitches capture support with readable baseline trace bundles.
+- Adds visual regression coverage for light and dark translucent and opaque editor surfaces.
+- Removes the macOS preview's hidden 0.96 font-size reduction so preview text no longer drifts smaller than the editor.
+- Removes an unreachable duplicate Warm Sepia toolbar theme mapping that produced a compiler warning.
 
 ## v1.5.1 (published August 21, 2026)
 
@@ -94,7 +107,6 @@ Release link: [GitHub Release v1.4.3](https://github.com/h3pdesign/Neon-Vision-E
 - Restores the virtual editor's usable width after sidebar, preview, and workspace changes.
 - Prevents the first editor row from drawing beneath the tab bar.
 - Prevents Brain Dump from collapsing open-document text into one-character columns.
-
 ## v1.4.2 (published August 15, 2026)
 
 Release link: [GitHub Release v1.4.2](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v1.4.2)
