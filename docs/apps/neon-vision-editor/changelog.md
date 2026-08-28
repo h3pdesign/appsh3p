@@ -10,7 +10,34 @@ head:
 
 # Neon Vision Editor Changelog
 
-_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on August 22, 2026._
+_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on August 27, 2026._
+
+## v1.5.4 (published August 27, 2026)
+
+Release link: [GitHub Release v1.5.4](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v1.5.4)
+
+- Restores access to every wrapped source row in the macOS editor after project-sidebar or preview width changes.
+- Keeps the final document lines reachable at both narrow and wide editor widths.
+- Preserves responsive virtual-editor layout without performing unbounded full-document measurement.
+- Measures a bounded, distributed sample of wrapped rows when calculating the virtual canvas scroll extent.
+- Uses exact row accounting for fully loaded documents and immediate expansion when wrapping increases.
+- Prevents the macOS editor from stopping before the document's final lines when the project sidebar or preview narrows the source pane.
+- Recalculates cached row geometry after sidebar width transitions without reintroducing unbounded layout work.
+
+## v1.5.3 (published August 27, 2026)
+
+Release link: [GitHub Release v1.5.3](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v1.5.3)
+
+- Makes large-file editing and scrolling more responsive across macOS, iOS, and iPadOS.
+- Reduces unnecessary editor, project, preview, and session-state refreshes during routine interaction.
+- Adds a distraction-free focus mode while improving editor selection, project-row clarity, and accessibility context.
+- Caches macOS viewport render snapshots and incrementally prepares syntax-highlighted lines outside the draw path.
+- Adds revision-aware iOS line metadata, no-wrap width caching, and bounded formatting for large documents.
+- Adds focused SwiftUI observation snapshots, preview reload measurements, and CI-exported performance results.
+- Adds Focus Mode to hide secondary editor chrome without changing the open document or workspace state.
+- Prevents the editor canvas from taking focus merely because it moved into a window.
+- Improves editor accessibility with document, line, column, selection, and read-only context.
+- Splits the root observer composition so supported public Xcode releases can type-check it reliably.
 
 ## v1.5.2 (published August 22, 2026)
 
@@ -80,7 +107,6 @@ Release link: [GitHub Release v1.4.5](https://github.com/h3pdesign/Neon-Vision-E
 - Prevents virtual rows from being cached using the canvas's previous width during preview and sidebar transitions.
 - Stops overlay scrollbars from reserving an uneditable strip inside the editor viewport.
 - Invalidates cached row fragments when their wrapping width or wrap mode no longer matches the active viewport.
-
 ## v1.4.4 (published August 15, 2026)
 
 Release link: [GitHub Release v1.4.4](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v1.4.4)
