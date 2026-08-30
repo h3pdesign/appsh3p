@@ -10,7 +10,37 @@ head:
 
 # Neon Vision Editor Changelog
 
-_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on August 27, 2026._
+_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on August 29, 2026._
+
+## v1.5.6 (published August 29, 2026)
+
+Release link: [GitHub Release v1.5.6](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v1.5.6)
+
+- Makes the iPhone and iPad editor toolbar more compact and language-aware without hiding full menu names or accessibility context.
+- Restores predictable Markdown list continuation and native text-selection commands across mobile and macOS editors.
+- Keeps collapsed and expanded Markdown formatting controls readable without wasting editor space or covering actions.
+- Uses icon-only mobile toolbar presets and language-specific symbols or initials for the current document language.
+- Adds a horizontally scrollable mobile Markdown formatting row while keeping the collapsed control in a compact opaque pill over a transparent surrounding area.
+- Treats explicit language choices as tab-level overrides so automatic detection does not immediately replace the user's selection.
+- Makes Settings and Help toolbar visibility follow their configured switches in standard, all-actions, and custom presets.
+- Increments ordered Markdown markers such as `1.` to `2.` and `9)` to `10)` when continuing lists, including in the macOS virtual editor.
+- Restores the system edit menu for caret-only interactions so Select and Select All remain available while preserving snapshot actions for selected ranges.
+- Prevents editor characters from bleeding through the collapsed Markdown formatting pill and keeps the expanded action row reachable by horizontal scrolling.
+
+## v1.5.5 (published August 29, 2026)
+
+Release link: [GitHub Release v1.5.5](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v1.5.5)
+
+- Prevents AppKit and Core Text drawing from leaking text state between macOS virtual-editor rows and producing mirrored or upside-down glyphs.
+- Makes Apple Pencil a precision iPad editing input with hover caret preview and direct range selection.
+- Keeps Markdown live-preview text at the exact resolved editor font size on every supported platform.
+- Makes the release regression suite more reliable while parallel performance, filesystem, and PTY tests compete for resources.
+- Draws every virtual-editor line through an isolated Core Text boundary that derives coordinates from the canvas and restores inherited text state.
+- Uses Pencil-only hover and drag recognizers for caret preview and range selection, with side tap or squeeze undo that respects system shortcut preferences.
+- Strengthens cross-platform preview-size coverage and asynchronous release-test deadlines.
+- Stops line-number, wrapped-row, and marked-text drawing from contaminating subsequent Core Text matrix and position state.
+- Removes the stale macOS regression expectation for the retired `0.96` Markdown preview scale.
+- Prevents false external-refresh and terminal-session failures during heavily parallelized test runs.
 
 ## v1.5.4 (published August 27, 2026)
 
@@ -81,7 +111,6 @@ Release link: [GitHub Release v1.5.0](https://github.com/h3pdesign/Neon-Vision-E
 - Makes Up and Down arrow navigation move the caret between visual rows, including wrapped text and viewport transitions.
 - Routes Command-W from the editor to the selected tab and preserves the unsaved-changes confirmation instead of closing the window.
 - Applies selected theme colors consistently to editor text, canvas, line numbers, caret, selection, marked text, and input-method text.
-
 ## v1.4.6 (published August 16, 2026)
 
 Release link: [GitHub Release v1.4.6](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v1.4.6)
