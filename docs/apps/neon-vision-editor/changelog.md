@@ -10,7 +10,22 @@ head:
 
 # Neon Vision Editor Changelog
 
-_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on August 29, 2026._
+_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on September 3, 2026._
+
+## v1.6.0 (published September 3, 2026)
+
+Release link: [GitHub Release v1.6.0](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v1.6.0)
+
+- Opens and edits large Markdown and source files with less blocking work and bounded viewport rendering.
+- Keeps scrolling, rapid typing, Unicode edits, and saving reliable in large documents.
+- Adds native macOS HEX color previews and a color picker directly in the source editor.
+- Prepares large-file indexes in the background and limits rendering to visible rows and bounded document windows.
+- Shows color swatches for supported HEX literals and preserves their format when editing colors.
+- Coalesces recent-file and performance-history persistence so repeated editor actions do not queue obsolete preference writes.
+- Prevents blank scrolling after editor-width changes and preserves forward content in bounded viewports.
+- Refreshes edit coordinates before consecutive keystrokes, preserving typed text and accurate caret positions.
+- Keeps independent document views valid until the underlying content changes.
+- Uses exact document positions for navigation across uneven line lengths and offscreen accessibility reporting.
 
 ## v1.5.6 (published August 29, 2026)
 
@@ -96,7 +111,6 @@ Release link: [GitHub Release v1.5.1](https://github.com/h3pdesign/Neon-Vision-E
 - Separates Neon Editorial and Nordic Light from default palette fallbacks in the affected appearance modes.
 - Adds regression coverage for theme uniqueness, vivid component styling, image captions, and export parity.
 - Pins Sparkle to a reproducible `2.9.5` package version to avoid missing package-product resolution.
-
 ## v1.5.0 (published August 20, 2026)
 
 Release link: [GitHub Release v1.5.0](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v1.5.0)
