@@ -10,7 +10,22 @@ head:
 
 # Neon Vision Editor Changelog
 
-_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on September 3, 2026._
+_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on September 4, 2026._
+
+## v1.6.1 (published September 4, 2026)
+
+Release link: [GitHub Release v1.6.1](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v1.6.1)
+
+- Brings official Emmet 2 abbreviation expansion to markup and stylesheet editing across the native editors.
+- Restores the established macOS editor commands and interactions after the move to bounded virtual rendering.
+- Improves large-document responsiveness while correcting HTML/CSS colors and App Store support-purchase handling.
+- Expands complex HTML, JSX, CSS, SCSS, Less, Sass, and related Emmet abbreviations with configured indentation.
+- Restores Tab-to-accept inline completion, Vim navigation, Markdown shortcuts, drag and drop, rich-text paste, code snapshots, and whitespace inspection in the macOS virtual editor.
+- Caches generation-safe bounded viewports and enforces median latency budgets for typing, scrolling, selection, and viewport reloads.
+- Colors HTML tags, attributes, strings, embedded CSS properties, and numbers as separate syntax tokens instead of treating complete attribute or style values as one string.
+- Reads offscreen selections and edits through bounded UTF-16 document ranges instead of materializing an entire file-backed document.
+- Preserves tab selection, preview, structured-data, AI completion, toolbar, and persistence behavior when switching to the virtual editor.
+- Uses the correct StoreKit purchase action on visionOS and recovers product loading cleanly during App Review-style sessions.
 
 ## v1.6.0 (published September 3, 2026)
 
@@ -96,7 +111,6 @@ Release link: [GitHub Release v1.5.2](https://github.com/h3pdesign/Neon-Vision-E
 - Adds visual regression coverage for light and dark translucent and opaque editor surfaces.
 - Removes the macOS preview's hidden 0.96 font-size reduction so preview text no longer drifts smaller than the editor.
 - Removes an unreachable duplicate Warm Sepia toolbar theme mapping that produced a compiler warning.
-
 ## v1.5.1 (published August 21, 2026)
 
 Release link: [GitHub Release v1.5.1](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v1.5.1)
