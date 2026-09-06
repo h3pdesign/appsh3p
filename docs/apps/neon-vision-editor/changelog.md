@@ -10,7 +10,22 @@ head:
 
 # Neon Vision Editor Changelog
 
-_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on September 4, 2026._
+_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on September 5, 2026._
+
+## v1.6.2 (published September 5, 2026)
+
+Release link: [GitHub Release v1.6.2](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v1.6.2)
+
+- Detects external edits on network volumes even when filesystem change notifications are missed.
+- Lets you disable the automatic Welcome Tour and opens Finder documents without interrupting them with a tour.
+- Keeps purchase feedback stable while Settings updates and product information refreshes.
+- Improves external-document save safety and opens text files with unknown extensions or no extension.
+- Adds a background metadata polling fallback for open network-volume files, reusing the existing external-change conflict handling.
+- Adds an automatic Welcome Tour preference; Finder file launches suppress the tour, including after app updates.
+- Presents purchase alerts using local SwiftUI presentation state and preserves the latest queued purchase message.
+- Retains a complete local recovery copy of external-document save payloads on iOS/iPadOS and visionOS.
+- Avoids duplicate network-file checks and skips tabs that are still loading or already reviewing an external change.
+- Rechecks launch intent before presenting a delayed Welcome Tour.
 
 ## v1.6.1 (published September 4, 2026)
 
@@ -98,7 +113,6 @@ Release link: [GitHub Release v1.5.3](https://github.com/h3pdesign/Neon-Vision-E
 - Prevents the editor canvas from taking focus merely because it moved into a window.
 - Improves editor accessibility with document, line, column, selection, and read-only context.
 - Splits the root observer composition so supported public Xcode releases can type-check it reliably.
-
 ## v1.5.2 (published August 22, 2026)
 
 Release link: [GitHub Release v1.5.2](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v1.5.2)
