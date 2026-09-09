@@ -10,7 +10,35 @@ head:
 
 # Neon Vision Editor Changelog
 
-_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on September 7, 2026._
+_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on September 8, 2026._
+
+## v1.7.0 (published September 8, 2026)
+
+Release link: [GitHub Release v1.7.0](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v1.7.0)
+
+- Keeps native document tabs, sidebars, editor surfaces, and Settings visually consistent across macOS, iOS, and iPadOS window modes.
+- Applies appearance and layout changes immediately when switching Light, Dark, or System mode.
+- Makes tab switching and Settings navigation feel immediate while preserving the native platform controls.
+- Replaces the remaining legacy tab-bar paths with native platform tab implementations.
+- Preserves complete tab borders, spacing, and translucent surfaces across hover, selection, and appearance changes.
+- Aligns tab, TOC sidebar, project sidebar, line-number, and editor backgrounds in opaque and translucent modes.
+- Prevents tab borders from clipping, flashing, or disappearing during hover and theme transitions.
+- Keeps Settings content sized to the selected tab and opens the Settings window in a stable editor-relative position.
+
+## v1.6.4 (published September 8, 2026)
+
+Release link: [GitHub Release v1.6.4](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v1.6.4)
+
+- Keeps macOS typing visually stable while preserving the native editor viewport.
+- Makes empty native titlebar space usable for window movement without sacrificing toolbar actions.
+- Keeps the editor’s native tab and viewport lifecycle intact while these macOS chrome fixes are applied.
+- Type continuously on macOS without editor flicker.
+- Move the window from unused titlebar and toolbar space while keeping toolbar controls usable.
+- Switch between open documents while the editor preserves the current frame and loads previews in the background.
+- Keep long, unwrapped iPhone lines visible and stable while typing and scrolling.
+- Improve hardware-keyboard word and logical-line selection on iPhone and iPad.
+- Match current-line highlighting to the selected editor theme.
+- Stops per-character document length and dirty-state changes from rebuilding the macOS editor configuration.
 
 ## v1.6.3 (published September 7, 2026)
 
@@ -86,7 +114,6 @@ Release link: [GitHub Release v1.5.6](https://github.com/h3pdesign/Neon-Vision-E
 - Increments ordered Markdown markers such as `1.` to `2.` and `9)` to `10)` when continuing lists, including in the macOS virtual editor.
 - Restores the system edit menu for caret-only interactions so Select and Select All remain available while preserving snapshot actions for selected ranges.
 - Prevents editor characters from bleeding through the collapsed Markdown formatting pill and keeps the expanded action row reachable by horizontal scrolling.
-
 ## v1.5.5 (published August 29, 2026)
 
 Release link: [GitHub Release v1.5.5](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v1.5.5)
