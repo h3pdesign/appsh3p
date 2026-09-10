@@ -10,7 +10,35 @@ head:
 
 # Neon Vision Editor Changelog
 
-_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on September 8, 2026._
+_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on September 9, 2026._
+
+## v1.7.2 (published September 9, 2026)
+
+Release link: [GitHub Release v1.7.2](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v1.7.2)
+
+- Keeps editor chrome responsive and visually consistent across macOS, iOS, and iPadOS.
+- Reduces the visible delay before syntax highlighting appears when switching documents.
+- Keeps the AI assistant, Markdown controls, and Find & Replace surfaces readable in opaque and translucent themes.
+- Refines mobile tab transitions, tab spacing, toolbar placement, and theme-aware translucent surfaces.
+- Aligns the AI assistant panel, Markdown controls, and Find & Replace surfaces with the active sidebar and editor themes.
+- Prevents mobile tabs and toolbar controls from clipping at the edges during selection and scrolling.
+- Prevents interrupted macOS window drags from extending editor text selection.
+- Starts macOS syntax highlighting as soon as the selected tab viewport is available.
+
+## v1.7.1 (published September 9, 2026)
+
+Release link: [GitHub Release v1.7.1](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v1.7.1)
+
+- Keeps native document tabs, sidebars, editor surfaces, and Settings visually consistent across macOS, iOS, and iPadOS window modes.
+- Applies appearance and layout changes immediately when switching Light, Dark, or System mode.
+- Makes tab switching and Settings navigation feel immediate while preserving the native platform controls.
+- Replaces the remaining legacy tab-bar paths with native platform tab implementations.
+- Preserves complete tab borders, spacing, and translucent surfaces across hover, selection, and appearance changes.
+- Aligns tab, TOC sidebar, project sidebar, line-number, and editor backgrounds in opaque and translucent modes.
+- Prevents tab borders from clipping, flashing, or disappearing during hover and theme transitions.
+- Keeps Settings content sized to the selected tab and opens the Settings window in a stable editor-relative position.
+- Restores drag-to-move behavior across the macOS top bar without applying window-drag handling to the editor surface.
+- Keeps cursor-based text selection available on iPhone, iPad, and visionOS.
 
 ## v1.7.0 (published September 8, 2026)
 
@@ -84,7 +112,6 @@ Release link: [GitHub Release v1.6.1](https://github.com/h3pdesign/Neon-Vision-E
 - Reads offscreen selections and edits through bounded UTF-16 document ranges instead of materializing an entire file-backed document.
 - Preserves tab selection, preview, structured-data, AI completion, toolbar, and persistence behavior when switching to the virtual editor.
 - Uses the correct StoreKit purchase action on visionOS and recovers product loading cleanly during App Review-style sessions.
-
 ## v1.6.0 (published September 3, 2026)
 
 Release link: [GitHub Release v1.6.0](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v1.6.0)
