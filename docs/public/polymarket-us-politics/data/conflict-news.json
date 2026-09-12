@@ -1,20 +1,249 @@
 {
-  "updated_at_utc": "2026-09-11T19:19:53.115Z",
+  "updated_at_utc": "2026-09-12T04:32:10.817Z",
   "conflicts": {
     "iran_2026": [
       {
-        "title": "US-Iran war: Anthropic reveals Iranian operators used Claude to gather intel on US naval forces, Israeli targets",
-        "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6aa454463516496fb6f77c402a0fd8ca&url=https%3a%2f%2fwww.livemint.com%2fai%2fartificial-intelligence%2fusiran-war-anthropic-reveals-iranian-operators-used-claude-to-gather-intel-on-us-naval-forces-israeli-targets-11789110946168.html&c=18299717453966629008&mkt=en-us",
-        "source": "Bing News",
-        "published_at_utc": "2026-09-11T00:32:00.000Z"
+        "title": "US links Chinese satellite imagery to Iranian strike that killed 3 soldiers - Arab Times Kuwait News",
+        "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNZmVkNC1uaGduTWtnVXJOV202LVlQdl84WGZkZ21hRDlXS2hDMVRYWlV0WUprQnE5QkszVFRfOVlFSDlrMUVKcXpTbDBBd0k1a2pSbkxXbDFDUVBaWG1LNXNObS1oaHpMRWJuVl9scUVnQnhvdlR3Y3QtYVIySnlpT2k3bmtLdTFMY201cnREcVdZRGxtS2ZGUnBQdFJ6NkNycnd6UGNPRFVid0QzQmxITC0wcw?oc=5",
+        "source": "Google News",
+        "published_at_utc": "2026-09-12T04:23:45.000Z"
       },
       {
-        "title": "US-Israel-Iran war live news: Oil tanker named New Andros attacked by drone off coast of Iraq; rescue boats successfully extinguished fire",
-        "url": "https://www.msn.com/en-in/news/news/us-israel-iran-war-live-news-oil-tanker-named-new-andros-attacked-by-drone-off-coast-of-iraq-rescue-boats-successfully-extinguished-fire/ar-AA2bSqyM?ocid=BingNewsVerp",
+        "title": "US-Israel-Iran War Latest Live News: ‘Were Not Iranians’ – Iran Hits Back At Pete Hegseth Over 9/11 Remarks, Calls His Argument ‘Utterly Absurd’ - sundayguardianlive.com",
+        "url": "https://news.google.com/rss/articles/CBMijAJBVV95cUxNTk9YT3I3LVdORFVCWUZPNGNaN0RKNF9nQjc1WWhhWE9uUFI3RHNQR1dERnZwYXVqRzZESHctb1haeXM5LTQxdGVMX3ZLMVRHd0xQclh2cVlfb2tkdUhQeWd6amtWSUhnbG5LS2RZajhQVVg4Y0M3T1VxZmZ2TmNpUGNDaVFJMUdCdHVES1Azd2VkaVMtcHkzSGxFcUt2VW1PamJIMURQYjFJTzJWdUJ2SE5sX1l1OEV6S25wNm1tanVXR3hhdkdkeHVKcmpYRFBUSXNza2NhaXFoTnRBaDV6Nng5NDVacmpyMFVGRjM1MEZJcXRwVnpLX0pQeWFQRjNQSld1YmN2NlBoQk820gGSAkFVX3lxTFBYaEVId1g1RGxTbjQyZkhMSC1BM2F2cjRpZi14bU90dVFZZ0FJOGViU3FVbi1uR21MOXVFYjQxU2tzaUN4TjZVd2hRejBXY3EtMEl3b3JHTTcxOUItc1ZPUlI0SlVPRUZoUm5BQWpfRVJYbzhhdXRQcld5XzZkVjl0bWxLS29HN0J0NUxCWVoyVWVSd08zY3ZEU0NtYmRpVWprY2tkdWdFUm9yU3RMSi1zYWI5bEVJY19qa3c1RjVwaUFSOEozemdBekJROXB3SG5fVmhRMjRleHNQQzVwOGFzYXYwalVvbGtZN2FPWnJfNGlyUml2MzdTdU02ZmlfY3QxNlR1RFB4aDRCOXRKeVpGblE?oc=5",
+        "source": "Google News",
+        "published_at_utc": "2026-09-12T03:44:05.000Z"
+      },
+      {
+        "title": "A 9/11 speech, a ‘Gru’ meme and a furious Iran-US clash over who gets to define terrorism - The Statesman",
+        "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxOYnV2QzNjb1M2VUpra3dlajlDdEhqVldUREhLLWdGWjRZaTZfajdZa25VZmQ5Q1hyVC10WlBRQlEwQ0JaMExPNXpZdWdOVWN6RGRrYV9VUm5sRjVLbnI4blR3ckU5Z0FzN1JjMkp6cjJLQnRIb0VYZGhPblFqTHdtbTZLY19jWHpBcmJuMk5FMUFjWEo0Vy1CUEtGOU5ZSlY4REpoaUNfeDVPVnI0dE9SSEJ2ZGg0NXZqRU9paWZIZ3U0aU9uQVpsN0dVaHRtTXBDN01Z0gHYAUFVX3lxTE5BRnlidGRKZVM1RkYyTnIyanFsVDJlbUtmcDYzc2k4ZFAtSTRiMEEzZ25DVWduSnM4TlBmRFJqVm4yanM3YXdLZ2hvY1JvMGJLRGxnYTF4MFhaUk5tZ3h3SDRySEJRRzlHemhLM1B1ZndJdDVEMXhvNnFGclgyc2VpNkZKZy16SmVNSThab05YQUdPVm1fYTFna0hJaDlPSnBwU1pBLTdqeXdLNU9OYUR3Yk1pUk1fQXM2ZkVKcURmQnprY0J5STNMVVYtOFNESENLVmFxR3JtNQ?oc=5",
+        "source": "Google News",
+        "published_at_utc": "2026-09-12T03:27:00.000Z"
+      },
+      {
+        "title": "U.S. links Chinese satellite imagery to deadly Iranian strike - WSJ - Investing.com Australia",
+        "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOZ1o1cEN2MGdJYnJiVDVub3NfY2hzSWZUZFNBN3NFNFJCR1pnQnY2alhBNDE3N21tY3JNSDJXRHU3bTBoQkN4Mk01MmdFdEotZXNtdkJIdmJfNC14R3dWNjhYWjMwX1JFVWUzX3lGLTVrZUw4RGtLblRiMWxhbW1BR3JOb3ZWU2p0Rm01SmlNZ2ktdE1kLXBzV3N2SkpEczdldGRTY0lQdjBBd1hBQ2JEdWZVNVlpQQ?oc=5",
+        "source": "Google News",
+        "published_at_utc": "2026-09-12T03:24:43.000Z"
+      },
+      {
+        "title": "US-Israel-Iran War Latest Live News: Iran And Allies Turn Up Pressure On Vital Maritime Routes, Houthis Claim Perim Island Near Bab el-Mandeb As Brent Crude Climbs Toward $110 - sundayguardianlive.com",
+        "url": "https://news.google.com/rss/articles/CBMivgJBVV95cUxPcnhndE1GVndkVGstbDhwaXhoRlRhWXlqYXZiM3h3REFab0l1NkpfVG1Ob3NSSDF1dWxMT0gyLWtnNkgyRENLRDBudGMxVW5BSlFTNzJEeFNPWVM5azV0b3ZkREpFWUlHNnhQbDZQbTBPVUJQV2R1dy1iV1c4VHlDZW9zRGhXUGQ4WVhSbmJWeUE4TlNrcVJxV190M0RWdE5SZUNzUnRJUkJNT3pvNFRFWVBoZjd4UFZvenlMZFFsN1NTRUFHRUpXX0JCQ2lSZFkzQmVhR3Z3QWM3dXRiQ1VCcklUNjh1cDQ3d2pKMVdJeVJqLXg2elM5cHl0ZThyWjZMYTVUSU1rQlBOSHlTUmZ0Qm91bjBpazRTVnJINldoNnltUUpTOThpNUtSUnlraTh6NThEby00ekFzajV2MFHSAcMCQVVfeXFMT2FERjEyLWpGZnB0ZzljWjVTOVhldkRrYl9PY25hcGFCTXEzdHZ1RXQ0WXhNTEdsLTB2TWg2b0NhUHlUQy1Hd0Z4b2pSVnhVY3lDeHFMRnJHbzZwdlZNaFNCa0xTbGVQZnBJNThMeW8tSm5XaWpqcno2blVNY1pRd1ZjT1pjWTlUa1p2WFAtRHVpSkJBSHNtV0hORjFfR3V1OTBqdXNyeXpRdlIwT25JRENpTkE0MlpES1c4Uk44ODRJTzhqMEo2b2I2NGw5bmZZSG9IY2RPdEVGejEtX1BMYnZQa09JZnFERUM4Ujh0VVBPdklsTHlONFN4ckdKbjhIb09HanhmMmRmQUNvZ25SZzMxSTNIdG55WW14X3BYMDRKUVRYcnJMR09XR1o2Y1A3eGI1MElpTVhZUTVUbUlfOUxDUm8?oc=5",
+        "source": "Google News",
+        "published_at_utc": "2026-09-12T02:59:57.000Z"
+      },
+      {
+        "title": "Iran obtained Chinese satellite images before deadly strike on US troops, officials say - Ynetnews",
+        "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE5KYzRRdnhTbUlyVUl5bnNRODFwY3JpSUNJVEVmLWk4eEI3ek1kMDhLbkFlNGh0YTY5OW5FaWx0Y0k1MlZQSnNmWmlmYjFwdFZTWWl6Yk93?oc=5",
+        "source": "Google News",
+        "published_at_utc": "2026-09-12T02:59:47.000Z"
+      },
+      {
+        "title": "WSJ: US links Chinese imagery to Iranian attack in Jordan - UA.NEWS",
+        "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQNlJUZ25oVklNdktNX0l1NUVtOHJHcWdBbGhRdmdQbUx5MTFuU0xvblY1dUJrNTlrWUJyTGVJUkZ3ZFU0azhNZlFSR21MNzdIOGwwZS05R2k5Z21oRGJBRnRRX255cm1CSl9Ka01TbC1FMElrRG9yTkZENXRUdnZiclNBT3hQVlpuQTdQUmdYVmR6VnZucVE?oc=5",
+        "source": "Google News",
+        "published_at_utc": "2026-09-12T02:57:11.000Z"
+      },
+      {
+        "title": "US links Chinese satellite imagery to Iranian strike that killed 3 soldiers: Report - Anadolu Ajansı",
+        "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPVmM0QjRYRm1RWldSb3c3Z0Utdl9ONjBZNV9aZEY5dmRKZGRZeTE5NVJmNjUtX1ZDTjQzSnRpLTVvVHowVVpYLWszVDRzUTlQTDJwb0ZrOUFhSFNGUHdRRFpDbVBUQi12SF9TOG13Umhqam1wc1RYTEIzb1BlTmxIelFweUZLVnBIZW5uZUtXcXJwc1dWemtBbGZMc2ItNnRzVlU2eFNFRUxweDNLOVdTaVFkV2J5SEg4SkZwTUFlNFg5QQ?oc=5",
+        "source": "Google News",
+        "published_at_utc": "2026-09-12T02:51:11.000Z"
+      },
+      {
+        "title": "Chinese images linked to Iran attack that killed US troops - The Australian",
+        "url": "https://news.google.com/rss/articles/CBMilgJBVV95cUxNejNDTVpuZC1jZE1wcWlVN2RhNjZzUHl5Q2xTclQxVmtrQ05HTU5WYmlqb1luMGlueW1kRXUwREtPd0lTMG95RFZ0aWZuMVh4WVBWUGloSE14eG9mdVZWdzFwdWpibkU3WjM3QlJPV2JsOGVaV0FxMXlVZ19SVTBSczYxTlp5YzRmOHFzZDAtLWxleTliaTVXNHhoTDU1Ung2clhsLTBWd3BsTWVfZkRWOXFNT0Z0SUFuMGNOMkd1MGFyWXlfV3UydjR6OUE3M0xHcnpmVjFiOWlnSjhvTnBlU0JqWVBQR0hiQUFzTHBWWlFRRzRtdWtELTMtaGd2SFo0SHRUZnl1d3RJSFJzdWNqbWZ3cDQ2Z9IBmwJBVV95cUxORlhnZTFkUUwyN3NWa0kwWHBBOEVYTUEzcjl0aVdKOVpJcXlDaTBqSTZmMlVraDhwbjZmeUs3NTA5dDV0N1RZTXhOdFVXVTRCYU5hbmhzUEh1YjZSLXIxdXNPSWk0ZmJsc1pXU3JhVlJ6ZkNNbHhGVmM2b0xxZnhLa3hGQmJfR0NpbXhEeFc0QVZUeFdvRXFPdjh4aGo4ZEZIRDAycEluNS1aREloRll1NE1fNm83V3NiMG9GUTRmTXpXMlkyc2tKc0tiYWIwOWZXeWtaR1JvTzFBRm9UODBITjhTMHJMaDZtRGE4Q1g4eWUtUU9FSWJvb2pVcVdHckVJbGIzdHVKb3hoTzRmWElpTXVsVDNCS1BVVVdn?oc=5",
+        "source": "Google News",
+        "published_at_utc": "2026-09-12T02:03:08.000Z"
+      },
+      {
+        "title": "‘Axis of Resistance’: How useful have proxies like Hezbollah, Hamas, Houthis been to Iran? - The Straits Times",
+        "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxQQ2Nvb0M2c1RlcmVtNDF6eVZtS2tYZUxiZWN2VVduOVVxa1lXb0IzZENkTHR5R2tFUUNLUzVRTEVvQ2wwTlhGM3NwRXo2SmJwQXM1Q2dSOG1BTEZzSTFtTWVINGxzY1JKMEZaWmZyVDlTUFdPdlFHNTBpUXM2QlMtMGpIdURrbElRWFNwM21XRTQ0bTc0Z2Q5SDNZVWNwUDZhc2wyVURfZy1sVl9sV1hEUjhEWW9YdlJ3N0gxYnBiQjAtN0xHSmtQRVYwRQ?oc=5",
+        "source": "Google News",
+        "published_at_utc": "2026-09-12T02:00:00.000Z"
+      },
+      {
+        "title": "Exclusive | U.S. Links Chinese Satellite Imagery to Iranian Strike That Killed Three Troops - WSJ",
+        "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNM05ZUHdkZVNUdzFKZzRrZW0wRkgzbWZNbE55Wk00TWgxNkFjVXRUdENGS0NJcm5LWHhkWVJWMVNTNU5YSGRvWGZIWnhkSzNRNzFYNHlYUmNTNHc4WVBsdlpFbFh1LXktYmozTTZOYkhPVlRlZzY4RllGamstNkJvSENmMUZobV8zQldNdlIxVjY3QnVGTk9Ba21SVmgyWF9uX3I0Ri1zR2JmV1JXQVFoanRsMA?oc=5",
+        "source": "Google News",
+        "published_at_utc": "2026-09-12T01:57:00.000Z"
+      },
+      {
+        "title": "Why The Latest Us Strikes On Iran Mean The Middle East Is Back On The Brink - ИФЗ РАН",
+        "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQZ0hqYWRNNW90Vmx3NV9kNXJKZTFUVGtQUGFnUjJhZ0hDMDRHS2tnSmVodWZRcE5DcXpDVzIzRTFSQWRDUnpzZUk1d3lBX0VJRElIWmdpd1pwb1lTQV80dUZ0QmZpaHVXRkdTdkRaRHJVWmU3eEtseS1XZm85UFUxRw?oc=5",
+        "source": "Google News",
+        "published_at_utc": "2026-09-12T01:26:09.000Z"
+      },
+      {
+        "title": "US said to link Chinese satellite imagery to Iran strike - Breakingthenews.net",
+        "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOd0JWLUVLV3JlMFJCTXJjYTkwM2VoRG83dndQdTFuZkNqQ1E4ZTRPSEVqVzI2LVNFcGpzMGtWWEZnWWhPa3dUZGRsNDY3UEhLdFExY3hwTEttY01KeV91NzItTF9UYm9HdE9qNC1nbTUtVTRVV1U4d21OWjhKdGpidERBRUZodGxBam11ZExqU29sMmNjWllZNnQtU3pXbUt4RkZV?oc=5",
+        "source": "Google News",
+        "published_at_utc": "2026-09-12T01:24:00.000Z"
+      },
+      {
+        "title": "US-Israel-Iran War Latest News: ‘Drone Attack Came From Maysan’ – Iraq Dismisses Operations Commander After Saudi Strike Amid Rising Tensions - sundayguardianlive.com",
+        "url": "https://news.google.com/rss/articles/CBMijgJBVV95cUxOQlBkZXdUTGNqMVo3cUVmVUJfWmxubVdiRVp1SDRFS21kVG1NbU9iRG0tWnpvZjlmTWlfRHNnLU5BWllOMXhwcG9LOEp4NlZfTHVScjFzMU1wc0cwWExQeWhvM2x3SlFKZ1NVWFpMYkp3LTFvSjh1alVkUzFMck96QV9ldDRfaGtJclJyaV9RLUUwWGZkVDEtZThxOU5zaldfSHl4T0xSZ3haUXFrZ1B4UVJudi1FekdER0luRlBDd2tZS2hhZENBMjVTNjMyN2hPMWpKVVZpWTMtMW5kRXQxMkVLVGg5TmpleHdUOEpGc1MyNm5ncVRsdVZSZVAtUzJ3WHNwNGtOclVwRGl4V3fSAZMCQVVfeXFMTUQ0VTliVEEtS01BSWtDS1AtZW1SRmlHLVNDS1JTdVV4ck1fbHdvZWNVVlRGYkJQMGJPR1BnRE9RdVB6U1NqT0pwZ1ZWNVRId3VKdVBuMWhhQkFPd1lYTVZjTldrbU9ZS3lIVDZyVExYdXFNY0lfb2FhZWVqQURCSG5vLXNyOE05NXRUbFFxazgyeWxtZl9RMzZXWTAtZ3ZfWTdDSFAyZkhjclpIdFhaaHVDUzJSR3JSS3JVTjVrdFE0eF9ONmhPT0Z4WDRJaWpiSlk3b0c5ZTVMSjNyYUpxMHJ6SW9oaHdWd0NSVFd4Tkg3dnNyUHlOaE14ZVhGVW1pZ2hHY2h5Y2JfSkllVkw2UEpqT00?oc=5",
+        "source": "Google News",
+        "published_at_utc": "2026-09-12T01:23:36.000Z"
+      },
+      {
+        "title": "Why The Tragic Us Strike On An Iranian Wedding Matters Right Now - ИФЗ РАН",
+        "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE9NRDlMRlBVVC1RdW44T3E2UUtpVWJoUTNJdlViVk9XcUpEMTBZMDFZS0NkQjBJbnZOcXkzYWtsX0liaF9JUUprWFg3UTZoQUxkSVVlMzVhcmllU0lDMTBYNUNXV2plY1VFTG9TWlozVHVqNjFwenBwSGdmQQ?oc=5",
+        "source": "Google News",
+        "published_at_utc": "2026-09-12T01:05:57.000Z"
+      },
+      {
+        "title": "US-Israel-Iran War Latest News: ‘Danger Has Passed’ – Saudi Arabia’s Khamis Mushait After Security Alert, Civil Defence Issues Fresh Warning - sundayguardianlive.com",
+        "url": "https://news.google.com/rss/articles/CBMiigJBVV95cUxNV3hKS1dGWjZmbzAtZU5PbW9Ra2tmZWR0a1NkR084VHRsYTl1ckh2SHpWakhRVkRQR0hrVS1XSDZYWHdqRnRoNi1wMGN0MjdWcWZCbE1QR1dtV2ttdU5MNmlrSEhJZlVIS3JXWlRDZjczU0VzOUpUNkpfZ0l4anlfLVlacFM2dS05amNLTzFGc05oejdGUDlRVEt5b1NfdVdmZHRDTHpuR0xSTzUwZ2dYd3BVTkFuLXdLVDZGbDZwa05ELUtfejktM2NJZm1TbWYweUJVV2pvR09GTjd0UUlGY1R6V2paUktaMWh2NWh0VjNqM3NPRzV6RHZBRHZMbDNZR3owT1ZiNnJlUdIBjwJBVV95cUxPbVk5RVZUbml3MDBYdkxZQXd6ZWtjbHNhRldHNmdfNkZUSVR0djc3eVZvZzhQdEhnLVRZQmczcy1qMVptdXZGczhyY1FlX3ptSFlaRmE3MVJYbm8tZjZfTW9NXzB0SnVHenJnSnp3b0kyRkVuNHJ0Y3Y0TTJKenhQTWlOMUR6dEczWEY4VGQ0UEwzOG5JcGpHZHpVT2xrLVBSbXdyT3g5QUQxaFZUak9Mc2Jha182bEpUaklMX3hHRWdSSkFLVGhaUnlJNUxMMmFpeXNTbFBKVlZoOENyRE03Nk4zZFNZZk51TlJQZFM4RDFDTmswRVRiRE10UnJ3R1pNNlV6b1g0d0ZDTXZTbmw4?oc=5",
+        "source": "Google News",
+        "published_at_utc": "2026-09-12T00:53:36.000Z"
+      },
+      {
+        "title": "Iran Strikes US Sea Drone in Hormuz as Two Ships Hit Off Oman - Beijing Times",
+        "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPME02TUNEejR1Wlpsd1FVUHdUNkFPYTJtNVIwajFDTThpVEw0Tm9YdTl0aUUzT1NjR3B1NlFOMzJadnhBakw1Tl9LbjdSQkdqaEVpbW9UbjlreXhBNzZVdk1DZGxEQXRZRnc3V2RhdTZwdThhZnVCSDE1QmtfN2pENDJDclNuWWNBTGc0QXhlWE1naC04ZXQ4ZEJyZ0JSRFNETUE?oc=5",
+        "source": "Google News",
+        "published_at_utc": "2026-09-11T21:11:02.000Z"
+      },
+      {
+        "title": "US Iran War Live Updates: Iraq closes Shalamcheh border with Iran; Israel-Lebanon talks postponed",
+        "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6aa4d5c9d8fd4a438118fda6b35f6f7d&url=https%3a%2f%2ftimesofindia.indiatimes.com%2fworld%2fmiddle-east%2fus-iran-war-live-updates-houthis-seize-red-sea-islands-irgc-attacks-us-oil-prices-hike-middle-east-latest-news%2fliveblog%2f134091078.cms&c=9755552973642188801&mkt=en-us",
         "source": "Bing News",
-        "published_at_utc": "2026-09-08T20:20:00.000Z"
+        "published_at_utc": "2026-09-11T20:35:00.000Z"
+      },
+      {
+        "title": "We fight hard, we fight to win: Trump defends Iran war on 9/11 anniversary - India Today",
+        "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNenpBZGFSMmI5aDlaWG1ETUhWdVpLc21YTllvVmJBdEpYTzdhMWc1UVh1d0xmSlJ0RUt5OFI4X25ydjhuSXpvSkxOc0RrLVVXMmxGSExJemI2VEhrcHFGeE5fTkw0SnJ5VXpsaDEteE43SGtJT01KV28zcGs4SDhYYXJ0ZWdxd1NoVXpCWTBlSWgyZ0JMMTFRRi0zYl9sNXdpWV9jN0huT0NmbUR3RElVMXBTaHRKY3ozUHJaU2R5MFNyZTNzbGfSAcsBQVVfeXFMUFhoZG1MRDY2cGo2T05BMFNZMDBpcGEyVDFadFY0U2x1Y1BMOW1VY3hpZnc3cjhsLUp2bnNXOXZQdTR5T0Z0aHhMaDc3QUxtcWZGaXRHa2didnFnUTFGVWlkY3N6LTJlTlBXQkU5ZHMta0V6aFFQdHQ1VkZFNGRiSHYtcFRlYnExWXZWLVlGSWpiZHh3MVc0UzF4QnhFbXlpcktaT1hRd1AzMng5R3VwOTVRSTU4cS1wTWo2SEhTNC02T1hvZ1BDaU0tcjg?oc=5",
+        "source": "Google News",
+        "published_at_utc": "2026-09-11T19:53:39.000Z"
+      },
+      {
+        "title": "Yemen's Iranian-backed Houthis seize an island in a key strait, opening a new front in Iran war - The Tribune-Democrat",
+        "url": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxOVHdKVDB5dWNNMlhsR2VONVZFVEZNZzZta3J0NXpNUm1ZMllRcmNzVHZzVmRMMnVaektsc01uZVBHMHVzeFc1bVlHeWZPVk9zZEZaZEQyc1NfQjJaSUFaOEpiT1EwRWsxQ3BvSU1TU1NUOHlfMTRCbDN4N3dBZWNRd3VYSWVENndVVUlIT3MybFJSOHRSTjMwWFpVUXNNb1Vrc1RZcjJObEVSUW94VjJwQ1V6VlFTamgybXBTVGFGYmFjZ0lkSjRKdUxCN1hCYk1lanFzWDF2WVcyNE5acGpGU2N6MmtYN21ubHFz?oc=5",
+        "source": "Google News",
+        "published_at_utc": "2026-09-11T19:52:00.000Z"
       }
     ],
-    "ukraine_2026": []
+    "ukraine_2026": [
+      {
+        "title": "BRICS 2026: Putin warns European troops in Ukraine would mean ‘war with Russia’ - The New Indian Express",
+        "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPR0doS1ItTjA4a0NER0VmY01EZUIycDJ3TllUMkdSZ0UtRUhic25jczc5dXZtSzdWTWJ0UlQwYWJLUzFKandBYWZIQ0RwMUxJZ2xxQXBFUUM1SndzUWU1LW5STmVJVzRXLVU0LWp2YVczb0tLaG54Sk96b3NCbnZUZ2E4LW1RdFk2MFd4R19NQ2pTOW1BRTVfM0hXbjNYWmpsUkV0OUdJZzIyTWtRZG1iOUFiRjdGMEo4d3JXRG1qaVJ6U1BYLWfSAdMBQVVfeXFMUGxhUU16WGRsRmlQQ0k2S2RjZVpZdWl6WUdnZlBpZDdBdWJvMW0xYlZERXVKeF80S1RuSHMzVVhJdE5Fb2FIb3BiNVpsR1VFVjlDVDQtaHZWZzh5dnFjcVhmUnFzbFVyUEViUGh1UFo1a2E5X1FKRm5nZGJiV21nRzZKM3FySHRXZTc2V0RjNlRwYkQ3NmZ0RW1OZ0RMMm5LT0U2c3YzcXp4YUxYcXp3NzhLSE9uZUxTdHFEeUVCUnB4eXdYbWpyWHM0a0djcXQ3V2k0dw?oc=5",
+        "source": "Google News",
+        "published_at_utc": "2026-09-12T03:47:52.000Z"
+      },
+      {
+        "title": "'War With Russia': Putin’s Stark Warning To Europe; 'Troops In Ukraine Could Mean Direct Conflict' - The Times of India",
+        "url": "https://news.google.com/rss/articles/CBMiggJBVV95cUxPVnFPVjJ4TjNrUzhXQ1JIRy1XTk1pd3lTQklhU3pNV3Ztb0tfNU40ZUNUX2VaOXVGTk1rY3dZNm9GemdKQnhNUzFnellnSGpxSVpHdjMxckFrdWZRdGJFMFR6eklfeHplaEhHZkh3c18xUU5pbjJmNS11aU1ZYmVRRUYtMDNrYWpacjhySmktRWY5ZThCaWxUUndnMnNKSXdlLWhMM3dlYUVJbHRMOVRhRUZULVJ2dUt4TGtJS19PcnpkQVkyX0ZhcG94TjNoYUVySDJ3bHpMakdjZm5mNUVFY2xRYXVfYUs3SThOUy1xTk1HUzRuVVVraGRRSjdOTnl4V2fSAYcCQVVfeXFMTlBQeUxiXzhpbjlxSFRNZWl2UG1rei1RM3BpQ0Vjc19PNnBKRjc0NEQ2aVo0d21VSjlRVHlxZ3E1WTNuaXBBYXI0QW9XbnNka3FiazNydjFUSEJtQkk2TEFZcUhUQVR0TTdGRTJTeWl2b1JPSS04b05WSzFBZlBRLVpyNGtGTUJBV2IwSi1vbG10dFVFaERiaWNYWnAxdm0yRmU2YnJTM3lES1hMcE8xeERrdEhmdU9vU0d1VFFLOFRKSkQ0cjRvY1ZrV19RWWtpcGN1NFRNOTlVWGlwSVVUbkFFeW5jd0hOTU1mZkJScXZHSktOUEU2MnUtZUFlOG9OWGZaODdyRDg?oc=5",
+        "source": "Google News",
+        "published_at_utc": "2026-09-12T03:12:08.000Z"
+      },
+      {
+        "title": "Remarks by Under Secretary of War for Policy Elbridge Colby at the Ukraine Defense Contact - U.S. Department of War (.gov)",
+        "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxNa2Jmb3dsWV9TZ0VQUVJEOV94YUxURlJNN2w1cUxCUXRBMHcxX3NENW80TG1yWVlEdUZTNFZqT056eGhjanZMTHZSM241VnpjQklXS2I3Zmx1SGtlUTFlX0pneXBlZ0xPdnB6VktfbEc5eWUzcmE0OWx5V2JXTHhwNWNOcWtwQkZ2MzhoVFlmOU9hMFp5eTk1R3c0ZzBEZ0tKSEJTZHhvQk05eWFaQWJVUmJ3SEVTZkJjY01TZmNnUUZoYmVsRmZyMl9IclN1UVI2LVR3?oc=5",
+        "source": "Google News",
+        "published_at_utc": "2026-09-12T02:35:56.000Z"
+      },
+      {
+        "title": "How many Russian soldiers died in the war with Ukraine - Mediazona",
+        "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE95WTVTQkRHVHNQaFZ4R2xNY2U5bEF4NkZjOTdTTlVRX2N6OUVaYVZvR2VWOGFjN05NZEhWZDN4MG14ZUxRSmpveEJtR1ZZN3F3SlNhWEpzOXU4X1A3anNBRVZYeXRJM21HWnNB?oc=5",
+        "source": "Google News",
+        "published_at_utc": "2026-09-12T02:32:00.000Z"
+      },
+      {
+        "title": "Zelenskyy describes Canada-U.S. tensions as 'strange,' draws comparison to Ukraine and Russia - CBC",
+        "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQb0s0VHY2ZDhEcVBHUGxESEg5eW5FZHRDX2JfR3NvUzV2bFd4TWxpQjR1ZkhIODM3MWxNQ25ERkozUTVrZFlndmIwV2ZVdzJaUUVYdmdCc2tHRE1NckZDUXl5YnhFVElvbm5aV3V2S2NxcmVDaGttNXE4NUVUWHFNc1FyTHdaS0dQaFV0TzhTQjRJUi1pdGRwaFRvcjVLQU9Wb2haaXlBcXNicUk?oc=5",
+        "source": "Google News",
+        "published_at_utc": "2026-09-12T02:28:00.000Z"
+      },
+      {
+        "title": "Zelenskyy says war holds no 'win-win' scenario for Russia and Ukraine - CBC",
+        "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBBRW1nVlE2WFdQc2RFTXhUR29UdndWRG1iMXJFbWoxbXBqMU8xakhoUHR3NnFoNHpGMW9xZDUyb3dRSkk0TTkyWi1YRmFoUF9IcXJiazdXbEI1Zw?oc=5",
+        "source": "Google News",
+        "published_at_utc": "2026-09-12T02:25:29.000Z"
+      },
+      {
+        "title": "Ukraine war briefing: Russian developers used AI to build ‘kamikaze’ attack drone software, Anthropic says - The Guardian",
+        "url": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxNV1pNN1E2LTdmelB4VUxzNkxvRThpTmNFc012M3lyWDBiYXc2c2VvUms2LTg2cjBqZGs0ZFJyN3pGU3doRVdkNnVzWVBFM0s3cWRtYVdHdUhtRS0wWEY3TjlBTG02V2czS2tjOVlsbkRMM0s4TV9heWo4UHh6ZFpjcW9pVlhCdXVmUnJFRWZldE5OWlVFQUFYcEhQcWUwRzdER0NKanB6SlIwLU5nSThMUTBsbDlSSk1JSkR0Y19VeHo4VEthNjZzZi1fVTU3S21FbDdRQWl3UGxXNGlMd3NEdVhB?oc=5",
+        "source": "Google News",
+        "published_at_utc": "2026-09-12T02:17:00.000Z"
+      },
+      {
+        "title": "‘Western Pressure, NATO Expansion’: Putin Blames West For Ukraine War - News18",
+        "url": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxNcW8zSmt4WFo2NmpHVUp0enB2VGRuZTNaQjBlcEhqVWtiazMyZ1QtVkJJM1NQaVpGajdQUTlWTldseFNIbkhqNEhsS1VoRkdEdmRySE9zcHFibjdwcklCbnd5RVItaG9qcnZtSzgwelUwQ3JZVFVLcXhvazZCMng4R3JtWUY2SUtjSlVBc2pUX1l5eVZxanRwSXkxcC1wQ1FaN1BJQi1JcjRCN1pxSUZyNDFmd054T2FMTjhQSDJRVzZyaWNUeFBubkY3Sy1xaTF1VlRJa1F0UE9ySVZNWU5sSUhGU0hrd2N50gHuAUFVX3lxTE5PYzJJbzBmaURUb2tMck1BUFhCeWhjRkxLOG9mYWozQmYwa0pYSVhPandNSlJ2cEFwbU1yb0dYU0FLMG14dDhQUTZfbnppa292OExPMFdzcWdhNEhxYkxTN3VfRlJjdjQyRkVSUGpBOUMybmFTa2hLRjUybGNfR2R1WmFQYnVEblYwVVhLVGJ6a0U1R2RkSDhueVZFRVB4UGNodERocmJxZnRXenhOdC0zc0hWeEJzWC1Ta3pWX2hZaHRPYnhhZEZtRWV0YUV1Z3JuQjF2dUMtOUE2ZnNwbDFoOWE3TFZiNzJOdGhJUnc?oc=5",
+        "source": "Google News",
+        "published_at_utc": "2026-09-12T02:07:53.000Z"
+      },
+      {
+        "title": "Putin warns NATO & Europe on camera, declares troop deployment in Ukraine would mean war with Russia | Videos - Hindustan Times",
+        "url": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxQdExyRTRNZExjZTNsNjJ3ZXVIaVVuWnZWZ1AxMG5QSmp5OFVsQ3ppaVNZbTMtSURhRjNGbkFaWVZfVzFfM3JXeG05Ry1zaHZlVXRmQUFQMEJtX0h2QlhkV3VubEZpZmQ2TnNxSWVpZ2kwemhWeW5nMnl0V3V4blRLZ3JLMEtuRzNYdHFRNzBpV0swOU1veWdoOVo5TE13NVZ5Mm55YzhlRnF6bzAzYkFKN3p5aThYX0dXWHpJUU4yekhmRU9IN0hTWmNfMlR4aHpvME85ekJveFV3RjhPcEhBaVlUdmRobXJIcXE5cdIB8gFBVV95cUxPbzM1MHV1UjU0Wm5qVGNTZFBXWUM3QUlBZ3RBQ2pveTVFTzdYcjZ6MXYzTnBRVGdmcld4em9YcUZXUjRlVkNaNW9uYlgzOEswVHh2Y3R0ZlNaQXBUNXJtcDhVWGdQLTBIdlVhbWxwbFVjZ1MybTZFb1pBMHVyZ3dWVHhxSDNhVVFLTTBTTU1LWnBha1ZGV2E5WmxQaFBLTVA0Z1RVbUtlalNxa1RqN2tlVGFVdm16U1pYZllDQVo1OWRWdXU1YlVhelNUVjZfejJ3RmRYb3ZUWmhaUGNVWHQyWG13U2Q3Y2NXa3RuY2NNLXZyZw?oc=5",
+        "source": "Google News",
+        "published_at_utc": "2026-09-12T02:03:47.000Z"
+      },
+      {
+        "title": "‘So many dead bodies I thought they were mannequins’: Horror of Russia’s foreign recruits - news24.com",
+        "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxOOWJQV3N6aE50R3hTSU1fel9GU3F2TnREQUZWNWJucVdHMl9jZmpFQzJIeVloZjVXbnFURTg4U2h5bF82VVRsLTFhenl6LURZVGthVmlOWGFoOHVBUml4cnZqeWdZYTFiVUZ6dHhab1prMFEySDhTcDN0M2gwc3dobE0yUVFHSGJxY2VPeFgzdGRGVXZJOXlfemRLbmFkWkl4ZGJTd2RYbU9ROGN0eEVMSTVxV003WEZiRHNhdlNtUWRyT3JIU044VzQ5Z0FJNVpaM1V5bE13?oc=5",
+        "source": "Google News",
+        "published_at_utc": "2026-09-12T02:00:58.000Z"
+      },
+      {
+        "title": "Half a million Russian troops killed since start of full-scale invasion of Ukraine, British intel reports - The Kyiv Independent",
+        "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxNSEFiZUxETkdDTzJJMXZoSDBnSENCY1NQMW9ldTd4OThnSEl6em1ab2Q0ekk3MExEdVV4UVpUeDE4MnhoanVtUDNSNWZCWGRtQ0ZhaTQ2bnhWWk9qUUUxX244dkpua3dMbld6bEJEa2gzNGhVeFUxTHZTVkV0T1NPQ3BnWDRjSlVmWnF6ellQSjYyUG1tUVg5LXN1NDh1MzhtdW1iLTlQUkVCRThMLTFFS1lIbUFYenVPM1RwSEV2SGhpV0UxMklVckFyeG9nQQ?oc=5",
+        "source": "Google News",
+        "published_at_utc": "2026-09-12T01:52:26.000Z"
+      },
+      {
+        "title": "Zelenskyy's plane 'almost hit' by drone; Trump says Putin wants Ukraine deal - SBS",
+        "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOS2dxU0ZSR2k4Y3Vpazg4TXRXZjQwWEZDd25OWllSQnAwM0pUdjNlaDJxVGxDLUhVOVpUVnlZRDZwV0tsd29JRm1UYkdnR2lmeXMxWjlJZnBMb1JGaHhpbGVDYmxaQ1hSb2FNQkJUSWduWE1JZXlWNmlrV1g3eEdMd3dvOVljaVBTN2o5LWRPMkNXMDgyd3JSeGZHU0MtX18tdHJCZmpOR3R0djNLWjVV?oc=5",
+        "source": "Google News",
+        "published_at_utc": "2026-09-12T01:36:23.000Z"
+      },
+      {
+        "title": "Russian forces allegedly executed two Ukrainian prisoners of war near Dobropillia, prosecutors investigate - Межа. Новини України.",
+        "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE5McU5wTURpMnRuOVJpUDBqMHNJTzFlX1BpLWkxMFJGaWpSQkc1VW9jaWVfYWNsb25EeWRDQm1ORkZVQndHeTRVSi1FSWdja1JaVWhPbm9jbWEtcDdoRzU5STYwWlh6SHc2TDNhcmxn?oc=5",
+        "source": "Google News",
+        "published_at_utc": "2026-09-12T01:13:03.000Z"
+      },
+      {
+        "title": "Ukraine News Today: Breaking Updates & Live Coverage - September 12, 2026 from Kyiv Post - Kyiv Post",
+        "url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE8zRjBTZHRMV21LZWY3a2VFOFVMWlFYTTJnT0dZcE5XRkRQVnQ2X0lKN0FtQjg2TVQzR2Z0Smc0QW1QZ3c2cjFYdHpyZ0swQQ?oc=5",
+        "source": "Google News",
+        "published_at_utc": "2026-09-12T01:01:47.000Z"
+      },
+      {
+        "title": "Putin says European troop deployment in Ukraine would be ‘war against Russia’ - The Hindu",
+        "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxOSzlQQkprVDhLeDhZMElOLUNnN2pqUVg4SWJ2amhzbTNpU2xGQ0h4cjBuTjFhNWl0RlZpRXEwcUVFMEJyRldXMzhmM19COFQzZ0RSWUNMb0d4NHJHbjFfNUpQYTRnYnRUTm1LQjJsQWtWaGprcDY3Z2c5dlZncXhYcUJxOThmdFhnNl9HbF83dll0WTFfRjg4cXBuLXJ0YXJvb3l3Mjd6MVVDQXVxMTYyYzZXdnAwWks3NjI3czZINmNBXzhmUGdjenFZLWl4aXo5NXNQY0RR0gHcAUFVX3lxTE5IdlVzaWh4UGh1ZWhXN0dob1ExVktXRnlDYVNXNk4xVkZlajB1Z1lpa0dNeVRiendCdGJ1R1JMbUdiZVFwSWktMldMY0tadW9xLWlESVdLZkhfOV80bEJBVUVJbjlzMnRJeUpUcUNWckE3NU5Wbkt0dFBIUTVRVWNoR2JWU2RIRHZkRm9UZUVNZldOQVMyVXlSSEZiZHdBZTB5djduUkpmNTkzMW9uNF9fRk9kUjE4N1NLSW9ZaDBPNDRsQ0RGbHN6ZmNVU1hpMjlPeUxBWHVVZW1FZU8?oc=5",
+        "source": "Google News",
+        "published_at_utc": "2026-09-12T00:59:22.000Z"
+      },
+      {
+        "title": "Russia escalates attacks with Kyiv petrol stations hit - aapnews.aap.com.au",
+        "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPODNoR01hMS1mZS1aUEtwdnVwTW5rajhlNGdUWHFDQUF5dEE4VkFBbmR0aFpHeHB1bTdteXQyR3lMODBfazEyY2hMZ2o1Q2d0RVVLdTYtN3RLQktfNWxRRjMxYUVlY1NVbWVTQV8zdk1lcUlzOU9FTXRGRjRIR1N3Wm43UzhQc2RPOXBLQi1B?oc=5",
+        "source": "Google News",
+        "published_at_utc": "2026-09-12T00:31:15.000Z"
+      },
+      {
+        "title": "Denial of a fair trial during Russia’s war against Ukraine will be discusse at the ICC Assembly of States Parties - Центр прав людини ZMINA",
+        "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxPbDk5VWFPcVB0TG90NkNhUTFjTzgybVkyYm1aNFpjeDY4TTMwUmtjSjVmR0o1X3ZrelFudVhvZkl3c2wwXzFqaXlCNEVaalFqYmo1NnhjWnIzTWlNa3JzQk0yLVRLSk9hUjBVOWVETFV6S2UwM0dJa1hiN0lOc2YzaTRPYXR6ZlZ2WnA5ZGMwNWdNOHp0OHZHeTJXcTlVdkpWaEdMY1BPb0ZOVURLLXAwZ3RCY3BZRHJtajVYcWZrRjktNlVXSTZaUXo5eVdsQkdqTmhR?oc=5",
+        "source": "Google News",
+        "published_at_utc": "2026-09-11T22:28:18.000Z"
+      },
+      {
+        "title": "Putin warns troop deployment in Ukraine means ‘war with Russia’ - Türkiye Today",
+        "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNU256bjNUWjN3Q0F0YjZsM2s4N1NBeVFyM0NEWEJHZXpxZk9Ia0lQLTd4cFA1bnJZM0c3b0hQMDJrLVFneXRpcXBWdTZHTWE2MnpKWHNyZFdQTWNxSmVVN1BoeFpsa2JKMTlTN3FySFQ3eFo1TEdPMUQ1S29lUTBfVVNSMFM4WDlmOEUtcmlLSGVYZzVXME1yUlhDYzBtbTBXTlI4NHM4bw?oc=5",
+        "source": "Google News",
+        "published_at_utc": "2026-09-11T21:59:08.000Z"
+      },
+      {
+        "title": "Ukraine Brings the War to Moscow as Huge Blasts Shakes Refinery - EnergyNow",
+        "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOZnRZNExHOFRVLWNfYy10OXRORmExSHJYNTlGQXlwaElzYTVZT18zLWpDa2V6Tldvb29ZNy1HdUlyR091cTNaZ0FPLWRpV3ZGd2x4Z29KbTFOeDZfRTJoVlhCTDVJc3UyTUROTHNUUGJrWDBQazNjbWExY1NzZzF3dXA0QXkwdmlPekRSVXBld3RoN1doR1R3ZQ?oc=5",
+        "source": "Google News",
+        "published_at_utc": "2026-09-11T21:40:39.000Z"
+      },
+      {
+        "title": "Putin says deployment of European troops to Ukraine would mean war with Russia - Anadolu Ajansı",
+        "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPTjl4ZmRaOEMwZFhiRmJ1YTdrcjlsTUFwUzRrOE9EY3FabGpyWjUxU2hKUFFrcnpUZ0ZhOUctcDNlaXNnckQySkZ4dGtVSzJ5Vy1OMVV2VUtlUzVFZjRLQzRKNnBjRFFyX1Rua21WTnZZdzJ2c00tenVhR1hBWUl0SVNJd1hObjNwZlBCUG5iVlYxdWJpc3RtTWtUVVlkM3NLVGdnai11YzNiQktnSWdnTDV4U2hfN0FINjdR?oc=5",
+        "source": "Google News",
+        "published_at_utc": "2026-09-11T21:21:58.000Z"
+      }
+    ]
   }
 }
