@@ -10,7 +10,44 @@ head:
 
 # Neon Vision Editor Changelog
 
-_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on September 9, 2026._
+_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on September 11, 2026._
+
+## v1.7.5 (published September 11, 2026)
+
+Release link: [GitHub Release v1.7.5](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v1.7.5)
+
+- Restores reliable drag-to-reorder behavior for native macOS document tabs.
+- Makes large-document scrolling smoother by keeping ordinary scroll events on AppKit's composited path.
+- Keeps the editor and minimap synchronized without repeating imperceptible viewport updates.
+- Reuses prepared Core Text rows across fine-grained scrolling while retaining an ahead-of-viewport render window.
+- Prevents native tab items from being treated as draggable window background instead of receiving their own reorder gesture.
+- Stops ordinary macOS editor scrolling from invalidating the complete canvas and rebuilding visual rows for subpoint movement.
+- Coalesces editor viewport publications and avoids duplicate SwiftUI minimap state updates.
+
+## v1.7.4 (published September 11, 2026)
+
+Release link: [GitHub Release v1.7.4](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v1.7.4)
+
+- Keeps Markdown and PDF project browsing responsive while large preview collections are prepared.
+- Reduces avoidable SwiftUI panel invalidations as indexed project files finish loading.
+- Preserves progressive preview feedback while publishing UI changes in bounded batches.
+- Updates project-preview cards and progress in bounded batches instead of invalidating the complete panel for every indexed file.
+- Prevents per-file loading-status publications from triggering redundant SwiftUI project-preview refreshes.
+
+## v1.7.3 (published September 11, 2026)
+
+Release link: [GitHub Release v1.7.3](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v1.7.3)
+
+- Completes macOS 27 release readiness while keeping existing deployment targets and runtime availability checks for older systems.
+- Makes macOS theme changes, settings updates, and document-tab activation more responsive by avoiding redundant preference and window-composition work.
+- Restores a coherent system-glass appearance across visionOS themes and reading surfaces.
+- Enables the macOS 27 Agent Mode sources in Xcode 27 App Store and notarized builds while preserving runtime availability checks and older-OS compatibility.
+- Validates the application with the macOS, iOS/iPadOS, and visionOS 27 SDKs accepted by App Store Connect.
+- Prevents a theme selection from publishing ten process-wide preference changes and removes unrelated full-window composition work from theme updates.
+- Avoids unnecessary editor highlighting and window-chrome refreshes during macOS settings changes and tab activation.
+- Keeps visionOS System Glass light in light mode and prevents mixed light and dark surfaces in Paper and other appearance themes.
+- Moves hosted platform, release-validation, and notarized-release jobs to GitHub's `xcode-27` runner and verifies the macOS, iOS/iPadOS, and visionOS 27 SDK paths before compiling them in CI; production archives continue to reject beta Xcode builds.
+- Centralizes Xcode and SDK validation across CI and release workflows and correctly rejects both `Xcode-beta.app` and underscored beta installation names from production archives.
 
 ## v1.7.2 (published September 9, 2026)
 
@@ -67,7 +104,6 @@ Release link: [GitHub Release v1.6.4](https://github.com/h3pdesign/Neon-Vision-E
 - Improve hardware-keyboard word and logical-line selection on iPhone and iPad.
 - Match current-line highlighting to the selected editor theme.
 - Stops per-character document length and dirty-state changes from rebuilding the macOS editor configuration.
-
 ## v1.6.3 (published September 7, 2026)
 
 Release link: [GitHub Release v1.6.3](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v1.6.3)
