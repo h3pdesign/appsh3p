@@ -2,270 +2,108 @@
 layout: home
 
 hero:
-  name: "> h3p apps"
-  text: "clean and modern development"
-  tagline: "A focused portal for product docs, setup guides, and release workflows."
+  name: "h3p apps"
+  text: "Small tools. Serious focus."
+  tagline: "Native apps for writing, building, learning, measuring, and making things with care."
+  image:
+    src: /media/neon/neon-vision-editor-hero-transparent.png
+    alt: Neon Vision Editor running on a MacBook
   actions:
     - theme: brand
-      text: open apps
+      text: Explore the apps
       link: /apps/index
+    - theme: alt
+      text: View all work ↗
+      link: https://h3pdesign.github.io/
 
-features:
-  - title: app-first navigation
-    details: Browse each app with consistent sections and clear status.
-    link: /apps/index
-  - title: fast local search
-    details: Find installation, features, and support details immediately.
-    link: /getting-started/introduction
-  - title: production-ready deploy
-    details: Published from GitHub Pages on apps-h3p.com.
-    link: /apps/github-repositories
+head:
+  - - meta
+    - name: description
+      content: H3P apps are focused native tools for Apple platforms, from Neon Vision Editor to Metrics Data, GitBird, and more.
 ---
 
-<div class="startpage-stats-row" aria-label="Docs quick stats">
-  <span>10 apps</span>
-  <span>1 docs hub</span>
-  <span class="startpage-updated-date">updated Sep 12, 2026</span>
-  <span class="startpage-synced-badge">GitHub synced Sep 12, 2026</span>
-</div>
-<p class="startpage-hero-secondary-cta">
-  Need setup help? <a href="/getting-started/introduction">Read the quick introduction</a>
-</p>
-<a class="startpage-mobile-open-apps" href="/apps/index" aria-label="Open all apps">Open apps</a>
-<p class="startpage-search-hint" aria-label="Search shortcut hint">Tip: press <kbd>/</kbd> to search docs instantly.</p>
-<div class="startpage-search-examples" aria-label="Search examples">
-  <a href="/apps/neon-vision-editor/installation">installation</a>
-  <a href="/apps/neon-vision-editor/known-issues">known issues</a>
-  <a href="/apps/neon-vision-editor/features">keyboard shortcuts</a>
-</div>
-<nav class="startpage-mobile-jump-links" aria-label="Section jumps">
-  <a href="#whats-new-week">What’s new</a>
-  <a href="#quick-start-60s">Quick start</a>
-  <a href="#featured-app">Featured</a>
-  <a href="#startpage-links">Links</a>
-</nav>
-
-<section class="startpage-start-here" aria-label="Start here">
-  <h2 id="start-here">start here</h2>
-  <p>New here? Begin with one clear flow and reach value in under 60 seconds.</p>
-  <a href="/apps/index">Open all apps</a>
-</section>
-
-<h2 id="whats-new-week">what's new this week</h2>
-
-<div class="startpage-weekly-strip" aria-label="What's new this week">
-  <a href="/apps/neon-vision-editor/changelog"><strong data-date="2026-09-12">Sep 12, 2026</strong>: Neon Vision Editor v1.7.6 release notes and docs refresh</a>
-  <a href="/apps/liquid-record/overview"><strong data-date="2026-08-09">Aug 9, 2026</strong>: Liquid Record app documentation added from the authoritative requirements</a>
-  <a href="/apps/gitbird/changelog"><strong data-date="2026-08-05">Aug 5, 2026</strong>: GitBird 2.1.4 security, provider, and accessibility docs added</a>
-  <a href="/apps/lingua-latina/overview"><strong data-date="2026-08-08">Aug 8, 2026</strong>: Lingua Latina 1.1.0 App Store release docs synced</a>
-  <a href="/apps/metric-data/overview"><strong data-date="2026-06-11">Jun 11, 2026</strong>: Metrics Data 0.2.6 App Store release docs synced</a>
-  <a href="/apps/vistral/overview"><strong data-date="2026-08-09">Aug 9, 2026</strong>: Vistral marked as TestFlight beta</a>
-</div>
-
-<div class="startpage-release-strip" aria-label="App status snapshot">
-  <article class="startpage-release-item release-neon">
-    <div class="startpage-release-head">
-      <img src="/icons/neon-vision-editor.png?v=20260401-2" alt="" aria-hidden="true" loading="lazy" decoding="async" />
-      <strong>Neon</strong>
-    </div>
-    <span>v1.7.6</span>
-    <span data-date="2026-09-12">Sep 12, 2026</span>
-    <span>macOS, iPadOS, iOS, visionOS</span>
-    <a href="/apps/neon-vision-editor/changelog">Source: changelog</a>
-    <a href="https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v1.7.6" target="_blank" rel="noreferrer noopener">Source: GitHub release</a>
-  </article>
-  <article class="startpage-release-item release-gitbird">
-    <div class="startpage-release-head">
-      <img src="/icons/gitbird.png?v=20260809-1" alt="" aria-hidden="true" loading="lazy" decoding="async" />
-      <strong>GitBird</strong>
-    </div>
-    <span>2.1.4</span>
-    <span data-date="2026-08-05">Aug 5, 2026</span>
-    <span>macOS</span>
-    <a href="/apps/gitbird/changelog">Source: changelog</a>
-  </article>
-  <article class="startpage-release-item release-liquid">
-    <div class="startpage-release-head">
-      <img src="/icons/liquid-record.png?v=20260809-1" alt="" aria-hidden="true" loading="lazy" decoding="async" />
-      <strong>Liquid</strong>
-    </div>
-    <span>1.0.1</span>
-    <span data-date="2026-08-09">Aug 9, 2026</span>
-    <span>iOS</span>
-    <a href="/apps/liquid-record/changelog">Source: requirements</a>
-  </article>
-  <article class="startpage-release-item release-metric">
-    <div class="startpage-release-head">
-      <img src="/icons/metric-data.png?v=20260430-1" alt="" aria-hidden="true" loading="lazy" decoding="async" />
-      <strong>Metric</strong>
-    </div>
-    <span>0.2.6</span>
-    <span data-date="2026-06-11">Jun 11, 2026</span>
-    <span>macOS, iPadOS, iOS, visionOS, watchOS</span>
-    <a href="/apps/metric-data/changelog">Source: changelog</a>
-    <a href="https://apps.apple.com/us/app/metrics-data/id6758959570" target="_blank" rel="noreferrer noopener">Source: App Store</a>
-  </article>
-  <article class="startpage-release-item release-release">
-    <div class="startpage-release-head">
-      <img src="/icons/release-assistant.png?v=20260430-1" alt="" aria-hidden="true" loading="lazy" decoding="async" />
-      <strong>Release</strong>
-    </div>
-    <span>0.2.0</span>
-    <span data-date="2026-05-06">May 6, 2026</span>
-    <span>macOS</span>
-    <a href="/apps/release-assistant/changelog">Source: changelog</a>
-  </article>
-  <article class="startpage-release-item release-newsbook">
-    <div class="startpage-release-head">
-      <img src="/icons/x-newsbook.png?v=20260430-1" alt="" aria-hidden="true" loading="lazy" decoding="async" />
-      <strong>Newsbook</strong>
-    </div>
-    <span>10</span>
-    <span data-date="2026-02-13">Feb 13, 2026</span>
-    <span>macOS, iPadOS, iOS</span>
-    <a href="/apps/x-newsbook/changelog">Source: changelog</a>
-  </article>
-</div>
-
-<div class="startpage-use-cases" aria-label="Choose by use case">
-  <a href="/apps/neon-vision-editor/overview">Write + Code</a>
-  <a href="/apps/metric-data/overview">Track Metrics</a>
-  <a href="/apps/x-newsbook/overview">Read News</a>
-  <a href="/apps/lingua-latina/overview">Learn Latin</a>
-  <a href="/apps/release-assistant/overview">Ship Releases</a>
-  <a href="/apps/gitbird/overview">Track Git</a>
-  <a href="/apps/liquid-record/overview">Record Audio</a>
-</div>
-
-<div class="startpage-app-strip" aria-label="H3P apps quick links">
-  <a class="startpage-app-item" href="/apps/neon-vision-editor/overview">
-    <img src="/icons/neon-vision-editor.png?v=20260401-2" alt="Neon Vision Editor icon" width="52" height="52" loading="lazy" decoding="async" />
-    <span>Neon Vision Editor</span>
-  </a>
-  <a class="startpage-app-item" href="/apps/gitbird/overview">
-    <img src="/icons/gitbird.png?v=20260809-1" alt="GitBird icon" width="52" height="52" loading="lazy" decoding="async" />
-    <span>GitBird</span>
-  </a>
-  <a class="startpage-app-item" href="/apps/liquid-record/overview">
-    <img src="/icons/liquid-record.png?v=20260809-1" alt="Liquid Record icon" width="52" height="52" loading="lazy" decoding="async" />
-    <span>Liquid Record</span>
-  </a>
-  <a class="startpage-app-item" href="/apps/metric-data/overview">
-    <img src="/icons/metric-data.png?v=20260430-1" alt="Metrics Data icon" width="52" height="52" loading="lazy" decoding="async" />
-    <span>Metrics Data</span>
-  </a>
-  <a class="startpage-app-item" href="/apps/release-assistant/overview">
-    <img src="/icons/release-assistant.png?v=20260430-1" alt="Release Assistant icon" width="52" height="52" loading="lazy" decoding="async" />
-    <span>Release Assistant</span>
-  </a>
-  <a class="startpage-app-item" href="/apps/x-newsbook/overview">
-    <img src="/icons/x-newsbook.png?v=20260430-1" alt="X-Newsbook icon" width="52" height="52" loading="lazy" decoding="async" />
-    <span>X-Newsbook</span>
-  </a>
-  <a class="startpage-app-item" href="/apps/image-sorter/overview">
-    <img src="/icons/image-sorter.png?v=20260302-1" alt="Image Sorter icon" width="52" height="52" loading="lazy" decoding="async" />
-    <span>Image Sorter</span>
-  </a>
-  <a class="startpage-app-item" href="/apps/vistral/overview">
-    <img src="/icons/vistral.png?v=20260430-1" alt="Vistral icon" width="52" height="52" loading="lazy" decoding="async" />
-    <span>Vistral</span>
-  </a>
-  <a class="startpage-app-item" href="/apps/history-vision/overview">
-    <img src="/icons/history-vision.png?v=20260430-1" alt="History Vision icon" width="52" height="52" loading="lazy" decoding="async" />
-    <span>History Vision</span>
-  </a>
-  <a class="startpage-app-item" href="/apps/lingua-latina/overview">
-    <img src="/icons/lingua-latina.png?v=20260430-1" alt="Lingua Latina icon" width="52" height="52" loading="lazy" decoding="async" />
-    <span>Lingua Latina</span>
-  </a>
-</div>
-
-<div class="startpage-social-proof" aria-label="Trust signals">
-  <span>10 app docs</span>
-  <span>Published on apps-h3p.com</span>
-  <span>Neon release published Sep 12, 2026</span>
-  <span>GitHub-backed changelogs</span>
-</div>
-
-<p class="startpage-external-note">Explore the main page for all H3P work on <a href="https://h3pdesign.github.io/" target="_blank" rel="noreferrer">h3pdesign.github.io</a>.</p>
-
-<blockquote class="startpage-testimonial">
-  <span class="startpage-testimonial-kicker">from the maker</span>
-  <p>Built to stay out of the way so writing, analysis, and release work stay fast and focused.</p>
-  <footer>H3P.</footer>
-  <a class="startpage-testimonial-cta" href="/apps/neon-vision-editor/overview">Open Neon Vision Editor docs</a>
-</blockquote>
-
-<h2 id="quick-start-60s">quick start in 60s</h2>
-
-<details class="startpage-collapsible startpage-quick-collapsible">
-  <summary>Show quick-start steps</summary>
-  <div class="startpage-quick-start" aria-label="Quick start">
-    <div><strong>1.</strong> Open <a href="/apps/index">All Apps</a> and choose your tool.</div>
-    <div><strong>2.</strong> Jump to <a href="/apps/neon-vision-editor/installation">Installation</a> for setup in under a minute.</div>
-    <div><strong>3.</strong> Use <a href="/apps/neon-vision-editor/faq">FAQ</a> and <a href="/support/">Support</a> for fast troubleshooting.</div>
+<div class="h3p-home-v2" aria-label="H3P apps overview">
+  <div class="h3p-home-proofline">
+    <span><i></i><strong>Independent</strong><small>Software studio</small></span>
+    <span><strong>10 apps</strong><small>Focused catalogue</small></span>
+    <span><strong>Apple native</strong><small>Mac, iPhone, iPad, and Vision</small></span>
   </div>
-</details>
 
-<h2 id="featured-app">featured app</h2>
-
-neon vision editor across iphone, mac, and ipad.
-
-<div class="startpage-feature-theme-toggle" role="group" aria-label="Featured preview theme">
-  <button class="is-active" type="button" data-preview-theme="dark">Dark preview</button>
-  <button type="button" data-preview-theme="light">Light preview</button>
-</div>
-
-<div class="home-featured-store-badge">
-  <a href="https://apps.apple.com/de/app/neon-vision-editor/id6758950965" target="_blank" rel="noreferrer noopener" aria-label="Download Neon Vision Editor on the App Store">
-    <img src="/media/app-store-badge.png" alt="Download on the App Store" width="160" height="48" loading="lazy" decoding="async" />
-  </a>
-</div>
-
-<div class="home-bottom-image startpage-focal-card startpage-feature-preview" data-preview-active="dark">
-  <picture data-preview-pane="dark">
-    <img src="/media/neon-vision-editor-presentation.svg" alt="Neon Vision Editor presentation artwork" width="1400" height="787" loading="lazy" decoding="async" />
-  </picture>
-  <picture data-preview-pane="light">
-    <img src="/media/neon/marketing-visioneditor.png" alt="Neon Vision Editor light showcase" width="2048" height="1536" loading="lazy" decoding="async" />
-  </picture>
-</div>
-
-<footer class="startpage-footer" aria-label="h3p apps footer">
-  <div class="startpage-footer-inner">
-    <div class="startpage-footer-brand">
-      <h2>h3p apps</h2>
-      <p>Clean, focused apps and documentation for Apple platforms.</p>
+  <section class="h3p-home-updates" aria-labelledby="home-updates-title">
+    <div class="h3p-home-updates-heading">
+      <div>
+        <p class="h3p-eyebrow">Latest updates</p>
+        <h2 id="home-updates-title">What's new this week.</h2>
+      </div>
+      <a href="/changelog">View changelog <span>↗</span></a>
     </div>
-    <nav class="startpage-footer-columns" aria-label="Footer navigation">
-      <section class="startpage-footer-column">
-        <h3>Product</h3>
-        <a href="/apps/index">All Apps</a>
-        <a href="/getting-started/introduction">Getting Started</a>
-        <a href="/getting-started/platform-support">Platform Support</a>
-        <a href="/changelog">Changelog</a>
-      </section>
-      <section class="startpage-footer-column">
-        <h3>Apps</h3>
-        <a href="/apps/neon-vision-editor/overview">Neon Vision Editor</a>
-        <a href="/apps/metric-data/overview">Metrics Data</a>
-        <a href="/apps/release-assistant/overview">Release Assistant</a>
-        <a href="/apps/x-newsbook/overview">X-Newsbook</a>
-      </section>
-      <section class="startpage-footer-column">
-        <h3>Resources</h3>
-        <a href="/apps/code-examples">Code Examples</a>
-        <a href="/apps/github-repositories">GitHub Repositories</a>
-        <a href="/getting-started/documentation-standards">Documentation Standards</a>
-        <a href="/support/support-and-feedback">Support</a>
-      </section>
-      <section class="startpage-footer-column">
-        <h3>Legal</h3>
-        <a href="/policies/index">Policies Overview</a>
-        <a href="/policies/privacy-policy">Privacy Policy</a>
-        <a href="/policies/terms-of-service">Terms of Service</a>
-        <a href="/policies/eu-cookie-notice">EU Cookie Notice</a>
-      </section>
+    <div class="h3p-home-update-list">
+      <a href="/apps/history-vision/changelog"><time datetime="2026-09-12">Sep 12, 2026</time><span><strong>History Vision</strong> library, chronology, research, and Watch documentation refreshed</span><b>↗</b></a>
+      <a href="/apps/neon-vision-editor/changelog"><time datetime="2026-08-16">Aug 16, 2026</time><span><strong>Neon Vision Editor</strong> release documentation and product details updated</span><b>↗</b></a>
+      <a href="/apps/liquid-record/changelog"><time datetime="2026-08-09">Aug 9, 2026</time><span><strong>Liquid Record</strong> recorder requirements and current icon added to the catalogue</span><b>↗</b></a>
+      <a href="/apps/gitbird/changelog"><time datetime="2026-08-05">Aug 5, 2026</time><span><strong>GitBird</strong> security, provider, and accessibility documentation expanded</span><b>↗</b></a>
+    </div>
+  </section>
+
+  <section class="h3p-home-intro" aria-labelledby="home-intro-title">
+    <div>
+      <p class="h3p-eyebrow">A focused software catalogue</p>
+      <h2 id="home-intro-title">Tools that respect your attention.</h2>
+    </div>
+    <p>Every H3P app has a clear job. Browse the current releases, see what is in beta, and open the documentation when you are ready to go deeper.</p>
+  </section>
+
+  <section class="h3p-home-featured" aria-labelledby="featured-title">
+    <div class="h3p-home-featured-copy">
+      <div class="h3p-home-app-label"><img src="/icons/neon-vision-editor.png?v=20260401-2" alt="" aria-hidden="true" /> Featured app</div>
+      <h2 id="featured-title">Neon Vision Editor</h2>
+      <p class="h3p-home-lede">A calm, native editor for real files, Markdown, and code. Move from thought to finished work without leaving your workspace.</p>
+      <div class="h3p-home-actions">
+        <a class="h3p-button h3p-button-primary" href="/apps/neon-vision-editor/overview">Explore Neon <span>↗</span></a>
+        <a class="h3p-button h3p-button-quiet" href="https://apps.apple.com/de/app/neon-vision-editor/id6758950965" target="_blank" rel="noreferrer noopener">App Store <span>↗</span></a>
+      </div>
+      <div class="h3p-home-meta"><span>macOS</span><span>iPhone</span><span>iPad</span><span>visionOS</span></div>
+    </div>
+    <a class="h3p-home-featured-media" href="/apps/neon-vision-editor/overview" aria-label="Open Neon Vision Editor documentation">
+      <img src="/media/neon/neon-vision-editor-presentation.png" alt="Neon Vision Editor running on a MacBook" loading="eager" decoding="async" />
+    </a>
+  </section>
+
+  <section class="h3p-home-apps" aria-labelledby="apps-title">
+    <div class="h3p-home-section-heading">
+      <div>
+        <p class="h3p-eyebrow">The catalogue</p>
+        <h2 id="apps-title">Find your next useful thing.</h2>
+      </div>
+      <a href="/apps/index">Browse all apps <span>↗</span></a>
+    </div>
+    <div class="h3p-home-app-grid">
+      <a class="h3p-app-card h3p-app-card-accent" href="/apps/gitbird/overview"><img src="/icons/gitbird.png?v=20260809-1" alt="" aria-hidden="true" /><span class="h3p-card-status">Public release</span><h3>GitBird</h3><p>GitHub and GitLab notifications in your menu bar.</p><span class="h3p-card-arrow">↗</span></a>
+      <a class="h3p-app-card" href="/apps/metric-data/overview"><img src="/icons/metric-data.png?v=20260430-1" alt="" aria-hidden="true" /><span class="h3p-card-status">App Store</span><h3>Metrics Data</h3><p>Focused AdSense and GA4 reporting for your accounts.</p><span class="h3p-card-arrow">↗</span></a>
+      <a class="h3p-app-card" href="/apps/lingua-latina/overview"><img src="/icons/lingua-latina.png?v=20260430-1" alt="" aria-hidden="true" /><span class="h3p-card-status">App Store</span><h3>Lingua Latina</h3><p>Dictionary, morphology, grammar, and vocabulary.</p><span class="h3p-card-arrow">↗</span></a>
+      <a class="h3p-app-card" href="/apps/liquid-record/overview"><img src="/icons/liquid-record.png?v=20260914-1" alt="" aria-hidden="true" /><span class="h3p-card-status">Private alpha</span><h3>Liquid Record</h3><p>Field recording with markers, playback, and export.</p><span class="h3p-card-arrow">↗</span></a>
+      <a class="h3p-app-card" href="/apps/vistral/overview"><img src="/icons/vistral.png?v=20260430-1" alt="" aria-hidden="true" /><span class="h3p-card-status">TestFlight beta</span><h3>Vistral</h3><p>Private, explainable dashboards for the data you choose.</p><span class="h3p-card-arrow">↗</span></a>
+      <a class="h3p-app-card" href="/apps/x-newsbook/overview"><img src="/icons/x-newsbook.png?v=20260430-1" alt="" aria-hidden="true" /><span class="h3p-card-status">Private beta</span><h3>X-Newsbook</h3><p>A calm home for feeds, saved stories, and context.</p><span class="h3p-card-arrow">↗</span></a>
+      <a class="h3p-app-card" href="/apps/history-vision/overview"><img src="/icons/history-vision.png?v=20260914-1" alt="" aria-hidden="true" /><span class="h3p-card-status">Private beta</span><h3>History Vision</h3><p>Read 295 source-aware articles and explore evidence-led timelines.</p><span class="h3p-card-arrow">↗</span></a>
+      <a class="h3p-app-card" href="/apps/image-sorter/overview"><img src="/icons/image-sorter.png?v=20260302-1" alt="" aria-hidden="true" /><span class="h3p-card-status">Private beta</span><h3>Image Sorter</h3><p>A deliberate queue for organizing visual assets.</p><span class="h3p-card-arrow">↗</span></a>
+      <a class="h3p-app-card" href="/apps/release-assistant/overview"><img src="/icons/release-assistant.png?v=20260430-1" alt="" aria-hidden="true" /><span class="h3p-card-status">Internal alpha</span><h3>Release Assistant</h3><p>Guarded release workflows with audit-ready output.</p><span class="h3p-card-arrow">↗</span></a>
+      <a class="h3p-app-card" href="/apps/index"><img src="/icons/x-newsbook.png?v=20260430-1" alt="" aria-hidden="true" /><span class="h3p-card-status">Documentation</span><h3>App documentation</h3><p>Installation, features, galleries, FAQs, privacy, and changelogs for every app.</p><span class="h3p-card-arrow">↗</span></a>
+    </div>
+  </section>
+
+  <section class="h3p-home-resources" aria-labelledby="resources-title">
+    <div>
+      <p class="h3p-eyebrow">Go deeper</p>
+      <h2 id="resources-title">The useful details are here.</h2>
+      <p>Installation notes, feature guides, changelogs, privacy policies, and known issues for every app.</p>
+    </div>
+    <nav aria-label="Documentation resources">
+      <a href="/getting-started/introduction"><span>01</span> Getting started <b>↗</b></a>
+      <a href="/changelog"><span>02</span> Latest changes <b>↗</b></a>
+      <a href="/support/"><span>03</span> Support and feedback <b>↗</b></a>
+      <a href="/apps/github-repositories"><span>04</span> GitHub repositories <b>↗</b></a>
     </nav>
-  </div>
-</footer>
+  </section>
+
+  <footer class="h3p-home-footer"><span>h3p apps</span><span>Built with care in Germany</span><a href="https://h3pdesign.github.io/" target="_blank" rel="noreferrer noopener">All H3P work ↗</a></footer>
+</div>

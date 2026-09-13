@@ -802,6 +802,26 @@ html.h3p-app-doc-route .overview-neon-banner img {
   color: rgba(255, 255, 255, 0.72);
 }
 
+.overview-download-appstore-image {
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.overview-download-appstore-image img {
+  display: block;
+  width: min(220px, 70vw);
+  height: auto;
+  border-radius: 12px;
+}
+
+.overview-download-appstore-image:hover {
+  border-color: transparent;
+  transform: translateY(-1px);
+}
+
 .overview-download-badges-hero .overview-download-github {
   border-color: rgba(143, 77, 255, 0.58);
   background: color-mix(in srgb, #8f4dff 14%, var(--vp-c-bg) 86%);

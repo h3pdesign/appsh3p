@@ -50,9 +50,8 @@ head:
       </div>
     </div>
     <div class="overview-download-badges overview-download-badges-hero" aria-label="Download Neon Vision Editor">
-      <a class="overview-download-badge overview-download-appstore" href="https://apps.apple.com/de/app/neon-vision-editor/id6758950965" target="_blank" rel="noreferrer noopener">
-        <span>Download: </span>
-        <strong>App Store</strong>
+      <a class="overview-download-badge overview-download-appstore overview-download-appstore-image" href="https://apps.apple.com/de/app/neon-vision-editor/id6758950965" target="_blank" rel="noreferrer noopener" aria-label="Download Neon Vision Editor on the App Store">
+        <img src="/media/app-store-badge.png" alt="Download on the App Store" width="220" height="76" loading="lazy" decoding="async" />
       </a>
       <a class="overview-download-badge overview-download-github" href="https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v1.7.6" target="_blank" rel="noreferrer noopener">
         <span>Download: </span>
