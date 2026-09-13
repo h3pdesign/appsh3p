@@ -26,7 +26,7 @@
     <span class="apps-whats-new-item is-newsbook">X-Newsbook docs added with overview, components, installation, and FAQ.</span>
     <span class="apps-whats-new-item is-sorter">Image Sorter docs added with queue workflow, installation, and support pages.</span>
     <span class="apps-whats-new-item is-vistral">Vistral is documented as a TestFlight beta.</span>
-    <span class="apps-whats-new-item is-history">History Vision docs added with reader + data-visualization product overview.</span>
+    <span class="apps-whats-new-item is-history">History Vision now documents its 295-article library, dense chronology, research tools, and Watch companion.</span>
     <span class="apps-whats-new-item is-lingua">Lingua Latina is now listed as an App Store release.</span>
   </div>
 </div>
@@ -40,7 +40,7 @@
   <div class="apps-release-item release"><span class="name">Release Assistant</span><span class="tag">0.2.0</span><span class="date">2026-05-06</span></div>
   <div class="apps-release-item sorter"><span class="name">Image Sorter</span><span class="tag">0.1</span><span class="date">2026-04-30</span></div>
   <div class="apps-release-item vistral"><span class="name">Vistral</span><span class="tag">0.1.6</span><span class="date">2026-05-09</span></div>
-  <div class="apps-release-item history"><span class="name">History Vision</span><span class="tag">1.0</span><span class="date">2026-04-30</span></div>
+  <div class="apps-release-item history"><span class="name">History Vision</span><span class="tag">1.0</span><span class="date">2026-09-12</span></div>
   <div class="apps-release-item lingua"><span class="name">Lingua Latina</span><span class="tag">1.1.0</span><span class="date">2026-08-08</span></div>
 </div>
 
@@ -144,7 +144,7 @@
   </article>
 
   <article class="app-card app-card-liquid" data-changelog="/apps/liquid-record/changelog" data-status="private" data-platforms="ios" data-use-cases="audio,recording,workflow">
-    <img src="/icons/liquid-record.png?v=20260809-1" alt="Liquid Record icon" class="app-icon" />
+    <img src="/icons/liquid-record.png?v=20260914-1" alt="Liquid Record icon" class="app-icon" />
     <div class="app-card-content">
       <h3 class="app-title-row"><a class="app-title-link" href="/apps/liquid-record/overview">Liquid Record</a><span class="app-status app-status-private">Private alpha</span></h3>
       <div class="app-card-meta-row">
@@ -267,20 +267,20 @@
     </div>
   </article>
 
-  <article class="app-card app-card-history" data-changelog="/apps/history-vision/changelog" data-status="private" data-platforms="macos,ipados,ios" data-use-cases="history,research,reading">
-    <img src="/icons/history-vision.png?v=20260430-1" alt="History Vision icon" class="app-icon" />
+  <article class="app-card app-card-history" data-changelog="/apps/history-vision/changelog" data-status="private" data-platforms="macos,ipados,ios,watchos" data-use-cases="history,research,reading">
+    <img src="/icons/history-vision.png?v=20260914-1" alt="History Vision icon" class="app-icon" />
     <div class="app-card-content">
       <h3 class="app-title-row"><a class="app-title-link" href="/apps/history-vision/overview">History Vision</a><span class="app-status app-status-private">Private beta</span></h3>
       <div class="app-card-meta-row">
         <div class="app-platform-pills">
-          <span>macOS</span><span>iPadOS</span><span>iOS</span>
+          <span>macOS</span><span>iPadOS</span><span>iOS</span><span>watchOS</span>
         </div>
         <div class="app-meta-right">
           <span class="app-doc-state app-doc-state-active">Docs: Active</span>
           <span class="app-updated-badge">updated recently</span>
         </div>
       </div>
-      <p>History reading and visualization app combining curated narratives with source-aware timelines and comparison views.</p>
+      <p>A 295-article source-aware library with research tools, evidence-led timelines, comparisons, and an offline Watch companion.</p>
       <div class="app-actions-row">
         <span class="chip">GitHub: repository not public yet</span>
       </div>

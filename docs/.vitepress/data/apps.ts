@@ -24,7 +24,7 @@ export const appCatalog: AppCatalogEntry[] = [
   {
     slug: 'neon-vision-editor', name: 'Neon Vision Editor', category: 'Native text, Markdown, and code editor',
     description: 'A focused editor for real files across Apple platforms.', icon: '/icons/neon-vision-editor.png?v=20260401-2',
-    status: 'public', statusLabel: 'Public release', version: '1.4.6', releaseDate: '2026-08-16', platforms: ['macOS', 'iPadOS', 'iOS', 'visionOS'],
+    status: 'public', statusLabel: 'Public release', version: '1.7.6', releaseDate: '2026-09-12', platforms: ['macOS', 'iPadOS', 'iOS', 'visionOS'],
     useCases: ['coding', 'markdown', 'ai'], overview: '/apps/neon-vision-editor/overview', installation: '/apps/neon-vision-editor/installation', changelog: '/apps/neon-vision-editor/changelog', privacy: '/policies/ai-and-data',
     installLabel: 'GitHub Releases', installUrl: 'https://github.com/h3pdesign/Neon-Vision-Editor/releases', privacySummary: 'Local-first editing; AI data handling is documented and user-controlled.'
   },
@@ -37,7 +37,7 @@ export const appCatalog: AppCatalogEntry[] = [
   },
   {
     slug: 'liquid-record', name: 'Liquid Record', category: 'Field recorder and audio capture',
-    description: 'An iPhone field-recorder console for WAV capture, markers, playback, and export.', icon: '/icons/liquid-record.png?v=20260809-1',
+    description: 'An iPhone field-recorder console for WAV capture, markers, playback, and export.', icon: '/icons/liquid-record.png?v=20260914-1',
     status: 'private', statusLabel: 'Private alpha', version: '1.0.1', releaseDate: '2026-08-09', platforms: ['iOS'],
     useCases: ['audio', 'recording', 'workflow'], overview: '/apps/liquid-record/overview', installation: '/apps/liquid-record/installation', changelog: '/apps/liquid-record/changelog', privacy: '/apps/liquid-record/privacy-policy',
     installLabel: 'Request access', installUrl: '/support/support-and-feedback', privacySummary: 'Offline-first local WAV recording with microphone permission requested only from the record action.'
@@ -79,8 +79,8 @@ export const appCatalog: AppCatalogEntry[] = [
   },
   {
     slug: 'history-vision', name: 'History Vision', category: 'History and timelines',
-    description: 'Source-aware stories, timelines, and visual comparisons.', icon: '/icons/history-vision.png?v=20260430-1',
-    status: 'private', statusLabel: 'Private beta', version: '1.0', releaseDate: '2026-04-30', platforms: ['macOS', 'iPadOS', 'iOS'],
+    description: 'A 295-article source-aware library with research tools, dense timelines, and an offline Watch companion.', icon: '/icons/history-vision.png?v=20260914-1',
+    status: 'private', statusLabel: 'Private beta', version: '1.0', releaseDate: '2026-09-12', platforms: ['macOS', 'iPadOS', 'iOS', 'watchOS'],
     useCases: ['history', 'research', 'reading'], overview: '/apps/history-vision/overview', installation: '/apps/history-vision/installation', changelog: '/apps/history-vision/changelog', privacy: '/policies/privacy-policy',
     installLabel: 'Request access', installUrl: '/support/support-and-feedback', privacySummary: 'Source-aware reading experience; private beta access is handled through support.'
   },

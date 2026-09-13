@@ -1435,9 +1435,15 @@ onBeforeUnmount(() => {
             <section class="h3p-app-site-footer-column">
               <h3>Apps</h3>
               <a href="/apps/neon-vision-editor/overview">Neon Vision Editor</a>
+              <a href="/apps/gitbird/overview">GitBird</a>
+              <a href="/apps/liquid-record/overview">Liquid Record</a>
               <a href="/apps/metric-data/overview">Metrics Data</a>
+              <a href="/apps/lingua-latina/overview">Lingua Latina</a>
+              <a href="/apps/vistral/overview">Vistral</a>
+              <a href="/apps/history-vision/overview">History Vision</a>
               <a href="/apps/release-assistant/overview">Release Assistant</a>
               <a href="/apps/x-newsbook/overview">X-Newsbook</a>
+              <a href="/apps/image-sorter/overview">Image Sorter</a>
             </section>
             <section class="h3p-app-site-footer-column">
               <h3>Resources</h3>

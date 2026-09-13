@@ -19,7 +19,7 @@ Use this view when you know the job you want to do but not which app is the best
 | [Release Assistant](/apps/release-assistant/overview) | Guarded release operations | macOS | Internal alpha · 0.2.0 (2026-05-06) | [Request access](/support/support-and-feedback) | [Website policy](/policies/privacy-policy) |
 | [Image Sorter](/apps/image-sorter/overview) | Local image queues and naming | macOS | Private beta · 0.1 (2026-04-30) | [Request access](/support/support-and-feedback) | [Website policy](/policies/privacy-policy) |
 | [Vistral](/apps/vistral/overview) | Local-first dashboards and insights | macOS · iPadOS · iOS · tvOS · watchOS · visionOS | TestFlight beta · 0.1.6 (2026-05-09) | [Request TestFlight access](/support/support-and-feedback) | [Website policy](/policies/privacy-policy) |
-| [History Vision](/apps/history-vision/overview) | Source-aware history and timelines | macOS · iPadOS · iOS | Private beta · 1.0 (2026-04-30) | [Request access](/support/support-and-feedback) | [Website policy](/policies/privacy-policy) |
+| [History Vision](/apps/history-vision/overview) | 295 source-aware articles, research, and timelines | macOS · iPadOS · iOS · watchOS | Private beta · 1.0 (2026-09-12) | [Request access](/support/support-and-feedback) | [Website policy](/policies/privacy-policy) |
 | [Lingua Latina](/apps/lingua-latina/overview) | Latin dictionary, grammar, and study | macOS · iPadOS · iOS · visionOS | App Store release · 1.1.0 (2026-08-08) | [App Store](https://apps.apple.com/us/app/lingua-latina/id6767503541) | [App policy](/apps/lingua-latina/privacy-policy) |
 
 ## Choose by use case

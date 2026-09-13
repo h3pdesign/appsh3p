@@ -18,10 +18,10 @@ head:
 <p class="overview-last-updated">Last updated: <span data-date="2026-09-12">September 12, 2026</span></p>
 
 <div class="overview-platform-badges overview-reveal" aria-label="supported platforms">
-  <span><b aria-hidden="true">⌘</b>macOS</span>
-  <span><b aria-hidden="true">▯</b>iPhone</span>
-  <span><b aria-hidden="true">▤</b>iPad</span>
-  <span><b aria-hidden="true">◈</b>visionOS</span>
+  <span>macOS</span>
+  <span>iPhone</span>
+  <span>iPad</span>
+  <span>visionOS</span>
 </div>
 
 <div class="overview-mini-stats overview-reveal" aria-label="app stats">
@@ -30,7 +30,7 @@ head:
   <div><span>repo status</span><strong>public</strong></div>
 </div>
 <figure class="overview-banner overview-neon-banner overview-reveal">
-  <img src="/media/neon/neon-vision-editor-presentation.svg" alt="Neon Vision Editor running across MacBook, iPhone, and iPad" />
+  <img src="/media/neon/neon-vision-editor-presentation.png" alt="Neon Vision Editor running on a MacBook" />
 </figure>
 <div class="overview-hero overview-app-neon overview-reveal">
   <div class="overview-hero-copy">

@@ -32,7 +32,7 @@ head:
     <p>Liquid Record is an iPhone audio-recording app shaped around a dense field-recorder console: timeline, meters, record controls, transport dial, markers, notes, playback, and export stay on one primary surface.</p>
   </div>
   <div class="overview-hero-media">
-    <img src="/icons/liquid-record.png?v=20260809-1" alt="Liquid Record icon" class="overview-app-icon" />
+    <img src="/icons/liquid-record.png?v=20260914-1" alt="Liquid Record icon" class="overview-app-icon" />
     <div class="overview-shot-frame">
       <img src="/media/liquid-record/reference-console.png" alt="Liquid Record reference console" class="overview-app-shot" />
     </div>
