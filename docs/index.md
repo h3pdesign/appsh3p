@@ -2,7 +2,7 @@
 layout: home
 
 hero:
-  name: "h3p apps"
+  name: "> h3p apps"
   text: "Small tools. Serious focus."
   tagline: "Native apps for writing, building, learning, measuring, and making things with care."
   image:
