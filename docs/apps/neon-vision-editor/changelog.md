@@ -10,7 +10,18 @@ head:
 
 # Neon Vision Editor Changelog
 
-_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on September 11, 2026._
+_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on September 12, 2026._
+
+## v1.7.6 (published September 12, 2026)
+
+Release link: [GitHub Release v1.7.6](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v1.7.6)
+
+- Keeps macOS editor text intact while scrolling long or wrapped documents.
+- Restores reliable line rendering when scrolling with the Markdown preview and sidebars open.
+- Preserves the virtual editor's bounded layout and redraw behavior while repairing ordinary scroll updates.
+- Repaints only the visible Core Text canvas region during ordinary scrolling, preserving the fast virtualized layout path.
+- Prevents stale AppKit backing pixels from covering or clipping editor lines during macOS scrolling.
+- Removes official Homebrew Cask branch and pull-request generation from release automation. Releases continue updating `h3pdesign/homebrew-tap`, while the official cask relies on Homebrew's upstream livecheck process.
 
 ## v1.7.5 (published September 11, 2026)
 
@@ -89,7 +100,6 @@ Release link: [GitHub Release v1.7.0](https://github.com/h3pdesign/Neon-Vision-E
 - Aligns tab, TOC sidebar, project sidebar, line-number, and editor backgrounds in opaque and translucent modes.
 - Prevents tab borders from clipping, flashing, or disappearing during hover and theme transitions.
 - Keeps Settings content sized to the selected tab and opens the Settings window in a stable editor-relative position.
-
 ## v1.6.4 (published September 8, 2026)
 
 Release link: [GitHub Release v1.6.4](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v1.6.4)
