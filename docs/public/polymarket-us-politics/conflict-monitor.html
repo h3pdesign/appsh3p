@@ -2850,8 +2850,8 @@ body.page-conflicts #methodology {
       </div>
       <div class="metric-series-board" id="conflictMetricSeriesBoard">
         <div class="metric-series-head">
-          <h3 class="metric-series-title">Accumulated Metric Graphs</h3>
-          <div class="metric-series-note">All metric-card values graphed as accumulated conflict totals since the conflict start date.</div>
+          <h3 class="metric-series-title">Historical Metric Coverage</h3>
+          <div class="metric-series-note">No verified historical series is available. Synthetic interpolations have been removed.</div>
         </div>
         <div class="metric-series-grid" id="conflictMetricSeriesGrid">
           <div class="metric-series-card">
@@ -2880,9 +2880,9 @@ body.page-conflicts #methodology {
             <label class="map-select">Window
               <select id="iranTimeframe" aria-label="Iran map timeframe">
                 <option value="24h">24h</option>
-                <option value="7d" selected>7d</option>
+                <option value="7d">7d</option>
                 <option value="30d">30d</option>
-                <option value="all">All</option>
+                <option value="all" selected>All history</option>
               </select>
             </label>
             <label class="map-select">Region
@@ -2942,13 +2942,13 @@ body.page-conflicts #methodology {
         <div class="conflict-map-points" id="conflictRecentPoints">
           <div class="conflict-map-points-head">
             <h4>Latest map events</h4>
-            <div class="conflict-map-points-note">Newest ten points with direct jump-back links into the live map.</div>
+            <div class="conflict-map-points-note">Selected documented incidents, newest first. Historical coverage is incomplete; locations are approximate.</div>
           </div>
           <div class="conflict-map-points-table-wrap">
             <table class="conflict-map-points-table">
               <thead>
                 <tr>
-                  <th scope="col">Time</th>
+                  <th scope="col">Event date</th>
                   <th scope="col">Event</th>
                   <th scope="col">Type</th>
                   <th scope="col">Mass</th>
@@ -3013,8 +3013,8 @@ body.page-conflicts #methodology {
       </div>
       <div class="metric-series-board" id="ukraineMetricSeriesBoard">
         <div class="metric-series-head">
-          <h3 class="metric-series-title">Accumulated Metric Graphs</h3>
-          <div class="metric-series-note">All metric-card values graphed as accumulated conflict totals since the conflict start date.</div>
+          <h3 class="metric-series-title">Historical Metric Coverage</h3>
+          <div class="metric-series-note">No verified historical series is available. Synthetic interpolations have been removed.</div>
         </div>
         <div class="metric-series-grid" id="ukraineMetricSeriesGrid">
           <div class="metric-series-card">
@@ -3037,9 +3037,9 @@ body.page-conflicts #methodology {
             <label class="map-select">Window
               <select id="ukraineTimeframe" aria-label="Ukraine map timeframe">
                 <option value="24h">24h</option>
-                <option value="7d" selected>7d</option>
+                <option value="7d">7d</option>
                 <option value="30d">30d</option>
-                <option value="all">All</option>
+                <option value="all" selected>All history</option>
               </select>
             </label>
             <label class="map-select">Region
@@ -3099,13 +3099,13 @@ body.page-conflicts #methodology {
         <div class="conflict-map-points" id="ukraineRecentPoints">
           <div class="conflict-map-points-head">
             <h4>Latest map events</h4>
-            <div class="conflict-map-points-note">Newest ten points with direct jump-back links into the live map.</div>
+            <div class="conflict-map-points-note">Selected documented incidents, newest first. Historical coverage is incomplete; locations are approximate.</div>
           </div>
           <div class="conflict-map-points-table-wrap">
             <table class="conflict-map-points-table">
               <thead>
                 <tr>
-                  <th scope="col">Time</th>
+                  <th scope="col">Event date</th>
                   <th scope="col">Event</th>
                   <th scope="col">Type</th>
                   <th scope="col">Mass</th>
@@ -4193,7 +4193,7 @@ const conflictModuleState = {
     zoomBound: false,
     densityPercent: 100,
     filters: { missiles: true, drones: true, infra: true },
-    timeFilter: '7d',
+    timeFilter: 'all',
     clusteringEnabled: true,
     heatEnabled: false,
     regionPreset: 'auto',
@@ -4215,7 +4215,7 @@ const conflictModuleState = {
     zoomBound: false,
     densityPercent: 100,
     filters: { missiles: true, drones: true, infra: true },
-    timeFilter: '7d',
+    timeFilter: 'all',
     clusteringEnabled: true,
     heatEnabled: false,
     regionPreset: 'auto',
@@ -5752,7 +5752,7 @@ function renderConflictMetrics(metrics, containerId = 'conflictMetrics', options
 
       card.appendChild(labelRow);
       card.appendChild(valueRow);
-      window.MetricTimeline.render(card, metric, options.conflictAsOf, moduleKey, deltaNode);
+      window.EventEvidence.renderMetricReview(card, metric, value, confidenceBadge, deltaNode);
       groupGrid.appendChild(card);
 
       nextByMetric.set(metricId, Number(metric && metric.value));
@@ -6397,8 +6397,8 @@ function renderRecentMapPoints(points, bodyId, moduleName) {
     const source = '<a href="' + escapeHtml(point.source_url) + '" target="_blank" rel="noopener noreferrer">' + escapeHtml(point.source || 'Event source') + '</a>';
     const count = Number.isFinite(Number(point.marker_mass ?? point.value)) ? formatInteger(point.marker_mass ?? point.value) : '--';
     const total = Number.isFinite(Number(point.total_metric)) ? formatInteger(point.total_metric) : '--';
-    const time = Number.isFinite(point.__ts) ? escapeHtml(new Date(point.__ts).toISOString().slice(0, 19).replace('T', ' ') + ' UTC') : 'Occurrence date unknown';
-    const location = escapeHtml(mapPointApproxLocation(point));
+    const time = escapeHtml(window.EventEvidence.dateLabel(point));
+    const location = escapeHtml((point.location_precision || 'Approximate location') + ': ' + mapPointApproxLocation(point));
     const key = escapeHtml(mapPointKey(point));
     return `
       <tr>
@@ -6479,9 +6479,10 @@ function focusConflictMapPoint(moduleName, pointKey) {
   const nextZoom = Math.max(Number.isFinite(mapRef.getZoom?.()) ? mapRef.getZoom() : 0, 6);
   const valueLabel = Number.isFinite(Number(point.value)) ? formatInteger(point.value) : '--';
   const popup = '<strong>' + escapeHtml(point.name || 'Event') + '</strong><br>'
-    + escapeHtml(point.label || 'Metric') + ': ' + valueLabel
+    + escapeHtml(window.EventEvidence.dateLabel(point))
+    + '<br>' + escapeHtml(point.location_precision || 'Location precision unspecified')
     + '<br>' + escapeHtml(point.description || 'Approximate geolocated event')
-    + '<br>Source: ' + escapeHtml(point.source || 'OSINT source chain');
+    + '<br><a target="_blank" rel="noopener noreferrer" href="' + escapeHtml(point.source_url) + '">' + escapeHtml(point.source || 'Event evidence') + '</a>';
 
   const openPoint = () => {
     if (typeof mapRef.invalidateSize === 'function') mapRef.invalidateSize();
@@ -7018,6 +7019,7 @@ function initMapResetButtons() {
 }
 
 function classifyMapPointCategory(point) {
+  if (['missiles', 'drones', 'casualties'].includes(point?.type)) return point.type;
   const probe = normalize(String(point?.category || '') + ' ' + String(point?.label || '') + ' ' + String(point?.description || ''));
   if (probe.includes('missile')) return 'missiles';
   if (probe.includes('drone')) return 'drones';
@@ -7427,7 +7429,7 @@ function bindMapControls(moduleName) {
     timeframe.dataset.bound = 'true';
     timeframe.value = state.timeFilter;
     timeframe.addEventListener('change', () => {
-      state.timeFilter = timeframe.value || '7d';
+      state.timeFilter = timeframe.value || 'all';
       stopReplay(moduleName);
       queueRedrawConflictMap(moduleName);
     });
@@ -7654,7 +7656,7 @@ function upsertConflictMap(mapConfig, points, legend, config = {}) {
       : '';
     const newestLabel = isNewest ? '<br><span style="color:#ef4444;font-weight:700;">Newest update</span>' : '';
     const clusterLabel = point.isCluster ? ('<br><span style="font-weight:700;">Clustered points: ' + formatInteger(point.clusterCount || 0) + '</span>') : '';
-    const popup = '<strong>' + (point.name || 'Event') + '</strong><br>' + (point.label || 'Metric') + ': ' + valueLabel + '<br>' + (point.description || '') + sourceLabel + newestLabel + clusterLabel + cloudLabel;
+    const popup = '<strong>' + escapeHtml(point.name || 'Event') + '</strong><br>' + escapeHtml(window.EventEvidence.dateLabel(point)) + '<br>' + escapeHtml(point.location_precision || 'Location precision unspecified') + '<br>' + escapeHtml(point.description || '') + (point.source_url ? '<br><a target="_blank" rel="noopener noreferrer" href="' + escapeHtml(point.source_url) + '">' + escapeHtml(point.source || 'Event evidence') + '</a>' : '') + clusterLabel;
     marker.bindPopup(popup);
     layerRef.addLayer(marker);
   });
@@ -7972,7 +7974,7 @@ async function refreshUkraineMetrics() {
     updateUkraineTimestamp(conflict.as_of_utc || conflict.updated_at_utc || feed.updated_at_utc);
     recomputeCompositeSyncHealth();
     renderDeltaCards();
-    setUkraineSync('Live metrics synced');
+    setUkraineSync('Reviewed records loaded; see report dates');
   } catch (error) {
     setUkraineSync('Metrics delayed - using fallback sources');
     if (Number.isFinite(lastConflictMetricsTimestamp)) {
@@ -8023,7 +8025,7 @@ async function refreshIranWarMetrics() {
     updateIranWarTimestamp(conflict.as_of_utc || conflict.updated_at_utc || feed.updated_at_utc);
     recomputeCompositeSyncHealth();
     renderDeltaCards();
-    setIranWarSync('Live metrics synced');
+    setIranWarSync('Reviewed records loaded; see report dates');
   } catch (error) {
     setIranWarSync('Metrics delayed - using fallback sources');
     if (Number.isFinite(lastConflictMetricsTimestamp)) {

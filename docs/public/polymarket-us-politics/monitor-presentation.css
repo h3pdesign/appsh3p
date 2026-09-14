@@ -95,3 +95,5 @@ body .metric-delta { font: 11px/1.4 var(--font-body); color: var(--text-secondar
 @media (max-width: 360px) {
   body .nav-inner { padding-inline: 8px; gap: 4px; }
 }
+.metric-evidence-note { font-size: 14px; line-height: 1.55; margin: 16px 0 12px; overflow-wrap: anywhere; }
+.metric-confidence-guide { display: none; }

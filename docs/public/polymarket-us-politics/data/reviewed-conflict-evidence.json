@@ -1,0 +1,52 @@
+{
+  "reviewed_on": "2026-09-14",
+  "methodology": "Source review confirms what the cited report states, not independent ground truth. Dates describe source coverage, not refresh time. Historical map coverage is selective; coordinates are approximate locality references, not verified impact coordinates.",
+  "metric_reviews": {
+    "iran_2026": {
+      "air_defense_intercepts_7d": {
+        "value": 2228, "label": "UAE Air Defence Engagements",
+        "verification_status": "reported_claim", "reported_as_of": "2026-03-27",
+        "source_name": "UAE Ministry of Defence via Gulf Today",
+        "source_url": "https://www.gulftoday.ae/news/2026/03/27/uae-intercepts-six-ballistic-missiles-nine-drones-from-iran",
+        "scope": "UAE cumulative engagements through 27 March 2026: 378 ballistic missiles + 15 cruise missiles + 1,835 UAVs. Not confirmed interceptions or a region-wide total.",
+        "verification_note": "The cited report supports the sum 2,228 and uses engaged, not destroyed. Official claim, not independently verified."
+      },
+      "critical_infrastructure_impacts_7d": {
+        "value": 113000, "value_prefix": ">", "label": "Iran Civilian Properties Reported Damaged",
+        "verification_status": "reported_claim", "reported_as_of": "2026-03-31",
+        "source_name": "Iranian Red Crescent via Anadolu",
+        "source_url": "https://www.aa.com.tr/en/middle-east/iran-says-over-113-000-civilian-places-damaged-in-us-israeli-attacks/3887118",
+        "scope": "Iranian Red Crescent claim through 31 March 2026. Includes homes and commercial premises, not only critical infrastructure. Not independently verified.",
+        "verification_note": "Report states more than 113,000 civilian places damaged. No current September total established."
+      }
+    },
+    "ukraine_2026": {
+      "ukr_civilians_killed_reported": {
+        "value": 16874, "value_prefix": ">=", "label": "Ukraine Civilian Deaths Verified by OHCHR",
+        "verification_status": "source_verified", "reported_as_of": "2026-08-13",
+        "source_name": "OHCHR / UN Human Rights Monitoring Mission",
+        "source_url": "https://ukraine.un.org/en/320943-un-human-rights-monitors-report-highest-monthly-number-civilian-deaths-and-injuries-ukraine",
+        "scope": "Cumulative verified civilian deaths since 24 February 2022, as reported 13 August 2026. Excludes military deaths; actual total likely higher.",
+        "verification_note": "UN release explicitly reports this cumulative verified minimum. This is not a September live count."
+      },
+      "ukr_civilians_injured_reported": {
+        "value": 51273, "value_prefix": ">=", "label": "Ukraine Civilian Injuries Verified by OHCHR",
+        "verification_status": "source_verified", "reported_as_of": "2026-08-13",
+        "source_name": "OHCHR / UN Human Rights Monitoring Mission",
+        "source_url": "https://ukraine.un.org/en/320943-un-human-rights-monitors-report-highest-monthly-number-civilian-deaths-and-injuries-ukraine",
+        "scope": "Cumulative verified civilian injuries since 24 February 2022, as reported 13 August 2026. Excludes military injuries; actual total likely higher.",
+        "verification_note": "UN release explicitly reports this cumulative verified minimum. This is not a September live count."
+      }
+    }
+  },
+  "historical_events": [
+    {"conflict_id":"iran_2026","point_key":"tamra-2025-06-14","name":"Tamra residential missile strike","occurred_on":"2025-06-14","type":"missiles","lat":32.85,"lng":35.20,"source":"Human Rights Watch field investigation","source_url":"https://www.hrw.org/news/2025/09/04/iran-missile-strikes-on-israeli-civilians-likely-war-crimes","verification_note":"HRW documents a residential missile impact in Tamra on 14 June. Locality-level marker; exact impact coordinates not asserted."},
+    {"conflict_id":"iran_2026","point_key":"bat-yam-2025-06-15","name":"Bat Yam apartment missile strike","occurred_on":"2025-06-15","type":"missiles","lat":32.02,"lng":34.75,"source":"Human Rights Watch field investigation","source_url":"https://www.hrw.org/news/2025/09/04/iran-missile-strikes-on-israeli-civilians-likely-war-crimes","verification_note":"HRW documents the 15 June apartment strike using site visits, witnesses and geolocated footage. City-level marker."},
+    {"conflict_id":"iran_2026","point_key":"petah-tikva-2025-06-16","name":"Petah Tikva residential missile strike","occurred_on":"2025-06-16","type":"missiles","lat":32.09,"lng":34.88,"source":"Human Rights Watch field investigation","source_url":"https://www.hrw.org/news/2025/09/04/iran-missile-strikes-on-israeli-civilians-likely-war-crimes","verification_note":"HRW documents the 16 June strike through witnesses and verified CCTV. City-level marker."},
+    {"conflict_id":"iran_2026","point_key":"soroka-2025-06-19","name":"Soroka Medical Center missile strike","occurred_on":"2025-06-19","type":"missiles","lat":31.26,"lng":34.80,"source":"Human Rights Watch field investigation","source_url":"https://www.hrw.org/news/2025/09/04/iran-missile-strikes-on-israeli-civilians-likely-war-crimes","verification_note":"HRW documents a direct hospital impact on 19 June. Approximate Be'er Sheva locality marker, not the impact point."},
+    {"conflict_id":"iran_2026","point_key":"beer-sheva-2025-06-24","name":"Be'er Sheva apartment missile strike","occurred_on":"2025-06-24","type":"missiles","lat":31.25,"lng":34.79,"source":"Human Rights Watch field investigation","source_url":"https://www.hrw.org/news/2025/09/04/iran-missile-strikes-on-israeli-civilians-likely-war-crimes","verification_note":"HRW documents the 24 June residential strike using witnesses and verified footage. City-level marker."},
+    {"conflict_id":"iran_2026","point_key":"shuaiba-2026-03-01","name":"Port Shuaiba drone attack","occurred_on":"2026-03-01","type":"drones","lat":29.03,"lng":48.16,"source":"U.S. Department of War, 3 March 2026 release","source_url":"https://www.war.gov/News/Releases/Release/Article/4420475/dow-identifies-army-casualties/","verification_note":"Official casualty notification identifies a 1 March UAS attack in Port Shuaiba, Kuwait. Incident was under investigation. Approximate port-area marker."},
+    {"conflict_id":"ukraine_2026","point_key":"okhmatdyt-2024-07-08","name":"Okhmatdyt Children's Hospital strike","occurred_on":"2024-07-08","type":"missiles","lat":50.46,"lng":30.48,"source":"Medecins Sans Frontieres","source_url":"https://www.msf.org/attack-okhmatdyt-childrens-hospital-kyiv","verification_note":"MSF reports the hospital was hit on 8 July 2024. Approximate Kyiv locality marker; no exact time or impact coordinate asserted."},
+    {"conflict_id":"ukraine_2026","point_key":"kyiv-wave-2026-07-02","name":"Missile and drone attack mainly affecting Kyiv","occurred_on":"2026-07-02","type":"missiles","lat":50.45,"lng":30.52,"source":"OHCHR / UN Human Rights Monitoring Mission","source_url":"https://ukraine.un.org/en/320943-un-human-rights-monitors-report-highest-monthly-number-civilian-deaths-and-injuries-ukraine","verification_note":"UN release identifies a 2 July attack mainly striking Kyiv. One city-level reference for the attack, not one marker per weapon or casualty."}
+  ]
+}

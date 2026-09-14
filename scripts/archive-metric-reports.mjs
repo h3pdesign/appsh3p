@@ -8,13 +8,15 @@ const archivePath = new URL('../docs/public/polymarket-us-politics/data/metric-r
 export function collectReports(archive, feed) {
   for (const conflict of feed.conflicts || []) {
     const module = { iran_2026: 'iran', ukraine_2026: 'ukraine' }[conflict.id]
-    const at = conflict.as_of_utc || conflict.updated_at_utc || feed.updated_at_utc
-    if (!module || !Number.isFinite(Date.parse(at))) continue
+    if (!module) continue
     for (const metric of conflict.metrics || []) {
+      if (!['source_verified', 'reported_claim'].includes(metric.verification_status)) continue
+      const at = metric.reported_as_of
+      if (!Number.isFinite(Date.parse(at))) continue
       if (!metric.id || metric.value == null || !Number.isFinite(Number(metric.value))) continue
       const key = `${module}:${metric.id}`
-      const rows = (archive[key] || []).filter(row => row.at !== at)
-      rows.push({ at, value: Number(metric.value), scope: metric.scope || metric.definition || '' })
+      const rows = (archive[key] || []).filter(row => row.at !== at && row.verification_status)
+      rows.push({ at, value: Number(metric.value), scope: metric.scope || metric.definition || '', verification_status: metric.verification_status, source_url: metric.source_url })
       archive[key] = rows.sort((a, b) => Date.parse(a.at) - Date.parse(b.at)).slice(-120)
     }
   }
@@ -24,6 +26,10 @@ export function collectReports(archive, feed) {
 export async function archiveMetricReports(feed) {
   let archive = {}
   try { archive = JSON.parse(await readFile(archivePath, 'utf8')) } catch (error) { if (error.code !== 'ENOENT') throw error }
+  for (const key of Object.keys(archive)) {
+    archive[key] = archive[key].filter(row => row.verification_status && row.source_url)
+    if (!archive[key].length) delete archive[key]
+  }
   collectReports(archive, feed)
   await writeFile(archivePath, `${JSON.stringify(archive)}\n`)
 }

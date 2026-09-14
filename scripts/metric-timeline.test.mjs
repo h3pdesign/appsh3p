@@ -43,7 +43,7 @@ test('incompatible scopes and future reports are excluded', async () => {
   assert.equal(nodes.some(n => n.tag === 'svg'), false)
 })
 test('archive captures actual metric totals, deduplicating feed timestamps', () => {
-  const feed = { conflicts: [{ id: 'iran_2026', as_of_utc: '2026-09-14T04:00:00Z', metrics: [{ id: 'test', value: 12 }] }] }
+  const feed = { conflicts: [{ id: 'iran_2026', as_of_utc: '2026-09-14T04:00:00Z', metrics: [{ id: 'test', value: 12, verification_status: 'source_verified', reported_as_of: '2026-08-13', source_url: 'https://example.org/report' }] }] }
   const archive = collectReports({}, feed)
   collectReports(archive, feed)
   assert.equal(archive['iran:test'].length, 1)
