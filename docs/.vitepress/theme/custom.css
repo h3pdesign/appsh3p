@@ -3616,7 +3616,8 @@ html.app-theme-lingua-latina {
 }
 
 html.h3p-apps-index-route body,
-html.h3p-app-doc-route body {
+html.h3p-app-doc-route body,
+html.h3p-changelog-route body {
   background:
     radial-gradient(800px 520px at 88% 4%, color-mix(in srgb, var(--app-accent-2) 16%, transparent), transparent 68%),
     radial-gradient(760px 500px at 8% 8%, color-mix(in srgb, var(--app-accent) 14%, transparent), transparent 65%),
@@ -3634,6 +3635,164 @@ html.h3p-app-doc-route .VPDoc .container,
 html.h3p-app-doc-route .VPDoc .content,
 html.h3p-app-doc-route .vp-doc {
   background: transparent !important;
+}
+
+/* Combined changelog: make the release history easy to scan by month and app. */
+html.h3p-changelog-route .VPDoc .container {
+  max-width: 1220px !important;
+}
+
+html.h3p-changelog-route .VPDoc .content,
+html.h3p-changelog-route .VPDoc .content-container,
+html.h3p-changelog-route .vp-doc {
+  max-width: 1080px !important;
+}
+
+html.h3p-changelog-route .vp-doc {
+  padding: 58px 0 96px;
+}
+
+html.h3p-changelog-route .vp-doc h1:first-of-type {
+  margin: 0;
+  color: var(--vp-c-text-1);
+  font-size: clamp(2.8rem, 7vw, 5.8rem);
+  line-height: 0.98;
+  letter-spacing: -0.055em;
+}
+
+html.h3p-changelog-route .vp-doc h1:first-of-type::before {
+  content: '#';
+  display: inline-block;
+  margin-right: 16px;
+  color: var(--vp-c-brand-1);
+  font-family: var(--vp-font-family-mono);
+  font-size: 0.72em;
+  font-weight: 700;
+  vertical-align: 0.08em;
+}
+
+html.h3p-changelog-route .vp-doc h1:first-of-type + p {
+  max-width: 760px;
+  margin: 24px 0 64px;
+  color: var(--vp-c-text-2);
+  font-size: 1.05rem;
+  line-height: 1.75;
+}
+
+html.h3p-changelog-route .vp-doc h2 {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 64px 0 0;
+  padding: 13px 0;
+  border-top: 1px solid var(--vp-c-divider);
+  border-bottom: 1px solid var(--vp-c-divider);
+  color: var(--vp-c-text-1);
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+html.h3p-changelog-route .vp-doc h2::before {
+  content: '';
+  width: 9px;
+  height: 9px;
+  flex: 0 0 auto;
+  border-radius: 50%;
+  background: var(--vp-c-brand-1);
+  box-shadow: 0 0 0 5px color-mix(in srgb, var(--vp-c-brand-1) 14%, transparent);
+}
+
+html.h3p-changelog-route .vp-doc h3 {
+  margin: 34px 0 0;
+  padding: 22px 26px 12px;
+  border: 1px solid color-mix(in srgb, var(--vp-c-brand-1) 44%, var(--vp-c-divider));
+  border-bottom: 0;
+  border-left: 4px solid var(--vp-c-brand-1);
+  border-radius: 10px 10px 0 0;
+  background: color-mix(in srgb, var(--vp-c-brand-1) 8%, var(--vp-c-bg-soft));
+  color: var(--vp-c-text-1);
+  font-size: clamp(1.25rem, 2.5vw, 1.85rem);
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+}
+
+html.h3p-changelog-route .vp-doc h3 + ul {
+  margin: 0;
+  padding: 8px 28px 8px 52px;
+  border-right: 1px solid color-mix(in srgb, var(--vp-c-brand-1) 44%, var(--vp-c-divider));
+  border-left: 4px solid var(--vp-c-brand-1);
+  background: color-mix(in srgb, var(--vp-c-brand-1) 8%, var(--vp-c-bg-soft));
+}
+
+html.h3p-changelog-route .vp-doc h3 + ul li {
+  margin: 10px 0;
+  color: var(--vp-c-text-2);
+  line-height: 1.65;
+}
+
+html.h3p-changelog-route .vp-doc h3 + ul li::marker {
+  color: var(--vp-c-brand-1);
+}
+
+html.h3p-changelog-route .vp-doc h3 + ul + p {
+  margin: 0 0 32px;
+  padding: 14px 28px 22px 52px;
+  border: 1px solid color-mix(in srgb, var(--vp-c-brand-1) 44%, var(--vp-c-divider));
+  border-top: 0;
+  border-left: 4px solid var(--vp-c-brand-1);
+  border-radius: 0 0 10px 10px;
+  background: color-mix(in srgb, var(--vp-c-brand-1) 8%, var(--vp-c-bg-soft));
+}
+
+html.h3p-changelog-route .vp-doc h3 + ul + p a {
+  color: var(--vp-c-brand-1);
+  font-size: 0.9rem;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+html.h3p-changelog-route .vp-doc h3 + ul + p a::after {
+  content: '  ->';
+  font-family: var(--vp-font-family-mono);
+}
+
+html.h3p-changelog-route .vp-doc h2:last-of-type + ul {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 28px;
+  margin-top: 18px;
+  padding: 0;
+  list-style: none;
+}
+
+html.h3p-changelog-route .vp-doc h2:last-of-type + ul li {
+  padding: 13px 0;
+  border-bottom: 1px solid var(--vp-c-divider);
+}
+
+html.h3p-changelog-route .vp-doc p:last-child {
+  margin-top: 42px;
+  padding: 18px 20px;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 8px;
+  color: var(--vp-c-text-2);
+  background: var(--vp-c-bg-soft);
+  font-size: 0.88rem;
+  line-height: 1.65;
+}
+
+@media (max-width: 760px) {
+  html.h3p-changelog-route .vp-doc { padding: 34px 0 62px; }
+  html.h3p-changelog-route .vp-doc h1:first-of-type { font-size: 3.25rem; }
+  html.h3p-changelog-route .vp-doc h1:first-of-type + p { margin-bottom: 42px; font-size: 0.94rem; }
+  html.h3p-changelog-route .vp-doc h2 { margin-top: 46px; }
+  html.h3p-changelog-route .vp-doc h3 { padding: 18px 18px 10px; }
+  html.h3p-changelog-route .vp-doc h3 + ul { padding: 6px 18px 6px 42px; }
+  html.h3p-changelog-route .vp-doc h3 + ul + p { padding: 12px 18px 18px 42px; }
+  html.h3p-changelog-route .vp-doc h2:last-of-type + ul { grid-template-columns: 1fr; gap: 0; }
 }
 
 html.h3p-apps-index-route .VPDoc .container,

@@ -324,12 +324,14 @@ function applyAppThemeClass() {
   root.classList.remove(
     'h3p-apps-index-route',
     'h3p-app-doc-route',
+    'h3p-changelog-route',
     'app-theme-neon',
     'app-theme-metric',
     'app-theme-release',
     ...appThemeClasses
   )
   if (isAppsIndexRoute.value) root.classList.add('h3p-apps-index-route')
+  if (route.path === '/changelog' || route.path === '/changelog/') root.classList.add('h3p-changelog-route')
   if (isAppDocPage.value && currentAppIdentity.value) {
     root.classList.add('h3p-app-doc-route', `app-theme-${appSlug.value}`)
   }

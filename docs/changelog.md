@@ -13,8 +13,6 @@ This is the combined release history for the H3P apps documentation site. It inc
 
 [Read the History Vision changelog](/apps/history-vision/changelog)
 
-## September 2026
-
 ### Neon Vision Editor 1.7.6 - September 12
 
 - Keeps long and wrapped macOS documents intact while scrolling and repaints only the visible Core Text canvas region.

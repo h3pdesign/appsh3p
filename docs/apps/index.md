@@ -1126,4 +1126,142 @@ See [GitHub Repositories](/apps/github-repositories) for repository links and cu
   .app-card { grid-template-columns: 48px 1fr; padding: 12px 14px 12px 20px; }
   .app-icon { width: 48px; height: 48px; }
 }
+
+/* Reference-style catalogue cards: compact, scannable, and app-coloured. */
+.h3p-apps-index-route .apps-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 22px;
+}
+
+.h3p-apps-index-route .app-card {
+  grid-template-columns: 88px minmax(0, 1fr);
+  min-height: 270px;
+  gap: 18px;
+  padding: 28px 24px 24px;
+  border-radius: 8px;
+  border-color: color-mix(in srgb, var(--app-card-accent, #668dff) 28%, var(--vp-c-divider));
+  background: var(--h3p-site-surface, #fff);
+  box-shadow: 0 12px 30px rgba(27, 48, 90, 0.06);
+}
+
+.h3p-apps-index-route .app-card::before {
+  top: 0;
+  right: 0;
+  left: 0;
+  width: auto;
+  height: 5px;
+  border-radius: 8px 8px 0 0;
+  background: var(--app-card-accent, #668dff);
+}
+
+.h3p-apps-index-route .app-icon {
+  width: 78px;
+  height: 78px;
+  border-radius: 19px;
+  align-self: start;
+}
+
+.h3p-apps-index-route .app-card-content {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.h3p-apps-index-route .app-title-row {
+  align-items: baseline;
+  gap: 10px;
+  margin: 0 0 12px;
+}
+
+.h3p-apps-index-route .app-title-link {
+  color: var(--vp-c-brand-1);
+  font-size: clamp(1.1rem, 1.7vw, 1.42rem);
+  font-weight: 800;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+.h3p-apps-index-route .app-status,
+.h3p-apps-index-route .app-platform-pills span,
+.h3p-apps-index-route .app-doc-state,
+.h3p-apps-index-route .app-updated-badge,
+.h3p-apps-index-route .chip {
+  border-radius: 999px;
+}
+
+.h3p-apps-index-route .app-status {
+  padding: 7px 10px;
+  color: var(--vp-c-brand-1);
+  border: 1px solid color-mix(in srgb, var(--vp-c-brand-1) 35%, var(--vp-c-divider));
+  background: color-mix(in srgb, var(--vp-c-brand-1) 10%, white);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.h3p-apps-index-route .app-card-meta-row {
+  width: 100%;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.h3p-apps-index-route .app-platform-pills,
+.h3p-apps-index-route .app-meta-right {
+  gap: 6px;
+}
+
+.h3p-apps-index-route .app-platform-pills span,
+.h3p-apps-index-route .app-doc-state,
+.h3p-apps-index-route .app-updated-badge {
+  padding: 5px 8px;
+  font-size: 0.72rem;
+}
+
+.h3p-apps-index-route .app-card p {
+  margin: 0 0 18px;
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+
+.h3p-apps-index-route .app-actions-row {
+  margin-top: auto;
+  gap: 6px;
+}
+
+.h3p-apps-index-route .chip {
+  padding: 7px 9px;
+  font-size: 0.72rem;
+}
+
+@media (max-width: 900px) {
+  .h3p-apps-index-route .apps-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 560px) {
+  .h3p-apps-index-route .app-card {
+    grid-template-columns: 62px minmax(0, 1fr);
+    min-height: 0;
+    gap: 14px;
+    padding: 24px 16px 18px;
+  }
+
+  .h3p-apps-index-route .app-icon {
+    width: 62px;
+    height: 62px;
+    border-radius: 16px;
+  }
+
+  .h3p-apps-index-route .app-title-row {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .h3p-apps-index-route .app-title-link { font-size: 1.22rem; }
+  .h3p-apps-index-route .app-card p { font-size: 0.9rem; }
+}
 </style>
