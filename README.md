@@ -12,11 +12,11 @@
   <a href="https://vitepress.dev/"><img alt="VitePress" src="https://img.shields.io/badge/VitePress-1.6.4-5c73e7?logo=vite&amp;logoColor=white"></a>
 </p>
 
-<h1 align="center">apps-h3p and conflict monitor</h1>
+<h1 align="center">h3p apps &amp; Politics and Conflict Monitor</h1>
 
 <p align="center">
-  <strong>Public documentation, release communication, and live intelligence presentation.</strong><br>
-  A single VitePress repository powering the H3P apps hub and the public <code>STATE OF US &amp; WORLD POLITICS</code> monitor.
+  <strong>Native app documentation, dated conflict reports, and prediction-market coverage.</strong><br>
+  One repository for the h3p apps hub and the public Politics &amp; Conflict Monitor.
 </p>
 
 <p align="center">
@@ -43,8 +43,11 @@ It provides:
 - installation, feature, FAQ, changelog, and component documentation
 - support, legal, privacy, cookie-policy, and trust pages
 - app-specific icons, media, screenshots, and release-linked content
+- shared navigation, app-page styling, and footer across the documentation
 
-### STATE OF US & WORLD POLITICS
+The catalogue covers ten apps: Neon Vision Editor, GitBird, Liquid Record, Metrics Data, X-Newsbook, Release Assistant, Image Sorter, Vistral, History Vision, and Lingua Latina. Availability and platform support are documented per app.
+
+### Politics & Conflict Monitor
 
 The monitor surface combines conflict-monitoring presentation and prediction-market reporting.
 
@@ -55,10 +58,12 @@ Primary entry points:
 
 It provides:
 
-- live conflict metric cards and freshness indicators
-- map, timeline, ticker, and source-summary views
-- prediction-market reporting pages
-- generated public data payloads refreshed by scheduled workflows
+- Iran and Ukraine metric cards with source links, reporting dates, scope, and evidence limitations
+- selected historical incidents on a map and timeline, using occurrence dates rather than refresh times
+- conflict news tickers and prediction-market snapshots refreshed by scheduled workflows
+- light, dark, and system appearance controls, plus classic and vibrant presentation modes
+
+**Evidence boundaries:** a reviewed record identifies what a cited source reports; it does not independently verify the underlying event or claim. Reports can cover different periods and definitions, so they are not automatically summed into regional totals. Unsupported metrics remain marked **Not established**. Historical coverage is incomplete, and synthetic trend lines are not used to fill gaps.
 
 ---
 
@@ -68,41 +73,34 @@ It provides:
 
 ![apps-h3p home](.github/readme-assets/apps-h3p.png)
 
-### Conflict Cards and Live Ticker
-
-![conflict cards and ticker](.github/readme-assets/conflict-monitor003.png)
-
 ### Conflict Monitor Overview
 
-![conflict monitor overview](.github/readme-assets/conflict-monitor005.png)
+![Politics and Conflict Monitor overview with dated source reports](.github/readme-assets/conflict-monitor-overview.png)
 
-### Conflict Metrics and Map
+### Conflict Metrics and Evidence
 
-![conflict metrics and map](.github/readme-assets/conflict-monitor002.png)
+![Conflict metric cards with report dates, source links, and evidence limitations](.github/readme-assets/conflict-monitor-evidence.png)
 
 ---
 
 ## Quick Start
 
+Use Node.js 20 (matching CI) and npm.
+
 ```bash
 git clone https://github.com/h3pdesign/appsh3p.git
 cd appsh3p
-npm install
+npm ci
 npm run docs:dev
 ```
 
 Open [http://127.0.0.1:5173](http://127.0.0.1:5173).
 
-Useful commands:
+Build and preview:
 
 ```bash
 npm run docs:build
 npm run docs:preview
-node scripts/validate-polymarket-site.mjs
-node scripts/update-iran-war-metrics.mjs
-node scripts/update-conflict-news.mjs
-node scripts/update-market-id-map.mjs
-node scripts/update-social-tracker-metrics.mjs
 ```
 
 ---
@@ -111,18 +109,22 @@ node scripts/update-social-tracker-metrics.mjs
 
 ```text
 docs/
+  .vitepress/data/apps.ts       Shared app catalogue
+  .vitepress/theme/             Shared layout and presentation styles
   apps/                         App documentation pages
   policies/                     Privacy, cookie, terms, and trust pages
   public/
     icons/                      Public app icons
     media/                      Public screenshots and app artwork
-    polymarket-us-politics/     Conflict monitor and prediction portal data
+    polymarket-us-politics/     Standalone monitor pages, scripts, and data
 scripts/
-  update-iran-war-metrics.mjs   Conflict metrics, map, and timeline payloads
+  update-iran-war-metrics.mjs   Apply reviewed evidence to metrics and map records
+  archive-metric-reports.mjs   Archive supported dated metric reports
   update-conflict-news.mjs      Live ticker and news payloads
   update-market-id-map.mjs      Prediction-market ID mapping
   update-social-tracker-metrics.mjs
   validate-polymarket-site.mjs  Static validation before publish
+  validate-reviewed-feed.mjs   Check feed consistency with reviewed evidence
 .github/workflows/              Scheduled data refresh and GitHub Pages deploys
 ```
 
@@ -130,24 +132,29 @@ scripts/
 
 ## Data and Automation
 
-The monitor pages are generated from public payloads stored under:
+The monitor pages load public JSON payloads stored under:
 
 ```text
 docs/public/polymarket-us-politics/data/
 ```
 
-Scheduled GitHub Actions refresh the public data for:
+Scheduled GitHub Actions refresh:
 
-- conflict metrics, map points, and timeline entries
 - conflict news ticker content
 - prediction-market mapping and snapshots
 - social-attention metrics
 
-Before publishing, validate the generated site payloads:
+Conflict evidence follows a separate path. `reviewed-conflict-evidence.json` stores reviewed metric records, explicit gaps, and selected historical events. The metrics workflow applies those records to `iran-war-metrics.json` and archives supported reports in `metric-reports.json`. It does not discover new evidence or turn an older report into a current count merely by running again.
+
+To apply an evidence update after reviewing its sources:
 
 ```bash
-node scripts/validate-polymarket-site.mjs
+node scripts/update-iran-war-metrics.mjs
 ```
+
+Preserve the source URL, scope, report date, and evidence limitations for each metric. Map records require supported occurrence dates and coordinates; approximate localities are identified as such. Source corrections can lower a value, and incompatible scopes must not be treated as a continuous series.
+
+Site Guard checks HTML and feed contracts, evidence consistency, timeline behavior, the performance budget, and the app catalogue. The stale-data watchdog checks live news and market snapshot freshness; historical conflict report dates are not subject to that refresh deadline.
 
 ---
 
@@ -156,6 +163,16 @@ node scripts/validate-polymarket-site.mjs
 Production is served by GitHub Pages on the custom domain:
 
 - [https://apps-h3p.com](https://apps-h3p.com)
+
+The `Deploy docs to GitHub Pages` workflow builds `main`, validates workflow configuration, optimizes documentation images, and publishes the VitePress output. It runs weekly on Monday at 06:00 UTC or by manual dispatch. **Pushing a commit does not itself trigger this deployment workflow.**
+
+After pushing and checking Site Guard, an authenticated maintainer can deploy with:
+
+```bash
+gh workflow run deploy-pages.yml --ref main
+```
+
+Check the Actions result and the live page before treating a change as published.
 
 Deployment-related files:
 
@@ -175,18 +192,21 @@ docs/.vitepress/dist
 
 When adding or updating an app:
 
-1. Create or update `docs/apps/<slug>/`
-2. Add app icons or media under `docs/public/icons/` or `docs/public/media/`
-3. Sync release-driven metadata when applicable
-4. Build locally
-5. Validate generated public data
-6. Deploy through the configured GitHub Pages workflow
+1. Create or update `docs/apps/<slug>/` using the shared documentation design.
+2. Keep `docs/.vitepress/data/apps.ts` and `docs/apps/index.md` consistent.
+3. Add icons and media under `docs/public/icons/` or `docs/public/media/`.
+4. Update release metadata and relevant changelogs when applicable.
+5. Run the preflight below and check affected pages at desktop and mobile widths.
+6. Commit, push, check CI, and dispatch the Pages deployment.
 
 Typical local preflight:
 
 ```bash
 npm run docs:build
 node scripts/validate-polymarket-site.mjs
+npm run docs:perf-budget
+npm run docs:validate-catalog
+node --test scripts/event-evidence.test.mjs scripts/metric-timeline.test.mjs scripts/reviewed-evidence.test.mjs scripts/validate-reviewed-feed.test.mjs
 ```
 
 ---
@@ -200,4 +220,4 @@ This repository is the public-facing operations and documentation layer for:
 - prediction-market reporting
 - support, policy, and trust content
 
-The goal is one maintainable site that serves product documentation, release communication, and continuously refreshed public intelligence pages from the same VitePress codebase.
+The goal is one maintainable site for product documentation and public reporting, with clear boundaries between live feeds, dated source claims, and information that has not been established.
