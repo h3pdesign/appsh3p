@@ -2,10 +2,10 @@
 head:
   - - meta
     - property: og:image
-      content: https://apps-h3p.com/icons/history-vision.png?v=20260914-1
+      content: https://apps-h3p.com/icons/history-vision.png?v=20260914-2
   - - meta
     - name: twitter:image
-      content: https://apps-h3p.com/icons/history-vision.png?v=20260914-1
+      content: https://apps-h3p.com/icons/history-vision.png?v=20260914-2
 ---
 
 # History Vision
@@ -45,7 +45,7 @@ Primary user outcomes:
     <p>Move from a curated discovery surface into a complete searchable library, source-labelled articles, research tools, and a chronology that separates curated history from archived date mentions.</p>
   </div>
   <div class="overview-hero-media">
-    <img src="/icons/history-vision.png?v=20260914-1" alt="History Vision icon" class="overview-app-icon" />
+    <img src="/icons/history-vision.png?v=20260914-2" alt="History Vision icon" class="overview-app-icon" />
   </div>
 </div>
 

@@ -1,4 +1,5 @@
 /* Shared catalogue and release surfaces, isolated from legacy Markdown decoration. */
+html .VPHome .h3p-app-card .h3p-documentation-icon { padding: 12px; border-radius: 8px; background: #e0f2ed; object-fit: contain; }
 html .VPHome { margin-bottom: 0 !important; }
 html .VPHome > .vp-doc.container { background: transparent !important; }
 html .VPHome .h3p-home-v2 { padding-bottom: 0; }

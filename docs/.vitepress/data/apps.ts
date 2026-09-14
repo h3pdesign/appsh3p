@@ -65,7 +65,7 @@ export const appCatalog: AppCatalogEntry[] = [
   },
   {
     slug: 'image-sorter', name: 'Image Sorter', category: 'Visual asset workflow',
-    description: 'A deliberate queue for organizing, naming, and processing images.', icon: '/icons/image-sorter.png?v=20260302-1',
+    description: 'A deliberate queue for organizing, naming, and processing images.', icon: '/icons/image-sorter.png?v=20260914-1',
     status: 'private', statusLabel: 'Private beta', version: '0.1', releaseDate: '2026-04-30', platforms: ['macOS'],
     useCases: ['visual', 'workflow'], overview: '/apps/image-sorter/overview', installation: '/apps/image-sorter/installation', changelog: '/apps/image-sorter/changelog', privacy: '/policies/privacy-policy',
     installLabel: 'Request access', installUrl: '/support/support-and-feedback', privacySummary: 'Local file workflow; access is private while the app is in beta.'
@@ -79,7 +79,7 @@ export const appCatalog: AppCatalogEntry[] = [
   },
   {
     slug: 'history-vision', name: 'History Vision', category: 'History and timelines',
-    description: 'A 295-article source-aware library with research tools, dense timelines, and an offline Watch companion.', icon: '/icons/history-vision.png?v=20260914-1',
+    description: 'A 295-article source-aware library with research tools, dense timelines, and an offline Watch companion.', icon: '/icons/history-vision.png?v=20260914-2',
     status: 'private', statusLabel: 'Private beta', version: '1.0', releaseDate: '2026-09-12', platforms: ['macOS', 'iPadOS', 'iOS', 'watchOS'],
     useCases: ['history', 'research', 'reading'], overview: '/apps/history-vision/overview', installation: '/apps/history-vision/installation', changelog: '/apps/history-vision/changelog', privacy: '/policies/privacy-policy',
     installLabel: 'Request access', installUrl: '/support/support-and-feedback', privacySummary: 'Source-aware reading experience; private beta access is handled through support.'

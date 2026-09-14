@@ -233,7 +233,7 @@
   </article>
 
   <article class="app-card app-card-sorter" data-changelog="/apps/image-sorter/changelog" data-status="private" data-platforms="macos" data-use-cases="visual,workflow">
-    <img src="/icons/image-sorter.png?v=20260302-1" alt="Image Sorter icon" class="app-icon" />
+    <img src="/icons/image-sorter.png?v=20260914-1" alt="Image Sorter icon" class="app-icon" />
     <div class="app-card-content">
       <h3 class="app-title-row"><a class="app-title-link" href="/apps/image-sorter/overview">Image Sorter</a><span class="app-status app-status-private">Private beta</span></h3>
       <div class="app-card-meta-row">
@@ -274,7 +274,7 @@
   </article>
 
   <article class="app-card app-card-history" data-changelog="/apps/history-vision/changelog" data-status="private" data-platforms="macos,ipados,ios,watchos" data-use-cases="history,research,reading">
-    <img src="/icons/history-vision.png?v=20260914-1" alt="History Vision icon" class="app-icon" />
+    <img src="/icons/history-vision.png?v=20260914-2" alt="History Vision icon" class="app-icon" />
     <div class="app-card-content">
       <h3 class="app-title-row"><a class="app-title-link" href="/apps/history-vision/overview">History Vision</a><span class="app-status app-status-private">Private beta</span></h3>
       <div class="app-card-meta-row">
