@@ -28,6 +28,9 @@ jobs:
       - name: Run validator
         run: node scripts/validate-polymarket-site.mjs
 
+      - name: Test evidence and timeline contracts
+        run: node --test scripts/event-evidence.test.mjs scripts/metric-timeline.test.mjs scripts/reviewed-evidence.test.mjs scripts/validate-reviewed-feed.test.mjs
+
       - name: Check performance budget
         run: node scripts/check-performance-budget.mjs
 

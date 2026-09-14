@@ -1,5 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
+import { validateReviewedFeed } from './validate-reviewed-feed.mjs';
 
 const baseDir = path.join("docs", "public", "polymarket-us-politics");
 
@@ -52,11 +53,6 @@ const requiredWrapperSnippets = [
   "<meta http-equiv=\"refresh\"",
   "/polymarket-us-politics/state-of-us-politics.html?focus=",
 ];
-
-const IRAN_PROJECTILE_BASELINE_MIN = {
-  missiles_total_2026: 810,
-  drones_total_2026: 1245,
-};
 
 function fail(message) {
   console.error(`VALIDATION ERROR: ${message}`);
@@ -163,25 +159,11 @@ function validateConflictFeed() {
     fail(`${feedPath} conflict ${active.id} must contain at least one timeline entry`);
   }
 
-  if (active.id === "iran_2026") {
-    const metricsById = new Map(
-      (Array.isArray(active.metrics) ? active.metrics : []).map(metric => [String(metric?.id || ""), metric])
-    );
-
-    for (const [metricId, minimum] of Object.entries(IRAN_PROJECTILE_BASELINE_MIN)) {
-      const metric = metricsById.get(metricId);
-      if (!metric) {
-        fail(`${feedPath} conflict iran_2026 missing required projectile metric: ${metricId}`);
-      }
-      const value = Number(metric?.value);
-      if (!Number.isFinite(value) || value < minimum) {
-        fail(`${feedPath} conflict iran_2026 metric ${metricId} is below baseline (${value} < ${minimum})`);
-      }
-      const scope = String(metric?.scope || "").toLowerCase();
-      if (!scope.includes("cumulative")) {
-        fail(`${feedPath} conflict iran_2026 metric ${metricId} scope must declare cumulative semantics`);
-      }
-    }
+  try {
+    const evidence = JSON.parse(fs.readFileSync(path.join(baseDir, 'data', 'reviewed-conflict-evidence.json'), 'utf8'));
+    validateReviewedFeed(parsed, evidence);
+  } catch (error) {
+    fail(`${feedPath}: ${error.message}`);
   }
 
   return parsed;
@@ -290,16 +272,8 @@ function validateFreshness(conflictFeed, newsFeed, snapshotFeed, maxAgeMinutes) 
 
   const checks = [];
   checks.push({ label: "polymarket snapshot", value: snapshotFeed?.updated_at_utc });
-  checks.push({ label: "conflict feed", value: conflictFeed?.updated_at_utc });
+  // Reviewed conflict reports retain their historical dates; only live feeds have a refresh SLA.
   checks.push({ label: "conflict news", value: newsFeed?.updated_at_utc });
-
-  const conflicts = Array.isArray(conflictFeed?.conflicts) ? conflictFeed.conflicts : [];
-  conflicts.forEach(conflict => {
-    checks.push({
-      label: `conflict ${conflict.id || "unknown"}`,
-      value: conflict?.as_of_utc || conflict?.updated_at_utc || conflictFeed?.updated_at_utc,
-    });
-  });
 
   for (const item of checks) {
     if (!item.value) {
