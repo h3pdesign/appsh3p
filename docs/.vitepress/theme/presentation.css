@@ -575,3 +575,156 @@ html .VPDoc .apps-grid .app-title-link:hover { text-decoration: underline; }
   html .VPDoc .release-entry { grid-template-columns: 1fr; gap: 20px; }
   html .VPDoc .apps-grid { grid-template-columns: 1fr; }
 }
+
+/* App documentation shares the catalogue's flat, neutral presentation. */
+html.h3p-app-doc-route body { background: var(--vp-c-bg) !important; }
+html.h3p-app-doc-route .VPDoc .vp-doc {
+  padding: 28px 0 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+html.h3p-app-doc-route .vp-doc :is(h1, h2, h3, p, li) {
+  letter-spacing: 0 !important;
+  text-shadow: none !important;
+  overflow-wrap: anywhere;
+}
+html.h3p-app-doc-route .VPDoc .vp-doc h1 {
+  max-width: 100%;
+  margin: 0 0 20px !important;
+  font-size: 40px !important;
+  line-height: 1.15 !important;
+  text-align: left !important;
+}
+html.h3p-app-doc-route .VPDoc .vp-doc h2 {
+  margin: 40px 0 16px;
+  padding-top: 24px;
+  border-top: 1px solid var(--vp-c-divider);
+  font-size: 26px !important;
+  line-height: 1.3;
+}
+html.h3p-app-doc-route .VPDoc .vp-doc h2::before { display: none !important; }
+html.h3p-app-doc-route .VPDoc .vp-doc h3 { font-size: 20px; line-height: 1.4; }
+html.h3p-app-doc-route .vp-doc :is(p, li) { font-size: 16px; line-height: 1.75; }
+html.h3p-app-doc-route .vp-doc li::marker { color: var(--vp-c-text-2); }
+html.h3p-app-doc-route .VPDoc .overview-status-pill {
+  display: inline-flex;
+  width: fit-content;
+  margin: 0 0 8px;
+  padding: 4px 10px;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 4px;
+  background: var(--vp-c-bg-soft);
+  color: var(--vp-c-text-1);
+  font-size: 12px;
+  line-height: 1.5;
+  letter-spacing: 0;
+  box-shadow: none;
+}
+html.h3p-app-doc-route .VPDoc .overview-last-updated {
+  margin: 0 0 24px;
+  text-align: left;
+  font-size: 14px;
+  color: var(--vp-c-text-2);
+}
+html.h3p-app-doc-route .h3p-doc-top-navs { width: 100%; max-width: 1016px; gap: 0; margin: 0 auto; align-items: stretch; }
+html.h3p-app-doc-route .h3p-app-action-bar {
+  width: 100%;
+  margin: 0;
+  padding: 16px 0;
+  border: 0;
+  border-bottom: 1px solid var(--vp-c-divider);
+  border-radius: 0;
+  background: transparent;
+}
+html.h3p-app-doc-route :is(.h3p-app-action-links a, .h3p-app-identity-link) { border-radius: 4px; }
+html.h3p-app-doc-route :is(.h3p-app-switcher, .h3p-doc-jump-rail) {
+  width: 100%;
+  margin-inline: 0;
+  justify-content: flex-start;
+  gap: 4px 16px;
+  padding: 8px 0;
+  border: 0;
+  border-bottom: 1px solid var(--vp-c-divider);
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+html.h3p-app-doc-route :is(.h3p-app-switcher, .h3p-doc-jump-rail) a {
+  padding: 10px 0;
+  border: 0;
+  border-bottom: 2px solid transparent;
+  border-radius: 0;
+  background: transparent;
+  color: var(--vp-c-text-2);
+  font-size: 14px;
+  letter-spacing: 0;
+  box-shadow: none;
+}
+html.h3p-app-doc-route .h3p-app-switcher a.active {
+  color: var(--vp-c-text-1);
+  border-bottom-color: var(--vp-c-brand-1);
+  background: transparent;
+}
+html.h3p-app-doc-route :is(.h3p-app-switcher, .h3p-doc-jump-rail) a:hover {
+  color: var(--vp-c-brand-1);
+  background: transparent;
+  transform: none;
+}
+html.h3p-app-doc-route .h3p-app-identity { padding: 20px 0; gap: 16px; }
+html.h3p-app-doc-route .h3p-app-identity-name { font-size: 24px; line-height: 1.3; letter-spacing: 0; }
+html.h3p-app-doc-route .h3p-app-identity-description { font-size: 14px; line-height: 1.6; }
+html.h3p-app-doc-route .overview-platform-badges { justify-content: flex-start; margin: 20px 0; }
+html.h3p-app-doc-route .overview-mini-stats { gap: 0; margin: 24px 0; border-block: 1px solid var(--vp-c-divider); }
+html.h3p-app-doc-route .overview-mini-stats > div {
+  min-height: 80px;
+  padding: 16px;
+  border: 0;
+  border-right: 1px solid var(--vp-c-divider);
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+html.h3p-app-doc-route .overview-mini-stats > div:last-child { border-right: 0; }
+html.h3p-app-doc-route .overview-hero { padding: 24px 0; gap: 24px; margin: 24px 0; }
+html.h3p-app-doc-route .overview-hero-copy p { font-size: 16px; line-height: 1.75; }
+html.h3p-app-doc-route :is(.overview-banner, .overview-shot-frame) {
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  box-shadow: none;
+}
+html.h3p-app-doc-route :is(.overview-banner img, .overview-shot-frame .overview-app-shot) {
+  border-radius: 8px;
+  box-shadow: none;
+  object-fit: contain;
+}
+html.h3p-app-doc-route .vp-doc blockquote {
+  padding: 12px 20px;
+  border-color: var(--vp-c-divider);
+  border-radius: 0;
+  background: var(--vp-c-bg-soft);
+}
+@media (max-width: 720px) {
+  html.h3p-app-doc-route .VPDoc .vp-doc { padding-top: 20px !important; }
+  html.h3p-app-doc-route :is(.h3p-app-switcher, .h3p-doc-jump-rail) {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap !important;
+    overflow-x: auto;
+    gap: 20px;
+    padding-block: 4px;
+  }
+  html.h3p-app-doc-route :is(.h3p-app-switcher, .h3p-doc-jump-rail) a {
+    flex: 0 0 auto !important;
+    width: auto !important;
+    min-height: 44px;
+    white-space: nowrap;
+  }
+  html.h3p-app-doc-route .VPDoc .vp-doc h1 { font-size: 30px !important; }
+  html.h3p-app-doc-route .VPDoc .vp-doc h2 { font-size: 23px !important; }
+  html.h3p-app-doc-route .overview-mini-stats { grid-template-columns: 1fr; }
+  html.h3p-app-doc-route .overview-mini-stats > div { border-right: 0; border-bottom: 1px solid var(--vp-c-divider); }
+  html.h3p-app-doc-route .overview-mini-stats > div:last-child { border-bottom: 0; }
+}
