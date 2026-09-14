@@ -2729,6 +2729,11 @@ body.page-conflicts #methodology {
 }
 
 </style>
+<link rel="stylesheet" href="./monitor-presentation.css">
+<script src="./theme-switches.js" defer></script>
+<script src="./metric-timeline.js"></script>
+<script src="./english-basemap.js"></script>
+<script src="./event-evidence.js"></script>
 </head>
 <body class="page-conflicts">
 
@@ -2782,9 +2787,9 @@ body.page-conflicts #methodology {
 <div class="container">
 
   <!-- ====== HERO ====== -->
-  <header class="hero reveal">
+  <header class="hero hero-centered reveal">
     <p class="hero-tag">World Conflicts Intelligence Briefing</p>
-    <h1>STATE OF<br><span>US & WORLD POLITICS</span></h1>
+    <h1>Politics &amp;<span>Conflict Monitor</span></h1>
     <p class="hero-subtitle">Prediction Market Intelligence Reports & Conflict Monitoring</p>
     <div class="hero-meta">
       <span id="asOfDate">&#9670; Last updated: --</span>
@@ -5284,7 +5289,7 @@ async function refreshConflictNews() {
   try {
     const response = await fetch(`${CONFLICT_NEWS_URL}?t=${Date.now()}`, { cache: 'no-store' });
     if (!response.ok) throw new Error(`Conflict news fetch failed: ${response.status}`);
-    const feed = await response.json();
+    const feed = window.EventEvidence.sanitize(await response.json());
     renderConflictTicker('iran_2026', 'iranNewsTrack', 'iranNewsUpdated', feed);
     renderConflictTicker('ukraine_2026', 'ukraineNewsTrack', 'ukraineNewsUpdated', feed);
     const newsTs = parseTimestamp(feed?.updated_at_utc || feed?.as_of_utc || null);
@@ -5745,39 +5750,9 @@ function renderConflictMetrics(metrics, containerId = 'conflictMetrics', options
       valueRow.appendChild(value);
       valueRow.appendChild(deltaNode);
 
-      const microTrack = document.createElement('div');
-      microTrack.className = 'metric-micro-track';
-      const microFill = document.createElement('div');
-      microFill.className = 'metric-micro-fill';
-      microFill.style.background = 'var(--tone-' + tone + ')';
-      const norm = Number.isFinite(Number(metric && metric.value)) ? ((Number(metric.value) - minV) / span) : 0;
-      microFill.style.width = String(Math.max(6, Math.round(norm * 100))) + '%';
-      microTrack.appendChild(microFill);
-
-      const seriesRows = Array.isArray(metricSeriesMap?.[metricId]?.series) ? metricSeriesMap[metricId].series : [];
-      const sparkValues = (seriesRows.length > 0
-        ? seriesRows.map(point => Number(point?.value)).filter(Number.isFinite)
-        : (() => {
-            const history = loadMetricHistory(moduleKey, metricId);
-            history.push(Number(metric && metric.value));
-            saveMetricHistory(moduleKey, metricId, history);
-            return history;
-          })()).slice(-12);
-      const pathData = sparklinePath(sparkValues);
-      const spark = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-      spark.setAttribute('class', 'metric-sparkline');
-      spark.setAttribute('viewBox', '0 0 120 18');
-      if (pathData) {
-        const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-        path.setAttribute('d', pathData);
-        path.setAttribute('stroke', 'var(--tone-' + tone + ')');
-        spark.appendChild(path);
-      }
-
       card.appendChild(labelRow);
       card.appendChild(valueRow);
-      card.appendChild(microTrack);
-      card.appendChild(spark);
+      window.MetricTimeline.render(card, metric, options.conflictAsOf, moduleKey, deltaNode);
       groupGrid.appendChild(card);
 
       nextByMetric.set(metricId, Number(metric && metric.value));
@@ -6362,9 +6337,7 @@ function renderConflictTrend(series, config = {}) {
 }
 
 function mapPointTimestamp(point) {
-  const raw = point?.reported_at_utc || point?.as_of_utc || point?.updated_at_utc || null;
-  const ts = raw ? new Date(raw).getTime() : NaN;
-  return Number.isFinite(ts) ? ts : null;
+  return window.EventEvidence.timestamp(point);
 }
 
 function latestMapTimestamp(points) {
@@ -6400,6 +6373,7 @@ function renderRecentMapPoints(points, bodyId, moduleName) {
   if (!body) return;
 
   const sortedRows = (Array.isArray(points) ? points : [])
+    .filter(window.EventEvidence.eligible)
     .map((point, index) => ({ ...point, __index: index, __ts: mapPointTimestamp(point) }))
     .filter(point => Number.isFinite(Number(point?.lat)) && Number.isFinite(Number(point?.lng)))
     .sort((a, b) => {
@@ -6409,25 +6383,10 @@ function renderRecentMapPoints(points, bodyId, moduleName) {
       return b.__index - a.__index;
     });
 
-  const rows = [];
-  const seenCategories = new Set();
-
-  for (const point of sortedRows) {
-    const categoryKey = String(point?.type || point?.category || 'other');
-    if (seenCategories.has(categoryKey)) continue;
-    rows.push(point);
-    seenCategories.add(categoryKey);
-    if (rows.length >= 10) break;
-  }
-
-  for (const point of sortedRows) {
-    if (rows.length >= 10) break;
-    if (rows.includes(point)) continue;
-    rows.push(point);
-  }
+  const rows = sortedRows.slice(0, 10);
 
   if (rows.length === 0) {
-    body.innerHTML = '<tr><td colspan="7">No recent map points available.</td></tr>';
+    body.innerHTML = '<tr><td colspan="7">No source-verified events with confirmed occurrence dates are available. Generated hotspots and feed refresh timestamps are excluded.</td></tr>';
     return;
   }
 
@@ -6435,10 +6394,10 @@ function renderRecentMapPoints(points, bodyId, moduleName) {
     const event = escapeHtml(point.name || 'Approximate map event');
     const label = escapeHtml(point.label || point.type || 'Conflict event');
     const type = escapeHtml(classifyMapPointCategory(point));
-    const source = escapeHtml(point.source || 'OSINT source chain');
+    const source = '<a href="' + escapeHtml(point.source_url) + '" target="_blank" rel="noopener noreferrer">' + escapeHtml(point.source || 'Event source') + '</a>';
     const count = Number.isFinite(Number(point.marker_mass ?? point.value)) ? formatInteger(point.marker_mass ?? point.value) : '--';
     const total = Number.isFinite(Number(point.total_metric)) ? formatInteger(point.total_metric) : '--';
-    const time = Number.isFinite(point.__ts) ? escapeHtml(formatShortLocalTimestamp(point.__ts)) : 'Unknown';
+    const time = Number.isFinite(point.__ts) ? escapeHtml(new Date(point.__ts).toISOString().slice(0, 19).replace('T', ' ') + ' UTC') : 'Occurrence date unknown';
     const location = escapeHtml(mapPointApproxLocation(point));
     const key = escapeHtml(mapPointKey(point));
     return `
@@ -6747,30 +6706,9 @@ function separateMapPoints(points, minDistance = 0.22) {
   });
 }
 
-function buildDisplayPointsForMap(points, zoom, densityPercent = 100) {
-  const list = Array.isArray(points) ? points : [];
-  const expanded = [];
-
-  list.forEach(point => {
-    const labelProbe = normalize(String(point?.label || ''));
-    const hasMass = Number(point?.marker_mass ?? point?.value) > 1;
-    const shouldCloud = hasMass
-      || labelProbe.includes('ballistic missiles')
-      || labelProbe.includes('drones (2025 benchmark)')
-      || labelProbe.includes('critical infrastructure impacts (7d)')
-      || labelProbe.includes('air strikes (reported floor)');
-
-    if (shouldCloud) {
-      const cloud = expandPointCloud(point, zoom);
-      const keep = Math.max(1, Math.round(cloud.length * (Math.max(20, Math.min(100, Number(densityPercent) || 100)) / 100)));
-      expanded.push(...cloud.slice(0, keep));
-    } else {
-      expanded.push({ ...point, markerKind: markerKindForPoint(point), markerCountRaw: 1, markerCountShown: 1 });
-    }
-  });
-
-  const minDistance = zoom <= 4 ? 0.25 : zoom <= 6 ? 0.16 : 0.08;
-  return separateMapPoints(expanded, minDistance);
+function buildDisplayPointsForMap(points) {
+  return (Array.isArray(points) ? points : []).filter(window.EventEvidence.eligible)
+    .map(point => ({ ...point, markerKind: markerKindForPoint(point), markerCountRaw: 1, markerCountShown: 1 }));
 }
 
 function filterPointsByTimeWindow(points, timeFilter, latestTs, replayTs = null) {
@@ -6995,29 +6933,17 @@ function tileConfigForTheme() {
     };
   }
 
-  const theme = currentThemeMode();
-  if (theme === 'light') {
-    return {
-      url: 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',
-      options: {
-        subdomains: 'abcd',
-        attribution: '&copy; OpenStreetMap contributors &copy; CARTO',
-        maxZoom: 20
-      }
-    };
-  }
-
   return {
-    url: 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',
+    url: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
     options: {
-      subdomains: 'abcd',
-      attribution: '&copy; OpenStreetMap contributors &copy; CARTO',
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+      maxNativeZoom: 19,
       maxZoom: 20
     }
   };
 }
 
-function replaceMapBaseLayer(mapRef, moduleName) {
+async function replaceMapBaseLayer(mapRef, moduleName) {
   if (!mapRef || typeof L === 'undefined') return;
 
   const theme = currentThemeMode();
@@ -7028,17 +6954,26 @@ function replaceMapBaseLayer(mapRef, moduleName) {
   }
 
   const config = tileConfigForTheme();
+  const english = conflictMapLayerMode !== 'terrain';
+  const layerKey = english ? 'openfreemap-english' : config.url;
+  const request = (mapRef._basemapRequest || 0) + 1;
+  mapRef._basemapRequest = request;
   const existing = moduleName === 'ukraine' ? ukraineBaseLayer : conflictBaseLayer;
 
-  if (existing && existing._url === config.url) {
+  if (existing && existing._url === layerKey) {
     return;
   }
 
-  if (existing) {
-    mapRef.removeLayer(existing);
+  let nextLayer;
+  try {
+    nextLayer = english ? await window.createEnglishBasemap() : L.tileLayer(config.url, config.options);
+  } catch (error) {
+    console.warn('English basemap failed; using local-label fallback.', error);
+    nextLayer = L.tileLayer(config.url, { ...config.options, attribution: config.options.attribution + ' | English map unavailable: local labels' });
   }
-
-  const nextLayer = L.tileLayer(config.url, config.options);
+  if (request !== mapRef._basemapRequest) return;
+  if (existing) mapRef.removeLayer(existing);
+  nextLayer._url = layerKey;
   nextLayer.addTo(mapRef);
 
   if (moduleName === 'ukraine') {
@@ -7978,7 +7913,7 @@ async function refreshUkraineMetrics() {
     const response = await fetch(`${CONFLICT_MONITOR_URL}?t=${Date.now()}`, { cache: 'no-store' });
     if (!response.ok) throw new Error(`Ukraine metrics fetch failed: ${response.status}`);
 
-    const feed = await response.json();
+    const feed = window.EventEvidence.sanitize(await response.json());
     cacheGlobeConflictFeed(feed);
     const conflict = pickConflictById(feed, 'ukraine_2026');
     await ensureLeafletReady();
@@ -8056,7 +7991,7 @@ async function refreshIranWarMetrics() {
     const response = await fetch(`${CONFLICT_MONITOR_URL}?t=${Date.now()}`, { cache: 'no-store' });
     if (!response.ok) throw new Error(`Iran war metrics fetch failed: ${response.status}`);
 
-    const feed = await response.json();
+    const feed = window.EventEvidence.sanitize(await response.json());
     cacheGlobeConflictFeed(feed);
     const conflict = pickActiveConflict(feed);
     await ensureLeafletReady();
