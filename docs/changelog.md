@@ -1,6 +1,13 @@
 # Changelog
 
-This is the combined release history for the H3P apps documentation site. It includes published app changes wherever an app changelog is available. Open the linked app changelog for complete notes, screenshots, requirements, and access information.
+Source: published release notes and documentation snapshots from the H3P app catalogue. Open the linked app changelog for complete notes, screenshots, requirements, and access information.
+
+<div class="changelog-legend" aria-label="Changelog categories">
+  <span class="is-new">New</span>
+  <span class="is-improved">Improved</span>
+  <span class="is-fixed">Fixed</span>
+  <span class="is-breaking">Breaking</span>
+</div>
 
 ## September 2026
 

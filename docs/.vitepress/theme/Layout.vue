@@ -1402,11 +1402,10 @@ onBeforeUnmount(() => {
 
     <template #doc-bottom>
       <section v-if="appDocRelatedLinks.length > 0" class="h3p-related-pages" aria-label="Next recommended reads">
-        <h2>Next recommended read</h2>
+        <h2>Continue exploring</h2>
         <div class="h3p-related-grid">
           <a v-for="item in appDocRelatedLinks" :key="item.link" :href="item.link" class="h3p-related-card">
             <span>{{ item.text }}</span>
-            <strong>Open</strong>
           </a>
         </div>
       </section>
@@ -1419,7 +1418,11 @@ onBeforeUnmount(() => {
           <a href="/support/support-and-feedback">Support</a>
         </div>
       </section>
-      <footer v-if="isAppsRoute" class="h3p-app-site-footer" aria-label="h3p apps footer">
+      <a v-if="isAppDocPage" class="h3p-back-apps-fab" href="/apps/index" aria-label="Back to all apps">Back to apps</a>
+    </template>
+
+    <template #layout-bottom>
+      <footer class="h3p-app-site-footer" aria-label="h3p apps footer">
         <div class="h3p-app-site-footer-inner">
           <div class="h3p-app-site-footer-brand">
             <h2>h3p apps</h2>
@@ -1464,8 +1467,12 @@ onBeforeUnmount(() => {
             </section>
           </nav>
         </div>
+        <div class="h3p-footer-bottom">
+          <span>Built with care in Germany</span>
+          <span>Copyright {{ new Date().getFullYear() }} h3p Hilthart Pedersen.</span>
+          <a href="https://h3pdesign.github.io/" target="_blank" rel="noreferrer noopener">All H3P work</a>
+        </div>
       </footer>
-      <a v-if="isAppDocPage" class="h3p-back-apps-fab" href="/apps/index" aria-label="Back to all apps">Back to apps</a>
     </template>
 
     <template #not-found>

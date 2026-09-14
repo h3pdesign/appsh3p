@@ -105,5 +105,4 @@ head:
     </nav>
   </section>
 
-  <footer class="h3p-home-footer"><span>h3p apps</span><span>Built with care in Germany</span><a href="https://h3pdesign.github.io/" target="_blank" rel="noreferrer noopener">All H3P work ↗</a></footer>
 </div>

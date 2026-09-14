@@ -1,4 +1,5 @@
 import { defineConfig } from 'vitepress'
+import releaseJournal from './release-journal.mjs'
 
 export default defineConfig({
   title: 'h3p apps',
@@ -38,6 +39,7 @@ export default defineConfig({
   appearance: true,
   lang: 'en-US',
   cleanUrls: true,
+  markdown: { config: (md) => md.use(releaseJournal) },
 
   themeConfig: {
     siteTitle: 'h3p apps',

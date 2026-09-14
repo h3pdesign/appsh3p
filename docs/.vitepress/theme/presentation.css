@@ -1,0 +1,566 @@
+/* Shared catalogue and release surfaces, isolated from legacy Markdown decoration. */
+html .VPFooter { display: none; }
+html body .h3p-app-site-footer {
+  margin: 0;
+  padding: 48px max(24px, calc((100% - 1200px) / 2)) 24px;
+  border: 0;
+  border-top: 1px solid #dde1e6;
+  border-radius: 0;
+  background: #fff;
+  color: #20242b;
+  box-shadow: none;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+html body .h3p-app-site-footer-inner { display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 48px; max-width: none; width: 100%; margin: 0; }
+html body .h3p-app-site-footer-brand h2 { margin: 0 0 12px; padding: 0; border: 0; font-size: 22px; line-height: 28px; letter-spacing: 0; }
+html body .h3p-app-site-footer-brand h2::before,
+html body .h3p-app-site-footer-brand h2::after { display: none; }
+html body .h3p-app-site-footer-brand p { margin: 0; font-size: 14px; line-height: 23px; color: #626b78; }
+html body .h3p-app-site-footer-columns { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 28px; }
+html body .h3p-app-site-footer-column { display: flex; flex-direction: column; gap: 0; }
+html body .h3p-app-site-footer-column h3 { margin: 0 0 12px; padding: 0; border: 0; font-size: 13px; font-weight: 650; line-height: 28px; text-transform: none; letter-spacing: 0; }
+html body .h3p-app-site-footer a { padding: 8px 0; color: #626b78; font-size: 13px; line-height: 20px; font-weight: 400; text-decoration: none; }
+html body .h3p-app-site-footer a::after { display: none; }
+html body .h3p-app-site-footer a:hover { color: #087f72; text-decoration: underline; text-underline-offset: 4px; }
+html body .h3p-app-site-footer a:focus-visible { outline: 2px solid #087f72; outline-offset: 3px; }
+html body .h3p-footer-bottom { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px 24px; margin-top: 32px; padding-top: 20px; border-top: 1px solid #dde1e6; color: #626b78; font-size: 12px; line-height: 20px; }
+html.dark body .h3p-app-site-footer { background: #1c1f23; color: #eef1f4; border-color: #353b43; }
+html.dark body .h3p-app-site-footer :is(p,a,.h3p-footer-bottom) { color: #adb5c0; border-color: #353b43; }
+html.dark body .h3p-app-site-footer a:hover { color: #67d7ba; }
+@media (max-width: 1000px) {
+  html body .h3p-app-site-footer-inner { grid-template-columns: 1fr; gap: 32px; }
+  html body .h3p-app-site-footer-brand p { max-width: 350px; }
+}
+@media (max-width: 640px) {
+  html body .h3p-app-site-footer-columns { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px 24px; }
+  html body .h3p-app-site-footer a { min-height: 44px; display: flex; align-items: center; }
+  html body .h3p-footer-bottom { flex-direction: column; align-items: flex-start; }
+}
+
+html .VPDoc .h3p-related-pages {
+  margin: 40px 0 24px;
+  padding: 24px 0 0;
+  border: 0;
+  border-top: 1px solid var(--presentation-line);
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+html .VPDoc .h3p-related-pages h2 {
+  margin: 0 0 20px;
+  color: var(--presentation-muted);
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 20px;
+  letter-spacing: 0;
+}
+html .VPDoc .h3p-related-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0;
+}
+html .VPDoc .h3p-related-card {
+  display: flex;
+  align-items: center;
+  min-height: 56px;
+  padding: 12px 20px;
+  border: 0;
+  border-left: 2px solid var(--presentation-line);
+  border-radius: 0;
+  background: transparent;
+  color: var(--presentation-ink);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  text-decoration: none;
+  box-shadow: none;
+  transition: background 150ms, border-color 150ms;
+}
+html .VPDoc .h3p-related-card:hover,
+html .VPDoc .h3p-related-card:focus-visible {
+  border-color: var(--presentation-accent);
+  background: var(--presentation-paper);
+  color: var(--presentation-accent);
+  transform: none;
+}
+html .VPDoc .h3p-related-card:focus-visible { outline: 2px solid var(--presentation-accent); outline-offset: 3px; }
+@media (max-width: 640px) {
+  html .VPDoc .h3p-related-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px 0; }
+  html .VPDoc .h3p-related-card { padding: 12px 16px; font-size: 15px; }
+}
+
+html .VPDoc .apps-resources {
+  margin: 36px 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+html .VPDoc .apps-resources section {
+  display: grid;
+  grid-template-columns: minmax(180px, 1fr) minmax(0, 2fr);
+  gap: 32px;
+  padding: 28px 0;
+  border-top: 1px solid var(--presentation-line);
+}
+html .VPDoc .apps-resources h2 {
+  margin: 0;
+  padding: 8px 0;
+  border: 0;
+  color: var(--presentation-ink);
+  font-size: 20px;
+  font-weight: 650;
+  line-height: 28px;
+  letter-spacing: 0;
+}
+html .VPDoc .apps-resources h2::before,
+html .VPDoc .apps-resources h2::after { display: none; }
+html .VPDoc .apps-resources p {
+  margin: 6px 0 12px;
+  color: var(--presentation-muted);
+  font-size: 15px;
+  line-height: 24px;
+}
+html .VPDoc .apps-resource-links {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-content: start;
+  gap: 4px 24px;
+}
+html .VPDoc .apps-resources a {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 8px 0;
+  color: var(--presentation-accent);
+  font-size: 14px;
+  font-weight: 550;
+  line-height: 22px;
+  text-decoration: none;
+}
+html .VPDoc .apps-resources a:hover { text-decoration: underline; text-underline-offset: 4px; }
+html .VPDoc .apps-resources a:focus-visible { outline: 2px solid var(--presentation-accent); outline-offset: 3px; }
+@media (max-width: 640px) {
+  html .VPDoc .apps-resources section { grid-template-columns: 1fr; gap: 12px; padding: 24px 0; }
+  html .VPDoc .apps-resource-links { gap: 4px 16px; }
+}
+
+html .VPDoc .apps-doc-map {
+  display: block;
+  margin: 28px 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+html .VPDoc .apps-doc-map section {
+  display: grid;
+  grid-template-columns: minmax(180px, 1fr) minmax(0, 2fr);
+  gap: 32px;
+  padding: 24px 0;
+  border: 0;
+  border-top: 1px solid var(--presentation-line);
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+html .VPDoc .apps-doc-map h3 {
+  margin: 0;
+  padding: 8px 0;
+  color: var(--presentation-ink);
+  font-size: 18px;
+  font-weight: 650;
+  line-height: 24px;
+  letter-spacing: 0;
+}
+html .VPDoc .apps-doc-map h3::before,
+html .VPDoc .apps-doc-map h3::after { display: none; }
+html .VPDoc .apps-doc-map section > div {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 4px 16px;
+}
+html .VPDoc .apps-doc-map a {
+  display: flex;
+  align-items: center;
+  min-height: 40px;
+  padding: 8px 10px;
+  border: 0;
+  border-radius: 4px;
+  color: var(--presentation-muted);
+  background: transparent;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  text-decoration: none;
+  transition: background 150ms, color 150ms;
+}
+html .VPDoc .apps-doc-map a:first-child { color: var(--presentation-accent); font-weight: 650; }
+html .VPDoc .apps-doc-map a:hover,
+html .VPDoc .apps-doc-map a:focus-visible {
+  color: var(--presentation-accent);
+  background: var(--presentation-paper);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+html .VPDoc .apps-doc-map a:focus-visible { outline: 2px solid var(--presentation-accent); outline-offset: 2px; }
+@media (max-width: 640px) {
+  html .VPDoc .apps-doc-map section { grid-template-columns: 1fr; gap: 12px; padding: 22px 0; }
+  html .VPDoc .apps-doc-map section > div { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 4px 12px; }
+  html .VPDoc .apps-doc-map a { min-height: 44px; padding: 8px 0; }
+}
+
+html .VPDoc .apps-release-timeline {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  margin: 32px 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent !important;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+html .VPDoc :is(.apps-release-heading, .apps-release-item) {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 64px 92px;
+  align-items: center;
+  gap: 12px;
+  min-height: 48px;
+  padding: 10px 14px;
+  border: 0;
+  border-bottom: 1px solid var(--presentation-line);
+  border-radius: 0 !important;
+  background: var(--presentation-paper) !important;
+}
+html .VPDoc .apps-release-heading {
+  background: transparent !important;
+  color: var(--presentation-muted);
+  font-size: 12px;
+  font-weight: 600;
+}
+html .VPDoc .apps-release-item .name { font-size: 14px; font-weight: 600; color: var(--presentation-ink); }
+html .VPDoc .apps-release-item .tag {
+  width: auto;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  color: var(--presentation-accent);
+  font: 500 13px/1.5 ui-monospace, monospace;
+}
+html .VPDoc .apps-release-item .date { font-size: 13px; color: var(--presentation-muted); font-variant-numeric: tabular-nums; }
+@media (max-width: 800px) {
+  html .VPDoc .apps-release-timeline { grid-template-columns: 1fr; gap: 0; }
+  html .VPDoc .apps-release-group + .apps-release-group .apps-release-heading { display: none; }
+}
+html .VPDoc .apps-carousel {
+  margin: 36px 0;
+  padding: 0 0 52px;
+  border: 0;
+  border-radius: 0;
+  background: transparent !important;
+  box-shadow: none !important;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+html .VPDoc .apps-carousel-track { gap: 20px; }
+html .VPDoc .apps-slide {
+  width: min(520px, 78vw);
+  padding: 0;
+  gap: 14px;
+  border: 0;
+  border-radius: 0;
+  background: transparent !important;
+  text-decoration: none;
+}
+html .VPDoc .apps-slide-media { background: var(--presentation-paper); border-radius: 6px; overflow: hidden; }
+html .VPDoc .apps-slide-media::after { display: none; }
+html .VPDoc .apps-slide-media img:first-child { height: 300px; object-fit: contain; border: 1px solid var(--presentation-line); border-radius: 6px; }
+html .VPDoc .apps-slide-icon { display: none; }
+html .VPDoc .apps-slide-cta {
+  top: auto;
+  bottom: 12px;
+  right: 12px;
+  padding: 6px 10px;
+  border: 1px solid var(--presentation-line);
+  border-radius: 4px;
+  background: var(--presentation-paper);
+  box-shadow: none;
+  color: var(--presentation-accent);
+  font-size: 12px;
+  letter-spacing: 0;
+  text-transform: none;
+}
+html .VPDoc .apps-slide-title { color: var(--presentation-ink); font-size: 15px; font-weight: 600; }
+html .VPDoc .apps-carousel-btn {
+  top: auto;
+  bottom: 0;
+  width: 36px;
+  height: 36px;
+  border-radius: 4px;
+  background: var(--presentation-paper);
+  color: var(--presentation-ink);
+  border-color: var(--presentation-line);
+  font-size: 24px;
+}
+html .VPDoc .apps-carousel-prev { left: auto; right: 44px; }
+html .VPDoc .apps-carousel-next { right: 0; }
+html .VPDoc .apps-carousel-dots { position: absolute; bottom: 14px; left: 0; margin: 0; }
+html .VPDoc .apps-carousel-dot { width: 8px; height: 8px; border-radius: 2px; }
+html .VPDoc .apps-carousel-dot.is-active { background: var(--presentation-accent); border-color: var(--presentation-accent); }
+html .VPDoc .apps-carousel-drag-hint { display: none; }
+@media (max-width: 560px) {
+  html .VPDoc :is(.apps-release-heading, .apps-release-item) { grid-template-columns: minmax(0, 1fr) 60px 82px; gap: 8px; padding: 12px 10px; }
+  html .VPDoc .apps-release-item .name { font-size: 13px; }
+  html .VPDoc .apps-release-item :is(.date, .tag) { font-size: 11px; }
+  html .VPDoc .apps-slide-media img:first-child { height: 230px; }
+}
+html:has(.release-journal), html:has(.apps-grid), html:has(.h3p-related-pages) {
+  --presentation-bg: #f4f5f7;
+  --presentation-paper: #fff;
+  --presentation-ink: #20242b;
+  --presentation-muted: #626b78;
+  --presentation-line: #dde1e6;
+  --presentation-accent: #087f72;
+}
+html.dark:has(.release-journal), html.dark:has(.apps-grid), html.dark:has(.h3p-related-pages) {
+  --presentation-bg: #141619;
+  --presentation-paper: #1c1f23;
+  --presentation-ink: #eef1f4;
+  --presentation-muted: #adb5c0;
+  --presentation-line: #353b43;
+  --presentation-accent: #67d7ba;
+}
+html body:has(.release-journal), html body:has(.apps-grid) {
+  background: var(--presentation-bg) !important;
+}
+html .VPDoc .vp-doc:has(.release-journal) {
+  padding: 24px 0 64px !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+html .VPDoc .release-journal, html .VPDoc .apps-grid {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  color: var(--presentation-ink);
+  letter-spacing: 0;
+}
+html .VPDoc .release-journal h1 {
+  max-width: none !important;
+  margin: 0 0 20px !important;
+  text-align: left !important;
+  color: var(--presentation-ink) !important;
+  font-size: 40px !important;
+  line-height: 1.15 !important;
+  letter-spacing: 0 !important;
+  text-shadow: none !important;
+}
+html .VPDoc .release-journal :is(h1,h2,h3)::before,
+html .VPDoc .release-journal :is(h1,h2,h3)::after,
+html .VPDoc .release-journal .header-anchor,
+html .VPDoc .release-journal .changelog-legend { display: none !important; }
+html .VPDoc .release-journal > p {
+  max-width: 740px;
+  padding: 0 !important;
+  margin: 0 0 32px !important;
+  border: 0 !important;
+  background: transparent !important;
+  font-size: 15px !important;
+  line-height: 1.65;
+  font-style: normal;
+  color: var(--presentation-muted);
+}
+html .VPDoc .release-journal > h2 {
+  margin: 40px 0 0 !important;
+  padding: 16px 0 !important;
+  border: 0 !important;
+  border-bottom: 2px solid var(--presentation-ink) !important;
+  font-size: 14px !important;
+  color: var(--presentation-muted) !important;
+  letter-spacing: 0 !important;
+}
+html .VPDoc .release-entry {
+  display: grid;
+  grid-template-columns: minmax(160px, 0.8fr) minmax(0, 2fr);
+  gap: 36px;
+  padding: 32px 0;
+  border-bottom: 1px solid var(--presentation-line);
+}
+html .VPDoc .release-label {
+  display: block;
+  margin-bottom: 14px;
+  color: var(--presentation-accent);
+  font: 600 12px/1.3 -apple-system, BlinkMacSystemFont, sans-serif;
+  text-transform: uppercase;
+}
+html .VPDoc .release-entry-heading :is(h2,h3) {
+  display: block;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+  color: var(--presentation-ink) !important;
+  font-size: 22px !important;
+  font-weight: 650;
+  line-height: 1.4 !important;
+  letter-spacing: 0 !important;
+}
+html .VPDoc .release-entry-body { min-width: 0; }
+html .VPDoc .release-entry-body ul {
+  margin: 0 !important;
+  padding: 0 !important;
+  list-style: none;
+  border: 0 !important;
+  background: transparent !important;
+}
+html .VPDoc .release-entry-body li {
+  position: relative;
+  margin: 0 !important;
+  padding: 14px 16px 14px 30px;
+  border-bottom: 1px solid var(--presentation-line);
+  background: var(--presentation-paper);
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--presentation-ink);
+}
+html .VPDoc .release-entry-body li::before {
+  content: '';
+  position: absolute;
+  left: 14px;
+  top: 24px;
+  width: 5px;
+  height: 5px;
+  background: var(--presentation-accent);
+}
+html .VPDoc .release-entry-body p {
+  margin: 16px 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+  color: var(--presentation-muted);
+  font-size: 14px !important;
+  line-height: 1.6;
+}
+html .VPDoc .release-journal a { color: var(--presentation-accent); }
+html .VPDoc .release-entry:nth-of-type(3n + 2) { --presentation-accent: #4169c1; }
+html .VPDoc .release-entry:nth-of-type(3n + 3) { --presentation-accent: #b75536; }
+html.dark .VPDoc .release-entry:nth-of-type(3n + 2) { --presentation-accent: #91b3ff; }
+html.dark .VPDoc .release-entry:nth-of-type(3n + 3) { --presentation-accent: #efa27f; }
+html:has(.release-journal) .h3p-doc-top-navs {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  box-shadow: none;
+}
+html:has(.release-journal) :is(.h3p-app-switcher, .h3p-doc-jump-rail) {
+  gap: 4px;
+  background: transparent;
+}
+html:has(.release-journal) :is(.h3p-app-switcher, .h3p-doc-jump-rail) a {
+  border: 0;
+  border-radius: 4px;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 550;
+  box-shadow: none;
+}
+html:has(.release-journal) :is(.h3p-app-switcher, .h3p-doc-jump-rail) a.active {
+  background: var(--presentation-paper);
+  color: var(--presentation-accent);
+}
+html .VPDoc .apps-grid { gap: 24px; }
+html .VPDoc .apps-grid .app-card {
+  display: grid;
+  grid-template-columns: 56px minmax(0, 1fr);
+  gap: 20px 16px;
+  min-height: 0;
+  padding: 24px;
+  border: 1px solid var(--presentation-line) !important;
+  border-radius: 8px !important;
+  background: var(--presentation-paper) !important;
+  box-shadow: none !important;
+  align-content: start;
+  transform: none !important;
+}
+html .VPDoc .apps-grid .app-card::before { display: none; }
+html .VPDoc .apps-grid .app-card.is-filter-hidden { display: none; }
+html .VPDoc .apps-grid .app-card-content { display: contents; }
+html .VPDoc .apps-grid .app-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
+  filter: none;
+}
+html .VPDoc .apps-grid .app-title-row {
+  margin: 0 !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 6px;
+  letter-spacing: 0;
+}
+html .VPDoc .apps-grid .app-title-link {
+  font-size: 21px;
+  line-height: 1.2;
+  font-weight: 650;
+  color: var(--presentation-ink);
+  text-decoration: none;
+}
+html .VPDoc .apps-grid .app-status {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--presentation-accent);
+  font-size: 12px;
+  font-weight: 550;
+  line-height: 1.5;
+  letter-spacing: 0;
+  text-transform: none;
+}
+html .VPDoc .apps-grid .app-status-private { color: #a15a18; }
+html .VPDoc .apps-grid .app-status-alpha { color: #7b559e; }
+html.dark .VPDoc .apps-grid .app-status-private { color: #e2b67e; }
+html.dark .VPDoc .apps-grid .app-status-alpha { color: #c6a2ed; }
+html .VPDoc .apps-grid .app-card-meta-row {
+  grid-column: 1 / -1;
+  margin: 0;
+  gap: 10px;
+}
+html .VPDoc .apps-grid .app-platform-pills span {
+  border: 0;
+  border-radius: 4px;
+  background: var(--presentation-bg);
+  color: var(--presentation-muted);
+  font: 500 12px/1.5 -apple-system, BlinkMacSystemFont, sans-serif;
+  padding: 3px 8px;
+}
+html .VPDoc .apps-grid .app-meta-right { display: none; }
+html .VPDoc .apps-grid .app-card p {
+  grid-column: 1 / -1;
+  margin: 0;
+  color: var(--presentation-muted);
+  font-size: 15px;
+  line-height: 1.65;
+}
+html .VPDoc .apps-grid .app-actions-row {
+  grid-column: 1 / -1;
+  border-top: 1px solid var(--presentation-line);
+  padding-top: 16px;
+  margin: 0;
+  gap: 12px 18px;
+}
+html .VPDoc .apps-grid .chip {
+  border: 0;
+  padding: 0;
+  border-radius: 0;
+  background: transparent;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--presentation-muted);
+}
+html .VPDoc .apps-grid .chip-link {
+  color: var(--presentation-accent);
+  font-weight: 600;
+  text-decoration: none;
+}
+html .VPDoc .apps-grid .chip-link:hover,
+html .VPDoc .apps-grid .app-title-link:hover { text-decoration: underline; }
+@media (max-width: 720px) {
+  html .VPDoc .release-journal h1 { font-size: 30px !important; }
+  html .VPDoc .release-entry { grid-template-columns: 1fr; gap: 20px; }
+  html .VPDoc .apps-grid { grid-template-columns: 1fr; }
+}

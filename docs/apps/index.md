@@ -32,16 +32,22 @@
 </div>
 
 <div class="apps-release-timeline" aria-label="Release timeline">
+  <div class="apps-release-group">
+  <div class="apps-release-heading"><span>App</span><span>Version</span><span>Released</span></div>
   <div class="apps-release-item neon"><span class="name">Neon Vision Editor</span><span class="tag">v1.7.6</span><span class="date">2026-09-12</span></div>
   <div class="apps-release-item gitbird"><span class="name">GitBird</span><span class="tag">2.1.4</span><span class="date">2026-08-05</span></div>
   <div class="apps-release-item liquid"><span class="name">Liquid Record</span><span class="tag">1.0.1</span><span class="date">2026-08-09</span></div>
   <div class="apps-release-item metric"><span class="name">Metrics Data</span><span class="tag">0.2.6</span><span class="date">2026-06-11</span></div>
   <div class="apps-release-item newsbook"><span class="name">X-Newsbook</span><span class="tag">10</span><span class="date">2026-02-13</span></div>
+  </div>
+  <div class="apps-release-group">
+  <div class="apps-release-heading"><span>App</span><span>Version</span><span>Released</span></div>
   <div class="apps-release-item release"><span class="name">Release Assistant</span><span class="tag">0.2.0</span><span class="date">2026-05-06</span></div>
   <div class="apps-release-item sorter"><span class="name">Image Sorter</span><span class="tag">0.1</span><span class="date">2026-04-30</span></div>
   <div class="apps-release-item vistral"><span class="name">Vistral</span><span class="tag">0.1.6</span><span class="date">2026-05-09</span></div>
   <div class="apps-release-item history"><span class="name">History Vision</span><span class="tag">1.0</span><span class="date">2026-09-12</span></div>
   <div class="apps-release-item lingua"><span class="name">Lingua Latina</span><span class="tag">1.1.0</span><span class="date">2026-08-08</span></div>
+  </div>
 </div>
 
 <div class="apps-carousel" aria-label="Featured screenshots carousel">
@@ -458,26 +464,37 @@
   <span><strong>Internal alpha</strong>: internal testing and active docs</span>
 </div>
 
-## Special Section
-
-See [Code Examples](/apps/code-examples) for syntax-highlighted snippets from Neon Vision Editor, Metrics Data, and Release Assistant.
-
-## Components Overview
-
-- [Neon Vision Editor Components Overview](/apps/neon-vision-editor/components-overview)
-- [GitBird Components Overview](/apps/gitbird/components-overview)
-- [Liquid Record Components Overview](/apps/liquid-record/components-overview)
-- [Metrics Data Components Overview](/apps/metric-data/components-overview)
-- [Release Assistant Components Overview](/apps/release-assistant/components-overview)
-- [X-Newsbook Components Overview](/apps/x-newsbook/components-overview)
-- [Image Sorter Components Overview](/apps/image-sorter/components-overview)
-- [Vistral Components Overview](/apps/vistral/components-overview)
-- [History Vision Components Overview](/apps/history-vision/components-overview)
-- [Lingua Latina Components Overview](/apps/lingua-latina/components-overview)
-
-## Source Code Repositories
-
-See [GitHub Repositories](/apps/github-repositories) for repository links and current publication status.
+<div class="apps-resources">
+  <section aria-labelledby="special-section">
+    <h2 id="special-section">Code examples</h2>
+    <div>
+      <p>Syntax-highlighted snippets from Neon Vision Editor, Metrics Data, and Release Assistant.</p>
+      <a href="/apps/code-examples">Browse code examples</a>
+    </div>
+  </section>
+  <section aria-labelledby="components-overview">
+    <h2 id="components-overview">Components</h2>
+    <nav class="apps-resource-links" aria-label="App component documentation">
+      <a href="/apps/neon-vision-editor/components-overview">Neon Vision Editor</a>
+      <a href="/apps/gitbird/components-overview">GitBird</a>
+      <a href="/apps/liquid-record/components-overview">Liquid Record</a>
+      <a href="/apps/metric-data/components-overview">Metrics Data</a>
+      <a href="/apps/release-assistant/components-overview">Release Assistant</a>
+      <a href="/apps/x-newsbook/components-overview">X-Newsbook</a>
+      <a href="/apps/image-sorter/components-overview">Image Sorter</a>
+      <a href="/apps/vistral/components-overview">Vistral</a>
+      <a href="/apps/history-vision/components-overview">History Vision</a>
+      <a href="/apps/lingua-latina/components-overview">Lingua Latina</a>
+    </nav>
+  </section>
+  <section aria-labelledby="source-code-repositories">
+    <h2 id="source-code-repositories">Source code</h2>
+    <div>
+      <p>Repository links and current publication status across the app catalogue.</p>
+      <a href="/apps/github-repositories">Browse GitHub repositories</a>
+    </div>
+  </section>
+</div>
 
 <style>
 .apps-top-row {
