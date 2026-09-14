@@ -63,13 +63,13 @@
       </div>
       <span class="apps-slide-title">Neon Vision Editor</span>
     </a>
-    <a class="apps-slide metric" href="/apps/metric-data/gallery">
+    <a class="apps-slide neon" href="/apps/neon-vision-editor/gallery">
       <div class="apps-slide-media">
-        <img src="/media/metrics/dashboard-ipad-frame.png" alt="Metrics Data screenshot" />
-        <img class="apps-slide-icon" src="/icons/metric-data.png?v=20260430-1" alt="" aria-hidden="true" />
+        <img src="/media/neon/neon-ipad-editor.png" alt="Neon Vision Editor on iPad with Swift syntax highlighting and file browser" />
+        <img class="apps-slide-icon" src="/icons/neon-vision-editor.png?v=20260401-2" alt="" aria-hidden="true" />
         <span class="apps-slide-cta">open gallery</span>
       </div>
-      <span class="apps-slide-title">Metrics Data</span>
+      <span class="apps-slide-title">Neon Vision Editor on iPad</span>
     </a>
     <a class="apps-slide release" href="/apps/release-assistant/gallery">
       <div class="apps-slide-media">

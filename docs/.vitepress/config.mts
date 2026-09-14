@@ -44,10 +44,6 @@ export default defineConfig({
   themeConfig: {
     siteTitle: 'h3p apps',
     aside: false,
-    footer: {
-      message: 'Clean and modern development',
-      copyright: 'Copyright 2026 by h3p Hilthart Pedersen.'
-    },
 
     search: {
       provider: 'local'

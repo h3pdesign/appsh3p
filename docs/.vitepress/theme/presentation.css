@@ -1,12 +1,16 @@
 /* Shared catalogue and release surfaces, isolated from legacy Markdown decoration. */
-html .VPFooter { display: none; }
-html body .h3p-app-site-footer {
+html .VPHome { margin-bottom: 0 !important; }
+html .VPHome > .vp-doc.container { background: transparent !important; }
+html .VPHome .h3p-home-v2 { padding-bottom: 0; }
+html .VPHome .h3p-home-resources { padding-bottom: 40px; border-bottom: 0; }
+
+html:root body footer.h3p-app-site-footer {
   margin: 0;
-  padding: 48px max(24px, calc((100% - 1200px) / 2)) 24px;
+  padding: 32px max(88px, calc((100% - 1272px) / 2)) 24px;
   border: 0;
   border-top: 1px solid #dde1e6;
   border-radius: 0;
-  background: #fff;
+  background: #f5f6f8;
   color: #20242b;
   box-shadow: none;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -24,9 +28,15 @@ html body .h3p-app-site-footer a::after { display: none; }
 html body .h3p-app-site-footer a:hover { color: #087f72; text-decoration: underline; text-underline-offset: 4px; }
 html body .h3p-app-site-footer a:focus-visible { outline: 2px solid #087f72; outline-offset: 3px; }
 html body .h3p-footer-bottom { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px 24px; margin-top: 32px; padding-top: 20px; border-top: 1px solid #dde1e6; color: #626b78; font-size: 12px; line-height: 20px; }
-html.dark body .h3p-app-site-footer { background: #1c1f23; color: #eef1f4; border-color: #353b43; }
+html:root.dark body footer.h3p-app-site-footer { background: #080b10; color: #eef1f4; border-color: #353b43; }
 html.dark body .h3p-app-site-footer :is(p,a,.h3p-footer-bottom) { color: #adb5c0; border-color: #353b43; }
 html.dark body .h3p-app-site-footer a:hover { color: #67d7ba; }
+@media (max-width: 959px) {
+  html:root body footer.h3p-app-site-footer { padding-inline: 52px; }
+}
+@media (max-width: 767px) {
+  html:root body footer.h3p-app-site-footer { padding-inline: 44px; }
+}
 @media (max-width: 1000px) {
   html body .h3p-app-site-footer-inner { grid-template-columns: 1fr; gap: 32px; }
   html body .h3p-app-site-footer-brand p { max-width: 350px; }
