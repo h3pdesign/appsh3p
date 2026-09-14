@@ -3,6 +3,78 @@
   "methodology": "Source review confirms what the cited report states, not independent ground truth. Dates describe source coverage, not refresh time. Historical map coverage is selective; coordinates are approximate locality references, not verified impact coordinates.",
   "metric_reviews": {
     "iran_2026": {
+      "iran_killed": {
+        "value": 3636, "value_prefix": ">=", "label": "Iran Deaths Documented by HRANA",
+        "verification_status": "reported_claim", "reported_as_of": "2026-04-07",
+        "source_name": "HRANA, day 39 report",
+        "source_url": "https://www.en-hrana.org/day-39-of-u-s-and-israeli-attacks-on-iran-extensive-damage-to-the-rail-network-and-roads/",
+        "scope": "28 February-7 April 2026: 1,701 civilian, 1,221 military and 714 unclassified deaths. Not a September total.",
+        "verification_note": "Sum of HRANA's three non-overlapping categories; classifications remain subject to revision."
+      },
+      "iran_injured": {
+        "value": 32314, "value_prefix": ">", "label": "Iran Injuries Reported by Health Ministry",
+        "verification_status": "reported_claim", "reported_as_of": "2026-04-07",
+        "source_name": "WHO EMRO, situation report 6, citing Iran MoH",
+        "source_url": "https://www.emro.who.int/images/stories/eha/ME-Sitrep-6-16-April-26.pdf",
+        "scope": "Ministry total through 7 April, published by WHO on 16 April. Not independently verified or a September count.",
+        "verification_note": "WHO reports more than 32,314 injuries; no severity-specific breakdown used."
+      },
+      "israel_killed": {
+        "value": 22, "label": "Deaths in Israel from Direct Missile / Rocket Strikes",
+        "verification_status": "reported_claim", "reported_as_of": "2026-04-08",
+        "source_name": "Ynet, Operation Roaring Lion casualty review",
+        "source_url": "https://www.ynetnews.com/article/ry2wuxnnzl",
+        "scope": "First 40 days, ending at the April ceasefire. Includes fire from Iran and Lebanon and victims of different nationalities. Excludes combat abroad and indirect deaths.",
+        "verification_note": "Uses the explicit 22 direct-strike deaths, not the broader 42-person war-related tally."
+      },
+      "israel_injured": {
+        "value": 7834, "label": "Israel Hospital Evacuations Reported",
+        "verification_status": "reported_claim", "reported_as_of": "2026-04-17",
+        "source_name": "Israel Ministry of Health",
+        "source_url": "https://www.gov.il/en/pages/17042026-02",
+        "scope": "Operation Roaring Lion cumulative hospital evacuations through 17 April, 07:00 local time. Broader than confirmed direct-strike wounds.",
+        "verification_note": "Official bulletin reports 7,834 injured persons evacuated to hospitals; 78 remained hospitalized."
+      },
+      "us_killed": {
+        "value": 18, "label": "US Service Member Deaths Reported",
+        "verification_status": "reported_claim", "reported_as_of": "2026-08-21",
+        "source_name": "Pentagon DCAS via FOX 5 DC",
+        "source_url": "https://www.fox5dc.com/news/pentagon-updates-casualty-count-iran-conflict.amp",
+        "scope": "Combined Operation Epic Fury and subsequent Overseas Operations tally. Includes operational deaths, not only hostile-fire deaths.",
+        "verification_note": "Published tally of 18; not a live September count."
+      },
+      "us_seriously_injured": {
+        "value": 757, "label": "US Service Members Wounded (All Severities)",
+        "verification_status": "reported_claim", "reported_as_of": "2026-08-21",
+        "source_name": "Pentagon DCAS via FOX 5 DC",
+        "source_url": "https://www.fox5dc.com/news/pentagon-updates-casualty-count-iran-conflict.amp",
+        "scope": "Epic Fury and Overseas Operations combined. Replaces the incorrect seriously-injured label. Not a September live count.",
+        "verification_note": "Article reports 757 overall, although its service subtotals sum to 756. Displayed as a reported claim, not an audited total."
+      },
+      "missiles_total_2026": {
+        "value": 563, "label": "Missiles UAE Reports Intercepting",
+        "verification_status": "reported_claim", "reported_as_of": "2026-04-08",
+        "source_name": "UAE Ministry of Defence via Khaleej Times",
+        "source_url": "https://www.khaleejtimes.com/uae/uae-intercepts-17-ballistic-missiles-35-drones-april-8",
+        "scope": "UAE only: 537 ballistic plus 26 cruise missiles since the conflict began. Replaces the unsupported regional launch total; not impact sites.",
+        "verification_note": "Official interception claim, not independently established interceptions or all Iranian launches."
+      },
+      "drones_total_2026": {
+        "value": 2256, "label": "Drones UAE Reports Intercepting",
+        "verification_status": "reported_claim", "reported_as_of": "2026-04-08",
+        "source_name": "UAE Ministry of Defence via Khaleej Times",
+        "source_url": "https://www.khaleejtimes.com/uae/uae-intercepts-17-ballistic-missiles-35-drones-april-8",
+        "scope": "UAE cumulative claim. Replaces the unsupported region-wide drone launch count. Does not establish individual map locations.",
+        "verification_note": "The cited report attributes 2,256 interceptions to UAE air defence."
+      },
+      "air_strikes_total_2026": {
+        "value": 3603, "label": "US-Israeli Strike Events (ACLED)",
+        "verification_status": "reported_claim", "reported_as_of": "2026-09-07",
+        "source_name": "ACLED Iran crisis data, 10 September release",
+        "source_url": "https://acleddata.com/iran-crisis-live",
+        "scope": "28 February-7 September. Location/day events include air, missile and drone attacks, including interceptions; not individual weapons or solely airstrikes.",
+        "verification_note": "ACLED's published cumulative event count; subject to verification and revision."
+      },
       "air_defense_intercepts_7d": {
         "value": 2228, "label": "UAE Air Defence Engagements",
         "verification_status": "reported_claim", "reported_as_of": "2026-03-27",
@@ -21,6 +93,62 @@
       }
     },
     "ukraine_2026": {
+      "russia_killed_reported": {
+        "value": 400000, "value_upper": 450000, "label": "Russian Military Deaths (CSIS Estimate)",
+        "verification_status": "reported_claim", "reported_as_of": "2026-06-30",
+        "source_name": "Center for Strategic and International Studies",
+        "source_url": "https://www.csis.org/analysis/russian-blood-and-treasure-ballooning-costs-putins-war",
+        "scope": "Estimated range for February 2022-June 2026. Not a named-person verified count or September total.",
+        "verification_note": "CSIS estimates 400,000-450,000 military fatalities."
+      },
+      "russia_injured_reported": {
+        "value": 1400000, "value_prefix": "~", "label": "Russian Military Casualties (CSIS Estimate)",
+        "verification_status": "reported_claim", "reported_as_of": "2026-06-30",
+        "source_name": "Center for Strategic and International Studies",
+        "source_url": "https://www.csis.org/analysis/russian-blood-and-treasure-ballooning-costs-putins-war",
+        "scope": "February 2022-June 2026; includes killed, wounded and missing. Replaces the unsupported wounded-only count. Deaths are already included; do not add the cards.",
+        "verification_note": "No wounded-only estimate can be derived by subtracting fatalities because missing personnel are included."
+      },
+      "ukraine_strike_incidents_7d": {
+        "value": 1181, "label": "Air and Drone Strike Events",
+        "verification_status": "reported_claim", "reported_as_of": "2026-09-04",
+        "source_name": "ACLED Ukraine weekly update",
+        "source_url": "https://acleddata.com/monitor/ukraine-conflict-monitor",
+        "scope": "29 August-4 September 2026. Event counts, not individual weapons.",
+        "verification_note": "Published weekly ACLED count, subject to revision."
+      },
+      "critical_infra_impacts_7d_ua": {
+        "value": 242, "label": "Russian Attacks on Civilian Infrastructure",
+        "verification_status": "reported_claim", "reported_as_of": "2026-09-04",
+        "source_name": "ACLED Ukraine weekly update",
+        "source_url": "https://acleddata.com/monitor/ukraine-conflict-monitor",
+        "scope": "29 August-4 September 2026. Attack events, not unique damaged facilities.",
+        "verification_note": "Infrastructure subcategories overlap and must not be summed."
+      },
+      "frontline_pressure_index": {
+        "value": 487, "label": "Armed Clashes (Weekly Events)",
+        "verification_status": "reported_claim", "reported_as_of": "2026-09-04",
+        "source_name": "ACLED Ukraine weekly update",
+        "source_url": "https://acleddata.com/monitor/ukraine-conflict-monitor",
+        "scope": "29 August-4 September 2026. Replaces the unsupported pressure index with a documented event count.",
+        "verification_note": "Not a percentage, territorial gain measure or intensity score."
+      },
+      "ukraine_energy_sites_damaged_30d": {
+        "value": 43, "label": "Energy Infrastructure Attack Events (Weekly)",
+        "verification_status": "reported_claim", "reported_as_of": "2026-09-04",
+        "source_name": "ACLED Ukraine weekly update",
+        "source_url": "https://acleddata.com/monitor/ukraine-conflict-monitor",
+        "scope": "29 August-4 September 2026. Replaces the unsupported 30-day damaged-site count; events can affect the same site more than once.",
+        "verification_note": "Energy-tagged events are a subset of infrastructure attacks, not additional events."
+      },
+      "ukraine_displaced_population_m": {
+        "value": 3871000, "label": "Internally Displaced People in Ukraine",
+        "verification_status": "reported_claim", "reported_as_of": "2026-06-30",
+        "source_name": "IOM estimate via UNHCR data portal",
+        "source_url": "https://data.unhcr.org/en/country/ukr/751",
+        "scope": "People displaced within Ukraine as of 30 June. Excludes refugees abroad; displayed in people, not millions.",
+        "verification_note": "Survey-based population estimate, not a complete individual registry."
+      },
       "ukr_civilians_killed_reported": {
         "value": 16874, "value_prefix": ">=", "label": "Ukraine Civilian Deaths Verified by OHCHR",
         "verification_status": "source_verified", "reported_as_of": "2026-08-13",
@@ -39,7 +167,24 @@
       }
     }
   },
+  "metric_gaps": {
+    "total_reported_killed": "No comparable regional total: reviewed reports cover different dates, countries and direct/indirect deaths. Adding these cards would misrepresent coverage.",
+    "total_reported_injured": "No comparable regional total: hospital evacuations and wounded-person reports use different definitions and dates. The country reports remain available separately.",
+    "conflict_duration_days": "Elapsed time since 28 February is not active combat duration: ceasefires and subsequent operations interrupt the period. No continuous-war duration asserted.",
+    "ukraine_intercepts_7d": "No substantiated seven-day interception total for the reviewed week. ACLED strike events include attacks, not a successful-interception count.",
+    "ukraine_drone_wave_incidents_7d": "No separately substantiated drone-wave count. The documented combined air/drone event count is shown under operations; a wave and a location/day event are not equivalent.",
+    "ukraine_frontline_settlement_changes_7d": "No independently reconciled weekly settlement-change count. ACLED describes advances but warns of exaggerated control claims; armed clashes do not measure territorial changes."
+  },
   "historical_events": [
+    {"conflict_id":"ukraine_2026","point_key":"kramatorsk-2022-04-08","name":"Kramatorsk railway station missile attack","occurred_on":"2022-04-08","type":"missiles","lat":48.74,"lng":37.59,"source":"SITU Research / Human Rights Watch investigation","source_url":"https://situ.nyc/research/projects/death-at-the-station-russian-cluster-munition-attack-in-kramatorsk-ukraine","verification_note":"Joint investigation dates the railway station attack to 8 April 2022. City-level marker rather than exact detonation coordinates."},
+    {"conflict_id":"ukraine_2026","point_key":"hroza-2023-10-05","name":"Hroza funeral reception missile attack","occurred_on":"2023-10-05","type":"missiles","lat":49.67,"lng":37.21,"source":"OHCHR / UN Human Rights Monitoring Mission","source_url":"https://ukraine.un.org/sites/default/files/2023-10/attack-funeral-reception-hroza-report-en_0.pdf","verification_note":"OHCHR investigation identifies the 5 October 2023 reception attack and assesses a likely Iskander missile. Approximate village reference."},
+    {"conflict_id":"iran_2026","point_key":"minab-2026-02-28","name":"Minab school missile strike","occurred_on":"2026-02-28","type":"missiles","lat":27.15,"lng":57.08,"source":"OHCHR experts statement, reproduced by ecoi.net","source_url":"https://www.ecoi.net/en/document/2137848.html","verification_note":"UN experts describe the school strike on 28 February and call for investigation. Attribution and casualty reports are not treated as independently settled. Approximate city reference."},
+    {"conflict_id":"iran_2026","point_key":"tel-aviv-2026-02-28","name":"Tel Aviv apartment missile strike","occurred_on":"2026-02-28","type":"missiles","lat":32.08,"lng":34.78,"source":"Ynet casualty review","source_url":"https://www.ynetnews.com/article/ry2wuxnnzl","verification_note":"Report dates the apartment strike to 28 February. City reference, not an exact impact point."},
+    {"conflict_id":"iran_2026","point_key":"yehud-2026-03-09","name":"Yehud workplace missile strike","occurred_on":"2026-03-09","type":"missiles","lat":32.03,"lng":34.89,"source":"Ynet casualty review","source_url":"https://www.ynetnews.com/article/ry2wuxnnzl","verification_note":"Report identifies a workplace strike on 9 March. Approximate locality reference."},
+    {"conflict_id":"iran_2026","point_key":"ramat-gan-2026-03-18","name":"Ramat Gan apartment missile strike","occurred_on":"2026-03-18","type":"missiles","lat":32.08,"lng":34.82,"source":"Ynet casualty review","source_url":"https://www.ynetnews.com/article/ry2wuxnnzl","verification_note":"Report identifies the apartment strike on 18 March. City reference only."},
+    {"conflict_id":"iran_2026","point_key":"haifa-2026-04-05","name":"Haifa residential building missile strike","occurred_on":"2026-04-05","type":"missiles","lat":32.79,"lng":34.99,"source":"Ynet casualty review","source_url":"https://www.ynetnews.com/article/ry2wuxnnzl","verification_note":"Occurrence date is 5 April, not the subsequent recovery of victims. Approximate city reference."},
+    {"conflict_id":"iran_2026","point_key":"fujairah-2026-05-04","name":"Fujairah oil facility drone attack","occurred_on":"2026-05-04","type":"drones","lat":25.13,"lng":56.33,"source":"Belga / Brussels Times, citing UAE authorities","source_url":"https://www.brusselstimes.com/world/2112929/three-injured-in-attack-on-major-oil-site-in-uae","verification_note":"Authorities report a drone attack and fire on 4 May. Attribution is an official claim; marker is a Fujairah locality reference, not the facility coordinates."},
+    {"conflict_id":"ukraine_2026","point_key":"kyiv-2026-08-31","name":"Kyiv drone and ballistic missile attack","occurred_on":"2026-08-31","type":"missiles","lat":50.45,"lng":30.52,"source":"ACLED Ukraine weekly update, 29 August-4 September","source_url":"https://acleddata.com/monitor/ukraine-conflict-monitor","verification_note":"ACLED dates the combined attack to 31 August. One city reference for the reported attack, not a marker for every weapon."},
     {"conflict_id":"iran_2026","point_key":"tamra-2025-06-14","name":"Tamra residential missile strike","occurred_on":"2025-06-14","type":"missiles","lat":32.85,"lng":35.20,"source":"Human Rights Watch field investigation","source_url":"https://www.hrw.org/news/2025/09/04/iran-missile-strikes-on-israeli-civilians-likely-war-crimes","verification_note":"HRW documents a residential missile impact in Tamra on 14 June. Locality-level marker; exact impact coordinates not asserted."},
     {"conflict_id":"iran_2026","point_key":"bat-yam-2025-06-15","name":"Bat Yam apartment missile strike","occurred_on":"2025-06-15","type":"missiles","lat":32.02,"lng":34.75,"source":"Human Rights Watch field investigation","source_url":"https://www.hrw.org/news/2025/09/04/iran-missile-strikes-on-israeli-civilians-likely-war-crimes","verification_note":"HRW documents the 15 June apartment strike using site visits, witnesses and geolocated footage. City-level marker."},
     {"conflict_id":"iran_2026","point_key":"petah-tikva-2025-06-16","name":"Petah Tikva residential missile strike","occurred_on":"2025-06-16","type":"missiles","lat":32.09,"lng":34.88,"source":"Human Rights Watch field investigation","source_url":"https://www.hrw.org/news/2025/09/04/iran-missile-strikes-on-israeli-civilians-likely-war-crimes","verification_note":"HRW documents the 16 June strike through witnesses and verified CCTV. City-level marker."},

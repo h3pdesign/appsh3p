@@ -24,9 +24,10 @@ export function applyReviewedEvidence(payload, evidence) {
         source: 'No reviewed metric-specific evidence', source_name: 'No reviewed metric-specific evidence',
         source_url: '', updated_at_utc: null, reported_as_of: null,
         scope: 'No substantiated figure for this metric and reporting period.', note: '', primary_source_index: null,
-        verification_note: 'Previous figure could not be substantiated for its stated scope and reporting period. Withheld pending evidence.'
+        verification_note: evidence.metric_gaps?.[metric.id] || 'Previous figure could not be substantiated for its stated scope and reporting period. Withheld pending evidence.'
       }
-      return { ...metric, ...review, source: review.source_name, note: review.verification_note,
+      return { ...metric, ...review, value_prefix: review.value_prefix || '', value_upper: review.value_upper ?? null,
+        source: review.source_name, note: review.verification_note,
         confidence: review.verification_status === 'source_verified' ? 'Source verified' : 'Reported claim',
         reviewed_on: evidence.reviewed_on, updated_at_utc: review.reported_as_of }
     })

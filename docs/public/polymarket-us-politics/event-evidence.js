@@ -49,18 +49,27 @@ globalThis.EventEvidence = (() => {
     return feed;
   }
   function renderMetricReview(card, metric, value, badge, delta) {
-    const supported = ['source_verified', 'reported_claim'].includes(metric.verification_status);
-    value.textContent = supported ? (metric.value_prefix || '') + Number(metric.value).toLocaleString('en-US') : 'Unavailable';
+    const supported = ['source_verified', 'reported_claim'].includes(metric.verification_status) && typeof metric.value === 'number' && Number.isFinite(metric.value);
+    value.textContent = supported ? (metric.value_prefix || '') + metric.value.toLocaleString('en-US') + (Number.isFinite(metric.value_upper) ? ' - ' + metric.value_upper.toLocaleString('en-US') : '') : 'Not established';
     badge.textContent = supported ? (metric.verification_status === 'source_verified' ? 'Source verified' : 'Reported claim') : 'Unverified';
     badge.title = metric.verification_note || 'No reviewed evidence';
     badge.setAttribute('aria-label', badge.textContent + ': ' + badge.title);
     card.querySelectorAll('.metric-card-source-dot, .metric-card-scope-dot').forEach(node => node.remove());
-    value.style.fontSize = supported ? '' : '24px';
+    value.style.fontSize = supported && !Number.isFinite(metric.value_upper) ? '' : '24px';
     delta.textContent = '';
     const note = document.createElement('p');
     note.className = 'metric-evidence-note';
     note.textContent = supported ? 'Reported as of ' + metric.reported_as_of + ' · Reviewed ' + metric.reviewed_on + '. ' + metric.scope : metric.verification_note;
     card.appendChild(note);
+    if (supported && metric.verification_note) {
+      const details = document.createElement('details');
+      const summary = document.createElement('summary');
+      summary.textContent = 'Evidence limitations';
+      const explanation = document.createElement('p');
+      explanation.textContent = metric.verification_note;
+      details.append(summary, explanation);
+      card.appendChild(details);
+    }
     if (supported) {
       const link = document.createElement('a');
       link.href = metric.source_url;
