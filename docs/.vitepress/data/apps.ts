@@ -51,7 +51,7 @@ export const appCatalog: AppCatalogEntry[] = [
   },
   {
     slug: 'x-newsbook', name: 'X-Newsbook', category: 'Reading and news library',
-    description: 'A calm, reading-first home for feeds, saved stories, and context.', icon: '/icons/x-newsbook.png?v=20260430-1',
+    description: 'A calm, reading-first home for feeds, saved stories, and context.', icon: '/icons/x-newsbook.png?v=20260914-1',
     status: 'private', statusLabel: 'Private beta', version: '10', releaseDate: '2026-02-13', platforms: ['macOS', 'iPadOS', 'iOS'],
     useCases: ['reading', 'research'], overview: '/apps/x-newsbook/overview', installation: '/apps/x-newsbook/installation', changelog: '/apps/x-newsbook/changelog', privacy: '/policies/privacy-policy',
     installLabel: 'Request access', installUrl: '/support/support-and-feedback', privacySummary: 'Covered by the website privacy policy; no public download is listed.'

@@ -213,7 +213,7 @@
   </article>
 
   <article class="app-card app-card-newsbook" data-changelog="/apps/x-newsbook/changelog" data-status="private" data-platforms="macos,ipados,ios" data-use-cases="reading,research">
-    <img src="/icons/x-newsbook.png?v=20260430-1" alt="X-Newsbook icon" class="app-icon" />
+    <img src="/icons/x-newsbook.png?v=20260914-1" alt="X-Newsbook icon" class="app-icon" />
     <div class="app-card-content">
       <h3 class="app-title-row"><a class="app-title-link" href="/apps/x-newsbook/overview">X-Newsbook</a><span class="app-status app-status-private">Private beta</span></h3>
       <div class="app-card-meta-row">

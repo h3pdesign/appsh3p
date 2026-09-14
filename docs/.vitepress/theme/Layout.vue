@@ -725,7 +725,7 @@ function ensureHomeWidgets() {
           <a href="/apps/gitbird/overview"><img src="/icons/gitbird.png" alt="GitBird" width="22" height="22" loading="lazy" decoding="async" /></a>
           <a href="/apps/liquid-record/overview"><img src="/icons/liquid-record.png" alt="Liquid Record" width="22" height="22" loading="lazy" decoding="async" /></a>
           <a href="/apps/metric-data/overview"><img src="/icons/metric-data.png" alt="Metrics Data" width="22" height="22" loading="lazy" decoding="async" /></a>
-          <a href="/apps/x-newsbook/overview"><img src="/icons/x-newsbook.png" alt="X-Newsbook" width="22" height="22" loading="lazy" decoding="async" /></a>
+          <a href="/apps/x-newsbook/overview"><img src="/icons/x-newsbook.png?v=20260914-1" alt="X-Newsbook" width="22" height="22" loading="lazy" decoding="async" /></a>
           <a href="/apps/release-assistant/overview"><img src="/icons/release-assistant.png" alt="Release Assistant" width="22" height="22" loading="lazy" decoding="async" /></a>
           <a href="/apps/image-sorter/overview"><img src="/icons/image-sorter.png?v=20260914-1" alt="Image Sorter" width="22" height="22" loading="lazy" decoding="async" /></a>
           <a href="/apps/vistral/overview"><img src="/icons/vistral.png" alt="Vistral" width="22" height="22" loading="lazy" decoding="async" /></a>
