@@ -6,7 +6,7 @@
   --glass-rim: rgb(255 255 255 / 90%);
   --glass-glint: rgb(255 255 255 / 25%);
   --glass-top-light: rgb(255 255 255 / 13%);
-  --glass-accent: #104c9c;
+  --glass-accent: #2458ff;
 }
 :root.dark, :root[data-theme='dark'] {
   --glass-fill: rgb(39 54 69 / 46%);
@@ -15,9 +15,6 @@
   --glass-rim: rgb(255 255 255 / 31%);
   --glass-glint: rgb(255 255 255 / 13%);
   --glass-top-light: rgb(255 255 255 / 10%);
-}
-:root[data-theme] {
-  --glass-accent: #005d59;
 }
 html body .glass-control {
   background-color: var(--glass-fill) !important;
@@ -30,6 +27,11 @@ html body .glass-control {
   backdrop-filter: blur(16px) saturate(145%);
   transition: background-color .16s ease, border-color .16s ease, box-shadow .16s ease;
   text-shadow: none !important;
+  text-decoration: none !important;
+}
+html body .glass-control:is(:hover, :focus-visible),
+html body .glass-control:is(:hover, :focus-visible) * {
+  text-decoration: none !important;
 }
 html body :is(.VPNav, .topbar, .theme-switches) .glass-control {
   -webkit-backdrop-filter: none;
@@ -37,7 +39,7 @@ html body :is(.VPNav, .topbar, .theme-switches) .glass-control {
 }
 html body .glass-control:is(.brand, .h3p-button-primary, .h3p-app-action-primary, .is-active, .active, [aria-pressed='true'], [aria-selected='true']),
 html body .theme-switches input:checked + .glass-control {
-  background-color: color-mix(in srgb, var(--glass-accent) 88%, transparent) !important;
+  background-color: color-mix(in srgb, var(--glass-accent) 89%, transparent) !important;
   color: #fff !important;
   --glass-glint: rgb(255 255 255 / 18%);
   --glass-top-light: rgb(255 255 255 / 23%);
