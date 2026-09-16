@@ -1,0 +1,98 @@
+/* Shared control material. Keep layout, icons, and content layers owned by the host. */
+:root {
+  --glass-fill: rgb(243 249 255 / 43%);
+  --glass-ink: #202c3b;
+  --glass-line: rgb(84 110 138 / 29%);
+  --glass-rim: rgb(255 255 255 / 90%);
+  --glass-glint: rgb(255 255 255 / 25%);
+  --glass-top-light: rgb(255 255 255 / 13%);
+  --glass-accent: #104c9c;
+}
+:root.dark, :root[data-theme='dark'] {
+  --glass-fill: rgb(39 54 69 / 46%);
+  --glass-ink: #f3f7fb;
+  --glass-line: rgb(190 216 232 / 33%);
+  --glass-rim: rgb(255 255 255 / 31%);
+  --glass-glint: rgb(255 255 255 / 13%);
+  --glass-top-light: rgb(255 255 255 / 10%);
+}
+:root[data-theme] {
+  --glass-accent: #005d59;
+}
+html body .glass-control {
+  background-color: var(--glass-fill) !important;
+  background-image: linear-gradient(180deg, var(--glass-top-light), transparent 58%), radial-gradient(circle 64px at var(--glass-x, 50%) var(--glass-y, -80px), var(--glass-glint), transparent 100%) !important;
+  color: var(--glass-ink) !important;
+  border: 1px solid var(--glass-line) !important;
+  border-radius: 8px;
+  box-shadow: inset 0 1px 0 var(--glass-rim), 0 1px 2px rgb(18 38 58 / 9%) !important;
+  -webkit-backdrop-filter: blur(16px) saturate(145%);
+  backdrop-filter: blur(16px) saturate(145%);
+  transition: background-color .16s ease, border-color .16s ease, box-shadow .16s ease;
+  text-shadow: none !important;
+}
+html body :is(.VPNav, .topbar, .theme-switches) .glass-control {
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
+html body .glass-control:is(.brand, .h3p-button-primary, .h3p-app-action-primary, .is-active, .active, [aria-pressed='true'], [aria-selected='true']),
+html body .theme-switches input:checked + .glass-control {
+  background-color: color-mix(in srgb, var(--glass-accent) 88%, transparent) !important;
+  color: #fff !important;
+  --glass-glint: rgb(255 255 255 / 18%);
+  --glass-top-light: rgb(255 255 255 / 23%);
+  border-color: rgb(255 255 255 / 38%) !important;
+}
+@media (hover: hover) and (pointer: fine) {
+  html body .glass-control:not(:disabled):not([aria-disabled='true']):hover {
+    --glass-glint: rgb(255 255 255 / 36%);
+    border-color: rgb(87 125 155 / 46%) !important;
+    box-shadow: inset 0 1px 0 var(--glass-rim), 0 1px 3px rgb(18 38 58 / 13%) !important;
+    transform: none !important;
+  }
+}
+html body .glass-control:not(:disabled):not([aria-disabled='true']):active {
+  box-shadow: inset 0 1px 3px rgb(19 46 67 / 20%) !important;
+  filter: brightness(.97);
+}
+html body .glass-control:focus-visible,
+html body .theme-switches input:focus-visible + .glass-control {
+  outline: 3px solid #008aaf !important;
+  outline-offset: 3px !important;
+}
+html body .glass-control:is(:disabled, [aria-disabled='true']) {
+  opacity: .5;
+  cursor: not-allowed;
+}
+@supports not (backdrop-filter: blur(1px)) {
+  html body .glass-control { --glass-fill: #edf2f7; }
+  html.dark body .glass-control, html[data-theme='dark'] body .glass-control { --glass-fill: #25323d; }
+}
+html.no-hero-fx body .glass-control {
+  background-image: none !important;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  transition: none !important;
+}
+@media (prefers-reduced-motion: reduce) {
+  html body .glass-control { transition: none !important; animation: none !important; transform: none !important; }
+}
+@media (prefers-reduced-transparency: reduce), (prefers-contrast: more) {
+  html body .glass-control {
+    --glass-fill: #edf2f7;
+    background-image: none !important;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+  html.dark body .glass-control, html[data-theme='dark'] body .glass-control { --glass-fill: #25323d; }
+}
+@media (forced-colors: active) {
+  html body .glass-control {
+    forced-color-adjust: auto;
+    background: ButtonFace !important;
+    color: ButtonText !important;
+    border: 1px solid ButtonText !important;
+    box-shadow: none !important;
+    backdrop-filter: none;
+  }
+}
