@@ -10,7 +10,7 @@ export default defineConfig({
   },
   head: [
     ['link', { rel: 'stylesheet', href: '/glass-controls.css?v=2' }],
-    ['script', { src: '/glass-controls.js', defer: '' }],
+    ['script', { src: '/glass-controls.js?v=2', defer: '' }],
     ['meta', { name: 'robots', content: 'index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1' }],
     ['meta', { name: 'author', content: 'H3P' }],
     ['meta', { name: 'theme-color', content: '#0b7cff' }],

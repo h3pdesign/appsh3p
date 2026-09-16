@@ -1,7 +1,7 @@
 (() => {
   if (window.h3pGlassControls) return;
   window.h3pGlassControls = true;
-  const selector = 'button, input[type="button"], input[type="submit"], a[role="button"], .VPButton, .h3p-button, .chip-link, .h3p-app-action-links a, .h3p-app-switcher a, .h3p-page-feedback-actions a, .h3p-back-apps-fab, .h3p-aside-cmd-cta, .startpage-hero-secondary-cta, .startpage-testimonial-cta, .h3p-nav-search-hint, .apps-slide-cta, .theme-switches span, .leaflet-bar a';
+  const selector = 'button, input[type="button"], input[type="submit"], a[role="button"], .VPButton, .h3p-button, .chip-link, .h3p-app-action-links a, .h3p-page-feedback-actions a, .h3p-back-apps-fab, .h3p-aside-cmd-cta, .startpage-hero-secondary-cta, .startpage-testimonial-cta, .h3p-nav-search-hint, .apps-slide-cta, .theme-switches span, .leaflet-bar a';
   const excluded = '.leaflet-marker-icon, .leaflet-interactive, [data-glass="off"], .VPSwitch, .VPNavBarHamburger';
   function decorate(root) {
     if (!(root instanceof Element || root instanceof Document)) return;
