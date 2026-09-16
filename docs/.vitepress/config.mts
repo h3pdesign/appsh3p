@@ -9,7 +9,7 @@ export default defineConfig({
     hostname: 'https://apps-h3p.com'
   },
   head: [
-    ['link', { rel: 'stylesheet', href: '/glass-controls.css' }],
+    ['link', { rel: 'stylesheet', href: '/glass-controls.css?v=2' }],
     ['script', { src: '/glass-controls.js', defer: '' }],
     ['meta', { name: 'robots', content: 'index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1' }],
     ['meta', { name: 'author', content: 'H3P' }],

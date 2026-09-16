@@ -7,6 +7,8 @@
   --glass-glint: rgb(255 255 255 / 25%);
   --glass-top-light: rgb(255 255 255 / 13%);
   --glass-accent: #2458ff;
+  --glass-accent-ink: #1745dc;
+  --glass-accent-fill: color-mix(in srgb, var(--glass-accent) 17%, transparent);
 }
 :root.dark, :root[data-theme='dark'] {
   --glass-fill: rgb(39 54 69 / 46%);
@@ -15,6 +17,8 @@
   --glass-rim: rgb(255 255 255 / 31%);
   --glass-glint: rgb(255 255 255 / 13%);
   --glass-top-light: rgb(255 255 255 / 10%);
+  --glass-accent-ink: #d5e0ff;
+  --glass-accent-fill: color-mix(in srgb, var(--glass-accent) 30%, transparent);
 }
 html body .glass-control {
   background-color: var(--glass-fill) !important;
@@ -39,11 +43,12 @@ html body :is(.VPNav, .topbar, .theme-switches) .glass-control {
 }
 html body .glass-control:is(.brand, .h3p-button-primary, .h3p-app-action-primary, .is-active, .active, [aria-pressed='true'], [aria-selected='true']),
 html body .theme-switches input:checked + .glass-control {
-  background-color: color-mix(in srgb, var(--glass-accent) 89%, transparent) !important;
-  color: #fff !important;
-  --glass-glint: rgb(255 255 255 / 18%);
-  --glass-top-light: rgb(255 255 255 / 23%);
-  border-color: rgb(255 255 255 / 38%) !important;
+  background-color: var(--glass-accent-fill) !important;
+  color: var(--glass-accent-ink) !important;
+  --glass-glint: rgb(255 255 255 / 42%);
+  --glass-top-light: rgb(255 255 255 / 34%);
+  border-color: color-mix(in srgb, var(--glass-accent) 48%, transparent) !important;
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 94%), 0 2px 5px rgb(36 88 255 / 12%) !important;
 }
 @media (hover: hover) and (pointer: fine) {
   html body .glass-control:not(:disabled):not([aria-disabled='true']):hover {
@@ -82,11 +87,15 @@ html.no-hero-fx body .glass-control {
 @media (prefers-reduced-transparency: reduce), (prefers-contrast: more) {
   html body .glass-control {
     --glass-fill: #edf2f7;
+    --glass-accent-fill: #e6edff;
     background-image: none !important;
     backdrop-filter: none;
     -webkit-backdrop-filter: none;
   }
-  html.dark body .glass-control, html[data-theme='dark'] body .glass-control { --glass-fill: #25323d; }
+  html.dark body .glass-control, html[data-theme='dark'] body .glass-control {
+    --glass-fill: #25323d;
+    --glass-accent-fill: #283c72;
+  }
 }
 @media (forced-colors: active) {
   html body .glass-control {
