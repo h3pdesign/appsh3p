@@ -10,7 +10,22 @@ head:
 
 # Neon Vision Editor Changelog
 
-_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on September 14, 2026._
+_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on September 16, 2026._
+
+## v1.8.1 (published September 16, 2026)
+
+Release link: [GitHub Release v1.8.1](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v1.8.1)
+
+- Gives iPhone and iPad a compact bottom editor toolbar with easier access to tools while keeping more code visible.
+- Makes editor controls, status, and keyboard shortcuts easier to read in light and dark appearances.
+- Brings preview and terminal surfaces into line with the selected editor theme.
+- Adds a horizontally scrollable iPhone toolbar and an adaptive-width iPad toolbar; compact controls appear while scrolling.
+- Keeps the mobile editor keyboard toolbar visible by default and adds a setting to control it.
+- Uses system Liquid Glass for supported controls and respects system glass and accessibility appearance settings.
+- Adds Markdown theme selection to the iPad preview menu.
+- Keeps the mobile keyboard toolbar clear of the editor and on-screen keyboard, with a frosted surface in light and dark mode.
+- Centers and collapses the mobile editor status above the bottom toolbar, then hides it while scrolling.
+- Aligns preview headers and uses the editor theme for project cards and terminal surfaces.
 
 ## v1.8.0 (published September 14, 2026)
 
@@ -87,7 +102,6 @@ Release link: [GitHub Release v1.7.2](https://github.com/h3pdesign/Neon-Vision-E
 - Prevents mobile tabs and toolbar controls from clipping at the edges during selection and scrolling.
 - Prevents interrupted macOS window drags from extending editor text selection.
 - Starts macOS syntax highlighting as soon as the selected tab viewport is available.
-
 ## v1.7.1 (published September 9, 2026)
 
 Release link: [GitHub Release v1.7.1](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v1.7.1)
