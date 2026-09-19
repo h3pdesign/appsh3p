@@ -10,7 +10,20 @@ head:
 
 # Neon Vision Editor Changelog
 
-_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on September 16, 2026._
+_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on September 18, 2026._
+
+## v1.8.2 (published September 18, 2026)
+
+Release link: [GitHub Release v1.8.2](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v1.8.2)
+
+- View large Markdown documents as rendered Markdown instead of a truncated source preview.
+- Open files from Finder even when no editor window is currently open.
+- Keep long-document scrolling focused on visible editor rows.
+- Renders complete Markdown previews for documents up to 8 MB, including file-backed editor documents.
+- Opens an editor window when files or project folders are sent from Finder while no editor window is open.
+- Keeps the editor's scroll redraw focused on visible rows and avoids an unnecessary localization override during system-language startup.
+- Removes the 180 KB Markdown preview cutoff that showed a truncated raw-text fallback for ordinary large documents.
+- Requires hosted release runtime checks and reports unsuccessful post-release documentation merges as failures.
 
 ## v1.8.1 (published September 16, 2026)
 
@@ -89,7 +102,6 @@ Release link: [GitHub Release v1.7.3](https://github.com/h3pdesign/Neon-Vision-E
 - Keeps visionOS System Glass light in light mode and prevents mixed light and dark surfaces in Paper and other appearance themes.
 - Moves hosted platform, release-validation, and notarized-release jobs to GitHub's `xcode-27` runner and verifies the macOS, iOS/iPadOS, and visionOS 27 SDK paths before compiling them in CI; production archives continue to reject beta Xcode builds.
 - Centralizes Xcode and SDK validation across CI and release workflows and correctly rejects both `Xcode-beta.app` and underscored beta installation names from production archives.
-
 ## v1.7.2 (published September 9, 2026)
 
 Release link: [GitHub Release v1.7.2](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v1.7.2)
