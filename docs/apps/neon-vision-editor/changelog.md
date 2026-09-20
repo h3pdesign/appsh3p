@@ -10,7 +10,22 @@ head:
 
 # Neon Vision Editor Changelog
 
-_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on September 18, 2026._
+_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on September 19, 2026._
+
+## v1.8.3 (published September 19, 2026)
+
+Release link: [GitHub Release v1.8.3](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v1.8.3)
+
+- Edit complete text documents below 100 MB without entering the excessive-file preview mode.
+- Read long lines on iPhone and iPad without losing text when line wrap is disabled.
+- Apply themes and formatting consistently, with less repeated work when using Settings.
+- Refines mobile toolbars with system-adaptive glass, complete action slots, and an optional larger-symbol setting.
+- Fixes clipped unwrapped text on iPhone and iPad by keeping the drawing canvas and horizontal scrolling geometry aligned, including cursor reveal, keyboard transitions, and large-document installs.
+- Restores native macOS Settings pane sizing and titlebar material, removes repeated window repositioning, and keeps Settings navigation separate from editor-wide preference refreshes.
+- Makes the custom mobile toolbar action-count setting include persistent controls and keeps Settings and Help available.
+- Coalesces startup session observations and caches ordinary in-memory document text to avoid repeated materialization during view updates.
+- Keeps macOS Settings controls responsive by eliminating the duplicate editor recoloring and layout pass that followed every theme, formatting, or palette change.
+- Refreshes the visible macOS editor immediately when themes change, preserves the loaded viewport during recoloring, applies bold keywords and Markdown headings plus italic comments and underlined links in the virtual renderer, and restores framework-type and function-call highlighting across supported programming languages without splitting existing comments, strings, attributes, or declarations or expanding work beyond the existing visible range.
 
 ## v1.8.2 (published September 18, 2026)
 
@@ -87,7 +102,6 @@ Release link: [GitHub Release v1.7.4](https://github.com/h3pdesign/Neon-Vision-E
 - Preserves progressive preview feedback while publishing UI changes in bounded batches.
 - Updates project-preview cards and progress in bounded batches instead of invalidating the complete panel for every indexed file.
 - Prevents per-file loading-status publications from triggering redundant SwiftUI project-preview refreshes.
-
 ## v1.7.3 (published September 11, 2026)
 
 Release link: [GitHub Release v1.7.3](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v1.7.3)
