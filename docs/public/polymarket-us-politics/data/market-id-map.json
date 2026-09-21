@@ -1,8 +1,8 @@
 {
-  "updated_at_utc": "2026-09-14T05:16:15.564Z",
+  "updated_at_utc": "2026-09-21T05:15:31.191Z",
   "total_questions": 66,
-  "mapped_questions": 27,
-  "unmapped_questions": 39,
+  "mapped_questions": 28,
+  "unmapped_questions": 38,
   "entries": [
     {
       "question": "Will LeBron James win the 2028 US Presidential Election?",
@@ -33,9 +33,9 @@
     },
     {
       "question": "Democratic Presidential Nominee 2028",
-      "market_id": "1389020",
-      "market_slug": "will-the-2028-democratic-presidential-nominee-be-a-woman",
-      "market_question": "Will the 2028 Democratic Presidential nominee be a woman?",
+      "market_id": "4591297",
+      "market_slug": "will-the-2028-democratic-presidential-nominee-be-85-or-older",
+      "market_question": "Will the 2028 Democratic presidential nominee be 85 or older?",
       "score": 0.691,
       "active": true,
       "closed": false
@@ -63,6 +63,15 @@
       "market_id": "666861",
       "market_slug": "trump-out-as-president-before-2027",
       "market_question": "Trump out as President before 2027?",
+      "score": 1,
+      "active": true,
+      "closed": false
+    },
+    {
+      "question": "Will Trump be impeached by June 30?",
+      "market_id": "4595916",
+      "market_slug": "will-trump-be-impeached-by-june-30-2027",
+      "market_question": "Will Trump be impeached by June 30, 2027?",
       "score": 1,
       "active": true,
       "closed": false
@@ -258,7 +267,6 @@
     "US anti-cartel ground operation in Mexico by June 30?",
     "US forces enter Iran by Dec 31?",
     "Trump out by March 31?",
-    "Will Trump be impeached by June 30?",
     "Trump deportations in 2025",
     "Trump Truth Social posts Feb 20–27",
     "Kevin Warsh formally nominated by March 31?",
