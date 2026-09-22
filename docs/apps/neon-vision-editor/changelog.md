@@ -10,7 +10,22 @@ head:
 
 # Neon Vision Editor Changelog
 
-_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on September 19, 2026._
+_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on September 21, 2026._
+
+## v1.8.4 (published September 21, 2026)
+
+Release link: [GitHub Release v1.8.4](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v1.8.4)
+
+- Browse JSON in a structured preview and read YAML with syntax colors.
+- Choose how macOS opens files across desktops and handles the last tab.
+- Keep space below the cursor when placing it on iPhone and iPad.
+- Adds opt-in macOS settings to open files on the current desktop and keep an empty window after closing its last tab.
+- Adds structured JSON previews and syntax-colored YAML previews for large documents.
+- Uses the same window routing for new and already-open files across macOS Spaces (#583, #584).
+- Keeps an empty macOS editor available without creating an unwanted untitled tab; Close Window remains available with Command-Shift-W (#586).
+- Reveals space below the cursor after placing it on iPhone and iPad, as well as while typing.
+- Preserves YAML string colors across preview pages and restores keyword formatting in previews.
+- No document migration is required. Very large single-line Unicode JSON can still stall mobile editing; this remains tracked in #595.
 
 ## v1.8.3 (published September 19, 2026)
 
@@ -92,7 +107,6 @@ Release link: [GitHub Release v1.7.5](https://github.com/h3pdesign/Neon-Vision-E
 - Prevents native tab items from being treated as draggable window background instead of receiving their own reorder gesture.
 - Stops ordinary macOS editor scrolling from invalidating the complete canvas and rebuilding visual rows for subpoint movement.
 - Coalesces editor viewport publications and avoids duplicate SwiftUI minimap state updates.
-
 ## v1.7.4 (published September 11, 2026)
 
 Release link: [GitHub Release v1.7.4](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v1.7.4)
