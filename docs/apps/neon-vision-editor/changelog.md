@@ -10,7 +10,21 @@ head:
 
 # Neon Vision Editor Changelog
 
-_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on September 21, 2026._
+_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on September 26, 2026._
+
+## v1.8.5 (published September 26, 2026)
+
+Release link: [GitHub Release v1.8.5](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v1.8.5)
+
+- Choose whether Markdown opens for editing or full-window reading, and switch modes from the toolbar or keyboard.
+- Arrange preferred iPhone and iPad toolbar actions and use configured app shortcuts while the editor has hardware-keyboard focus.
+- Navigate line and document boundaries with standard Command-arrow keys on macOS.
+- Adds a default Markdown opening mode for editing or full-window reading, with toolbar or Command-Shift-P switching ([#617](https://github.com/h3pdesign/Neon-Vision-Editor/issues/617)).
+- Makes configured app shortcuts available while the mobile editor has hardware-keyboard focus; restores the documented Save As, Line Wrap, and Language Search keys, reserves editor-owned editing keys, resolves a macOS shortcut collision, and removes duplicate mobile Settings and Help bindings.
+- Fixes the custom iPhone and iPad toolbar icon limit so it matches the selected action count, and lets users reorder their chosen icons ([#615](https://github.com/h3pdesign/Neon-Vision-Editor/issues/615)).
+- Restores the standard macOS Command-arrow and Command-Shift-arrow navigation for line and document boundaries ([#622](https://github.com/h3pdesign/Neon-Vision-Editor/issues/622)).
+- No document migration is required. Large single-line Unicode JSON responsiveness on iPhone and iPad remains tracked in #595; native macOS tab behavior remains tracked in #621.
+- Advances the 1.8.5 development build to 1058; release preparation allocates the final build from the live Xcode Cloud counter.
 
 ## v1.8.4 (published September 21, 2026)
 
@@ -95,7 +109,6 @@ Release link: [GitHub Release v1.7.6](https://github.com/h3pdesign/Neon-Vision-E
 - Repaints only the visible Core Text canvas region during ordinary scrolling, preserving the fast virtualized layout path.
 - Prevents stale AppKit backing pixels from covering or clipping editor lines during macOS scrolling.
 - Removes official Homebrew Cask branch and pull-request generation from release automation. Releases continue updating `h3pdesign/homebrew-tap`, while the official cask relies on Homebrew's upstream livecheck process.
-
 ## v1.7.5 (published September 11, 2026)
 
 Release link: [GitHub Release v1.7.5](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v1.7.5)
