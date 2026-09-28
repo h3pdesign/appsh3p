@@ -10,7 +10,21 @@ head:
 
 # Neon Vision Editor Changelog
 
-_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on September 26, 2026._
+_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on September 27, 2026._
+
+## v1.8.6 (published September 27, 2026)
+
+Release link: [GitHub Release v1.8.6](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v1.8.6)
+
+- Edit unusually long generated lines on iPhone and iPad without changing the saved text.
+- Work with Markdown source and rendered preview side by side again.
+- Rearrange macOS document tabs without opening the dragged document first.
+- Restores side-by-side Markdown editing and preview as the default; full-window reading remains a Settings option.
+- Keeps pathological single-line files editable on iPhone and iPad with display-only segmented wrapping, including when No Wrap is selected. The saved text and copied selections retain their original bytes; ordinary formatted documents retain their chosen layout ([#595](https://github.com/h3pdesign/Neon-Vision-Editor/issues/595)).
+- Keeps the Markdown formatting toolbar with the editor instead of overlaying full-window reading.
+- Defers macOS document-tab activation until a click completes, allowing a drag to start without switching editors; accepts reorder drops across tab gaps and strip edges ([#632](https://github.com/h3pdesign/Neon-Vision-Editor/issues/632)). Native macOS window tabs remain a separate, future change ([#621](https://github.com/h3pdesign/Neon-Vision-Editor/issues/621)).
+- No document migration is required. Full-window Markdown reading remains available in Settings.
+- Advances the development build to 1061; release preparation allocates the final build from the live Xcode Cloud counter.
 
 ## v1.8.5 (published September 26, 2026)
 
@@ -98,7 +112,6 @@ Release link: [GitHub Release v1.8.0](https://github.com/h3pdesign/Neon-Vision-E
 - Reduces repeated URL normalization during project scans and uses the measured faster byte-iteration path for large files.
 - Uses measured size classes, flexible pane widths, scaled tab typography, and safe-area-aware margins instead of assuming a specific iPhone or iPad shape.
 - Keeps a newly selected long document's complete content visible instead of applying a stale scroll position from the previous tab.
-
 ## v1.7.6 (published September 12, 2026)
 
 Release link: [GitHub Release v1.7.6](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v1.7.6)
