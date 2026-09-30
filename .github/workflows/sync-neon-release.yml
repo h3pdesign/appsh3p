@@ -69,14 +69,15 @@ jobs:
 
       - name: Commit and push if changed
         run: |
-          if git diff --quiet; then
+          git add docs/index.md docs/apps/index.md docs/apps/compare.md docs/.vitepress/data/apps.ts docs/.vitepress/theme/Layout.vue docs/apps/neon-vision-editor/overview.md docs/apps/neon-vision-editor/changelog.md docs/apps/metric-data/overview.md docs/apps/metric-data/changelog.md docs/apps/release-assistant/overview.md docs/apps/release-assistant/changelog.md
+
+          if git diff --cached --quiet; then
             echo "No version changes detected"
             exit 0
           fi
 
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add docs/index.md docs/apps/index.md docs/.vitepress/theme/Layout.vue docs/apps/neon-vision-editor/overview.md docs/apps/neon-vision-editor/changelog.md docs/apps/metric-data/overview.md docs/apps/metric-data/changelog.md docs/apps/release-assistant/overview.md docs/apps/release-assistant/changelog.md
           git commit -m "Sync app release version references"
           git push
 
@@ -103,13 +104,14 @@ jobs:
 
       - name: Commit and push if changed
         run: |
-          if git diff --quiet; then
+          git add docs/index.md docs/apps/index.md docs/apps/compare.md docs/.vitepress/data/apps.ts docs/.vitepress/theme/Layout.vue docs/apps/neon-vision-editor/overview.md docs/apps/neon-vision-editor/changelog.md docs/apps/metric-data/overview.md docs/apps/metric-data/changelog.md docs/apps/release-assistant/overview.md docs/apps/release-assistant/changelog.md
+
+          if git diff --cached --quiet; then
             echo "No version changes detected"
             exit 0
           fi
 
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add docs/index.md docs/apps/index.md docs/.vitepress/theme/Layout.vue docs/apps/neon-vision-editor/overview.md docs/apps/neon-vision-editor/changelog.md docs/apps/metric-data/overview.md docs/apps/metric-data/changelog.md docs/apps/release-assistant/overview.md docs/apps/release-assistant/changelog.md
           git commit -m "Sync app release version references"
           git push
