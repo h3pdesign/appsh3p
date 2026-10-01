@@ -10,7 +10,37 @@ head:
 
 # Neon Vision Editor Changelog
 
-_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on September 27, 2026._
+_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on October 1, 2026._
+
+## v1.9.1 (published October 1, 2026)
+
+Release link: [GitHub Release v1.9.1](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v1.9.1)
+
+- Open and save Japanese Shift-JIS files using Apple's native text encodings.
+- Keep the iPad status bar and toolbar separated, with less unused toolbar space.
+- Jump to the beginning or end of long macOS documents with Command-Up/Down.
+- Exposes Apple’s available text encodings in the existing encoding picker, including Shift-JIS, with persisted encoding choices and non-lossy saving (#674).
+- Allows the always-available Settings action to be reordered in custom mobile toolbars (#676).
+- Reveals the destination of macOS Command-Up/Down document navigation even when it lies outside the loaded editor viewport, including Shift-selection (#660).
+- Loads the destination inside oversized single-line files using a bounded offset-aware window, preserving edit offsets, column reporting and repeated boundary navigation.
+- Arranges the mobile status pill and bottom toolbar in one measured stack instead of independent fixed offsets, avoiding touching bars and double keyboard-accessory spacing (#672, #673).
+- Fits the iPad bottom toolbar to its visible controls while retaining its window-width limit and horizontal scrolling (#675).
+- Detects Shift-JIS KiriKiri text without the CP1251 punctuation corruption, preserving Cyrillic and Western fixtures (#674).
+
+## v1.9.0 (published September 30, 2026)
+
+Release link: [GitHub Release v1.9.0](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v1.9.0)
+
+- Use the app in seven languages, including Danish, French, Spanish, and Japanese.
+- Close What’s New directly and see the current release highlights.
+- Transfer a text-document copy to a nearby device through an explicit pairing and consent flow.
+- Adds Danish, French, Spanish, and Japanese app localization alongside English, German, and Simplified Chinese, including Settings, editor actions, accessibility text, and companion surfaces.
+- Adds opt-in nearby text-document transfer with an ephemeral pairing code, encrypted transport, receiver consent, a 4 MB payload limit, and independently staged received copies.
+- Adds a visible Close control to What’s New, preserves Escape dismissal, and refreshes its latest release card during release preparation ([#659](https://github.com/h3pdesign/Neon-Vision-Editor/issues/659)).
+- Expands localization coverage for dynamic search, toolbar, Git status, and share-import messages.
+- Processes macOS terminal output as a bounded primary screen, preserving fragmented UTF-8, progress-line rewrites, cursor movement, erase commands, and text styles while publishing coalesced changed-text patches.
+- No document migration is required. Nearby transfers create independent copies rather than synchronizing documents. Physical-device transfer acceptance remains tracked in #164; terminal, UI-test, and profiling acceptance remains tracked in #318.
+- Keeps the Help-sheet release cards aligned with the changelog during release preparation.
 
 ## v1.8.6 (published September 27, 2026)
 
@@ -82,7 +112,6 @@ Release link: [GitHub Release v1.8.2](https://github.com/h3pdesign/Neon-Vision-E
 - Keeps the editor's scroll redraw focused on visible rows and avoids an unnecessary localization override during system-language startup.
 - Removes the 180 KB Markdown preview cutoff that showed a truncated raw-text fallback for ordinary large documents.
 - Requires hosted release runtime checks and reports unsuccessful post-release documentation merges as failures.
-
 ## v1.8.1 (published September 16, 2026)
 
 Release link: [GitHub Release v1.8.1](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v1.8.1)
