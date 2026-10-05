@@ -1,5 +1,5 @@
 {
-  "updated_at_utc": "2026-09-28T05:42:42.685Z",
+  "updated_at_utc": "2026-10-05T06:01:57.648Z",
   "total_questions": 66,
   "mapped_questions": 28,
   "unmapped_questions": 38,
@@ -15,9 +15,9 @@
     },
     {
       "question": "US-Iran diplomatic meeting location",
-      "market_id": "4867450",
-      "market_slug": "us-x-iran-diplomatic-meeting-by-march-31-2027-20260922",
-      "market_question": "Next US-Iran senior diplomatic meeting by September 30, 2026?",
+      "market_id": "4867452",
+      "market_slug": "us-x-iran-diplomatic-meeting-by-december-31-2026-20260922",
+      "market_question": "Next US-Iran senior diplomatic meeting by December 31, 2026?",
       "score": 0.435,
       "active": true,
       "closed": false
@@ -159,9 +159,9 @@
     },
     {
       "question": "Mike Johnson out as Speaker by Dec 31, 2026?",
-      "market_id": "3229462",
-      "market_slug": "mike-johnson-out-as-speaker-by-september-30-20260730191157194",
-      "market_question": "Mike Johnson out as Speaker by September 30?",
+      "market_id": "813506",
+      "market_slug": "mike-johnson-out-as-speaker-by-december-31",
+      "market_question": "Mike Johnson out as Speaker by December 31?",
       "score": 0.691,
       "active": true,
       "closed": false
