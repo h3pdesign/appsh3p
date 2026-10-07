@@ -10,7 +10,22 @@ head:
 
 # Neon Vision Editor Changelog
 
-_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on October 1, 2026._
+_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on October 6, 2026._
+
+## v1.9.2 (published October 6, 2026)
+
+Release link: [GitHub Release v1.9.2](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v1.9.2)
+
+- Delete the previous word with Option-Delete on macOS, including Unicode text.
+- Keep mobile editor actions and AI settings accessible from the first layout.
+- Optionally rank external AI chat context with explicit TypeSafe consent and conservative fallback.
+- Adds configurable Join Lines (Command-J) and Format JSON (Command-Option-J) shortcuts on supported hardware keyboards (#713).
+- Allows custom macOS toolbar actions to be reordered in the chooser, including optional preset and AI-provider controls (#715).
+- Adds experimental, opt-in Jev ranking of optional context for external AI chat, with TypeSafe disclosure, Keychain storage, conservative fallback, and per-request usage information. Apple Intelligence, Agent Mode, selections, and follow-up context remain outside classification.
+- Handles macOS Option-Delete through the existing document edit path, recognizes Unicode letters and combining marks, and leaves read-only preview selections unchanged (#696).
+- Restore access to AI provider and Jev settings on iPhone and iPad, and improve Jev disclosure text and Done button contrast.
+- Sizes the mobile bottom toolbar from its actual container on first layout, keeping editor actions and Settings visible when the observed editor width has not been populated.
+- No migration required. Jev ranking remains disabled unless explicitly enabled and configured.
 
 ## v1.9.1 (published October 1, 2026)
 
@@ -99,7 +114,6 @@ Release link: [GitHub Release v1.8.3](https://github.com/h3pdesign/Neon-Vision-E
 - Coalesces startup session observations and caches ordinary in-memory document text to avoid repeated materialization during view updates.
 - Keeps macOS Settings controls responsive by eliminating the duplicate editor recoloring and layout pass that followed every theme, formatting, or palette change.
 - Refreshes the visible macOS editor immediately when themes change, preserves the loaded viewport during recoloring, applies bold keywords and Markdown headings plus italic comments and underlined links in the virtual renderer, and restores framework-type and function-call highlighting across supported programming languages without splitting existing comments, strings, attributes, or declarations or expanding work beyond the existing visible range.
-
 ## v1.8.2 (published September 18, 2026)
 
 Release link: [GitHub Release v1.8.2](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v1.8.2)
