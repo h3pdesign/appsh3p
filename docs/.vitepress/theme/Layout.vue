@@ -1387,6 +1387,7 @@ onBeforeUnmount(() => {
           </div>
           <div class="h3p-app-action-links">
             <a class="h3p-app-action-primary" :href="currentAppIdentity.installUrl" :target="currentAppIdentity.installUrl.startsWith('http') ? '_blank' : undefined" :rel="currentAppIdentity.installUrl.startsWith('http') ? 'noreferrer noopener' : undefined">{{ currentAppIdentity.installLabel }}</a>
+            <a v-if="currentAppIdentity.websiteUrl" :href="currentAppIdentity.websiteUrl" target="_blank" rel="noreferrer noopener">{{ currentAppIdentity.websiteLabel || 'Website' }}</a>
             <a :href="currentAppIdentity.changelog">Release notes</a>
             <a :href="currentAppIdentity.privacy">Privacy</a>
           </div>

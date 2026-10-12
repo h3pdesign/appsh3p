@@ -16,6 +16,8 @@ export type AppCatalogEntry = {
   privacy: string
   installLabel: string
   installUrl: string
+  websiteLabel?: string
+  websiteUrl?: string
   privacySummary: string
 }
 
@@ -89,7 +91,7 @@ export const appCatalog: AppCatalogEntry[] = [
     description: 'Dictionary, morphology, grammar, and vocabulary in one native study space.', icon: '/icons/lingua-latina.png?v=20260430-1',
     status: 'public', statusLabel: 'App Store release', version: '1.1.0', releaseDate: '2026-08-08', platforms: ['iOS', 'iPadOS', 'macOS', 'visionOS'],
     useCases: ['language', 'study'], overview: '/apps/lingua-latina/overview', installation: '/apps/lingua-latina/installation', changelog: '/apps/lingua-latina/changelog', privacy: '/apps/lingua-latina/privacy-policy',
-    installLabel: 'App Store', installUrl: 'https://apps.apple.com/us/app/lingua-latina/id6767503541', privacySummary: 'App Store privacy lists Data Not Collected; optional external AI providers are user-enabled.'
+    installLabel: 'App Store', installUrl: 'https://apps.apple.com/us/app/lingua-latina/id6767503541', websiteLabel: 'Product website', websiteUrl: 'https://h3pdesign.github.io/Lingua-Latina-Public/', privacySummary: 'App Store privacy lists Data Not Collected; optional external AI providers are user-enabled.'
   }
 ]
 

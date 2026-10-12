@@ -310,6 +310,7 @@
       <div class="app-actions-row">
         <span class="chip chip-live">App Store: public listing</span>
         <a class="chip chip-link" href="https://apps.apple.com/us/app/lingua-latina/id6767503541" target="_blank" rel="noreferrer">App Store</a>
+        <a class="chip chip-link" href="https://h3pdesign.github.io/Lingua-Latina-Public/" target="_blank" rel="noreferrer">Website</a>
         <a class="chip chip-link" href="/apps/lingua-latina/privacy-policy">Privacy Policy</a>
       </div>
     </div>
