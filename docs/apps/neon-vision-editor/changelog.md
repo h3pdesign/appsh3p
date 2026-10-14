@@ -10,7 +10,22 @@ head:
 
 # Neon Vision Editor Changelog
 
-_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on October 6, 2026._
+_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on October 13, 2026._
+
+## v1.9.3 (published October 13, 2026)
+
+Release link: [GitHub Release v1.9.3](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v1.9.3)
+
+- Choose plain-text editing instead of CSV/TSV tables on macOS.
+- Keep long font names from overlapping controls or widening Settings on Mac, iPhone, and iPad.
+- Find Markdown preview and AI provider options in dedicated macOS Settings sections.
+- Adds Settings → Editor → Basics → Show CSV/TSV Table View on macOS. Turn it off to edit CSV/TSV as text and stop automatic table detection in new notes without changing file contents (#738).
+- Moves project Markdown preview options to Settings → Editor → Markdown Preview on macOS.
+- Separates macOS AI settings into provider/model and custom-provider sections, preserving existing credentials and saved values.
+- Prevents ordinary multiline notes containing commas from opening as CSV tables (#738).
+- Keeps long selected font names inside their dropdown on macOS, iPhone, and iPad without overlapping nearby controls or widening the page. The complete name remains available in the font menu.
+- Restores the released native macOS Settings sizing and background behavior, keeping controls accessible above the Dock (#714).
+- No migration required. CSV/TSV table views remain enabled by default; existing font choices and AI provider settings are preserved.
 
 ## v1.9.2 (published October 6, 2026)
 
@@ -99,7 +114,6 @@ Release link: [GitHub Release v1.8.4](https://github.com/h3pdesign/Neon-Vision-E
 - Reveals space below the cursor after placing it on iPhone and iPad, as well as while typing.
 - Preserves YAML string colors across preview pages and restores keyword formatting in previews.
 - No document migration is required. Very large single-line Unicode JSON can still stall mobile editing; this remains tracked in #595.
-
 ## v1.8.3 (published September 19, 2026)
 
 Release link: [GitHub Release v1.8.3](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v1.8.3)
