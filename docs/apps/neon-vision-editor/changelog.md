@@ -10,7 +10,22 @@ head:
 
 # Neon Vision Editor Changelog
 
-_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on October 13, 2026._
+_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on October 15, 2026._
+
+## v2.0.0 (published October 15, 2026)
+
+Release link: [GitHub Release v2.0.0](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v2.0.0)
+
+- Switch between open Mac documents with less waiting, including large Markdown and source files.
+- Place the cursor more reliably on iPhone and iPad, and return to saved positions after large documents load.
+- Browse overflowing Mac tabs with visible left and right controls.
+- Keeps compatible Markdown previews up to date without reloading unchanged content or losing your scroll position.
+- Stops obsolete folder scans when you cancel project indexing.
+- Adapts the phone toolbar when the available layout changes between compact and regular width.
+- Detects external file rewrites even when file size and modification time are unchanged, preventing stale text indexes during background tab activation.
+- Keeps precise iPhone/iPad cursor placement from being overwritten by delayed saved-position updates (#770).
+- Restores saved cursor positions after deferred large-file loading completes, without saving temporary placeholder positions (#770).
+- Preserves manual scrolling through overflowing Mac tabs and adds accessible left/right navigation controls (#766).
 
 ## v1.9.3 (published October 13, 2026)
 
@@ -99,7 +114,6 @@ Release link: [GitHub Release v1.8.5](https://github.com/h3pdesign/Neon-Vision-E
 - Restores the standard macOS Command-arrow and Command-Shift-arrow navigation for line and document boundaries ([#622](https://github.com/h3pdesign/Neon-Vision-Editor/issues/622)).
 - No document migration is required. Large single-line Unicode JSON responsiveness on iPhone and iPad remains tracked in #595; native macOS tab behavior remains tracked in #621.
 - Advances the 1.8.5 development build to 1058; release preparation allocates the final build from the live Xcode Cloud counter.
-
 ## v1.8.4 (published September 21, 2026)
 
 Release link: [GitHub Release v1.8.4](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v1.8.4)
