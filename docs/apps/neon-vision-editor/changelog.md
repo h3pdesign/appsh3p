@@ -10,7 +10,22 @@ head:
 
 # Neon Vision Editor Changelog
 
-_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on October 15, 2026._
+_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on October 22, 2026._
+
+## v2.1.0 (published October 22, 2026)
+
+Release link: [GitHub Release v2.1.0](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v2.1.0)
+
+- Use native Mac document tabs with filenames, active-tab highlighting, and double-click closing.
+- Keep the iPhone Duo editor toolbar clear of your document when the phone is closed, open, or partially folded.
+- Preserve unsaved edits during external-file refreshes and exact JSON values when formatting.
+- Double-click a native Mac document tab to close it, with the existing unsaved-change confirmation.
+- Makes native document tabs standard for macOS, replacing the previous in-editor tab strip. Native tabs show filenames, highlight the active document, and share the project sidebar without sharing document contents or preview state.
+- On iPhone Duo, moves the editor toolbar into a vertical column on the right edge, below the status bar, when the phone is closed, open, or partially folded, so it no longer covers the bottom of your document (#498).
+- Rechecks document revisions before applying external file refreshes, so edits made while a refresh is pending are not replaced by stale content.
+- Preserves JSON object member order, repeated keys, exact number tokens, and escaped strings when formatting or combining lines (#802).
+- The previous Mac in-editor tab strip is replaced by native document tabs. iPhone, iPad, and visionOS retain their existing platform-specific tab experiences.
+- No document conversion is required. Existing saved sessions use the native document-tab layout on macOS.
 
 ## v2.0.0 (published October 15, 2026)
 
@@ -100,7 +115,6 @@ Release link: [GitHub Release v1.8.6](https://github.com/h3pdesign/Neon-Vision-E
 - Defers macOS document-tab activation until a click completes, allowing a drag to start without switching editors; accepts reorder drops across tab gaps and strip edges ([#632](https://github.com/h3pdesign/Neon-Vision-Editor/issues/632)). Native macOS window tabs remain a separate, future change ([#621](https://github.com/h3pdesign/Neon-Vision-Editor/issues/621)).
 - No document migration is required. Full-window Markdown reading remains available in Settings.
 - Advances the development build to 1061; release preparation allocates the final build from the live Xcode Cloud counter.
-
 ## v1.8.5 (published September 26, 2026)
 
 Release link: [GitHub Release v1.8.5](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v1.8.5)
