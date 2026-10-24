@@ -10,7 +10,22 @@ head:
 
 # Neon Vision Editor Changelog
 
-_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on October 22, 2026._
+_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on October 23, 2026._
+
+## v2.1.1 (published October 23, 2026)
+
+Release link: [GitHub Release v2.1.1](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v2.1.1)
+
+- Type or paste into a new Mac tab right away, without clicking into the editor first.
+- Mac tabs you return to always show their content, even after the window's first tab was closed.
+- Closed Mac tabs stop their background work and no longer reopen on the next launch.
+- New native Mac tabs and newly opened documents put the cursor in the editor immediately.
+- New native Mac tabs accept typing and paste immediately, without clicking into the editor first.
+- Returning to a native Mac tab always shows its content, including after the first tab of a window has been closed.
+- Closing a native Mac tab stops its background work and shared-import watcher, and a closed tab no longer reopens after its window's first tab was closed.
+- "Open files on current desktop" finds a file that is already open in a background tab instead of opening it twice.
+- No migration required. Existing documents, sessions, and preferences are preserved.
+- Avoids rewriting unchanged toolbar labels on every document update.
 
 ## v2.1.0 (published October 22, 2026)
 
@@ -101,7 +116,6 @@ Release link: [GitHub Release v1.9.0](https://github.com/h3pdesign/Neon-Vision-E
 - Processes macOS terminal output as a bounded primary screen, preserving fragmented UTF-8, progress-line rewrites, cursor movement, erase commands, and text styles while publishing coalesced changed-text patches.
 - No document migration is required. Nearby transfers create independent copies rather than synchronizing documents. Physical-device transfer acceptance remains tracked in #164; terminal, UI-test, and profiling acceptance remains tracked in #318.
 - Keeps the Help-sheet release cards aligned with the changelog during release preparation.
-
 ## v1.8.6 (published September 27, 2026)
 
 Release link: [GitHub Release v1.8.6](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v1.8.6)
