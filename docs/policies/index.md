@@ -50,6 +50,10 @@ These app-specific policies document data handling where an app has its own priv
     <span>Lingua Latina Privacy Policy</span>
     <strong>Local-first learning data, optional synced data, purchases, diagnostics, and deletion rights.</strong>
   </a>
+  <a class="policy-card policy-card-primary" href="/apps/history-vision/privacy-policy">
+    <span>History Vision Privacy Policy</span>
+    <strong>Local reading and research data, optional Wikimedia lookups, Apple Watch sync, and App Store purchases.</strong>
+  </a>
 </div>
 
 ## App Privacy Status
@@ -63,7 +67,7 @@ These app-specific policies document data handling where an app has its own priv
 | X-Newsbook | Covered by [Website Privacy Policy](/policies/privacy-policy) and app documentation | No dedicated app privacy page is currently published on this site. |
 | Image Sorter | Covered by [Website Privacy Policy](/policies/privacy-policy) and app documentation | No dedicated app privacy page is currently published on this site. |
 | Vistral | Covered by [Website Privacy Policy](/policies/privacy-policy) and app documentation | No dedicated app privacy page is currently published on this site. |
-| History Vision | Covered by [Website Privacy Policy](/policies/privacy-policy) and app documentation | No dedicated app privacy page is currently published on this site. |
+| History Vision | [Dedicated app policy](/apps/history-vision/privacy-policy) | Covers local reading and research data, optional Wikimedia lookups, Apple Watch sync and App Store purchases. |
 
 ## Privacy Request Path
 
