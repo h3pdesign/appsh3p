@@ -33,7 +33,7 @@ jobs:
 
       - name: Trigger refresh workflows when stale
         if: steps.stale_check.outcome == 'failure'
-        uses: actions/github-script@v7
+        uses: actions/github-script@v8
         with:
           script: |
             const owner = context.repo.owner;
@@ -74,7 +74,7 @@ jobs:
 
       - name: Open issue when stale after re-check
         if: steps.stale_check.outcome == 'failure' && steps.stale_recheck.outcome == 'failure'
-        uses: actions/github-script@v7
+        uses: actions/github-script@v8
         with:
           script: |
             const owner = context.repo.owner;
