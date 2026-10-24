@@ -37,5 +37,5 @@ https://apps-h3p.com/apps/neon-vision-editor/app-clip
 ## Related Links
 
 - [Neon Vision Editor overview](/apps/neon-vision-editor/overview)
-- [App Store](https://apps.apple.com/de/app/neon-vision-editor/id6758950965)
+- [App Store](https://apps.apple.com/us/app/neon-vision-editor/id6758950965)
 - [Support](/support/)

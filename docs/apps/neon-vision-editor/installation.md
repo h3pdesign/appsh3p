@@ -14,20 +14,17 @@ head:
 
 - Direct macOS release: [GitHub Releases](https://github.com/h3pdesign/Neon-Vision-Editor/releases)
 - Homebrew Cask: [neon-vision-editor](https://github.com/Homebrew/homebrew-cask/blob/HEAD/Casks/n/neon-vision-editor.rb)
-- App Store: [App Store](https://apps.apple.com/de/app/neon-vision-editor/id6758950965)
+- App Store: [App Store](https://apps.apple.com/us/app/neon-vision-editor/id6758950965)
 - TestFlight preview: [TestFlight](https://testflight.apple.com/join/YWB2fGAP)
 
-The direct GitHub release is currently v0.9.4 and can be ahead of App Store listings while platform updates move through review.
+Version 2.1.5 is available through the App Store, GitHub Releases, and Homebrew. TestFlight may contain preview builds.
 
 | Channel | Platform | Current track |
 |---|---|---|
-| GitHub Releases | macOS | v0.9.4 direct notarized build |
-| Homebrew Cask | macOS | v0.9.4 cask delivery |
-| App Store | iOS / iPadOS | v0.7.8 public listing |
-| App Store | macOS | v0.8.6 public listing |
-| App Store | visionOS | v0.8.8 public listing |
-| App Store review | iOS / iPadOS | v0.9.4 in review |
-| TestFlight | iOS / iPadOS / macOS | v0.9.4 availability varies |
+| GitHub Releases | macOS | v2.1.5 direct notarized build |
+| Homebrew Cask | macOS | v2.1.5 cask delivery |
+| App Store | macOS / iOS / iPadOS / visionOS | v2.1.5 public listing |
+| TestFlight | iOS / iPadOS / macOS / visionOS | Preview availability varies |
 
 ## Direct macOS Install
 
@@ -67,7 +64,7 @@ brew install --cask --appdir="$HOME/Applications" neon-vision-editor
 
 ## App Store Install
 
-1. Open [App Store](https://apps.apple.com/de/app/neon-vision-editor/id6758950965).
+1. Open [App Store](https://apps.apple.com/us/app/neon-vision-editor/id6758950965).
 2. Install Neon Vision Editor.
 3. Launch and complete first run.
 

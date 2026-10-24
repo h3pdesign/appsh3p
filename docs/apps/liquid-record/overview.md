@@ -8,24 +8,26 @@ head:
       content: https://apps-h3p.com/media/liquid-record/reference-console.png
   - - script
     - type: application/ld+json
-    - '{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://apps-h3p.com/#organization","name":"H3P","url":"https://apps-h3p.com","sameAs":["https://github.com/h3pdesign"]},{"@type":"SoftwareApplication","@id":"https://apps-h3p.com/apps/liquid-record/overview#app","name":"Liquid Record","applicationCategory":"MultimediaApplication","operatingSystem":"iOS, iPadOS","url":"https://apps-h3p.com/apps/liquid-record/overview","softwareVersion":"1.0","isAccessibleForFree":true,"publisher":{"@id":"https://apps-h3p.com/#organization"}}]}'
+    - '{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://apps-h3p.com/#organization","name":"H3P","url":"https://apps-h3p.com","sameAs":["https://github.com/h3pdesign"]},{"@type":"SoftwareApplication","@id":"https://apps-h3p.com/apps/liquid-record/overview#app","name":"Liquid Record","applicationCategory":"MultimediaApplication","operatingSystem":"iOS, iPadOS, macOS, visionOS","url":"https://apps-h3p.com/apps/liquid-record/overview","downloadUrl":"https://apps.apple.com/us/app/liquid-record-audio-recorder/id6812232944","softwareVersion":"1.1.1","isAccessibleForFree":true,"publisher":{"@id":"https://apps-h3p.com/#organization"}}]}'
 ---
 
 # Liquid Record
 
-<div class="overview-status-pill overview-status-private">Status: App Store preparation</div>
+<div class="overview-status-pill overview-status-release">Status: App Store release</div>
 
-<p class="overview-last-updated">Last updated: <span data-date="2026-09-15">September 15, 2026</span></p>
+<p class="overview-last-updated">Last updated: <span data-date="2026-10-27">October 27, 2026</span></p>
 
 <div class="overview-platform-badges overview-reveal" aria-label="supported platforms">
   <span>iOS</span>
   <span>iPadOS</span>
+  <span>macOS</span>
+  <span>visionOS</span>
 </div>
 
 <div class="overview-mini-stats overview-reveal" aria-label="app stats">
-  <div><span>latest version</span><strong>1.0 (build 26)</strong></div>
-  <div><span>platforms</span><strong>iPhone and iPad</strong></div>
-  <div><span>repo status</span><strong>private</strong></div>
+  <div><span>latest version</span><strong>1.1.1</strong></div>
+  <div><span>platforms</span><strong>iOS / iPadOS / macOS / visionOS</strong></div>
+  <div><span>distribution</span><strong>App Store</strong></div>
 </div>
 
 <div class="overview-hero overview-app-release overview-reveal">
@@ -60,6 +62,7 @@ The current release targets iPhone and iPad with local files, SwiftData metadata
 
 ## Related Pages
 
+- [App Store](https://apps.apple.com/us/app/liquid-record-audio-recorder/id6812232944)
 - [Components Overview](/apps/liquid-record/components-overview)
 - [Installation](/apps/liquid-record/installation)
 - [Features](/apps/liquid-record/features)

@@ -2,7 +2,7 @@
 
 ## Current Notes
 
-- Liquid Record is private alpha documentation; public download links are not listed.
+- Liquid Record 1.1.1 is the current public App Store release. Include the app version and device model when reporting an issue.
 - Physical-device audio validation remains required for microphone routing, playback route behavior, interruptions, screen lock, and low-storage handling.
 - The mockup is the visual source of truth for the interior console only; the app must not reproduce phone bezel, camera cutout, physical buttons, or Home indicator as app chrome.
 - Background recording is only valid if the Audio background mode is enabled and tested.

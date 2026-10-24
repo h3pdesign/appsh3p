@@ -1,5 +1,10 @@
 # Lingua Latina Changelog
 
+## 1.8.1 (published October 24, 2026)
+
+- Added full-screen support for iPhone Duo using the iOS 27.1 SDK.
+- Refreshed the public App Store release metadata.
+
 ## 1.1.0 (published August 8, 2026)
 
 - App Store release metadata synced to the public app documentation.

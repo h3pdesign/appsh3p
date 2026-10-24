@@ -142,7 +142,6 @@ Release link: [GitHub Release v1.9.1](https://github.com/h3pdesign/Neon-Vision-E
 - Arranges the mobile status pill and bottom toolbar in one measured stack instead of independent fixed offsets, avoiding touching bars and double keyboard-accessory spacing (#672, #673).
 - Fits the iPad bottom toolbar to its visible controls while retaining its window-width limit and horizontal scrolling (#675).
 - Detects Shift-JIS KiriKiri text without the CP1251 punctuation corruption, preserving Cyrillic and Western fixtures (#674).
-
 ## v1.9.0 (published September 30, 2026)
 
 Release link: [GitHub Release v1.9.0](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v1.9.0)
@@ -627,7 +626,7 @@ Release link: [GitHub Release v0.4.21](https://github.com/h3pdesign/Neon-Vision-
 
 ## v1.0.0 milestone context
 
-- App is available on [App Store](https://apps.apple.com/de/app/neon-vision-editor/id6758950965) with preview builds via [TestFlight](https://testflight.apple.com/join/YWB2fGAP).
+- App is available on [App Store](https://apps.apple.com/us/app/neon-vision-editor/id6758950965) with preview builds via [TestFlight](https://testflight.apple.com/join/YWB2fGAP).
 - Core launch scope included macOS, iPadOS, and iOS platform parity with native implementation.
 
 ## Related Pages

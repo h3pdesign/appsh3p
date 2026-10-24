@@ -13,7 +13,7 @@ Use the [app catalogue](/apps/index) to compare purpose, platform, release statu
 | [Metrics Data](/apps/metric-data/overview) | AdSense and GA4 reporting | App Store |
 | [Lingua Latina](/apps/lingua-latina/overview) | Latin dictionary and study | App Store |
 | [Vistral](/apps/vistral/overview) | Personal data dashboards | TestFlight beta via support |
-| [Liquid Record](/apps/liquid-record/overview) | iPhone WAV field recording | Private alpha via support |
+| [Liquid Record](/apps/liquid-record/overview) | WAV field recording and production | App Store |
 | [History Vision](/apps/history-vision/overview) | Source-aware history and timelines | Private beta via support |
 | [X-Newsbook](/apps/x-newsbook/overview) | Reading and saved stories | Private beta via support |
 | [Image Sorter](/apps/image-sorter/overview) | Organizing visual assets | Private beta via support |

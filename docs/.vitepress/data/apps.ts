@@ -26,9 +26,9 @@ export const appCatalog: AppCatalogEntry[] = [
   {
     slug: 'neon-vision-editor', name: 'Neon Vision Editor', category: 'Native text, Markdown, and code editor',
     description: 'A focused editor for real files across Apple platforms.', icon: '/icons/neon-vision-editor.png?v=20260401-2',
-    status: 'public', statusLabel: 'Public release', version: '2.1.5', releaseDate: '2026-10-26', platforms: ['macOS', 'iPadOS', 'iOS', 'visionOS'],
+    status: 'public', statusLabel: 'App Store release', version: '2.1.5', releaseDate: '2026-10-26', platforms: ['macOS', 'iPadOS', 'iOS', 'visionOS'],
     useCases: ['coding', 'markdown', 'ai'], overview: '/apps/neon-vision-editor/overview', installation: '/apps/neon-vision-editor/installation', changelog: '/apps/neon-vision-editor/changelog', privacy: '/policies/ai-and-data',
-    installLabel: 'GitHub Releases', installUrl: 'https://github.com/h3pdesign/Neon-Vision-Editor/releases', privacySummary: 'Local-first editing; AI data handling is documented and user-controlled.'
+    installLabel: 'App Store', installUrl: 'https://apps.apple.com/us/app/neon-vision-editor/id6758950965', websiteLabel: 'GitHub releases', websiteUrl: 'https://github.com/h3pdesign/Neon-Vision-Editor/releases', privacySummary: 'Local-first editing; AI data handling is documented and user-controlled.'
   },
   {
     slug: 'gitbird', name: 'GitBird', category: 'Git notification menu bar app',
@@ -40,9 +40,9 @@ export const appCatalog: AppCatalogEntry[] = [
   {
     slug: 'liquid-record', name: 'Liquid Record', category: 'Field recorder and audio capture',
     description: 'An iPhone field-recorder console for WAV capture, markers, playback, and export.', icon: '/icons/liquid-record.png?v=20260914-1',
-    status: 'private', statusLabel: 'Private alpha', version: '1.0.1', releaseDate: '2026-08-09', platforms: ['iOS'],
+    status: 'public', statusLabel: 'App Store release', version: '1.1.1', releaseDate: '2026-10-27', platforms: ['iOS', 'iPadOS', 'macOS', 'visionOS'],
     useCases: ['audio', 'recording', 'workflow'], overview: '/apps/liquid-record/overview', installation: '/apps/liquid-record/installation', changelog: '/apps/liquid-record/changelog', privacy: '/apps/liquid-record/privacy-policy',
-    installLabel: 'Request access', installUrl: '/support/support-and-feedback', privacySummary: 'Offline-first local WAV recording with microphone permission requested only from the record action.'
+    installLabel: 'App Store', installUrl: 'https://apps.apple.com/us/app/liquid-record-audio-recorder/id6812232944', privacySummary: 'Offline-first local recording; the App Store privacy label states that the developer does not collect data.'
   },
   {
     slug: 'metric-data', name: 'Metrics Data', category: 'AdSense and GA4 analytics workspace',
@@ -89,7 +89,7 @@ export const appCatalog: AppCatalogEntry[] = [
   {
     slug: 'lingua-latina', name: 'Lingua Latina', category: 'Latin language study',
     description: 'Dictionary, morphology, grammar, and vocabulary in one native study space.', icon: '/icons/lingua-latina.png?v=20260430-1',
-    status: 'public', statusLabel: 'App Store release', version: '1.1.0', releaseDate: '2026-08-08', platforms: ['iOS', 'iPadOS', 'macOS', 'visionOS'],
+    status: 'public', statusLabel: 'App Store release', version: '1.8.1', releaseDate: '2026-10-24', platforms: ['iOS', 'iPadOS', 'macOS', 'visionOS'],
     useCases: ['language', 'study'], overview: '/apps/lingua-latina/overview', installation: '/apps/lingua-latina/installation', changelog: '/apps/lingua-latina/changelog', privacy: '/apps/lingua-latina/privacy-policy',
     installLabel: 'App Store', installUrl: 'https://apps.apple.com/us/app/lingua-latina/id6767503541', websiteLabel: 'Product website', websiteUrl: 'https://h3pdesign.github.io/Lingua-Latina-Public/', privacySummary: 'App Store privacy lists Data Not Collected; optional external AI providers are user-enabled.'
   }

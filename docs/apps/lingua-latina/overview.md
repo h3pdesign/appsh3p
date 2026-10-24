@@ -12,7 +12,7 @@ head:
 
 <div class="overview-status-pill overview-status-release">Status: App Store release</div>
 
-<p class="overview-last-updated">Last updated: <span data-date="2026-08-08">August 8, 2026</span></p>
+<p class="overview-last-updated">Last updated: <span data-date="2026-10-24">October 24, 2026</span></p>
 
 ## Application Purpose
 
@@ -34,7 +34,7 @@ Primary user outcomes:
 </div>
 
 <div class="overview-mini-stats overview-reveal" aria-label="app stats">
-  <div><span>latest version</span><strong>1.1.0</strong></div>
+  <div><span>latest version</span><strong>1.8.1</strong></div>
   <div><span>platforms</span><strong>iOS / iPadOS / macOS / visionOS</strong></div>
   <div><span>distribution</span><strong>App Store</strong></div>
 </div>

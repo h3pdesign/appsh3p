@@ -2,7 +2,7 @@
 
 ## Status
 
-Liquid Record is currently documented as a private alpha project. Public download links are not listed.
+Liquid Record 1.1.1 is available from the [App Store](https://apps.apple.com/us/app/liquid-record-audio-recorder/id6812232944).
 
 ## Requirements
 
@@ -11,13 +11,15 @@ Liquid Record is currently documented as a private alpha project. Public downloa
 - Microphone permission.
 - Local storage for WAV recordings and waveform metadata.
 
-## Access
+## Install
 
-Use [support and feedback](/support/support-and-feedback) to request access or ask about availability.
+1. Open [Liquid Record: Audio Recorder](https://apps.apple.com/us/app/liquid-record-audio-recorder/id6812232944) on the App Store.
+2. Install the app on a supported Apple device.
+3. Allow microphone access when you choose to record, and Speech Recognition access only if you choose to transcribe.
 
 ## Source Build Notes
 
-The local project version is **1.0.1** with build **2**. The Xcode project bundle identifier is `com.h3p.LiquidRecord`.
+The public App Store version is **1.1.1**. The Xcode project bundle identifier is `com.h3p.LiquidRecord`.
 
 ## Related Pages
 

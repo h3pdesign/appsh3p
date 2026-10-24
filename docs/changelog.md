@@ -9,6 +9,29 @@ Source: published release notes and documentation snapshots from the H3P app cat
   <span class="is-breaking">Breaking</span>
 </div>
 
+## October 2026
+
+### Liquid Record 1.1.1 - October 27
+
+- Improved recording and playback performance, clarified device microphone naming, and added app version/build details to support information.
+- Published the current version on the App Store for iPhone, iPad, compatible Apple silicon Macs, and Apple Vision.
+
+[Read the Liquid Record changelog](/apps/liquid-record/changelog)
+
+### Neon Vision Editor 2.1.5 - October 26
+
+- Published version 2.1.5 through the App Store, GitHub Releases, and Homebrew.
+- Added Folder Compare on iPhone and iPad and improved performance in large projects and documents.
+
+[Read the Neon Vision Editor changelog](/apps/neon-vision-editor/changelog)
+
+### Lingua Latina 1.8.1 - October 24
+
+- Published version 1.8.1 on the App Store.
+- Added full-screen support for iPhone Duo using the iOS 27.1 SDK.
+
+[Read the Lingua Latina changelog](/apps/lingua-latina/changelog)
+
 ## September 2026
 
 ### History Vision 1.0 beta - September 12

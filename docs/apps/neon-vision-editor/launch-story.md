@@ -57,7 +57,7 @@ The goal is assistant behavior, not content-factory behavior.
 
 - [GitHub](https://github.com/h3pdesign/Neon-Vision-Editor)
 - [TestFlight](https://testflight.apple.com/join/YWB2fGAP)
-- [App Store](https://apps.apple.com/de/app/neon-vision-editor/id6758950965)
+- [App Store](https://apps.apple.com/us/app/neon-vision-editor/id6758950965)
 
 If you are into native Apple platform development, the source code is openly visible.
 

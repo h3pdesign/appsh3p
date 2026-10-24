@@ -10,6 +10,8 @@ This page tracks repository mapping for all documented apps.
 
 ## Public App Store Listings
 
+- Neon Vision Editor: [App Store](https://apps.apple.com/us/app/neon-vision-editor/id6758950965)
+- Liquid Record: [App Store](https://apps.apple.com/us/app/liquid-record-audio-recorder/id6812232944)
 - Metrics Data: [App Store](https://apps.apple.com/us/app/metrics-data/id6758959570)
 - Lingua Latina: [App Store](https://apps.apple.com/us/app/lingua-latina/id6767503541)
 

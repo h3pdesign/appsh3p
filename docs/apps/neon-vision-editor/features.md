@@ -89,11 +89,11 @@ Neon Vision Editor uses controlled neon accents with restrained contrast.
 
 - [GitHub Releases](https://github.com/h3pdesign/Neon-Vision-Editor/releases)
 - [Homebrew Cask](https://github.com/Homebrew/homebrew-cask/blob/HEAD/Casks/n/neon-vision-editor.rb)
-- [App Store](https://apps.apple.com/de/app/neon-vision-editor/id6758950965)
+- [App Store](https://apps.apple.com/us/app/neon-vision-editor/id6758950965)
 - [TestFlight](https://testflight.apple.com/join/YWB2fGAP)
 - [GitHub](https://github.com/h3pdesign/Neon-Vision-Editor)
 
-The direct GitHub release is currently ahead of the App Store version. App Store and TestFlight availability can vary by platform and review state.
+App Store, GitHub Releases, and Homebrew currently publish version 2.1.5. TestFlight availability can vary while preview builds are validated.
 
 ## Related Pages
 

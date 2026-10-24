@@ -26,9 +26,9 @@ Workaround:
 
 ## App Store and TestFlight Build Divergence
 
-Behavior in [TestFlight](https://testflight.apple.com/join/YWB2fGAP) can differ from [App Store](https://apps.apple.com/de/app/neon-vision-editor/id6758950965) while fixes are being validated.
+Behavior in [TestFlight](https://testflight.apple.com/join/YWB2fGAP) can differ from [App Store](https://apps.apple.com/us/app/neon-vision-editor/id6758950965) while fixes are being validated.
 
-The direct GitHub macOS release can also be ahead of App Store listings. As of the current README, GitHub Releases track v0.9.4 while public App Store listings vary by platform.
+App Store, GitHub Releases, and Homebrew currently publish version 2.1.5. Release channels can diverge temporarily during future reviews.
 
 Workaround:
 

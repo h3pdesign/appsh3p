@@ -17,18 +17,18 @@ head:
 
 ## Is Neon Vision Editor available on all Apple platforms?
 
-The current project target covers macOS, iPadOS, iOS, and visionOS / Apple Vision Pro. App Store availability can vary by platform and review state.
+Yes. Version 2.1.5 is available on the App Store for macOS, iPadOS, iOS, and visionOS / Apple Vision Pro.
 
 ## Where can I download it?
 
 - Direct macOS release: [GitHub Releases](https://github.com/h3pdesign/Neon-Vision-Editor/releases)
 - Homebrew Cask: [neon-vision-editor](https://github.com/Homebrew/homebrew-cask/blob/HEAD/Casks/n/neon-vision-editor.rb)
-- App Store: [App Store](https://apps.apple.com/de/app/neon-vision-editor/id6758950965)
+- App Store: [App Store](https://apps.apple.com/us/app/neon-vision-editor/id6758950965)
 - TestFlight preview: [TestFlight](https://testflight.apple.com/join/YWB2fGAP)
 
 ## Why does the App Store version differ from the GitHub release?
 
-Direct GitHub releases can publish faster. App Store and TestFlight builds move through platform-specific review, so public listings can temporarily lag behind the latest GitHub release.
+Direct GitHub releases can publish faster. App Store and TestFlight builds move through review, so the channels can temporarily differ even though App Store, GitHub Releases, and Homebrew currently publish version 2.1.5.
 
 ## Does Neon sync my documents through its own cloud?
 

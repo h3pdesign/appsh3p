@@ -2,7 +2,7 @@
 
 ## Is Liquid Record public?
 
-No. It is currently documented as a private alpha app.
+Yes. Liquid Record 1.1.1 is available on the [App Store](https://apps.apple.com/us/app/liquid-record-audio-recorder/id6812232944).
 
 ## Does it require an account?
 
