@@ -10,7 +10,35 @@ head:
 
 # Neon Vision Editor Changelog
 
-_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on October 23, 2026._
+_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on October 24, 2026._
+
+## v2.1.3 (published October 24, 2026)
+
+Release link: [GitHub Release v2.1.3](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v2.1.3)
+
+- Select long, unwrapped lines on the Mac by dragging: the editor now scrolls sideways to follow the selection.
+- The Mac Markdown formatting bar is back in the editor's top-right corner with all its buttons.
+- Scroll the editor from the Mac minimap with the mouse wheel or trackpad.
+- Scrolling with the mouse wheel or trackpad while the pointer is over the Mac minimap scrolls the editor.
+- Dragging a selection past the left or right edge of a long unwrapped line on the Mac scrolls the editor sideways, so the text being selected stays visible (#854).
+- The Mac Markdown formatting bar sits in the editor's top-right corner again, shows all its buttons when there is room, and no longer covers the first lines of text.
+- No migration required. Existing documents, sessions, and preferences are preserved.
+- Development version 2.1.3 (build 1129).
+
+## v2.1.2 (published October 24, 2026)
+
+Release link: [GitHub Release v2.1.2](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v2.1.2)
+
+- Edit two open Mac documents side by side again, now that every document opens in its own native tab.
+- Compare any two open Mac tabs in the diff view again.
+- Move a native Mac tab into its own window from the Window menu.
+- Side by Side is back on the Mac: choose Toggle Side by Side Editor (⌥⌘\) in the View menu or the Side by Side toolbar button, then pick which open tab to show next to the current one. Both panes are editable, and the Side by Side button is now part of the standard toolbar.
+- Adds Move Tab to New Window to the Window menu.
+- Side by Side and Compare Open Tabs find the other documents open in the same Mac window's tabs instead of reporting that no other tab is open.
+- Save and Save As apply to the Side by Side pane you are editing, and a file conflict or save error on that document brings its tab forward so you can resolve it.
+- The second Side by Side pane shows its own minimap, line navigation and cursor position.
+- Undo keeps your own edits after saving a new document, and starts fresh when the document changes elsewhere.
+- No migration required. Existing documents, sessions, and preferences are preserved.
 
 ## v2.1.1 (published October 23, 2026)
 
@@ -86,7 +114,6 @@ Release link: [GitHub Release v1.9.2](https://github.com/h3pdesign/Neon-Vision-E
 - Restore access to AI provider and Jev settings on iPhone and iPad, and improve Jev disclosure text and Done button contrast.
 - Sizes the mobile bottom toolbar from its actual container on first layout, keeping editor actions and Settings visible when the observed editor width has not been populated.
 - No migration required. Jev ranking remains disabled unless explicitly enabled and configured.
-
 ## v1.9.1 (published October 1, 2026)
 
 Release link: [GitHub Release v1.9.1](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v1.9.1)
