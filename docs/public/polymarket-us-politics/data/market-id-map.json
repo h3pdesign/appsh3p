@@ -1,5 +1,5 @@
 {
-  "updated_at_utc": "2026-10-19T05:03:21.972Z",
+  "updated_at_utc": "2026-10-26T05:07:55.423Z",
   "total_questions": 66,
   "mapped_questions": 28,
   "unmapped_questions": 38,
@@ -132,9 +132,9 @@
     },
     {
       "question": "Republican Senate seats after midterms",
-      "market_id": "943819",
-      "market_slug": "will-the-republican-party-hold-47-or-fewer-senate-seats-after-the-2026-midterm-elections",
-      "market_question": "Will the Republican Party hold 47 or fewer Senate seats after the 2026 midterm elections?",
+      "market_id": "6083704",
+      "market_slug": "will-the-republicans-hold-40-or-fewer-senate-seats-after-the-2026-midterm-elections-copy",
+      "market_question": "Will the Republican Party hold 40 or fewer Senate seats after the 2026 midterm elections?",
       "score": 0.428,
       "active": true,
       "closed": false
