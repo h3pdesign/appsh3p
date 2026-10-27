@@ -1,52 +1,52 @@
 {
-  "updated_at_utc": "2026-10-26T21:13:49.490Z",
+  "updated_at_utc": "2026-10-27T14:57:02.527Z",
   "source_name": "Wikimedia Pageviews API",
   "source_url": "https://wikitech.wikimedia.org/wiki/Analytics/AQS/Pageviews",
   "metrics": [
     {
       "id": "elon_attention_3d",
       "label": "Elon Musk Attention (3D)",
-      "value": 74657,
+      "value": 70280,
       "unit": "views",
       "window_days": 3,
       "scope": "Latest available 3-day aggregate Wikimedia pageviews for Elon Musk",
       "source_name": "Wikimedia Pageviews API",
       "source_url": "https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article/en.wikipedia.org/all-access/user/Elon_Musk/daily",
-      "source_window_start": "20261023",
-      "source_window_end": "20261025",
+      "source_window_start": "20261024",
+      "source_window_end": "20261026",
       "fallback_days": 0,
       "is_fallback": false,
-      "as_of_utc": "2026-10-26T21:13:49.490Z"
+      "as_of_utc": "2026-10-27T14:57:02.527Z"
     },
     {
       "id": "elon_attention_7d",
       "label": "Elon Musk Attention (7D)",
-      "value": 203686,
+      "value": 191587,
       "unit": "views",
       "window_days": 7,
       "scope": "Latest available 7-day aggregate Wikimedia pageviews for Elon Musk",
       "source_name": "Wikimedia Pageviews API",
       "source_url": "https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article/en.wikipedia.org/all-access/user/Elon_Musk/daily",
-      "source_window_start": "20261019",
-      "source_window_end": "20261025",
+      "source_window_start": "20261020",
+      "source_window_end": "20261026",
       "fallback_days": 0,
       "is_fallback": false,
-      "as_of_utc": "2026-10-26T21:13:49.490Z"
+      "as_of_utc": "2026-10-27T14:57:02.527Z"
     },
     {
       "id": "trump_attention_7d",
       "label": "Donald Trump Attention (7D)",
-      "value": 252452,
+      "value": 258377,
       "unit": "views",
       "window_days": 7,
       "scope": "Latest available 7-day aggregate Wikimedia pageviews for Donald Trump",
       "source_name": "Wikimedia Pageviews API",
       "source_url": "https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article/en.wikipedia.org/all-access/user/Donald_Trump/daily",
-      "source_window_start": "20261019",
-      "source_window_end": "20261025",
+      "source_window_start": "20261020",
+      "source_window_end": "20261026",
       "fallback_days": 0,
       "is_fallback": false,
-      "as_of_utc": "2026-10-26T21:13:49.490Z"
+      "as_of_utc": "2026-10-27T14:57:02.527Z"
     }
   ]
 }
