@@ -10,7 +10,22 @@ head:
 
 # Neon Vision Editor Changelog
 
-_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on October 24, 2026._
+_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on October 26, 2026._
+
+## v2.1.5 (published October 26, 2026)
+
+Release link: [GitHub Release v2.1.5](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v2.1.5)
+
+- Finish words on the Mac from the macOS dictionary and your Text Replacements by pressing Tab.
+- Quick Open, Go to Symbol, and the outline no longer rescan your project or document on every keystroke.
+- Compare two folders on iPhone and iPad, and open a changed file's diff in the editor.
+- The Mac table of contents sidebar reopens the way you left it after quitting.
+- Settings on iPhone and iPad has a Close button, including on iPhone Duo's outer display.
+- On iPhone, the editor status stays above the keyboard shortcut bar again.
+- Settings on iPhone and iPad has a Close button in its top-right corner. On iPhone Duo's outer display the sheet could not be closed (#867).
+- With Translucent Window turned on, the iPhone and iPad tab bar no longer turns into one solid grey bar; only the active tab is highlighted (#868).
+- On iPhone, the editor status (line, column) sits above the keyboard shortcut bar again instead of covering it while the software keyboard is open.
+- Quick Open stays responsive in large projects: deduplicating indexed files and ranking by recency no longer slow down with every file in the index.
 
 ## v2.1.3 (published October 24, 2026)
 
@@ -99,7 +114,6 @@ Release link: [GitHub Release v1.9.3](https://github.com/h3pdesign/Neon-Vision-E
 - Keeps long selected font names inside their dropdown on macOS, iPhone, and iPad without overlapping nearby controls or widening the page. The complete name remains available in the font menu.
 - Restores the released native macOS Settings sizing and background behavior, keeping controls accessible above the Dock (#714).
 - No migration required. CSV/TSV table views remain enabled by default; existing font choices and AI provider settings are preserved.
-
 ## v1.9.2 (published October 6, 2026)
 
 Release link: [GitHub Release v1.9.2](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v1.9.2)
