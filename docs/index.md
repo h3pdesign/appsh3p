@@ -38,8 +38,8 @@ head:
       <a href="/changelog">View changelog <span>↗</span></a>
     </div>
     <div class="h3p-home-update-list">
+      <a href="/apps/liquid-record/changelog"><time datetime="2026-10-27">Oct 27, 2026</time><span><strong>Liquid Record 1.1.1</strong> improved native-input recording, support diagnostics, recording performance, and iPad landscape controls</span><b>↗</b></a>
       <a href="/apps/neon-vision-editor/changelog"><time datetime="2026-10-27">Oct 27, 2026</time><span><strong>Neon Vision Editor 2.1.5</strong> reached the App Store with iPhone/iPad Folder Compare and faster large-document navigation</span><b>↗</b></a>
-      <a href="/apps/liquid-record/changelog"><time datetime="2026-10-26">Oct 26, 2026</time><span><strong>Liquid Record 1.0.4</strong> added upright Duo controls, marker/note editing, and better transcription</span><b>↗</b></a>
       <a href="/apps/lingua-latina/changelog"><time datetime="2026-10-26">Oct 26, 2026</time><span><strong>Lingua Latina 1.6.1</strong> improved morphology, dictionary reliability, and translation checks</span><b>↗</b></a>
       <a href="/apps/gitbird/changelog"><time datetime="2026-10-25">Oct 25, 2026</time><span><strong>GitBird 2.1.10</strong> shipped on GitHub with refreshed full-canvas app icon artwork</span><b>↗</b></a>
       <a href="/apps/image-sorter/changelog"><time datetime="2026-10-26">Oct 26, 2026</time><span><strong>Image Sorter</strong> strengthened image review, file safety, queue performance, and purchase/settings flows</span><b>↗</b></a>

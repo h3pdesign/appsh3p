@@ -40,7 +40,7 @@ export const appCatalog: AppCatalogEntry[] = [
   {
     slug: 'liquid-record', name: 'Liquid Record', category: 'Field recorder and audio capture',
     description: 'An iPhone field-recorder console for WAV capture, markers, playback, and export.', icon: '/icons/liquid-record.png?v=20260914-1',
-    status: 'public', statusLabel: 'App Store release', version: '1.0.4', releaseDate: '2026-10-26', platforms: ['iOS', 'iPadOS'],
+    status: 'public', statusLabel: 'App Store release', version: '1.1.1', releaseDate: '2026-10-27', platforms: ['iOS', 'iPadOS'],
     useCases: ['audio', 'recording', 'workflow'], overview: '/apps/liquid-record/overview', installation: '/apps/liquid-record/installation', changelog: '/apps/liquid-record/changelog', privacy: '/apps/liquid-record/privacy-policy',
     installLabel: 'App Store', installUrl: 'https://apps.apple.com/us/app/liquid-record-audio-recorder/id6812232944', privacySummary: 'Offline-first local recording; the App Store privacy label states that the developer does not collect data.'
   },

@@ -1,14 +1,22 @@
 # Liquid Record Changelog
 
+## 1.1.1 (build 74) - 2026-10-27 (App Store)
+
+- Requests 48 kHz for the built-in microphone and other non-USB inputs in device-native recording mode; USB interfaces retain their own rate.
+- Shows the app version and build under Support and uses the built-in microphone's display name in Information and Projects.
+- Reduces full-console redraws during recording and playback for smoother iPad and iPhone Duo performance.
+- Limits the Full Access launch offer to at most once per day and tightens iPad landscape control spacing.
+- Adds no new capabilities, entitlements, or privacy changes.
+
 ## 1.0.4 - 2026-10-26 (App Store)
 
 - Added upright unfolded iPhone Duo side-panel support, with playhead notes and marker renaming.
 - Made transcription easier to start and find; summaries follow the transcript language and long transcripts are handled more reliably.
 - Added readable take names, improved status-card behavior at larger text sizes, and App Store offer-code redemption.
 
-## October project release: 1.1.0–1.1.1 (builds 71–74)
+## October project release: 1.1.0 (build 71)
 
-The project release log records 1.1.1 build 73 submitted on October 26 and build 74 prepared afterward. The public App Store version checked October 27 remains 1.0.4; these project changes are not described as released until the listing confirms them.
+Version 1.1.0 was a project milestone; the public App Store release is 1.1.1 (build 74), documented above.
 
 - Reduced unnecessary status-card and side-panel redraws during recording and playback.
 - Improved audio input handling, microphone naming, take-duration visibility, and support version/build information.
@@ -35,7 +43,7 @@ The project release log records 1.1.1 build 73 submitted on October 26 and build
 - Version synchronized from the local Xcode project and `project.yml`.
 - Public docs now cover console scope, audio behavior, file storage, privacy, accessibility, and validation expectations.
 
-## Current Alpha Scope
+## Current App Scope
 
 - iPhone field-recorder console.
 - Local WAV recording with AVAudioEngine.

@@ -21,10 +21,10 @@ October updates below separate verified public releases from project builds that
 
 [Read the Neon Vision Editor changelog](/apps/neon-vision-editor/changelog)
 
-### Liquid Record 1.0.4 - October 26 (App Store)
+### Liquid Record 1.1.1 - October 27 (App Store)
 
-- Added upright unfolded iPhone Duo controls, playhead notes, marker renaming, improved transcription access and long-transcript handling, readable take names, and offer-code redemption.
-- Project release records show 1.1.1 build 73 submitted October 26; the live listing checked October 27 still showed 1.0.4, so those later project changes are not called public here.
+- Published as build 74 with 48 kHz native-input recording, clearer support diagnostics and microphone naming, smoother recording/playback, once-daily launch offers, and improved iPad landscape controls.
+- The earlier 1.0.4 update added upright unfolded iPhone Duo controls, playhead notes, marker renaming, improved transcription, readable take names, and offer-code redemption.
 
 [Read the Liquid Record changelog](/apps/liquid-record/changelog)
 

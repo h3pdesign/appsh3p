@@ -8,7 +8,7 @@ head:
       content: https://apps-h3p.com/media/liquid-record/reference-console.png?v=20261027-iphone
   - - script
     - type: application/ld+json
-    - '{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://apps-h3p.com/#organization","name":"H3P","url":"https://apps-h3p.com","sameAs":["https://github.com/h3pdesign"]},{"@type":"SoftwareApplication","@id":"https://apps-h3p.com/apps/liquid-record/overview#app","name":"Liquid Record","applicationCategory":"MultimediaApplication","operatingSystem":"iOS, iPadOS","url":"https://apps-h3p.com/apps/liquid-record/overview","downloadUrl":"https://apps.apple.com/us/app/liquid-record-audio-recorder/id6812232944","softwareVersion":"1.0.4","isAccessibleForFree":true,"publisher":{"@id":"https://apps-h3p.com/#organization"}}]}'
+    - '{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://apps-h3p.com/#organization","name":"H3P","url":"https://apps-h3p.com","sameAs":["https://github.com/h3pdesign"]},{"@type":"SoftwareApplication","@id":"https://apps-h3p.com/apps/liquid-record/overview#app","name":"Liquid Record","applicationCategory":"MultimediaApplication","operatingSystem":"iOS, iPadOS","url":"https://apps-h3p.com/apps/liquid-record/overview","downloadUrl":"https://apps.apple.com/us/app/liquid-record-audio-recorder/id6812232944","softwareVersion":"1.1.1","isAccessibleForFree":true,"publisher":{"@id":"https://apps-h3p.com/#organization"}}]}'
 ---
 
 # Liquid Record
@@ -23,7 +23,7 @@ head:
 </div>
 
 <div class="overview-mini-stats overview-reveal" aria-label="app stats">
-  <div><span>App Store version</span><strong>1.0.4</strong></div>
+  <div><span>App Store version</span><strong>1.1.1</strong></div>
   <div><span>App Store platforms</span><strong>iPhone / iPad</strong></div>
   <div><span>distribution</span><strong>App Store</strong></div>
 </div>
@@ -58,7 +58,7 @@ Primary user outcomes:
 
 The current release targets iPhone and iPad with local files, SwiftData metadata, AVAudioEngine recording, selectable compatible audio inputs, Apple Files import and export, and an offline-first workflow. One recording with playback is available at no cost. A one-time Full Access purchase unlocks unlimited recordings and the complete production toolset; there is no subscription.
 
-The App Store listing showed version **1.0.4** when checked on October 27, 2026. The project release log separately records 1.1.1 build 73 submitted on October 26; public availability for that build is not confirmed by the listing yet.
+Version **1.1.1 (build 74)** is now available on the App Store. It improves native-input sample-rate selection, support diagnostics, microphone naming, recording performance, offer frequency, and iPad landscape control placement. The release does not add capabilities, entitlements, or privacy changes.
 
 ## Related Pages
 
