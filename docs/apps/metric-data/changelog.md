@@ -1,5 +1,16 @@
 # Metrics Data Changelog
 
+## 1.1.2 (development snapshot, October 24, 2026; build 112)
+
+- Adapted dashboard chart pairs for foldable phones and larger screens, placing compatible charts side by side at regular width and height.
+- Kept chart identity stable while the layout responds to resizing and refined toolbar visibility after scrolling.
+- This project build is not a public release; the App Store listing currently shows 1.1.1.
+
+## 1.1.1 (App Store, September 16, 2026)
+
+- Added clearer subscription states and a streamlined dashboard toolbar.
+- Added pull-to-refresh, improved dashboard spacing/readability, easier Privacy Policy and EULA access, and refined light/dark presentation.
+
 ## 0.2.6 (published June 11, 2026)
 
 - App Store release metadata synced to the public app documentation.

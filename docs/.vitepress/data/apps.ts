@@ -26,28 +26,28 @@ export const appCatalog: AppCatalogEntry[] = [
   {
     slug: 'neon-vision-editor', name: 'Neon Vision Editor', category: 'Native text, Markdown, and code editor',
     description: 'A focused editor for real files across Apple platforms.', icon: '/icons/neon-vision-editor.png?v=20260401-2',
-    status: 'public', statusLabel: 'App Store release', version: '2.1.5', releaseDate: '2026-10-26', platforms: ['macOS', 'iPadOS', 'iOS', 'visionOS'],
+    status: 'public', statusLabel: 'App Store release', version: '2.1.5', releaseDate: '2026-10-27', platforms: ['macOS', 'iPadOS', 'iOS', 'visionOS'],
     useCases: ['coding', 'markdown', 'ai'], overview: '/apps/neon-vision-editor/overview', installation: '/apps/neon-vision-editor/installation', changelog: '/apps/neon-vision-editor/changelog', privacy: '/policies/ai-and-data',
     installLabel: 'App Store', installUrl: 'https://apps.apple.com/us/app/neon-vision-editor/id6758950965', websiteLabel: 'GitHub releases', websiteUrl: 'https://github.com/h3pdesign/Neon-Vision-Editor/releases', privacySummary: 'Local-first editing; AI data handling is documented and user-controlled.'
   },
   {
     slug: 'gitbird', name: 'GitBird', category: 'Git notification menu bar app',
     description: 'A native macOS menu bar app for GitHub and GitLab notifications.', icon: '/icons/gitbird.png?v=20260809-1',
-    status: 'public', statusLabel: 'Public release', version: '2.1.4', releaseDate: '2026-08-05', platforms: ['macOS'],
+    status: 'public', statusLabel: 'Public release', version: '2.1.10', releaseDate: '2026-10-25', platforms: ['macOS'],
     useCases: ['git', 'notifications', 'developer'], overview: '/apps/gitbird/overview', installation: '/apps/gitbird/installation', changelog: '/apps/gitbird/changelog', privacy: '/apps/gitbird/privacy-policy',
     installLabel: 'GitHub Releases', installUrl: 'https://github.com/h3pdesign/GitBird/releases', privacySummary: 'Provider tokens are stored in Keychain and used only for configured GitHub or GitLab HTTPS hosts.'
   },
   {
     slug: 'liquid-record', name: 'Liquid Record', category: 'Field recorder and audio capture',
     description: 'An iPhone field-recorder console for WAV capture, markers, playback, and export.', icon: '/icons/liquid-record.png?v=20260914-1',
-    status: 'public', statusLabel: 'App Store release', version: '1.1.1', releaseDate: '2026-10-27', platforms: ['iOS', 'iPadOS', 'macOS', 'visionOS'],
+    status: 'public', statusLabel: 'App Store release', version: '1.0.4', releaseDate: '2026-10-26', platforms: ['iOS', 'iPadOS'],
     useCases: ['audio', 'recording', 'workflow'], overview: '/apps/liquid-record/overview', installation: '/apps/liquid-record/installation', changelog: '/apps/liquid-record/changelog', privacy: '/apps/liquid-record/privacy-policy',
     installLabel: 'App Store', installUrl: 'https://apps.apple.com/us/app/liquid-record-audio-recorder/id6812232944', privacySummary: 'Offline-first local recording; the App Store privacy label states that the developer does not collect data.'
   },
   {
     slug: 'metric-data', name: 'Metrics Data', category: 'AdSense and GA4 analytics workspace',
     description: 'Focused AdSense and GA4 reporting with secure, account-owned access.', icon: '/icons/metric-data.png?v=20260430-1',
-    status: 'public', statusLabel: 'App Store release', version: '0.2.6', releaseDate: '2026-06-11', platforms: ['iOS', 'iPadOS', 'macOS', 'visionOS', 'watchOS'],
+    status: 'public', statusLabel: 'App Store release', version: '1.1.1', releaseDate: '2026-09-16', platforms: ['iOS', 'iPadOS', 'watchOS'],
     useCases: ['analytics', 'reporting'], overview: '/apps/metric-data/overview', installation: '/apps/metric-data/installation', changelog: '/apps/metric-data/changelog', privacy: '/apps/metric-data/privacy-policy',
     installLabel: 'App Store', installUrl: 'https://apps.apple.com/us/app/metrics-data/id6758959570', privacySummary: 'Google account data is user-authorized; App Store privacy lists Data Not Collected.'
   },
@@ -68,7 +68,7 @@ export const appCatalog: AppCatalogEntry[] = [
   {
     slug: 'image-sorter', name: 'Image Sorter', category: 'Visual asset workflow',
     description: 'A deliberate queue for organizing, naming, and processing images.', icon: '/icons/image-sorter.png?v=20260914-1',
-    status: 'private', statusLabel: 'Private beta', version: '0.1', releaseDate: '2026-04-30', platforms: ['macOS'],
+    status: 'private', statusLabel: 'Private beta', version: '1.0', releaseDate: '2026-10-26', platforms: ['macOS'],
     useCases: ['visual', 'workflow'], overview: '/apps/image-sorter/overview', installation: '/apps/image-sorter/installation', changelog: '/apps/image-sorter/changelog', privacy: '/policies/privacy-policy',
     installLabel: 'Request access', installUrl: '/support/support-and-feedback', privacySummary: 'Local file workflow; access is private while the app is in beta.'
   },
@@ -81,15 +81,15 @@ export const appCatalog: AppCatalogEntry[] = [
   },
   {
     slug: 'history-vision', name: 'History Vision', category: 'History and timelines',
-    description: 'A 295-article source-aware library with research tools, dense timelines, and an offline Watch companion.', icon: '/icons/history-vision.png?v=20260914-2',
-    status: 'private', statusLabel: 'Private beta', version: '1.0', releaseDate: '2026-09-12', platforms: ['macOS', 'iPadOS', 'iOS', 'watchOS'],
+    description: 'A source-aware historical library with research tools, dense timelines, and an offline Watch companion.', icon: '/icons/history-vision.png?v=20260914-2',
+    status: 'private', statusLabel: 'Private beta', version: '1.0', releaseDate: '2026-10-27', platforms: ['macOS', 'iPadOS', 'iOS', 'watchOS'],
     useCases: ['history', 'research', 'reading'], overview: '/apps/history-vision/overview', installation: '/apps/history-vision/installation', changelog: '/apps/history-vision/changelog', privacy: '/policies/privacy-policy',
     installLabel: 'Request access', installUrl: '/support/support-and-feedback', privacySummary: 'Source-aware reading experience; private beta access is handled through support.'
   },
   {
     slug: 'lingua-latina', name: 'Lingua Latina', category: 'Latin language study',
     description: 'Dictionary, morphology, grammar, and vocabulary in one native study space.', icon: '/icons/lingua-latina.png?v=20260430-1',
-    status: 'public', statusLabel: 'App Store release', version: '1.8.1', releaseDate: '2026-10-24', platforms: ['iOS', 'iPadOS', 'macOS', 'visionOS'],
+    status: 'public', statusLabel: 'App Store release', version: '1.6.1', releaseDate: '2026-10-26', platforms: ['iOS', 'iPadOS'],
     useCases: ['language', 'study'], overview: '/apps/lingua-latina/overview', installation: '/apps/lingua-latina/installation', changelog: '/apps/lingua-latina/changelog', privacy: '/apps/lingua-latina/privacy-policy',
     installLabel: 'App Store', installUrl: 'https://apps.apple.com/us/app/lingua-latina/id6767503541', websiteLabel: 'Product website', websiteUrl: 'https://h3pdesign.github.io/Lingua-Latina-Public/', privacySummary: 'App Store privacy lists Data Not Collected; optional external AI providers are user-enabled.'
   }

@@ -1,5 +1,16 @@
 # GitBird Changelog
 
+## 2.1.7–2.1.10 (October 9–25, 2026)
+
+GitBird is distributed through GitHub Releases; it is not an App Store app.
+
+- **2.1.7:** kept bulk-action confirmation in the notification popup and tightened provider-specific scope and retry handling.
+- **2.1.8:** added per-item progress and local mention, review-request, and repository filters; improved refresh/action coordination, cached-error recovery, and GitLab action clarity.
+- **2.1.9:** repaired Icon Composer integration and release icon resources.
+- **2.1.10:** enlarged bird-and-branch artwork by 15% and shipped full-canvas rendered app icons. App Store Connect artwork still requires a separate uploaded build.
+
+[Download GitBird 2.1.10](https://github.com/h3pdesign/GitBird/releases/tag/v2.1.10).
+
 ## 2.1.4 - 2026-08-05
 
 ### Security and Reliability

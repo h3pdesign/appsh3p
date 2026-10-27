@@ -13,6 +13,8 @@
 - Mark individual items read or done on the provider.
 - Mark all visible notifications read where the provider supports it.
 - Keep GitLab completion behavior aligned with the GitLab Todo API.
+- Filter loaded GitHub notifications by mentions or review requests and either provider's items by repository; search and filters combine locally.
+- See row-level action progress and keep cached notifications available while refresh errors are shown.
 
 ## Security and Credentials
 

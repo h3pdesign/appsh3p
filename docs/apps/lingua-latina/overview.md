@@ -12,7 +12,7 @@ head:
 
 <div class="overview-status-pill overview-status-release">Status: App Store release</div>
 
-<p class="overview-last-updated">Last updated: <span data-date="2026-10-24">October 24, 2026</span></p>
+<p class="overview-last-updated">Last updated: <span data-date="2026-10-27">October 27, 2026</span></p>
 
 ## Application Purpose
 
@@ -29,13 +29,11 @@ Primary user outcomes:
 <div class="overview-platform-badges overview-reveal" aria-label="supported platforms">
   <span>iOS</span>
   <span>iPadOS</span>
-  <span>macOS</span>
-  <span>visionOS</span>
 </div>
 
 <div class="overview-mini-stats overview-reveal" aria-label="app stats">
-  <div><span>latest version</span><strong>1.8.1</strong></div>
-  <div><span>platforms</span><strong>iOS / iPadOS / macOS / visionOS</strong></div>
+  <div><span>App Store version</span><strong>1.6.1</strong></div>
+  <div><span>App Store platforms</span><strong>iPhone / iPad</strong></div>
   <div><span>distribution</span><strong>App Store</strong></div>
 </div>
 
@@ -61,6 +59,8 @@ Primary user outcomes:
 
 Lingua Latina prioritizes speed, clarity, offline capability, native Apple UX, and optional AI assistance.
 
+The App Store listing showed version **1.6.1** when checked on October 27, 2026. Project release materials also contain prepared versions 1.7–1.8.2 (build 325); those are not represented as public releases here.
+
 The app uses a single active language mode:
 
 - German UI produces German dictionary, grammar, and quiz output.
@@ -76,8 +76,8 @@ Optional external AI providers are user-selected in Settings. API keys are store
 
 - iOS
 - iPadOS
-- macOS
-- visionOS
+
+The current public App Store listing is for iPhone and iPad. macOS and visionOS targets in project materials are not presented as public App Store availability.
 
 ## Related Pages
 

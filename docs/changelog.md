@@ -11,26 +11,64 @@ Source: published release notes and documentation snapshots from the H3P app cat
 
 ## October 2026
 
-### Liquid Record 1.1.1 - October 27
+October updates below separate verified public releases from project builds that remain private, in development, or absent from the current store listing.
 
-- Improved recording and playback performance, clarified device microphone naming, and added app version/build details to support information.
-- Published the current version on the App Store for iPhone, iPad, compatible Apple silicon Macs, and Apple Vision.
+### Neon Vision Editor 2.1.5 - October 27 (App Store)
 
-[Read the Liquid Record changelog](/apps/liquid-record/changelog)
-
-### Neon Vision Editor 2.1.5 - October 26
-
-- Published version 2.1.5 through the App Store, GitHub Releases, and Homebrew.
-- Added Folder Compare on iPhone and iPad and improved performance in large projects and documents.
+- Added Folder Compare on iPhone and iPad and reduced repeated scans in Quick Open and Go to Symbol.
+- Moved outline and line/word counts to background work to keep large documents responsive.
+- October releases 2.1.0–2.1.5 also brought substantial Mac tab, side-by-side editing, keyboard/focus, Duo, and reliability work.
 
 [Read the Neon Vision Editor changelog](/apps/neon-vision-editor/changelog)
 
-### Lingua Latina 1.8.1 - October 24
+### Liquid Record 1.0.4 - October 26 (App Store)
 
-- Published version 1.8.1 on the App Store.
-- Added full-screen support for iPhone Duo using the iOS 27.1 SDK.
+- Added upright unfolded iPhone Duo controls, playhead notes, marker renaming, improved transcription access and long-transcript handling, readable take names, and offer-code redemption.
+- Project release records show 1.1.1 build 73 submitted October 26; the live listing checked October 27 still showed 1.0.4, so those later project changes are not called public here.
+
+[Read the Liquid Record changelog](/apps/liquid-record/changelog)
+
+### Lingua Latina 1.6.1 - October 26 (App Store)
+
+- Improved Latin morphology, dictionary reliability, translation validation, AI-result labeling, and English/German answer behavior.
+- Project builds 1.7–1.8.2 (through build 325) contain major study, interface, Duo, and answer-routing work, but the current App Store listing remains 1.6.1.
 
 [Read the Lingua Latina changelog](/apps/lingua-latina/changelog)
+
+### GitBird 2.1.7–2.1.10 - October 9–25 (GitHub Releases)
+
+- Improved bulk-action scope and recovery, per-item progress, provider filters, refresh coordination, and the app icon.
+- GitBird is distributed through GitHub Releases; it is not an App Store app.
+
+[Read the GitBird changelog](/apps/gitbird/changelog)
+
+### Image Sorter - October 12–26 (private project)
+
+- Hardened image recognition and file safety, improved review-queue performance, and added StoreKit purchase and About/settings flows.
+- Remains a private project at version 1.0 (build 1).
+
+[Read the Image Sorter changelog](/apps/image-sorter/changelog)
+
+### Vistral - October 25–26 (TestFlight project)
+
+- Refined Duo/large-screen navigation, Watch previews, chart continuity, localization, and theme colors; current project metadata is version 1.0, build 306.
+- Project changes do not confirm a new TestFlight upload.
+
+[Read the Vistral changelog](/apps/vistral/changelog)
+
+### History Vision - October 27 (private beta, build 262)
+
+- Expanded and corrected source-backed historical content across ancient and modern subjects and refreshed the bundled database.
+- Current catalogue snapshot: 2,079 articles, 6,635 timeline records, 4,532 sources, and 4,868 structured claims. These counts are not independent historical verification.
+
+[Read the History Vision changelog](/apps/history-vision/changelog)
+
+### Metrics Data 1.1.2 - October 24 (development build 112)
+
+- Adapted chart layouts to foldable phones and larger screens and preserved chart identity during resizing.
+- The current App Store version remains 1.1.1; build 1.1.2 is not a confirmed public release.
+
+[Read the Metrics Data changelog](/apps/metric-data/changelog)
 
 ## September 2026
 

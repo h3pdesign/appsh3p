@@ -12,11 +12,13 @@ head:
 
 <div class="overview-status-pill overview-status-private">Status: Private beta</div>
 
-<p class="overview-last-updated">Last updated: <span data-date="2026-04-30">April 30, 2026</span></p>
+<p class="overview-last-updated">Last updated: <span data-date="2026-10-26">October 26, 2026</span></p>
 
 ## Application Purpose
 
 Image Sorter is a macOS image-ingestion and organization app. Its purpose is to help users review dropped image batches, classify them into consistent categories, and process them into structured output folders with optional companion-server sync.
+
+October development focused on safer image recognition and file operations, a faster review queue, and a StoreKit-backed purchase flow with an About/settings page. The app remains a private beta; the project version is 1.0 (build 1), not a public release.
 
 Primary user outcomes:
 
@@ -30,7 +32,7 @@ Primary user outcomes:
 </div>
 
 <div class="overview-mini-stats overview-reveal" aria-label="app stats">
-  <div><span>latest version</span><strong>0.1 (build 1)</strong></div>
+  <div><span>project version</span><strong>1.0 (build 1)</strong></div>
   <div><span>platforms</span><strong>macOS</strong></div>
   <div><span>repo status</span><strong>private</strong></div>
 </div>

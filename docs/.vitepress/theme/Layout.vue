@@ -78,16 +78,16 @@ const topSwitcherLinks = [
 ]
 
 const appUpdatedBySlug: Record<string, string> = {
-  'neon-vision-editor': 'October 26, 2026',
-  'gitbird': 'August 5, 2026',
+  'neon-vision-editor': 'October 27, 2026',
+  'gitbird': 'October 25, 2026',
   'liquid-record': 'October 27, 2026',
-  'metric-data': 'June 11, 2026',
+  'metric-data': 'October 27, 2026',
   'x-newsbook': 'February 13, 2026',
   'release-assistant': 'May 6, 2026',
-  'image-sorter': 'April 30, 2026',
-  'vistral': 'May 9, 2026',
-  'history-vision': 'April 30, 2026',
-  'lingua-latina': 'October 24, 2026'
+  'image-sorter': 'October 26, 2026',
+  'vistral': 'October 26, 2026',
+  'history-vision': 'October 27, 2026',
+  'lingua-latina': 'October 27, 2026'
 }
 
 const appDocTopLinks = computed<DocJumpLink[]>(() => {
@@ -747,8 +747,8 @@ function ensureHomeWidgets() {
 
       <section class="home-hero-widget-card home-hero-ticker">
         <h3>Latest release</h3>
-        <p><strong>Liquid Record v1.1.1</strong> published on October 27, 2026.</p>
-        <a href="https://apps.apple.com/us/app/liquid-record-audio-recorder/id6812232944" target="_blank" rel="noreferrer noopener">View App Store listing</a>
+        <p><strong>Neon Vision Editor v2.1.5</strong> is the latest App Store release, published October 27, 2026.</p>
+        <a href="https://apps.apple.com/us/app/neon-vision-editor/id6758950965" target="_blank" rel="noreferrer noopener">View App Store listing</a>
       </section>
     `
 

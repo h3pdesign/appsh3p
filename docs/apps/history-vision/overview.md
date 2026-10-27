@@ -12,17 +12,17 @@ head:
 
 <div class="overview-status-pill overview-status-private">Status: Private beta</div>
 
-<p class="overview-last-updated">Last updated: <span data-date="2026-09-14">September 14, 2026</span></p>
+<p class="overview-last-updated">Last updated: <span data-date="2026-10-27">October 27, 2026</span></p>
 
 ## Application Purpose
 
-History Vision is a native historical reading and research app built around a 295-article local catalogue. It combines editorial articles, source inspection, related people and inventions, dense chronology, comparison tools, and private reading workflows without turning historical uncertainty into false precision.
+History Vision is a native historical reading and research app built around a source-backed local catalogue. It combines editorial articles, source inspection, related people and inventions, dense chronology, comparison tools, and private reading workflows without turning historical uncertainty into false precision.
 
 Primary user outcomes:
 
 - discover articles by period, region, source status, or recommendation
 - read structured long-form articles with inline references and source details
-- search and compare 13,387 catalogued timeline records across eras and regions
+- search and compare 6,635 bundled timeline records across eras and regions
 - save articles, reading progress, review state, and private research notes locally
 - carry offline briefs, chronology, and a reading list onto Apple Watch
 
@@ -34,8 +34,8 @@ Primary user outcomes:
 </div>
 
 <div class="overview-mini-stats overview-reveal" aria-label="app stats">
-  <div><span>latest version</span><strong>1.0 · iOS 225 · Mac/Watch 115</strong></div>
-  <div><span>catalogue</span><strong>295 articles · 13,387 timeline records</strong></div>
+  <div><span>project build</span><strong>1.0 · build 262</strong></div>
+  <div><span>catalogue</span><strong>2,079 articles · 6,635 timeline records</strong></div>
   <div><span>platforms</span><strong>iOS / iPadOS / macOS / watchOS</strong></div>
   <div><span>repo status</span><strong>private</strong></div>
 </div>
@@ -59,7 +59,7 @@ Primary user outcomes:
 
 ## Current Catalogue
 
-The bundled database currently contains **295 articles**, **13,387 timeline records**, **824 research sources**, and **2,280 structured historical claims**. Source-backed editorial content and archived research material remain visibly distinguished, and the documentation does not treat structural validation as independent historical review.
+The bundled database in project build 262 contains **2,079 articles**, **6,635 timeline records**, **4,532 research sources**, and **4,868 structured historical claims**. October content work expanded source-backed entries and corrected chronology across modern and ancient topics. Source-backed editorial content and archived research material remain visibly distinguished; database counts and structural validation are not substitutes for independent historical review. The app remains a private beta.
 
 ## Related Pages
 

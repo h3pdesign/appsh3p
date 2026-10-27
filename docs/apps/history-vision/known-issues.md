@@ -1,6 +1,6 @@
 # History Vision Known Issues And Limits
 
-- All 295 articles have source-checked editorial drafts, but independent historical review and owner approval remain pending.
+- Editorial material has source references, but independent historical review and owner approval remain pending.
 - Catalogue coverage is broad, not exhaustive; article depth and illustration coverage vary by topic.
 - Archived date mentions are searchable research material, not independently verified historical events.
 - Optional daily content and Wikimedia source links require network access; the bundled catalogue remains available offline.

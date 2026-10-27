@@ -13,7 +13,7 @@
 
 ## Content Model
 
-The current SQLite catalogue includes 295 articles, 1,775 editorial paragraphs, 1,794 editorial citation links, 824 research sources, 2,280 structured claims, and 13,387 timeline records. Curated chronology and archived date mentions remain separate data classes.
+The SQLite catalogue in project build 262 includes 2,079 article records, 4,532 research sources, 4,868 structured claims, and 6,635 timeline records. Curated chronology and archived date mentions remain separate data classes. These counts describe the bundled data shape, not editorial verification.
 
 ## Source Boundaries
 

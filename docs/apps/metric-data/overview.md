@@ -8,14 +8,14 @@ head:
       content: https://apps-h3p.com/media/metrics/dashboard-ipad.png
   - - script
     - type: application/ld+json
-    - '{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://apps-h3p.com/#organization","name":"H3P","url":"https://apps-h3p.com","sameAs":["https://github.com/h3pdesign"]},{"@type":"SoftwareApplication","@id":"https://apps-h3p.com/apps/metric-data/overview#app","name":"Metrics Data","applicationCategory":"BusinessApplication","operatingSystem":"macOS, iPadOS, iOS, visionOS, watchOS","url":"https://apps-h3p.com/apps/metric-data/overview","downloadUrl":"https://apps.apple.com/us/app/metrics-data/id6758959570","softwareVersion":"0.2.6","isAccessibleForFree":true,"publisher":{"@id":"https://apps-h3p.com/#organization"}}]}'
+    - '{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://apps-h3p.com/#organization","name":"H3P","url":"https://apps-h3p.com","sameAs":["https://github.com/h3pdesign"]},{"@type":"SoftwareApplication","@id":"https://apps-h3p.com/apps/metric-data/overview#app","name":"Metrics Data","applicationCategory":"BusinessApplication","operatingSystem":"iOS, iPadOS, watchOS","url":"https://apps-h3p.com/apps/metric-data/overview","downloadUrl":"https://apps.apple.com/us/app/metrics-data/id6758959570","softwareVersion":"1.1.1","isAccessibleForFree":true,"publisher":{"@id":"https://apps-h3p.com/#organization"}}]}'
 ---
 
 # Metrics Data
 
 <div class="overview-status-pill overview-status-release">Status: App Store release</div>
 
-<p class="overview-last-updated">Last updated: <span data-date="2026-06-11">June 11, 2026</span></p>
+<p class="overview-last-updated">Last updated: <span data-date="2026-10-27">October 27, 2026</span></p>
 
 ## Application Identity
 
@@ -32,21 +32,21 @@ Primary use:
 - sign in with Google OAuth 2.0 (Authorization Code + PKCE)
 - fetch AdSense reporting data for authorized users
 - display trends, dimensions, and account-level performance summaries
-- support daily analytics workflows across macOS, iPadOS, and iOS
+- support daily analytics workflows across iPhone, iPad, and Apple Watch
 
-This app is not a public data crawler and does not access data outside the Google accounts explicitly authorized by the signed-in user.
+This app is not a public data crawler and does not access data outside the Google accounts explicitly authorized by the signed-in user. The current App Store listing is for iPhone, iPad, and Apple Watch; additional macOS project targets are not presented as public store availability.
+
+The App Store listing shows version **1.1.1**. The October 24 project snapshot is **1.1.2 (build 112)** and adapts chart pairs to regular-width/regular-height screens while preserving chart identity during resizing; it is a development build, not a confirmed store release.
 
 <div class="overview-platform-badges overview-reveal" aria-label="supported platforms">
   <span>iOS</span>
   <span>iPadOS</span>
-  <span>macOS</span>
-  <span>visionOS</span>
   <span>watchOS</span>
 </div>
 
 <div class="overview-mini-stats overview-reveal" aria-label="app stats">
-  <div><span>latest version</span><strong>0.2.6</strong></div>
-  <div><span>platforms</span><strong>iOS / iPadOS / macOS / visionOS / watchOS</strong></div>
+  <div><span>App Store version</span><strong>1.1.1</strong></div>
+  <div><span>App Store platforms</span><strong>iPhone / iPad / Apple Watch</strong></div>
   <div><span>distribution</span><strong>App Store</strong></div>
 </div>
 <div class="overview-hero overview-app-metric overview-reveal">

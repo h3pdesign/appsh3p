@@ -2,7 +2,7 @@
 
 ## Is History Vision focused on one region or period?
 
-No. The 295-article catalogue spans periods and regions and can be browsed or filtered through both dimensions.
+No. The catalogue spans periods and regions and can be browsed or filtered through both dimensions.
 
 ## Will all pages include citations?
 
@@ -14,7 +14,7 @@ The bundled article catalogue and the Apple Watch brief catalogue work offline. 
 
 ## What does the timeline contain?
 
-The current database contains 13,387 dated records. Curated events, people, periods, and themes are kept distinct from unreviewed date mentions extracted from archived source text.
+Project build 262 contains 6,635 timeline records. Curated chronology and archived date mentions are stored separately; a database record count does not establish historical accuracy.
 
 ## Does History Vision use AI?
 

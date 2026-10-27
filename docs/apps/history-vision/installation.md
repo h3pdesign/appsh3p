@@ -17,8 +17,6 @@
 ## Current Build Metadata
 
 - Marketing version: **1.0**
-- iOS build: **225**
-- macOS build: **115**
-- watchOS build: **115**
+- Current project build: **262** (iOS, macOS, and watchOS targets)
 
 History Vision remains a private beta. Use [support and feedback](/support/support-and-feedback) for availability questions.

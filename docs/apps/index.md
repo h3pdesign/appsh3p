@@ -18,35 +18,35 @@
 <div class="apps-whats-new" aria-label="Latest updates">
   <div class="apps-whats-new-title">What's new</div>
   <div class="apps-whats-new-items">
-    <span class="apps-whats-new-item is-neon">Neon Vision Editor 2.1.5 is available on the App Store and through direct release channels.</span>
-    <span class="apps-whats-new-item is-gitbird">GitBird docs added with GitHub/GitLab notification, Keychain, and release guidance.</span>
-    <span class="apps-whats-new-item is-liquid">Liquid Record 1.1.1 is now available on the App Store.</span>
-    <span class="apps-whats-new-item is-metric">Metrics Data is now listed as an App Store release.</span>
-    <span class="apps-whats-new-item is-release">Release Assistant now includes structured install, gallery, and changelog docs.</span>
-    <span class="apps-whats-new-item is-newsbook">X-Newsbook docs added with overview, components, installation, and FAQ.</span>
-    <span class="apps-whats-new-item is-sorter">Image Sorter docs added with queue workflow, installation, and support pages.</span>
-    <span class="apps-whats-new-item is-vistral">Vistral is documented as a TestFlight beta.</span>
-    <span class="apps-whats-new-item is-history">History Vision now documents its 295-article library, dense chronology, research tools, and Watch companion.</span>
-    <span class="apps-whats-new-item is-lingua">Lingua Latina 1.8.1 is now available on the App Store.</span>
+    <span class="apps-whats-new-item is-neon">October: Neon Vision Editor 2.1.5 reached the App Store with Folder Compare and faster background indexing.</span>
+    <span class="apps-whats-new-item is-gitbird">October: GitBird 2.1.7–2.1.10 improved notification actions, filters, recovery, and app artwork; GitHub is its release channel.</span>
+    <span class="apps-whats-new-item is-liquid">October: Liquid Record 1.0.4 is the App Store listing; project release 1.1.1 is tracked separately until its public availability is confirmed.</span>
+    <span class="apps-whats-new-item is-metric">October: Metrics Data prepared adaptive chart layouts in development build 1.1.2 (112); the App Store listing remains 1.1.1.</span>
+    <span class="apps-whats-new-item is-release">Release Assistant remains an internal alpha; no October release is recorded.</span>
+    <span class="apps-whats-new-item is-newsbook">X-Newsbook remains in private beta; no October release is recorded.</span>
+    <span class="apps-whats-new-item is-sorter">October: Image Sorter improved image review, file safety, queue performance, StoreKit, and About settings in its private project.</span>
+    <span class="apps-whats-new-item is-vistral">October: Vistral's TestFlight project added large-screen/Duo refinements, chart continuity, Watch previews, and palette/localization polish.</span>
+    <span class="apps-whats-new-item is-history">October: History Vision's private beta expanded source-backed articles and corrected historical chronology; current project build 262.</span>
+    <span class="apps-whats-new-item is-lingua">October: Lingua Latina 1.6.1 is the current App Store listing; 1.7–1.8.2 remain project release-train builds.</span>
   </div>
 </div>
 
-<div class="apps-release-timeline" aria-label="Release timeline">
+<div class="apps-release-timeline" aria-label="Latest app version and update dates">
   <div class="apps-release-group">
-  <div class="apps-release-heading"><span>App</span><span>Version</span><span>Released</span></div>
-  <div class="apps-release-item neon"><span class="name">Neon Vision Editor</span><span class="tag">v2.1.5</span><span class="date">2026-10-26</span></div>
-  <div class="apps-release-item gitbird"><span class="name">GitBird</span><span class="tag">2.1.4</span><span class="date">2026-08-05</span></div>
-  <div class="apps-release-item liquid"><span class="name">Liquid Record</span><span class="tag">1.1.1</span><span class="date">2026-10-27</span></div>
-  <div class="apps-release-item metric"><span class="name">Metrics Data</span><span class="tag">0.2.6</span><span class="date">2026-06-11</span></div>
+  <div class="apps-release-heading"><span>App</span><span>Version</span><span>Updated</span></div>
+  <div class="apps-release-item neon"><span class="name">Neon Vision Editor</span><span class="tag">v2.1.5</span><span class="date">2026-10-27</span></div>
+  <div class="apps-release-item gitbird"><span class="name">GitBird</span><span class="tag">2.1.10</span><span class="date">2026-10-25</span></div>
+  <div class="apps-release-item liquid"><span class="name">Liquid Record</span><span class="tag">1.0.4</span><span class="date">2026-10-26</span></div>
+  <div class="apps-release-item metric"><span class="name">Metrics Data</span><span class="tag">1.1.1</span><span class="date">2026-09-16</span></div>
   <div class="apps-release-item newsbook"><span class="name">X-Newsbook</span><span class="tag">10</span><span class="date">2026-02-13</span></div>
   </div>
   <div class="apps-release-group">
-  <div class="apps-release-heading"><span>App</span><span>Version</span><span>Released</span></div>
+  <div class="apps-release-heading"><span>App</span><span>Version</span><span>Updated</span></div>
   <div class="apps-release-item release"><span class="name">Release Assistant</span><span class="tag">0.2.0</span><span class="date">2026-05-06</span></div>
-  <div class="apps-release-item sorter"><span class="name">Image Sorter</span><span class="tag">0.1</span><span class="date">2026-04-30</span></div>
+  <div class="apps-release-item sorter"><span class="name">Image Sorter</span><span class="tag">1.0 beta</span><span class="date">2026-10-26</span></div>
   <div class="apps-release-item vistral"><span class="name">Vistral</span><span class="tag">0.1.6</span><span class="date">2026-05-09</span></div>
-  <div class="apps-release-item history"><span class="name">History Vision</span><span class="tag">1.0</span><span class="date">2026-09-12</span></div>
-  <div class="apps-release-item lingua"><span class="name">Lingua Latina</span><span class="tag">1.8.1</span><span class="date">2026-10-24</span></div>
+  <div class="apps-release-item history"><span class="name">History Vision</span><span class="tag">1.0 · build 262</span><span class="date">2026-10-27</span></div>
+  <div class="apps-release-item lingua"><span class="name">Lingua Latina</span><span class="tag">1.6.1</span><span class="date">2026-10-26</span></div>
   </div>
 </div>
 

@@ -8,21 +8,21 @@ head:
       content: https://apps-h3p.com/media/gitbird/screenshot.png
   - - script
     - type: application/ld+json
-    - '{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://apps-h3p.com/#organization","name":"H3P","url":"https://apps-h3p.com","sameAs":["https://github.com/h3pdesign"]},{"@type":"SoftwareApplication","@id":"https://apps-h3p.com/apps/gitbird/overview#app","name":"GitBird","applicationCategory":"DeveloperApplication","operatingSystem":"macOS","url":"https://apps-h3p.com/apps/gitbird/overview","downloadUrl":"https://github.com/h3pdesign/GitBird/releases","softwareVersion":"2.1.4","isAccessibleForFree":true,"publisher":{"@id":"https://apps-h3p.com/#organization"}}]}'
+    - '{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://apps-h3p.com/#organization","name":"H3P","url":"https://apps-h3p.com","sameAs":["https://github.com/h3pdesign"]},{"@type":"SoftwareApplication","@id":"https://apps-h3p.com/apps/gitbird/overview#app","name":"GitBird","applicationCategory":"DeveloperApplication","operatingSystem":"macOS","url":"https://apps-h3p.com/apps/gitbird/overview","downloadUrl":"https://github.com/h3pdesign/GitBird/releases","softwareVersion":"2.1.10","isAccessibleForFree":true,"publisher":{"@id":"https://apps-h3p.com/#organization"}}]}'
 ---
 
 # GitBird
 
 <div class="overview-status-pill overview-status-release">Status: Public release</div>
 
-<p class="overview-last-updated">Last updated: <span data-date="2026-08-05">August 5, 2026</span></p>
+<p class="overview-last-updated">Last updated: <span data-date="2026-10-25">October 25, 2026</span></p>
 
 <div class="overview-platform-badges overview-reveal" aria-label="supported platforms">
   <span>macOS</span>
 </div>
 
 <div class="overview-mini-stats overview-reveal" aria-label="app stats">
-  <div><span>latest version</span><strong>2.1.4 (build 181)</strong></div>
+  <div><span>latest version</span><strong>2.1.10</strong></div>
   <div><span>platforms</span><strong>macOS 14.6+</strong></div>
   <div><span>repo status</span><strong>public</strong></div>
 </div>
@@ -52,7 +52,7 @@ Primary user outcomes:
 
 ## Release Status
 
-The current local project version is **2.1.4** with build **181**. The release adds Keychain-backed token storage, host restrictions for authenticated provider requests, and reliability fixes for refresh/bulk-action state.
+The latest public release is **2.1.10**, distributed from GitHub rather than the App Store. October releases improved confirmed bulk actions, per-item progress, local notification filters, refresh recovery, provider-state handling, and the app icon. See the changelog for the 2.1.7–2.1.10 sequence.
 
 ## Related Pages
 

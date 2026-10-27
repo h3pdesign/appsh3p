@@ -9,7 +9,7 @@
 
 ## Complete Library
 
-- Search all 295 bundled articles by title, period, and region.
+- Search the bundled article catalogue by title, period, and region.
 - Compact, lazy-loading catalogue rows with stable article identity.
 - Filters for saved articles and source-quality state.
 - Featured, recent, and suggested article collections.
@@ -29,7 +29,7 @@
 
 ## Timeline And Comparison
 
-- Search 13,387 dated records with year, region, period, and text filters.
+- Search 6,635 bundled timeline records with year, region, period, and text filters (project build 262).
 - Separate curated events and intervals from unreviewed archived date mentions.
 - List and comparison presentations with shared chronology, semantic types, uncertainty labels, and source links.
 - Dense-timeline navigation designed for progressive filtering instead of rendering every record as an equal card.

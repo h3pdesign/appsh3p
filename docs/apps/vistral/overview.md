@@ -12,11 +12,13 @@ head:
 
 <div class="overview-status-pill overview-status-private">Status: TestFlight beta</div>
 
-<p class="overview-last-updated">Last updated: <span data-date="2026-05-09">May 9, 2026</span></p>
+<p class="overview-last-updated">Last updated: <span data-date="2026-10-26">October 26, 2026</span></p>
 
 ## Application Purpose
 
 Vistral is a privacy-first personal data visualization app. Its purpose is to import user-provided data exports and turn them into explainable insights and dashboards while keeping processing primarily on-device.
+
+October project work refined navigation for compact and unfolded iPhone Duo layouts, improved chart continuity when source data has gaps, brightened the theme palette, and updated Watch preview/localization and store-review imagery. The project is at version 1.0, build 306; TestFlight upload status for that build is not confirmed here.
 
 Primary user outcomes:
 
@@ -35,7 +37,7 @@ Primary user outcomes:
 </div>
 
 <div class="overview-mini-stats overview-reveal" aria-label="app stats">
-  <div><span>latest version</span><strong>0.1.6 (build 46)</strong></div>
+  <div><span>project version</span><strong>1.0 (build 306)</strong></div>
   <div><span>platforms</span><strong>iOS / iPadOS / macOS / tvOS / watchOS / visionOS</strong></div>
   <div><span>distribution</span><strong>TestFlight</strong></div>
 </div>
