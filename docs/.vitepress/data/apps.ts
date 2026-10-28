@@ -26,7 +26,7 @@ export const appCatalog: AppCatalogEntry[] = [
   {
     slug: 'neon-vision-editor', name: 'Neon Vision Editor', category: 'Native text, Markdown, and code editor',
     description: 'A focused editor for real files across Apple platforms.', icon: '/icons/neon-vision-editor.png?v=20260401-2',
-    status: 'public', statusLabel: 'App Store release', version: '2.1.5', releaseDate: '2026-10-27', platforms: ['macOS', 'iPadOS', 'iOS', 'visionOS'],
+    status: 'public', statusLabel: 'App Store release', version: '2.1.5', releaseDate: '2026-10-26', platforms: ['macOS', 'iPadOS', 'iOS', 'visionOS'],
     useCases: ['coding', 'markdown', 'ai'], overview: '/apps/neon-vision-editor/overview', installation: '/apps/neon-vision-editor/installation', changelog: '/apps/neon-vision-editor/changelog', privacy: '/policies/ai-and-data',
     installLabel: 'App Store', installUrl: 'https://apps.apple.com/us/app/neon-vision-editor/id6758950965', websiteLabel: 'GitHub releases', websiteUrl: 'https://github.com/h3pdesign/Neon-Vision-Editor/releases', privacySummary: 'Local-first editing; AI data handling is documented and user-controlled.'
   },

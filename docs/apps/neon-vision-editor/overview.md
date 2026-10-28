@@ -15,7 +15,7 @@ head:
 
 <div class="overview-status-pill overview-status-release">Status: App Store release</div>
 
-<p class="overview-last-updated">Last updated: <span data-date="2026-10-27">October 27, 2026</span></p>
+<p class="overview-last-updated">Last updated: <span data-date="2026-10-26">October 26, 2026</span></p>
 
 <div class="overview-platform-badges overview-reveal" aria-label="supported platforms">
   <span>macOS</span>

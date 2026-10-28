@@ -27,12 +27,6 @@ Release link: [GitHub Release v2.1.5](https://github.com/h3pdesign/Neon-Vision-E
 - On iPhone, the editor status (line, column) sits above the keyboard shortcut bar again instead of covering it while the software keyboard is open.
 - Quick Open stays responsive in large projects: deduplicating indexed files and ranking by recency no longer slow down with every file in the index.
 
-## v2.1.4 (App Store, October 26, 2026)
-
-- Added a Close button to Settings on iPhone and iPad, including iPhone Duo's outer display.
-- Fixed the Translucent Window tab bar so only the active tab is highlighted.
-- Kept line/column status above the software-keyboard shortcut bar while editing.
-
 ## v2.1.3 (published October 24, 2026)
 
 Release link: [GitHub Release v2.1.3](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v2.1.3)
