@@ -10,7 +10,22 @@ head:
 
 # Neon Vision Editor Changelog
 
-_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on October 26, 2026._
+_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on November 1, 2026._
+
+## v2.1.6 (published November 1, 2026)
+
+Release link: [GitHub Release v2.1.6](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v2.1.6)
+
+- On smaller Mac screens, every Settings page fits above the Dock again, and taller pages scroll.
+- Typing and moving the caret on iPhone and iPad copies the document once per change instead of up to four times.
+- On iPhone Duo's unfolded display, the editor toolbar no longer covers the clock and status icons.
+- Completion options have their own section in Mac Settings under Editor.
+- Notes in Mac Settings wrap onto more lines instead of being cut off.
+- Where iPhone Duo doesn't report the status bar's position, the editor toolbar moves to the bottom of the screen.
+- On iPhone Duo's unfolded display, the editor toolbar no longer covers the vertical status bar. Where the system doesn't report the status bar's position on that edge, the toolbar returns to the bottom of the screen (#891).
+- Typing and moving the caret on iPhone and iPad copies the document once per change instead of up to four times, which keeps large files more responsive.
+- On smaller Mac screens, Settings no longer extends behind the Dock. A Settings page taller than the screen now scrolls, and Editor › Completion has its own section so Editor › Behavior fits again (#898).
+- No migration required. Existing documents, sessions, and preferences are preserved.
 
 ## v2.1.5 (published October 26, 2026)
 
@@ -99,7 +114,6 @@ Release link: [GitHub Release v2.0.0](https://github.com/h3pdesign/Neon-Vision-E
 - Keeps precise iPhone/iPad cursor placement from being overwritten by delayed saved-position updates (#770).
 - Restores saved cursor positions after deferred large-file loading completes, without saving temporary placeholder positions (#770).
 - Preserves manual scrolling through overflowing Mac tabs and adds accessible left/right navigation controls (#766).
-
 ## v1.9.3 (published October 13, 2026)
 
 Release link: [GitHub Release v1.9.3](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v1.9.3)
