@@ -10,7 +10,22 @@ head:
 
 # Neon Vision Editor Changelog
 
-_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on November 1, 2026._
+_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on November 7, 2026._
+
+## v2.1.7 (published November 7, 2026)
+
+Release link: [GitHub Release v2.1.7](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v2.1.7)
+
+- On the Mac, words from the macOS dictionary and your Text Replacements appear in a list below the caret as you type.
+- Markdown previews and PDF exports show TeX formulas offline, using a bundled copy of KaTeX.
+- Typing in large documents on iPhone and iPad is faster, with far less delay per keystroke in files over 1 MB.
+- Quitting the Mac app with several tabs open no longer crashes.
+- Right Arrow accepts inline suggestions as the setting describes, and Tab also works with Caps Lock on.
+- Cheaper Inference is available as an optional AI provider.
+- In the word list, Up and Down Arrow pick a word, Tab or Right Arrow accepts it, and Escape closes the list.
+- Clicking a word in the list inserts it, and Return accepts a word you picked with the arrow keys.
+- Cheaper Inference uses gpt-5.4-mini by default, keeps its API token in the Keychain, and lets you set your own model id.
+- Markdown previews and PDF exports render inline and display TeX formulas offline with bundled KaTeX. Formula underscores are preserved, and document JavaScript remains disabled (#942).
 
 ## v2.1.6 (published November 1, 2026)
 
@@ -99,7 +114,6 @@ Release link: [GitHub Release v2.1.0](https://github.com/h3pdesign/Neon-Vision-E
 - Preserves JSON object member order, repeated keys, exact number tokens, and escaped strings when formatting or combining lines (#802).
 - The previous Mac in-editor tab strip is replaced by native document tabs. iPhone, iPad, and visionOS retain their existing platform-specific tab experiences.
 - No document conversion is required. Existing saved sessions use the native document-tab layout on macOS.
-
 ## v2.0.0 (published October 15, 2026)
 
 Release link: [GitHub Release v2.0.0](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v2.0.0)
