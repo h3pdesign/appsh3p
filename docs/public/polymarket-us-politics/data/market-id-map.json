@@ -1,8 +1,8 @@
 {
-  "updated_at_utc": "2026-11-02T06:35:25.803Z",
+  "updated_at_utc": "2026-11-09T06:59:49.395Z",
   "total_questions": 66,
-  "mapped_questions": 28,
-  "unmapped_questions": 38,
+  "mapped_questions": 23,
+  "unmapped_questions": 43,
   "entries": [
     {
       "question": "Will LeBron James win the 2028 US Presidential Election?",
@@ -33,9 +33,9 @@
     },
     {
       "question": "Democratic Presidential Nominee 2028",
-      "market_id": "4591297",
-      "market_slug": "will-the-2028-democratic-presidential-nominee-be-85-or-older",
-      "market_question": "Will the 2028 Democratic presidential nominee be 85 or older?",
+      "market_id": "1389020",
+      "market_slug": "will-the-2028-democratic-presidential-nominee-be-a-woman",
+      "market_question": "Will the 2028 Democratic Presidential nominee be a woman?",
       "score": 0.691,
       "active": true,
       "closed": false
@@ -113,47 +113,11 @@
       "closed": false
     },
     {
-      "question": "Blue wave in 2026?",
-      "market_id": "919484",
-      "market_slug": "blue-wave-in-2026",
-      "market_question": "Blue wave in 2026?",
-      "score": 1,
-      "active": true,
-      "closed": false
-    },
-    {
-      "question": "Blue tsunami in 2026?",
-      "market_id": "1170844",
-      "market_slug": "blue-tsunami-in-2026",
-      "market_question": "Blue tsunami in 2026?",
-      "score": 1,
-      "active": true,
-      "closed": false
-    },
-    {
       "question": "Republican Senate seats after midterms",
-      "market_id": "6083704",
-      "market_slug": "will-the-republicans-hold-40-or-fewer-senate-seats-after-the-2026-midterm-elections-copy",
-      "market_question": "Will the Republican Party hold 40 or fewer Senate seats after the 2026 midterm elections?",
+      "market_id": "6083708",
+      "market_slug": "will-the-republicans-hold-exactly-44-senate-seats-after-the-2026-midterm-elections-copy",
+      "market_question": "Will the Republican Party hold exactly 44 Senate seats after the 2026 midterm elections?",
       "score": 0.428,
-      "active": true,
-      "closed": false
-    },
-    {
-      "question": "ACA credits not extended & Dem House",
-      "market_id": "902970",
-      "market_slug": "will-aca-premium-tax-credits-not-be-extended-and-will-the-democratic-party-win-the-house-in-2026",
-      "market_question": "Will ACA premium tax credits not be extended and will the Democratic Party win the House in 2026?",
-      "score": 0.453,
-      "active": true,
-      "closed": false
-    },
-    {
-      "question": "Will Republicans lose House majority before midterms?",
-      "market_id": "1178757",
-      "market_slug": "will-republicans-lose-house-majority-before-the-midterms",
-      "market_question": "Will Republicans lose House majority before the midterms?",
-      "score": 0.995,
       "active": true,
       "closed": false
     },
@@ -163,15 +127,6 @@
       "market_slug": "mike-johnson-out-as-speaker-by-december-31",
       "market_question": "Mike Johnson out as Speaker by December 31?",
       "score": 0.691,
-      "active": true,
-      "closed": false
-    },
-    {
-      "question": "Republicans win Trifecta with Senate Supermajority?",
-      "market_id": "1060867",
-      "market_slug": "republican-trifecta-with-supermajority-in-the-senate",
-      "market_question": "Republicans win Trifecta with Senate Supermajority in midterms?",
-      "score": 1,
       "active": true,
       "closed": false
     },
@@ -277,9 +232,14 @@
     "US tariff rate on China — March 31",
     "Revenue from tariffs 2025",
     "Will Congress pass any tariffs by March 31?",
+    "Blue wave in 2026?",
+    "Blue tsunami in 2026?",
     "House Popular Vote Margin",
     "Government shutdown & House winner",
+    "ACA credits not extended & Dem House",
+    "Will Republicans lose House majority before midterms?",
     "Mitch McConnell step down?",
+    "Republicans win Trifecta with Senate Supermajority?",
     "Texas Dem Senate Primary",
     "DHS Shutdown Duration",
     "When will DHS shutdown end?",
