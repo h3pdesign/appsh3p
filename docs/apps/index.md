@@ -415,6 +415,7 @@
       <a href="/apps/image-sorter/changelog">Changelog</a>
       <a href="/apps/image-sorter/known-issues">Known Issues</a>
       <a href="/apps/image-sorter/faq">FAQ</a>
+      <a href="/apps/image-sorter-ai/privacy-policy">Privacy</a>
     </div>
   </section>
   <section>

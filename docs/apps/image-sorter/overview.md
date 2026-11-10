@@ -52,6 +52,7 @@ Primary user outcomes:
 - [Installation](/apps/image-sorter/installation)
 - [Features](/apps/image-sorter/features)
 - [Gallery](/apps/image-sorter/gallery)
+- [Privacy Policy](/apps/image-sorter-ai/privacy-policy)
 
 ## Related Pages
 
@@ -62,3 +63,4 @@ Primary user outcomes:
 - [Changelog](/apps/image-sorter/changelog)
 - [Known Issues](/apps/image-sorter/known-issues)
 - [FAQ](/apps/image-sorter/faq)
+- [Privacy Policy](/apps/image-sorter-ai/privacy-policy)

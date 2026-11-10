@@ -69,7 +69,7 @@ export const appCatalog: AppCatalogEntry[] = [
     slug: 'image-sorter', name: 'Image Sorter', category: 'Visual asset workflow',
     description: 'A deliberate queue for organizing, naming, and processing images.', icon: '/icons/image-sorter.png?v=20260914-1',
     status: 'private', statusLabel: 'Private beta', version: '1.0', releaseDate: '2026-10-26', platforms: ['macOS'],
-    useCases: ['visual', 'workflow'], overview: '/apps/image-sorter/overview', installation: '/apps/image-sorter/installation', changelog: '/apps/image-sorter/changelog', privacy: '/policies/privacy-policy',
+    useCases: ['visual', 'workflow'], overview: '/apps/image-sorter/overview', installation: '/apps/image-sorter/installation', changelog: '/apps/image-sorter/changelog', privacy: '/apps/image-sorter-ai/privacy-policy',
     installLabel: 'Request access', installUrl: '/support/support-and-feedback', privacySummary: 'Local file workflow; access is private while the app is in beta.'
   },
   {
