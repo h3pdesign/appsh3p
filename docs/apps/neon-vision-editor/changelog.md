@@ -10,7 +10,22 @@ head:
 
 # Neon Vision Editor Changelog
 
-_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on November 7, 2026._
+_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on November 9, 2026._
+
+## v2.2.0 (published November 9, 2026)
+
+Release link: [GitHub Release v2.2.0](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v2.2.0)
+
+- On iPhone Duo, a preview next to the editor starts at the fold, so the document and preview each get one half.
+- The iPhone app updates Apple Watch only when your status changes, and network files aren't checked in the background.
+- API Route is available as an optional AI provider.
+- On the Mac, a Text Replacement shortcut such as “omw” lists its phrase first, and Tab or Return replaces it.
+- With Reopen Last Session, Mac tabs come back in the order you left them.
+- The Neon Pulse inbox complication on Apple Watch updates as soon as you capture a note.
+- On iPhone Duo, a Markdown, JSON, YAML, web, image or PDF preview next to the editor starts at the fold. Without a reported fold, the split stays as before.
+- API Route uses claude-haiku-4-5 by default, keeps its API key in the Keychain, and lets you set your own model id (#957).
+- On the Mac, typing a Text Replacement shortcut such as "omw" lists its phrase first in the word list. Tab, Right Arrow or Return replaces the shortcut with the phrase (#959).
+- With "Reopen Last Session", Mac tabs reopen in the order you left them instead of reversed (#940).
 
 ## v2.1.7 (published November 7, 2026)
 
@@ -99,7 +114,6 @@ Release link: [GitHub Release v2.1.1](https://github.com/h3pdesign/Neon-Vision-E
 - "Open files on current desktop" finds a file that is already open in a background tab instead of opening it twice.
 - No migration required. Existing documents, sessions, and preferences are preserved.
 - Avoids rewriting unchanged toolbar labels on every document update.
-
 ## v2.1.0 (published October 22, 2026)
 
 Release link: [GitHub Release v2.1.0](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v2.1.0)
