@@ -25,7 +25,7 @@ This page tracks repository mapping for all documented apps.
 - Vistral
 - History Vision
 - Lingua Latina
-- ArtiBol
+- Morphia
 
 ## Publication Checklist
 

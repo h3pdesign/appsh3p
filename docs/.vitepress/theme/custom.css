@@ -3615,7 +3615,7 @@ html.app-theme-lingua-latina {
   --app-accent-2: #e28cb8;
 }
 
-html.app-theme-artibol {
+html.app-theme-morphia {
   --app-accent: #e0456a;
   --app-accent-2: #d9a93a;
 }
@@ -4367,7 +4367,7 @@ html.h3p-apps-index-route .vp-doc > h1:first-child {
 .h3p-apps-index-route .apps-release-item.vistral .tag { color: #20a99d; border-color: rgba(32, 169, 157, 0.45); }
 .h3p-apps-index-route .apps-release-item.history .tag { color: #88a94b; border-color: rgba(113, 141, 54, 0.5); }
 .h3p-apps-index-route .apps-release-item.lingua .tag { color: #cc6c9e; border-color: rgba(182, 78, 132, 0.5); }
-.h3p-apps-index-route .apps-release-item.artibol .tag { color: #e0456a; border-color: rgba(224, 69, 106, 0.5); }
+.h3p-apps-index-route .apps-release-item.morphia .tag { color: #e0456a; border-color: rgba(224, 69, 106, 0.5); }
 
 .h3p-apps-index-route .apps-carousel {
   margin-top: 18px;
@@ -4459,7 +4459,7 @@ html.h3p-apps-index-route .vp-doc > h1:first-child {
 .h3p-apps-index-route .app-card-vistral { --app-card-accent: #20a99d; }
 .h3p-apps-index-route .app-card-history { --app-card-accent: #718d36; }
 .h3p-apps-index-route .app-card-lingua { --app-card-accent: #b64e84; }
-.h3p-apps-index-route .app-card-artibol { --app-card-accent: #e0456a; }
+.h3p-apps-index-route .app-card-morphia { --app-card-accent: #e0456a; }
 
 .h3p-apps-index-route .app-card:hover,
 .h3p-apps-index-route .app-card:focus-within {
