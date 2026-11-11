@@ -92,6 +92,13 @@ export const appCatalog: AppCatalogEntry[] = [
     status: 'public', statusLabel: 'App Store release', version: '1.6.1', releaseDate: '2026-10-26', platforms: ['iOS', 'iPadOS'],
     useCases: ['language', 'study'], overview: '/apps/lingua-latina/overview', installation: '/apps/lingua-latina/installation', changelog: '/apps/lingua-latina/changelog', privacy: '/apps/lingua-latina/privacy-policy',
     installLabel: 'App Store', installUrl: 'https://apps.apple.com/us/app/lingua-latina/id6767503541', websiteLabel: 'Product website', websiteUrl: 'https://h3pdesign.github.io/Lingua-Latina-Public/', privacySummary: 'App Store privacy lists Data Not Collected; optional external AI providers are user-enabled.'
+  },
+  {
+    slug: 'artibol', name: 'ArtiBol', category: 'Generative art inspired by biology',
+    description: 'A living canvas where reaction-diffusion, flocks, and cephalopod skin become art tools.', icon: '/icons/artibol.png?v=20261111-1',
+    status: 'private', statusLabel: 'Coming soon', version: '0.1.0', releaseDate: '2026-11-11', platforms: ['iOS', 'iPadOS'],
+    useCases: ['art', 'visual', 'learning'], overview: '/apps/artibol/overview', installation: '/apps/artibol/installation', changelog: '/apps/artibol/changelog', privacy: '/apps/artibol/privacy-policy',
+    installLabel: 'Coming soon', installUrl: '/apps/artibol/installation', privacySummary: 'Runs fully on device with no network requests; the developer does not collect data.'
   }
 ]
 

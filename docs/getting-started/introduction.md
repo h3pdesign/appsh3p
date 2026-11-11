@@ -12,6 +12,7 @@ Use the [app catalogue](/apps/index) to compare purpose, platform, release statu
 | [GitBird](/apps/gitbird/overview) | GitHub and GitLab notifications | Public macOS release via GitHub Releases |
 | [Metrics Data](/apps/metric-data/overview) | AdSense and GA4 reporting | App Store |
 | [Lingua Latina](/apps/lingua-latina/overview) | Latin dictionary and study | App Store |
+| [ArtiBol](/apps/artibol/overview) | Generative art inspired by biology | Coming soon to the App Store |
 | [Vistral](/apps/vistral/overview) | Personal data dashboards | TestFlight beta via support |
 | [Liquid Record](/apps/liquid-record/overview) | WAV field recording and production | App Store |
 | [History Vision](/apps/history-vision/overview) | Source-aware history and timelines | Private beta via support |
