@@ -717,7 +717,7 @@ function ensureHomeWidgets() {
       <section class="home-hero-widget-card">
         <h3>Status</h3>
         <ul>
-          <li><strong>10</strong> apps documented</li>
+          <li><strong>${Object.keys(appCatalogBySlug).length}</strong> apps documented</li>
           <li>Published on <a href="https://apps-h3p.com" target="_blank" rel="noreferrer noopener">apps-h3p.com</a></li>
           <li><a href="https://github.com/h3pdesign/appsh3p" target="_blank" rel="noreferrer noopener">Docs repo</a></li>
         </ul>
