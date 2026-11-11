@@ -21,6 +21,7 @@ Use this view when you know the job you want to do but not which app is the best
 | [Vistral](/apps/vistral/overview) | Local-first dashboards and insights | macOS · iPadOS · iOS · tvOS · watchOS · visionOS | TestFlight beta · 0.1.6 (2026-05-09) | [Request TestFlight access](/support/support-and-feedback) | [Website policy](/policies/privacy-policy) |
 | [History Vision](/apps/history-vision/overview) | Source-aware history, research, and timelines | macOS · iPadOS · iOS · watchOS | Private beta · 1.0 project build 262 (2026-10-27) | [Request access](/support/support-and-feedback) | [Website policy](/policies/privacy-policy) |
 | [Lingua Latina](/apps/lingua-latina/overview) | Latin dictionary, grammar, and study | macOS · iPadOS · iOS · visionOS | App Store release · 1.6.1 (2026-10-26) | [App Store](https://apps.apple.com/us/app/lingua-latina/id6767503541) | [App policy](/apps/lingua-latina/privacy-policy) |
+| [ArtiBol](/apps/artibol/overview) | Generative art driven by biology models | iPadOS · iOS | Coming soon · 0.1.0 project build (2026-11-11) | [Installation](/apps/artibol/installation) | [App policy](/apps/artibol/privacy-policy) |
 
 ## Choose by use case
 
@@ -31,6 +32,7 @@ Use this view when you know the job you want to do but not which app is the best
 - **Reading and research:** [X-Newsbook](/apps/x-newsbook/overview) or [History Vision](/apps/history-vision/overview)
 - **Release work:** [Release Assistant](/apps/release-assistant/overview)
 - **Language study:** [Lingua Latina](/apps/lingua-latina/overview)
+- **Generative art and biology:** [ArtiBol](/apps/artibol/overview)
 
 <style>
 .compare-actions { display: flex; flex-wrap: wrap; gap: 10px; margin: 18px 0 24px; }

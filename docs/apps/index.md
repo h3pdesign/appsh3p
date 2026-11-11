@@ -3,7 +3,7 @@
 <div class="apps-top-row">
   <div class="apps-index-intro-copy">
     <p class="apps-index-eyebrow">App library</p>
-    <p class="apps-intro">Explore ten focused apps, each with a clear purpose, platform story, and complete documentation path.</p>
+    <p class="apps-intro">Explore eleven focused apps, each with a clear purpose, platform story, and complete documentation path.</p>
     <p class="apps-intro-note">Choose an app to see its overview, features, installation guidance, gallery, release history, and support resources.</p>
   </div>
   <div class="apps-avatar-card">
@@ -28,6 +28,7 @@
     <span class="apps-whats-new-item is-vistral">October: Vistral's TestFlight project added large-screen/Duo refinements, chart continuity, Watch previews, and palette/localization polish.</span>
     <span class="apps-whats-new-item is-history">October: History Vision's private beta expanded source-backed articles and corrected historical chronology; current project build 262.</span>
     <span class="apps-whats-new-item is-lingua">October: Lingua Latina 1.6.1 is the current App Store listing; 1.7–1.8.2 remain project release-train builds.</span>
+    <span class="apps-whats-new-item is-artibol">November: ArtiBol, a generative art app driven by biology models, joined the catalogue ahead of its App Store release.</span>
   </div>
 </div>
 
@@ -47,6 +48,7 @@
   <div class="apps-release-item vistral"><span class="name">Vistral</span><span class="tag">0.1.6</span><span class="date">2026-05-09</span></div>
   <div class="apps-release-item history"><span class="name">History Vision</span><span class="tag">1.0 · build 262</span><span class="date">2026-10-27</span></div>
   <div class="apps-release-item lingua"><span class="name">Lingua Latina</span><span class="tag">1.6.1</span><span class="date">2026-10-26</span></div>
+  <div class="apps-release-item artibol"><span class="name">ArtiBol</span><span class="tag">0.1.0</span><span class="date">2026-11-11</span></div>
   </div>
 </div>
 
@@ -102,7 +104,7 @@
   <button type="button" data-app-filter="usecase:reading">Reading</button>
   <button type="button" data-app-filter="usecase:language">Language</button>
 </div>
-<div class="apps-filter-status" aria-live="polite"><span data-app-count>10 apps shown</span><span data-app-empty hidden>No apps match. Try another search or filter.</span><a href="/apps/compare">Compare all apps →</a></div>
+<div class="apps-filter-status" aria-live="polite"><span data-app-count>11 apps shown</span><span data-app-empty hidden>No apps match. Try another search or filter.</span><a href="/apps/compare">Compare all apps →</a></div>
 
 <div class="apps-grid">
   <article class="app-card app-card-neon" data-changelog="/apps/neon-vision-editor/changelog" data-status="public" data-platforms="macos,ipados,ios,visionos" data-use-cases="coding,markdown,ai">
@@ -317,6 +319,28 @@
       </div>
     </div>
   </article>
+
+  <article class="app-card app-card-artibol" data-changelog="/apps/artibol/changelog" data-status="private" data-platforms="ipados,ios" data-use-cases="art,visual,learning">
+    <img src="/icons/artibol.png?v=20261111-1" alt="ArtiBol icon" class="app-icon" />
+    <div class="app-card-content">
+      <h3 class="app-title-row"><a class="app-title-link" href="/apps/artibol/overview">ArtiBol</a><span class="app-status app-status-beta">Coming soon</span></h3>
+      <div class="app-card-meta-row">
+        <div class="app-platform-pills">
+          <span>iPadOS</span><span>iOS</span>
+        </div>
+        <div class="app-meta-right">
+          <span class="app-doc-state app-doc-state-active">Docs: Active</span>
+          <span class="app-updated-badge">updated recently</span>
+        </div>
+      </div>
+      <p>Generative art studio where real biology models, from reaction-diffusion coats to starling flocks and cuttlefish skin, become touch-driven art tools.</p>
+      <div class="app-actions-row">
+        <span class="chip chip-live">App Store: coming soon</span>
+        <a class="chip chip-link" href="/apps/artibol/features">Features</a>
+        <a class="chip chip-link" href="/apps/artibol/privacy-policy">Privacy Policy</a>
+      </div>
+    </div>
+  </article>
 </div>
 
 ## Documentation Map
@@ -458,6 +482,20 @@
       <a href="/apps/lingua-latina/privacy-policy">Privacy</a>
     </div>
   </section>
+  <section>
+    <h3>ArtiBol</h3>
+    <div>
+      <a href="/apps/artibol/overview">Overview</a>
+      <a href="/apps/artibol/components-overview">Components</a>
+      <a href="/apps/artibol/installation">Install</a>
+      <a href="/apps/artibol/features">Features</a>
+      <a href="/apps/artibol/gallery">Gallery</a>
+      <a href="/apps/artibol/changelog">Changelog</a>
+      <a href="/apps/artibol/known-issues">Known Issues</a>
+      <a href="/apps/artibol/faq">FAQ</a>
+      <a href="/apps/artibol/privacy-policy">Privacy</a>
+    </div>
+  </section>
 </div>
 
 <div class="apps-status-legend" aria-label="App status legend">
@@ -466,6 +504,7 @@
   <span><strong>TestFlight beta</strong>: limited TestFlight testing and active docs</span>
   <span><strong>Private beta</strong>: limited testing and active docs</span>
   <span><strong>Internal alpha</strong>: internal testing and active docs</span>
+  <span><strong>Coming soon</strong>: App Store submission in preparation and active docs</span>
 </div>
 
 <div class="apps-resources">
@@ -489,6 +528,7 @@
       <a href="/apps/vistral/components-overview">Vistral</a>
       <a href="/apps/history-vision/components-overview">History Vision</a>
       <a href="/apps/lingua-latina/components-overview">Lingua Latina</a>
+      <a href="/apps/artibol/components-overview">ArtiBol</a>
     </nav>
   </section>
   <section aria-labelledby="source-code-repositories">
@@ -567,6 +607,7 @@
 .apps-whats-new-item.is-vistral { --item-accent: #42b7a7; }
 .apps-whats-new-item.is-history { --item-accent: #7c8f38; }
 .apps-whats-new-item.is-lingua { --item-accent: #b25686; }
+.apps-whats-new-item.is-artibol { --item-accent: #e0456a; }
 
 
 .apps-release-timeline {

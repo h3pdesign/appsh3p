@@ -22,6 +22,7 @@ App-specific privacy details:
 - Lingua Latina has an app-specific policy at [Privacy Policy for Lingua Latina](/apps/lingua-latina/privacy-policy).
 - History Vision has an app-specific policy at [Privacy Policy for History Vision](/apps/history-vision/privacy-policy).
 - Image Sorter has an app-specific policy at [Privacy Policy for Image Sorter](/apps/image-sorter-ai/privacy-policy), covering local processing and optional external providers.
+- ArtiBol has an app-specific policy at [Privacy Policy for ArtiBol](/apps/artibol/privacy-policy).
 
 The current app privacy policy status table is maintained at [Policies Overview](/policies/index#app-privacy-status).
 
