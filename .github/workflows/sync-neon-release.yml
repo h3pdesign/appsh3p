@@ -67,6 +67,9 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.APP_RELEASES_PAT || secrets.GITHUB_TOKEN }}
         run: node scripts/sync-neon-release.mjs "${{ steps.target.outputs.app }}" "${{ steps.target.outputs.repo }}"
 
+      - name: Refresh weekly updates from app changelogs
+        run: npm run docs:sync-whats-new
+
       - name: Commit and push if changed
         run: |
           git add docs/index.md docs/apps/index.md docs/apps/compare.md docs/.vitepress/data/apps.ts docs/.vitepress/theme/Layout.vue docs/apps/neon-vision-editor/overview.md docs/apps/neon-vision-editor/changelog.md docs/apps/metric-data/overview.md docs/apps/metric-data/changelog.md docs/apps/release-assistant/overview.md docs/apps/release-assistant/changelog.md
@@ -101,6 +104,7 @@ jobs:
           node scripts/sync-neon-release.mjs neon
           node scripts/sync-neon-release.mjs metric
           node scripts/sync-neon-release.mjs release-assistant
+          npm run docs:sync-whats-new
 
       - name: Commit and push if changed
         run: |

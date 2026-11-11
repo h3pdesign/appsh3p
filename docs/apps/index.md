@@ -18,17 +18,8 @@
 <div class="apps-whats-new" aria-label="Latest updates">
   <div class="apps-whats-new-title">What's new</div>
   <div class="apps-whats-new-items">
-    <span class="apps-whats-new-item is-neon">October: Neon Vision Editor 2.1.5 reached the App Store with Folder Compare and faster background indexing.</span>
-    <span class="apps-whats-new-item is-gitbird">October: GitBird 2.1.7–2.1.10 improved notification actions, filters, recovery, and app artwork; GitHub is its release channel.</span>
-    <span class="apps-whats-new-item is-liquid">October: Liquid Record 1.0.4 is the App Store listing; project release 1.1.1 is tracked separately until its public availability is confirmed.</span>
-    <span class="apps-whats-new-item is-metric">October: Metrics Data prepared adaptive chart layouts in development build 1.1.2 (112); the App Store listing remains 1.1.1.</span>
-    <span class="apps-whats-new-item is-release">Release Assistant remains an internal alpha; no October release is recorded.</span>
-    <span class="apps-whats-new-item is-newsbook">X-Newsbook remains in private beta; no October release is recorded.</span>
-    <span class="apps-whats-new-item is-sorter">October: Image Sorter improved image review, file safety, queue performance, StoreKit, and About settings in its private project.</span>
-    <span class="apps-whats-new-item is-vistral">October: Vistral's TestFlight project added large-screen/Duo refinements, chart continuity, Watch previews, and palette/localization polish.</span>
-    <span class="apps-whats-new-item is-history">October: History Vision's private beta expanded source-backed articles and corrected historical chronology; current project build 262.</span>
-    <span class="apps-whats-new-item is-lingua">October: Lingua Latina 1.6.1 is the current App Store listing; 1.7–1.8.2 remain project release-train builds.</span>
-    <span class="apps-whats-new-item is-morphia">November: Morphia, a generative art app driven by biology models, joined the catalogue ahead of its App Store release.</span>
+    <span class="apps-whats-new-item is-morphia">Nov 11, 2026: Morphia: Living art The app formerly documented as ArtiBol is now Morphia. Old /apps/artibol/ links redirect to the new pages.</span>
+    <span class="apps-whats-new-item is-neon-vision-editor">Nov 9, 2026: Neon Vision Editor 2.2.0 On iPhone Duo, a preview next to the editor starts at the fold, so the document and preview each get one half.</span>
   </div>
 </div>
 

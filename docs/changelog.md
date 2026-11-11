@@ -9,6 +9,20 @@ Source: published release notes and documentation snapshots from the H3P app cat
   <span class="is-breaking">Breaking</span>
 </div>
 
+## November 2026
+
+### Neon Vision Editor 2.2.0 - November 9 (GitHub release)
+
+- Refined iPhone Duo previews, added optional API Route support, and improved workflows across Apple platforms.
+- The current release and detailed notes are in the [Neon Vision Editor changelog](/apps/neon-vision-editor/changelog).
+
+### Morphia - November 11 (in development)
+
+- Added the Morphia catalogue entry, app icon, and documentation for the current 0.1.0 (build 1) project snapshot.
+- Documents Coats, Murmuration, and Cephalopod Skin. This is development documentation, not a public app release.
+
+[Read Morphia documentation](/apps/morphia/overview) · [Morphia changelog](/apps/morphia/changelog)
+
 ## October 2026
 
 October updates below separate verified public releases from project builds that remain private, in development, or absent from the current store listing.

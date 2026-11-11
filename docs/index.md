@@ -38,14 +38,8 @@ head:
       <a href="/changelog">View changelog <span>↗</span></a>
     </div>
     <div class="h3p-home-update-list">
-      <a href="/apps/liquid-record/changelog"><time datetime="2026-10-27">Oct 27, 2026</time><span><strong>Liquid Record 1.1.1</strong> improved native-input recording, support diagnostics, recording performance, and iPad landscape controls</span><b>↗</b></a>
-      <a href="/apps/neon-vision-editor/changelog"><time datetime="2026-10-27">Oct 27, 2026</time><span><strong>Neon Vision Editor 2.1.5</strong> reached the App Store with iPhone/iPad Folder Compare and faster large-document navigation</span><b>↗</b></a>
-      <a href="/apps/lingua-latina/changelog"><time datetime="2026-10-26">Oct 26, 2026</time><span><strong>Lingua Latina 1.6.1</strong> improved morphology, dictionary reliability, and translation checks</span><b>↗</b></a>
-      <a href="/apps/gitbird/changelog"><time datetime="2026-10-25">Oct 25, 2026</time><span><strong>GitBird 2.1.10</strong> shipped on GitHub with refreshed full-canvas app icon artwork</span><b>↗</b></a>
-      <a href="/apps/image-sorter/changelog"><time datetime="2026-10-26">Oct 26, 2026</time><span><strong>Image Sorter</strong> strengthened image review, file safety, queue performance, and purchase/settings flows</span><b>↗</b></a>
-      <a href="/apps/vistral/changelog"><time datetime="2026-10-26">Oct 26, 2026</time><span><strong>Vistral beta</strong> improved Duo and large-screen navigation, chart continuity, themes, and Watch previews</span><b>↗</b></a>
-      <a href="/apps/history-vision/changelog"><time datetime="2026-10-27">Oct 27, 2026</time><span><strong>History Vision beta</strong> expanded source-backed entries and corrected chronology; build 262</span><b>↗</b></a>
-      <a href="/apps/metric-data/changelog"><time datetime="2026-10-24">Oct 24, 2026</time><span><strong>Metrics Data</strong> prepared an adaptive large-screen dashboard in development build 1.1.2 (112); App Store version remains 1.1.1</span><b>↗</b></a>
+      <a href="/apps/morphia/changelog"><time datetime="2026-11-11">Nov 11, 2026</time><span><strong>Morphia: Living art</strong> The app formerly documented as ArtiBol is now Morphia. Old /apps/artibol/ links redirect to the new pages.</span><b>↗</b></a>
+      <a href="/apps/neon-vision-editor/changelog"><time datetime="2026-11-09">Nov 9, 2026</time><span><strong>Neon Vision Editor 2.2.0</strong> On iPhone Duo, a preview next to the editor starts at the fold, so the document and preview each get one half.</span><b>↗</b></a>
     </div>
   </section>
 

@@ -1453,6 +1453,7 @@ onBeforeUnmount(() => {
               <a href="/apps/release-assistant/overview">Release Assistant</a>
               <a href="/apps/x-newsbook/overview">X-Newsbook</a>
               <a href="/apps/image-sorter/overview">Image Sorter</a>
+              <a href="/apps/morphia/overview">Morphia</a>
             </section>
             <section class="h3p-app-site-footer-column">
               <h3>Resources</h3>
