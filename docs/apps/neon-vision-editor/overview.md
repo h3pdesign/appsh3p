@@ -30,7 +30,7 @@ head:
   <div><span>repo status</span><strong>public</strong></div>
 </div>
 <figure class="overview-banner overview-neon-banner overview-reveal">
-  <img src="/media/neon/neon-vision-editor-presentation.png" alt="Neon Vision Editor running on a MacBook" />
+  <img src="/media/neon/neon-vision-editor-presentation.webp" alt="Neon Vision Editor running on a MacBook" />
 </figure>
 <div class="overview-hero overview-app-neon overview-reveal">
   <div class="overview-hero-copy">

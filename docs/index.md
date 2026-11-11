@@ -6,7 +6,7 @@ hero:
   text: "Small tools. Serious focus."
   tagline: "Native apps for writing, building, learning, measuring, and making things with care."
   image:
-    src: /media/neon/neon-vision-editor-hero-transparent.png
+    src: /media/neon/neon-vision-editor-hero-transparent.webp
     alt: Neon Vision Editor running on a MacBook
   actions:
     - theme: brand
@@ -59,7 +59,7 @@ head:
 
   <section class="h3p-home-featured" aria-labelledby="featured-title">
     <div class="h3p-home-featured-copy">
-      <div class="h3p-home-app-label"><img src="/icons/neon-vision-editor.png?v=20260401-2" alt="" aria-hidden="true" /> Featured app</div>
+      <div class="h3p-home-app-label"><img loading="lazy" decoding="async" src="/icons/neon-vision-editor.png?v=20260401-2" alt="" aria-hidden="true" /> Featured app</div>
       <h2 id="featured-title">Neon Vision Editor</h2>
       <p class="h3p-home-lede">A calm, native editor for real files, Markdown, and code. Move from thought to finished work without leaving your workspace.</p>
       <div class="h3p-home-actions">
@@ -69,7 +69,7 @@ head:
       <div class="h3p-home-meta"><span>macOS</span><span>iPhone</span><span>iPad</span><span>visionOS</span></div>
     </div>
     <a class="h3p-home-featured-media" href="/apps/neon-vision-editor/overview" aria-label="Open Neon Vision Editor documentation">
-      <img src="/media/neon/neon-vision-editor-presentation.png" alt="Neon Vision Editor running on a MacBook" loading="eager" decoding="async" />
+      <img src="/media/neon/neon-vision-editor-presentation.webp" alt="Neon Vision Editor running on a MacBook" loading="lazy" decoding="async" />
     </a>
   </section>
 
@@ -82,17 +82,17 @@ head:
       <a href="/apps/index">Browse all apps <span>↗</span></a>
     </div>
     <div class="h3p-home-app-grid">
-      <a class="h3p-app-card h3p-app-card-accent" href="/apps/gitbird/overview"><img src="/icons/gitbird.png?v=20260809-1" alt="" aria-hidden="true" /><span class="h3p-card-status">Public release</span><h3>GitBird</h3><p>GitHub and GitLab notifications in your menu bar.</p><span class="h3p-card-arrow">↗</span></a>
-      <a class="h3p-app-card" href="/apps/metric-data/overview"><img src="/icons/metric-data.png?v=20260430-1" alt="" aria-hidden="true" /><span class="h3p-card-status">App Store</span><h3>Metrics Data</h3><p>Focused AdSense and GA4 reporting for your accounts.</p><span class="h3p-card-arrow">↗</span></a>
-      <a class="h3p-app-card" href="/apps/lingua-latina/overview"><img src="/icons/lingua-latina.png?v=20260430-1" alt="" aria-hidden="true" /><span class="h3p-card-status">App Store</span><h3>Lingua Latina</h3><p>Dictionary, morphology, grammar, and vocabulary.</p><span class="h3p-card-arrow">↗</span></a>
-      <a class="h3p-app-card" href="/apps/morphia/overview"><img src="/icons/morphia.png?v=20261111-1" alt="" aria-hidden="true" /><span class="h3p-card-status">Coming soon</span><h3>Morphia</h3><p>Generative art driven by real biology models.</p><span class="h3p-card-arrow">↗</span></a>
-      <a class="h3p-app-card" href="/apps/liquid-record/overview"><img src="/icons/liquid-record.png?v=20260914-1" alt="" aria-hidden="true" /><span class="h3p-card-status">App Store</span><h3>Liquid Record</h3><p>Field recording with markers, playback, and export.</p><span class="h3p-card-arrow">↗</span></a>
-      <a class="h3p-app-card" href="/apps/vistral/overview"><img src="/icons/vistral.png?v=20260430-1" alt="" aria-hidden="true" /><span class="h3p-card-status">TestFlight beta</span><h3>Vistral</h3><p>Private, explainable dashboards for the data you choose.</p><span class="h3p-card-arrow">↗</span></a>
-      <a class="h3p-app-card" href="/apps/x-newsbook/overview"><img src="/icons/x-newsbook.png?v=20260914-1" alt="" aria-hidden="true" /><span class="h3p-card-status">Private beta</span><h3>X-Newsbook</h3><p>A calm home for feeds, saved stories, and context.</p><span class="h3p-card-arrow">↗</span></a>
-      <a class="h3p-app-card" href="/apps/history-vision/overview"><img src="/icons/history-vision.png?v=20260914-2" alt="" aria-hidden="true" /><span class="h3p-card-status">Private beta</span><h3>History Vision</h3><p>Read 295 source-aware articles and explore evidence-led timelines.</p><span class="h3p-card-arrow">↗</span></a>
-      <a class="h3p-app-card" href="/apps/image-sorter/overview"><img src="/icons/image-sorter.png?v=20260914-1" alt="" aria-hidden="true" /><span class="h3p-card-status">Private beta</span><h3>Image Sorter</h3><p>A deliberate queue for organizing visual assets.</p><span class="h3p-card-arrow">↗</span></a>
-      <a class="h3p-app-card" href="/apps/release-assistant/overview"><img src="/icons/release-assistant.png?v=20260430-1" alt="" aria-hidden="true" /><span class="h3p-card-status">Internal alpha</span><h3>Release Assistant</h3><p>Guarded release workflows with audit-ready output.</p><span class="h3p-card-arrow">↗</span></a>
-      <a class="h3p-app-card" href="/apps/index"><img class="h3p-documentation-icon" src="/icons/documentation.svg" alt="" aria-hidden="true" /><span class="h3p-card-status">Documentation</span><h3>App documentation</h3><p>Installation, features, galleries, FAQs, privacy, and changelogs for every app.</p><span class="h3p-card-arrow">↗</span></a>
+      <a class="h3p-app-card h3p-app-card-accent" href="/apps/gitbird/overview"><img loading="lazy" decoding="async" src="/icons/gitbird.png?v=20260809-1" alt="" aria-hidden="true" /><span class="h3p-card-status">Public release</span><h3>GitBird</h3><p>GitHub and GitLab notifications in your menu bar.</p><span class="h3p-card-arrow">↗</span></a>
+      <a class="h3p-app-card" href="/apps/metric-data/overview"><img loading="lazy" decoding="async" src="/icons/metric-data.png?v=20260430-1" alt="" aria-hidden="true" /><span class="h3p-card-status">App Store</span><h3>Metrics Data</h3><p>Focused AdSense and GA4 reporting for your accounts.</p><span class="h3p-card-arrow">↗</span></a>
+      <a class="h3p-app-card" href="/apps/lingua-latina/overview"><img loading="lazy" decoding="async" src="/icons/lingua-latina.png?v=20260430-1" alt="" aria-hidden="true" /><span class="h3p-card-status">App Store</span><h3>Lingua Latina</h3><p>Dictionary, morphology, grammar, and vocabulary.</p><span class="h3p-card-arrow">↗</span></a>
+      <a class="h3p-app-card" href="/apps/morphia/overview"><img loading="lazy" decoding="async" src="/icons/morphia.png?v=20261111-1" alt="" aria-hidden="true" /><span class="h3p-card-status">Coming soon</span><h3>Morphia</h3><p>Generative art driven by real biology models.</p><span class="h3p-card-arrow">↗</span></a>
+      <a class="h3p-app-card" href="/apps/liquid-record/overview"><img loading="lazy" decoding="async" src="/icons/liquid-record.png?v=20260914-1" alt="" aria-hidden="true" /><span class="h3p-card-status">App Store</span><h3>Liquid Record</h3><p>Field recording with markers, playback, and export.</p><span class="h3p-card-arrow">↗</span></a>
+      <a class="h3p-app-card" href="/apps/vistral/overview"><img loading="lazy" decoding="async" src="/icons/vistral.png?v=20260430-1" alt="" aria-hidden="true" /><span class="h3p-card-status">TestFlight beta</span><h3>Vistral</h3><p>Private, explainable dashboards for the data you choose.</p><span class="h3p-card-arrow">↗</span></a>
+      <a class="h3p-app-card" href="/apps/x-newsbook/overview"><img loading="lazy" decoding="async" src="/icons/x-newsbook.png?v=20260914-1" alt="" aria-hidden="true" /><span class="h3p-card-status">Private beta</span><h3>X-Newsbook</h3><p>A calm home for feeds, saved stories, and context.</p><span class="h3p-card-arrow">↗</span></a>
+      <a class="h3p-app-card" href="/apps/history-vision/overview"><img loading="lazy" decoding="async" src="/icons/history-vision.png?v=20260914-2" alt="" aria-hidden="true" /><span class="h3p-card-status">Private beta</span><h3>History Vision</h3><p>Read 295 source-aware articles and explore evidence-led timelines.</p><span class="h3p-card-arrow">↗</span></a>
+      <a class="h3p-app-card" href="/apps/image-sorter/overview"><img loading="lazy" decoding="async" src="/icons/image-sorter.png?v=20260914-1" alt="" aria-hidden="true" /><span class="h3p-card-status">Private beta</span><h3>Image Sorter</h3><p>A deliberate queue for organizing visual assets.</p><span class="h3p-card-arrow">↗</span></a>
+      <a class="h3p-app-card" href="/apps/release-assistant/overview"><img loading="lazy" decoding="async" src="/icons/release-assistant.png?v=20260430-1" alt="" aria-hidden="true" /><span class="h3p-card-status">Internal alpha</span><h3>Release Assistant</h3><p>Guarded release workflows with audit-ready output.</p><span class="h3p-card-arrow">↗</span></a>
+      <a class="h3p-app-card" href="/apps/index"><img loading="lazy" decoding="async" class="h3p-documentation-icon" src="/icons/documentation.svg" alt="" aria-hidden="true" /><span class="h3p-card-status">Documentation</span><h3>App documentation</h3><p>Installation, features, galleries, FAQs, privacy, and changelogs for every app.</p><span class="h3p-card-arrow">↗</span></a>
     </div>
   </section>
 
