@@ -45,7 +45,7 @@ It provides:
 - app-specific icons, media, screenshots, and release-linked content
 - shared navigation, app-page styling, and footer across the documentation
 
-The catalogue covers eleven apps: Neon Vision Editor, GitBird, Liquid Record, Metrics Data, X-Newsbook, Release Assistant, Image Sorter, Vistral, History Vision, Lingua Latina, and ArtiBol. Availability and platform support are documented per app.
+The catalogue covers eleven apps: Neon Vision Editor, GitBird, Liquid Record, Metrics Data, X-Newsbook, Release Assistant, Image Sorter, Vistral, History Vision, Lingua Latina, and Morphia. Availability and platform support are documented per app.
 
 ### Politics & Conflict Monitor
 
