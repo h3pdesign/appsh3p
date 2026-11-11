@@ -2,7 +2,7 @@
 
 ## App Store
 
-Morphia is being prepared for the App Store. The download link will be added to this page and the [overview](/apps/morphia/overview) once the listing is live.
+Morphia is being prepared for the App Store, where it will be listed as **Morphia: Living art**. The download link will be added to this page and the [overview](/apps/morphia/overview) once the listing is live.
 
 ## Requirements
 

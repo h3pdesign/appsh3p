@@ -2,7 +2,7 @@
 
 _Last updated: November 11, 2026_
 
-Morphia is a generative art app. It does not require an account and does not include ads, tracking, analytics, or developer telemetry. The developer does not collect data from this app.
+Morphia (listed on the App Store as Morphia: Living art) is a generative art app. It does not require an account and does not include ads, tracking, analytics, or developer telemetry. The developer does not collect data from this app.
 
 ## Data Stored Locally
 

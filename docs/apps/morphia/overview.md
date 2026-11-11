@@ -71,7 +71,7 @@ A one-time **Morphia Studio** in-app purchase (9,99 €, or the local App Store 
 - iOS 18 or later
 - iPadOS 18 or later
 
-Morphia is designed iPhone-first. The App Store listing link will be added here once the app is published.
+Morphia is designed iPhone-first. On the App Store it will be listed as **Morphia: Living art**; the listing link will be added here once the app is published.
 
 ## Related Pages
 
