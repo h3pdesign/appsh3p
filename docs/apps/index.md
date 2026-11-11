@@ -59,24 +59,24 @@
     <div class="apps-carousel-track">
     <a class="apps-slide neon" href="/apps/neon-vision-editor/gallery">
       <div class="apps-slide-media">
-        <img src="/media/neon/neon-vision-editor.png" alt="Neon Vision Editor screenshot" />
-        <img class="apps-slide-icon" src="/icons/neon-vision-editor.png?v=20260401-2" alt="" aria-hidden="true" />
+        <img loading="lazy" decoding="async" src="/media/neon/neon-vision-editor.png" alt="Neon Vision Editor screenshot" />
+        <img loading="lazy" decoding="async" class="apps-slide-icon" src="/icons/neon-vision-editor.png?v=20260401-2" alt="" aria-hidden="true" />
         <span class="apps-slide-cta">open gallery</span>
       </div>
       <span class="apps-slide-title">Neon Vision Editor</span>
     </a>
     <a class="apps-slide neon" href="/apps/neon-vision-editor/gallery">
       <div class="apps-slide-media">
-        <img src="/media/neon/neon-ipad-editor.png" alt="Neon Vision Editor on iPad with Swift syntax highlighting and file browser" />
-        <img class="apps-slide-icon" src="/icons/neon-vision-editor.png?v=20260401-2" alt="" aria-hidden="true" />
+        <img loading="lazy" decoding="async" src="/media/neon/neon-ipad-editor.png" alt="Neon Vision Editor on iPad with Swift syntax highlighting and file browser" />
+        <img loading="lazy" decoding="async" class="apps-slide-icon" src="/icons/neon-vision-editor.png?v=20260401-2" alt="" aria-hidden="true" />
         <span class="apps-slide-cta">open gallery</span>
       </div>
       <span class="apps-slide-title">Neon Vision Editor on iPad</span>
     </a>
     <a class="apps-slide release" href="/apps/release-assistant/gallery">
       <div class="apps-slide-media">
-        <img src="/media/release-assistant/main-window.png" alt="Release Assistant screenshot" />
-        <img class="apps-slide-icon" src="/icons/release-assistant.png?v=20260430-1" alt="" aria-hidden="true" />
+        <img loading="lazy" decoding="async" src="/media/release-assistant/main-window.png" alt="Release Assistant screenshot" />
+        <img loading="lazy" decoding="async" class="apps-slide-icon" src="/icons/release-assistant.png?v=20260430-1" alt="" aria-hidden="true" />
         <span class="apps-slide-cta">open gallery</span>
       </div>
       <span class="apps-slide-title">Release Assistant</span>
@@ -108,7 +108,7 @@
 
 <div class="apps-grid">
   <article class="app-card app-card-neon" data-changelog="/apps/neon-vision-editor/changelog" data-status="public" data-platforms="macos,ipados,ios,visionos" data-use-cases="coding,markdown,ai">
-    <img src="/icons/neon-vision-editor.png?v=20260401-2" alt="Neon Vision Editor icon" class="app-icon" />
+    <img loading="lazy" decoding="async" src="/icons/neon-vision-editor.png?v=20260401-2" alt="Neon Vision Editor icon" class="app-icon" />
     <div class="app-card-content">
       <h3 class="app-title-row"><a class="app-title-link" href="/apps/neon-vision-editor/overview">Neon Vision Editor</a><span class="app-status app-status-release">App Store release</span></h3>
       <div class="app-card-meta-row">
@@ -131,7 +131,7 @@
   </article>
 
   <article class="app-card app-card-gitbird" data-changelog="/apps/gitbird/changelog" data-status="public" data-platforms="macos" data-use-cases="git,notifications,developer">
-    <img src="/icons/gitbird.png?v=20260809-1" alt="GitBird icon" class="app-icon" />
+    <img loading="lazy" decoding="async" src="/icons/gitbird.png?v=20260809-1" alt="GitBird icon" class="app-icon" />
     <div class="app-card-content">
       <h3 class="app-title-row"><a class="app-title-link" href="/apps/gitbird/overview">GitBird</a><span class="app-status app-status-release">Public release</span></h3>
       <div class="app-card-meta-row">
@@ -153,7 +153,7 @@
   </article>
 
   <article class="app-card app-card-liquid" data-changelog="/apps/liquid-record/changelog" data-status="public" data-platforms="macos,ipados,ios,visionos" data-use-cases="audio,recording,workflow">
-    <img src="/icons/liquid-record.png?v=20260914-1" alt="Liquid Record icon" class="app-icon" />
+    <img loading="lazy" decoding="async" src="/icons/liquid-record.png?v=20260914-1" alt="Liquid Record icon" class="app-icon" />
     <div class="app-card-content">
       <h3 class="app-title-row"><a class="app-title-link" href="/apps/liquid-record/overview">Liquid Record</a><span class="app-status app-status-release">App Store release</span></h3>
       <div class="app-card-meta-row">
@@ -175,7 +175,7 @@
   </article>
 
   <article class="app-card app-card-metric" data-changelog="/apps/metric-data/changelog" data-status="public" data-platforms="macos,ipados,ios,visionos,watchos" data-use-cases="analytics,reporting">
-    <img src="/icons/metric-data.png?v=20260430-1" alt="Metrics Data icon" class="app-icon" />
+    <img loading="lazy" decoding="async" src="/icons/metric-data.png?v=20260430-1" alt="Metrics Data icon" class="app-icon" />
     <div class="app-card-content">
       <h3 class="app-title-row"><a class="app-title-link" href="/apps/metric-data/overview">Metrics Data</a><span class="app-status app-status-release">App Store release</span></h3>
       <div class="app-card-meta-row">
@@ -197,7 +197,7 @@
   </article>
 
   <article class="app-card app-card-release" data-changelog="/apps/release-assistant/changelog" data-status="internal" data-platforms="macos" data-use-cases="release,automation">
-    <img src="/icons/release-assistant.png?v=20260430-1" alt="Release Assistant icon" class="app-icon" />
+    <img loading="lazy" decoding="async" src="/icons/release-assistant.png?v=20260430-1" alt="Release Assistant icon" class="app-icon" />
     <div class="app-card-content">
       <h3 class="app-title-row"><a class="app-title-link" href="/apps/release-assistant/overview">Release Assistant</a><span class="app-status app-status-alpha">Internal alpha</span></h3>
       <div class="app-card-meta-row">
@@ -217,7 +217,7 @@
   </article>
 
   <article class="app-card app-card-newsbook" data-changelog="/apps/x-newsbook/changelog" data-status="private" data-platforms="macos,ipados,ios" data-use-cases="reading,research">
-    <img src="/icons/x-newsbook.png?v=20260914-1" alt="X-Newsbook icon" class="app-icon" />
+    <img loading="lazy" decoding="async" src="/icons/x-newsbook.png?v=20260914-1" alt="X-Newsbook icon" class="app-icon" />
     <div class="app-card-content">
       <h3 class="app-title-row"><a class="app-title-link" href="/apps/x-newsbook/overview">X-Newsbook</a><span class="app-status app-status-private">Private beta</span></h3>
       <div class="app-card-meta-row">
@@ -237,7 +237,7 @@
   </article>
 
   <article class="app-card app-card-sorter" data-changelog="/apps/image-sorter/changelog" data-status="private" data-platforms="macos" data-use-cases="visual,workflow">
-    <img src="/icons/image-sorter.png?v=20260914-1" alt="Image Sorter icon" class="app-icon" />
+    <img loading="lazy" decoding="async" src="/icons/image-sorter.png?v=20260914-1" alt="Image Sorter icon" class="app-icon" />
     <div class="app-card-content">
       <h3 class="app-title-row"><a class="app-title-link" href="/apps/image-sorter/overview">Image Sorter</a><span class="app-status app-status-private">Private beta</span></h3>
       <div class="app-card-meta-row">
@@ -257,7 +257,7 @@
   </article>
 
   <article class="app-card app-card-vistral" data-changelog="/apps/vistral/changelog" data-status="private" data-platforms="macos,ipados,ios,tvos,watchos,visionos" data-use-cases="analytics,visual,insights">
-    <img src="/icons/vistral.png?v=20260430-1" alt="Vistral icon" class="app-icon" />
+    <img loading="lazy" decoding="async" src="/icons/vistral.png?v=20260430-1" alt="Vistral icon" class="app-icon" />
     <div class="app-card-content">
       <h3 class="app-title-row"><a class="app-title-link" href="/apps/vistral/overview">Vistral</a><span class="app-status app-status-private">TestFlight beta</span></h3>
       <div class="app-card-meta-row">
@@ -278,7 +278,7 @@
   </article>
 
   <article class="app-card app-card-history" data-changelog="/apps/history-vision/changelog" data-status="private" data-platforms="macos,ipados,ios,watchos" data-use-cases="history,research,reading">
-    <img src="/icons/history-vision.png?v=20260914-2" alt="History Vision icon" class="app-icon" />
+    <img loading="lazy" decoding="async" src="/icons/history-vision.png?v=20260914-2" alt="History Vision icon" class="app-icon" />
     <div class="app-card-content">
       <h3 class="app-title-row"><a class="app-title-link" href="/apps/history-vision/overview">History Vision</a><span class="app-status app-status-private">Private beta</span></h3>
       <div class="app-card-meta-row">
@@ -298,7 +298,7 @@
   </article>
 
   <article class="app-card app-card-lingua" data-changelog="/apps/lingua-latina/changelog" data-status="public" data-platforms="macos,ipados,ios,visionos" data-use-cases="language,study">
-    <img src="/icons/lingua-latina.png?v=20260430-1" alt="Lingua Latina icon" class="app-icon" />
+    <img loading="lazy" decoding="async" src="/icons/lingua-latina.png?v=20260430-1" alt="Lingua Latina icon" class="app-icon" />
     <div class="app-card-content">
       <h3 class="app-title-row"><a class="app-title-link" href="/apps/lingua-latina/overview">Lingua Latina</a><span class="app-status app-status-release">App Store release</span></h3>
       <div class="app-card-meta-row">
@@ -321,7 +321,7 @@
   </article>
 
   <article class="app-card app-card-artibol" data-changelog="/apps/artibol/changelog" data-status="private" data-platforms="ipados,ios" data-use-cases="art,visual,learning">
-    <img src="/icons/artibol.png?v=20261111-1" alt="ArtiBol icon" class="app-icon" />
+    <img loading="lazy" decoding="async" src="/icons/artibol.png?v=20261111-1" alt="ArtiBol icon" class="app-icon" />
     <div class="app-card-content">
       <h3 class="app-title-row"><a class="app-title-link" href="/apps/artibol/overview">ArtiBol</a><span class="app-status app-status-beta">Coming soon</span></h3>
       <div class="app-card-meta-row">
