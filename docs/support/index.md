@@ -29,7 +29,7 @@ The app overview links to installation, features, gallery, FAQ, known issues, pr
 - [Liquid Record](/apps/liquid-record/overview)
 - [Metrics Data](/apps/metric-data/overview)
 - [Lingua Latina](/apps/lingua-latina/overview)
-- [ArtiBol](/apps/artibol/overview)
+- [Morphia](/apps/morphia/overview)
 - [Vistral](/apps/vistral/overview)
 - [History Vision](/apps/history-vision/overview)
 - [X-Newsbook](/apps/x-newsbook/overview)

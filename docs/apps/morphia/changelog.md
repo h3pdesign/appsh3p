@@ -1,4 +1,8 @@
-# ArtiBol Changelog
+# Morphia Changelog
+
+## Renamed from ArtiBol (November 2026)
+
+- The app formerly documented as ArtiBol is now Morphia. Old `/apps/artibol/` links redirect to the new pages.
 
 ## 0.1.0 (in development, November 2026)
 

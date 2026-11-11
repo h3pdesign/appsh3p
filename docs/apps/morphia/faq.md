@@ -1,14 +1,14 @@
-# ArtiBol FAQ
+# Morphia FAQ
 
-## Does ArtiBol require an account?
+## Does Morphia require an account?
 
 No. There is no account, sign-in, or cloud sync.
 
 ## Does the app work offline?
 
-Yes. ArtiBol runs entirely on your device and makes no network requests of its own. Only the App Store purchase and restore flow uses Apple's services.
+Yes. Morphia runs entirely on your device and makes no network requests of its own. Only the App Store purchase and restore flow uses Apple's services.
 
-## What does ArtiBol Studio cost?
+## What does Morphia Studio cost?
 
 Studio is a single, non-consumable in-app purchase of 9,99 € (or the local App Store equivalent). It is not a subscription.
 
@@ -30,4 +30,4 @@ Each "Why?" card is written in plain language and reviewed for accuracy. The sim
 
 ## How do I get support?
 
-Use [Support and Feedback](/support/support-and-feedback) and include "ArtiBol" with your app version and device in the title.
+Use [Support and Feedback](/support/support-and-feedback) and include "Morphia" with your app version and device in the title.

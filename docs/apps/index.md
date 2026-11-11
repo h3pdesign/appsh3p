@@ -28,7 +28,7 @@
     <span class="apps-whats-new-item is-vistral">October: Vistral's TestFlight project added large-screen/Duo refinements, chart continuity, Watch previews, and palette/localization polish.</span>
     <span class="apps-whats-new-item is-history">October: History Vision's private beta expanded source-backed articles and corrected historical chronology; current project build 262.</span>
     <span class="apps-whats-new-item is-lingua">October: Lingua Latina 1.6.1 is the current App Store listing; 1.7–1.8.2 remain project release-train builds.</span>
-    <span class="apps-whats-new-item is-artibol">November: ArtiBol, a generative art app driven by biology models, joined the catalogue ahead of its App Store release.</span>
+    <span class="apps-whats-new-item is-morphia">November: Morphia, a generative art app driven by biology models, joined the catalogue ahead of its App Store release.</span>
   </div>
 </div>
 
@@ -48,7 +48,7 @@
   <div class="apps-release-item vistral"><span class="name">Vistral</span><span class="tag">0.1.6</span><span class="date">2026-05-09</span></div>
   <div class="apps-release-item history"><span class="name">History Vision</span><span class="tag">1.0 · build 262</span><span class="date">2026-10-27</span></div>
   <div class="apps-release-item lingua"><span class="name">Lingua Latina</span><span class="tag">1.6.1</span><span class="date">2026-10-26</span></div>
-  <div class="apps-release-item artibol"><span class="name">ArtiBol</span><span class="tag">0.1.0</span><span class="date">2026-11-11</span></div>
+  <div class="apps-release-item morphia"><span class="name">Morphia</span><span class="tag">0.1.0</span><span class="date">2026-11-11</span></div>
   </div>
 </div>
 
@@ -320,10 +320,10 @@
     </div>
   </article>
 
-  <article class="app-card app-card-artibol" data-changelog="/apps/artibol/changelog" data-status="private" data-platforms="ipados,ios" data-use-cases="art,visual,learning">
-    <img src="/icons/artibol.png?v=20261111-1" alt="ArtiBol icon" class="app-icon" />
+  <article class="app-card app-card-morphia" data-changelog="/apps/morphia/changelog" data-status="private" data-platforms="ipados,ios" data-use-cases="art,visual,learning">
+    <img src="/icons/morphia.png?v=20261111-1" alt="Morphia icon" class="app-icon" />
     <div class="app-card-content">
-      <h3 class="app-title-row"><a class="app-title-link" href="/apps/artibol/overview">ArtiBol</a><span class="app-status app-status-beta">Coming soon</span></h3>
+      <h3 class="app-title-row"><a class="app-title-link" href="/apps/morphia/overview">Morphia</a><span class="app-status app-status-beta">Coming soon</span></h3>
       <div class="app-card-meta-row">
         <div class="app-platform-pills">
           <span>iPadOS</span><span>iOS</span>
@@ -336,8 +336,8 @@
       <p>Generative art studio where real biology models, from reaction-diffusion coats to starling flocks and cuttlefish skin, become touch-driven art tools.</p>
       <div class="app-actions-row">
         <span class="chip chip-live">App Store: coming soon</span>
-        <a class="chip chip-link" href="/apps/artibol/features">Features</a>
-        <a class="chip chip-link" href="/apps/artibol/privacy-policy">Privacy Policy</a>
+        <a class="chip chip-link" href="/apps/morphia/features">Features</a>
+        <a class="chip chip-link" href="/apps/morphia/privacy-policy">Privacy Policy</a>
       </div>
     </div>
   </article>
@@ -483,17 +483,17 @@
     </div>
   </section>
   <section>
-    <h3>ArtiBol</h3>
+    <h3>Morphia</h3>
     <div>
-      <a href="/apps/artibol/overview">Overview</a>
-      <a href="/apps/artibol/components-overview">Components</a>
-      <a href="/apps/artibol/installation">Install</a>
-      <a href="/apps/artibol/features">Features</a>
-      <a href="/apps/artibol/gallery">Gallery</a>
-      <a href="/apps/artibol/changelog">Changelog</a>
-      <a href="/apps/artibol/known-issues">Known Issues</a>
-      <a href="/apps/artibol/faq">FAQ</a>
-      <a href="/apps/artibol/privacy-policy">Privacy</a>
+      <a href="/apps/morphia/overview">Overview</a>
+      <a href="/apps/morphia/components-overview">Components</a>
+      <a href="/apps/morphia/installation">Install</a>
+      <a href="/apps/morphia/features">Features</a>
+      <a href="/apps/morphia/gallery">Gallery</a>
+      <a href="/apps/morphia/changelog">Changelog</a>
+      <a href="/apps/morphia/known-issues">Known Issues</a>
+      <a href="/apps/morphia/faq">FAQ</a>
+      <a href="/apps/morphia/privacy-policy">Privacy</a>
     </div>
   </section>
 </div>
@@ -528,7 +528,7 @@
       <a href="/apps/vistral/components-overview">Vistral</a>
       <a href="/apps/history-vision/components-overview">History Vision</a>
       <a href="/apps/lingua-latina/components-overview">Lingua Latina</a>
-      <a href="/apps/artibol/components-overview">ArtiBol</a>
+      <a href="/apps/morphia/components-overview">Morphia</a>
     </nav>
   </section>
   <section aria-labelledby="source-code-repositories">
@@ -607,7 +607,7 @@
 .apps-whats-new-item.is-vistral { --item-accent: #42b7a7; }
 .apps-whats-new-item.is-history { --item-accent: #7c8f38; }
 .apps-whats-new-item.is-lingua { --item-accent: #b25686; }
-.apps-whats-new-item.is-artibol { --item-accent: #e0456a; }
+.apps-whats-new-item.is-morphia { --item-accent: #e0456a; }
 
 
 .apps-release-timeline {

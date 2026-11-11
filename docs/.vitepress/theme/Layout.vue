@@ -75,7 +75,7 @@ const topSwitcherLinks = [
   { key: 'vistral', text: 'Vistral', link: '/apps/vistral/overview' },
   { key: 'history-vision', text: 'History', link: '/apps/history-vision/overview' },
   { key: 'lingua-latina', text: 'Lingua', link: '/apps/lingua-latina/overview' },
-  { key: 'artibol', text: 'ArtiBol', link: '/apps/artibol/overview' }
+  { key: 'morphia', text: 'Morphia', link: '/apps/morphia/overview' }
 ]
 
 const appUpdatedBySlug: Record<string, string> = {
@@ -89,7 +89,7 @@ const appUpdatedBySlug: Record<string, string> = {
   'vistral': 'October 26, 2026',
   'history-vision': 'October 27, 2026',
   'lingua-latina': 'October 27, 2026',
-  'artibol': 'November 11, 2026'
+  'morphia': 'November 11, 2026'
 }
 
 const appDocTopLinks = computed<DocJumpLink[]>(() => {
@@ -105,7 +105,7 @@ const appDocTopLinks = computed<DocJumpLink[]>(() => {
     { text: 'Known Issues', link: base + '/known-issues' },
     { text: 'FAQ', link: base + '/faq' }
   ]
-  if (appSlug.value === 'metric-data' || appSlug.value === 'lingua-latina' || appSlug.value === 'gitbird' || appSlug.value === 'liquid-record' || appSlug.value === 'artibol') {
+  if (appSlug.value === 'metric-data' || appSlug.value === 'lingua-latina' || appSlug.value === 'gitbird' || appSlug.value === 'liquid-record' || appSlug.value === 'morphia') {
     links.push({ text: 'Privacy', link: base + '/privacy-policy' })
   }
   if (appSlug.value === 'neon-vision-editor') {
@@ -1447,7 +1447,7 @@ onBeforeUnmount(() => {
               <a href="/apps/liquid-record/overview">Liquid Record</a>
               <a href="/apps/metric-data/overview">Metrics Data</a>
               <a href="/apps/lingua-latina/overview">Lingua Latina</a>
-              <a href="/apps/artibol/overview">ArtiBol</a>
+              <a href="/apps/morphia/overview">Morphia</a>
               <a href="/apps/vistral/overview">Vistral</a>
               <a href="/apps/history-vision/overview">History Vision</a>
               <a href="/apps/release-assistant/overview">Release Assistant</a>

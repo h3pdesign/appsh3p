@@ -9,7 +9,7 @@ Use this page for app access requests, reproducible problems, and corrections to
 - [H3P GitHub profile](https://github.com/h3pdesign)
 - [Main page for all H3P work](https://h3pdesign.github.io/)
 
-For ArtiBol, Vistral, Liquid Record, History Vision, X-Newsbook, Image Sorter, and Release Assistant access requests, open an issue in `appsh3p` and put the app name and request type in the title. Do not include private credentials, tokens, personal analytics exports, or sensitive recordings.
+For Morphia, Vistral, Liquid Record, History Vision, X-Newsbook, Image Sorter, and Release Assistant access requests, open an issue in `appsh3p` and put the app name and request type in the title. Do not include private credentials, tokens, personal analytics exports, or sensitive recordings.
 
 ## Access request template
 

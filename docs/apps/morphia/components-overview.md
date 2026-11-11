@@ -1,4 +1,4 @@
-# ArtiBol Components Overview
+# Morphia Components Overview
 
 ## App Shell
 
@@ -33,4 +33,4 @@
 
 ## Store
 
-- StoreKit 2 one-time, non-consumable "ArtiBol Studio" unlock with restore support
+- StoreKit 2 one-time, non-consumable "Morphia Studio" unlock with restore support

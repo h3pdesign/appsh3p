@@ -1,4 +1,4 @@
-# ArtiBol Features
+# Morphia Features
 
 - three biology-driven modes: Coats (reaction-diffusion), Murmuration (flocking), and Cephalopod Skin (chromatophores)
 - touch, drag, and press-and-hold interactions specific to each mode

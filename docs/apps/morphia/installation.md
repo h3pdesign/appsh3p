@@ -1,8 +1,8 @@
-# ArtiBol Installation
+# Morphia Installation
 
 ## App Store
 
-ArtiBol is being prepared for the App Store. The download link will be added to this page and the [overview](/apps/artibol/overview) once the listing is live.
+Morphia is being prepared for the App Store. The download link will be added to this page and the [overview](/apps/morphia/overview) once the listing is live.
 
 ## Requirements
 
@@ -11,7 +11,7 @@ ArtiBol is being prepared for the App Store. The download link will be added to 
 
 ## First Run
 
-1. Open ArtiBol. The Coats canvas is ready to draw on immediately.
+1. Open Morphia. The Coats canvas is ready to draw on immediately.
 2. Drag a finger across the canvas to seed a pattern.
 3. Use the mode picker at the top left to switch between Coats, Murmuration, and Cephalopod Skin.
 4. Open **Presets**, **Palette**, or the sliders button to tune the simulation.
@@ -19,7 +19,7 @@ ArtiBol is being prepared for the App Store. The download link will be added to 
 
 ## Permissions
 
-ArtiBol asks for **add-only** access to Photos the first time you save an artwork or video to your photo library. It cannot read your existing photos. You can change this at any time in Settings > Privacy & Security > Photos.
+Morphia asks for **add-only** access to Photos the first time you save an artwork or video to your photo library. It cannot read your existing photos. You can change this at any time in Settings > Privacy & Security > Photos.
 
 ## Unlocking Studio
 

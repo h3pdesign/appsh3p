@@ -54,8 +54,8 @@ These app-specific policies document data handling where an app has its own priv
     <span>History Vision Privacy Policy</span>
     <strong>Local reading and research data, optional Wikimedia lookups, Apple Watch sync, and App Store purchases.</strong>
   </a>
-  <a class="policy-card policy-card-primary" href="/apps/artibol/privacy-policy">
-    <span>ArtiBol Privacy Policy</span>
+  <a class="policy-card policy-card-primary" href="/apps/morphia/privacy-policy">
+    <span>Morphia Privacy Policy</span>
     <strong>On-device artwork and gallery data, add-only Photos access, no network requests, and App Store purchases.</strong>
   </a>
   <a class="policy-card policy-card-primary" href="/apps/image-sorter-ai/privacy-policy">
@@ -76,7 +76,7 @@ These app-specific policies document data handling where an app has its own priv
 | Image Sorter | [Dedicated app policy](/apps/image-sorter-ai/privacy-policy) | Covers local image data, optional remote AI and companion-server processing, and purchases. |
 | Vistral | Covered by [Website Privacy Policy](/policies/privacy-policy) and app documentation | No dedicated app privacy page is currently published on this site. |
 | History Vision | [Dedicated app policy](/apps/history-vision/privacy-policy) | Covers local reading and research data, optional Wikimedia lookups, Apple Watch sync and App Store purchases. |
-| ArtiBol | [Dedicated app policy](/apps/artibol/privacy-policy) | Covers on-device artwork data, add-only Photos access, and the Studio in-app purchase. |
+| Morphia | [Dedicated app policy](/apps/morphia/privacy-policy) | Covers on-device artwork data, add-only Photos access, and the Studio in-app purchase. |
 
 ## Privacy Request Path
 
