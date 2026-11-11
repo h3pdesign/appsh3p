@@ -2,8 +2,9 @@ name: Update Polymarket snapshot
 
 on:
   schedule:
-    # GitHub cron is UTC + best-effort; run weekly.
-    - cron: "3 0 * * 1"
+    # GitHub cron is UTC + best-effort. Run every 8 hours, ahead of the
+    # stale-data watchdog (:52 past 0/8/16), so the 12-hour freshness SLA holds.
+    - cron: "3 0,8,16 * * *"
   workflow_dispatch:
 
 permissions:
