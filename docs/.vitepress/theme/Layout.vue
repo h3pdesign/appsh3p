@@ -79,7 +79,7 @@ const topSwitcherLinks = [
 ]
 
 const appUpdatedBySlug: Record<string, string> = {
-  'neon-vision-editor': 'November 9, 2026',
+  'neon-vision-editor': 'November 13, 2026',
   'gitbird': 'October 25, 2026',
   'liquid-record': 'October 27, 2026',
   'metric-data': 'October 27, 2026',
@@ -721,7 +721,7 @@ function ensureHomeWidgets() {
           <li>Published on <a href="https://apps-h3p.com" target="_blank" rel="noreferrer noopener">apps-h3p.com</a></li>
           <li><a href="https://github.com/h3pdesign/appsh3p" target="_blank" rel="noreferrer noopener">Docs repo</a></li>
         </ul>
-        <div class="home-deploy-badge"><a href="https://github.com/h3pdesign/appsh3p/commits/main" target="_blank" rel="noreferrer noopener">Last docs sync: <span data-date="2026-11-09">November 9, 2026</span></a></div>
+        <div class="home-deploy-badge"><a href="https://github.com/h3pdesign/appsh3p/commits/main" target="_blank" rel="noreferrer noopener">Last docs sync: <span data-date="2026-11-13">November 13, 2026</span></a></div>
         <div class="home-hero-mini-apps" aria-label="App icons">
           <a href="/apps/neon-vision-editor/overview"><img class="mini-icon-neon" src="/icons/neon-vision-editor.png" alt="Neon Vision Editor" width="22" height="22" loading="lazy" decoding="async" /></a>
           <a href="/apps/gitbird/overview"><img src="/icons/gitbird.png" alt="GitBird" width="22" height="22" loading="lazy" decoding="async" /></a>

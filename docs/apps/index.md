@@ -18,15 +18,15 @@
 <div class="apps-whats-new" aria-label="Latest updates">
   <div class="apps-whats-new-title">What's new</div>
   <div class="apps-whats-new-items">
+    <span class="apps-whats-new-item is-neon-vision-editor">Nov 13, 2026: Neon Vision Editor 2.2.2 MeierScript files get syntax highlighting and, on the Mac, suggestions for keywords, built-in functions and names.</span>
     <span class="apps-whats-new-item is-morphia">Nov 11, 2026: Morphia: Living art The app formerly documented as ArtiBol is now Morphia. Old /apps/artibol/ links redirect to the new pages.</span>
-    <span class="apps-whats-new-item is-neon-vision-editor">Nov 9, 2026: Neon Vision Editor 2.2.0 On iPhone Duo, a preview next to the editor starts at the fold, so the document and preview each get one half.</span>
   </div>
 </div>
 
 <div class="apps-release-timeline" aria-label="Latest app version and update dates">
   <div class="apps-release-group">
   <div class="apps-release-heading"><span>App</span><span>Version</span><span>Updated</span></div>
-  <div class="apps-release-item neon"><span class="name">Neon Vision Editor</span><span class="tag">v2.2.0</span><span class="date">2026-11-09</span></div>
+  <div class="apps-release-item neon"><span class="name">Neon Vision Editor</span><span class="tag">v2.2.2</span><span class="date">2026-11-13</span></div>
   <div class="apps-release-item gitbird"><span class="name">GitBird</span><span class="tag">2.1.10</span><span class="date">2026-10-25</span></div>
   <div class="apps-release-item liquid"><span class="name">Liquid Record</span><span class="tag">1.0.4</span><span class="date">2026-10-26</span></div>
   <div class="apps-release-item metric"><span class="name">Metrics Data</span><span class="tag">1.1.1</span><span class="date">2026-09-16</span></div>

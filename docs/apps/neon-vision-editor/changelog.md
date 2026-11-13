@@ -10,7 +10,22 @@ head:
 
 # Neon Vision Editor Changelog
 
-_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on November 9, 2026._
+_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on November 13, 2026._
+
+## v2.2.2 (published November 13, 2026)
+
+Release link: [GitHub Release v2.2.2](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v2.2.2)
+
+- MeierScript files get syntax highlighting and, on the Mac, suggestions for keywords, built-in functions and names.
+- In the Mac version from GitHub, a run console runs MeierScript, Python, JavaScript, Ruby, PHP, Lua, R, shell and Swift files.
+- On iPhone, a Hide Keyboard button above the keyboard closes it without scrolling the document.
+- On iPhone and iPad, tapping a table of contents entry jumps to that heading, even far down a long document.
+- Code completion stays quiet inside comments in more languages and keeps suggestions such as #include or $variable.
+- On the Mac, text inside multi-line strings and MeierScript comments keeps its string or comment color.
+- MeierScript support: `.meierscript` files get syntax highlighting and, on the Mac, suggestions for keywords, built-in functions and names from the document while you type.
+- In the Mac version downloaded from GitHub (not the Mac App Store version), a MeierScript console runs the script with the `meierscript` command-line tool from an installed SidUI Editor or SidUI Viewer and shows output and errors in separate panes. Run is ⌘R, Check Syntax is ⇧⌘R, and Auto-Check and opt-in Auto-Run react to each edit.
+- Help › MeierScript Help… and the ? button in the MeierScript console open a MeierScript section in the editor help.
+- In the Mac version downloaded from GitHub, the run console also runs Python, JavaScript (Node.js), Ruby, Perl, PHP, Lua, R, Bash, Zsh, Fish, PowerShell and Swift files with an interpreter installed on the Mac, such as from Homebrew or the Xcode Command Line Tools. ⌘R runs the script as it is in the editor and opens the console; ⇧⌘R and Auto-Check check the syntax where the language offers a check, and a click on the error jumps to its line. Python uses the interpreter set in Settings or a `.venv` next to the file. The console stays hidden for these languages until you run a script, and Help › Run Scripts Help… explains it.
 
 ## v2.2.0 (published November 9, 2026)
 
@@ -99,7 +114,6 @@ Release link: [GitHub Release v2.1.2](https://github.com/h3pdesign/Neon-Vision-E
 - The second Side by Side pane shows its own minimap, line navigation and cursor position.
 - Undo keeps your own edits after saving a new document, and starts fresh when the document changes elsewhere.
 - No migration required. Existing documents, sessions, and preferences are preserved.
-
 ## v2.1.1 (published October 23, 2026)
 
 Release link: [GitHub Release v2.1.1](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v2.1.1)
