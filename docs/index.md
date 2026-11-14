@@ -38,7 +38,7 @@ head:
       <a href="/changelog">View changelog <span>↗</span></a>
     </div>
     <div class="h3p-home-update-list">
-      <a href="/apps/neon-vision-editor/changelog"><time datetime="2026-11-13">Nov 13, 2026</time><span><strong>Neon Vision Editor 2.2.2</strong> MeierScript files get syntax highlighting and, on the Mac, suggestions for keywords, built-in functions and names.</span><b>↗</b></a>
+      <a href="/apps/neon-vision-editor/changelog"><time datetime="2026-11-13">Nov 13, 2026</time><span><strong>Neon Vision Editor 2.2.3</strong> MeierScript functions complete as calls with their parameters, such as print(string), with the first parameter selected.</span><b>↗</b></a>
       <a href="/apps/morphia/changelog"><time datetime="2026-11-11">Nov 11, 2026</time><span><strong>Morphia: Living art</strong> The app formerly documented as ArtiBol is now Morphia. Old /apps/artibol/ links redirect to the new pages.</span><b>↗</b></a>
     </div>
   </section>

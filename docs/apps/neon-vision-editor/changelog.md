@@ -12,6 +12,21 @@ head:
 
 _Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on November 13, 2026._
 
+## v2.2.3 (published November 13, 2026)
+
+Release link: [GitHub Release v2.2.3](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v2.2.3)
+
+- MeierScript functions complete as calls with their parameters, such as print(string), with the first parameter selected.
+- An optional setting lets Return accept the selected suggestion from the completion list, as in Xcode.
+- On the Mac, pasting a long text shows it right away instead of an empty editor until you scroll.
+- In the Mac version from GitHub, the run console's Output and Errors panes can be resized by dragging the divider between them.
+- Console output stays scrolled to the start of its lines after each run instead of jumping to the middle.
+- On the Mac, Text Replacements with punctuation shortcuts or several lines now appear in the word list.
+- MeierScript completion inserts a function as a call with its required parameters, as Xcode does: `getCommands` completes to `getCommands()` and `print` to `print(string)` with the parameter selected, so typing replaces it. Functions declared in the script complete with their parameter names, and keywords such as `let` stay plain words.
+- Settings › Editor › Completion › Accept Suggestions with Return makes Return insert the selected suggestion from the list, as in Xcode. It is off by default, so Return still ends the line unless you chose a suggestion with the arrow keys.
+- In the Mac version from GitHub, the divider between the run console's Output and Errors panes can be dragged to resize them; a double-click splits them evenly again. The console keeps its height and split.
+- In the Mac version from GitHub, the run console's Output and Errors panes stay scrolled to the start of their lines after each run instead of jumping to the middle of long lines.
+
 ## v2.2.2 (published November 13, 2026)
 
 Release link: [GitHub Release v2.2.2](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v2.2.2)
@@ -99,7 +114,6 @@ Release link: [GitHub Release v2.1.3](https://github.com/h3pdesign/Neon-Vision-E
 - The Mac Markdown formatting bar sits in the editor's top-right corner again, shows all its buttons when there is room, and no longer covers the first lines of text.
 - No migration required. Existing documents, sessions, and preferences are preserved.
 - Development version 2.1.3 (build 1129).
-
 ## v2.1.2 (published October 24, 2026)
 
 Release link: [GitHub Release v2.1.2](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v2.1.2)
