@@ -1,5 +1,13 @@
 # Lingua Latina Changelog
 
+## 1.8.3 (App Store, November 9, 2026)
+
+- iPhone Duo: on the large inner display, Grammar topics and Study decks are shown in two columns.
+- iPhone Duo: the app keeps the open tab when you fold or unfold the phone or return to the app later.
+- The Dictionary keeps your results and scroll position when you switch tabs.
+- Better battery life: grammar, citations, and sources load once per launch, and store prices are no longer reloaded every time the app opens.
+- 1.8.3 is the first App Store release since 1.6.1 and includes the 1.7 and 1.8 work listed below.
+
 ## 1.6.1 (App Store, October 2026)
 
 - Improved Latin morphology, including perfect-tense verbs and regular first-declension nouns, and made offline dictionary results more reliable.
@@ -8,7 +16,7 @@
 
 ## October project release train: 1.7–1.8.2 (through build 325)
 
-These are prepared project builds, not the current App Store version. Apple's listing showed 1.6.1 when checked October 27, 2026.
+These were prepared project builds; their changes reached the App Store with 1.8.3 on November 9, 2026.
 
 - **1.7 (build 314):** clearer Ask results, spaced-review sessions, curated vocabulary, study-data backup/import, provider controls, and additional morphology corrections.
 - **1.8 (build 315):** restored the title and direct-question home cards, improved headings, and adapted layouts for iPhone Duo.

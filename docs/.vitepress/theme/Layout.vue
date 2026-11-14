@@ -81,14 +81,14 @@ const topSwitcherLinks = [
 const appUpdatedBySlug: Record<string, string> = {
   'neon-vision-editor': 'November 13, 2026',
   'gitbird': 'October 25, 2026',
-  'liquid-record': 'October 27, 2026',
-  'metric-data': 'October 27, 2026',
+  'liquid-record': 'November 13, 2026',
+  'metric-data': 'November 14, 2026',
   'x-newsbook': 'February 13, 2026',
   'release-assistant': 'May 6, 2026',
   'image-sorter': 'October 26, 2026',
-  'vistral': 'October 26, 2026',
+  'vistral': 'November 10, 2026',
   'history-vision': 'October 27, 2026',
-  'lingua-latina': 'October 27, 2026',
+  'lingua-latina': 'November 9, 2026',
   'morphia': 'November 14, 2026'
 }
 

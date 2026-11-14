@@ -10,15 +10,15 @@ head:
 
 # Vistral
 
-<div class="overview-status-pill overview-status-private">Status: TestFlight beta</div>
+<div class="overview-status-pill overview-status-release">Status: App Store release</div>
 
-<p class="overview-last-updated">Last updated: <span data-date="2026-10-26">October 26, 2026</span></p>
+<p class="overview-last-updated">Last updated: <span data-date="2026-11-10">November 10, 2026</span></p>
 
 ## Application Purpose
 
 Vistral is a privacy-first personal data visualization app. Its purpose is to import user-provided data exports and turn them into explainable insights and dashboards while keeping processing primarily on-device.
 
-October project work refined navigation for compact and unfolded iPhone Duo layouts, improved chart continuity when source data has gaps, brightened the theme palette, and updated Watch preview/localization and store-review imagery. The project is at version 1.0, build 306; TestFlight upload status for that build is not confirmed here.
+October project work refined navigation for compact and unfolded iPhone Duo layouts, improved chart continuity when source data has gaps, brightened the theme palette, and updated Watch preview/localization and store-review imagery. Vistral 1.0 is available on the [App Store](https://apps.apple.com/us/app/vistral/id6759879882) for iPhone, iPad, and Apple Watch since November 10, 2026.
 
 Primary user outcomes:
 
@@ -37,9 +37,9 @@ Primary user outcomes:
 </div>
 
 <div class="overview-mini-stats overview-reveal" aria-label="app stats">
-  <div><span>project version</span><strong>1.0 (build 306)</strong></div>
+  <div><span>App Store version</span><strong>1.0</strong></div>
   <div><span>platforms</span><strong>iOS / iPadOS / macOS / tvOS / watchOS / visionOS</strong></div>
-  <div><span>distribution</span><strong>TestFlight</strong></div>
+  <div><span>distribution</span><strong>App Store</strong></div>
 </div>
 
 <div class="overview-hero overview-app-release overview-reveal">
@@ -54,7 +54,7 @@ Primary user outcomes:
 ## Quick Links
 
 - [Components Overview](/apps/vistral/components-overview)
-- [Request TestFlight access](/support/support-and-feedback)
+- [App Store](https://apps.apple.com/us/app/vistral/id6759879882)
 - [Installation](/apps/vistral/installation)
 - [Features](/apps/vistral/features)
 

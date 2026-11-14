@@ -19,7 +19,10 @@
   <div class="apps-whats-new-title">What's new</div>
   <div class="apps-whats-new-items">
     <span class="apps-whats-new-item is-morphia">Nov 14, 2026: Morphia: Living Art 1.2.0 Now on the App Store, with three new living systems: Slime Mould, Fireflies, and Sunflower, each with presets, games, a quiz, and an Apple Watch version.</span>
+    <span class="apps-whats-new-item is-liquid-record">Nov 13, 2026: Liquid Record 1.2.1 Control Center and the Action button: Record now opens Liquid Record and starts recording right away. The Live Activity on the Lock Screen and in the Dynamic Island shows the take and stops it. In 1.2.0 the button did nothing.</span>
     <span class="apps-whats-new-item is-neon-vision-editor">Nov 13, 2026: Neon Vision Editor 2.2.3 MeierScript functions complete as calls with their parameters, such as print(string), with the first parameter selected.</span>
+    <span class="apps-whats-new-item is-vistral">Nov 10, 2026: Vistral 1.0 First public App Store release, for iPhone, iPad, and Apple Watch. Download on the App Store</span>
+    <span class="apps-whats-new-item is-lingua-latina">Nov 9, 2026: Lingua Latina 1.8.3 iPhone Duo: on the large inner display, Grammar topics and Study decks are shown in two columns.</span>
   </div>
 </div>
 
@@ -28,17 +31,17 @@
   <div class="apps-release-heading"><span>App</span><span>Version</span><span>Updated</span></div>
   <div class="apps-release-item neon"><span class="name">Neon Vision Editor</span><span class="tag">v2.2.3</span><span class="date">2026-11-13</span></div>
   <div class="apps-release-item gitbird"><span class="name">GitBird</span><span class="tag">2.1.10</span><span class="date">2026-10-25</span></div>
-  <div class="apps-release-item liquid"><span class="name">Liquid Record</span><span class="tag">1.0.4</span><span class="date">2026-10-26</span></div>
-  <div class="apps-release-item metric"><span class="name">Metrics Data</span><span class="tag">1.1.1</span><span class="date">2026-09-16</span></div>
+  <div class="apps-release-item liquid"><span class="name">Liquid Record</span><span class="tag">1.2.1</span><span class="date">2026-11-13</span></div>
+  <div class="apps-release-item metric"><span class="name">Metrics Data</span><span class="tag">1.1.2</span><span class="date">2026-10-25</span></div>
   <div class="apps-release-item newsbook"><span class="name">X-Newsbook</span><span class="tag">10</span><span class="date">2026-02-13</span></div>
   </div>
   <div class="apps-release-group">
   <div class="apps-release-heading"><span>App</span><span>Version</span><span>Updated</span></div>
   <div class="apps-release-item release"><span class="name">Release Assistant</span><span class="tag">0.2.0</span><span class="date">2026-05-06</span></div>
   <div class="apps-release-item sorter"><span class="name">Image Sorter</span><span class="tag">1.0 beta</span><span class="date">2026-10-26</span></div>
-  <div class="apps-release-item vistral"><span class="name">Vistral</span><span class="tag">0.1.6</span><span class="date">2026-05-09</span></div>
+  <div class="apps-release-item vistral"><span class="name">Vistral</span><span class="tag">1.0</span><span class="date">2026-11-10</span></div>
   <div class="apps-release-item history"><span class="name">History Vision</span><span class="tag">1.0 · build 262</span><span class="date">2026-10-27</span></div>
-  <div class="apps-release-item lingua"><span class="name">Lingua Latina</span><span class="tag">1.6.1</span><span class="date">2026-10-26</span></div>
+  <div class="apps-release-item lingua"><span class="name">Lingua Latina</span><span class="tag">1.8.3</span><span class="date">2026-11-09</span></div>
   <div class="apps-release-item morphia"><span class="name">Morphia</span><span class="tag">1.2.0</span><span class="date">2026-11-14</span></div>
   </div>
 </div>
@@ -247,10 +250,10 @@
     </div>
   </article>
 
-  <article class="app-card app-card-vistral" data-changelog="/apps/vistral/changelog" data-status="private" data-platforms="macos,ipados,ios,tvos,watchos,visionos" data-use-cases="analytics,visual,insights">
+  <article class="app-card app-card-vistral" data-changelog="/apps/vistral/changelog" data-status="public" data-platforms="macos,ipados,ios,tvos,watchos,visionos" data-use-cases="analytics,visual,insights">
     <img loading="lazy" decoding="async" src="/icons/vistral.png?v=20260430-1" alt="Vistral icon" class="app-icon" />
     <div class="app-card-content">
-      <h3 class="app-title-row"><a class="app-title-link" href="/apps/vistral/overview">Vistral</a><span class="app-status app-status-private">TestFlight beta</span></h3>
+      <h3 class="app-title-row"><a class="app-title-link" href="/apps/vistral/overview">Vistral</a><span class="app-status app-status-release">App Store release</span></h3>
       <div class="app-card-meta-row">
         <div class="app-platform-pills">
           <span>macOS</span><span>iPadOS</span><span>iOS</span><span>tvOS</span><span>watchOS</span><span>visionOS</span>
@@ -262,8 +265,8 @@
       </div>
       <p>Personal data visualization app with local-first analytics dashboards and explainable insight blocks.</p>
       <div class="app-actions-row">
-        <span class="chip">TestFlight: beta access</span>
-        <a class="chip chip-link" href="/support/support-and-feedback">Request TestFlight access</a>
+        <span class="chip chip-live">App Store: public listing</span>
+        <a class="chip chip-link" href="https://apps.apple.com/us/app/vistral/id6759879882" target="_blank" rel="noreferrer">App Store</a>
       </div>
     </div>
   </article>
@@ -592,14 +595,14 @@
 
 .apps-whats-new-item.is-neon { --item-accent: #9f6bff; }
 .apps-whats-new-item.is-gitbird { --item-accent: #2563eb; }
-.apps-whats-new-item.is-liquid { --item-accent: #ef4444; }
-.apps-whats-new-item.is-metric { --item-accent: #37b86f; }
+.apps-whats-new-item.is-liquid, .apps-whats-new-item.is-liquid-record { --item-accent: #ef4444; }
+.apps-whats-new-item.is-metric, .apps-whats-new-item.is-metric-data { --item-accent: #37b86f; }
 .apps-whats-new-item.is-release { --item-accent: #18a7d8; }
 .apps-whats-new-item.is-newsbook { --item-accent: #4f86ff; }
 .apps-whats-new-item.is-sorter { --item-accent: #d18b2f; }
 .apps-whats-new-item.is-vistral { --item-accent: #42b7a7; }
 .apps-whats-new-item.is-history { --item-accent: #7c8f38; }
-.apps-whats-new-item.is-lingua { --item-accent: #b25686; }
+.apps-whats-new-item.is-lingua, .apps-whats-new-item.is-lingua-latina { --item-accent: #b25686; }
 .apps-whats-new-item.is-morphia { --item-accent: #e0456a; }
 
 

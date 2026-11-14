@@ -1,5 +1,10 @@
 # Vistral Changelog
 
+## 1.0 (App Store, November 10, 2026)
+
+- First public App Store release, for iPhone, iPad, and Apple Watch. [Download on the App Store](https://apps.apple.com/us/app/vistral/id6759879882)
+- Includes the October project updates below.
+
 ## October project updates (through build 306)
 
 - Improved chart continuity when source series contain gaps and brightened the theme palette.

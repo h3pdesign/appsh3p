@@ -1,5 +1,10 @@
 # Liquid Record Changelog
 
+## 1.2.1 - 2026-11-13 (App Store)
+
+- Control Center and the Action button: Record now opens Liquid Record and starts recording right away. The Live Activity on the Lock Screen and in the Dynamic Island shows the take and stops it. In 1.2.0 the button did nothing.
+- Settings › Console now shows the app version and build.
+
 ## 1.1.1 (build 74) - 2026-10-27 (App Store)
 
 - Requests 48 kHz for the built-in microphone and other non-USB inputs in device-native recording mode; USB interfaces retain their own rate.
