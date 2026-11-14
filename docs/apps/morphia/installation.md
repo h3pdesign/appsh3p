@@ -2,7 +2,7 @@
 
 ## App Store
 
-Download [Morphia: Living Art on the App Store](https://apps.apple.com/app/morphia-living-art/id6833573410). It is free, with an optional one-time Studio purchase and no subscription. The Apple Watch app is included and installs from the Watch app on your iPhone.
+Download [Morphia: Living Art on the App Store](https://apps.apple.com/app/morphia-living-art/id6833573410). It is free, with an optional one-time Studio purchase and no subscription. The Apple Watch app is included and installs from the Watch app on your iPhone. More about the app is on the [Morphia website](https://h3pdesign.github.io/Morphia-Public/).
 
 ## Requirements
 

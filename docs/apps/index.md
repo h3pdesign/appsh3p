@@ -328,6 +328,7 @@
       <div class="app-actions-row">
         <span class="chip chip-live">App Store: public listing</span>
         <a class="chip chip-link" href="https://apps.apple.com/app/morphia-living-art/id6833573410" target="_blank" rel="noreferrer">App Store</a>
+        <a class="chip chip-link" href="https://h3pdesign.github.io/Morphia-Public/" target="_blank" rel="noreferrer">Website</a>
         <a class="chip chip-link" href="/apps/morphia/features">Features</a>
         <a class="chip chip-link" href="/apps/morphia/privacy-policy">Privacy Policy</a>
       </div>

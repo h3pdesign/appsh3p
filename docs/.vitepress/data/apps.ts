@@ -98,7 +98,7 @@ export const appCatalog: AppCatalogEntry[] = [
     description: 'Generative art where every canvas is a real biology simulation, with games, quizzes, and Game Center.', icon: '/icons/morphia.png?v=20261114-1',
     status: 'public', statusLabel: 'App Store release', version: '1.2.0', releaseDate: '2026-11-14', platforms: ['iOS', 'iPadOS', 'watchOS'],
     useCases: ['art', 'visual', 'learning'], overview: '/apps/morphia/overview', installation: '/apps/morphia/installation', changelog: '/apps/morphia/changelog', privacy: '/apps/morphia/privacy-policy',
-    installLabel: 'App Store', installUrl: 'https://apps.apple.com/app/morphia-living-art/id6833573410', privacySummary: 'App Store privacy lists Data Not Collected; runs on device, with optional Game Center.'
+    installLabel: 'App Store', installUrl: 'https://apps.apple.com/app/morphia-living-art/id6833573410', websiteLabel: 'Product website', websiteUrl: 'https://h3pdesign.github.io/Morphia-Public/', privacySummary: 'App Store privacy lists Data Not Collected; runs on device, with optional Game Center.'
   }
 ]
 
