@@ -12,7 +12,7 @@ head:
 
 <div class="overview-status-pill overview-status-release">Status: App Store release</div>
 
-<p class="overview-last-updated">Last updated: <span data-date="2026-10-27">October 27, 2026</span></p>
+<p class="overview-last-updated">Last updated: <span data-date="2026-11-14">November 14, 2026</span></p>
 
 ## Application Purpose
 
@@ -32,7 +32,7 @@ Primary user outcomes:
 </div>
 
 <div class="overview-mini-stats overview-reveal" aria-label="app stats">
-  <div><span>App Store version</span><strong>1.6.1</strong></div>
+  <div><span>App Store version</span><strong>1.8.3</strong></div>
   <div><span>App Store platforms</span><strong>iPhone / iPad</strong></div>
   <div><span>distribution</span><strong>App Store</strong></div>
 </div>
@@ -59,7 +59,7 @@ Primary user outcomes:
 
 Lingua Latina prioritizes speed, clarity, offline capability, native Apple UX, and optional AI assistance.
 
-The App Store listing showed version **1.6.1** when checked on October 27, 2026. Project release materials also contain prepared versions 1.7–1.8.2 (build 325); those are not represented as public releases here.
+The App Store listing shows version **1.8.3** (released November 9, 2026), checked on November 14, 2026. It adds two-column layouts on the iPhone Duo inner display, keeps Dictionary results when you switch tabs, and improves battery life.
 
 The app uses a single active language mode:
 

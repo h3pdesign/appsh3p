@@ -1,8 +1,8 @@
 # Vistral Installation
 
-## TestFlight
+## App Store
 
-Vistral is currently distributed through TestFlight. Use [Support and Feedback](/support/support-and-feedback) to request beta access.
+Download [Vistral on the App Store](https://apps.apple.com/us/app/vistral/id6759879882). It is free and runs on iPhone, iPad, and Apple Watch.
 
 ## Requirements
 

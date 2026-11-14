@@ -8,12 +8,12 @@ Use the [app catalogue](/apps/index) to compare purpose, platform, release statu
 
 | App | Best for | Current access |
 | --- | --- | --- |
-| [Neon Vision Editor](/apps/neon-vision-editor/overview) | Files, Markdown, and code | Public release via GitHub Releases |
+| [Neon Vision Editor](/apps/neon-vision-editor/overview) | Files, Markdown, and code | App Store and GitHub Releases |
 | [GitBird](/apps/gitbird/overview) | GitHub and GitLab notifications | Public macOS release via GitHub Releases |
 | [Metrics Data](/apps/metric-data/overview) | AdSense and GA4 reporting | App Store |
 | [Lingua Latina](/apps/lingua-latina/overview) | Latin dictionary and study | App Store |
 | [Morphia](/apps/morphia/overview) | Generative art inspired by biology | App Store |
-| [Vistral](/apps/vistral/overview) | Personal data dashboards | TestFlight beta via support |
+| [Vistral](/apps/vistral/overview) | Personal data dashboards | App Store |
 | [Liquid Record](/apps/liquid-record/overview) | WAV field recording and production | App Store |
 | [History Vision](/apps/history-vision/overview) | Source-aware history and timelines | Private beta via support |
 | [X-Newsbook](/apps/x-newsbook/overview) | Reading and saved stories | Private beta via support |

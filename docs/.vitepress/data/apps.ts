@@ -40,14 +40,14 @@ export const appCatalog: AppCatalogEntry[] = [
   {
     slug: 'liquid-record', name: 'Liquid Record', category: 'Field recorder and audio capture',
     description: 'An iPhone field-recorder console for WAV capture, markers, playback, and export.', icon: '/icons/liquid-record.png?v=20260914-1',
-    status: 'public', statusLabel: 'App Store release', version: '1.1.1', releaseDate: '2026-10-27', platforms: ['iOS', 'iPadOS'],
+    status: 'public', statusLabel: 'App Store release', version: '1.2.1', releaseDate: '2026-11-13', platforms: ['iOS', 'iPadOS'],
     useCases: ['audio', 'recording', 'workflow'], overview: '/apps/liquid-record/overview', installation: '/apps/liquid-record/installation', changelog: '/apps/liquid-record/changelog', privacy: '/apps/liquid-record/privacy-policy',
     installLabel: 'App Store', installUrl: 'https://apps.apple.com/us/app/liquid-record-audio-recorder/id6812232944', privacySummary: 'Offline-first local recording; the App Store privacy label states that the developer does not collect data.'
   },
   {
     slug: 'metric-data', name: 'Metrics Data', category: 'AdSense and GA4 analytics workspace',
     description: 'Focused AdSense and GA4 reporting with secure, account-owned access.', icon: '/icons/metric-data.png?v=20260430-1',
-    status: 'public', statusLabel: 'App Store release', version: '1.1.1', releaseDate: '2026-09-16', platforms: ['iOS', 'iPadOS', 'watchOS'],
+    status: 'public', statusLabel: 'App Store release', version: '1.1.2', releaseDate: '2026-10-25', platforms: ['iOS', 'iPadOS', 'watchOS'],
     useCases: ['analytics', 'reporting'], overview: '/apps/metric-data/overview', installation: '/apps/metric-data/installation', changelog: '/apps/metric-data/changelog', privacy: '/apps/metric-data/privacy-policy',
     installLabel: 'App Store', installUrl: 'https://apps.apple.com/us/app/metrics-data/id6758959570', privacySummary: 'Google account data is user-authorized; App Store privacy lists Data Not Collected.'
   },
@@ -75,9 +75,9 @@ export const appCatalog: AppCatalogEntry[] = [
   {
     slug: 'vistral', name: 'Vistral', category: 'Personal data visualization',
     description: 'Private, explainable dashboards for the data you choose to explore.', icon: '/icons/vistral.png?v=20260430-1',
-    status: 'private', statusLabel: 'TestFlight beta', version: '0.1.6', releaseDate: '2026-05-09', platforms: ['macOS', 'iPadOS', 'iOS', 'tvOS', 'watchOS', 'visionOS'],
+    status: 'public', statusLabel: 'App Store release', version: '1.0', releaseDate: '2026-11-10', platforms: ['macOS', 'iPadOS', 'iOS', 'tvOS', 'watchOS', 'visionOS'],
     useCases: ['analytics', 'visual', 'insights'], overview: '/apps/vistral/overview', installation: '/apps/vistral/installation', changelog: '/apps/vistral/changelog', privacy: '/policies/privacy-policy',
-    installLabel: 'TestFlight', installUrl: '/support/support-and-feedback', privacySummary: 'Local-first analytics for data the user chooses to explore; beta access is handled through TestFlight.'
+    installLabel: 'App Store', installUrl: 'https://apps.apple.com/us/app/vistral/id6759879882', privacySummary: 'Local-first analytics for data the user chooses to explore.'
   },
   {
     slug: 'history-vision', name: 'History Vision', category: 'History and timelines',
@@ -89,7 +89,7 @@ export const appCatalog: AppCatalogEntry[] = [
   {
     slug: 'lingua-latina', name: 'Lingua Latina', category: 'Latin language study',
     description: 'Dictionary, morphology, grammar, and vocabulary in one native study space.', icon: '/icons/lingua-latina.png?v=20260430-1',
-    status: 'public', statusLabel: 'App Store release', version: '1.6.1', releaseDate: '2026-10-26', platforms: ['iOS', 'iPadOS'],
+    status: 'public', statusLabel: 'App Store release', version: '1.8.3', releaseDate: '2026-11-09', platforms: ['iOS', 'iPadOS'],
     useCases: ['language', 'study'], overview: '/apps/lingua-latina/overview', installation: '/apps/lingua-latina/installation', changelog: '/apps/lingua-latina/changelog', privacy: '/apps/lingua-latina/privacy-policy',
     installLabel: 'App Store', installUrl: 'https://apps.apple.com/us/app/lingua-latina/id6767503541', websiteLabel: 'Product website', websiteUrl: 'https://h3pdesign.github.io/Lingua-Latina-Public/', privacySummary: 'App Store privacy lists Data Not Collected; optional external AI providers are user-enabled.'
   },

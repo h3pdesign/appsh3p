@@ -18,6 +18,24 @@ Source: published release notes and documentation snapshots from the H3P app cat
 
 [Read Morphia documentation](/apps/morphia/overview) · [Morphia changelog](/apps/morphia/changelog) · [App Store](https://apps.apple.com/app/morphia-living-art/id6833573410)
 
+### Liquid Record 1.2.1 - November 13 (App Store)
+
+- Record in Control Center and on the Action button now starts a recording right away, with a Live Activity that shows and stops the take.
+
+[Read the Liquid Record changelog](/apps/liquid-record/changelog)
+
+### Vistral 1.0 - November 10 (App Store)
+
+- First public App Store release for iPhone, iPad, and Apple Watch.
+
+[Read the Vistral changelog](/apps/vistral/changelog)
+
+### Lingua Latina 1.8.3 - November 9 (App Store)
+
+- Two-column layouts on the iPhone Duo inner display, Dictionary results kept across tabs, and better battery life. Includes the 1.7 and 1.8 project work.
+
+[Read the Lingua Latina changelog](/apps/lingua-latina/changelog)
+
 ### Neon Vision Editor 2.2.0 - November 9 (GitHub release)
 
 - Refined iPhone Duo previews, added optional API Route support, and improved workflows across Apple platforms.
