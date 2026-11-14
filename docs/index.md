@@ -38,8 +38,8 @@ head:
       <a href="/changelog">View changelog <span>↗</span></a>
     </div>
     <div class="h3p-home-update-list">
+      <a href="/apps/morphia/changelog"><time datetime="2026-11-14">Nov 14, 2026</time><span><strong>Morphia: Living Art 1.2.0</strong> Now on the App Store, with three new living systems: Slime Mould, Fireflies, and Sunflower, each with presets, games, a quiz, and an Apple Watch version.</span><b>↗</b></a>
       <a href="/apps/neon-vision-editor/changelog"><time datetime="2026-11-13">Nov 13, 2026</time><span><strong>Neon Vision Editor 2.2.3</strong> MeierScript functions complete as calls with their parameters, such as print(string), with the first parameter selected.</span><b>↗</b></a>
-      <a href="/apps/morphia/changelog"><time datetime="2026-11-11">Nov 11, 2026</time><span><strong>Morphia: Living art</strong> The app formerly documented as ArtiBol is now Morphia. Old /apps/artibol/ links redirect to the new pages.</span><b>↗</b></a>
     </div>
   </section>
 
@@ -79,7 +79,7 @@ head:
       <a class="h3p-app-card h3p-app-card-accent" href="/apps/gitbird/overview"><img loading="lazy" decoding="async" src="/icons/gitbird.png?v=20260809-1" alt="" aria-hidden="true" /><span class="h3p-card-status">Public release</span><h3>GitBird</h3><p>GitHub and GitLab notifications in your menu bar.</p><span class="h3p-card-arrow">↗</span></a>
       <a class="h3p-app-card" href="/apps/metric-data/overview"><img loading="lazy" decoding="async" src="/icons/metric-data.png?v=20260430-1" alt="" aria-hidden="true" /><span class="h3p-card-status">App Store</span><h3>Metrics Data</h3><p>Focused AdSense and GA4 reporting for your accounts.</p><span class="h3p-card-arrow">↗</span></a>
       <a class="h3p-app-card" href="/apps/lingua-latina/overview"><img loading="lazy" decoding="async" src="/icons/lingua-latina.png?v=20260430-1" alt="" aria-hidden="true" /><span class="h3p-card-status">App Store</span><h3>Lingua Latina</h3><p>Dictionary, morphology, grammar, and vocabulary.</p><span class="h3p-card-arrow">↗</span></a>
-      <a class="h3p-app-card" href="/apps/morphia/overview"><img loading="lazy" decoding="async" src="/icons/morphia.png?v=20261111-1" alt="" aria-hidden="true" /><span class="h3p-card-status">Coming soon</span><h3>Morphia</h3><p>Generative art driven by real biology models.</p><span class="h3p-card-arrow">↗</span></a>
+      <a class="h3p-app-card" href="/apps/morphia/overview"><img loading="lazy" decoding="async" src="/icons/morphia.png?v=20261114-1" alt="" aria-hidden="true" /><span class="h3p-card-status">App Store</span><h3>Morphia</h3><p>Generative art driven by real biology simulations.</p><span class="h3p-card-arrow">↗</span></a>
       <a class="h3p-app-card" href="/apps/liquid-record/overview"><img loading="lazy" decoding="async" src="/icons/liquid-record.png?v=20260914-1" alt="" aria-hidden="true" /><span class="h3p-card-status">App Store</span><h3>Liquid Record</h3><p>Field recording with markers, playback, and export.</p><span class="h3p-card-arrow">↗</span></a>
       <a class="h3p-app-card" href="/apps/vistral/overview"><img loading="lazy" decoding="async" src="/icons/vistral.png?v=20260430-1" alt="" aria-hidden="true" /><span class="h3p-card-status">TestFlight beta</span><h3>Vistral</h3><p>Private, explainable dashboards for the data you choose.</p><span class="h3p-card-arrow">↗</span></a>
       <a class="h3p-app-card" href="/apps/x-newsbook/overview"><img loading="lazy" decoding="async" src="/icons/x-newsbook.png?v=20260914-1" alt="" aria-hidden="true" /><span class="h3p-card-status">Private beta</span><h3>X-Newsbook</h3><p>A calm home for feeds, saved stories, and context.</p><span class="h3p-card-arrow">↗</span></a>

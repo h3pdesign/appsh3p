@@ -11,6 +11,13 @@ Source: published release notes and documentation snapshots from the H3P app cat
 
 ## November 2026
 
+### Morphia: Living Art 1.2.0 - November 14 (App Store)
+
+- First public App Store release of Morphia: generative art where every canvas is a real biology simulation, now with Slime Mould, Fireflies, and Sunflower next to Coats, Murmuration, and Cephalopod Skin.
+- Ten game modes with stars and Expeditions, quizzes, goals, and Game Center. Free, with an optional one-time Studio purchase and no subscription.
+
+[Read Morphia documentation](/apps/morphia/overview) · [Morphia changelog](/apps/morphia/changelog) · [App Store](https://apps.apple.com/app/morphia-living-art/id6833573410)
+
 ### Neon Vision Editor 2.2.0 - November 9 (GitHub release)
 
 - Refined iPhone Duo previews, added optional API Route support, and improved workflows across Apple platforms.

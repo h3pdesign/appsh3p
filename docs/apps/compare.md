@@ -21,7 +21,7 @@ Use this view when you know the job you want to do but not which app is the best
 | [Vistral](/apps/vistral/overview) | Local-first dashboards and insights | macOS · iPadOS · iOS · tvOS · watchOS · visionOS | TestFlight beta · 0.1.6 (2026-05-09) | [Request TestFlight access](/support/support-and-feedback) | [Website policy](/policies/privacy-policy) |
 | [History Vision](/apps/history-vision/overview) | Source-aware history, research, and timelines | macOS · iPadOS · iOS · watchOS | Private beta · 1.0 project build 262 (2026-10-27) | [Request access](/support/support-and-feedback) | [Website policy](/policies/privacy-policy) |
 | [Lingua Latina](/apps/lingua-latina/overview) | Latin dictionary, grammar, and study | macOS · iPadOS · iOS · visionOS | App Store release · 1.6.1 (2026-10-26) | [App Store](https://apps.apple.com/us/app/lingua-latina/id6767503541) | [App policy](/apps/lingua-latina/privacy-policy) |
-| [Morphia](/apps/morphia/overview) | Generative art driven by biology models | iPadOS · iOS | Coming soon · 0.1.0 project build (2026-11-11) | [Installation](/apps/morphia/installation) | [App policy](/apps/morphia/privacy-policy) |
+| [Morphia](/apps/morphia/overview) | Generative art driven by biology simulations, with games | iOS · iPadOS · watchOS | App Store release · 1.2.0 (2026-11-14) | [App Store](https://apps.apple.com/app/morphia-living-art/id6833573410) | [App policy](/apps/morphia/privacy-policy) |
 
 ## Choose by use case
 

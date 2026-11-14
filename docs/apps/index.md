@@ -18,8 +18,8 @@
 <div class="apps-whats-new" aria-label="Latest updates">
   <div class="apps-whats-new-title">What's new</div>
   <div class="apps-whats-new-items">
+    <span class="apps-whats-new-item is-morphia">Nov 14, 2026: Morphia: Living Art 1.2.0 Now on the App Store, with three new living systems: Slime Mould, Fireflies, and Sunflower, each with presets, games, a quiz, and an Apple Watch version.</span>
     <span class="apps-whats-new-item is-neon-vision-editor">Nov 13, 2026: Neon Vision Editor 2.2.3 MeierScript functions complete as calls with their parameters, such as print(string), with the first parameter selected.</span>
-    <span class="apps-whats-new-item is-morphia">Nov 11, 2026: Morphia: Living art The app formerly documented as ArtiBol is now Morphia. Old /apps/artibol/ links redirect to the new pages.</span>
   </div>
 </div>
 
@@ -39,7 +39,7 @@
   <div class="apps-release-item vistral"><span class="name">Vistral</span><span class="tag">0.1.6</span><span class="date">2026-05-09</span></div>
   <div class="apps-release-item history"><span class="name">History Vision</span><span class="tag">1.0 · build 262</span><span class="date">2026-10-27</span></div>
   <div class="apps-release-item lingua"><span class="name">Lingua Latina</span><span class="tag">1.6.1</span><span class="date">2026-10-26</span></div>
-  <div class="apps-release-item morphia"><span class="name">Morphia</span><span class="tag">0.1.0</span><span class="date">2026-11-11</span></div>
+  <div class="apps-release-item morphia"><span class="name">Morphia</span><span class="tag">1.2.0</span><span class="date">2026-11-14</span></div>
   </div>
 </div>
 
@@ -311,22 +311,24 @@
     </div>
   </article>
 
-  <article class="app-card app-card-morphia" data-changelog="/apps/morphia/changelog" data-status="private" data-platforms="ipados,ios" data-use-cases="art,visual,learning">
-    <img loading="lazy" decoding="async" src="/icons/morphia.png?v=20261111-1" alt="Morphia icon" class="app-icon" />
+  <article class="app-card app-card-morphia" data-changelog="/apps/morphia/changelog" data-status="public" data-platforms="ipados,ios,watchos" data-use-cases="art,visual,learning">
+    <img loading="lazy" decoding="async" src="/icons/morphia.png?v=20261114-1" alt="Morphia icon" class="app-icon" />
     <div class="app-card-content">
-      <h3 class="app-title-row"><a class="app-title-link" href="/apps/morphia/overview">Morphia</a><span class="app-status app-status-beta">Coming soon</span></h3>
+      <h3 class="app-title-row"><a class="app-title-link" href="/apps/morphia/overview">Morphia</a><span class="app-status app-status-release">App Store release</span></h3>
       <div class="app-card-meta-row">
         <div class="app-platform-pills">
-          <span>iPadOS</span><span>iOS</span>
+          <span>iPadOS</span><span>iOS</span><span>watchOS</span>
         </div>
         <div class="app-meta-right">
           <span class="app-doc-state app-doc-state-active">Docs: Active</span>
           <span class="app-updated-badge">updated recently</span>
         </div>
       </div>
-      <p>Generative art studio where real biology models, from reaction-diffusion coats to starling flocks and cuttlefish skin, become touch-driven art tools.</p>
+      <p>Generative art where every canvas is a real biology simulation: animal coats, starling murmurations, cuttlefish skin, slime mould, fireflies, and sunflowers. Includes games, quizzes, and Game Center.</p>
       <div class="app-actions-row">
-        <span class="chip chip-live">App Store: coming soon</span>
+        <span class="chip chip-live">App Store: public listing</span>
+        <a class="chip chip-link" href="https://apps.apple.com/app/morphia-living-art/id6833573410" target="_blank" rel="noreferrer">App Store</a>
+        <a class="chip chip-link" href="https://h3pdesign.github.io/Morphia-Public/" target="_blank" rel="noreferrer">Website</a>
         <a class="chip chip-link" href="/apps/morphia/features">Features</a>
         <a class="chip chip-link" href="/apps/morphia/privacy-policy">Privacy Policy</a>
       </div>

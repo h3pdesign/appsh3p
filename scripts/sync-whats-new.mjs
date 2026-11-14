@@ -11,7 +11,7 @@ const appNames = {
   'lingua-latina': 'Lingua Latina',
   'liquid-record': 'Liquid Record',
   'metric-data': 'Metrics Data',
-  'morphia': 'Morphia: Living art',
+  'morphia': 'Morphia: Living Art',
   'neon-vision-editor': 'Neon Vision Editor',
   'release-assistant': 'Release Assistant',
   'vistral': 'Vistral',
