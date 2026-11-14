@@ -1,8 +1,8 @@
 # Privacy Policy for Morphia
 
-_Last updated: November 11, 2026_
+_Last updated: November 14, 2026_
 
-Morphia (listed on the App Store as Morphia: Living art) is a generative art app. It does not require an account and does not include ads, tracking, analytics, or developer telemetry. The developer does not collect data from this app.
+Morphia (listed on the App Store as Morphia: Living Art) is a generative art app. It does not require an account and does not include ads, tracking, analytics, or developer telemetry. The developer does not collect data from this app.
 
 ## Data Stored Locally
 
@@ -15,6 +15,10 @@ If you choose to save an artwork or time-lapse video to your photo library, Morp
 ## Network
 
 Morphia makes no network requests of its own. It contains no third-party SDKs.
+
+## Game Center
+
+Game Center is optional. If you are signed in to Game Center on your device, Morphia reports achievements and leaderboard scores to Apple's Game Center service, which Apple runs under its own privacy policy. The developer does not receive your Game Center data. Every game, goal, and quiz also works offline without signing in.
 
 ## In-App Purchase
 

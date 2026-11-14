@@ -89,7 +89,7 @@ const appUpdatedBySlug: Record<string, string> = {
   'vistral': 'October 26, 2026',
   'history-vision': 'October 27, 2026',
   'lingua-latina': 'October 27, 2026',
-  'morphia': 'November 11, 2026'
+  'morphia': 'November 14, 2026'
 }
 
 const appDocTopLinks = computed<DocJumpLink[]>(() => {

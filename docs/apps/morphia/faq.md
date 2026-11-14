@@ -2,11 +2,11 @@
 
 ## Does Morphia require an account?
 
-No. There is no account, sign-in, or cloud sync.
+No. There is no account, sign-in, or cloud sync. Game Center is optional.
 
 ## Does the app work offline?
 
-Yes. Morphia runs entirely on your device and makes no network requests of its own. Only the App Store purchase and restore flow uses Apple's services.
+Yes. Morphia runs entirely on your device and makes no network requests of its own. Only the App Store purchase and restore flow and the optional Game Center achievements and leaderboards use Apple's services.
 
 ## What does Morphia Studio cost?
 
@@ -26,7 +26,7 @@ Saved works and exports are stored in the app on your device. They are included 
 
 ## Is the biology accurate?
 
-Each "Why?" card is written in plain language and reviewed for accuracy. The simulations are simplified models of real mechanisms: Turing-style reaction-diffusion, boids flocking, and chromatophore signalling.
+Each "Why?" card is written in plain language and reviewed for accuracy. The simulations are simplified models of real mechanisms: Turing-style reaction-diffusion, boids flocking, chromatophore signalling, Physarum trail networks, firefly pulse coupling, and sunflower phyllotaxis. Deep dives list their peer-reviewed sources.
 
 ## How do I get support?
 
