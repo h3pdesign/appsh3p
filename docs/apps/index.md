@@ -19,8 +19,8 @@
   <div class="apps-whats-new-title">What's new</div>
   <div class="apps-whats-new-items">
     <span class="apps-whats-new-item is-morphia">Nov 14, 2026: Morphia: Living Art 1.2.0 Now on the App Store, with three new living systems: Slime Mould, Fireflies, and Sunflower, each with presets, games, a quiz, and an Apple Watch version.</span>
+    <span class="apps-whats-new-item is-neon-vision-editor">Nov 14, 2026: Neon Vision Editor 2.2.4 On the Mac, JSON objects and arrays and XML elements can be folded, so large files read as an outline.</span>
     <span class="apps-whats-new-item is-liquid-record">Nov 13, 2026: Liquid Record 1.2.1 Control Center and the Action button: Record now opens Liquid Record and starts recording right away. The Live Activity on the Lock Screen and in the Dynamic Island shows the take and stops it. In 1.2.0 the button did nothing.</span>
-    <span class="apps-whats-new-item is-neon-vision-editor">Nov 13, 2026: Neon Vision Editor 2.2.3 MeierScript functions complete as calls with their parameters, such as print(string), with the first parameter selected.</span>
     <span class="apps-whats-new-item is-vistral">Nov 10, 2026: Vistral 1.0 First public App Store release, for iPhone, iPad, and Apple Watch. Download on the App Store</span>
     <span class="apps-whats-new-item is-lingua-latina">Nov 9, 2026: Lingua Latina 1.8.3 iPhone Duo: on the large inner display, Grammar topics and Study decks are shown in two columns.</span>
   </div>
@@ -29,7 +29,7 @@
 <div class="apps-release-timeline" aria-label="Latest app version and update dates">
   <div class="apps-release-group">
   <div class="apps-release-heading"><span>App</span><span>Version</span><span>Updated</span></div>
-  <div class="apps-release-item neon"><span class="name">Neon Vision Editor</span><span class="tag">v2.2.3</span><span class="date">2026-11-13</span></div>
+  <div class="apps-release-item neon"><span class="name">Neon Vision Editor</span><span class="tag">v2.2.4</span><span class="date">2026-11-14</span></div>
   <div class="apps-release-item gitbird"><span class="name">GitBird</span><span class="tag">2.1.10</span><span class="date">2026-10-25</span></div>
   <div class="apps-release-item liquid"><span class="name">Liquid Record</span><span class="tag">1.2.1</span><span class="date">2026-11-13</span></div>
   <div class="apps-release-item metric"><span class="name">Metrics Data</span><span class="tag">1.1.2</span><span class="date">2026-10-25</span></div>

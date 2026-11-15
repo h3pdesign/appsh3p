@@ -10,7 +10,22 @@ head:
 
 # Neon Vision Editor Changelog
 
-_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on November 13, 2026._
+_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on November 14, 2026._
+
+## v2.2.4 (published November 14, 2026)
+
+Release link: [GitHub Release v2.2.4](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v2.2.4)
+
+- On the Mac, JSON objects and arrays and XML elements can be folded, so large files read as an outline.
+- Large files stay responsive while you edit and scroll after the first change.
+- Find and Go to Line open the folds they land in, and copying across a fold includes the hidden lines.
+- In the Mac version from GitHub, the run console shows the folder a script starts in.
+- On the Mac, Fold All and Unfold All work from the Editor menu, and a folded block opens with a click on its ⋯ marker.
+- On the Mac, JSON5 files with single-quoted strings and XML tags that span several lines fold correctly.
+- On the Mac, JSON and XML files can fold their structure: click the triangle next to a line number, or use Editor › Fold (⌥⌘←), Unfold (⌥⌘→), Fold All (⌥⇧⌘←) and Unfold All (⌥⇧⌘→). A folded block keeps its first and closing lines visible with a ⋯ marker you can click to open it. Fold All folds everything below the top level, and opening a block shows its children still folded. Find, Go to Line and other jumps open the folds they land in, and copying a selection across a fold copies the hidden lines too.
+- In the Mac version from GitHub, the run console shows the folder a script starts in, so relative paths such as `data.csv` are easy to check. Scripts start in the folder of their file; a document that was never saved starts in the app's own folder. Run Scripts Help explains it.
+- Editing a large file no longer makes later scrolling, clicking and typing slower: after the first edit, the editor found positions in the file by reading it from the start each time, and now starts from the nearest of evenly spaced markers instead.
+- No migration required. Existing documents, sessions, and preferences are preserved.
 
 ## v2.2.3 (published November 13, 2026)
 
@@ -101,7 +116,6 @@ Release link: [GitHub Release v2.1.5](https://github.com/h3pdesign/Neon-Vision-E
 - With Translucent Window turned on, the iPhone and iPad tab bar no longer turns into one solid grey bar; only the active tab is highlighted (#868).
 - On iPhone, the editor status (line, column) sits above the keyboard shortcut bar again instead of covering it while the software keyboard is open.
 - Quick Open stays responsive in large projects: deduplicating indexed files and ranking by recency no longer slow down with every file in the index.
-
 ## v2.1.3 (published October 24, 2026)
 
 Release link: [GitHub Release v2.1.3](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v2.1.3)
