@@ -21,7 +21,6 @@
     <span class="apps-whats-new-item is-morphia">Nov 14, 2026: Morphia: Living Art 1.2.0 Now on the App Store, with three new living systems: Slime Mould, Fireflies, and Sunflower, each with presets, games, a quiz, and an Apple Watch version.</span>
     <span class="apps-whats-new-item is-neon-vision-editor">Nov 14, 2026: Neon Vision Editor 2.2.4 On the Mac, JSON objects and arrays and XML elements can be folded, so large files read as an outline.</span>
     <span class="apps-whats-new-item is-liquid-record">Nov 13, 2026: Liquid Record 1.2.1 Control Center and the Action button: Record now opens Liquid Record and starts recording right away. The Live Activity on the Lock Screen and in the Dynamic Island shows the take and stops it. In 1.2.0 the button did nothing.</span>
-    <span class="apps-whats-new-item is-vistral">Nov 10, 2026: Vistral 1.0 First public App Store release, for iPhone, iPad, and Apple Watch. Download on the App Store</span>
   </div>
 </div>
 
