@@ -38,8 +38,8 @@ head:
       <a href="/changelog">View changelog <span>↗</span></a>
     </div>
     <div class="h3p-home-update-list">
+      <a href="/apps/neon-vision-editor/changelog"><time datetime="2026-11-18">Nov 18, 2026</time><span><strong>Neon Vision Editor 2.2.5</strong> On iPhone and iPad, JSON objects and arrays and XML elements can be folded with a tap next to the line number.</span><b>↗</b></a>
       <a href="/apps/morphia/changelog"><time datetime="2026-11-14">Nov 14, 2026</time><span><strong>Morphia: Living Art 1.2.0</strong> Now on the App Store, with three new living systems: Slime Mould, Fireflies, and Sunflower, each with presets, games, a quiz, and an Apple Watch version.</span><b>↗</b></a>
-      <a href="/apps/neon-vision-editor/changelog"><time datetime="2026-11-14">Nov 14, 2026</time><span><strong>Neon Vision Editor 2.2.4</strong> On the Mac, JSON objects and arrays and XML elements can be folded, so large files read as an outline.</span><b>↗</b></a>
       <a href="/apps/liquid-record/changelog"><time datetime="2026-11-13">Nov 13, 2026</time><span><strong>Liquid Record 1.2.1</strong> Control Center and the Action button: Record now opens Liquid Record and starts recording right away. The Live Activity on the Lock Screen and in the Dynamic Island shows the take and stops it. In 1.2.0 the button did nothing.</span><b>↗</b></a>
     </div>
   </section>
