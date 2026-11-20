@@ -10,7 +10,22 @@ head:
 
 # Neon Vision Editor Changelog
 
-_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on November 18, 2026._
+_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on November 19, 2026._
+
+## v2.2.6 (published November 19, 2026)
+
+Release link: [GitHub Release v2.2.6](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v2.2.6)
+
+- On the Mac, the app no longer quits when a narrow window moves toolbar buttons into the overflow menu.
+- On iPhone and iPad, Choose… next to the editor font opens the system font picker, with previews and search.
+- On iPhone and iPad, any face of an installed font, such as a bold or a light weight, can be the editor font.
+- On iPhone and iPad, the system font picker opens on the editor font you use now.
+- On iPhone and iPad, Settings > Editor > Font has a Choose… button that opens the system font picker, with fonts grouped by family, a preview of each and search. Pick any face, such as a bold or a Retina weight, and the editor uses it.
+- On the Mac, the app no longer quits when you make a window narrow enough that toolbar buttons move into the overflow menu. This happened on macOS 26 when resizing a window ([#1055](https://github.com/h3pdesign/Neon-Vision-Editor/issues/1055)).
+- On the Mac, MeierScript completion offers your own functions and their parameters, even when declared far above the caret. Before, only functions within about 1,200 characters above the caret were found.
+- No migration required. Existing documents, sessions, and preferences are preserved.
+- Development version 2.2.6 (build 1166).
+- Release preparation now updates the README roadmap's Now entry, which still described v1.4.0.
 
 ## v2.2.5 (published November 18, 2026)
 
@@ -101,7 +116,6 @@ Release link: [GitHub Release v2.1.7](https://github.com/h3pdesign/Neon-Vision-E
 - Clicking a word in the list inserts it, and Return accepts a word you picked with the arrow keys.
 - Cheaper Inference uses gpt-5.4-mini by default, keeps its API token in the Keychain, and lets you set your own model id.
 - Markdown previews and PDF exports render inline and display TeX formulas offline with bundled KaTeX. Formula underscores are preserved, and document JavaScript remains disabled (#942).
-
 ## v2.1.6 (published November 1, 2026)
 
 Release link: [GitHub Release v2.1.6](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v2.1.6)
