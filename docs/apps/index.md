@@ -19,7 +19,6 @@
   <div class="apps-whats-new-title">What's new</div>
   <div class="apps-whats-new-items">
     <span class="apps-whats-new-item is-neon-vision-editor">Nov 19, 2026: Neon Vision Editor 2.2.6 On the Mac, the app no longer quits when a narrow window moves toolbar buttons into the overflow menu.</span>
-    <span class="apps-whats-new-item is-morphia">Nov 14, 2026: Morphia: Living Art 1.2.0 Now on the App Store, with three new living systems: Slime Mould, Fireflies, and Sunflower, each with presets, games, a quiz, and an Apple Watch version.</span>
   </div>
 </div>
 

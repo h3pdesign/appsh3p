@@ -39,7 +39,6 @@ head:
     </div>
     <div class="h3p-home-update-list">
       <a href="/apps/neon-vision-editor/changelog"><time datetime="2026-11-19">Nov 19, 2026</time><span><strong>Neon Vision Editor 2.2.6</strong> On the Mac, the app no longer quits when a narrow window moves toolbar buttons into the overflow menu.</span><b>↗</b></a>
-      <a href="/apps/morphia/changelog"><time datetime="2026-11-14">Nov 14, 2026</time><span><strong>Morphia: Living Art 1.2.0</strong> Now on the App Store, with three new living systems: Slime Mould, Fireflies, and Sunflower, each with presets, games, a quiz, and an Apple Watch version.</span><b>↗</b></a>
     </div>
   </section>
 
