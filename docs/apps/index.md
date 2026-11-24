@@ -18,6 +18,7 @@
 <div class="apps-whats-new" aria-label="Latest updates">
   <div class="apps-whats-new-title">What's new</div>
   <div class="apps-whats-new-items">
+    <span class="apps-whats-new-item is-liquid-record">Nov 21, 2026: Liquid Record 1.3.0 Search in Projects now finds words in transcripts, Apple Intelligence summaries, marker labels, and notes, and shows each match's location.</span>
     <span class="apps-whats-new-item is-neon-vision-editor">Nov 19, 2026: Neon Vision Editor 2.2.6 On the Mac, the app no longer quits when a narrow window moves toolbar buttons into the overflow menu.</span>
   </div>
 </div>
@@ -27,7 +28,7 @@
   <div class="apps-release-heading"><span>App</span><span>Version</span><span>Updated</span></div>
   <div class="apps-release-item neon"><span class="name">Neon Vision Editor</span><span class="tag">v2.2.6</span><span class="date">2026-11-19</span></div>
   <div class="apps-release-item gitbird"><span class="name">GitBird</span><span class="tag">2.1.10</span><span class="date">2026-10-25</span></div>
-  <div class="apps-release-item liquid"><span class="name">Liquid Record</span><span class="tag">1.2.1</span><span class="date">2026-11-13</span></div>
+  <div class="apps-release-item liquid"><span class="name">Liquid Record</span><span class="tag">1.3.0</span><span class="date">2026-11-21</span></div>
   <div class="apps-release-item metric"><span class="name">Metrics Data</span><span class="tag">1.1.2</span><span class="date">2026-10-25</span></div>
   <div class="apps-release-item newsbook"><span class="name">X-Newsbook</span><span class="tag">10</span><span class="date">2026-02-13</span></div>
   </div>
@@ -114,6 +115,7 @@
       <div class="app-actions-row">
         <span class="chip chip-live">App Store: public listing</span>
         <a class="chip chip-link" href="https://apps.apple.com/us/app/neon-vision-editor/id6758950965" target="_blank" rel="noreferrer">App Store</a>
+        <a class="chip chip-link" href="https://h3pdesign.github.io/Neon-Vision-Editor/" target="_blank" rel="noreferrer">Website</a>
         <a class="chip chip-link" href="https://github.com/h3pdesign/Neon-Vision-Editor/releases" target="_blank" rel="noreferrer">GitHub Releases</a>
         <a class="chip chip-link" href="https://testflight.apple.com/join/YWB2fGAP" target="_blank" rel="noreferrer">TestFlight</a>
       </div>
@@ -142,13 +144,13 @@
     </div>
   </article>
 
-  <article class="app-card app-card-liquid" data-changelog="/apps/liquid-record/changelog" data-status="public" data-platforms="macos,ipados,ios,visionos" data-use-cases="audio,recording,workflow">
+  <article class="app-card app-card-liquid" data-changelog="/apps/liquid-record/changelog" data-status="public" data-platforms="ipados,ios,watchos" data-use-cases="audio,recording,workflow">
     <img loading="lazy" decoding="async" src="/icons/liquid-record.png?v=20260914-1" alt="Liquid Record icon" class="app-icon" />
     <div class="app-card-content">
       <h3 class="app-title-row"><a class="app-title-link" href="/apps/liquid-record/overview">Liquid Record</a><span class="app-status app-status-release">App Store release</span></h3>
       <div class="app-card-meta-row">
         <div class="app-platform-pills">
-          <span>iOS</span><span>iPadOS</span><span>macOS</span><span>visionOS</span>
+          <span>iOS</span><span>iPadOS</span><span>watchOS</span>
         </div>
         <div class="app-meta-right">
           <span class="app-doc-state app-doc-state-active">Docs: Active</span>
@@ -159,6 +161,7 @@
       <div class="app-actions-row">
         <span class="chip chip-live">App Store: public listing</span>
         <a class="chip chip-link" href="https://apps.apple.com/us/app/liquid-record-audio-recorder/id6812232944" target="_blank" rel="noreferrer">App Store</a>
+        <a class="chip chip-link" href="https://h3pdesign.github.io/Liquid-Record-Public/" target="_blank" rel="noreferrer">Website</a>
         <a class="chip chip-link" href="/apps/liquid-record/privacy-policy">Privacy Policy</a>
       </div>
     </div>
@@ -181,6 +184,7 @@
       <div class="app-actions-row">
         <span class="chip chip-live">App Store: public listing</span>
         <a class="chip chip-link" href="https://apps.apple.com/us/app/metrics-data/id6758959570" target="_blank" rel="noreferrer">App Store</a>
+        <a class="chip chip-link" href="https://h3pdesign.github.io/Metrics-Data-Public/" target="_blank" rel="noreferrer">Website</a>
         <a class="chip chip-link" href="/apps/metric-data/privacy-policy">Privacy Policy</a>
       </div>
     </div>

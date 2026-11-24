@@ -327,6 +327,7 @@ function applyAppThemeClass() {
     'h3p-apps-index-route',
     'h3p-app-doc-route',
     'h3p-changelog-route',
+    'h3p-getting-started-route',
     'app-theme-neon',
     'app-theme-metric',
     'app-theme-release',
@@ -334,6 +335,7 @@ function applyAppThemeClass() {
   )
   if (isAppsIndexRoute.value) root.classList.add('h3p-apps-index-route')
   if (route.path === '/changelog' || route.path === '/changelog/') root.classList.add('h3p-changelog-route')
+  if (route.path === '/getting-started/introduction' || route.path === '/getting-started/introduction/') root.classList.add('h3p-getting-started-route')
   if (isAppDocPage.value && currentAppIdentity.value) {
     root.classList.add('h3p-app-doc-route', `app-theme-${appSlug.value}`)
   }
@@ -1390,6 +1392,7 @@ onBeforeUnmount(() => {
           <div class="h3p-app-action-links">
             <a class="h3p-app-action-primary" :href="currentAppIdentity.installUrl" :target="currentAppIdentity.installUrl.startsWith('http') ? '_blank' : undefined" :rel="currentAppIdentity.installUrl.startsWith('http') ? 'noreferrer noopener' : undefined">{{ currentAppIdentity.installLabel }}</a>
             <a v-if="currentAppIdentity.websiteUrl" :href="currentAppIdentity.websiteUrl" target="_blank" rel="noreferrer noopener">{{ currentAppIdentity.websiteLabel || 'Website' }}</a>
+            <a v-if="currentAppIdentity.githubUrl" :href="currentAppIdentity.githubUrl" target="_blank" rel="noreferrer noopener">GitHub Releases</a>
             <a :href="currentAppIdentity.changelog">Release notes</a>
             <a :href="currentAppIdentity.privacy">Privacy</a>
           </div>

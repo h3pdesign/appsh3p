@@ -8,23 +8,24 @@ head:
       content: https://apps-h3p.com/media/liquid-record/reference-console.png?v=20261027-iphone
   - - script
     - type: application/ld+json
-    - '{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://apps-h3p.com/#organization","name":"H3P","url":"https://apps-h3p.com","sameAs":["https://github.com/h3pdesign"]},{"@type":"SoftwareApplication","@id":"https://apps-h3p.com/apps/liquid-record/overview#app","name":"Liquid Record","applicationCategory":"MultimediaApplication","operatingSystem":"iOS, iPadOS","url":"https://apps-h3p.com/apps/liquid-record/overview","downloadUrl":"https://apps.apple.com/us/app/liquid-record-audio-recorder/id6812232944","softwareVersion":"1.2.1","isAccessibleForFree":true,"publisher":{"@id":"https://apps-h3p.com/#organization"}}]}'
+    - '{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://apps-h3p.com/#organization","name":"H3P","url":"https://apps-h3p.com","sameAs":["https://github.com/h3pdesign"]},{"@type":"SoftwareApplication","@id":"https://apps-h3p.com/apps/liquid-record/overview#app","name":"Liquid Record","applicationCategory":"MultimediaApplication","operatingSystem":"iOS, iPadOS, watchOS","url":"https://apps-h3p.com/apps/liquid-record/overview","downloadUrl":"https://apps.apple.com/us/app/liquid-record-audio-recorder/id6812232944","softwareVersion":"1.3.0","isAccessibleForFree":true,"publisher":{"@id":"https://apps-h3p.com/#organization"}}]}'
 ---
 
 # Liquid Record
 
 <div class="overview-status-pill overview-status-release">Status: App Store release</div>
 
-<p class="overview-last-updated">Last updated: <span data-date="2026-11-13">November 13, 2026</span></p>
+<p class="overview-last-updated">Last updated: <span data-date="2026-11-24">November 24, 2026</span></p>
 
 <div class="overview-platform-badges overview-reveal" aria-label="supported platforms">
   <span>iOS</span>
   <span>iPadOS</span>
+  <span>watchOS</span>
 </div>
 
 <div class="overview-mini-stats overview-reveal" aria-label="app stats">
-  <div><span>App Store version</span><strong>1.2.1</strong></div>
-  <div><span>App Store platforms</span><strong>iPhone / iPad</strong></div>
+  <div><span>App Store version</span><strong>1.3.0</strong></div>
+  <div><span>App Store platforms</span><strong>iPhone / iPad / Apple Watch</strong></div>
   <div><span>distribution</span><strong>App Store</strong></div>
 </div>
 
@@ -58,11 +59,12 @@ Primary user outcomes:
 
 The current release targets iPhone and iPad with local files, SwiftData metadata, AVAudioEngine recording, selectable compatible audio inputs, Apple Files import and export, and an offline-first workflow. One recording with playback is available at no cost. A one-time Full Access purchase unlocks unlimited recordings and the complete production toolset; there is no subscription.
 
-Version **1.2.1** is now available on the App Store. Record in Control Center and on the Action button now opens Liquid Record and starts recording right away, with a Live Activity on the Lock Screen and in the Dynamic Island that shows and stops the take. Settings › Console shows the app version and build.
+Version **1.3.0** is now available on the App Store. Search finds text inside transcripts, summaries, markers, and notes; Find Speech can suggest trim points around silence; and transcribed takes can export captions. Siri, Shortcuts, and Spotlight can open recordings, and Apple Intelligence can suggest chapter markers on supported devices.
 
 ## Related Pages
 
 - [App Store](https://apps.apple.com/us/app/liquid-record-audio-recorder/id6812232944)
+- [Product website](https://h3pdesign.github.io/Liquid-Record-Public/)
 - [Components Overview](/apps/liquid-record/components-overview)
 - [Installation](/apps/liquid-record/installation)
 - [Features](/apps/liquid-record/features)

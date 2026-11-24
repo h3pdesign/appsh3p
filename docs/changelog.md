@@ -11,6 +11,13 @@ Source: published release notes and documentation snapshots from the H3P app cat
 
 ## November 2026
 
+### Liquid Record 1.3.0 - November 21 (App Store)
+
+- Adds project-wide transcript/summary/marker search, silence-aware trim suggestions, caption export, Siri/Shortcuts and Spotlight playback, and on-device suggested chapters.
+- The latest version and full notes are in the [Liquid Record changelog](/apps/liquid-record/changelog).
+
+[Liquid Record App Store](https://apps.apple.com/us/app/liquid-record-audio-recorder/id6812232944) · [Product website](https://h3pdesign.github.io/Liquid-Record-Public/)
+
 ### Morphia: Living Art 1.2.0 - November 14 (App Store)
 
 - First public App Store release of Morphia: generative art where every canvas is a real biology simulation, now with Slime Mould, Fireflies, and Sunflower next to Coats, Murmuration, and Cephalopod Skin.

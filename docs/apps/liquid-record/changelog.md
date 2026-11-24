@@ -1,5 +1,13 @@
 # Liquid Record Changelog
 
+## 1.3.0 - 2026-11-21 (App Store)
+
+- Search in Projects now finds words in transcripts, Apple Intelligence summaries, marker labels, and notes, and shows each match's location.
+- Find Speech sets trim points to where audio begins and ends, skipping silence before and after. (Full Access)
+- Export captions as SubRip (.srt) or WebVTT (.vtt) from a transcribed take. (Full Access)
+- Siri and Shortcuts can play the latest recording or a selected take. On iOS 18 and later, recordings also appear in Spotlight by title.
+- Suggested Chapters uses on-device Apple Intelligence to propose chapter starts and titles from a timed transcript; add them as markers without changing existing markers. (Full Access; requires Apple Intelligence)
+
 ## 1.2.1 - 2026-11-13 (App Store)
 
 - Control Center and the Action button: Record now opens Liquid Record and starts recording right away. The Live Activity on the Lock Screen and in the Dynamic Island shows the take and stops it. In 1.2.0 the button did nothing.

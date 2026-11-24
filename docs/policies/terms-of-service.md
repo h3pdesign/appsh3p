@@ -1,6 +1,6 @@
 # Terms of Service
 
-_Last updated: March 2, 2026_
+_Last updated: November 24, 2026_
 
 These Terms of Service govern use of the h3p apps documentation website at https://apps-h3p.com.
 
@@ -11,9 +11,18 @@ This website provides documentation, guides, release notes, and support referenc
 These terms also apply to your use of h3p-provided apps referenced on this site, including:
 
 - Neon Vision Editor
+- GitBird
+- Liquid Record
 - Metrics Data
-- Release Assistant
 - X-Newsbook
+- Release Assistant
+- Image Sorter
+- Vistral
+- History Vision
+- Lingua Latina
+- Morphia
+
+For Liquid Record distributed through Apple's App Store, the app license is governed by Apple's [Standard Licensed Application End User License Agreement](https://www.apple.com/legal/internet-services/itunes/dev/stdeula/). Full Access is a one-time, non-consumable in-app purchase, not a subscription. Apple displays the localized price and purchase terms before confirmation and processes the transaction. One recording and playback of that recording are available at no cost; additional recordings and the production toolset require Full Access. Refund requests are made through Apple and are subject to Apple's eligibility rules. These terms do not limit non-waivable statutory consumer rights.
 
 Use of each app must follow applicable platform terms (for example Apple App Store or TestFlight terms) in addition to these terms.
 

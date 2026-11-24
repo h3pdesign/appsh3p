@@ -12,11 +12,9 @@ head:
 
 ## Mac
 
-![Neon Vision Editor Mac screenshot](/media/neon/neon-v1.4-workspace.webp)
+![Neon Vision Editor on Mac with a code document, file browser, and editor toolbar](/media/neon/neon-vision-editor.png)
 
-## iPad
-
-![Neon Vision Editor iPad screenshot](/media/neon/neon-v1.4-ipad.png)
+![Neon Vision Editor AI Assistant on Mac beside a Markdown document](/media/neon/neon-v1.4-ai-assistant-macos.png)
 
 ## iPhone
 

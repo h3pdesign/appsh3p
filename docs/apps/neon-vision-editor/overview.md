@@ -167,6 +167,8 @@ Neon Vision Editor keeps the interface out of your way so writing stays central.
 
 ## Related Pages
 
+- [Product website](https://h3pdesign.github.io/Neon-Vision-Editor/)
+- [GitHub releases](https://github.com/h3pdesign/Neon-Vision-Editor/releases)
 - [Components Overview](/apps/neon-vision-editor/components-overview)
 - [Features](/apps/neon-vision-editor/features)
 - [Gallery](/apps/neon-vision-editor/gallery)

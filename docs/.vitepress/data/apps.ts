@@ -18,6 +18,7 @@ export type AppCatalogEntry = {
   installUrl: string
   websiteLabel?: string
   websiteUrl?: string
+  githubUrl?: string
   privacySummary: string
 }
 
@@ -28,7 +29,7 @@ export const appCatalog: AppCatalogEntry[] = [
     description: 'A focused editor for real files across Apple platforms.', icon: '/icons/neon-vision-editor.png?v=20260401-2',
     status: 'public', statusLabel: 'App Store release', version: '2.2.6', releaseDate: '2026-11-19', platforms: ['macOS', 'iPadOS', 'iOS', 'visionOS'],
     useCases: ['coding', 'markdown', 'ai'], overview: '/apps/neon-vision-editor/overview', installation: '/apps/neon-vision-editor/installation', changelog: '/apps/neon-vision-editor/changelog', privacy: '/policies/ai-and-data',
-    installLabel: 'App Store', installUrl: 'https://apps.apple.com/us/app/neon-vision-editor/id6758950965', websiteLabel: 'GitHub releases', websiteUrl: 'https://github.com/h3pdesign/Neon-Vision-Editor/releases', privacySummary: 'Local-first editing; AI data handling is documented and user-controlled.'
+    installLabel: 'App Store', installUrl: 'https://apps.apple.com/us/app/neon-vision-editor/id6758950965', websiteLabel: 'Product website', websiteUrl: 'https://h3pdesign.github.io/Neon-Vision-Editor/', githubUrl: 'https://github.com/h3pdesign/Neon-Vision-Editor/releases', privacySummary: 'Local-first editing; AI data handling is documented and user-controlled.'
   },
   {
     slug: 'gitbird', name: 'GitBird', category: 'Git notification menu bar app',
@@ -40,16 +41,16 @@ export const appCatalog: AppCatalogEntry[] = [
   {
     slug: 'liquid-record', name: 'Liquid Record', category: 'Field recorder and audio capture',
     description: 'An iPhone field-recorder console for WAV capture, markers, playback, and export.', icon: '/icons/liquid-record.png?v=20260914-1',
-    status: 'public', statusLabel: 'App Store release', version: '1.2.1', releaseDate: '2026-11-13', platforms: ['iOS', 'iPadOS'],
+    status: 'public', statusLabel: 'App Store release', version: '1.3.0', releaseDate: '2026-11-21', platforms: ['iOS', 'iPadOS', 'watchOS'],
     useCases: ['audio', 'recording', 'workflow'], overview: '/apps/liquid-record/overview', installation: '/apps/liquid-record/installation', changelog: '/apps/liquid-record/changelog', privacy: '/apps/liquid-record/privacy-policy',
-    installLabel: 'App Store', installUrl: 'https://apps.apple.com/us/app/liquid-record-audio-recorder/id6812232944', privacySummary: 'Offline-first local recording; the App Store privacy label states that the developer does not collect data.'
+    installLabel: 'App Store', installUrl: 'https://apps.apple.com/us/app/liquid-record-audio-recorder/id6812232944', websiteLabel: 'Product website', websiteUrl: 'https://h3pdesign.github.io/Liquid-Record-Public/', privacySummary: 'Offline-first local recording; the App Store privacy label states that the developer does not collect data.'
   },
   {
     slug: 'metric-data', name: 'Metrics Data', category: 'AdSense and GA4 analytics workspace',
     description: 'Focused AdSense and GA4 reporting with secure, account-owned access.', icon: '/icons/metric-data.png?v=20260430-1',
     status: 'public', statusLabel: 'App Store release', version: '1.1.2', releaseDate: '2026-10-25', platforms: ['iOS', 'iPadOS', 'watchOS'],
     useCases: ['analytics', 'reporting'], overview: '/apps/metric-data/overview', installation: '/apps/metric-data/installation', changelog: '/apps/metric-data/changelog', privacy: '/apps/metric-data/privacy-policy',
-    installLabel: 'App Store', installUrl: 'https://apps.apple.com/us/app/metrics-data/id6758959570', privacySummary: 'Google account data is user-authorized; App Store privacy lists Data Not Collected.'
+    installLabel: 'App Store', installUrl: 'https://apps.apple.com/us/app/metrics-data/id6758959570', websiteLabel: 'Product website', websiteUrl: 'https://h3pdesign.github.io/Metrics-Data-Public/', privacySummary: 'Google account data is user-authorized; App Store privacy lists Data Not Collected.'
   },
   {
     slug: 'x-newsbook', name: 'X-Newsbook', category: 'Reading and news library',

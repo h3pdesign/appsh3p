@@ -38,6 +38,7 @@ head:
       <a href="/changelog">View changelog <span>↗</span></a>
     </div>
     <div class="h3p-home-update-list">
+      <a href="/apps/liquid-record/changelog"><time datetime="2026-11-21">Nov 21, 2026</time><span><strong>Liquid Record 1.3.0</strong> Search in Projects now finds words in transcripts, Apple Intelligence summaries, marker labels, and notes, and shows each match's location.</span><b>↗</b></a>
       <a href="/apps/neon-vision-editor/changelog"><time datetime="2026-11-19">Nov 19, 2026</time><span><strong>Neon Vision Editor 2.2.6</strong> On the Mac, the app no longer quits when a narrow window moves toolbar buttons into the overflow menu.</span><b>↗</b></a>
     </div>
   </section>

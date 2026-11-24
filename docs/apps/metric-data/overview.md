@@ -103,6 +103,7 @@ The details here align with:
 
 ## Related Pages
 
+- [Product website](https://h3pdesign.github.io/Metrics-Data-Public/)
 - [Components Overview](/apps/metric-data/components-overview)
 - [Installation](/apps/metric-data/installation)
 - [Features](/apps/metric-data/features)

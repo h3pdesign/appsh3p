@@ -2,7 +2,7 @@
 
 ## Status
 
-Liquid Record 1.2.1 is available from the [App Store](https://apps.apple.com/us/app/liquid-record-audio-recorder/id6812232944).
+Liquid Record 1.3.0 is available from the [App Store](https://apps.apple.com/us/app/liquid-record-audio-recorder/id6812232944).
 
 ## Requirements
 
@@ -19,7 +19,9 @@ Liquid Record 1.2.1 is available from the [App Store](https://apps.apple.com/us/
 
 ## Source Build Notes
 
-The current public App Store version is **1.2.1**. The Xcode project bundle identifier is `com.h3p.LiquidRecord`.
+The current public App Store version is **1.3.0**. The Xcode project bundle identifier is `com.h3p.LiquidRecord`.
+
+Product website: [Liquid Record for iPhone and iPad](https://h3pdesign.github.io/Liquid-Record-Public/).
 
 ## Related Pages
 
