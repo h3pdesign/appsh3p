@@ -85,7 +85,7 @@ const appUpdatedBySlug: Record<string, string> = {
   'metric-data': 'November 14, 2026',
   'x-newsbook': 'February 13, 2026',
   'release-assistant': 'May 6, 2026',
-  'image-sorter': 'October 26, 2026',
+  'image-sorter': 'November 24, 2026',
   'vistral': 'November 10, 2026',
   'history-vision': 'October 27, 2026',
   'lingua-latina': 'November 9, 2026',

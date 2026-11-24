@@ -69,9 +69,9 @@ export const appCatalog: AppCatalogEntry[] = [
   {
     slug: 'image-sorter', name: 'Image Sorter', category: 'Visual asset workflow',
     description: 'A deliberate queue for organizing, naming, and processing images.', icon: '/icons/image-sorter.png?v=20260914-1',
-    status: 'private', statusLabel: 'Private beta', version: '1.0', releaseDate: '2026-10-26', platforms: ['macOS'],
+    status: 'public', statusLabel: 'App Store release', version: '1.0', releaseDate: '2026-11-20', platforms: ['macOS'],
     useCases: ['visual', 'workflow'], overview: '/apps/image-sorter/overview', installation: '/apps/image-sorter/installation', changelog: '/apps/image-sorter/changelog', privacy: '/apps/image-sorter-ai/privacy-policy',
-    installLabel: 'Request access', installUrl: '/support/support-and-feedback', privacySummary: 'Local file workflow; access is private while the app is in beta.'
+    installLabel: 'Mac App Store', installUrl: 'https://apps.apple.com/us/app/image-sorter-ai/id6832581913', privacySummary: 'Local-first image organization with optional services documented in the privacy policy.'
   },
   {
     slug: 'vistral', name: 'Vistral', category: 'Personal data visualization',

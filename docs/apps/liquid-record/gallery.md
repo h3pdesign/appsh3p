@@ -1,6 +1,6 @@
 # Liquid Record Gallery
 
-![Liquid Record running on an iPhone in a recording console with the waveform, input meter, and transport controls](/media/liquid-record/reference-console.png?v=20261027-iphone)
+![Liquid Record running on an iPhone in a recording console with the waveform, input meter, and transport controls](/media/liquid-record/iphone-17-pro-console.jpg)
 
 ## Related Pages
 

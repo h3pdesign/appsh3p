@@ -9,4 +9,4 @@
 - Secondary library/preview window
 - Safer image-recognition and file-operation checks with regression coverage
 - Faster review queue and clearer output-numbering controls
-- StoreKit purchase flow and About/settings surface in the private project
+- About and settings surfaces for app configuration

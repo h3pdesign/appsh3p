@@ -2,23 +2,23 @@
 head:
   - - meta
     - property: og:image
-      content: https://apps-h3p.com/icons/image-sorter.png?v=20260914-1
+      content: https://apps-h3p.com/media/image-sorter/01-review.jpg
   - - meta
     - name: twitter:image
-      content: https://apps-h3p.com/icons/image-sorter.png?v=20260914-1
+      content: https://apps-h3p.com/media/image-sorter/01-review.jpg
 ---
 
 # Image Sorter
 
-<div class="overview-status-pill overview-status-private">Status: Private beta</div>
+<div class="overview-status-pill overview-status-release">Status: App Store release</div>
 
-<p class="overview-last-updated">Last updated: <span data-date="2026-10-26">October 26, 2026</span></p>
+<p class="overview-last-updated">Last updated: <span data-date="2026-11-24">November 24, 2026</span></p>
 
 ## Application Purpose
 
-Image Sorter is a macOS image-ingestion and organization app. Its purpose is to help users review dropped image batches, classify them into consistent categories, and process them into structured output folders with optional companion-server sync.
+Image Sorter AI is a macOS image-ingestion and organization app. It helps users review image batches, classify them into consistent categories, and process them into structured output folders.
 
-October development focused on safer image recognition and file operations, a faster review queue, and a StoreKit-backed purchase flow with an About/settings page. The app remains a private beta; the project version is 1.0 (build 1), not a public release.
+Version 1.0 is available on the [Mac App Store](https://apps.apple.com/us/app/image-sorter-ai/id6832581913). The release includes safer image recognition and file operations, a faster review queue, and clearer numbering controls.
 
 Primary user outcomes:
 
@@ -32,9 +32,9 @@ Primary user outcomes:
 </div>
 
 <div class="overview-mini-stats overview-reveal" aria-label="app stats">
-  <div><span>project version</span><strong>1.0 (build 1)</strong></div>
-  <div><span>platforms</span><strong>macOS</strong></div>
-  <div><span>repo status</span><strong>private</strong></div>
+  <div><span>App Store version</span><strong>1.0</strong></div>
+  <div><span>platform</span><strong>macOS</strong></div>
+  <div><span>distribution</span><strong>Mac App Store</strong></div>
 </div>
 
 <div class="overview-hero overview-app-release overview-reveal">
@@ -43,6 +43,9 @@ Primary user outcomes:
   </div>
   <div class="overview-hero-media">
     <img src="/icons/image-sorter.png?v=20260914-1" alt="Image Sorter icon" class="overview-app-icon" />
+    <div class="overview-shot-frame">
+      <img src="/media/image-sorter/01-review.jpg" alt="Image Sorter AI Mac review queue with image previews and sorting categories" class="overview-app-shot" loading="lazy" decoding="async" />
+    </div>
   </div>
 </div>
 
@@ -52,6 +55,7 @@ Primary user outcomes:
 - [Installation](/apps/image-sorter/installation)
 - [Features](/apps/image-sorter/features)
 - [Gallery](/apps/image-sorter/gallery)
+- [Mac App Store](https://apps.apple.com/us/app/image-sorter-ai/id6832581913)
 - [Privacy Policy](/apps/image-sorter-ai/privacy-policy)
 
 ## Related Pages

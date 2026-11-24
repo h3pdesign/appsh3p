@@ -43,6 +43,9 @@ Primary user outcomes:
   </div>
   <div class="overview-hero-media">
     <img src="/icons/lingua-latina.png?v=20260430-1" alt="Lingua Latina icon" class="overview-app-icon" />
+    <div class="overview-shot-frame">
+      <img src="/media/lingua-latina/01-ask.jpg" alt="Lingua Latina Latin lookup and study screen" class="overview-app-shot overview-app-shot-device" loading="lazy" decoding="async" />
+    </div>
   </div>
 </div>
 

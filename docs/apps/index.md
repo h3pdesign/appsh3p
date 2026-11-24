@@ -35,7 +35,7 @@
   <div class="apps-release-group">
   <div class="apps-release-heading"><span>App</span><span>Version</span><span>Updated</span></div>
   <div class="apps-release-item release"><span class="name">Release Assistant</span><span class="tag">0.2.0</span><span class="date">2026-05-06</span></div>
-  <div class="apps-release-item sorter"><span class="name">Image Sorter</span><span class="tag">1.0 beta</span><span class="date">2026-10-26</span></div>
+  <div class="apps-release-item sorter"><span class="name">Image Sorter</span><span class="tag">1.0</span><span class="date">2026-11-20</span></div>
   <div class="apps-release-item vistral"><span class="name">Vistral</span><span class="tag">1.0</span><span class="date">2026-11-10</span></div>
   <div class="apps-release-item history"><span class="name">History Vision</span><span class="tag">1.0 · build 262</span><span class="date">2026-10-27</span></div>
   <div class="apps-release-item lingua"><span class="name">Lingua Latina</span><span class="tag">1.8.3</span><span class="date">2026-11-09</span></div>
@@ -230,10 +230,10 @@
     </div>
   </article>
 
-  <article class="app-card app-card-sorter" data-changelog="/apps/image-sorter/changelog" data-status="private" data-platforms="macos" data-use-cases="visual,workflow">
+  <article class="app-card app-card-sorter" data-changelog="/apps/image-sorter/changelog" data-status="public" data-platforms="macos" data-use-cases="visual,workflow">
     <img loading="lazy" decoding="async" src="/icons/image-sorter.png?v=20260914-1" alt="Image Sorter icon" class="app-icon" />
     <div class="app-card-content">
-      <h3 class="app-title-row"><a class="app-title-link" href="/apps/image-sorter/overview">Image Sorter</a><span class="app-status app-status-private">Private beta</span></h3>
+      <h3 class="app-title-row"><a class="app-title-link" href="/apps/image-sorter/overview">Image Sorter</a><span class="app-status app-status-public">App Store release</span></h3>
       <div class="app-card-meta-row">
         <div class="app-platform-pills">
           <span>macOS</span>
@@ -245,7 +245,7 @@
       </div>
       <p>macOS queue-based image ingest and processing tool with category, naming, duplicate, and diagnostics workflows.</p>
       <div class="app-actions-row">
-        <span class="chip">GitHub: repository not public yet</span>
+        <a class="chip" href="https://apps.apple.com/us/app/image-sorter-ai/id6832581913">Mac App Store</a><span class="chip">GitHub: repository not public yet</span>
       </div>
     </div>
   </article>

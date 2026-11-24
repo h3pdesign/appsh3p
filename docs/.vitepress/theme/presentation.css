@@ -700,6 +700,12 @@ html.h3p-app-doc-route :is(.overview-banner img, .overview-shot-frame .overview-
   box-shadow: none;
   object-fit: contain;
 }
+html.h3p-app-doc-route .overview-shot-frame .overview-app-shot-device {
+  width: auto;
+  max-width: min(100%, 360px);
+  max-height: 680px;
+  margin-inline: auto;
+}
 html.h3p-app-doc-route .vp-doc blockquote {
   padding: 12px 20px;
   border-color: var(--vp-c-divider);

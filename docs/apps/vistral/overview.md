@@ -48,6 +48,9 @@ Primary user outcomes:
   </div>
   <div class="overview-hero-media">
     <img src="/icons/vistral.png?v=20260430-1" alt="Vistral icon" class="overview-app-icon" />
+    <div class="overview-shot-frame">
+      <img src="/media/vistral/01-dashboard.jpg" alt="Vistral dashboard showing personal data visualizations" class="overview-app-shot overview-app-shot-device" loading="lazy" decoding="async" />
+    </div>
   </div>
 </div>
 

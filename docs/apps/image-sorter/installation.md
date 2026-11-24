@@ -1,19 +1,12 @@
-# Image Sorter Installation
+# Image Sorter AI Installation
 
 ## Requirements
 
-- macOS
-- Xcode (for local project builds)
+- A Mac running macOS 26 or later
 
-## Local Setup
+## Install from the Mac App Store
 
-1. Open the Image Sorter Xcode project.
-2. Build and run the macOS target.
-3. Open Settings and configure output folder + categories.
-
-## Optional Companion Server
-
-For centralized storage or processing APIs, run the companion server documented in the project `Server/README.md`.
+Download [Image Sorter AI from the Mac App Store](https://apps.apple.com/us/app/image-sorter-ai/id6832581913), then open it from Applications. Add an image batch and review categories before processing.
 
 ## Related Pages
 

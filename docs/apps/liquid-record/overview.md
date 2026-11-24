@@ -2,10 +2,10 @@
 head:
   - - meta
     - property: og:image
-      content: https://apps-h3p.com/media/liquid-record/reference-console.png?v=20261027-iphone
+      content: https://apps-h3p.com/media/liquid-record/iphone-17-pro-console.jpg
   - - meta
     - name: twitter:image
-      content: https://apps-h3p.com/media/liquid-record/reference-console.png?v=20261027-iphone
+      content: https://apps-h3p.com/media/liquid-record/iphone-17-pro-console.jpg
   - - script
     - type: application/ld+json
     - '{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://apps-h3p.com/#organization","name":"H3P","url":"https://apps-h3p.com","sameAs":["https://github.com/h3pdesign"]},{"@type":"SoftwareApplication","@id":"https://apps-h3p.com/apps/liquid-record/overview#app","name":"Liquid Record","applicationCategory":"MultimediaApplication","operatingSystem":"iOS, iPadOS, watchOS","url":"https://apps-h3p.com/apps/liquid-record/overview","downloadUrl":"https://apps.apple.com/us/app/liquid-record-audio-recorder/id6812232944","softwareVersion":"1.3.0","isAccessibleForFree":true,"publisher":{"@id":"https://apps-h3p.com/#organization"}}]}'
@@ -36,7 +36,7 @@ head:
   <div class="overview-hero-media">
     <img src="/icons/liquid-record.png?v=20260914-1" alt="Liquid Record icon" class="overview-app-icon" />
     <div class="overview-shot-frame">
-      <img src="/media/liquid-record/reference-console.png?v=20261027-iphone" alt="Liquid Record running on an iPhone in a recording console with the waveform, input meter, and transport controls" class="overview-app-shot" />
+      <img src="/media/liquid-record/iphone-17-pro-console.jpg" alt="Liquid Record running on an iPhone in a recording console with the waveform, input meter, and transport controls" class="overview-app-shot overview-app-shot-device" loading="lazy" decoding="async" />
     </div>
   </div>
 </div>

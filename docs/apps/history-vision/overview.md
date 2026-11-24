@@ -46,6 +46,9 @@ Primary user outcomes:
   </div>
   <div class="overview-hero-media">
     <img src="/icons/history-vision.png?v=20260914-2" alt="History Vision icon" class="overview-app-icon" />
+    <div class="overview-shot-frame">
+      <img src="/media/history-vision/01-discover.jpg" alt="History Vision Discover screen with the article library and featured historical reading" class="overview-app-shot overview-app-shot-device" loading="lazy" decoding="async" />
+    </div>
   </div>
 </div>
 

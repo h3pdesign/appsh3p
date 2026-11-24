@@ -45,6 +45,9 @@ Primary user outcomes:
   </div>
   <div class="overview-hero-media">
     <img src="/icons/morphia.png?v=20261114-1" alt="Morphia icon" class="overview-app-icon" />
+    <div class="overview-shot-frame">
+      <img src="/media/morphia/morphia-1.2-coats.jpg" alt="Morphia living coat simulation with generative biological patterns" class="overview-app-shot overview-app-shot-device" loading="lazy" decoding="async" />
+    </div>
   </div>
 </div>
 
