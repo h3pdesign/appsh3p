@@ -18,15 +18,16 @@
 <div class="apps-whats-new" aria-label="Latest updates">
   <div class="apps-whats-new-title">What's new</div>
   <div class="apps-whats-new-items">
+    <span class="apps-whats-new-item is-neon-vision-editor">Nov 24, 2026: Neon Vision Editor 2.2.7 Line commands such as Join Lines, Delete Line, Toggle Comment and Sort Lines change only the lines you selected. Before, they could rewrite the whole document.</span>
     <span class="apps-whats-new-item is-liquid-record">Nov 21, 2026: Liquid Record 1.3.0 Search in Projects now finds words in transcripts, Apple Intelligence summaries, marker labels, and notes, and shows each match's location.</span>
-    <span class="apps-whats-new-item is-neon-vision-editor">Nov 19, 2026: Neon Vision Editor 2.2.6 On the Mac, the app no longer quits when a narrow window moves toolbar buttons into the overflow menu.</span>
+    <span class="apps-whats-new-item is-image-sorter">Nov 20, 2026: Image Sorter 1.0 Initial Mac App Store release of Image Sorter AI.</span>
   </div>
 </div>
 
 <div class="apps-release-timeline" aria-label="Latest app version and update dates">
   <div class="apps-release-group">
   <div class="apps-release-heading"><span>App</span><span>Version</span><span>Updated</span></div>
-  <div class="apps-release-item neon"><span class="name">Neon Vision Editor</span><span class="tag">v2.2.6</span><span class="date">2026-11-19</span></div>
+  <div class="apps-release-item neon"><span class="name">Neon Vision Editor</span><span class="tag">v2.2.7</span><span class="date">2026-11-24</span></div>
   <div class="apps-release-item gitbird"><span class="name">GitBird</span><span class="tag">2.1.10</span><span class="date">2026-10-25</span></div>
   <div class="apps-release-item liquid"><span class="name">Liquid Record</span><span class="tag">1.3.0</span><span class="date">2026-11-21</span></div>
   <div class="apps-release-item metric"><span class="name">Metrics Data</span><span class="tag">1.1.2</span><span class="date">2026-10-25</span></div>

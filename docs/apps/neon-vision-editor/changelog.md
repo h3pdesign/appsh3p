@@ -10,7 +10,22 @@ head:
 
 # Neon Vision Editor Changelog
 
-_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on November 19, 2026._
+_Source: GitHub Releases for [Neon Vision Editor](https://github.com/h3pdesign/Neon-Vision-Editor). Last synced on November 24, 2026._
+
+## v2.2.7 (published November 24, 2026)
+
+Release link: [GitHub Release v2.2.7](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v2.2.7)
+
+- Line commands such as Join Lines, Delete Line, Toggle Comment and Sort Lines change only the lines you selected. Before, they could rewrite the whole document.
+- The Copy button on Markdown preview code blocks works, and single quotes in those code blocks show correctly.
+- On the Mac, closing restored tabs no longer quits the app, and folders you expanded in the project sidebar stay expanded when you open a file.
+- Toggle Comment (⌘/), Duplicate Line (⌥⇧⌘↓) and Delete Line (⇧⌘K) in the Mac Editor menu and on the iPad keyboard.
+- The table of contents sidebar can sit on the right of the editor on the Mac, and its text size can be changed.
+- On the Mac, Settings > Layout & Status Bar can place the table of contents sidebar on the right of the editor ([#1087](https://github.com/h3pdesign/Neon-Vision-Editor/issues/1087)).
+- Settings > Layout can make the table of contents text smaller or larger, separately from the project navigator, so more of long headings fits ([#1086](https://github.com/h3pdesign/Neon-Vision-Editor/issues/1086)).
+- Toggle Comment is in the Mac Editor menu and on the iPad keyboard with ⌘/. It uses the comment syntax of the document's language, such as `#` in Python or `<!-- -->` in HTML.
+- Duplicate Line (⌥⇧⌘↓) and Delete Line (⇧⌘K) are in the Mac Editor menu and on the iPad keyboard. They work on the current line or every selected line.
+- More files open with the right syntax highlighting: SCSS and Less, `.cxx` and `.hxx`, JSON Lines and GeoJSON, Xcode storyboards, XIBs and entitlements, and Gemfile, Podfile, Brewfile, Fastfile, Containerfile, Pipfile, `.zshenv` and `.editorconfig`.
 
 ## v2.2.6 (published November 19, 2026)
 
@@ -39,7 +54,7 @@ Release link: [GitHub Release v2.2.5](https://github.com/h3pdesign/Neon-Vision-E
 - On an iPad keyboard, Fold All (⌥⇧⌘←) and Unfold All (⌥⇧⌘→) work as on the Mac.
 - On iPhone and iPad, JSON and XML files can fold their structure: tap the chevron next to a line number to fold or unfold a block, or tap the ⋯ marker after a folded line to open it. Fold, Fold All and Unfold All are in the text menu, and on an iPad keyboard Fold (⌥⌘←), Unfold (⌥⌘→), Fold All (⌥⇧⌘←) and Unfold All (⌥⇧⌘→) work as on the Mac. With VoiceOver, the same commands are in the Actions rotor. Folding only hides lines: saving, copying across a fold and undo keep the whole document, and Find or Go to Line open the fold they land in.
 - Compare can ignore whitespace: turn on Ignore Whitespace in the compare panel, and lines that differ only in indentation or spacing count as unchanged. JSON exported by two tools with different indentation now highlights only the values that changed. The setting is remembered and works for Compare with Tab, Compare with Disk and the Git panel's change and commit diffs on Mac, iPhone and iPad.
-- On the Mac, the integrated terminal starts without a stray `%` line and without a wrapped banner: zsh now gets the panel's real width, and the banner is a short "zsh in &lt;folder&gt;" line with the home folder shown as `~`. iCloud Drive folders show by name instead of their Mobile Documents path.
+- On the Mac, the integrated terminal starts without a stray `%` line and without a wrapped banner: zsh now gets the panel's real width, and the banner is a short "zsh in <folder>" line with the home folder shown as `~`. iCloud Drive folders show by name instead of their Mobile Documents path.
 - On iPhone and iPad, tapping or dragging to place the cursor no longer scrolls the text under your finger, so a second tap on the same line lands where you aim instead of jumping elsewhere ([#1036](https://github.com/h3pdesign/Neon-Vision-Editor/issues/1036), [#770](https://github.com/h3pdesign/Neon-Vision-Editor/issues/770)).
 
 ## v2.2.4 (published November 14, 2026)
@@ -101,7 +116,6 @@ Release link: [GitHub Release v2.2.0](https://github.com/h3pdesign/Neon-Vision-E
 - API Route uses claude-haiku-4-5 by default, keeps its API key in the Keychain, and lets you set your own model id (#957).
 - On the Mac, typing a Text Replacement shortcut such as "omw" lists its phrase first in the word list. Tab, Right Arrow or Return replaces the shortcut with the phrase (#959).
 - With "Reopen Last Session", Mac tabs reopen in the order you left them instead of reversed (#940).
-
 ## v2.1.7 (published November 7, 2026)
 
 Release link: [GitHub Release v2.1.7](https://github.com/h3pdesign/Neon-Vision-Editor/releases/tag/v2.1.7)
