@@ -212,7 +212,7 @@
   </article>
 
   <article class="app-card app-card-broadside" data-changelog="/apps/broadside/changelog" data-status="private" data-platforms="macos,ipados,ios" data-use-cases="reading,research">
-    <img loading="lazy" decoding="async" src="/icons/broadside.png?v=20260914-1" alt="Broadside icon" class="app-icon" />
+    <img loading="lazy" decoding="async" src="/icons/broadside.png?v=20261126-1" alt="Broadside icon" class="app-icon" />
     <div class="app-card-content">
       <h3 class="app-title-row"><a class="app-title-link" href="/apps/broadside/overview">Broadside</a><span class="app-status app-status-private">Private beta</span></h3>
       <div class="app-card-meta-row">

@@ -54,10 +54,10 @@ export const appCatalog: AppCatalogEntry[] = [
   },
   {
     slug: 'broadside', name: 'Broadside', category: 'Reading and news library',
-    description: 'A newspaper-style reader that sets your RSS/Atom feeds, Feedly and X timeline into a daily front page.', icon: '/icons/broadside.png?v=20260914-1',
+    description: 'A newspaper-style reader that sets your RSS/Atom feeds, Feedly and X timeline into a daily front page.', icon: '/icons/broadside.png?v=20261126-1',
     status: 'private', statusLabel: 'Private beta', version: '10', releaseDate: '2026-02-13', platforms: ['macOS', 'iPadOS', 'iOS'],
-    useCases: ['reading', 'research'], overview: '/apps/broadside/overview', installation: '/apps/broadside/installation', changelog: '/apps/broadside/changelog', privacy: '/policies/privacy-policy',
-    installLabel: 'Request access', installUrl: '/support/support-and-feedback', privacySummary: 'Covered by the website privacy policy; no public download is listed.'
+    useCases: ['reading', 'research'], overview: '/apps/broadside/overview', installation: '/apps/broadside/installation', changelog: '/apps/broadside/changelog', privacy: '/apps/broadside/privacy-policy',
+    installLabel: 'Request access', installUrl: '/support/support-and-feedback', privacySummary: 'No data collected; feeds, Feedly and X are fetched directly from the device and tokens stay in the Keychain.'
   },
   {
     slug: 'release-assistant', name: 'Release Assistant', category: 'Release operations',
