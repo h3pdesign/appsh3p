@@ -18,7 +18,7 @@ Feedly and X are optional. If you connect them, the app sends requests only to F
 
 ## Optional Reading Accounts and Read Later
 
-If you connect Inoreader, a FreshRSS or Miniflux server (or another Google Reader API server), or Feedbin, the app sends requests only to that service to load your subscriptions, folders and stories, and to mark stories you open as read there. If you connect Instapaper or Raindrop.io, the app sends a story's web address and headline to that service only when you choose "Save for later". Sign-ins and tokens are stored in the system Keychain on your device and are sent only to the service they belong to. Disconnecting an account in Sources deletes them. Each service's handling of your data is governed by its own privacy policy.
+If you connect Inoreader (inoreader.com), The Old Reader (theoldreader.com), a FreshRSS or Miniflux server (or another Google Reader API server), or Feedbin (api.feedbin.com), the app sends requests only to that service to load your subscriptions, folders and stories, and to mark stories you open as read there. If you connect Instapaper (instapaper.com) or Raindrop.io (api.raindrop.io), the app sends a story's web address and headline to that service only when you choose "Save for later". Sign-ins and tokens are stored in the system Keychain on your device and are sent only to the service they belong to. Disconnecting an account in Sources deletes them. Each service's handling of your data is governed by its own privacy policy.
 
 ## OPML Import and Export
 
