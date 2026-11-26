@@ -53,10 +53,10 @@ export const appCatalog: AppCatalogEntry[] = [
     installLabel: 'App Store', installUrl: 'https://apps.apple.com/us/app/metrics-data/id6758959570', websiteLabel: 'Product website', websiteUrl: 'https://h3pdesign.github.io/Metrics-Data-Public/', privacySummary: 'Google account data is user-authorized; App Store privacy lists Data Not Collected.'
   },
   {
-    slug: 'x-newsbook', name: 'X-Newsbook', category: 'Reading and news library',
-    description: 'A calm, reading-first home for feeds, saved stories, and context.', icon: '/icons/x-newsbook.png?v=20260914-1',
+    slug: 'broadside', name: 'Broadside', category: 'Reading and news library',
+    description: 'A newspaper-style reader that sets your RSS/Atom feeds, Feedly and X timeline into a daily front page.', icon: '/icons/broadside.png?v=20260914-1',
     status: 'private', statusLabel: 'Private beta', version: '10', releaseDate: '2026-02-13', platforms: ['macOS', 'iPadOS', 'iOS'],
-    useCases: ['reading', 'research'], overview: '/apps/x-newsbook/overview', installation: '/apps/x-newsbook/installation', changelog: '/apps/x-newsbook/changelog', privacy: '/policies/privacy-policy',
+    useCases: ['reading', 'research'], overview: '/apps/broadside/overview', installation: '/apps/broadside/installation', changelog: '/apps/broadside/changelog', privacy: '/policies/privacy-policy',
     installLabel: 'Request access', installUrl: '/support/support-and-feedback', privacySummary: 'Covered by the website privacy policy; no public download is listed.'
   },
   {

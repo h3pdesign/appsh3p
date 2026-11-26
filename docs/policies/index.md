@@ -72,7 +72,7 @@ These app-specific policies document data handling where an app has its own priv
 | Lingua Latina | [Dedicated app policy](/apps/lingua-latina/privacy-policy) | Covers dictionary, grammar, study progress, and optional app data handling. |
 | Neon Vision Editor | Covered by [Website Privacy Policy](/policies/privacy-policy) and app documentation | No dedicated app privacy page is currently published on this site. |
 | Release Assistant | Covered by [Website Privacy Policy](/policies/privacy-policy) and app documentation | No dedicated app privacy page is currently published on this site. |
-| X-Newsbook | Covered by [Website Privacy Policy](/policies/privacy-policy) and app documentation | No dedicated app privacy page is currently published on this site. |
+| Broadside | Covered by [Website Privacy Policy](/policies/privacy-policy) and app documentation | No dedicated app privacy page is currently published on this site. |
 | Image Sorter | [Dedicated app policy](/apps/image-sorter-ai/privacy-policy) | Covers local image data, optional remote AI and companion-server processing, and purchases. |
 | Vistral | Covered by [Website Privacy Policy](/policies/privacy-policy) and app documentation | No dedicated app privacy page is currently published on this site. |
 | History Vision | [Dedicated app policy](/apps/history-vision/privacy-policy) | Covers local reading and research data, optional Wikimedia lookups, Apple Watch sync and App Store purchases. |

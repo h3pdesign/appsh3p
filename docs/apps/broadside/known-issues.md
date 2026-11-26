@@ -1,4 +1,4 @@
-# X-Newsbook Known Issues
+# Broadside Known Issues
 
 ## Feed Source Rate Limits
 
@@ -20,5 +20,5 @@ Large saved queues can increase local storage usage.
 
 ## Related Pages
 
-- [Overview](/apps/x-newsbook/overview)
-- [FAQ](/apps/x-newsbook/faq)
+- [Overview](/apps/broadside/overview)
+- [FAQ](/apps/broadside/faq)

@@ -31,7 +31,7 @@
   <div class="apps-release-item gitbird"><span class="name">GitBird</span><span class="tag">2.1.10</span><span class="date">2026-10-25</span></div>
   <div class="apps-release-item liquid"><span class="name">Liquid Record</span><span class="tag">1.3.0</span><span class="date">2026-11-21</span></div>
   <div class="apps-release-item metric"><span class="name">Metrics Data</span><span class="tag">1.1.2</span><span class="date">2026-10-25</span></div>
-  <div class="apps-release-item newsbook"><span class="name">X-Newsbook</span><span class="tag">10</span><span class="date">2026-02-13</span></div>
+  <div class="apps-release-item broadside"><span class="name">Broadside</span><span class="tag">10</span><span class="date">2026-02-13</span></div>
   </div>
   <div class="apps-release-group">
   <div class="apps-release-heading"><span>App</span><span>Version</span><span>Updated</span></div>
@@ -211,10 +211,10 @@
     </div>
   </article>
 
-  <article class="app-card app-card-newsbook" data-changelog="/apps/x-newsbook/changelog" data-status="private" data-platforms="macos,ipados,ios" data-use-cases="reading,research">
-    <img loading="lazy" decoding="async" src="/icons/x-newsbook.png?v=20260914-1" alt="X-Newsbook icon" class="app-icon" />
+  <article class="app-card app-card-broadside" data-changelog="/apps/broadside/changelog" data-status="private" data-platforms="macos,ipados,ios" data-use-cases="reading,research">
+    <img loading="lazy" decoding="async" src="/icons/broadside.png?v=20260914-1" alt="Broadside icon" class="app-icon" />
     <div class="app-card-content">
-      <h3 class="app-title-row"><a class="app-title-link" href="/apps/x-newsbook/overview">X-Newsbook</a><span class="app-status app-status-private">Private beta</span></h3>
+      <h3 class="app-title-row"><a class="app-title-link" href="/apps/broadside/overview">Broadside</a><span class="app-status app-status-private">Private beta</span></h3>
       <div class="app-card-meta-row">
         <div class="app-platform-pills">
           <span>macOS</span><span>iPadOS</span><span>iOS</span>
@@ -224,7 +224,7 @@
           <span class="app-updated-badge">updated recently</span>
         </div>
       </div>
-      <p>News-focused reading app with curated feeds, saved items, and reading-first layout across Apple platforms.</p>
+      <p>A newspaper-style reader that sets your RSS/Atom feeds, Feedly and X timeline into a daily front page.</p>
       <div class="app-actions-row">
         <span class="chip">GitHub: repository not public yet</span>
       </div>
@@ -413,16 +413,16 @@
     </div>
   </section>
   <section>
-    <h3>X-Newsbook</h3>
+    <h3>Broadside</h3>
     <div>
-      <a href="/apps/x-newsbook/overview">Overview</a>
-      <a href="/apps/x-newsbook/components-overview">Components</a>
-      <a href="/apps/x-newsbook/installation">Install</a>
-      <a href="/apps/x-newsbook/features">Features</a>
-      <a href="/apps/x-newsbook/gallery">Gallery</a>
-      <a href="/apps/x-newsbook/changelog">Changelog</a>
-      <a href="/apps/x-newsbook/known-issues">Known Issues</a>
-      <a href="/apps/x-newsbook/faq">FAQ</a>
+      <a href="/apps/broadside/overview">Overview</a>
+      <a href="/apps/broadside/components-overview">Components</a>
+      <a href="/apps/broadside/installation">Install</a>
+      <a href="/apps/broadside/features">Features</a>
+      <a href="/apps/broadside/gallery">Gallery</a>
+      <a href="/apps/broadside/changelog">Changelog</a>
+      <a href="/apps/broadside/known-issues">Known Issues</a>
+      <a href="/apps/broadside/faq">FAQ</a>
     </div>
   </section>
   <section>
@@ -520,7 +520,7 @@
       <a href="/apps/liquid-record/components-overview">Liquid Record</a>
       <a href="/apps/metric-data/components-overview">Metrics Data</a>
       <a href="/apps/release-assistant/components-overview">Release Assistant</a>
-      <a href="/apps/x-newsbook/components-overview">X-Newsbook</a>
+      <a href="/apps/broadside/components-overview">Broadside</a>
       <a href="/apps/image-sorter/components-overview">Image Sorter</a>
       <a href="/apps/vistral/components-overview">Vistral</a>
       <a href="/apps/history-vision/components-overview">History Vision</a>
@@ -599,7 +599,7 @@
 .apps-whats-new-item.is-liquid, .apps-whats-new-item.is-liquid-record { --item-accent: #ef4444; }
 .apps-whats-new-item.is-metric, .apps-whats-new-item.is-metric-data { --item-accent: #37b86f; }
 .apps-whats-new-item.is-release { --item-accent: #18a7d8; }
-.apps-whats-new-item.is-newsbook { --item-accent: #4f86ff; }
+.apps-whats-new-item.is-broadside { --item-accent: #4f86ff; }
 .apps-whats-new-item.is-sorter { --item-accent: #d18b2f; }
 .apps-whats-new-item.is-vistral { --item-accent: #42b7a7; }
 .apps-whats-new-item.is-history { --item-accent: #7c8f38; }
@@ -642,7 +642,7 @@
 .apps-release-item.gitbird .tag { color: #7ca8ff; border-color: rgba(124,168,255,0.45); }
 .apps-release-item.liquid .tag { color: #ff7a7a; border-color: rgba(255,122,122,0.45); }
 .apps-release-item.metric .tag { color: #5bd485; border-color: rgba(91,212,133,0.45); }
-.apps-release-item.newsbook .tag { color: #7ca8ff; border-color: rgba(124,168,255,0.45); }
+.apps-release-item.broadside .tag { color: #7ca8ff; border-color: rgba(124,168,255,0.45); }
 .apps-release-item.release .tag { color: #69d7ff; border-color: rgba(105,215,255,0.45); }
 
 .apps-status-legend {
@@ -963,7 +963,7 @@
 
 .app-card-neon::before { background: linear-gradient(180deg, #8f4dff, #b682ff); }
 .app-card-metric::before { background: linear-gradient(180deg, #39b66b, #8be5aa); }
-.app-card-newsbook::before { background: linear-gradient(180deg, #4f86ff, #93b5ff); }
+.app-card-broadside::before { background: linear-gradient(180deg, #4f86ff, #93b5ff); }
 .app-card-release::before { background: linear-gradient(180deg, #2dc0ff, #74e0ff); }
 
 .app-card:hover {

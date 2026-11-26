@@ -1,4 +1,4 @@
-# X-Newsbook Features
+# Broadside Features
 
 ## Reading Experience
 
@@ -19,6 +19,6 @@
 
 ## Related Pages
 
-- [Overview](/apps/x-newsbook/overview)
-- [Components Overview](/apps/x-newsbook/components-overview)
-- [FAQ](/apps/x-newsbook/faq)
+- [Overview](/apps/broadside/overview)
+- [Components Overview](/apps/broadside/components-overview)
+- [FAQ](/apps/broadside/faq)

@@ -14,7 +14,7 @@ These terms also apply to your use of h3p-provided apps referenced on this site,
 - GitBird
 - Liquid Record
 - Metrics Data
-- X-Newsbook
+- Broadside
 - Release Assistant
 - Image Sorter
 - Vistral

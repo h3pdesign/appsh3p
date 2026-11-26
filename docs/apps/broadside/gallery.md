@@ -1,4 +1,4 @@
-# X-Newsbook Gallery
+# Broadside Gallery
 
 Screenshots will be added as the beta UI stabilizes.
 
@@ -11,5 +11,5 @@ Screenshots will be added as the beta UI stabilizes.
 
 ## Related Pages
 
-- [Overview](/apps/x-newsbook/overview)
-- [Features](/apps/x-newsbook/features)
+- [Overview](/apps/broadside/overview)
+- [Features](/apps/broadside/features)

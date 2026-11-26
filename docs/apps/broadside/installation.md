@@ -1,4 +1,4 @@
-# X-Newsbook Installation
+# Broadside Installation
 
 ## Requirements
 
@@ -8,7 +8,7 @@
 ## Install Steps
 
 1. Install TestFlight or internal distribution build.
-2. Launch X-Newsbook and allow required permissions.
+2. Launch Broadside and allow required permissions.
 3. Add at least one source feed in onboarding.
 
 ## Initial Setup
@@ -19,6 +19,6 @@
 
 ## Related Pages
 
-- [Overview](/apps/x-newsbook/overview)
-- [Features](/apps/x-newsbook/features)
-- [Known Issues](/apps/x-newsbook/known-issues)
+- [Overview](/apps/broadside/overview)
+- [Features](/apps/broadside/features)
+- [Known Issues](/apps/broadside/known-issues)

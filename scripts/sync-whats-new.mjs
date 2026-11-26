@@ -15,7 +15,7 @@ const appNames = {
   'neon-vision-editor': 'Neon Vision Editor',
   'release-assistant': 'Release Assistant',
   'vistral': 'Vistral',
-  'x-newsbook': 'X-Newsbook'
+  'broadside': 'Broadside'
 }
 const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
 

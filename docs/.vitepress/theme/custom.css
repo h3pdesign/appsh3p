@@ -2518,7 +2518,7 @@ html:not(.dark) .VPDocAside {
 .release-neon::before { background: linear-gradient(180deg, #a865ff, #53d2ff); }
 .release-metric::before { background: linear-gradient(180deg, #51cc7a, #9de8b6); }
 .release-release::before { background: linear-gradient(180deg, #53d2ff, #8ca9ff); }
-.release-newsbook::before { background: linear-gradient(180deg, #4f8dff, #7fa9ff); }
+.release-broadside::before { background: linear-gradient(180deg, #4f8dff, #7fa9ff); }
 
 .startpage-release-item span {
   font-size: 11px;
@@ -3585,7 +3585,7 @@ html.app-theme-metric-data {
   --app-accent-2: #8be6ae;
 }
 
-html.app-theme-x-newsbook {
+html.app-theme-broadside {
   --app-accent: #4e84ff;
   --app-accent-2: #83b6ff;
 }
@@ -4453,7 +4453,7 @@ html.h3p-apps-index-route .vp-doc > h1:first-child {
 
 .h3p-apps-index-route .app-card-neon { --app-card-accent: #9b67ff; }
 .h3p-apps-index-route .app-card-metric { --app-card-accent: #2fb873; }
-.h3p-apps-index-route .app-card-newsbook { --app-card-accent: #4e84ff; }
+.h3p-apps-index-route .app-card-broadside { --app-card-accent: #4e84ff; }
 .h3p-apps-index-route .app-card-release { --app-card-accent: #1ba9dc; }
 .h3p-apps-index-route .app-card-sorter { --app-card-accent: #d88a2c; }
 .h3p-apps-index-route .app-card-vistral { --app-card-accent: #20a99d; }

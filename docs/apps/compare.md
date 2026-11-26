@@ -15,7 +15,7 @@ Use this view when you know the job you want to do but not which app is the best
 | [GitBird](/apps/gitbird/overview) | GitHub and GitLab notification triage | macOS | Public · 2.1.10 (2026-10-25) | [GitHub Releases](https://github.com/h3pdesign/GitBird/releases) | [App policy](/apps/gitbird/privacy-policy) |
 | [Liquid Record](/apps/liquid-record/overview) | WAV recording, markers, transcription, and playback | iOS · iPadOS · watchOS | App Store release · 1.3.0 (2026-11-21) | [App Store](https://apps.apple.com/us/app/liquid-record-audio-recorder/id6812232944) · [Product website](https://h3pdesign.github.io/Liquid-Record-Public/) | [App policy](/apps/liquid-record/privacy-policy) |
 | [Metrics Data](/apps/metric-data/overview) | AdSense and GA4 reporting | iOS · iPadOS · watchOS | App Store release · 1.1.2 (2026-10-25) | [App Store](https://apps.apple.com/us/app/metrics-data/id6758959570) · [Product website](https://h3pdesign.github.io/Metrics-Data-Public/) | [App policy](/apps/metric-data/privacy-policy) |
-| [X-Newsbook](/apps/x-newsbook/overview) | Reading, feeds, and saved context | macOS · iPadOS · iOS | Private beta · 10 (2026-02-13) | [Request access](/support/support-and-feedback) | [Website policy](/policies/privacy-policy) |
+| [Broadside](/apps/broadside/overview) | Reading, feeds, and saved context | macOS · iPadOS · iOS | Private beta · 10 (2026-02-13) | [Request access](/support/support-and-feedback) | [Website policy](/policies/privacy-policy) |
 | [Release Assistant](/apps/release-assistant/overview) | Guarded release operations | macOS | Internal alpha · 0.2.0 (2026-05-06) | [Request access](/support/support-and-feedback) | [Website policy](/policies/privacy-policy) |
 | [Image Sorter](/apps/image-sorter/overview) | Local image queues and naming | macOS | Private beta · 1.0 project snapshot (2026-10-26) | [Request access](/support/support-and-feedback) | [App policy](/apps/image-sorter-ai/privacy-policy) |
 | [Vistral](/apps/vistral/overview) | Local-first dashboards and insights | macOS · iPadOS · iOS · tvOS · watchOS · visionOS | App Store release · 1.0 (2026-11-10) | [App Store](https://apps.apple.com/us/app/vistral/id6759879882) | [Website policy](/policies/privacy-policy) |
@@ -29,7 +29,7 @@ Use this view when you know the job you want to do but not which app is the best
 - **Git notifications:** [GitBird](/apps/gitbird/overview)
 - **Audio recording:** [Liquid Record](/apps/liquid-record/overview)
 - **Analytics:** [Metrics Data](/apps/metric-data/overview) or [Vistral](/apps/vistral/overview)
-- **Reading and research:** [X-Newsbook](/apps/x-newsbook/overview) or [History Vision](/apps/history-vision/overview)
+- **Reading and research:** [Broadside](/apps/broadside/overview) or [History Vision](/apps/history-vision/overview)
 - **Release work:** [Release Assistant](/apps/release-assistant/overview)
 - **Language study:** [Lingua Latina](/apps/lingua-latina/overview)
 - **Generative art and biology:** [Morphia](/apps/morphia/overview)

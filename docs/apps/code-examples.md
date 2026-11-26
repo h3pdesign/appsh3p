@@ -50,7 +50,7 @@ scripts/run_selfhosted_notarized_release.sh "$VERSION"
 echo "Done"
 ```
 
-## X-Newsbook (Swift)
+## Broadside (Swift)
 
 ```swift
 struct FeedSection: Identifiable {
@@ -81,5 +81,5 @@ func sortedSections(_ sections: [FeedSection]) -> [FeedSection] {
 - [All Apps](/apps/index)
 - [Neon Vision Editor Overview](/apps/neon-vision-editor/overview)
 - [Metrics Data Overview](/apps/metric-data/overview)
-- [X-Newsbook Overview](/apps/x-newsbook/overview)
+- [Broadside Overview](/apps/broadside/overview)
 - [Release Assistant Overview](/apps/release-assistant/overview)

@@ -1,6 +1,6 @@
-# X-Newsbook FAQ
+# Broadside FAQ
 
-## Is X-Newsbook public?
+## Is Broadside public?
 
 Not yet. It is currently documented as private beta.
 
@@ -14,5 +14,5 @@ Yes. Reader and app surfaces follow system appearance.
 
 ## Related Pages
 
-- [Overview](/apps/x-newsbook/overview)
-- [Known Issues](/apps/x-newsbook/known-issues)
+- [Overview](/apps/broadside/overview)
+- [Known Issues](/apps/broadside/known-issues)

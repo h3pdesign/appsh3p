@@ -32,7 +32,7 @@ The app overview links to installation, features, gallery, FAQ, known issues, pr
 - [Morphia](/apps/morphia/overview)
 - [Vistral](/apps/vistral/overview)
 - [History Vision](/apps/history-vision/overview)
-- [X-Newsbook](/apps/x-newsbook/overview)
+- [Broadside](/apps/broadside/overview)
 - [Image Sorter](/apps/image-sorter/overview)
 - [Release Assistant](/apps/release-assistant/overview)
 

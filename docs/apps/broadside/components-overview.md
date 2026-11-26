@@ -1,8 +1,8 @@
-# X-Newsbook Components Overview
+# Broadside Components Overview
 
 ## Design Philosophy
 
-X-Newsbook components prioritize calm reading flow: discover, open, save, and return without interface clutter.
+Broadside components prioritize calm reading flow: discover, open, save, and return without interface clutter.
 
 ## Core Components
 
@@ -37,6 +37,6 @@ struct StoryPreview: Identifiable {
 
 ## Related Pages
 
-- [Overview](/apps/x-newsbook/overview)
-- [Features](/apps/x-newsbook/features)
+- [Overview](/apps/broadside/overview)
+- [Features](/apps/broadside/features)
 - [Code Examples](/apps/code-examples)

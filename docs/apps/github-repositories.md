@@ -19,7 +19,7 @@ This page tracks repository mapping for all documented apps.
 
 - Liquid Record
 - Metrics Data
-- X-Newsbook
+- Broadside
 - Release Assistant
 - Image Sorter
 - Vistral

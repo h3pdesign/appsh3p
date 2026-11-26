@@ -14,7 +14,7 @@ This documentation site is designed to minimize data collection.
 - No first-party advertising trackers are intentionally installed.
 - No payment data is processed directly on this site.
 
-For h3p apps listed on this site (including Metrics Data, Neon Vision Editor, Release Assistant, X-Newsbook, and Lingua Latina), data handling may vary by app features and platform integration. Where app-specific behavior exists, it is documented in the relevant app documentation and in linked third-party provider policies.
+For h3p apps listed on this site (including Metrics Data, Neon Vision Editor, Release Assistant, Broadside, and Lingua Latina), data handling may vary by app features and platform integration. Where app-specific behavior exists, it is documented in the relevant app documentation and in linked third-party provider policies.
 
 App-specific privacy details:
 

@@ -199,11 +199,11 @@ October updates below separate verified public releases from project builds that
 
 ## February 2026
 
-### X-Newsbook 10 - February 13
+### Broadside 10 - February 13
 
 - Published the initial documentation structure covering overview, components, installation, features, gallery, known issues, and FAQ.
 
-[Read the X-Newsbook changelog](/apps/x-newsbook/changelog)
+[Read the Broadside changelog](/apps/broadside/changelog)
 
 ## App changelogs
 
@@ -216,6 +216,6 @@ October updates below separate verified public releases from project builds that
 - [History Vision](/apps/history-vision/changelog)
 - [Release Assistant](/apps/release-assistant/changelog)
 - [Image Sorter](/apps/image-sorter/changelog)
-- [X-Newsbook](/apps/x-newsbook/changelog)
+- [Broadside](/apps/broadside/changelog)
 
 Dates and version numbers are documentation snapshots. Follow the linked release page for the app's current distribution channel and detailed notes.

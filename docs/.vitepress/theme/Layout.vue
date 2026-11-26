@@ -69,7 +69,7 @@ const topSwitcherLinks = [
   { key: 'gitbird', text: 'GitBird', link: '/apps/gitbird/overview' },
   { key: 'liquid-record', text: 'Liquid', link: '/apps/liquid-record/overview' },
   { key: 'metric-data', text: 'Metrics', link: '/apps/metric-data/overview' },
-  { key: 'x-newsbook', text: 'Newsbook', link: '/apps/x-newsbook/overview' },
+  { key: 'broadside', text: 'Broadside', link: '/apps/broadside/overview' },
   { key: 'release-assistant', text: 'Release', link: '/apps/release-assistant/overview' },
   { key: 'image-sorter', text: 'ImageSorter', link: '/apps/image-sorter/overview' },
   { key: 'vistral', text: 'Vistral', link: '/apps/vistral/overview' },
@@ -83,7 +83,7 @@ const appUpdatedBySlug: Record<string, string> = {
   'gitbird': 'October 25, 2026',
   'liquid-record': 'November 13, 2026',
   'metric-data': 'November 14, 2026',
-  'x-newsbook': 'February 13, 2026',
+  'broadside': 'February 13, 2026',
   'release-assistant': 'May 6, 2026',
   'image-sorter': 'November 24, 2026',
   'vistral': 'November 10, 2026',
@@ -729,7 +729,7 @@ function ensureHomeWidgets() {
           <a href="/apps/gitbird/overview"><img src="/icons/gitbird.png" alt="GitBird" width="22" height="22" loading="lazy" decoding="async" /></a>
           <a href="/apps/liquid-record/overview"><img src="/icons/liquid-record.png" alt="Liquid Record" width="22" height="22" loading="lazy" decoding="async" /></a>
           <a href="/apps/metric-data/overview"><img src="/icons/metric-data.png" alt="Metrics Data" width="22" height="22" loading="lazy" decoding="async" /></a>
-          <a href="/apps/x-newsbook/overview"><img src="/icons/x-newsbook.png?v=20260914-1" alt="X-Newsbook" width="22" height="22" loading="lazy" decoding="async" /></a>
+          <a href="/apps/broadside/overview"><img src="/icons/broadside.png?v=20260914-1" alt="Broadside" width="22" height="22" loading="lazy" decoding="async" /></a>
           <a href="/apps/release-assistant/overview"><img src="/icons/release-assistant.png" alt="Release Assistant" width="22" height="22" loading="lazy" decoding="async" /></a>
           <a href="/apps/image-sorter/overview"><img src="/icons/image-sorter.png?v=20260914-1" alt="Image Sorter" width="22" height="22" loading="lazy" decoding="async" /></a>
           <a href="/apps/vistral/overview"><img src="/icons/vistral.png" alt="Vistral" width="22" height="22" loading="lazy" decoding="async" /></a>
@@ -744,7 +744,7 @@ function ensureHomeWidgets() {
           <div class="home-platform-row"><span class="app">GitBird</span><span class="plat">macOS</span></div>
           <div class="home-platform-row"><span class="app">Liquid</span><span class="plat">iOS</span></div>
           <div class="home-platform-row"><span class="app">Metrics</span><span class="plat">macOS</span><span class="plat">iPadOS</span><span class="plat">iOS</span></div>
-          <div class="home-platform-row"><span class="app">Newsbook</span><span class="plat">macOS</span><span class="plat">iPadOS</span><span class="plat">iOS</span></div>
+          <div class="home-platform-row"><span class="app">Broadside</span><span class="plat">macOS</span><span class="plat">iPadOS</span><span class="plat">iOS</span></div>
           <div class="home-platform-row"><span class="app">Release</span><span class="plat">macOS</span></div>
         </div>
       </section>
@@ -1454,7 +1454,7 @@ onBeforeUnmount(() => {
               <a href="/apps/vistral/overview">Vistral</a>
               <a href="/apps/history-vision/overview">History Vision</a>
               <a href="/apps/release-assistant/overview">Release Assistant</a>
-              <a href="/apps/x-newsbook/overview">X-Newsbook</a>
+              <a href="/apps/broadside/overview">Broadside</a>
               <a href="/apps/image-sorter/overview">Image Sorter</a>
               <a href="/apps/morphia/overview">Morphia</a>
             </section>
