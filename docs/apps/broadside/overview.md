@@ -2,10 +2,10 @@
 head:
   - - meta
     - property: og:image
-      content: https://apps-h3p.com/icons/broadside.png?v=20260914-1
+      content: https://apps-h3p.com/icons/broadside.png?v=20261126-1
   - - meta
     - name: twitter:image
-      content: https://apps-h3p.com/icons/broadside.png?v=20260914-1
+      content: https://apps-h3p.com/icons/broadside.png?v=20261126-1
   - - script
     - type: application/ld+json
     - '{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://apps-h3p.com/#organization","name":"H3P","url":"https://apps-h3p.com","sameAs":["https://github.com/h3pdesign"]},{"@type":"SoftwareApplication","@id":"https://apps-h3p.com/apps/broadside/overview#app","name":"Broadside","applicationCategory":"NewsApplication","operatingSystem":"macOS, iPadOS, iOS","url":"https://apps-h3p.com/apps/broadside/overview","softwareVersion":"10","isAccessibleForFree":true,"publisher":{"@id":"https://apps-h3p.com/#organization"}}]}'
@@ -34,7 +34,7 @@ head:
     <p>Broadside is a newspaper-style reader that sets your RSS/Atom feeds, Feedly and X timeline into a daily front page.</p>
   </div>
   <div class="overview-hero-media">
-    <img src="/icons/broadside.png?v=20260914-1" alt="Broadside icon" class="overview-app-icon" />
+    <img src="/icons/broadside.png?v=20261126-1" alt="Broadside icon" class="overview-app-icon" />
   </div>
 </div>
 

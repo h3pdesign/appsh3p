@@ -32,7 +32,7 @@
       <a class="gs-app-item" href="/apps/morphia/overview"><img src="/icons/morphia.png?v=20261114-1" alt="" /><span><strong>Morphia</strong><small>Generative art inspired by biology</small></span><b>App Store</b></a>
       <a class="gs-app-item" href="/apps/vistral/overview"><img src="/icons/vistral.png?v=20260430-1" alt="" /><span><strong>Vistral</strong><small>Personal data dashboards</small></span><b>App Store</b></a>
       <a class="gs-app-item" href="/apps/history-vision/overview"><img src="/icons/history-vision.png?v=20260914-2" alt="" /><span><strong>History Vision</strong><small>Source-aware history and timelines</small></span><b>Private beta</b></a>
-      <a class="gs-app-item" href="/apps/broadside/overview"><img src="/icons/broadside.png?v=20260914-1" alt="" /><span><strong>Broadside</strong><small>Your feeds as a daily front page</small></span><b>Private beta</b></a>
+      <a class="gs-app-item" href="/apps/broadside/overview"><img src="/icons/broadside.png?v=20261126-1" alt="" /><span><strong>Broadside</strong><small>Your feeds as a daily front page</small></span><b>Private beta</b></a>
       <a class="gs-app-item" href="/apps/image-sorter/overview"><img src="/icons/image-sorter.png?v=20260914-1" alt="" /><span><strong>Image Sorter</strong><small>Organize and process visual assets</small></span><b>Private beta</b></a>
       <a class="gs-app-item" href="/apps/release-assistant/overview"><img src="/icons/release-assistant.png?v=20260430-1" alt="" /><span><strong>Release Assistant</strong><small>Guarded release operations</small></span><b>Internal alpha</b></a>
     </div>
