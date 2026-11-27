@@ -1,8 +1,8 @@
 # Privacy Policy for Broadside
 
-_Last updated: November 26, 2026_
+_Last updated: November 27, 2026_
 
-Broadside is a newspaper-style reader for RSS and Atom feeds, Feedly and X. The app does not require an account and does not include ads, tracking, or developer telemetry. The developer does not collect data from this app.
+Broadside is a newspaper-style reader for RSS and Atom feeds and optional reading accounts. The app does not require an account and does not include ads, tracking, or developer telemetry. The developer does not collect data from this app.
 
 ## Data Stored Locally
 
@@ -15,6 +15,10 @@ Feeds you subscribe to are fetched directly from your device from the addresses 
 ## Optional Sources: Feedly and X
 
 Feedly and X are optional. If you connect them, the app sends requests only to Feedly (cloud.feedly.com) or X (api.x.com) using the access token or sign-in you provide. Tokens and the X Client ID are stored in the system Keychain on your device. Their handling of your data is governed by their own privacy policies.
+
+## Optional Reading Accounts and Read Later
+
+If you connect Inoreader (inoreader.com), The Old Reader (theoldreader.com), a FreshRSS or Miniflux server (or another Google Reader API server), or Feedbin (api.feedbin.com), the app sends requests only to that service to load your subscriptions, folders and stories, and to mark stories you open as read there. If you connect Instapaper (instapaper.com) or Raindrop.io (api.raindrop.io), the app sends a story's web address and headline to that service only when you choose "Save for later". Sign-ins and tokens are stored in the system Keychain on your device and are sent only to the service they belong to. Disconnecting an account in Sources deletes them. Each service's handling of your data is governed by its own privacy policy.
 
 ## OPML Import and Export
 
