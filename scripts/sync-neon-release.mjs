@@ -155,6 +155,15 @@ function formatShortDate(iso) {
   return new Date(iso).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric', timeZone: 'UTC' })
 }
 
+// Escape tag-like text (e.g. "<folder>") outside `code` spans so VitePress
+// doesn't parse it as an unclosed HTML/Vue element and fail the build.
+function escapeHtmlOutsideCode(line) {
+  return line
+    .split(/(`[^`]*`)/)
+    .map((part) => (part.startsWith('`') ? part : part.replace(/<(?=[A-Za-z/])/g, '&lt;').replace(/(&lt;[A-Za-z/][^<>]*)>/g, '$1&gt;')))
+    .join('')
+}
+
 function extractReleaseBullets(body) {
   const lines = (body || '').split(/\r?\n/)
   const bullets = lines
@@ -162,6 +171,7 @@ function extractReleaseBullets(body) {
     .filter((l) => l.startsWith('- ') || l.startsWith('* '))
     .map((l) => (l.startsWith('* ') ? `- ${l.slice(2)}` : l))
     .map((l) => l.replace(/!\[[^\]]*]\([^)]+\)/g, '').replace(/\s{2,}/g, ' ').trim())
+    .map(escapeHtmlOutsideCode)
     .filter((l) => l !== '-' && !/^- none\.?$/i.test(l))
     .slice(0, 10)
   return bullets.length ? bullets : ['- Release notes are available in the linked GitHub release.']
