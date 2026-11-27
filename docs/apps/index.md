@@ -20,7 +20,6 @@
   <div class="apps-whats-new-items">
     <span class="apps-whats-new-item is-neon-vision-editor">Nov 24, 2026: Neon Vision Editor 2.2.7 Line commands such as Join Lines, Delete Line, Toggle Comment and Sort Lines change only the lines you selected. Before, they could rewrite the whole document.</span>
     <span class="apps-whats-new-item is-liquid-record">Nov 21, 2026: Liquid Record 1.3.0 Search in Projects now finds words in transcripts, Apple Intelligence summaries, marker labels, and notes, and shows each match's location.</span>
-    <span class="apps-whats-new-item is-image-sorter">Nov 20, 2026: Image Sorter 1.0 Initial Mac App Store release of Image Sorter AI.</span>
   </div>
 </div>
 
