@@ -39,7 +39,6 @@ head:
     </div>
     <div class="h3p-home-update-list">
       <a href="/apps/neon-vision-editor/changelog"><time datetime="2026-11-24">Nov 24, 2026</time><span><strong>Neon Vision Editor 2.2.7</strong> Line commands such as Join Lines, Delete Line, Toggle Comment and Sort Lines change only the lines you selected. Before, they could rewrite the whole document.</span><b>↗</b></a>
-      <a href="/apps/liquid-record/changelog"><time datetime="2026-11-21">Nov 21, 2026</time><span><strong>Liquid Record 1.3.0</strong> Search in Projects now finds words in transcripts, Apple Intelligence summaries, marker labels, and notes, and shows each match's location.</span><b>↗</b></a>
     </div>
   </section>
 
